@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to RG Docs\n\n\nI'm working on a unified docs tree.  Please excuse the dust as I experiment. - 10 OCT 2016\n\n\nTest 1\n\n\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\n\n\nTest 2\n\n\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test", 
+            "text": "Welcome to RG Docs\n\n\nI'm working on a unified docs tree.  Please excuse the dust as I experiment. - 10 OCT 2016\n\n\nPlugins\n\n\n\n\nMath2D\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\n\n\nTest 2\n\n\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test", 
             "title": "Home"
         }, 
         {
@@ -11,9 +11,9 @@
             "title": "Welcome to RG Docs"
         }, 
         {
-            "location": "/#test-1", 
-            "text": "Test  - test  Test  - test  Test  - test  Test  - test  Test  - test", 
-            "title": "Test 1"
+            "location": "/#plugins", 
+            "text": "Math2D  - test  Test  - test  Test  - test  Test  - test  Test  - test", 
+            "title": "Plugins"
         }, 
         {
             "location": "/#test-2", 
