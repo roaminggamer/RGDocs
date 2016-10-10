@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to RG Docs\n\n\nI'm working on a unified docs tree.  Please excuse the dust as I experiment. - 10 OCT 2016\n\n\nPlugins\n\n\n\n\nMath2D\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\n\n\nTest 2\n\n\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test", 
+            "text": "Welcome to RG Docs\n\n\nI'm working on a unified docs tree.  Please excuse the dust as I experiment. - 10 OCT 2016\n\n\nPlugins\n\n\nReleased\n\n\nNone as of yet.  I'm scrambling like a mad man.\n\n\nUpcoming\n\n\n\n\nMath 2D\n - Native 2D Math Library. \n\n\nSudoku Generator\n - 2x2, 3x3, 4x4 Sudoku data generator.\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\n\n\nTest 2\n\n\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test", 
             "title": "Home"
         }, 
         {
@@ -12,8 +12,18 @@
         }, 
         {
             "location": "/#plugins", 
-            "text": "Math2D  - test  Test  - test  Test  - test  Test  - test  Test  - test", 
+            "text": "", 
             "title": "Plugins"
+        }, 
+        {
+            "location": "/#released", 
+            "text": "None as of yet.  I'm scrambling like a mad man.", 
+            "title": "Released"
+        }, 
+        {
+            "location": "/#upcoming", 
+            "text": "Math 2D  - Native 2D Math Library.   Sudoku Generator  - 2x2, 3x3, 4x4 Sudoku data generator.  Test  - test  Test  - test  Test  - test", 
+            "title": "Upcoming"
         }, 
         {
             "location": "/#test-2", 

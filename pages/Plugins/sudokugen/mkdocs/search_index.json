@@ -1,0 +1,99 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Sudoku Gen \n\n\nWhat Is Sudoku Gen?\n\n\nThe \nsudokugen\n plugin is a sudoku generator can can generate puzzles of these sizes:\n\n\n\n\n2 by 2 (good for kids)\n\n\n3 by 3 (traditional)\n\n\n4 by 4 (good for sudoku masters)\n\n\n\n\n \n  \n \n\n\nAdditionally, you can inject preset values for cells to simplify the generation of overlapping puzzles.\n\n\n \n\n\nWhere Can I Get It?\n\n\nYou can get the paid \nsudokugen\n plugin on the \nCorona SDK Marketplace\n.\n\n\nBasic Usage\n\n\nUpdating build.settings\n\n\nsudokugen\n is a plugin and thus requires that you add it to the plugins section of build.settings as follows:\n\n\nsettings =\n{\n    plugins =\n    {\n        [\nplugin.sudokugen\n] = { publisherId = \ncom.roaminggamer\n },\n    },      \n}\n\n\n\n\nRequiring It\n\n\nTo include \nsudokugen\n in your project, simply add this line in main.lua:\n\n\nlocal sudokugen = require \nplugin.sudokugen\n\n\n\n\n\n2 by 2 Puzzles\n\n\nsudokugen.gen_sudoku2( seed, [ cells ] )\n\n\n\n\nGenerates a 2 by 2 puzzle.\n\n\n\n\nseed - Required value used to seed random generator for this generation.\n\n\ncells - An optional table of predefined cell values.  Leave values at 0 to let the generator fill them. (Up to 16 values)\n\n\n\n\nWarning:\n You must take care predefining in the cells.  If you provide an illegal combination, the generator may hang trying to produce a legal puzzle.\n\n\n2 by 2 Example\n\n\nlocal sudokugen = require \nplugin.sudokugen\n\n\n-- Returns a 2 by 2 puzzle (16 cells)\nlocal cells = sudokugen.gen_sudoku2( math.random(1, 100000) )\n\n-- Print the puzzle to the console\nlocal out = \n\nfor i = 1, #cells do\n    out = out .. cells[i]\n    if( i%4 == 0) then\n        print( out )\n        out = \n\n    end\nend\n\n-- Prints something like this:\n-- 4123\n-- 2314\n-- 3241\n-- 1432\n\n\n\n\n3 by 3 Puzzles\n\n\nsudokugen.gen_sudoku3( seed, [ cells ] )\n\n\n\n\nGenerates a 3 by 3 puzzle.\n\n\n\n\nseed - Required value used to seed random generator for this generation.\n\n\ncells - An optional table of predefined cell values.  Leave values at 0 to let the generator fill them. (Up to 81 values).\n\n\n\n\nWarning:\n You must take care predefining in the cells.  If you provide an illegal combination, the generator may hang trying to produce a legal puzzle.\n\n\n3 by 3 Example\n\n\nlocal sudokugen = require \nplugin.sudokugen\n\n\n-- Returns a 3 by 3 puzzle (81 cells)\nlocal cells = sudokugen.gen_sudoku3( math.random(1, 100000) )\n\n-- Print the puzzle to the console\nlocal out = \n\nfor i = 1, #cells do\n    out = out .. cells[i]\n    if( i%9 == 0) then\n        print( out )\n        out = \n\n    end\nend\n\n\n\n\n4 by 4 Puzzles\n\n\nsudokugen.gen_sudoku4( seed, [ cells ] )\n\n\n\n\nGenerates a 4 by 4 puzzle.\n\n\n\n\nseed - Required value used to seed random generator for this generation.\n\n\ncells - An optional table of predefined cell values.  Leave values at 0 to let the generator fill them. (Up to 256 values).\n\n\n\n\nWarning:\n You must take care predefining in the cells.  If you provide an illegal combination, the generator may hang trying to produce a legal puzzle.\n\n\n4 by 4 Example\n\n\nlocal sudokugen = require \nplugin.sudokugen\n\n\n-- Returns a 4 by 4 puzzle (256 cells)\nlocal cells = sudokugen.gen_sudoku4( math.random(1, 100000) )\n\n-- Print the puzzle to the console\nlocal out = \n\nfor i = 1, #cells do\n    out = out .. cells[i]\n    if( i%16 == 0) then\n        print( out )\n        out = \n\n    end\nend\n\n\n\n\nOverlapping 2 by 2\n\n\nIn this example we will generate two puzzles, where the second puzzle's upper-left box will contain the same values as the first puzzle's lower-right box.\n\n\nNote:\n A box is a collection of cells.  For a 2 by 2 puzzle, a box has four cells.\n\n\n \n\n\n-- Generate the first puzzle\nlocal sample1 = sudokugen.gen_sudoku2( math.random(1,10000) )\n\n-- Generate a blank cells\nlocal cells = {}\nfor i = 1, 16 do\n    cells[i] = 0\nend\n\n-- Snag the lower-right box values and inject them into the cells at the right places\ncells[1] = sample1[11]\ncells[2] = sample1[12]\ncells[5] = sample1[15]\ncells[6] = sample1[16]\n\n-- Generate our second puzzle and pass in the predefined list of cells (mostly 0).\n-- The generator will retain any non-zero values and generate those that are 0.\nlocal sample2 = sudokugen.gen_sudoku2( math.random(1,10000), cells )\n\n\n\n\nSamples\n\n\nIf you want to see complete examples using \nsudokugen\n, you can download them here:\n\n\n\n\nexample1\n\n\nexample2\n\n\n\n\nFAQ\n\n\n\n\n\n\nDoes this plugin contain game logic?\n  - No. It's just a generator.  The game design is still up to you.  However, Roaming Gamer, LLC. does offer a Sudoku game template that is compatible with this generator.  Check it out here: EFM.\n\n\n\n\n\n\nDoes this plugin contain a solver?\n  - No.  Again.  This only a generator.  Solving is a much more computationally expensive endeavor and has to handle incorrectly filled cells, etc.\n\n\n\n\n\n\nWhy doesn't this generator support 5 by 5 and higher-level puzzles?\n  - The are computationally prohibitive to generate in real- or near-real- time.\n\n\n\n\n\n\nRequesting Features\n\n\nIf you have a request for a \nmissing\n function that you feel would be especially useful, please post a request to the \nCorona Plugins Forum\n, using this format:\n\n\nTitle\n\n\nSudokuGen Feature Request - \nfeature name here\n\n\nBody\n\n\nA clear, concise, and precise description of the feature you want including these details:\n\n\n\n\nName of feature.\n\n\nDescription of feature.\n\n\nSample of problem(s) it can be used to solve.\n\n\nOther supporting details and/or images, but please keep it as concise as possible.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#sudoku-gen", 
+            "text": "", 
+            "title": "Sudoku Gen"
+        }, 
+        {
+            "location": "/#what-is-sudoku-gen", 
+            "text": "The  sudokugen  plugin is a sudoku generator can can generate puzzles of these sizes:   2 by 2 (good for kids)  3 by 3 (traditional)  4 by 4 (good for sudoku masters)           Additionally, you can inject preset values for cells to simplify the generation of overlapping puzzles.", 
+            "title": "What Is Sudoku Gen?"
+        }, 
+        {
+            "location": "/#where-can-i-get-it", 
+            "text": "You can get the paid  sudokugen  plugin on the  Corona SDK Marketplace .", 
+            "title": "Where Can I Get It?"
+        }, 
+        {
+            "location": "/#basic-usage", 
+            "text": "", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/#updating-buildsettings", 
+            "text": "sudokugen  is a plugin and thus requires that you add it to the plugins section of build.settings as follows:  settings =\n{\n    plugins =\n    {\n        [ plugin.sudokugen ] = { publisherId =  com.roaminggamer  },\n    },      \n}", 
+            "title": "Updating build.settings"
+        }, 
+        {
+            "location": "/#requiring-it", 
+            "text": "To include  sudokugen  in your project, simply add this line in main.lua:  local sudokugen = require  plugin.sudokugen", 
+            "title": "Requiring It"
+        }, 
+        {
+            "location": "/#2-by-2-puzzles", 
+            "text": "sudokugen.gen_sudoku2( seed, [ cells ] )  Generates a 2 by 2 puzzle.   seed - Required value used to seed random generator for this generation.  cells - An optional table of predefined cell values.  Leave values at 0 to let the generator fill them. (Up to 16 values)   Warning:  You must take care predefining in the cells.  If you provide an illegal combination, the generator may hang trying to produce a legal puzzle.", 
+            "title": "2 by 2 Puzzles"
+        }, 
+        {
+            "location": "/#2-by-2-example", 
+            "text": "local sudokugen = require  plugin.sudokugen \n\n-- Returns a 2 by 2 puzzle (16 cells)\nlocal cells = sudokugen.gen_sudoku2( math.random(1, 100000) )\n\n-- Print the puzzle to the console\nlocal out =  \nfor i = 1, #cells do\n    out = out .. cells[i]\n    if( i%4 == 0) then\n        print( out )\n        out =  \n    end\nend\n\n-- Prints something like this:\n-- 4123\n-- 2314\n-- 3241\n-- 1432", 
+            "title": "2 by 2 Example"
+        }, 
+        {
+            "location": "/#3-by-3-puzzles", 
+            "text": "sudokugen.gen_sudoku3( seed, [ cells ] )  Generates a 3 by 3 puzzle.   seed - Required value used to seed random generator for this generation.  cells - An optional table of predefined cell values.  Leave values at 0 to let the generator fill them. (Up to 81 values).   Warning:  You must take care predefining in the cells.  If you provide an illegal combination, the generator may hang trying to produce a legal puzzle.", 
+            "title": "3 by 3 Puzzles"
+        }, 
+        {
+            "location": "/#3-by-3-example", 
+            "text": "local sudokugen = require  plugin.sudokugen \n\n-- Returns a 3 by 3 puzzle (81 cells)\nlocal cells = sudokugen.gen_sudoku3( math.random(1, 100000) )\n\n-- Print the puzzle to the console\nlocal out =  \nfor i = 1, #cells do\n    out = out .. cells[i]\n    if( i%9 == 0) then\n        print( out )\n        out =  \n    end\nend", 
+            "title": "3 by 3 Example"
+        }, 
+        {
+            "location": "/#4-by-4-puzzles", 
+            "text": "sudokugen.gen_sudoku4( seed, [ cells ] )  Generates a 4 by 4 puzzle.   seed - Required value used to seed random generator for this generation.  cells - An optional table of predefined cell values.  Leave values at 0 to let the generator fill them. (Up to 256 values).   Warning:  You must take care predefining in the cells.  If you provide an illegal combination, the generator may hang trying to produce a legal puzzle.", 
+            "title": "4 by 4 Puzzles"
+        }, 
+        {
+            "location": "/#4-by-4-example", 
+            "text": "local sudokugen = require  plugin.sudokugen \n\n-- Returns a 4 by 4 puzzle (256 cells)\nlocal cells = sudokugen.gen_sudoku4( math.random(1, 100000) )\n\n-- Print the puzzle to the console\nlocal out =  \nfor i = 1, #cells do\n    out = out .. cells[i]\n    if( i%16 == 0) then\n        print( out )\n        out =  \n    end\nend", 
+            "title": "4 by 4 Example"
+        }, 
+        {
+            "location": "/#overlapping-2-by-2", 
+            "text": "In this example we will generate two puzzles, where the second puzzle's upper-left box will contain the same values as the first puzzle's lower-right box.  Note:  A box is a collection of cells.  For a 2 by 2 puzzle, a box has four cells.     -- Generate the first puzzle\nlocal sample1 = sudokugen.gen_sudoku2( math.random(1,10000) )\n\n-- Generate a blank cells\nlocal cells = {}\nfor i = 1, 16 do\n    cells[i] = 0\nend\n\n-- Snag the lower-right box values and inject them into the cells at the right places\ncells[1] = sample1[11]\ncells[2] = sample1[12]\ncells[5] = sample1[15]\ncells[6] = sample1[16]\n\n-- Generate our second puzzle and pass in the predefined list of cells (mostly 0).\n-- The generator will retain any non-zero values and generate those that are 0.\nlocal sample2 = sudokugen.gen_sudoku2( math.random(1,10000), cells )", 
+            "title": "Overlapping 2 by 2"
+        }, 
+        {
+            "location": "/#samples", 
+            "text": "If you want to see complete examples using  sudokugen , you can download them here:   example1  example2", 
+            "title": "Samples"
+        }, 
+        {
+            "location": "/#faq", 
+            "text": "Does this plugin contain game logic?   - No. It's just a generator.  The game design is still up to you.  However, Roaming Gamer, LLC. does offer a Sudoku game template that is compatible with this generator.  Check it out here: EFM.    Does this plugin contain a solver?   - No.  Again.  This only a generator.  Solving is a much more computationally expensive endeavor and has to handle incorrectly filled cells, etc.    Why doesn't this generator support 5 by 5 and higher-level puzzles?   - The are computationally prohibitive to generate in real- or near-real- time.", 
+            "title": "FAQ"
+        }, 
+        {
+            "location": "/#requesting-features", 
+            "text": "If you have a request for a  missing  function that you feel would be especially useful, please post a request to the  Corona Plugins Forum , using this format:", 
+            "title": "Requesting Features"
+        }, 
+        {
+            "location": "/#title", 
+            "text": "SudokuGen Feature Request -  feature name here", 
+            "title": "Title"
+        }, 
+        {
+            "location": "/#body", 
+            "text": "A clear, concise, and precise description of the feature you want including these details:   Name of feature.  Description of feature.  Sample of problem(s) it can be used to solve.  Other supporting details and/or images, but please keep it as concise as possible.", 
+            "title": "Body"
+        }
+    ]
+}
