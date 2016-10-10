@@ -1,0 +1,319 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Math2D by Roaming Gamer, LLC. \n\n\nWhat Is Math2D?\n\n\nThe \nmath2d\n plugin is a collection of (natively coded) functions designed to solve the most common 2D math problems found in games.  This collection is both fast and flexible, simplifying and speeding up \nCorona SDK\n in a real way.\n\n\nThe \nmath2d\n plugin is designed to work with \nCorona SDK\n specifically.  Like many of my libraries and modules, I created it for myself originally, but it was so useful I decided to make it available to others.  \n\n\nDon't strugle with 2D math any more.  Get it now.\n\n\nWhere Can I Get It?\n\n\nYou can get the paid \nmath2d\n plugin on the \nCorona SDK Marketplace\n.\n\n\nWhy Is This Paid?\n\n\nOriginally, I released a free version of the \nmath2d\n plugin as a Pure-Lua solution.  Since then, I have converted the library to a much faster (2x .. 6x) native version and added many new 2D math functions.  \n\n\nClick \nBenchmarks\n at the top of this page to see a comparison of \nmath2d\n versus the legacy version.\n\n\nYou can get the old Pure-Lua version here, but be warned, it is much slower than the new version and is missing several key features: \nlegacy math2d\n.\n\n\nBasic Usage\n\n\nUpdating build.settings\n\n\nmath2d\n is a plugin and thus requires that you add it to the plugins section of build.settings as follows:\n\n\nsettings =\n{\n    plugins =\n    {\n        [\nplugin.math2d\n] = { publisherId = \ncom.roaminggamer\n },\n    },      \n}\n\n\n\n\nUsing It\n\n\nTo include \nmath2d\n in your project, simply add this line in main.lua:\n\n\nlocal math2d = require \nplugin.math2d\n\n\n\n\n\nDocs\n\n\nClick the 'References' link at the top of this page for detailed documenation of the \nmath2d\n functions.\n\n\nSamples\n\n\nIf you want to see complete examples using \nmath2d\n, you can download them here:\n\n\n\n\nexample1\n\n\nexample2\n\n\n\n\nRequesting Features\n\n\nIf you have a request for a \nmissing\n function that you feel would be especially useful, please post a request to the \nCorona Plugins Forum\n, using this format:\n\n\nTitle\n\n\nMath2D Feature Request - \nfeature name here\n\n\nBody\n\n\nA clear, concise, and precise description of the feature you want including these details:\n\n\n\n\nName of feature.\n\n\nDescription of feature.\n\n\nSample of problem(s) it can be used to solve.\n\n\nOther supporting details and/or images, but please keep it as concise as possible.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#math2d-by-roaming-gamer-llc", 
+            "text": "", 
+            "title": "Math2D by Roaming Gamer, LLC."
+        }, 
+        {
+            "location": "/#what-is-math2d", 
+            "text": "The  math2d  plugin is a collection of (natively coded) functions designed to solve the most common 2D math problems found in games.  This collection is both fast and flexible, simplifying and speeding up  Corona SDK  in a real way.  The  math2d  plugin is designed to work with  Corona SDK  specifically.  Like many of my libraries and modules, I created it for myself originally, but it was so useful I decided to make it available to others.    Don't strugle with 2D math any more.  Get it now.", 
+            "title": "What Is Math2D?"
+        }, 
+        {
+            "location": "/#where-can-i-get-it", 
+            "text": "You can get the paid  math2d  plugin on the  Corona SDK Marketplace .", 
+            "title": "Where Can I Get It?"
+        }, 
+        {
+            "location": "/#why-is-this-paid", 
+            "text": "Originally, I released a free version of the  math2d  plugin as a Pure-Lua solution.  Since then, I have converted the library to a much faster (2x .. 6x) native version and added many new 2D math functions.    Click  Benchmarks  at the top of this page to see a comparison of  math2d  versus the legacy version.  You can get the old Pure-Lua version here, but be warned, it is much slower than the new version and is missing several key features:  legacy math2d .", 
+            "title": "Why Is This Paid?"
+        }, 
+        {
+            "location": "/#basic-usage", 
+            "text": "", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/#updating-buildsettings", 
+            "text": "math2d  is a plugin and thus requires that you add it to the plugins section of build.settings as follows:  settings =\n{\n    plugins =\n    {\n        [ plugin.math2d ] = { publisherId =  com.roaminggamer  },\n    },      \n}", 
+            "title": "Updating build.settings"
+        }, 
+        {
+            "location": "/#using-it", 
+            "text": "To include  math2d  in your project, simply add this line in main.lua:  local math2d = require  plugin.math2d", 
+            "title": "Using It"
+        }, 
+        {
+            "location": "/#docs", 
+            "text": "Click the 'References' link at the top of this page for detailed documenation of the  math2d  functions.", 
+            "title": "Docs"
+        }, 
+        {
+            "location": "/#samples", 
+            "text": "If you want to see complete examples using  math2d , you can download them here:   example1  example2", 
+            "title": "Samples"
+        }, 
+        {
+            "location": "/#requesting-features", 
+            "text": "If you have a request for a  missing  function that you feel would be especially useful, please post a request to the  Corona Plugins Forum , using this format:", 
+            "title": "Requesting Features"
+        }, 
+        {
+            "location": "/#title", 
+            "text": "Math2D Feature Request -  feature name here", 
+            "title": "Title"
+        }, 
+        {
+            "location": "/#body", 
+            "text": "A clear, concise, and precise description of the feature you want including these details:   Name of feature.  Description of feature.  Sample of problem(s) it can be used to solve.  Other supporting details and/or images, but please keep it as concise as possible.", 
+            "title": "Body"
+        }, 
+        {
+            "location": "/benchmarks/", 
+            "text": "Native Math2D versus Legacy (Pure-Lua) Math2D\n\n\nThe native version of \nmath2d\n is significantly faster (and smaller too) than the legacy version.\n\n\nThis graph shows a comparison of all functions the to versions have in common (there are many more function in the native version of \nmath2d\n).  \n\n\nShorter Bars == FASTER", 
+            "title": "Benchmarks"
+        }, 
+        {
+            "location": "/benchmarks/#native-math2d-versus-legacy-pure-lua-math2d", 
+            "text": "The native version of  math2d  is significantly faster (and smaller too) than the legacy version.  This graph shows a comparison of all functions the to versions have in common (there are many more function in the native version of  math2d ).    Shorter Bars == FASTER", 
+            "title": "Native Math2D versus Legacy (Pure-Lua) Math2D"
+        }, 
+        {
+            "location": "/references/", 
+            "text": "math2d.*\n\n\nThis page contains reference materials (docs) for the paid version of \nmath2d\n.  \n\n\n References marked with this icon also apply to the \nlegacy\n version of \nmath2d\n.\n\n\nVector Representations\n\n\nIn the context of these docs, a vector is any table or object with both an x- and a y-field.  Additionally, we often deal with vectors as discrete collections of \nx\n and \ny\n values. \n\n\n-- A table as a 2d-vector: \n 10, 15 \n\nlocal v1 = { x = 10, y = 15 } \n\n-- A circle display object; Also a 2d-vector: \n 10, 15 \n\nlocal circ = display.newCircle( 10, 15, 5 )\n\n-- Four discrete values repsenting the vectors: \n 10, 15 \n and \n -1, 0 \n\nlocal x1 = 10\nlocal y1 = 15\nlocal x2 = -1\nlocal y2 = 0\n\n\n\n\nAddition \n\n\nTable/Object Vectors\n\n\nmath2d.add( v1, v2 [, altRet ] )\n\n\n\n\nAdds two vectors \nv1\n and \nv2\n and returns a (table) vector unless \naltRet\n is \ntrue\n.  \n\n\n\n\nv1, v2 - Vectors one and two.\n\n\naltRet\n - If this is \ntrue\n, the function returns two discrete values.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.add( circ, rect ) -- Return a table\nprint(\nResults: \n, vec.x, vec.y )\n\nlocal vx,vy = math2d.add( circ, rect, true ) -- Return two numbers\nprint(\nResults: \n, vx, vy ) \n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.add( x1, y1, x2, y2 [, altRet ] )\n\n\n\n\nAdds two vectors \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n and returns two discrete values unless \naltRet\n is \ntrue\n.  \n\n\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\naltRet\n - If this is \ntrue\n, the function returns a (table) vector.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vx,vy = math2d.add( circ.x, circ.y, rect.x, rect.y ) -- Return two numbers\nprint(\nResults: \n, vx, vy ) \n\nlocal vec = math2d.add( math2d.add( circ.x, circ.y, rect.x, rect.y, true ) -- Return a table\nprint(\nResults: \n, vec.x, vec.y )\n\n\n\n\nSubtraction \n\n\nTable/Object Vectors\n\n\nmath2d.sub( v1, v2 [, altRet ] )\n\n\n\n\nSubtracts vector \nv2\n from vector \nv1\n  ( \nv1\n - \nv2\n ) and returns a (table) vector unless \naltRet\n is \ntrue\n.  \n\n\nNote:\n The returned value represents a direction vector equivalent to the direction from \nv2\n to \nv1\n translated to \n 0, 0 \n.  Adding this vector to \nv2\n gives you \nv1\n.\n\n\n\n\nv1, v2 - Vectors one and two.\n\n\naltRet\n - If this is \ntrue\n, the function returns two discrete values.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\nprint(\nResults: \n, vec.x, vec.y )\n\nlocal vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers\nprint(\nResults: \n, vx, vy ) \n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.sub( x1, y1, x2, y2 [, altRet ] )\n\n\n\n\nSubtracts vector \n \nx2\n, \ny2\n \n from vector \n \nx1\n, \ny1\n \n ( \n \nx1\n - \nx2\n, \ny1\n - \ny2\n \n ) and returns two discrete values unless \naltRet\n is \ntrue\n.  \n\n\nNote:\n The returned value represents a direction vector equivalent to the direction from \nv2\n to \nv1\n translated to \n 0, 0 \n.  Adding this vector to \nv2\n gives you \nv1\n.\n\n\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\naltRet\n - If this is \ntrue\n, the function returns a (table) vector.\n\n\n\n\nlocal x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\nprint(\nResults: \n, vx, vy ) \n\nlocal vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table\nprint(\nResults: \n, vec.x, vec.y ) \n\n\n\n\nDifference \n\n\nTable/Object Vectors\n\n\nmath2d.diff( v1, v2 [, altRet ] )\n\n\n\n\nSubtracts vector \nv1\n from vector \nv2\n  ( \nv2\n - \nv1\n ) and returns a (table) vector unless \naltRet\n is \ntrue\n.  \n\n\nNote:\n The returned value represents a direction vector equivalent to the direction from \nv1\n to \nv2\n translated to \n 0, 0 \n.  Adding this vector to \nv1\n gives you \nv2\n.\n\n\n\n\nv1, v2 - Vectors one and two.\n\n\naltRet\n - If this is \ntrue\n, the function returns two discrete values.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\nprint(\nResults: \n, vec.x, vec.y )\n\nlocal vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers\nprint(\nResults: \n, vx, vy ) \n\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.diff( x1, y1, x2, y2 [, altRet ] )\n\n\n\n\nSubtracts vector \n \nx1\n, \ny1\n \n from vector \n \nx2\n, \ny2\n \n ( \n \nx2\n - \nx1\n, \ny2\n - \ny1\n \n ) and returns two discrete values unless \naltRet\n is \ntrue\n.  \n\n\nNote:\n The returned value represents a direction vector equivalent to the direction from \nv1\n to \nv2\n translated to \n 0, 0 \n.  Adding this vector to \nv1\n gives you \nv2\n.\n\n\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\naltRet\n - If this is \ntrue\n, the function returns a (table) vector.\n\n\n\n\nlocal x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\nprint(\nResults: \n, vx, vy ) \n\nlocal vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table\nprint(\nResults: \n, vec.x, vec.y ) \n\n\n\n\nLength \n\n\nTable/Object Vectors\n\n\nmath2d.length( v1 )\n\n\n\n\nCalculates the length (magnitude) of scalar (encoded) vector.\n\n\n\n\nv1 - Vectors whose length we want to calculate.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\n\nprint(\nResult: \n, math2d.length(vec) )\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.length( x1, y1 )\n\n\n\n\nAdds two vectors \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n and returns two discrete values unless \naltRet\n is \ntrue\n.  \n\n\n\n\nx1, y1 - Two discrete values representing the vector \n \nx1\n, \ny1\n \n whose length we want to calculate.\n\n\n\n\nlocal x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\n\nprint(\nResult: \n, math2d.length(vx, vy) )\n\n\n\n\nSquared Length \n\n\nTable/Object Vectors\n\n\nmath2d.length2( v1,  )\n\n\n\n\nCalculates the squared length of a vector.\n\n\n\n\nv1 - Vectors whose squared length we want to calculate.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\n\nprint(\nResult: \n, math2d.length2(vec) )\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.length2( x1, y1 )\n\n\n\n\nCalculates the squared length of a vector.\n\n\n\n\nx1, y1 - Two discrete values representing the vector \n \nx1\n, \ny1\n \n whose squared length we want to calculate.\n\n\n\n\nlocal x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\n\nprint(\nResult: \n, math2d.length2(vx, vy) )\n\n\n\n\nScaling \n\n\nTable/Object Vectors\n\n\nmath2d.scale( obj, scaleBy [, altRet]  )\n\n\n\n\nMultiply \n x, y \n components of a vector by scaleBy.\n\n\n\n\nv1 - Vector we wish to scale.\n\n\naltRet\n - If this is \ntrue\n, the function returns two discrete values.\n\n\n\n\nlocal vec = { x = 1, y = 0 }\n\nvec = math2d.scale( vec, 30 ) -- Vector is now \n 30, 0 \n\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.scale( vx, vy, scaleBy [, altRet ] )\n\n\n\n\nMultiply \nvx\n and \nvy\n components of a vector by scaleBy.\n\n\n\n\nx1, y1 - Two discrete values representing the vector \n \nx1\n, \ny1\n \n we wish to scale.\n\n\naltRet\n - If this is \ntrue\n, the function returns a table.\n\n\n\n\nlocal vx = 1, vy = 0\n\nvx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now \n 30, 0 \n\n\n\n\n\nNormalizing \n\n\nTable/Object Vectors\n\n\nmath2d.normalize( v1 [, altRet ] )\n\n\n\n\nConverts the input vector into a unit length (one) vector.\n\n\n\n\nv1 - The vector we wish to normalize.\n\n\naltRet\n - If this is \ntrue\n, the function returns two discrete values.\n\n\n\n\nlocal vec = { x = 30, y = 30 }\n\nvec = math2d.normalize( vec ) -- Vector is now \n 0.707..., 0.707... \n\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.normalize( x1, y1 [, altRet ] )\n\n\n\n\nConverts the input vector into a unit length (one) vector.\n\n\n\n\nx1, y1 - Two discrete values representing the vector \n \nx1\n, \ny1\n \n we wish to normalize.\n\n\naltRet\n - If this is \ntrue\n, the function returns a (table) vector.\n\n\n\n\nlocal vx = 30, vy = 30\n\nvx, vy = math2d.normalize( vx, vy ) -- Vector is now \n 0.707..., 0.707... \n\n\n\n\n\nDot Product \n\n\nTable/Object Vectors\n\n\nmath2d.dot( v1, v2 )\n\n\n\n\nCalculates the inner product of two vectors \nv1\n and \nv2\n and returns a scalar value.\n\n\n\n\nv1, v2 - Vectors one and two.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nprint(\nResult: \n, math2d.dot( circ, rect ) )\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.dot( x1, y1, x2, y2 )\n\n\n\n\nCalculates the inner product of two vectors \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n and returns a scalar value.\n\n\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\n\n\nlocal x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nprint(\nResult: \n, math2d.dot( x1, y1, x2, y2 ) )\n\n\n\n\nCross Product \n\n\nTable/Object Vectors\n\n\nmath2d.cross( v1, v2 )\n\n\n\n\nCalculates the cross product of two vectors \nv1\n and \nv2\n and returns a scalar value.\n\n\n\n\nv1, v2 - Vectors one and two.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nprint(\nResult: \n, math2d.cross( circ, rect ) )\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.cross( x1, y1, x2, y2 )\n\n\n\n\nCalculates the cross product of two vectors \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n and returns a scalar value.\n\n\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\n\n\nlocal x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nprint(\nResult: \n, math2d.cross( x1, y1, x2, y2 ) )\n\n\n\n\nNormals \n\n\nTable/Object Vectors\n\n\nmath2d.normals( v1 [, altRet ] )\n\n\n\n\nReturns two normal vectors \nn1\n and \nn2\n for the given vector \nv1\n unless \naltRet\n is \ntrue\n.  \n\n\nWarning:\n The returned normals are not normalized (unit length) to save computation time.\n\n\n\n\nv1 - Vector for which we want the two normal vectors.\n\n\naltRet\n - If this is \ntrue\n, the function returns four discrete values representing two vectors.\n\n\n\n\nlocal vec = { x = 1, y = 0 }\n\nlocal n1, n2 = math2d.normals( vec ) \n\n-- n1 and n2 will contain the two vectors:\n--   \n 0, -1 \n and \n 0, 1 \n (order may vary).\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.normals( x1, y1 [, altRet ] )\n\n\n\n\nReturns two normal vectors \n \nnx1\n, \nny1\n \n and \n \nnx2\n, \nny2\n \n for the given vector \n \nx1\n, \ny1\n \n unless \naltRet\n is \ntrue\n.  \n\n\nWarning:\n The returned normals are not normalized (unit length) to save computation time.\n\n\n\n\nx1, y1 - Two discrete values representing the vector: \n \nx1\n, \ny1\n \n for which we want two normals.\n\n\naltRet\n - If this is \ntrue\n, the function returns two tables representing two vectors.\n\n\n\n\nlocal x1 = 1, y1 = 0\n\nlocal nx1, ny1, nx2, ny2 = math2d.normals( x1, y1 ) \n\n-- \n nx1, ny1 \n and \n nx2, ny2 \n will be equivalent to: \n--   \n 0, -1 \n and \n 0, 1 \n (order may vary).\n\n\n\n\nAngle To Vector \n\n\nmath2d.angle2Vector( angle [, altRet ] )\n\n\n\n\nConverts a (screen) angle into a normalized direction vector of the form \n vx, vy \n.  \n\n\nWarning:\n This library uses screen angles NOT Cartesian or polar.\n\n\n\n\nangle - Angle whose value we wish to convert to a unit length direction vector.\n\n\naltRet\n - If this is \ntrue\n, the function returns a table otherwise it returns two scalar values.\n\n\n\n\nlocal angle = 135\n\nlocal vec = math2d.angle2Vector( angle, true ) -- Return a table\nprint(\nThe vector: \n .. vec.x .. \n, \n .. vec.y  )\n\nlocal vx,vy = math2d.angle2Vector( angle ) -- Return two numbers\nprint(\nThe vector: \n .. vx .. \n, \n .. vy  )\n\n\n\n\nVector To Angle \n\n\nTable/Object Vectors\n\n\nmath2d.vector2Angle( v1 )\n\n\n\n\nTakes a table vector and returns a screen angle.\nWarning: This library uses screen angles NOT Cartesian or polar. \n\n\n\n\nv1 - Vector we wish to calculate the angle (direction) for.\n\n\n\n\nlocal circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\n\nprint(\nResult: \n, math2d.vector2Angle(vec) )\n\n\n\n\nDiscrete Value Vectors\n\n\nmath2d.vector2Angle( vx, vy )\n\n\n\n\nTakes a two discrete values representing a vector and returns a screen angle.\n\n\n\n\nvx, vy - Two discrete values representing a vector \n \nx1\n, \ny1\n \n we wish to calculate the angle (direction) for.\n\n\n\n\nlocal x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\n\nprint(\nResult: \n, math2d.vector2Angle(vx, vy) )\n\n\n\n\nAngle Between\n\n\n\n\nmath2d.angleBetween( v1, v2 )\nmath2d.angleBetween( x1, y1, x2, y2 )\n\n\n\n\nReturns the inner (shortest) angle between two vectors.\n\n\n\n\nv1, v2 - Vectors one and two.\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\n\n\nlocal vec1 = angle2Vector( -90, true )\nlocal vec2 = angle2Vector( -15, true )\n\nprint( math2d.angleBetween( vec1, vec2 ) ) -- ~75 degrees\n\nprint( math2d.angleBetween( vec2, vec1 ) ) -- ~75 degrees\n\n\n\n\nDistance Between\n\n\nmath2d.distanceBetween( v1, v2 )\nmath2d.distanceBetween( x1, y1, x2, y2 )\n\n\n\n\nReturns the distance betweent two vectors.  Shorthand notation for substraction followed by a length calculation.\n\n\n\n\nv1, v2 - Vectors one and two.\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\n\n\nlocal vec1 = { 0, 100 }\nlocal vec2 = { 0, 0 }\n\nprint( math2d.distanceBetween( vec1, vec2 ) ) -- 100\n\nprint( math2d.distanceBetween( 0, 100, 0, 0 ) ) -- 100\n\n\n\n\nIs Within Distance\n\n\nmath2d.isWithinDistance( v1, v2, distance )\nmath2d.isWithinDistance( x1, y1, x2, y2, distance )\n\n\n\n\nReturns true if two vectors are with the specified \ndistance\n of each other.\n\n\n\n\nv1, v2 - Vectors one and two.\n\n\nx1, y1, x2, y2 - Four discrete values representing the two vectors: \n \nx1\n, \ny1\n \n and \n \nx2\n, \ny2\n \n.\n\n\ndistance - Distance for which true is returned.  Greater than this returns false.\n\n\n\n\nlocal vec1 = { 0, 100 }\nlocal vec2 = { 0, 0 }\n\nprint( math2d.isWithinDistance( vec1, vec2, 100 ) ) -- true\n\nprint( math2d.isWithinDistance( vec1, vec2, 99.999 ) ) -- false\n\nprint( math2d.isWithinDistance( 0, 100, 0, 0, 100 ) ) -- true\n\nprint( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false\n\n\n\n\nIn Field-Of-View\n\n\n(image borrowed from \nGeek Blight\n)\n\n\n\nmath2d.inFOV( target, observer, fov [, offsetAngle ] )\n\n\n\n\nReturns true \ntarget\n is within \nobserver\n's field of view as defined by \nfov\n and the optional rotation \noffsetAngle\n.\n\n\n\n\ntarget - A table vector.  Usually a display object, but can be a table representing point in the world.\n\n\nobserver - A table vector containing a \nrotation\n value in addition to the \nx\n and \ny\n values.  Usually a display object.\n\n\nfov - The angle representing the entire field of vision of the observer from that observer's current forward facing vector.\n\n\noffsetAngle - Optional angle used to 'rotate' the fov from the observer's forward view.  With this you can rotate the observer's view without rotating the object itself which is useful for animations that give the effect of rotating while the display object stays fixed.\n\n\n\n\n-- See picture above for reference\n-- objectA, objecB, and player are all display objects.\n\nmath2d.inFOV( objectA, player, 90 ) -- false\n\nmath2d.inFOV( objectB, player, 90 ) -- true\n\nmath2d.inFOV( objectA, player, 90, 270 ) -- true because we rotated the FOV by 270 degrees\n\n\n\n\nIs In Front\n\n\nIs Behind\n\n\nIs To Left\n\n\nIs To Right\n\n\nmath2d.isInFront( target, observer [, offsetAngle ] )\nmath2d.isBehind( target, observer [, offsetAngle ] )\nmath2d.isToLeft( target, observer [, offsetAngle ] )\nmath2d.isToRight( target, observer [, offsetAngle ] )\n\n\n\n\nThese are all shortcut functions that will quickly tell you if an object is: in-front, behind. to-the-left, or to-the-right of another object.  This is exceptionally useful for things like missiles or enemies that need to 'steer' in the direction of a target.\n\n\nThis determiniation is based upon the current \nrotation\n of the observer and that angle can be modified with the optional \noffsetAngle\n.\n\n\n\n\ntarget - A table vector.  Usually a display object, but can be a table representing point in the world.\n\n\nobserver - A table vector containing a \nrotation\n value in addition to the \nx\n and \ny\n values.  Usually a display object.\n\n\noffsetAngle - Optional angle used to 'rotate' the observers 'forward' vector for the calculation without actually rotating the observer.\n\n\n\n\n-- See picture from 'In Field-Of-View ' above for reference\n\nmath2d.isInFront( objectA, player ) -- true\n\nmath2d.isInFront( objectB, player ) -- true \n\nmath2d.isToLeft( objectA, player ) -- true\n\nmath2d.isToRight( objectB, player ) -- true \n\n\n\n\nLine-Line Intersect\n\n\n\n\nmath2d.lineLineIntersect( l1x1, l1y1, l1x1, l1y2, l2x1, l2y1, l2x2, l2y2 )\n\n\n\n\nChecks to see if two lines intersect and if so where. \n\n\nReturns two points \n x, y \n if an intersection occurs or nil meaning no intersection was found.\n\n\nWarning:\n Although these 'lines' are specified as segments, they are treated as true (infinite) lines and as such any intersection of the infinite lines will be detected.\n\n\n\n\nl1x1 .. l2y2 - Points making up the two lines we wish to test.  For example, \n l1x1, l1y1 \n is the position of the first point of the first line.\n\n\n\n\nlocal x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, \n                    display.contentCenterX, display.contentCenterY+200\nlocal line1 = display.newLine( x1,y1,x2,y2 )\nline1.strokeWidth = 2\n\nlocal x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, \n                    display.contentCenterX + 200, display.contentCenterY\nlocal line2 = display.newLine( x3,y3,x4,y4 )\nline2.strokeWidth = 2\n\nlocal period = 60\nlocal deltaAngle = 5\nlocal startAngle = 0\nlocal endAngle = 360\nlocal angle = startAngle\nlocal marker\n\nlocal function testLineIntersect()\n    angle = angle + deltaAngle\n    display.remove(line2)\n    display.remove(marker)\n\n    if( angle \n endAngle ) then         \n        return\n    end\n    local vec = angle2Vector( angle, true )\n    vec = scaleVec( vec, 250 )\n    vec.x = vec.x + x3\n    vec.y = vec.y + y3\n    line2 = display.newLine( x3, y3, vec.x, vec.y )\n    line2.strokeWidth = 2\n    local intersect = math2d.lineLineIntersect( x3, y3, vec.x, vec.y, x1, y1, x2, y2 )\n    if( intersect ) then \n        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )\n        marker:setFillColor(0,1,0)\n    end\n\n    timer.performWithDelay( period, testLineIntersect )\nend\ntimer.performWithDelay( period, testLineIntersect )\n\n\n\n\nSegment-Segment Intersect\n\n\n\n\nmath2d.segmentSegmentIntersect( s1x1, s1y1, s1x1, s1y2, s2x1, s2y1, s2x2, s2y2 )\n\n\n\n\nChecks to see if two line segments intersect and if so where. \n\n\nReturns two points \n x, y \n if an intersection occurs or nil meaning no intersection was found.\n\n\nNote:\n For most game implementations/tests you will want to use this instead of the line-line version as it is a true segment-segment test and only checks for intersections within the limited ranges of the two segments.\n\n\n\n\ns1x1 .. s2y2 - Points making up the two lines we wish to test.  For example, \n s1x1, s1y1 \n is the position of the first point of the first segment.\n\n\n\n\nlocal x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, \n                    display.contentCenterX, display.contentCenterY+200\nlocal line1 = display.newLine( x1,y1,x2,y2 )\nline1.strokeWidth = 2\n\nlocal x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, \n                    display.contentCenterX + 200, display.contentCenterY\nlocal line2 = display.newLine( x3,y3,x4,y4 )\nline2.strokeWidth = 2\n\nlocal period = 60\nlocal deltaAngle = 5\nlocal startAngle = 0\nlocal endAngle = 360\nlocal angle = startAngle\nlocal marker\n\nlocal function testSegmentIntersect()\n    angle = angle + deltaAngle\n    display.remove(line2)\n    display.remove(marker)\n\n    if( angle \n endAngle ) then         \n        return\n    end\n    local vec = angle2Vector( angle, true )\n    vec = scaleVec( vec, 250 )\n    vec.x = vec.x + x3\n    vec.y = vec.y + y3\n    line2 = display.newLine( x3, y3, vec.x, vec.y )\n    line2.strokeWidth = 2\n    local intersect = math2d.segmentSegmentIntersect( x3, y3, vec.x, vec.y , x1, y1, x2, y2 )\n    if( intersect ) then \n        print(intersect)\n        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )\n        marker:setFillColor(0,1,0)\n    end\n\n    timer.performWithDelay( period, testSegmentIntersect )\nend\ntimer.performWithDelay( period, testSegmentIntersect )\n\n\n\n\nSegment-Circle Intersect\n\n\nmath2d.segmentCircleIntersect( p1, p2, circle, radius )\n\n\n\n\n\n\nChecks to see if the line segment defined by points \np1\n and \np2\n intersects with a \ncircle\n of the specified \nradius\n.\n\n\nPossible returns:\n\n\n\n\nnil - No intersections.\n\n\ni1,  nil - Table containing point of first intersection and nil meaning no second intersection.\n\n\ni1,  i2 - Tables containing points of first and second intersection. (This is the maximum possible number of intersections that can occur.)\n\n\n\n\nCredit:\n Derived from code by: Davis Claiborne (https://github.com/davisdude/mlib/blob/master/mlib.lua)\n\n\n\n\np1, p2 - Table vectors representing the endpoints of a line segment.\n\n\ncircle - Table or object representing the position of the circle.\n\n\nradius - The radius of said circle.\n\n\n\n\nlocal x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY+200, \n                    display.contentCenterX, display.contentCenterY-200\nx1 = x1 - 150\nx2 = x2\nlocal line1 = display.newLine( x1,y1,x2,y2 )\nline1.strokeWidth = 2\n\nlocal p1 = { x = x1, y = y1 }\nlocal p2 = { x = x2, y = y2 }\n\nlocal circ = display.newCircle( display.contentCenterX, display.contentCenterY, 100 )\ncirc:setFillColor(0,0,0,0)\ncirc.strokeWidth = 2\n\nlocal i1, i2 = math2d.segmentCircleIntersect( { x = p1.x, y = p1.y}, \n                                               { x = p2.x, y = p2.y}, \n                                               circ, \n                                               100 )\n\nif( i1 ) then\n    local hit = display.newCircle( i1.x, i1.y, 10 )\n    hit:setFillColor(0,1,0)\nend\n\nif( i2 ) then\n    local hit = display.newCircle( i2.x, i2.y, 10 )\n    hit:setFillColor(0,1,0)\nend", 
+            "title": "References"
+        }, 
+        {
+            "location": "/references/#math2d", 
+            "text": "This page contains reference materials (docs) for the paid version of  math2d .     References marked with this icon also apply to the  legacy  version of  math2d .", 
+            "title": "math2d.*"
+        }, 
+        {
+            "location": "/references/#vector-representations", 
+            "text": "In the context of these docs, a vector is any table or object with both an x- and a y-field.  Additionally, we often deal with vectors as discrete collections of  x  and  y  values.   -- A table as a 2d-vector:   10, 15  \nlocal v1 = { x = 10, y = 15 } \n\n-- A circle display object; Also a 2d-vector:   10, 15  \nlocal circ = display.newCircle( 10, 15, 5 )\n\n-- Four discrete values repsenting the vectors:   10, 15   and   -1, 0  \nlocal x1 = 10\nlocal y1 = 15\nlocal x2 = -1\nlocal y2 = 0", 
+            "title": "Vector Representations"
+        }, 
+        {
+            "location": "/references/#addition", 
+            "text": "", 
+            "title": "Addition"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors", 
+            "text": "math2d.add( v1, v2 [, altRet ] )  Adds two vectors  v1  and  v2  and returns a (table) vector unless  altRet  is  true .     v1, v2 - Vectors one and two.  altRet  - If this is  true , the function returns two discrete values.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.add( circ, rect ) -- Return a table\nprint( Results:  , vec.x, vec.y )\n\nlocal vx,vy = math2d.add( circ, rect, true ) -- Return two numbers\nprint( Results:  , vx, vy )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors", 
+            "text": "math2d.add( x1, y1, x2, y2 [, altRet ] )  Adds two vectors    x1 ,  y1    and    x2 ,  y2    and returns two discrete values unless  altRet  is  true .     x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .  altRet  - If this is  true , the function returns a (table) vector.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vx,vy = math2d.add( circ.x, circ.y, rect.x, rect.y ) -- Return two numbers\nprint( Results:  , vx, vy ) \n\nlocal vec = math2d.add( math2d.add( circ.x, circ.y, rect.x, rect.y, true ) -- Return a table\nprint( Results:  , vec.x, vec.y )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#subtraction", 
+            "text": "", 
+            "title": "Subtraction"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_1", 
+            "text": "math2d.sub( v1, v2 [, altRet ] )  Subtracts vector  v2  from vector  v1   (  v1  -  v2  ) and returns a (table) vector unless  altRet  is  true .    Note:  The returned value represents a direction vector equivalent to the direction from  v2  to  v1  translated to   0, 0  .  Adding this vector to  v2  gives you  v1 .   v1, v2 - Vectors one and two.  altRet  - If this is  true , the function returns two discrete values.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\nprint( Results:  , vec.x, vec.y )\n\nlocal vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers\nprint( Results:  , vx, vy )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_1", 
+            "text": "math2d.sub( x1, y1, x2, y2 [, altRet ] )  Subtracts vector    x2 ,  y2    from vector    x1 ,  y1    (    x1  -  x2 ,  y1  -  y2    ) and returns two discrete values unless  altRet  is  true .    Note:  The returned value represents a direction vector equivalent to the direction from  v2  to  v1  translated to   0, 0  .  Adding this vector to  v2  gives you  v1 .   x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .  altRet  - If this is  true , the function returns a (table) vector.   local x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\nprint( Results:  , vx, vy ) \n\nlocal vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table\nprint( Results:  , vec.x, vec.y )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#difference", 
+            "text": "", 
+            "title": "Difference"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_2", 
+            "text": "math2d.diff( v1, v2 [, altRet ] )  Subtracts vector  v1  from vector  v2   (  v2  -  v1  ) and returns a (table) vector unless  altRet  is  true .    Note:  The returned value represents a direction vector equivalent to the direction from  v1  to  v2  translated to   0, 0  .  Adding this vector to  v1  gives you  v2 .   v1, v2 - Vectors one and two.  altRet  - If this is  true , the function returns two discrete values.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\nprint( Results:  , vec.x, vec.y )\n\nlocal vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers\nprint( Results:  , vx, vy )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_2", 
+            "text": "math2d.diff( x1, y1, x2, y2 [, altRet ] )  Subtracts vector    x1 ,  y1    from vector    x2 ,  y2    (    x2  -  x1 ,  y2  -  y1    ) and returns two discrete values unless  altRet  is  true .    Note:  The returned value represents a direction vector equivalent to the direction from  v1  to  v2  translated to   0, 0  .  Adding this vector to  v1  gives you  v2 .   x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .  altRet  - If this is  true , the function returns a (table) vector.   local x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\nprint( Results:  , vx, vy ) \n\nlocal vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table\nprint( Results:  , vec.x, vec.y )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#length", 
+            "text": "", 
+            "title": "Length"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_3", 
+            "text": "math2d.length( v1 )  Calculates the length (magnitude) of scalar (encoded) vector.   v1 - Vectors whose length we want to calculate.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\n\nprint( Result:  , math2d.length(vec) )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_3", 
+            "text": "math2d.length( x1, y1 )  Adds two vectors    x1 ,  y1    and    x2 ,  y2    and returns two discrete values unless  altRet  is  true .     x1, y1 - Two discrete values representing the vector    x1 ,  y1    whose length we want to calculate.   local x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\n\nprint( Result:  , math2d.length(vx, vy) )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#squared-length", 
+            "text": "", 
+            "title": "Squared Length"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_4", 
+            "text": "math2d.length2( v1,  )  Calculates the squared length of a vector.   v1 - Vectors whose squared length we want to calculate.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\n\nprint( Result:  , math2d.length2(vec) )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_4", 
+            "text": "math2d.length2( x1, y1 )  Calculates the squared length of a vector.   x1, y1 - Two discrete values representing the vector    x1 ,  y1    whose squared length we want to calculate.   local x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\n\nprint( Result:  , math2d.length2(vx, vy) )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#scaling", 
+            "text": "", 
+            "title": "Scaling"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_5", 
+            "text": "math2d.scale( obj, scaleBy [, altRet]  )  Multiply   x, y   components of a vector by scaleBy.   v1 - Vector we wish to scale.  altRet  - If this is  true , the function returns two discrete values.   local vec = { x = 1, y = 0 }\n\nvec = math2d.scale( vec, 30 ) -- Vector is now   30, 0", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_5", 
+            "text": "math2d.scale( vx, vy, scaleBy [, altRet ] )  Multiply  vx  and  vy  components of a vector by scaleBy.   x1, y1 - Two discrete values representing the vector    x1 ,  y1    we wish to scale.  altRet  - If this is  true , the function returns a table.   local vx = 1, vy = 0\n\nvx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now   30, 0", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#normalizing", 
+            "text": "", 
+            "title": "Normalizing"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_6", 
+            "text": "math2d.normalize( v1 [, altRet ] )  Converts the input vector into a unit length (one) vector.   v1 - The vector we wish to normalize.  altRet  - If this is  true , the function returns two discrete values.   local vec = { x = 30, y = 30 }\n\nvec = math2d.normalize( vec ) -- Vector is now   0.707..., 0.707...", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_6", 
+            "text": "math2d.normalize( x1, y1 [, altRet ] )  Converts the input vector into a unit length (one) vector.   x1, y1 - Two discrete values representing the vector    x1 ,  y1    we wish to normalize.  altRet  - If this is  true , the function returns a (table) vector.   local vx = 30, vy = 30\n\nvx, vy = math2d.normalize( vx, vy ) -- Vector is now   0.707..., 0.707...", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#dot-product", 
+            "text": "", 
+            "title": "Dot Product"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_7", 
+            "text": "math2d.dot( v1, v2 )  Calculates the inner product of two vectors  v1  and  v2  and returns a scalar value.   v1, v2 - Vectors one and two.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nprint( Result:  , math2d.dot( circ, rect ) )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_7", 
+            "text": "math2d.dot( x1, y1, x2, y2 )  Calculates the inner product of two vectors    x1 ,  y1    and    x2 ,  y2    and returns a scalar value.   x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .   local x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nprint( Result:  , math2d.dot( x1, y1, x2, y2 ) )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#cross-product", 
+            "text": "", 
+            "title": "Cross Product"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_8", 
+            "text": "math2d.cross( v1, v2 )  Calculates the cross product of two vectors  v1  and  v2  and returns a scalar value.   v1, v2 - Vectors one and two.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nprint( Result:  , math2d.cross( circ, rect ) )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_8", 
+            "text": "math2d.cross( x1, y1, x2, y2 )  Calculates the cross product of two vectors    x1 ,  y1    and    x2 ,  y2    and returns a scalar value.   x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .   local x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nprint( Result:  , math2d.cross( x1, y1, x2, y2 ) )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#normals", 
+            "text": "", 
+            "title": "Normals"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_9", 
+            "text": "math2d.normals( v1 [, altRet ] )  Returns two normal vectors  n1  and  n2  for the given vector  v1  unless  altRet  is  true .    Warning:  The returned normals are not normalized (unit length) to save computation time.   v1 - Vector for which we want the two normal vectors.  altRet  - If this is  true , the function returns four discrete values representing two vectors.   local vec = { x = 1, y = 0 }\n\nlocal n1, n2 = math2d.normals( vec ) \n\n-- n1 and n2 will contain the two vectors:\n--     0, -1   and   0, 1   (order may vary).", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_9", 
+            "text": "math2d.normals( x1, y1 [, altRet ] )  Returns two normal vectors    nx1 ,  ny1    and    nx2 ,  ny2    for the given vector    x1 ,  y1    unless  altRet  is  true .    Warning:  The returned normals are not normalized (unit length) to save computation time.   x1, y1 - Two discrete values representing the vector:    x1 ,  y1    for which we want two normals.  altRet  - If this is  true , the function returns two tables representing two vectors.   local x1 = 1, y1 = 0\n\nlocal nx1, ny1, nx2, ny2 = math2d.normals( x1, y1 ) \n\n--   nx1, ny1   and   nx2, ny2   will be equivalent to: \n--     0, -1   and   0, 1   (order may vary).", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#angle-to-vector", 
+            "text": "math2d.angle2Vector( angle [, altRet ] )  Converts a (screen) angle into a normalized direction vector of the form   vx, vy  .    Warning:  This library uses screen angles NOT Cartesian or polar.   angle - Angle whose value we wish to convert to a unit length direction vector.  altRet  - If this is  true , the function returns a table otherwise it returns two scalar values.   local angle = 135\n\nlocal vec = math2d.angle2Vector( angle, true ) -- Return a table\nprint( The vector:   .. vec.x ..  ,   .. vec.y  )\n\nlocal vx,vy = math2d.angle2Vector( angle ) -- Return two numbers\nprint( The vector:   .. vx ..  ,   .. vy  )", 
+            "title": "Angle To Vector"
+        }, 
+        {
+            "location": "/references/#vector-to-angle", 
+            "text": "", 
+            "title": "Vector To Angle"
+        }, 
+        {
+            "location": "/references/#tableobject-vectors_10", 
+            "text": "math2d.vector2Angle( v1 )  Takes a table vector and returns a screen angle.\nWarning: This library uses screen angles NOT Cartesian or polar.    v1 - Vector we wish to calculate the angle (direction) for.   local circ = display.newCircle( 100, 100, 30 )\nlocal rect = display.newRect( 150, 250, 60, 60 )\n\nlocal vec = math2d.sub( circ, rect ) -- Return a table\n\nprint( Result:  , math2d.vector2Angle(vec) )", 
+            "title": "Table/Object Vectors"
+        }, 
+        {
+            "location": "/references/#discrete-value-vectors_10", 
+            "text": "math2d.vector2Angle( vx, vy )  Takes a two discrete values representing a vector and returns a screen angle.   vx, vy - Two discrete values representing a vector    x1 ,  y1    we wish to calculate the angle (direction) for.   local x1,y1 = 10,10\nlocal x2,y2 = 15,-10\n\nlocal vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers\n\nprint( Result:  , math2d.vector2Angle(vx, vy) )", 
+            "title": "Discrete Value Vectors"
+        }, 
+        {
+            "location": "/references/#angle-between", 
+            "text": "math2d.angleBetween( v1, v2 )\nmath2d.angleBetween( x1, y1, x2, y2 )  Returns the inner (shortest) angle between two vectors.   v1, v2 - Vectors one and two.  x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .   local vec1 = angle2Vector( -90, true )\nlocal vec2 = angle2Vector( -15, true )\n\nprint( math2d.angleBetween( vec1, vec2 ) ) -- ~75 degrees\n\nprint( math2d.angleBetween( vec2, vec1 ) ) -- ~75 degrees", 
+            "title": "Angle Between"
+        }, 
+        {
+            "location": "/references/#distance-between", 
+            "text": "math2d.distanceBetween( v1, v2 )\nmath2d.distanceBetween( x1, y1, x2, y2 )  Returns the distance betweent two vectors.  Shorthand notation for substraction followed by a length calculation.   v1, v2 - Vectors one and two.  x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .   local vec1 = { 0, 100 }\nlocal vec2 = { 0, 0 }\n\nprint( math2d.distanceBetween( vec1, vec2 ) ) -- 100\n\nprint( math2d.distanceBetween( 0, 100, 0, 0 ) ) -- 100", 
+            "title": "Distance Between"
+        }, 
+        {
+            "location": "/references/#is-within-distance", 
+            "text": "math2d.isWithinDistance( v1, v2, distance )\nmath2d.isWithinDistance( x1, y1, x2, y2, distance )  Returns true if two vectors are with the specified  distance  of each other.   v1, v2 - Vectors one and two.  x1, y1, x2, y2 - Four discrete values representing the two vectors:    x1 ,  y1    and    x2 ,  y2   .  distance - Distance for which true is returned.  Greater than this returns false.   local vec1 = { 0, 100 }\nlocal vec2 = { 0, 0 }\n\nprint( math2d.isWithinDistance( vec1, vec2, 100 ) ) -- true\n\nprint( math2d.isWithinDistance( vec1, vec2, 99.999 ) ) -- false\n\nprint( math2d.isWithinDistance( 0, 100, 0, 0, 100 ) ) -- true\n\nprint( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false", 
+            "title": "Is Within Distance"
+        }, 
+        {
+            "location": "/references/#in-field-of-view", 
+            "text": "(image borrowed from  Geek Blight )  math2d.inFOV( target, observer, fov [, offsetAngle ] )  Returns true  target  is within  observer 's field of view as defined by  fov  and the optional rotation  offsetAngle .   target - A table vector.  Usually a display object, but can be a table representing point in the world.  observer - A table vector containing a  rotation  value in addition to the  x  and  y  values.  Usually a display object.  fov - The angle representing the entire field of vision of the observer from that observer's current forward facing vector.  offsetAngle - Optional angle used to 'rotate' the fov from the observer's forward view.  With this you can rotate the observer's view without rotating the object itself which is useful for animations that give the effect of rotating while the display object stays fixed.   -- See picture above for reference\n-- objectA, objecB, and player are all display objects.\n\nmath2d.inFOV( objectA, player, 90 ) -- false\n\nmath2d.inFOV( objectB, player, 90 ) -- true\n\nmath2d.inFOV( objectA, player, 90, 270 ) -- true because we rotated the FOV by 270 degrees", 
+            "title": "In Field-Of-View"
+        }, 
+        {
+            "location": "/references/#is-in-front", 
+            "text": "", 
+            "title": "Is In Front"
+        }, 
+        {
+            "location": "/references/#is-behind", 
+            "text": "", 
+            "title": "Is Behind"
+        }, 
+        {
+            "location": "/references/#is-to-left", 
+            "text": "", 
+            "title": "Is To Left"
+        }, 
+        {
+            "location": "/references/#is-to-right", 
+            "text": "math2d.isInFront( target, observer [, offsetAngle ] )\nmath2d.isBehind( target, observer [, offsetAngle ] )\nmath2d.isToLeft( target, observer [, offsetAngle ] )\nmath2d.isToRight( target, observer [, offsetAngle ] )  These are all shortcut functions that will quickly tell you if an object is: in-front, behind. to-the-left, or to-the-right of another object.  This is exceptionally useful for things like missiles or enemies that need to 'steer' in the direction of a target.  This determiniation is based upon the current  rotation  of the observer and that angle can be modified with the optional  offsetAngle .   target - A table vector.  Usually a display object, but can be a table representing point in the world.  observer - A table vector containing a  rotation  value in addition to the  x  and  y  values.  Usually a display object.  offsetAngle - Optional angle used to 'rotate' the observers 'forward' vector for the calculation without actually rotating the observer.   -- See picture from 'In Field-Of-View ' above for reference\n\nmath2d.isInFront( objectA, player ) -- true\n\nmath2d.isInFront( objectB, player ) -- true \n\nmath2d.isToLeft( objectA, player ) -- true\n\nmath2d.isToRight( objectB, player ) -- true", 
+            "title": "Is To Right"
+        }, 
+        {
+            "location": "/references/#line-line-intersect", 
+            "text": "math2d.lineLineIntersect( l1x1, l1y1, l1x1, l1y2, l2x1, l2y1, l2x2, l2y2 )  Checks to see if two lines intersect and if so where.   Returns two points   x, y   if an intersection occurs or nil meaning no intersection was found.  Warning:  Although these 'lines' are specified as segments, they are treated as true (infinite) lines and as such any intersection of the infinite lines will be detected.   l1x1 .. l2y2 - Points making up the two lines we wish to test.  For example,   l1x1, l1y1   is the position of the first point of the first line.   local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, \n                    display.contentCenterX, display.contentCenterY+200\nlocal line1 = display.newLine( x1,y1,x2,y2 )\nline1.strokeWidth = 2\n\nlocal x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, \n                    display.contentCenterX + 200, display.contentCenterY\nlocal line2 = display.newLine( x3,y3,x4,y4 )\nline2.strokeWidth = 2\n\nlocal period = 60\nlocal deltaAngle = 5\nlocal startAngle = 0\nlocal endAngle = 360\nlocal angle = startAngle\nlocal marker\n\nlocal function testLineIntersect()\n    angle = angle + deltaAngle\n    display.remove(line2)\n    display.remove(marker)\n\n    if( angle   endAngle ) then         \n        return\n    end\n    local vec = angle2Vector( angle, true )\n    vec = scaleVec( vec, 250 )\n    vec.x = vec.x + x3\n    vec.y = vec.y + y3\n    line2 = display.newLine( x3, y3, vec.x, vec.y )\n    line2.strokeWidth = 2\n    local intersect = math2d.lineLineIntersect( x3, y3, vec.x, vec.y, x1, y1, x2, y2 )\n    if( intersect ) then \n        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )\n        marker:setFillColor(0,1,0)\n    end\n\n    timer.performWithDelay( period, testLineIntersect )\nend\ntimer.performWithDelay( period, testLineIntersect )", 
+            "title": "Line-Line Intersect"
+        }, 
+        {
+            "location": "/references/#segment-segment-intersect", 
+            "text": "math2d.segmentSegmentIntersect( s1x1, s1y1, s1x1, s1y2, s2x1, s2y1, s2x2, s2y2 )  Checks to see if two line segments intersect and if so where.   Returns two points   x, y   if an intersection occurs or nil meaning no intersection was found.  Note:  For most game implementations/tests you will want to use this instead of the line-line version as it is a true segment-segment test and only checks for intersections within the limited ranges of the two segments.   s1x1 .. s2y2 - Points making up the two lines we wish to test.  For example,   s1x1, s1y1   is the position of the first point of the first segment.   local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, \n                    display.contentCenterX, display.contentCenterY+200\nlocal line1 = display.newLine( x1,y1,x2,y2 )\nline1.strokeWidth = 2\n\nlocal x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, \n                    display.contentCenterX + 200, display.contentCenterY\nlocal line2 = display.newLine( x3,y3,x4,y4 )\nline2.strokeWidth = 2\n\nlocal period = 60\nlocal deltaAngle = 5\nlocal startAngle = 0\nlocal endAngle = 360\nlocal angle = startAngle\nlocal marker\n\nlocal function testSegmentIntersect()\n    angle = angle + deltaAngle\n    display.remove(line2)\n    display.remove(marker)\n\n    if( angle   endAngle ) then         \n        return\n    end\n    local vec = angle2Vector( angle, true )\n    vec = scaleVec( vec, 250 )\n    vec.x = vec.x + x3\n    vec.y = vec.y + y3\n    line2 = display.newLine( x3, y3, vec.x, vec.y )\n    line2.strokeWidth = 2\n    local intersect = math2d.segmentSegmentIntersect( x3, y3, vec.x, vec.y , x1, y1, x2, y2 )\n    if( intersect ) then \n        print(intersect)\n        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )\n        marker:setFillColor(0,1,0)\n    end\n\n    timer.performWithDelay( period, testSegmentIntersect )\nend\ntimer.performWithDelay( period, testSegmentIntersect )", 
+            "title": "Segment-Segment Intersect"
+        }, 
+        {
+            "location": "/references/#segment-circle-intersect", 
+            "text": "math2d.segmentCircleIntersect( p1, p2, circle, radius )   Checks to see if the line segment defined by points  p1  and  p2  intersects with a  circle  of the specified  radius .  Possible returns:   nil - No intersections.  i1,  nil - Table containing point of first intersection and nil meaning no second intersection.  i1,  i2 - Tables containing points of first and second intersection. (This is the maximum possible number of intersections that can occur.)   Credit:  Derived from code by: Davis Claiborne (https://github.com/davisdude/mlib/blob/master/mlib.lua)   p1, p2 - Table vectors representing the endpoints of a line segment.  circle - Table or object representing the position of the circle.  radius - The radius of said circle.   local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY+200, \n                    display.contentCenterX, display.contentCenterY-200\nx1 = x1 - 150\nx2 = x2\nlocal line1 = display.newLine( x1,y1,x2,y2 )\nline1.strokeWidth = 2\n\nlocal p1 = { x = x1, y = y1 }\nlocal p2 = { x = x2, y = y2 }\n\nlocal circ = display.newCircle( display.contentCenterX, display.contentCenterY, 100 )\ncirc:setFillColor(0,0,0,0)\ncirc.strokeWidth = 2\n\nlocal i1, i2 = math2d.segmentCircleIntersect( { x = p1.x, y = p1.y}, \n                                               { x = p2.x, y = p2.y}, \n                                               circ, \n                                               100 )\n\nif( i1 ) then\n    local hit = display.newCircle( i1.x, i1.y, 10 )\n    hit:setFillColor(0,1,0)\nend\n\nif( i2 ) then\n    local hit = display.newCircle( i2.x, i2.y, 10 )\n    hit:setFillColor(0,1,0)\nend", 
+            "title": "Segment-Circle Intersect"
+        }
+    ]
+}

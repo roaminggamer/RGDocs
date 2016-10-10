@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>References - Math2D Docs</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Math2D Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../benchmarks/">Benchmarks</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">References</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../benchmarks/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#math2d">math2d.*</a></li>
+        
+            <li><a href="#vector-representations">Vector Representations</a></li>
+        
+            <li><a href="#addition">Addition</a></li>
+        
+            <li><a href="#subtraction">Subtraction</a></li>
+        
+            <li><a href="#difference">Difference</a></li>
+        
+            <li><a href="#length">Length</a></li>
+        
+            <li><a href="#squared-length">Squared Length</a></li>
+        
+            <li><a href="#scaling">Scaling</a></li>
+        
+            <li><a href="#normalizing">Normalizing</a></li>
+        
+            <li><a href="#dot-product">Dot Product</a></li>
+        
+            <li><a href="#cross-product">Cross Product</a></li>
+        
+            <li><a href="#normals">Normals</a></li>
+        
+            <li><a href="#angle-to-vector">Angle To Vector</a></li>
+        
+            <li><a href="#vector-to-angle">Vector To Angle</a></li>
+        
+            <li><a href="#angle-between">Angle Between</a></li>
+        
+            <li><a href="#distance-between">Distance Between</a></li>
+        
+            <li><a href="#is-within-distance">Is Within Distance</a></li>
+        
+            <li><a href="#in-field-of-view">In Field-Of-View</a></li>
+        
+            <li><a href="#is-in-front">Is In Front</a></li>
+        
+            <li><a href="#is-behind">Is Behind</a></li>
+        
+            <li><a href="#is-to-left">Is To Left</a></li>
+        
+            <li><a href="#is-to-right">Is To Right</a></li>
+        
+            <li><a href="#line-line-intersect">Line-Line Intersect</a></li>
+        
+            <li><a href="#segment-segment-intersect">Segment-Segment Intersect</a></li>
+        
+            <li><a href="#segment-circle-intersect">Segment-Circle Intersect</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="math2d">math2d.*</h1>
+<p>This page contains reference materials (docs) for the paid version of <a href="https://marketplace.coronalabs.com/plugin/math2d">math2d</a>.  </p>
+<p><img alt="legacy" src="../legacy.png" /> References marked with this icon also apply to the <a href="https://github.com/roaminggamer/legacy_math2d">legacy</a> version of <a href="https://marketplace.coronalabs.com/plugin/math2d">math2d</a>.</p>
+<h2 id="vector-representations">Vector Representations</h2>
+<p>In the context of these docs, a vector is any table or object with both an x- and a y-field.  Additionally, we often deal with vectors as discrete collections of <em>x</em> and <em>y</em> values. </p>
+<pre><code>-- A table as a 2d-vector: &lt; 10, 15 &gt;
+local v1 = { x = 10, y = 15 } 
+
+-- A circle display object; Also a 2d-vector: &lt; 10, 15 &gt;
+local circ = display.newCircle( 10, 15, 5 )
+
+-- Four discrete values repsenting the vectors: &lt; 10, 15 &gt; and &lt; -1, 0 &gt;
+local x1 = 10
+local y1 = 15
+local x2 = -1
+local y2 = 0
+</code></pre>
+
+<h2 id="addition">Addition <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors">Table/Object Vectors</h3>
+<pre><code>math2d.add( v1, v2 [, altRet ] )
+</code></pre>
+
+<p>Adds two vectors <em>v1</em> and <em>v2</em> and returns a (table) vector unless <em>altRet</em> is <em>true</em>.  </p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.add( circ, rect ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+
+local vx,vy = math2d.add( circ, rect, true ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+</code></pre>
+
+<h3 id="discrete-value-vectors">Discrete Value Vectors</h3>
+<pre><code>math2d.add( x1, y1, x2, y2 [, altRet ] )
+</code></pre>
+
+<p>Adds two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vx,vy = math2d.add( circ.x, circ.y, rect.x, rect.y ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+local vec = math2d.add( math2d.add( circ.x, circ.y, rect.x, rect.y, true ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+</code></pre>
+
+<h2 id="subtraction">Subtraction <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_1">Table/Object Vectors</h3>
+<pre><code>math2d.sub( v1, v2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector <em>v2</em> from vector <em>v1</em>  ( <em>v1</em> - <em>v2</em> ) and returns a (table) vector unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v2</em> to <em>v1</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v2</em> gives you <em>v1</em>.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+
+local vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+</code></pre>
+
+<h3 id="discrete-value-vectors_1">Discrete Value Vectors</h3>
+<pre><code>math2d.sub( x1, y1, x2, y2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector &lt; <em>x2</em>, <em>y2</em> &gt; from vector &lt; <em>x1</em>, <em>y1</em> &gt; ( &lt; <em>x1</em> - <em>x2</em>, <em>y1</em> - <em>y2</em> &gt; ) and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v2</em> to <em>v1</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v2</em> gives you <em>v1</em>.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y ) 
+</code></pre>
+
+<h2 id="difference">Difference <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_2">Table/Object Vectors</h3>
+<pre><code>math2d.diff( v1, v2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector <em>v1</em> from vector <em>v2</em>  ( <em>v2</em> - <em>v1</em> ) and returns a (table) vector unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v1</em> to <em>v2</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v1</em> gives you <em>v2</em>.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+
+local vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+</code></pre>
+
+<h3 id="discrete-value-vectors_2">Discrete Value Vectors</h3>
+<pre><code>math2d.diff( x1, y1, x2, y2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector &lt; <em>x1</em>, <em>y1</em> &gt; from vector &lt; <em>x2</em>, <em>y2</em> &gt; ( &lt; <em>x2</em> - <em>x1</em>, <em>y2</em> - <em>y1</em> &gt; ) and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v1</em> to <em>v2</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v1</em> gives you <em>v2</em>.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y ) 
+</code></pre>
+
+<h2 id="length">Length <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_3">Table/Object Vectors</h3>
+<pre><code>math2d.length( v1 )
+</code></pre>
+
+<p>Calculates the length (magnitude) of scalar (encoded) vector.</p>
+<ul>
+<li>v1 - Vectors whose length we want to calculate.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+
+print(&quot;Result: &quot;, math2d.length(vec) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_3">Discrete Value Vectors</h3>
+<pre><code>math2d.length( x1, y1 )
+</code></pre>
+
+<p>Adds two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; whose length we want to calculate.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+
+print(&quot;Result: &quot;, math2d.length(vx, vy) )
+</code></pre>
+
+<h2 id="squared-length">Squared Length <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_4">Table/Object Vectors</h3>
+<pre><code>math2d.length2( v1,  )
+</code></pre>
+
+<p>Calculates the squared length of a vector.</p>
+<ul>
+<li>v1 - Vectors whose squared length we want to calculate.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+
+print(&quot;Result: &quot;, math2d.length2(vec) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_4">Discrete Value Vectors</h3>
+<pre><code>math2d.length2( x1, y1 )
+</code></pre>
+
+<p>Calculates the squared length of a vector.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; whose squared length we want to calculate.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+
+print(&quot;Result: &quot;, math2d.length2(vx, vy) )
+</code></pre>
+
+<h2 id="scaling">Scaling <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_5">Table/Object Vectors</h3>
+<pre><code>math2d.scale( obj, scaleBy [, altRet]  )
+</code></pre>
+
+<p>Multiply &lt; x, y &gt; components of a vector by scaleBy.</p>
+<ul>
+<li>v1 - Vector we wish to scale.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local vec = { x = 1, y = 0 }
+
+vec = math2d.scale( vec, 30 ) -- Vector is now &lt; 30, 0 &gt;
+</code></pre>
+
+<h3 id="discrete-value-vectors_5">Discrete Value Vectors</h3>
+<pre><code>math2d.scale( vx, vy, scaleBy [, altRet ] )
+</code></pre>
+
+<p>Multiply <em>vx</em> and <em>vy</em> components of a vector by scaleBy.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; we wish to scale.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a table.</li>
+</ul>
+<pre><code>local vx = 1, vy = 0
+
+vx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now &lt; 30, 0 &gt;
+</code></pre>
+
+<h2 id="normalizing">Normalizing <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_6">Table/Object Vectors</h3>
+<pre><code>math2d.normalize( v1 [, altRet ] )
+</code></pre>
+
+<p>Converts the input vector into a unit length (one) vector.</p>
+<ul>
+<li>v1 - The vector we wish to normalize.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local vec = { x = 30, y = 30 }
+
+vec = math2d.normalize( vec ) -- Vector is now &lt; 0.707..., 0.707... &gt;
+</code></pre>
+
+<h3 id="discrete-value-vectors_6">Discrete Value Vectors</h3>
+<pre><code>math2d.normalize( x1, y1 [, altRet ] )
+</code></pre>
+
+<p>Converts the input vector into a unit length (one) vector.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; we wish to normalize.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local vx = 30, vy = 30
+
+vx, vy = math2d.normalize( vx, vy ) -- Vector is now &lt; 0.707..., 0.707... &gt;
+</code></pre>
+
+<h2 id="dot-product">Dot Product <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_7">Table/Object Vectors</h3>
+<pre><code>math2d.dot( v1, v2 )
+</code></pre>
+
+<p>Calculates the inner product of two vectors <em>v1</em> and <em>v2</em> and returns a scalar value.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+print(&quot;Result: &quot;, math2d.dot( circ, rect ) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_7">Discrete Value Vectors</h3>
+<pre><code>math2d.dot( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Calculates the inner product of two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns a scalar value.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+print(&quot;Result: &quot;, math2d.dot( x1, y1, x2, y2 ) )
+</code></pre>
+
+<h2 id="cross-product">Cross Product <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_8">Table/Object Vectors</h3>
+<pre><code>math2d.cross( v1, v2 )
+</code></pre>
+
+<p>Calculates the cross product of two vectors <em>v1</em> and <em>v2</em> and returns a scalar value.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+print(&quot;Result: &quot;, math2d.cross( circ, rect ) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_8">Discrete Value Vectors</h3>
+<pre><code>math2d.cross( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Calculates the cross product of two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns a scalar value.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+print(&quot;Result: &quot;, math2d.cross( x1, y1, x2, y2 ) )
+</code></pre>
+
+<h2 id="normals">Normals <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_9">Table/Object Vectors</h3>
+<pre><code>math2d.normals( v1 [, altRet ] )
+</code></pre>
+
+<p>Returns two normal vectors <em>n1</em> and <em>n2</em> for the given vector <em>v1</em> unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Warning:</strong> The returned normals are not normalized (unit length) to save computation time.</p>
+<ul>
+<li>v1 - Vector for which we want the two normal vectors.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns four discrete values representing two vectors.</li>
+</ul>
+<pre><code>local vec = { x = 1, y = 0 }
+
+local n1, n2 = math2d.normals( vec ) 
+
+-- n1 and n2 will contain the two vectors:
+--   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
+</code></pre>
+
+<h3 id="discrete-value-vectors_9">Discrete Value Vectors</h3>
+<pre><code>math2d.normals( x1, y1 [, altRet ] )
+</code></pre>
+
+<p>Returns two normal vectors &lt; <em>nx1</em>, <em>ny1</em> &gt; and &lt; <em>nx2</em>, <em>ny2</em> &gt; for the given vector &lt; <em>x1</em>, <em>y1</em> &gt; unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Warning:</strong> The returned normals are not normalized (unit length) to save computation time.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector: &lt; <em>x1</em>, <em>y1</em> &gt; for which we want two normals.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two tables representing two vectors.</li>
+</ul>
+<pre><code>local x1 = 1, y1 = 0
+
+local nx1, ny1, nx2, ny2 = math2d.normals( x1, y1 ) 
+
+-- &lt; nx1, ny1 &gt; and &lt; nx2, ny2 &gt; will be equivalent to: 
+--   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
+</code></pre>
+
+<h2 id="angle-to-vector">Angle To Vector <img alt="legacy" src="../legacy.png" /></h2>
+<pre><code>math2d.angle2Vector( angle [, altRet ] )
+</code></pre>
+
+<p>Converts a (screen) angle into a normalized direction vector of the form &lt; vx, vy &gt;.  </p>
+<p><strong>Warning:</strong> This library uses screen angles NOT Cartesian or polar.</p>
+<ul>
+<li>angle - Angle whose value we wish to convert to a unit length direction vector.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a table otherwise it returns two scalar values.</li>
+</ul>
+<pre><code>local angle = 135
+
+local vec = math2d.angle2Vector( angle, true ) -- Return a table
+print(&quot;The vector: &quot; .. vec.x .. &quot;, &quot; .. vec.y  )
+
+local vx,vy = math2d.angle2Vector( angle ) -- Return two numbers
+print(&quot;The vector: &quot; .. vx .. &quot;, &quot; .. vy  )
+</code></pre>
+
+<h2 id="vector-to-angle">Vector To Angle <img alt="legacy" src="../legacy.png" /></h2>
+<h3 id="tableobject-vectors_10">Table/Object Vectors</h3>
+<pre><code>math2d.vector2Angle( v1 )
+</code></pre>
+
+<p>Takes a table vector and returns a screen angle.
+Warning: This library uses screen angles NOT Cartesian or polar. </p>
+<ul>
+<li>v1 - Vector we wish to calculate the angle (direction) for.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+
+print(&quot;Result: &quot;, math2d.vector2Angle(vec) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_10">Discrete Value Vectors</h3>
+<pre><code>math2d.vector2Angle( vx, vy )
+</code></pre>
+
+<p>Takes a two discrete values representing a vector and returns a screen angle.</p>
+<ul>
+<li>vx, vy - Two discrete values representing a vector &lt; <em>x1</em>, <em>y1</em> &gt; we wish to calculate the angle (direction) for.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+
+print(&quot;Result: &quot;, math2d.vector2Angle(vx, vy) )
+</code></pre>
+
+<h2 id="angle-between">Angle Between</h2>
+<p><img alt="Angle Between" src="../anglebetween2.png" /></p>
+<pre><code>math2d.angleBetween( v1, v2 )
+math2d.angleBetween( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Returns the inner (shortest) angle between two vectors.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local vec1 = angle2Vector( -90, true )
+local vec2 = angle2Vector( -15, true )
+
+print( math2d.angleBetween( vec1, vec2 ) ) -- ~75 degrees
+
+print( math2d.angleBetween( vec2, vec1 ) ) -- ~75 degrees
+</code></pre>
+
+<h2 id="distance-between">Distance Between</h2>
+<pre><code>math2d.distanceBetween( v1, v2 )
+math2d.distanceBetween( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Returns the distance betweent two vectors.  Shorthand notation for substraction followed by a length calculation.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local vec1 = { 0, 100 }
+local vec2 = { 0, 0 }
+
+print( math2d.distanceBetween( vec1, vec2 ) ) -- 100
+
+print( math2d.distanceBetween( 0, 100, 0, 0 ) ) -- 100
+</code></pre>
+
+<h2 id="is-within-distance">Is Within Distance</h2>
+<pre><code>math2d.isWithinDistance( v1, v2, distance )
+math2d.isWithinDistance( x1, y1, x2, y2, distance )
+</code></pre>
+
+<p>Returns true if two vectors are with the specified <em>distance</em> of each other.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li>distance - Distance for which true is returned.  Greater than this returns false.</li>
+</ul>
+<pre><code>local vec1 = { 0, 100 }
+local vec2 = { 0, 0 }
+
+print( math2d.isWithinDistance( vec1, vec2, 100 ) ) -- true
+
+print( math2d.isWithinDistance( vec1, vec2, 99.999 ) ) -- false
+
+print( math2d.isWithinDistance( 0, 100, 0, 0, 100 ) ) -- true
+
+print( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false
+</code></pre>
+
+<h2 id="in-field-of-view">In Field-Of-View</h2>
+<p>(image borrowed from <a href="http://rg3.name/201210281829.html">Geek Blight</a>)
+<img alt="In Field-Of-View" src="../fov.png" /></p>
+<pre><code>math2d.inFOV( target, observer, fov [, offsetAngle ] )
+</code></pre>
+
+<p>Returns true <em>target</em> is within <em>observer</em>'s field of view as defined by <em>fov</em> and the optional rotation <em>offsetAngle</em>.</p>
+<ul>
+<li>target - A table vector.  Usually a display object, but can be a table representing point in the world.</li>
+<li>observer - A table vector containing a <em>rotation</em> value in addition to the <em>x</em> and <em>y</em> values.  Usually a display object.</li>
+<li>fov - The angle representing the entire field of vision of the observer from that observer's current forward facing vector.</li>
+<li>offsetAngle - Optional angle used to 'rotate' the fov from the observer's forward view.  With this you can rotate the observer's view without rotating the object itself which is useful for animations that give the effect of rotating while the display object stays fixed.</li>
+</ul>
+<pre><code>-- See picture above for reference
+-- objectA, objecB, and player are all display objects.
+
+math2d.inFOV( objectA, player, 90 ) -- false
+
+math2d.inFOV( objectB, player, 90 ) -- true
+
+math2d.inFOV( objectA, player, 90, 270 ) -- true because we rotated the FOV by 270 degrees
+</code></pre>
+
+<h2 id="is-in-front">Is In Front</h2>
+<h2 id="is-behind">Is Behind</h2>
+<h2 id="is-to-left">Is To Left</h2>
+<h2 id="is-to-right">Is To Right</h2>
+<pre><code>math2d.isInFront( target, observer [, offsetAngle ] )
+math2d.isBehind( target, observer [, offsetAngle ] )
+math2d.isToLeft( target, observer [, offsetAngle ] )
+math2d.isToRight( target, observer [, offsetAngle ] )
+</code></pre>
+
+<p>These are all shortcut functions that will quickly tell you if an object is: in-front, behind. to-the-left, or to-the-right of another object.  This is exceptionally useful for things like missiles or enemies that need to 'steer' in the direction of a target.</p>
+<p>This determiniation is based upon the current <em>rotation</em> of the observer and that angle can be modified with the optional <em>offsetAngle</em>.</p>
+<ul>
+<li>target - A table vector.  Usually a display object, but can be a table representing point in the world.</li>
+<li>observer - A table vector containing a <em>rotation</em> value in addition to the <em>x</em> and <em>y</em> values.  Usually a display object.</li>
+<li>offsetAngle - Optional angle used to 'rotate' the observers 'forward' vector for the calculation without actually rotating the observer.</li>
+</ul>
+<pre><code>-- See picture from 'In Field-Of-View ' above for reference
+
+math2d.isInFront( objectA, player ) -- true
+
+math2d.isInFront( objectB, player ) -- true 
+
+math2d.isToLeft( objectA, player ) -- true
+
+math2d.isToRight( objectB, player ) -- true 
+</code></pre>
+
+<h2 id="line-line-intersect">Line-Line Intersect</h2>
+<p><img alt="Line Line Intersection" src="../lineLineIntersect.gif" /></p>
+<pre><code>math2d.lineLineIntersect( l1x1, l1y1, l1x1, l1y2, l2x1, l2y1, l2x2, l2y2 )
+</code></pre>
+
+<p>Checks to see if two lines intersect and if so where. </p>
+<p>Returns two points &lt; x, y &gt; if an intersection occurs or nil meaning no intersection was found.</p>
+<p><strong>Warning:</strong> Although these 'lines' are specified as segments, they are treated as true (infinite) lines and as such any intersection of the infinite lines will be detected.</p>
+<ul>
+<li>l1x1 .. l2y2 - Points making up the two lines we wish to test.  For example, &lt; l1x1, l1y1 &gt; is the position of the first point of the first line.</li>
+</ul>
+<pre><code>local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, 
+                    display.contentCenterX, display.contentCenterY+200
+local line1 = display.newLine( x1,y1,x2,y2 )
+line1.strokeWidth = 2
+
+local x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, 
+                    display.contentCenterX + 200, display.contentCenterY
+local line2 = display.newLine( x3,y3,x4,y4 )
+line2.strokeWidth = 2
+
+local period = 60
+local deltaAngle = 5
+local startAngle = 0
+local endAngle = 360
+local angle = startAngle
+local marker
+
+local function testLineIntersect()
+    angle = angle + deltaAngle
+    display.remove(line2)
+    display.remove(marker)
+
+    if( angle &gt; endAngle ) then         
+        return
+    end
+    local vec = angle2Vector( angle, true )
+    vec = scaleVec( vec, 250 )
+    vec.x = vec.x + x3
+    vec.y = vec.y + y3
+    line2 = display.newLine( x3, y3, vec.x, vec.y )
+    line2.strokeWidth = 2
+    local intersect = math2d.lineLineIntersect( x3, y3, vec.x, vec.y, x1, y1, x2, y2 )
+    if( intersect ) then 
+        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )
+        marker:setFillColor(0,1,0)
+    end
+
+    timer.performWithDelay( period, testLineIntersect )
+end
+timer.performWithDelay( period, testLineIntersect )
+</code></pre>
+
+<h2 id="segment-segment-intersect">Segment-Segment Intersect</h2>
+<p><img alt="Segment Segment Intersection" src="../segmentSegmentIntersect.gif" /></p>
+<pre><code>math2d.segmentSegmentIntersect( s1x1, s1y1, s1x1, s1y2, s2x1, s2y1, s2x2, s2y2 )
+</code></pre>
+
+<p>Checks to see if two line segments intersect and if so where. </p>
+<p>Returns two points &lt; x, y &gt; if an intersection occurs or nil meaning no intersection was found.</p>
+<p><strong>Note:</strong> For most game implementations/tests you will want to use this instead of the line-line version as it is a true segment-segment test and only checks for intersections within the limited ranges of the two segments.</p>
+<ul>
+<li>s1x1 .. s2y2 - Points making up the two lines we wish to test.  For example, &lt; s1x1, s1y1 &gt; is the position of the first point of the first segment.</li>
+</ul>
+<pre><code>local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, 
+                    display.contentCenterX, display.contentCenterY+200
+local line1 = display.newLine( x1,y1,x2,y2 )
+line1.strokeWidth = 2
+
+local x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, 
+                    display.contentCenterX + 200, display.contentCenterY
+local line2 = display.newLine( x3,y3,x4,y4 )
+line2.strokeWidth = 2
+
+local period = 60
+local deltaAngle = 5
+local startAngle = 0
+local endAngle = 360
+local angle = startAngle
+local marker
+
+local function testSegmentIntersect()
+    angle = angle + deltaAngle
+    display.remove(line2)
+    display.remove(marker)
+
+    if( angle &gt; endAngle ) then         
+        return
+    end
+    local vec = angle2Vector( angle, true )
+    vec = scaleVec( vec, 250 )
+    vec.x = vec.x + x3
+    vec.y = vec.y + y3
+    line2 = display.newLine( x3, y3, vec.x, vec.y )
+    line2.strokeWidth = 2
+    local intersect = math2d.segmentSegmentIntersect( x3, y3, vec.x, vec.y , x1, y1, x2, y2 )
+    if( intersect ) then 
+        print(intersect)
+        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )
+        marker:setFillColor(0,1,0)
+    end
+
+    timer.performWithDelay( period, testSegmentIntersect )
+end
+timer.performWithDelay( period, testSegmentIntersect )
+</code></pre>
+
+<h2 id="segment-circle-intersect">Segment-Circle Intersect</h2>
+<pre><code>math2d.segmentCircleIntersect( p1, p2, circle, radius )
+</code></pre>
+
+<p><img alt="Segment Circle Intersection" src="../lineCircleIntersection.png" /></p>
+<p>Checks to see if the line segment defined by points <em>p1</em> and <em>p2</em> intersects with a <em>circle</em> of the specified <em>radius</em>.</p>
+<p>Possible returns:</p>
+<ul>
+<li>nil - No intersections.</li>
+<li>i1,  nil - Table containing point of first intersection and nil meaning no second intersection.</li>
+<li>i1,  i2 - Tables containing points of first and second intersection. (This is the maximum possible number of intersections that can occur.)</li>
+</ul>
+<p><strong>Credit:</strong> Derived from code by: Davis Claiborne (https://github.com/davisdude/mlib/blob/master/mlib.lua)</p>
+<ul>
+<li>p1, p2 - Table vectors representing the endpoints of a line segment.</li>
+<li>circle - Table or object representing the position of the circle.</li>
+<li>radius - The radius of said circle.</li>
+</ul>
+<pre><code>local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY+200, 
+                    display.contentCenterX, display.contentCenterY-200
+x1 = x1 - 150
+x2 = x2
+local line1 = display.newLine( x1,y1,x2,y2 )
+line1.strokeWidth = 2
+
+local p1 = { x = x1, y = y1 }
+local p2 = { x = x2, y = y2 }
+
+local circ = display.newCircle( display.contentCenterX, display.contentCenterY, 100 )
+circ:setFillColor(0,0,0,0)
+circ.strokeWidth = 2
+
+local i1, i2 = math2d.segmentCircleIntersect( { x = p1.x, y = p1.y}, 
+                                               { x = p2.x, y = p2.y}, 
+                                               circ, 
+                                               100 )
+
+if( i1 ) then
+    local hit = display.newCircle( i1.x, i1.y, 10 )
+    hit:setFillColor(0,1,0)
+end
+
+if( i2 ) then
+    local hit = display.newCircle( i2.x, i2.y, 10 )
+    hit:setFillColor(0,1,0)
+end
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
