@@ -2,33 +2,43 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to RG Docs\n\n\nI'm working on a unified docs tree.  Please excuse the dust as I experiment. - 10 OCT 2016\n\n\nPlugins\n\n\nReleased\n\n\nNone as of yet.  I'm scrambling like a mad man.\n\n\nUpcoming\n\n\n\n\nMath 2D\n - Native 2D Math Library. \n\n\nSudoku Generator\n - 2x2, 3x3, 4x4 Sudoku data generator.\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\n\n\nTest 2\n\n\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test\n\n\nTest\n - test", 
+            "text": "Roaming Gamer Docs\n\n\n \n\n\n\n\nA unified collection of all \nRoaming Gamer Product Documenation\n.  \n\n\nCurrently, it is a little sparse, but that will be rectified soon.\n\n\n~ The Roaming Gamer (10 OCT 2016)\n\n\n\n\nPlugins\n\n\n\n\nMath 2D\n - Highly functional, flexible, and fast 2D Math module.\n\n\nSudoku Generator\n - Sudoku data generator for 2x2, 3x3, and 4x4 puzzles.\n\n\nTBD\n - TBD\n\n\n\n\n\n\nTools\n\n\n\n\nEAT Lean\n (external) - EAT Lean takes all of the pain, hassle, and confusion out of setting up a project.\n\n\nEAT FAT\n - Coming in the future.\n\n\nRG Particle Editor 2\n - Coming soon.\n\n\nRG Super Meter 3.0\n - Coming soon.\n\n\n\n\n\n\nStarter Kits\n\n\n\n\nSuper Starter Kit for Corona SDK\n - All new and improved version of SSK coming soon... \n\n\nAction Pack\n - (Uses \nmath2d\n plugin.)\n\n\nTBD\n - TBD\n\n\nTBD\n - TBD\n\n\nTBD\n - TBD\n\n\nTBD\n - TBD\n\n\n\n\n\n\nGame Templates\n\n\n\n\nSudoku\n - Standard Sudoku game. (Uses \nsudokugen\n plugin.)\n\n\nTic Tac Toe\n - Coming soon.\n\n\nSliding Puzzle\n - Coming soon.\n\n\nJigsaw Puzzles\n - Coming soon.\n\n\nPig (Dice Game)\n - Coming soon.\n\n\nRoids (Asteroids Clone)\n - Coming soon.\n\n\nGear Jumper\n - Coming soon.\n\n\nSlots\n - Coming soon.\n\n\nPoker\n - Coming soon.\n\n\nBlackjack\n - Coming soon.\n\n\nTile Targets\n - TBD\n\n\nTBD\n - TBD\n\n\n\n\n\n\nApp Templates Templates\n\n\n\n\nProducts Catalog\n - Coming soon.\n\n\nForeign Vocabulary Starter\n - Coming soon.\n\n\nPhoto Editor\n - Coming soon.\n\n\nPersonal Recorder\n - Coming soon.\n\n\nTBD\n - TBD\n\n\n\n\n\n\nFree Stuff\n\n\n\n\nTBD\n - TBD\n\n\nTBD\n - TBD\n\n\nTBD\n - TBD\n\n\nTBD\n - TBD", 
             "title": "Home"
         }, 
         {
-            "location": "/#welcome-to-rg-docs", 
-            "text": "I'm working on a unified docs tree.  Please excuse the dust as I experiment. - 10 OCT 2016", 
-            "title": "Welcome to RG Docs"
+            "location": "/#roaming-gamer-docs", 
+            "text": "A unified collection of all  Roaming Gamer Product Documenation .    Currently, it is a little sparse, but that will be rectified soon.  ~ The Roaming Gamer (10 OCT 2016)", 
+            "title": "Roaming Gamer Docs"
         }, 
         {
             "location": "/#plugins", 
-            "text": "", 
+            "text": "Math 2D  - Highly functional, flexible, and fast 2D Math module.  Sudoku Generator  - Sudoku data generator for 2x2, 3x3, and 4x4 puzzles.  TBD  - TBD", 
             "title": "Plugins"
         }, 
         {
-            "location": "/#released", 
-            "text": "None as of yet.  I'm scrambling like a mad man.", 
-            "title": "Released"
+            "location": "/#tools", 
+            "text": "EAT Lean  (external) - EAT Lean takes all of the pain, hassle, and confusion out of setting up a project.  EAT FAT  - Coming in the future.  RG Particle Editor 2  - Coming soon.  RG Super Meter 3.0  - Coming soon.", 
+            "title": "Tools"
         }, 
         {
-            "location": "/#upcoming", 
-            "text": "Math 2D  - Native 2D Math Library.   Sudoku Generator  - 2x2, 3x3, 4x4 Sudoku data generator.  Test  - test  Test  - test  Test  - test", 
-            "title": "Upcoming"
+            "location": "/#starter-kits", 
+            "text": "Super Starter Kit for Corona SDK  - All new and improved version of SSK coming soon...   Action Pack  - (Uses  math2d  plugin.)  TBD  - TBD  TBD  - TBD  TBD  - TBD  TBD  - TBD", 
+            "title": "Starter Kits"
         }, 
         {
-            "location": "/#test-2", 
-            "text": "Test  - test  Test  - test  Test  - test  Test  - test  Test  - test", 
-            "title": "Test 2"
+            "location": "/#game-templates", 
+            "text": "Sudoku  - Standard Sudoku game. (Uses  sudokugen  plugin.)  Tic Tac Toe  - Coming soon.  Sliding Puzzle  - Coming soon.  Jigsaw Puzzles  - Coming soon.  Pig (Dice Game)  - Coming soon.  Roids (Asteroids Clone)  - Coming soon.  Gear Jumper  - Coming soon.  Slots  - Coming soon.  Poker  - Coming soon.  Blackjack  - Coming soon.  Tile Targets  - TBD  TBD  - TBD", 
+            "title": "Game Templates"
+        }, 
+        {
+            "location": "/#app-templates-templates", 
+            "text": "Products Catalog  - Coming soon.  Foreign Vocabulary Starter  - Coming soon.  Photo Editor  - Coming soon.  Personal Recorder  - Coming soon.  TBD  - TBD", 
+            "title": "App Templates Templates"
+        }, 
+        {
+            "location": "/#free-stuff", 
+            "text": "TBD  - TBD  TBD  - TBD  TBD  - TBD  TBD  - TBD", 
+            "title": "Free Stuff"
         }
     ]
 }
