@@ -1,0 +1,89 @@
+--------------------------------------------------------
+--------------------------------------------------------
+
+
+[![Video 3](rg144.png)](http://www.youtube.com/watch?v=kBjzAQ4_uO4)
+
+
+--------------------------------------------------------
+--------------------------------------------------------
+--------------------------------------------------------
+
+
+# Specialty Button Factories
++ `presetNavButton( group, presetName, x, y, w, h, labelText, onRelease, overrideParams )`
++ `buttons:presetBackButton( group, presetName, x, y, w, h, labelText, onRelease, overrideParams )`
++ `buttons:presetAudioButton( group, presetName, x, y, w, h, labelText, onEvent, overrideParams )`
++ `buttons:presetEventButton( group, presetName, x, y, w, h, labelText, onRelease, overrideParams )`
++ `buttons:presetShareButton( group, presetName, x, y, w, h, labelText, onRelease, overrideParams )`
++ `buttons:presetBuyButton( group, presetName, x, y, w, h, labelText, onRelease, overrideParams )`
++ `buttons:presetURLButton( group, presetName, x, y, w, h, labelText, onRelease, overrideParams )`
++ `buttons:presetRateButton( group, presetName, x, y, w, h, labelText, onRelease, overrideParams )`
+
+
+
+
+# Slider Factories
++ `buttons:presetSlider( group, presetName, x, y, w, h, onEvent, onRelease, overrideParams)`
++ `buttons:quickHorizSlider( group, x, y, w, h, imageBase, onEvent, onRelease, knobImgBase, kw, kh )`
+
+## Slider Factory Parameters
+The slider factories have a few new parameters to control the knob:
++ `knobImgBase` - Base name of image files (2) for knob.
++ `kw`, `kh` - Width and height of knob.
+
+
+##Slider Methods
++ `sliderInstance:getValue()` - EFM
++ `sliderInstance:setValue( val )` - EFM
++ `sliderInstance:disable( ) ` - EFM
++ `sliderInstance:enable( ) ` - EFM
+
+
+--------------------------------------------------------
+--------------------------------------------------------
+--------------------------------------------------------
+--------------------------------------------------------
+
+
+
+
+
+## Who Should Use SSK 2?
+This library is for any experienced developer using [Corona SDK](https://coronalabs.com/) to make games or apps. 
+
+### Experienced?
+If you are a new developer and/or just getting started with [Corona SDK](https://coronalabs.com/), then kudos to you and "Welcome!"  However, while I feel SSK 2 will eventually be very useful to you, it is NOT a starting point.  
+
+If you can answer "Yes," to the following questions, then you will definitely benefit from SSK 2:
+
++ **Lua**
+	+ Do you know the language already?
+	+ Are you clear on the concepts of scope and visiblity?
+	+ Do you know how to make a basic module and use it later?
++ **[Corona SDK](https://coronalabs.com/)**
+	+ Have you used it before?
+	+ Do you know how to make basic display objects and do you know the difference between display.newRect() and display.newImageRect()?
+	+ If you saw this message, would know what it implies an feel confident you could find the problem? 
+	> ERROR: Runtime error /users/owner/Documents/Corona Projects/space_shooter/main.lua:32: attempt to index field 'rewardValue' (a nil value)
+
+
+
+### How Do I Get Experience?
+If you answered "No," to any of the above questions you probably are not ready to use SSK 2 quite yet.
+
+While the purpose of SSK 2 is to greatly speed up development by simplifying and reducing coding work, it is not a short-cut to the acquisition and understanding of:  
+
++ Lua programming knowledge,
++ [Corona SDK](https://coronalabs.com/) usage mastery, or 
++ Game development skills and concepts in general.
+
+The only way to get these skills is through study, hard work, and repetition.  
+
+To that end, please consider visiting these links for more training, then when you are ready, I hope you will come back and try SSK 2:
+
++ TBD
++ TBD
++ TBD
++ TBD
++ TBD
