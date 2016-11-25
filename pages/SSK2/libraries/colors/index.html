@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>ssk.colors.* - Super Starter Kit 2</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ssk.colors.*";
+    var mkdocs_page_input_path = "libraries\colors.md";
+    var mkdocs_page_url = "/libraries/colors/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Super Starter Kit 2</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../quick_start/">Quick Start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../globals/">Globals</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../extensions/">Extensions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">ssk.colors.*</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#colors-library-sskcolors">Colors Library (ssk.colors.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#easy-colors-sskcolorseasy">Easy Colors (ssk.colors.easy.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#color-helpers-and-utilities-sskcolors">Color Helpers and Utilities (ssk.colors.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#rgb-functions-sskcolors">RGB Functions (ssk.colors.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#hsl-functions-sskcolors">HSL Functions (ssk.colors.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#example-1-rgb-hsl">Example 1 - RGB &amp; HSL</a></li>
+                
+                    <li><a class="toctree-l4" href="#example-2-pastels">Example 2 - Pastels</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_standard/">ssk.display.* (Standard Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_arcs/">ssk.display.* (Arc Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_lines/">ssk.display.* (Line Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_layers/">ssk.display.* (Quick Layers)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_samples/">ssk.display.* Samples</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_presets/">ssk.easyIFC.* (Button Presets)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../system/">ssk.system.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Solutions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">ssk.actions.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">ssk.android.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../camera/">ssk.camera.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cc/">ssk.cc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_inputs/">ssk.easyInputs.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../files/">ssk.files.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../math2D/">ssk.math2d.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../misc/">ssk.misc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../persist/">ssk.persist.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../points/">ssk.points.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">ssk.security.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social/">ssk.social.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../help/">Help!</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Super Starter Kit 2</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Core &raquo;</li>
+        
+      
+    
+    <li>ssk.colors.*</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="colors-library-sskcolors">Colors Library (ssk.colors.*)</h1>
+<h2 id="easy-colors-sskcolorseasy">Easy Colors (ssk.colors.easy.*)</h2>
+<p><strong>Tip:</strong> These variables are exported as globals when SSK <code>init()</code> parameter <code>exportColors</code> is <code>true</code>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_WHITE_</code>, <code>_W_</code></td>
+<td><code>_BLACK_</code>, <code>_K_</code></td>
+<td><code>_TRANSPARENT_</code>, <code>_T_</code></td>
+</tr>
+<tr>
+<td><code>_RED_</code>, <code>_R_</code></td>
+<td><code>_GREEN_</code>, <code>_G_</code></td>
+<td><code>_BLUE_</code>, <code>_B_</code></td>
+</tr>
+<tr>
+<td><code>_LIGHTGREY_</code></td>
+<td><code>_GREY_</code></td>
+<td><code>_DARKGREY_</code></td>
+</tr>
+<tr>
+<td><code>_CYAN_</code>, <code>_C_</code></td>
+<td><code>_YELLOW_</code>, <code>_Y_</code></td>
+<td><code>_ORANGE_</code>, <code>_O_</code></td>
+</tr>
+<tr>
+<td><code>_PURPLE_</code></td>
+<td><code>_PINK_</code>, <code>_P_</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="Lua">
+local circ = display.newCircle( 100, 100, 100 )
+
+rect:setFillColor( unpack( _PURPLE_ ) )
+
+</code></pre>
+
+<h2 id="color-helpers-and-utilities-sskcolors">Color Helpers and Utilities (ssk.colors.*)</h2>
+<ul>
+<li><code>hexcolor( code )</code> - converts hex color codes to rgba Graphics 2.0 value</li>
+<li><code>randomColor( )</code> - Returns random  color selected from 'Easy Colors'.</li>
+<li><code>rgba2( colors )</code> - Converts Graphics 1.0 color table to a valid Graphics 2.0 color table.</li>
+</ul>
+<pre><code class="Lua">
+local rect1 = display.newRect( 100, 100, 100, 100 )
+local rect2 = display.newRect( 100, 100, 200, 100 )
+local rect3 = display.newRect( 100, 100, 300, 100 )
+
+-- Set fill color to a nice blue
+rect1:setFillColor( unpack( hexcolor( &quot;33AFFF&quot; ) ) )
+
+-- Choose a random Easy Color as the fill
+rect2:setFillColor( unpack( randomColor() ) )
+
+-- Set color to Graphics 1.0 encoded 'Pink'
+rect3:setFillColor( unpack( rgba2( { 255, 0, 255 } ) ) )
+
+</code></pre>
+
+<h2 id="rgb-functions-sskcolors">RGB Functions (ssk.colors.*)</h2>
+<ul>
+<li><code>rgb2hsl( r, g, b, a )</code> - Convert RGB color to HSL color table.</li>
+<li><code>mixRGB( c1, c2 )</code> - Evenly mix two RGBa colors.</li>
+<li><code>randomRGB( [ c1 ] )</code> - Generates a random RGB color.  If optional c1 is passed in, it is mixed evenly with the random color.</li>
+<li><code>pastelRGB( [ c1 ] )</code> - Generates a random RGB pastel color.  If optional c1 is passed in, it is mixed evenly with the random color.</li>
+<li><code>rgbOffset( r, g, b, a, angle )</code> - Converts RGB color to HSL and applies hueOffset()</li>
+<li><code>rgbNeighbors( r, g, b, a, angle )</code> - Converts RGB color to HSL and applies hslNeighbors(), then returns two rgb colors.</li>
+<li><code>rgbTriadic( r, g, b, a )</code> - Converts RGB color to HSL and applies hslTriadic(), then returns two rgb colors.</li>
+<li><code>rgbSplitComplementary( r, g, b, a, angle )</code> - Converts RGB color to HSL and applies hslSplitComplementary(), then returns two rgb colors.</li>
+</ul>
+<h2 id="hsl-functions-sskcolors">HSL Functions (ssk.colors.*)</h2>
+<ul>
+<li><code>hsl2rgb( h, s, l, a )</code> - Convert HSL color to RGB color table.</li>
+<li><code>hueOffset( h, s, l, a, angle )</code> - Rotate hue by 'angle' degrees</li>
+<li><code>hslNeighbors( h, s, l, a, angle )</code> - Return two arbitray angle neighbors (left and right by angle)</li>
+<li><code>hslTriadic( h, s, l, a )</code> - Return two triadic neighbors of color</li>
+<li><code>hslSplitComplementary( h, s, l, a, angle )</code> - Return two complementary split angle colors. </li>
+</ul>
+<h2 id="example-1-rgb-hsl">Example 1 - RGB &amp; HSL</h2>
+<p><img alt="Colors Example" src="../..\images\colors.jpg" /></p>
+<pre><code class="Lua">function test.run( group, params )
+   group = group or display.currentStage
+   params = params or {}
+
+   local startX = left + 100
+   local startY = top + 100
+
+   local curX = startX
+   local curY = startY
+
+   -- ==============================================
+   -- Row 1 - Test conversions
+    -- ==============================================
+
+    -- RGB 2 HSL &amp; HSL 2 RGB
+    curX = startX
+    local c = ssk.colors.rgb2hsl(_R_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_G_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_B_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_O_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_Y_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_P_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_PURPLE_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_GREY_)
+    local c2 = ssk.colors.hsl2rgb( c )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+
+   -- ==============================================
+   -- Row 2 - Test HSL HUE Offset
+    -- ==============================================
+
+    -- hueOffset
+    curX = startX
+    curY = curY + 100
+    local c = ssk.colors.rgb2hsl(_R_)
+    local c1 = ssk.colors.hueOffset(c, 60 )
+    local c2 = ssk.colors.hsl2rgb( c1 )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+
+    curX = curX + 80
+    local c = ssk.colors.rgb2hsl(_R_)
+    local c1 = ssk.colors.hueOffset(c, -60 )
+    local c2 = ssk.colors.hsl2rgb( c1 )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+
+   -- ==============================================
+   -- Row 3 - Test HSL Neighbors, Triadic, Split Complementary
+    -- ==============================================
+
+    -- hslNeighbors
+    curX = startX
+    curY = curY + 100
+    local c = ssk.colors.rgb2hsl(_R_)
+    local c2,c3 = ssk.colors.hslNeighbors( c, 90 )
+    c2 = ssk.colors.hsl2rgb( c2 )
+    c3 = ssk.colors.hsl2rgb( c3 )   
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = c3  } )
+
+    -- hslTriadic
+    curX = curX + 100
+    local c = ssk.colors.rgb2hsl(_R_)
+    local c2,c3 = ssk.colors.hslTriadic( c )
+    c2 = ssk.colors.hsl2rgb( c2 )
+    c3 = ssk.colors.hsl2rgb( c3 )   
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = c3  } )
+
+    -- hslSplitComplementary
+    curX = curX + 100
+    local c = ssk.colors.rgb2hsl(_R_)
+    local c2,c3 = ssk.colors.hslSplitComplementary( c, 30 )
+    c2 = ssk.colors.hsl2rgb( c2 )
+    c3 = ssk.colors.hsl2rgb( c3 )   
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = c3  } )
+
+   -- ==============================================
+   -- Row 4 - Test RGB Offset
+    -- ==============================================
+
+    -- rgbOffset
+    curX = startX
+    curY = curY + 100
+    local c1 = ssk.colors.rgbOffset( _R_, 60 )
+    newRect( group, curX, curY, { size = 80, fill = c1  } )
+
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+
+    curX = curX + 80
+    local c1 = ssk.colors.rgbOffset( _R_, -60 )
+    newRect( group, curX, curY, { size = 80, fill = c1  } )
+
+   -- ==============================================
+   -- Row 5 - Test RGB Neighbors, Triadic, Split Complementary
+    -- ==============================================
+
+    -- hslNeighbors
+    curX = startX
+    curY = curY + 100
+    local c2,c3 = ssk.colors.rgbNeighbors( _R_, 90 )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = c3  } )
+
+    -- rgbTriadic
+    curX = curX + 100
+    local c2,c3 = ssk.colors.rgbTriadic( _R_ )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = c3  } )
+
+    -- rgbSplitComplementary
+    curX = curX + 100
+    local c2,c3 = ssk.colors.rgbSplitComplementary( _R_, 30 )
+    newRect( group, curX, curY, { size = 80, fill = c2  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = _R_  } )
+    curX = curX + 80
+    newRect( group, curX, curY, { size = 80, fill = c3  } )
+end
+</code></pre>
+
+<h2 id="example-2-pastels">Example 2 - Pastels</h2>
+<p><img alt="Pastels Example" src="../..\images\pastels.jpg" /></p>
+<pre><code class="Lua">
+function test.run( group, params )
+   group = group or display.currentStage
+   params = params or {}
+
+   local startX = left + 100
+   local startY = top + 100
+
+   local curX = startX
+   local curY = startY
+
+    -- Pastel No Seed Color
+    for i = 1, 3 do
+        curX = startX   
+        for j = 1, 10 do
+            newRect( group, curX, curY, { size = 80, fill = ssk.colors.pastelRGB( )  } )
+            curX = curX + 80
+        end
+        curY = curY + 80
+    end
+
+    curY = curY + 40
+
+    -- Pastel Random Seed Color
+    for i = 1, 3 do
+        curX = startX   
+        for j = 1, 10 do
+            newRect( group, curX, curY, { size = 80, fill = ssk.colors.pastelRGB( randomColor() )  } )
+            curX = curX + 80
+        end
+        curY = curY + 80
+    end
+
+end
+
+
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../display_standard/" class="btn btn-neutral float-right" title="ssk.display.* (Standard Factories)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Alphabetic Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../display_standard/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

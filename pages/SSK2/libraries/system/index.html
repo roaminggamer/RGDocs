@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>ssk.system.* - Super Starter Kit 2</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ssk.system.*";
+    var mkdocs_page_input_path = "libraries\system.md";
+    var mkdocs_page_url = "/libraries/system/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Super Starter Kit 2</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../quick_start/">Quick Start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../globals/">Globals</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../extensions/">Extensions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../colors/">ssk.colors.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_standard/">ssk.display.* (Standard Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_arcs/">ssk.display.* (Arc Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_lines/">ssk.display.* (Line Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_layers/">ssk.display.* (Quick Layers)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_samples/">ssk.display.* Samples</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_presets/">ssk.easyIFC.* (Button Presets)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">ssk.system.*</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#ssksystem">ssk.system.*</a></li>
+                
+                    <li><a class="toctree-l4" href="#environment-flags">Environment Flags</a></li>
+                
+                    <li><a class="toctree-l4" href="#device-flags">Device Flags</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#how-to-export-ssksystem">How To Export ssk.system.*</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Solutions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">ssk.actions.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">ssk.android.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../camera/">ssk.camera.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cc/">ssk.cc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_inputs/">ssk.easyInputs.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../files/">ssk.files.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../math2D/">ssk.math2d.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../misc/">ssk.misc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../persist/">ssk.persist.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../points/">ssk.points.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">ssk.security.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social/">ssk.social.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../help/">Help!</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Super Starter Kit 2</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Core &raquo;</li>
+        
+      
+    
+    <li>ssk.system.*</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ssksystem">ssk.system.*</h1>
+<h2 id="environment-flags">Environment Flags</h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onSimulator</td>
+<td><code>true</code> if running on Corona SDK simulator.</td>
+</tr>
+<tr>
+<td>oniOS</td>
+<td><code>true</code> if running on iPhone or iPad.</td>
+</tr>
+<tr>
+<td>onAndroid</td>
+<td><code>true</code> if running on any Android device.</td>
+</tr>
+<tr>
+<td>onAmazon</td>
+<td><code>true</code> if running on Amazon device.</td>
+</tr>
+<tr>
+<td>onNook</td>
+<td><code>true</code> if running on NOOK device.</td>
+</tr>
+<tr>
+<td>onWinPhone</td>
+<td><code>true</code> if running on Windows phone.</td>
+</tr>
+<tr>
+<td>onAppleTV</td>
+<td><code>true</code> if running on Apple TV device.</td>
+</tr>
+<tr>
+<td>onAndroidTV</td>
+<td><code>true</code> if running on Android TV device. <em>Not 100% reliable.</em></td>
+</tr>
+<tr>
+<td>onOSX</td>
+<td><code>true</code> if running on machine using OS X operating system.</td>
+</tr>
+<tr>
+<td>onWin</td>
+<td><code>true</code> if running on machine using Windows (7/8/10/..) operating system.</td>
+</tr>
+<tr>
+<td>onDesktop</td>
+<td><code>true</code> if onSimulator is <code>false</code> <strong>AND</strong> onOSX or onWin is <code>true</code>.</td>
+</tr>
+<tr>
+<td>onDevice</td>
+<td><code>true</code> if running on a device( i.e. NOT simulator).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="device-flags">Device Flags</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>oniPhone</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>oniPhone4</td>
+<td>oniPhone5</td>
+<td>oniPhone5c</td>
+<td>oniPhone5s</td>
+</tr>
+<tr>
+<td>oniPhone6</td>
+<td>oniPhone6Plus</td>
+<td>oniPhone6s</td>
+<td>oniPhone6sPlus</td>
+</tr>
+<tr>
+<td>oniPad</td>
+<td>oniPadPro</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>onAndroidTablet</td>
+<td><em>Not 100% reliable.</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>onTablet</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="how-to-export-ssksystem">How To Export ssk.system.*</h1>
+<p>By default, SSK 2 <strong>DOES NOT</strong> export the ssk.system.* variables as globals.  </p>
+<p>However, I find them extremely useful and so you will typically see me exporting them in my examples by setting <code>exportSystem</code> to <code>true</code> when initializing SSK.</p>
+<pre><code>_G.ssk.init( { exportSystem = true } )
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../" class="btn btn-neutral float-right" title="Alphabetic Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../easy_interfaces_labels/" class="btn btn-neutral" title="ssk.easyIFC.* (Label Factories)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../easy_interfaces_labels/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

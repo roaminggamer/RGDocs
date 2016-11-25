@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>ssk.actions.* - Super Starter Kit 2</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ssk.actions.*";
+    var mkdocs_page_input_path = "libraries\actions.md";
+    var mkdocs_page_url = "/libraries/actions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Super Starter Kit 2</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../quick_start/">Quick Start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../globals/">Globals</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../extensions/">Extensions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../colors/">ssk.colors.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_standard/">ssk.display.* (Standard Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_arcs/">ssk.display.* (Arc Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_lines/">ssk.display.* (Line Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_layers/">ssk.display.* (Quick Layers)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_samples/">ssk.display.* Samples</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_presets/">ssk.easyIFC.* (Button Presets)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../system/">ssk.system.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Solutions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">ssk.actions.*</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#actions-library-sskactions">Actions Library (ssk.actions.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#facing-face">Facing  (face)</a></li>
+                
+                    <li><a class="toctree-l4" href="#non-physics-movement-move">Non-Physics Movement (move.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#physics-movement-movep">Physics Movement  (movep.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#scene-wrapping-scene">Scene Wrapping (scene.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#target-acquisition-target">Target Acquisition (target.*)</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">ssk.android.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../camera/">ssk.camera.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cc/">ssk.cc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_inputs/">ssk.easyInputs.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../files/">ssk.files.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../math2D/">ssk.math2d.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../misc/">ssk.misc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../persist/">ssk.persist.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../points/">ssk.points.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">ssk.security.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social/">ssk.social.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../help/">Help!</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Super Starter Kit 2</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Solutions &raquo;</li>
+        
+      
+    
+    <li>ssk.actions.*</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="actions-library-sskactions">Actions Library (ssk.actions.*)</h1>
+<p>The actions library is a collection of helper modules and functions to do the heavy lifting associated with smooth facing, movement, screen-wrapping, and target acquisition.  </p>
+<p><img alt="GIF" src="../../images/actions.gif" /></p>
+<p>This library is especially suited to action and arcade style game mechanics.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Facing</th>
+<th align="center">Non-Physics Movement</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="../actions/#face">face</a></td>
+<td align="center"><a href="../actions/#moveat">move.at</a></td>
+<td align="center"><a href="../actions/#moveforward">move.forward</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Physics Movement</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="../actions/#movepdampdown">movep.dampDown</a></td>
+<td align="center"><a href="../actions/#movepdamphoriz">movep.dampHoriz</a></td>
+<td align="center"><a href="../actions/#movepdampnormal">movep.dampNormal</a></td>
+</tr>
+<tr>
+<td align="center"><a href="../actions/#movepdampvert">movep.dampVert</a></td>
+<td align="center"><a href="../actions/#movepforward">movep.forward</a></td>
+<td align="center"><a href="../actions/#movepimpulseforward">movep.impulseForward</a></td>
+</tr>
+<tr>
+<td align="center"><a href="../actions/#moveplimitv">movep.limitV</a></td>
+<td align="center"><a href="../actions/#moveplimitav">movep.limitAV</a></td>
+<td align="center"><a href="../actions/#movepthrustforward">movep.thrustForward</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Scene</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="../actions/#scenecircwrap">scene.circWrap</a>  <a href="../actions/#scenerectwrap">scene.rectWrap</a></td>
+<td align="center"><a href="../actions/#targetacquirerandom">target.acquireRandom</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Target Acquisition</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="../actions/#targetdrawdebugangledistancelabel">target.drawDebugAngleDistanceLabel</a></td>
+<td align="center"><a href="../actions/#targetdrawdebugdistancelabel">target.drawDebugDistanceLabel</a></td>
+<td align="center"><a href="../actions/#targetdrawdebugline">target.drawDebugLine</a></td>
+</tr>
+<tr>
+<td align="center"><a href="../actions/#targetget">target.get</a></td>
+<td align="center"><a href="../actions/#targetloseatmaxdistance">target.loseAtMaxDistance</a></td>
+<td align="center"><a href="../actions/#targetloseatminalpha">target.loseAtMinAlpha</a></td>
+</tr>
+<tr>
+<td align="center"><a href="../actions/#targetlosenotvisible">target.loseNotVisible</a></td>
+<td align="center"><a href="../actions/#targetloseondestroyed">target.loseOnDestroyed</a></td>
+<td align="center"><a href="../actions/#targetset">target.set</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="facing-face">Facing  (face)</h2>
+<h3 id="face">face</h3>
+<p>Causes <code>obj</code> to rotate towards a specific angle or target.  The rate of rotation can be immediate or at a specified number of degrees-per-second (<strong>dps</strong>).</p>
+<p>This function is typically called in an enterFrame listener and once used must be called every frame.  </p>
+<pre><code class="lua">ssk.actions.face( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to be turned.</li>
+<li><code>params</code> - A table of key-value pairs controling the facing algorithm.<ul>
+<li><code>target</code> - A display object or table with <code>x</code> and <code>y</code> fields.</li>
+<li><code>angle</code> - A desired rotation angle to face towards.</li>
+<li><code>rate</code> - A number specifying the degrees-per-second to turn <code>obj</code> by.  <ul>
+<li>If set to <code>nil</code> or not specified, facing is immediate.</li>
+</ul>
+</li>
+<li><code>pause</code> - Do not do any facing calculations during this call.  Simply update the turn timer and exit.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Rotate to face the object `enemy` at a rate of 180 degrees-per-second
+    ssk.actions.face( self, { target = enemy, rate = 180 } )
+
+end
+</code></pre>
+
+<p><strong>Tip #1:</strong> While you must continue to call this function every frame after you first call it, you can pause the facing to temorarily suspend calculations.  This is useful if you want <code>obj</code> to stop turning, of if you no longer have an angle/target to face.</p>
+<p><strong>Tip #2:</strong> If used in Combination with <a href="../actions/#target-acquisition">Target Acquisition</a> functions, you don't need to provide a target.  This will be handled for you.</p>
+<hr />
+<h2 id="non-physics-movement-move">Non-Physics Movement (move.*)</h2>
+<p>The actions <code>move</code> module provides functions to move object using 'calculated' movement in pixels-per-second.  </p>
+<h3 id="moveforward">move.forward</h3>
+<p>Move at a fixed rate, measured in pixels-per-second (<strong>pps</strong>), in the direction the object is facing.</p>
+<pre><code class="lua">ssk.actions.move.forward( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to be moved.</li>
+<li><code>params</code> - A table of key-value pairs controling the movement algorithm.<ul>
+<li><code>rate</code> (<code>100</code>) - A number specifying the movement speed in pixels-per-second.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Move forward at 300 pixels-per-second
+    ssk.actions.move.forward( self, { rate = 300 } )
+
+end
+</code></pre>
+
+<h3 id="moveat">move.at</h3>
+<p>Move at a fixed rate, measured in pps, in an arbitrary &lt; x, y &gt; direction.</p>
+<pre><code class="lua">ssk.actions.move.at( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to be moved.</li>
+<li><code>params</code> - A table of key-value pairs controling the movement algorithm.<ul>
+<li><code>x</code> (<code>0</code>) - A number specifiying the number of pixels-per-second by which to move in the x-axis.</li>
+<li><code>y</code> (<code>0</code>) - A number specifiying the number of pixels-per-second by which to move in the y-axis.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Move 'right' at 300 pixels-per-second
+    ssk.actions.move.at( self, { x = 300 } )
+
+end
+</code></pre>
+
+<hr />
+<h2 id="physics-movement-movep">Physics Movement  (movep.*)</h2>
+<p>The actions <code>movep</code> module provides functions to move, limit, and dampen movement using 'calculatoins' and physics methods.  </p>
+<p><strong>All objects moved with the <code>movep</code> module must have physics bodies.</strong></p>
+<h3 id="movepforward">movep.forward</h3>
+<p>Move <code>obj</code> foward at a fixed rate, measured in pixels-per-second, using frame-by-frame calculations and <code>obj:setLinearVelocity()</code>.</p>
+<pre><code class="lua">ssk.actions.movep.forward( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to be moved.</li>
+<li><code>params</code> - A table of key-value pairs controling the movement algorithm.<ul>
+<li><code>rate</code> (<code>100</code>) - A number specifying the movement speed in pixels-per-second.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Move forward using physics at a rate of 300 pixels-per-second
+    ssk.actions.movep.forward( self, { rate = 300 } )
+
+end
+</code></pre>
+
+<h3 id="movepthrustforward">movep.thrustForward</h3>
+<p>Move <code>obj</code> forward by applying a force using calculations and <code>obj:applyForce()</code>.</p>
+<pre><code class="lua">ssk.actions.movep.thrustForward( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to be moved.</li>
+<li><code>params</code> - A table of key-value pairs controling the movement algorithm.<ul>
+<li><code>rate</code> (<code>100</code>) - A number specifying the magnitude of the force to apply to <code>obj</code>.        </li>
+<li><code>ignoreMass</code> (<code>false</code>) - By default, <code>rate</code> is automatically multiplied by the object's mass.  Setting this field to <code>true</code> bypasses that part of the calculation.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Move this object forward by applying a 100 units of force.
+    ssk.actions.movep.thrustForward( self, { rate = 100 } )
+
+end
+</code></pre>
+
+<h3 id="movepimpulseforward">movep.impulseForward</h3>
+<p>Move <code>obj</code> forward by applying a impulses (kicks) using calculations and <code>obj:applyLinearImpulse()</code>.  </p>
+<p>This is suitable for use in timed or intermittent movements and can produce some very intersting responses.</p>
+<pre><code class="lua">ssk.actions.movep.impulseForward( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to be moved.</li>
+<li><code>params</code> - A table of key-value pairs controling the movement algorithm.<ul>
+<li><code>rate</code> (<code>100</code>) - A number specifying the magnitude of the impulse force to apply to <code>obj</code>.        </li>
+<li><code>ignoreMass</code> (<code>false</code>) - By default, <code>rate</code> is automatically multiplied by the object's mass.  Setting this field to <code>true</code> bypasses that part of the calculation.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">-- Apply 15 impulses (kicks) to player, one every 250 milliseconds
+function player.timer( self )
+    ssk.actions.movep.impulseForward( self, { rate = 25 } )
+end
+
+timer.performWithDelay( 250, player, 15 )
+</code></pre>
+
+<h3 id="moveplimitv">movep.limitV</h3>
+<p>Limits an object's linear velocity to a maximum rate in pixels-per-second.</p>
+<p>This is often used to place a cap on the maximum rate that can be produced using  <code>movep.thrustForward</code>.</p>
+<pre><code class="lua">ssk.actions.movep.limitV( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose rate is to be limited.</li>
+<li><code>params</code> - A table of key-value pairs controling the movement algorithm.<ul>
+<li><code>rate</code> (<code>100</code>) - Maximum rate object may move at in pixels-per-second.    </li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Accelerate this quickly using 500 units of force, but
+    -- limit the maximum velocity to 750 pixels-per-second
+    ssk.actions.movep.thrustForward( self, { rate = 500 } ) 
+    ssk.actions.movep.limitV( self, { rate = 750 } )
+
+end
+</code></pre>
+
+<h3 id="moveplimitav">movep.limitAV</h3>
+<p>Limits an object's angular velocity to a maximum rate in degrees-per-second.</p>
+<p>This is great for things like wheels and circles that turn due to frictional contact with other objects.</p>
+<pre><code class="lua">ssk.actions.movep.limitAV( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose angular rate is to be limited.</li>
+<li><code>params</code> - A table of key-value pairs controling the movement algorithm.<ul>
+<li><code>rate</code> (<code>100</code>) - Maximum angular rate object may turn at in degrees-per-second.   </li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    ssk.actions.face( self, { target = target, rate = 180 } )
+
+end
+</code></pre>
+
+<h3 id="movepdampvert">movep.dampVert</h3>
+<p>This allows you to dampen linear velocity for just the vertical component of an object's movement.</p>
+<pre><code class="lua">ssk.actions.movep.dampVert( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose angular rate is to be limited.</li>
+<li><code>params</code> - A table of key-value pairs controling the damping algorithm.<ul>
+<li><code>damping</code> (<code>1</code>) - Damping factor for vertical component of movement.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    ssk.actions.movep.dampVert( self, { damping = 1.5 } )
+
+end
+</code></pre>
+
+<h3 id="movepdamphoriz">movep.dampHoriz</h3>
+<p>This allows you to dampen linear velocity for just the horizontal component of an object's movement.</p>
+<pre><code class="lua">ssk.actions.movep.dampHoriz( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose angular rate is to be limited.</li>
+<li><code>params</code> - A table of key-value pairs controling the damping algorithm.<ul>
+<li><code>damping</code> (<code>1</code>) - Damping factor for horizontal component of movement.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    ssk.actions.movep.dampHoriz( self, { damping = 1.5 } )
+
+end
+</code></pre>
+
+<h3 id="movepdampdown">movep.dampDown</h3>
+<p>This allows you to dampen linear velocity for just the downward (<code>+y</code>) component of an object's movement.</p>
+<pre><code class="lua">ssk.actions.movep.dampDown( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose angular rate is to be limited.</li>
+<li><code>params</code> - A table of key-value pairs controling the damping algorithm.<ul>
+<li><code>damping</code> (<code>1</code>) - Damping factor for postive vertical component of movement.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    ssk.actions.movep.dampDown( self, { damping = 1.5 } )
+
+end
+</code></pre>
+
+<h3 id="movepdampnormal">movep.dampNormal</h3>
+<p>This is a very specialized kind of damping that dampens motion that is 90-degrees away from forward motion.</p>
+<p>The easiest way to think of this is damping like a tire.  Tires slow movement that is at cross angles to the tire's forward vector.</p>
+<p><strong>Note:</strong> Not available yet.</p>
+<pre><code class="lua">ssk.actions.movep.dampNormal( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose angular rate is to be limited.</li>
+<li><code>params</code> - A table of key-value pairs controling the damping algorithm.<ul>
+<li><code>damping</code> (<code>1</code>) - Damping factor for motion in the directions of either normal from the forward vector.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    ssk.actions.movep.dampNormal( self, { damping = 1.5 } )
+
+end
+</code></pre>
+
+<hr />
+<h2 id="scene-wrapping-scene">Scene Wrapping (scene.*)</h2>
+<p>Some action games use a single-screen world that wraps.  That is, if a player or enemy leaves one side of the screen, they re-enter from the other side.</p>
+<p>The helper functions in this action module help you achieve this.</p>
+<h3 id="scenerectwrap">scene.rectWrap</h3>
+<p>This helper will wrap one object about the bounds of a rectangle (any display object).</p>
+<p>This seem strange at first, but by using a display object as the proxy for wrapping calculations, we have an easy way to define the wrapping space and well as an easy way to debug this.</p>
+<pre><code class="lua">ssk.actions.scene.rectWrap( objectToWrap, wrapRectangle )
+</code></pre>
+
+<ul>
+<li><code>objectToWrap</code> - The object that should wrap about a 'wrapping space'.</li>
+<li><code>wrapRectangle</code> - A display object to act as a proxy and define the 'wrapping space'.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">-- Create a rectangle to act as our 'wrapping bounds'
+local wrapProxy = display.newRect( display.contentCenterX, display.contentCenterY, 300, 300 )
+
+-- Show it a little so we can see where the wrap should happen
+wrapProxy.alpha = 0.1 
+
+-- Place a player in the center of the wrapProxy and give it a random velocity
+local player = display.newCirle( wrapProxy.x, wrapProxy.y, 20 )
+
+physics:addBody( player )
+
+player:setLinearVelocity( math.random( -100, 100), math.random( -100, 100) )
+
+-- Start an enter frame listener and test for wrapping each frame
+function player.enterFrame( self )
+    ssk.actions.scene.rectWrap( self, wrapProxy )
+end
+
+Runtime:addEventListener( &quot;enterFrame&quot;, player )
+</code></pre>
+
+<h3 id="scenecircwrap">scene.circWrap</h3>
+<p>This helper is similar to <code>rectWrap</code>, but the wrapping is about a circular space and no proxy is required.</p>
+<pre><code class="lua">ssk.actions.scene.circWrap( objectToWrap, point, radius )
+</code></pre>
+
+<ul>
+<li><code>objectToWrap</code> - The object that should wrap about a 'wrapping space'.</li>
+<li><code>point</code> - <code>&lt;x,y&gt;</code> position of the 'wrapping circle'.</li>
+<li><code>radius</code> - Radius of the 'wrapping circle'.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">
+local cx = display.contentCenterX
+local cy = display.contentCenterY
+
+-- Place a player in the center of the screen and give it a random velocity
+local player = display.newCirle( cx, cy, 20 )
+
+physics:addBody( player )
+
+player:setLinearVelocity( math.random( -100, 100), math.random( -100, 100) )
+
+-- Start an enter frame listener and test for wrapping each frame
+function player.enterFrame( self )
+    ssk.actions.scene.circWrap( self, { x = cx, y = cy }, 100 )
+end
+
+Runtime:addEventListener( &quot;enterFrame&quot;, player )
+</code></pre>
+
+<hr />
+<h2 id="target-acquisition-target">Target Acquisition (target.*)</h2>
+<p>In action and arcade games, there is often the need for missiles, gun turrets, enemies, etc. to acquire a target and then chase it down.</p>
+<p>The functions in this actions module handle the first half of that work (target acquisition), and you can code up the second half using the <code>face</code> function in combination with <code>move</code> or <code>movep</code> functions.</p>
+<h3 id="targetset">target.set</h3>
+<p>This function allows you to manually assign a target to an object.</p>
+<pre><code class="lua">ssk.actions.target.set( obj, newTarget )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object that will be seeking or tracking the target.</li>
+<li><code>newTarget</code> - The new target for this object, or <code>nil</code> to clear the target.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">-- Have the player start targeting enemy
+ssk.actions.target.set( player, enemy )
+</code></pre>
+
+<h3 id="targetget">target.get</h3>
+<p>This function allows you to manually get an object's current target.  </p>
+<p>Returns nil if the object has no current target.</p>
+<pre><code class="lua">ssk.actions.target.get( obj )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object that may be tracking a target.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">-- Get the player's current target
+local curTarget = ssk.actions.target.get( player )
+</code></pre>
+
+<h3 id="targetacquirerandom">target.acquireRandom</h3>
+<p>This chooses a random target from a target pool and assigns it to <code>obj</code>.  </p>
+<p>Returns <code>true</code> if a target was assigned, <code>false</code> otherwise.</p>
+<pre><code class="lua">ssk.actions.target.acquireRandom( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to assign a target to.</li>
+<li><code>params</code> - A table of key-value pairs controling the targeting algorithm.<ul>
+<li><code>targets</code> - A table of targets.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">ssk.actions.target.acquireRandom( self, { targets = targets } )
+</code></pre>
+
+<h3 id="targetacquirenearest">target.acquireNearest</h3>
+<p>This chooses the nearest target from a target pool and assigns it to <code>obj</code>.  </p>
+<p>Returns <code>true</code> if a target was assigned, <code>false</code> otherwise.</p>
+<pre><code class="lua">ssk.actions.target.acquireRandom( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object to assign a target to.</li>
+<li><code>params</code> - A table of key-value pairs controling the targeting algorithm.<ul>
+<li><code>maxDist</code> (<code>math.huge</code>) - The maximum distance at which a target is considered valid.</li>
+<li><code>targets</code> - A table of targets.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">ssk.actions.target.acquireRandom( self, { targets = targets } )
+</code></pre>
+
+<h3 id="targetloseondestroyed">target.loseOnDestroyed</h3>
+<p>Tell <code>obj</code> to wipe its current target if that target has been destroyed and is no longer a valid display object.</p>
+<p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
+<pre><code class="lua">ssk.actions.target.loseOnDestroyed( obj )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose target we want to check.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Acquire a new random target if our last one was destroyed, or
+    -- if we don't have one yet.
+    if( ssk.actions.target.loseOnDestroyed( self ) ) then
+        ssk.actions.target.acquireRandom( self, { targets = targets } )
+    end
+end
+</code></pre>
+
+<h3 id="targetloseatmaxdistance">target.loseAtMaxDistance</h3>
+<p>Tell <code>obj</code> to wipe its current target if that target has moved beyond <code>maxDist</code>.</p>
+<p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
+<pre><code class="lua">ssk.actions.target.loseAtMaxDistance( obj )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose target we want to check.</li>
+<li><code>params</code> - A table of key-value pairs controling the targeting algorithm.<ul>
+<li><code>maxDist</code> (<code>math.huge</code>) - The maximum distance at which a target is considered valid.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Acquire a new random target if our last one was destroyed, or
+    -- if we don't have one yet.
+    if( ssk.actions.target.loseAtMaxDistance( self, { maxDist = 200 } ) ) then
+        ssk.actions.target.acquireRandom( self, { targets = targets } )
+    end
+end
+</code></pre>
+
+<h3 id="targetloseatminalpha">target.loseAtMinAlpha</h3>
+<p>Tell <code>obj</code> to wipe its current target if that target's alpha is below <code>alpha</code>.</p>
+<p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
+<pre><code class="lua">ssk.actions.target.loseAtMinAlpha( obj )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose target we want to check.</li>
+<li><code>params</code> - A table of key-value pairs controling the targeting algorithm.<ul>
+<li><code>alpha</code> (<code>0.5</code>) - The maximum alpha at which a target is considered valid.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Acquire a new random target if our last one was destroyed, or
+    -- if we don't have one yet.
+    if( ssk.actions.target.loseAtMinAlpha( self, { alpha = 0.1 } ) ) then
+        ssk.actions.target.acquireRandom( self, { targets = targets } )
+    end
+end
+</code></pre>
+
+<h3 id="targetlosenotvisible">target.loseNotVisible</h3>
+<p>Tell <code>obj</code> to wipe its current target if that target is not visible.</p>
+<p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
+<pre><code class="lua">ssk.actions.target.loseNotVisible( obj )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object whose target we want to check.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">function player.enterFrame( self )
+
+    -- Acquire a new random target if our last one was destroyed, or
+    -- if we don't have one yet.
+    if( ssk.actions.target.loseNotVisible( self ) ) then
+        ssk.actions.target.acquireRandom( self, { targets = targets } )
+    end
+end
+</code></pre>
+
+<h3 id="targetdrawdebugline">target.drawDebugLine</h3>
+<p>This is a debug feature that draws a line between <code>obj</code> and its target.</p>
+<pre><code class="lua">ssk.actions.target.drawDebugLine( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object that acts as the anchor for the line.</li>
+<li><code>params</code> - A table of key-value pairs controling the targeting algorithm.<ul>
+<li><code>parent</code> - By default, the line is added to <code>display.currentStage</code> group, but you can specify a another group with this argument.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">ssk.actions.target.drawDebugLine( self )
+</code></pre>
+
+<h3 id="targetdrawdebugdistancelabel">target.drawDebugDistanceLabel</h3>
+<p>This is a debug feature that draws a label showing the distance from <code>obj</code> to its target in pixels.</p>
+<pre><code class="lua">ssk.actions.target.drawDebugDistanceLabel( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object that acts as the anchor for the line.</li>
+<li><code>params</code> - A table of key-value pairs controling the targeting algorithm.<ul>
+<li><code>parent</code> - By default, the line is added to <code>display.currentStage</code> group, but you can specify a another group with this argument.</li>
+<li><code>xOffset</code> (<code>0</code>) - The label's x-position is <code>obj.x + xOffset</code>.</li>
+<li><code>yOffset</code> (<code>0</code>) - The label's y-position is <code>obj.y + yOffset</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">ssk.actions.target.drawDebugDistanceLabel( self, { yOffset = 40 } )
+</code></pre>
+
+<h3 id="targetdrawdebugangledistancelabel">target.drawDebugAngleDistanceLabel</h3>
+<p>This is a debug feature that draws a label showing the distance from <code>obj</code> to its target in pixels, as well as the angle between <code>obj</code> forward and the target.</p>
+<pre><code class="lua">ssk.actions.target.drawDebugAngleDistanceLabel( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - The object that acts as the anchor for the line.</li>
+<li><code>params</code> - A table of key-value pairs controling the targeting algorithm.<ul>
+<li><code>parent</code> - By default, the line is added to <code>display.currentStage</code> group, but you can specify a another group with this argument.</li>
+<li><code>xOffset</code> (<code>0</code>) - The label's x-position is <code>obj.x + xOffset</code>.</li>
+<li><code>yOffset</code> (<code>0</code>) - The label's y-position is <code>obj.y + yOffset</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lua">ssk.actions.target.drawDebugAngleDistanceLabel( self, { yOffset = 40 } )
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../android/" class="btn btn-neutral float-right" title="ssk.android.*">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Alphabetic Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../android/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

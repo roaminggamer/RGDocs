@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>ssk.display.* (Line Factories) - Super Starter Kit 2</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ssk.display.* (Line Factories)";
+    var mkdocs_page_input_path = "libraries\display_lines.md";
+    var mkdocs_page_url = "/libraries/display_lines/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Super Starter Kit 2</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../quick_start/">Quick Start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../globals/">Globals</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../extensions/">Extensions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../colors/">ssk.colors.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_standard/">ssk.display.* (Standard Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_arcs/">ssk.display.* (Arc Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">ssk.display.* (Line Factories)</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#line-factories-sskdisplay">Line Factories (ssk.display.*)</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_layers/">ssk.display.* (Quick Layers)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_samples/">ssk.display.* Samples</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_presets/">ssk.easyIFC.* (Button Presets)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../system/">ssk.system.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Solutions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">ssk.actions.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">ssk.android.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../camera/">ssk.camera.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cc/">ssk.cc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_inputs/">ssk.easyInputs.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../files/">ssk.files.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../math2D/">ssk.math2d.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../misc/">ssk.misc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../persist/">ssk.persist.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../points/">ssk.points.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">ssk.security.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social/">ssk.social.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../help/">Help!</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Super Starter Kit 2</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Core &raquo;</li>
+        
+      
+    
+    <li>ssk.display.* (Line Factories)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="line-factories-sskdisplay">Line Factories (ssk.display.*)</h1>
+<p><img alt="Lines" src="../..\images\lines.gif" /></p>
+<ul>
+<li><code>newLine( group, startX, startY, endX, endY, visualParams )</code> - Hyper-configurable line-segment factory, using two end-points to define the line.</li>
+<li><code>newAngleLine( group, startX, startY, angle, length, visualParams )</code> - Hyper-configurable line-segment factory using a start-point, an angle, and a length to define the line.</li>
+<li><code>newPointsLine( group, points, visualParams )</code> - Hyper-configurable line-segment factory, using a points-list to define the line.</li>
+<li><code>arrowhead( group, x, y, width, height, visualParams )</code> - Arrow head utility function that is primarily used by line builders.</li>
+<li><code>arrow( group, startX, startY, endX, endY, visualParams )</code> - Arrow utility function that is primarily used by line builders.</li>
+<li><code>arrow2( group, startX, startY, angle, length, visualParams)</code> - Angle based arrow utility function that is primarily used by line builders.</li>
+</ul>
+<pre><code class="Lua">
+function test.run( group, params )
+   group = group or display.currentStage
+   params = params or {}
+
+   -- Basic
+   local newLine    = ssk.display.newLine
+    newLine( group, 50, top + 50, 450, top + 50 )
+    newLine( group, 50, top + 50 + 20, 450, top + 50 + 20, { w = 2, fill = _R_ } )
+    newLine( group, 50, top + 50 + 40, 450, top + 50 + 40, { w = 1, dashLen = 3, gapLen = 5, fill = _C_, style = &quot;dashed&quot; } )
+    newLine( group, 50, top + 50 + 60, 450, top + 50 + 60, { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, stroke = _Y_, strokeWidth = 1} )
+    newLine( group, 50, top + 50 + 80, 450, top + 50 + 80, { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, style = &quot;arrows&quot;} )
+    newLine( group, 50, top + 50 + 100, 450, top + 50 + 100, { gapLen = 10, dashLen = 0, headSize = 4, fill = _C_, style = &quot;arrows&quot;} )
+
+
+    -- Angle lines
+    local newAngleLine = ssk.display.newAngleLine
+    local curY = top + 200
+    local tmp = newAngleLine( group, 50, curY, 135, 200 )
+    curY = curY + 20
+    local tmp = newAngleLine( group, 50, curY, 135, 200, { w = 2, fill = _R_ } )
+    curY = curY + 20
+    local tmp = newAngleLine( group, 50, curY, 135, 200, { w = 1, dashLen = 3, gapLen = 5, fill = _C_, style = &quot;dashed&quot; } )
+    curY = curY + 20
+    local tmp = newAngleLine( group, 50, curY, 135, 200, { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, stroke = _Y_, strokeWidth = 1} )
+    curY = curY + 20
+    local tmp = newAngleLine( group, 50, curY, 135, 200, { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, style = &quot;arrows&quot;} )
+    curY = curY + 20
+    local tmp = newAngleLine( group, 50, curY, 135, 200, { gapLen = 10, dashLen = 1, headSize = 4, fill = _C_, style = &quot;arrows&quot;} )
+
+    -- Complex Lines
+    local newPointsLine     = ssk.display.newPointsLine
+    local newPoints         = ssk.points.new
+    local easyIFC           = ssk.easyIFC
+    local mRand             = math.random
+    local reDrawLines
+    local lastGroup
+
+    reDrawLines = function()
+        display.remove( lastGroup )
+
+        lastGroup = display.newGroup()
+        group:insert( lastGroup )
+
+        lastGroup.x  = lastGroup.x + 200
+
+        local curY = 250
+
+        local points = newPoints()
+        for i = 1, 36 do
+            points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
+        end
+        local tmp = newPointsLine( lastGroup, points  )
+
+        local points = newPoints()  
+        curY = curY + 20
+        for i = 1, 36 do
+            points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
+        end
+        local tmp = newPointsLine( lastGroup, points, { w = 2, fill = _R_ } )
+
+        local points = newPoints()
+        curY = curY + 20    
+        for i = 1, 36 do
+            points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
+        end
+        local tmp = newPointsLine( lastGroup, points, { w = 1, dashLen = 1, gapLen = 2, fill = _C_, style = &quot;dashed&quot; } )
+
+        local points = newPoints()
+        curY = curY + 20
+        for i = 1, 36 do
+            points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
+        end
+        local tmp = newPointsLine( lastGroup, points, { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, stroke = _Y_, strokeWidth = 1} )
+
+        local points = newPoints()
+        curY = curY + 20
+        for i = 1, 36 do
+            points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
+        end
+        local tmp = newPointsLine( lastGroup, points, { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, style = &quot;arrowheads&quot;} )
+
+        local points = newPoints()
+        curY = curY + 20
+        for i = 1, 36 do
+            points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
+        end
+        local tmp = newPointsLine( lastGroup, points, { fill = {1,1,1,0.2} } )
+        local tmp = newPointsLine( lastGroup, points, { gapLen = 10, dashLen = 1, headSize = 4, fill = _C_, style = &quot;arrowheads&quot;} )
+
+        timer.performWithDelay( 100, reDrawLines )
+    end
+
+    reDrawLines()
+end
+
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../display_layers/" class="btn btn-neutral float-right" title="ssk.display.* (Quick Layers)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../display_arcs/" class="btn btn-neutral" title="ssk.display.* (Arc Factories)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../display_arcs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../display_layers/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

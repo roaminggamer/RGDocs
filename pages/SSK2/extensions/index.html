@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Extensions - Super Starter Kit 2</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Extensions";
+    var mkdocs_page_input_path = "extensions.md";
+    var mkdocs_page_url = "/extensions/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Super Starter Kit 2</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../quick_start/">Quick Start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../globals/">Globals</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Extensions</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#display">display.*</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#io">io.*</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#math">math.*</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#string">string.*</a></li>
+                
+                    <li><a class="toctree-l4" href="#torque-derived-string-functions">Torque Derived String Functions</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#table">table.*</a></li>
+                
+                    <li><a class="toctree-l4" href="#table-debug-features">Table Debug Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#saving-loading-tables">Saving &amp; Loading Tables</a></li>
+                
+                    <li><a class="toctree-l4" href="#table-utilities">Table Utilities</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#transition">transition.*</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/colors/">ssk.colors.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/display_standard/">ssk.display.* (Standard Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/display_arcs/">ssk.display.* (Arc Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/display_lines/">ssk.display.* (Line Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/display_layers/">ssk.display.* (Quick Layers)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/display_samples/">ssk.display.* Samples</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/easy_interfaces_button_presets/">ssk.easyIFC.* (Button Presets)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/system/">ssk.system.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Solutions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/actions/">ssk.actions.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/android/">ssk.android.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/camera/">ssk.camera.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/cc/">ssk.cc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/easy_inputs/">ssk.easyInputs.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/files/">ssk.files.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/math2D/">ssk.math2d.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/misc/">ssk.misc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/persist/">ssk.persist.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/points/">ssk.points.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/security/">ssk.security.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../libraries/social/">ssk.social.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../help/">Help!</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Super Starter Kit 2</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Extensions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>SSK extends a number of Lua and Corona libraries/functions.  </p>
+<h1 id="display">display.*</h1>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>newContainer( ... )</code></td>
+<td>Adds flags <code>__isContainer = true</code> and <code>__isGroup = true</code> to returned container.</td>
+</tr>
+<tr>
+<td><code>newGroup()</code></td>
+<td>Adds flags <code>__isContainer = false</code> and <code>__isGroup = true</code> to returned group.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="io">io.*</h1>
+<p><strong>Note:</strong> Unless otherwise specified, if a function takes the (optional) argument <code>base</code>, it defaults to <code>system.DocumentsDirectory</code></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>appendFile( dataToWrite, fileName [ , base ] )</code></td>
+<td>Append the contents of string <code>dataToWrite</code> to the file <code>fileName</code>, creating file if it does not exist.</td>
+</tr>
+<tr>
+<td><code>cleanFileName( filename )</code></td>
+<td>Cleans the string <code>filename</code> to ensure it is safe for use as a file name in all OSes targted by Corona SDK.</td>
+</tr>
+<tr>
+<td><code>exists( fileName [, base ] )</code></td>
+<td>Returns <code>true</code> if path exists.</td>
+</tr>
+<tr>
+<td><code>mkdir( dirName [, base ] )</code></td>
+<td>Make a new directory with the name <code>dirName</code>.  (<strong>Warning:</strong> Parent folders must be created first for compound paths.)</td>
+</tr>
+<tr>
+<td><code>readFile( fileName [, base ] )</code></td>
+<td>Returns contents of file at <code>fileName</code> as string.</td>
+</tr>
+<tr>
+<td><code>readFileTable( fileName [, base ] )</code></td>
+<td>Read the contens of fileName and return it as a table, where each entry is a line from the file.  Lines are separated by newline (<code>\n</code>).</td>
+</tr>
+<tr>
+<td><code>repairPath( path )</code></td>
+<td>Changes 'slashes' in path to match current OS specifications.</td>
+</tr>
+<tr>
+<td><code>writeFile( dataToWrite, fileName [ , base ] )</code></td>
+<td>Write the contents of string <code>dataToWrite</code> to the file <code>fileName</code>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="math">math.*</h1>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getUID( rlen )</code></td>
+<td>Generates and returns a unique ID of length <code>rlen</code>.  <strong>Warning:</strong> With a <code>rlen</code> of 12 or higher, it is extremely unlikely you will get an id collision, but it is your responsibility to track your prior IDs and verify no collision occurs.</td>
+</tr>
+<tr>
+<td><code>haversine_dist( lat1, lng1, lat2, lng2 [, R ] )</code></td>
+<td>Calculate the distance from GPS position to another. Distance is a multiple of R (default is 6373 kilometers == 3961 miles.)</td>
+</tr>
+<tr>
+<td><code>normRot( toNorm )</code> (number)</td>
+<td>Modifies number <code>toNorm</code> and returns equivalent angle in range [0,360).</td>
+</tr>
+<tr>
+<td><code>normRot( toNorm )</code> (display object)</td>
+<td>Modifies display object <code>toNorm</code>, such that <code>rotation</code> is an equivalent value in range [0,360).</td>
+</tr>
+</tbody>
+</table>
+<h1 id="string">string.*</h1>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>comma_value( num )</code></td>
+<td>Returns a nicely comma-separated string version of number <code>num</code>.</td>
+</tr>
+<tr>
+<td><code>endswith( str, piece)</code></td>
+<td>Return <code>true</code> if <code>str</code> ends with <code>piece</code>. Credit: https://gist.github.com/Lerg</td>
+</tr>
+<tr>
+<td><code>first_upper( str )</code></td>
+<td>Convert first letter in <code>str</code> to upper-case.</td>
+</tr>
+<tr>
+<td><code>lpad( str, len [, char] )</code></td>
+<td>Places padding on left side of a string, such that the new string is at  least len characters long.</td>
+</tr>
+<tr>
+<td><code>merge( t )</code></td>
+<td>Return a string containing all entries in an indexed table concatenated together.</td>
+</tr>
+<tr>
+<td><code>printf( ... )</code></td>
+<td>Replicates C-language printf().</td>
+</tr>
+<tr>
+<td><code>rpad( str, len [, char] )</code></td>
+<td>Places padding on right side of a string, such that the new string is at least len characters long.</td>
+</tr>
+<tr>
+<td><code>spaces2underbars( str )</code></td>
+<td>Returns string converting all spaces (<code></code>) in <code>str</code> to underbars (<code>_</code>).</td>
+</tr>
+<tr>
+<td><code>split( str, tok)</code></td>
+<td>Split <code>str</code> into a table, where elements in the string are separated by the token <code>tok</code>.</td>
+</tr>
+<tr>
+<td><code>startswith( str, piece)</code></td>
+<td>Return <code>true</code> if <code>str</code> starts with <code>piece</code>. Credit: https://gist.github.com/Lerg</td>
+</tr>
+<tr>
+<td><code>trim( str )</code></td>
+<td>Remove all whitespace from beginning and end of <code>str</code>. Credit: https://gist.github.com/Lerg</td>
+</tr>
+<tr>
+<td><code>truncate( str, maxLen [, appendMe ] )</code></td>
+<td>Shorten <code>str</code> to maxLen and optionally append <code>appendMe</code> to indicate string has been truncated.</td>
+</tr>
+<tr>
+<td><code>underbars2spaces( str )</code></td>
+<td>Returns string converting all underbars (<code>_</code>) in <code>str</code> to spaces (<code></code>).</td>
+</tr>
+<tr>
+<td><code>url_decode( str )</code></td>
+<td>Returns URL decoded version of <code>str</code>.</td>
+</tr>
+<tr>
+<td><code>url_encode( str )</code></td>
+<td>Returns URL encoded version of <code>str</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="torque-derived-string-functions">Torque Derived String Functions</h2>
+<p>I added a number of functions to string.* based on same-named functions from Torque.  These functions operate on:</p>
+<ul>
+<li>Words - Strings containing elements separated by a space (<code></code>).</li>
+<li>Fields - Strings containing elements separated by a tab (<code>\t</code>)</li>
+<li>Records - Strings containing elements separated by a newline (<code>\n</code>)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getWord( str [, index ] )</code></td>
+<td>Returns <code>index</code> (<code>1</code>) word in <code>str</code>.</td>
+</tr>
+<tr>
+<td><code>getWordCount( str )</code></td>
+<td>Counts words in <code>str</code>.</td>
+</tr>
+<tr>
+<td><code>getWords( str, [ index [, endindex ]] )</code></td>
+<td>Returns a string containing all words in <code>str</code> between <code>index</code> (<code>1</code>) and <code>endindex</code> (<em>last word</em>).</td>
+</tr>
+<tr>
+<td><code>setWord( str, [ index [, replace ]] )</code></td>
+<td>Returns a string where the word in <code>str</code> at <code>index</code> (<code>1</code>) has been replaced with the string <code>replace</code> (<code>nil</code>).</td>
+</tr>
+<tr>
+<td><code>getField( str [, index ] )</code></td>
+<td><em>Field</em> equivalent of <code>getWord()</code></td>
+</tr>
+<tr>
+<td><code>getFieldCount( str )</code></td>
+<td><em>Field</em> equivalent of <code>getWordCount()</code></td>
+</tr>
+<tr>
+<td><code>getFields( str, [ index [, endindex ]] )</code></td>
+<td><em>Field</em> equivalent of <code>getWords()</code></td>
+</tr>
+<tr>
+<td><code>setField( str, [ index [, replace ]] )</code></td>
+<td><em>Field</em> equivalent of <code>setWord()</code></td>
+</tr>
+<tr>
+<td><code>getRecord( str [, index ] )</code></td>
+<td><em>Record</em> equivalent of <code>getWord()</code></td>
+</tr>
+<tr>
+<td><code>getRecordCount( str )</code></td>
+<td><em>Record</em> equivalent of <code>getWordCount()</code></td>
+</tr>
+<tr>
+<td><code>getRecords( str, [ index [, endindex ]] )</code></td>
+<td><em>Record</em> equivalent of <code>getWords()</code></td>
+</tr>
+<tr>
+<td><code>setRecord( str, [ index [, replace ]] )</code></td>
+<td><em>Record</em> equivalent of <code>setWord()</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="table">table.*</h1>
+<h2 id="table-debug-features">Table Debug Features</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dump(theTable [ , padding [ , marker ]]  )</code></td>
+<td>Dumps indexes and values inside single-level table (for debug) (SORTED).</td>
+</tr>
+<tr>
+<td><code>dumpu(theTable [ , padding [ , marker ]]  )</code></td>
+<td>Dumps indexes and values inside single-level table (for debug) (UNSORTED).</td>
+</tr>
+<tr>
+<td><code>print_r( t )</code></td>
+<td>Dumps indexes and values inside multi-level table (for debug)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="saving-loading-tables">Saving &amp; Loading Tables</h2>
+<p><strong>Note:</strong> Unless otherwise specified, if a function takes the (optional) argument <code>base</code>, it defaults to <code>system.DocumentsDirectory</code></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>load( fileName [ , base ] )</code></td>
+<td>Returns table loaded from file (Uses JSON library as intermediary)</td>
+</tr>
+<tr>
+<td><code>prettySave( theTable, fileName [ , base ] )</code></td>
+<td>Saves table to file as human readable JSON.</td>
+</tr>
+<tr>
+<td><code>repairIndicies( theTable )</code></td>
+<td>Repair numeric indicies in table that uses numbers and other values for indexing.  Combining index types like this is bad practice if you are going to save() and load() the table.  This function repairs the indices after a load.</td>
+</tr>
+<tr>
+<td><code>save( theTable, fileName [ , base ] )</code></td>
+<td>Saves table to file (Uses JSON library as intermediary)</td>
+</tr>
+<tr>
+<td><code>secure_save( theTable, fileName [ , base ] )</code></td>
+<td>Equivalent to save(), but uses ssk.security.* to obfuscate save.</td>
+</tr>
+<tr>
+<td><code>secure_load( theTable, fileName [ , base ] )</code></td>
+<td>Equivalent to load(), but uses ssk.security.* to obfuscate save.</td>
+</tr>
+<tr>
+<td><code>stripSave( theTable, fileName [ , base ] )</code></td>
+<td>Saves table to file (Uses JSON library as intermediary)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-utilities">Table Utilities</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>combineUnique( ... )</code></td>
+<td>Combines n tables into a single table containing only unique members from each source table.</td>
+</tr>
+<tr>
+<td><code>combineUnique_i( ... )</code></td>
+<td>Combines n tables into a single table containing only unique members from each source table.</td>
+</tr>
+<tr>
+<td><code>count( t )</code></td>
+<td>Counts all entries in table (non-recursive).</td>
+</tr>
+<tr>
+<td><code>count_r( t )</code></td>
+<td>Counts all entries in table (recursive).</td>
+</tr>
+<tr>
+<td><code>deepCopy( src [ , dst ])</code></td>
+<td>Copies multi-level tables; handles non-integer indexes; does not copy metatable</td>
+</tr>
+<tr>
+<td><code>deepStripCopy( src [ , dst ])</code></td>
+<td>Copies multi-level tables, but strips out metatable(s) and  Fields with these value types: functions or userdata; Fields with these these names: _class or __index.</td>
+</tr>
+<tr>
+<td><code>getRandom( t )</code></td>
+<td>Return randomly selected entry from table <code>t</code>.</td>
+</tr>
+<tr>
+<td><code>maxIndex( t )</code></td>
+<td>Determine the maximum index of a sparse table.</td>
+</tr>
+<tr>
+<td><code>removeByRef( t, obj )</code></td>
+<td>Locate entry <code>obj</code> in numerically indexed table <code>t</code> and remove it.  Credit: https://gist.github.com/Lerg</td>
+</tr>
+<tr>
+<td><code>serialize( t )</code></td>
+<td>Table Serializer: https://github.com/EmmanuelOga/columns/blob/master/utils/serialize.lua</td>
+</tr>
+<tr>
+<td><code>shallowCopy( src [ , dst ])</code></td>
+<td>Copies single-level tables; handles non-integer indexes; does not copy metatable</td>
+</tr>
+<tr>
+<td><code>shallowStripCopy( src, dst )</code></td>
+<td>Copies single-level tables; handles non-integer indexes; does not copy metatable</td>
+</tr>
+<tr>
+<td><code>shuffle( t[ , iter ] )</code></td>
+<td>Randomizes the order of a numerically indexed (non-sparse) table.  Supply iteration value <code>iter</code> (<code>1</code>) for better randomizing.</td>
+</tr>
+<tr>
+<td><code>toString( t [ , flat ]) )</code></td>
+<td>Converts table to string.(serializes it): http://www.jasonschroeder.com/</td>
+</tr>
+</tbody>
+</table>
+<h1 id="transition">transition.*</h1>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transition.color( obj, colorFrom, colorTo, time, delay, ease )</code></td>
+<td>Adds ability to transition the color of display objects (including text objects) from <code>fromColor</code> to <code>toColor</code>.  <strong>Warning:</strong> Does not currently support onComplete.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><img alt="RoamingGamer" src="../roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../libraries/" class="btn btn-neutral float-right" title="Alphabetic Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../globals/" class="btn btn-neutral" title="Globals"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../globals/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../libraries/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

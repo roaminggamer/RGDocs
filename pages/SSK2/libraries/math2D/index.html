@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>ssk.math2d.* - Super Starter Kit 2</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ssk.math2d.*";
+    var mkdocs_page_input_path = "libraries\math2D.md";
+    var mkdocs_page_url = "/libraries/math2D/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Super Starter Kit 2</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../quick_start/">Quick Start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../globals/">Globals</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../extensions/">Extensions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../colors/">ssk.colors.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_standard/">ssk.display.* (Standard Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_arcs/">ssk.display.* (Arc Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_lines/">ssk.display.* (Line Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_layers/">ssk.display.* (Quick Layers)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_samples/">ssk.display.* Samples</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_presets/">ssk.easyIFC.* (Button Presets)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../system/">ssk.system.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Solutions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">ssk.actions.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">ssk.android.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../camera/">ssk.camera.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cc/">ssk.cc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_inputs/">ssk.easyInputs.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../files/">ssk.files.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">ssk.math2d.*</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#2d-math-sskmath2d">2D Math (ssk.math2d.*)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vector-representations">Vector Representations</a></li>
+                
+                    <li><a class="toctree-l4" href="#addition">Addition</a></li>
+                
+                    <li><a class="toctree-l4" href="#subtraction">Subtraction</a></li>
+                
+                    <li><a class="toctree-l4" href="#difference">Difference</a></li>
+                
+                    <li><a class="toctree-l4" href="#length">Length</a></li>
+                
+                    <li><a class="toctree-l4" href="#squared-length">Squared Length</a></li>
+                
+                    <li><a class="toctree-l4" href="#scaling">Scaling</a></li>
+                
+                    <li><a class="toctree-l4" href="#normalizing">Normalizing</a></li>
+                
+                    <li><a class="toctree-l4" href="#dot-product">Dot Product</a></li>
+                
+                    <li><a class="toctree-l4" href="#cross-product">Cross Product</a></li>
+                
+                    <li><a class="toctree-l4" href="#normals">Normals</a></li>
+                
+                    <li><a class="toctree-l4" href="#angle-to-vector">Angle To Vector</a></li>
+                
+                    <li><a class="toctree-l4" href="#vector-to-angle">Vector To Angle</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../misc/">ssk.misc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../persist/">ssk.persist.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../points/">ssk.points.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">ssk.security.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social/">ssk.social.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../help/">Help!</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Super Starter Kit 2</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Solutions &raquo;</li>
+        
+      
+    
+    <li>ssk.math2d.*</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="2d-math-sskmath2d">2D Math (ssk.math2d.*)</h1>
+<p>SSK 2 comes with a complete library of fundamental 2D operations.</p>
+<p>Additionally, if you own the <a href="https://marketplace.coronalabs.com/plugin/math2d">Math2D Plugin</a>, SSK can use that instead.</p>
+<pre><code class="Lua">
+-- Use Math2D Plugin if you own it!
+_G.ssk.init( { math2DPlugin = true } )
+
+</code></pre>
+
+<p><strong>Tip:</strong> The paid version of the <a href="https://marketplace.coronalabs.com/plugin/math2d">Math2D Plugin</a> is both faster than the SSK 2 (Pure Lua) version and incorporates a number of additional features, so you should definitely check it out!</p>
+<h2 id="vector-representations">Vector Representations</h2>
+<p>In the context of these docs, a vector is any table or object with both an x- and a y-field.  Additionally, we often deal with vectors as discrete collections of <em>x</em> and <em>y</em> values. </p>
+<pre><code>-- A table as a 2d-vector: &lt; 10, 15 &gt;
+local v1 = { x = 10, y = 15 } 
+
+-- A circle display object; Also a 2d-vector: &lt; 10, 15 &gt;
+local circ = display.newCircle( 10, 15, 5 )
+
+-- Four discrete values repsenting the vectors: &lt; 10, 15 &gt; and &lt; -1, 0 &gt;
+local x1 = 10
+local y1 = 15
+local x2 = -1
+local y2 = 0
+</code></pre>
+
+<h2 id="addition">Addition</h2>
+<h3 id="tableobject-vectors">Table/Object Vectors</h3>
+<pre><code>math2d.add( v1, v2 [, altRet ] )
+</code></pre>
+
+<p>Adds two vectors <em>v1</em> and <em>v2</em> and returns a (table) vector unless <em>altRet</em> is <em>true</em>.  </p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.add( circ, rect ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+
+local vx,vy = math2d.add( circ, rect, true ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+</code></pre>
+
+<h3 id="discrete-value-vectors">Discrete Value Vectors</h3>
+<pre><code>math2d.add( x1, y1, x2, y2 [, altRet ] )
+</code></pre>
+
+<p>Adds two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vx,vy = math2d.add( circ.x, circ.y, rect.x, rect.y ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+local vec = math2d.add( math2d.add( circ.x, circ.y, rect.x, rect.y, true ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+</code></pre>
+
+<h2 id="subtraction">Subtraction</h2>
+<h3 id="tableobject-vectors_1">Table/Object Vectors</h3>
+<pre><code>math2d.sub( v1, v2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector <em>v2</em> from vector <em>v1</em>  ( <em>v1</em> - <em>v2</em> ) and returns a (table) vector unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v2</em> to <em>v1</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v2</em> gives you <em>v1</em>.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+
+local vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+</code></pre>
+
+<h3 id="discrete-value-vectors_1">Discrete Value Vectors</h3>
+<pre><code>math2d.sub( x1, y1, x2, y2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector &lt; <em>x2</em>, <em>y2</em> &gt; from vector &lt; <em>x1</em>, <em>y1</em> &gt; ( &lt; <em>x1</em> - <em>x2</em>, <em>y1</em> - <em>y2</em> &gt; ) and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v2</em> to <em>v1</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v2</em> gives you <em>v1</em>.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y ) 
+</code></pre>
+
+<h2 id="difference">Difference</h2>
+<h3 id="tableobject-vectors_2">Table/Object Vectors</h3>
+<pre><code>math2d.diff( v1, v2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector <em>v1</em> from vector <em>v2</em>  ( <em>v2</em> - <em>v1</em> ) and returns a (table) vector unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v1</em> to <em>v2</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v1</em> gives you <em>v2</em>.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y )
+
+local vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+</code></pre>
+
+<h3 id="discrete-value-vectors_2">Discrete Value Vectors</h3>
+<pre><code>math2d.diff( x1, y1, x2, y2 [, altRet ] )
+</code></pre>
+
+<p>Subtracts vector &lt; <em>x1</em>, <em>y1</em> &gt; from vector &lt; <em>x2</em>, <em>y2</em> &gt; ( &lt; <em>x2</em> - <em>x1</em>, <em>y2</em> - <em>y1</em> &gt; ) and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Note:</strong> The returned value represents a direction vector equivalent to the direction from <em>v1</em> to <em>v2</em> translated to &lt; 0, 0 &gt;.  Adding this vector to <em>v1</em> gives you <em>v2</em>.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+print(&quot;Results: &quot;, vx, vy ) 
+
+local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
+print(&quot;Results: &quot;, vec.x, vec.y ) 
+</code></pre>
+
+<h2 id="length">Length</h2>
+<h3 id="tableobject-vectors_3">Table/Object Vectors</h3>
+<pre><code>math2d.length( v1 )
+</code></pre>
+
+<p>Calculates the length (magnitude) of scalar (encoded) vector.</p>
+<ul>
+<li>v1 - Vectors whose length we want to calculate.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+
+print(&quot;Result: &quot;, math2d.length(vec) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_3">Discrete Value Vectors</h3>
+<pre><code>math2d.length( x1, y1 )
+</code></pre>
+
+<p>Adds two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns two discrete values unless <em>altRet</em> is <em>true</em>.  </p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; whose length we want to calculate.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+
+print(&quot;Result: &quot;, math2d.length(vx, vy) )
+</code></pre>
+
+<h2 id="squared-length">Squared Length</h2>
+<h3 id="tableobject-vectors_4">Table/Object Vectors</h3>
+<pre><code>math2d.length2( v1,  )
+</code></pre>
+
+<p>Calculates the squared length of a vector.</p>
+<ul>
+<li>v1 - Vectors whose squared length we want to calculate.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+
+print(&quot;Result: &quot;, math2d.length2(vec) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_4">Discrete Value Vectors</h3>
+<pre><code>math2d.length2( x1, y1 )
+</code></pre>
+
+<p>Calculates the squared length of a vector.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; whose squared length we want to calculate.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+
+print(&quot;Result: &quot;, math2d.length2(vx, vy) )
+</code></pre>
+
+<h2 id="scaling">Scaling</h2>
+<h3 id="tableobject-vectors_5">Table/Object Vectors</h3>
+<pre><code>math2d.scale( obj, scaleBy [, altRet]  )
+</code></pre>
+
+<p>Multiply &lt; x, y &gt; components of a vector by scaleBy.</p>
+<ul>
+<li>v1 - Vector we wish to scale.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local vec = { x = 1, y = 0 }
+
+vec = math2d.scale( vec, 30 ) -- Vector is now &lt; 30, 0 &gt;
+</code></pre>
+
+<h3 id="discrete-value-vectors_5">Discrete Value Vectors</h3>
+<pre><code>math2d.scale( vx, vy, scaleBy [, altRet ] )
+</code></pre>
+
+<p>Multiply <em>vx</em> and <em>vy</em> components of a vector by scaleBy.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; we wish to scale.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a table.</li>
+</ul>
+<pre><code>local vx = 1, vy = 0
+
+vx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now &lt; 30, 0 &gt;
+</code></pre>
+
+<h2 id="normalizing">Normalizing</h2>
+<h3 id="tableobject-vectors_6">Table/Object Vectors</h3>
+<pre><code>math2d.normalize( v1 [, altRet ] )
+</code></pre>
+
+<p>Converts the input vector into a unit length (one) vector.</p>
+<ul>
+<li>v1 - The vector we wish to normalize.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two discrete values.</li>
+</ul>
+<pre><code>local vec = { x = 30, y = 30 }
+
+vec = math2d.normalize( vec ) -- Vector is now &lt; 0.707..., 0.707... &gt;
+</code></pre>
+
+<h3 id="discrete-value-vectors_6">Discrete Value Vectors</h3>
+<pre><code>math2d.normalize( x1, y1 [, altRet ] )
+</code></pre>
+
+<p>Converts the input vector into a unit length (one) vector.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector &lt; <em>x1</em>, <em>y1</em> &gt; we wish to normalize.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a (table) vector.</li>
+</ul>
+<pre><code>local vx = 30, vy = 30
+
+vx, vy = math2d.normalize( vx, vy ) -- Vector is now &lt; 0.707..., 0.707... &gt;
+</code></pre>
+
+<h2 id="dot-product">Dot Product</h2>
+<h3 id="tableobject-vectors_7">Table/Object Vectors</h3>
+<pre><code>math2d.dot( v1, v2 )
+</code></pre>
+
+<p>Calculates the inner product of two vectors <em>v1</em> and <em>v2</em> and returns a scalar value.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+print(&quot;Result: &quot;, math2d.dot( circ, rect ) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_7">Discrete Value Vectors</h3>
+<pre><code>math2d.dot( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Calculates the inner product of two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns a scalar value.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+print(&quot;Result: &quot;, math2d.dot( x1, y1, x2, y2 ) )
+</code></pre>
+
+<h2 id="cross-product">Cross Product</h2>
+<h3 id="tableobject-vectors_8">Table/Object Vectors</h3>
+<pre><code>math2d.cross( v1, v2 )
+</code></pre>
+
+<p>Calculates the cross product of two vectors <em>v1</em> and <em>v2</em> and returns a scalar value.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+print(&quot;Result: &quot;, math2d.cross( circ, rect ) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_8">Discrete Value Vectors</h3>
+<pre><code>math2d.cross( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Calculates the cross product of two vectors &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt; and returns a scalar value.</p>
+<ul>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+print(&quot;Result: &quot;, math2d.cross( x1, y1, x2, y2 ) )
+</code></pre>
+
+<h2 id="normals">Normals</h2>
+<h3 id="tableobject-vectors_9">Table/Object Vectors</h3>
+<pre><code>math2d.normals( v1 [, altRet ] )
+</code></pre>
+
+<p>Returns two normal vectors <em>n1</em> and <em>n2</em> for the given vector <em>v1</em> unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Warning:</strong> The returned normals are not normalized (unit length) to save computation time.</p>
+<ul>
+<li>v1 - Vector for which we want the two normal vectors.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns four discrete values representing two vectors.</li>
+</ul>
+<pre><code>local vec = { x = 1, y = 0 }
+
+local n1, n2 = math2d.normals( vec ) 
+
+-- n1 and n2 will contain the two vectors:
+--   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
+</code></pre>
+
+<h3 id="discrete-value-vectors_9">Discrete Value Vectors</h3>
+<pre><code>math2d.normals( x1, y1 [, altRet ] )
+</code></pre>
+
+<p>Returns two normal vectors &lt; <em>nx1</em>, <em>ny1</em> &gt; and &lt; <em>nx2</em>, <em>ny2</em> &gt; for the given vector &lt; <em>x1</em>, <em>y1</em> &gt; unless <em>altRet</em> is <em>true</em>.  </p>
+<p><strong>Warning:</strong> The returned normals are not normalized (unit length) to save computation time.</p>
+<ul>
+<li>x1, y1 - Two discrete values representing the vector: &lt; <em>x1</em>, <em>y1</em> &gt; for which we want two normals.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns two tables representing two vectors.</li>
+</ul>
+<pre><code>local x1 = 1, y1 = 0
+
+local nx1, ny1, nx2, ny2 = math2d.normals( x1, y1 ) 
+
+-- &lt; nx1, ny1 &gt; and &lt; nx2, ny2 &gt; will be equivalent to: 
+--   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
+</code></pre>
+
+<h2 id="angle-to-vector">Angle To Vector</h2>
+<pre><code>math2d.angle2Vector( angle [, altRet ] )
+</code></pre>
+
+<p>Converts a (screen) angle into a normalized direction vector of the form &lt; vx, vy &gt;.  </p>
+<p><strong>Warning:</strong> This library uses screen angles NOT Cartesian or polar.</p>
+<ul>
+<li>angle - Angle whose value we wish to convert to a unit length direction vector.</li>
+<li><em>altRet</em> - If this is <em>true</em>, the function returns a table otherwise it returns two scalar values.</li>
+</ul>
+<pre><code>local angle = 135
+
+local vec = math2d.angle2Vector( angle, true ) -- Return a table
+print(&quot;The vector: &quot; .. vec.x .. &quot;, &quot; .. vec.y  )
+
+local vx,vy = math2d.angle2Vector( angle ) -- Return two numbers
+print(&quot;The vector: &quot; .. vx .. &quot;, &quot; .. vy  )
+</code></pre>
+
+<h2 id="vector-to-angle">Vector To Angle</h2>
+<h3 id="tableobject-vectors_10">Table/Object Vectors</h3>
+<pre><code>math2d.vector2Angle( v1 )
+</code></pre>
+
+<p>Takes a table vector and returns a screen angle.
+Warning: This library uses screen angles NOT Cartesian or polar. </p>
+<ul>
+<li>v1 - Vector we wish to calculate the angle (direction) for.</li>
+</ul>
+<pre><code>local circ = display.newCircle( 100, 100, 30 )
+local rect = display.newRect( 150, 250, 60, 60 )
+
+local vec = math2d.sub( circ, rect ) -- Return a table
+
+print(&quot;Result: &quot;, math2d.vector2Angle(vec) )
+</code></pre>
+
+<h3 id="discrete-value-vectors_10">Discrete Value Vectors</h3>
+<pre><code>math2d.vector2Angle( vx, vy )
+</code></pre>
+
+<p>Takes a two discrete values representing a vector and returns a screen angle.</p>
+<ul>
+<li>vx, vy - Two discrete values representing a vector &lt; <em>x1</em>, <em>y1</em> &gt; we wish to calculate the angle (direction) for.</li>
+</ul>
+<pre><code>local x1,y1 = 10,10
+local x2,y2 = 15,-10
+
+local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+
+print(&quot;Result: &quot;, math2d.vector2Angle(vx, vy) )
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../misc/" class="btn btn-neutral float-right" title="ssk.misc.*">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../files/" class="btn btn-neutral" title="ssk.files.*"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../files/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../misc/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

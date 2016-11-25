@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>ssk.easyIFC.* (Button Presets) - Super Starter Kit 2</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ssk.easyIFC.* (Button Presets)";
+    var mkdocs_page_input_path = "libraries\easy_interfaces_button_presets.md";
+    var mkdocs_page_url = "/libraries/easy_interfaces_button_presets/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Super Starter Kit 2</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../quick_start/">Quick Start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../globals/">Globals</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../extensions/">Extensions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Core</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../colors/">ssk.colors.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_standard/">ssk.display.* (Standard Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_arcs/">ssk.display.* (Arc Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_lines/">ssk.display.* (Line Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_layers/">ssk.display.* (Quick Layers)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../display_samples/">ssk.display.* Samples</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">ssk.easyIFC.* (Button Presets)</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#easy-interface-factories-sskeasyifc">Easy Interface Factories (ssk.easyIFC.*)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#buttons-standard-factories">Buttons - Standard Factories</a></li>
+                
+                    <li><a class="toctree-l4" href="#buttoninstance">buttonInstance</a></li>
+                
+                    <li><a class="toctree-l4" href="#button-factory-parameters">Button Factory Parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#button-utilities">Button Utilities</a></li>
+                
+                    <li><a class="toctree-l4" href="#buttoninstance-properties">buttonInstance - Properties</a></li>
+                
+                    <li><a class="toctree-l4" href="#buttoninstance-methods">buttonInstance - Methods</a></li>
+                
+                    <li><a class="toctree-l4" href="#components-of-a-button">Components Of A Button</a></li>
+                
+                    <li><a class="toctree-l4" href="#overrideparams">overrideParams</a></li>
+                
+                    <li><a class="toctree-l4" href="#components-of-a-slider">Components Of A Slider</a></li>
+                
+                    <li><a class="toctree-l4" href="#labels">Labels</a></li>
+                
+                    <li><a class="toctree-l4" href="#effects">Effects</a></li>
+                
+                    <li><a class="toctree-l4" href="#button-callbacks">Button Callbacks</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#who-needs-another-interface-library">Who needs another interface library?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#code-comparison-easyifc-versus-using-widget">Code Comparison: easyIFC.* versus using widget.*</a></li>
+                
+                    <li><a class="toctree-l4" href="#push-button-with-easyifc">Push Button with easyIFC.*</a></li>
+                
+                    <li><a class="toctree-l4" href="#push-button-with-widget">Push Button with widget.*</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../system/">ssk.system.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Solutions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Alphabetic Index</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/">ssk.actions.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">ssk.android.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../camera/">ssk.camera.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cc/">ssk.cc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../easy_inputs/">ssk.easyInputs.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../files/">ssk.files.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../math2D/">ssk.math2d.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../misc/">ssk.misc.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../persist/">ssk.persist.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../points/">ssk.points.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">ssk.security.*</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social/">ssk.social.*</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../help/">Help!</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Super Starter Kit 2</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Core &raquo;</li>
+        
+      
+    
+    <li>ssk.easyIFC.* (Button Presets)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="easy-interface-factories-sskeasyifc">Easy Interface Factories (ssk.easyIFC.*)</h1>
+<h1 id="buttons-standard-factories">Buttons - Standard Factories</h1>
+<ul>
+<li><code>buttons:newButton( group, params )</code> - Generic button builder, called by following:</li>
+<li><code>buttons:presetPush( group, presetName, x, y, w, h, labelText, onRelease, overrideParams)</code></li>
+<li><code>buttons:presetToggle( group, presetName, x,y,w,h, labelText, onEvent, overrideParams)</code></li>
+<li><code>buttons:presetRadio( group, presetName, x, y , w, h, labelText, onRelease, overrideParams)</code></li>
+</ul>
+<h2 id="buttoninstance"><code>buttonInstance</code></h2>
+<p>Each of the above factories returns a <code>buttonInstance</code> (a display group with special fields and functions attached, that contains all of the button 'parts'.)</p>
+<h2 id="button-factory-parameters">Button Factory Parameters</h2>
+<p>The factories share a fairly consistent set of parameters:</p>
+<ul>
+<li><code>group</code> - Display group to place button/slider into.</li>
+<li><code>presetName</code> - String identifying preset to use to configure button/slider.</li>
+<li><code>x</code>, <code>y</code> - x- and y- position of button/slider center.</li>
+<li><code>w</code>, <code>h</code> - Width and height of button.</li>
+<li><code>labelText</code> - (Optional) text to put on button.  May be "" for no text.</li>
+<li><code>onPress</code> - Listener called only on 'began' phase of button touch.</li>
+<li><code>onRelease</code> - Listener called only on 'ended' phase of button touch, and then only if the <em>finger</em> is still 'over' the button when lifted.</li>
+<li><code>onEvent</code> - A generic listener that gets all phases of the touch.</li>
+<li><code>overrideParams</code> - (Optional) table that lets you override any property in the preset and set any property you wish.  See '<a href="../easy_interfaces/#overrideParams">overrideParams</a>' below for the extensive listof properties.</li>
+</ul>
+<h2 id="button-utilities">Button Utilities</h2>
+<p><code>ssk.easyIfC.*</code> provides two button related utility functions:</p>
+<ul>
+<li><code>buttons:addButtonPreset( presetName, params )</code> - Method to add preset definitions to known presets library.</li>
+<li><code>buttons.getCurrentRadio( group )</code> - Returns the currently toggled radio button in a group.</li>
+</ul>
+<h2 id="buttoninstance-properties"><code>buttonInstance</code> - Properties</h2>
+<ul>
+<li><code>isPressed</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+</ul>
+<h2 id="buttoninstance-methods"><code>buttonInstance</code> - Methods</h2>
+<ul>
+<li><code>buttonInstance:pressed( )</code> - EFM</li>
+<li><code>buttonInstance:toggle( noDispatch )</code> - EFM</li>
+<li><code>buttonInstance:disable( )</code> - EFM</li>
+<li><code>buttonInstance:enable( )</code> - EFM</li>
+<li><code>buttonInstance:isEnabled()</code> - EFM</li>
+<li><code>buttonInstance:getText( )</code> - EFM</li>
+<li><code>buttonInstance:setText( newText )</code> - EFM</li>
+<li><code>buttonInstance:getTextColor()</code> - EFM</li>
+<li><code>buttonInstance:setFillColor( color )</code> - EFM</li>
+<li><code>buttonInstance:adjustLabelOffset( offset )</code> - EFM</li>
+<li><code>buttonInstance:setHighlight( vis )</code> - EFM</li>
+<li><code>buttonInstance:setSize( width, height )</code> - EFM</li>
+</ul>
+<h2 id="components-of-a-button">Components Of A Button</h2>
+<p>Before we look at <code>overrideParams</code> (next in the docs), it would be helpful to understand some basic principles behind how a button is created.</p>
+<p><code>easyIFC.*</code> button factories build two-state buttons.  That is they are either un-selected (OFF), or selected (ON).  </p>
+<p>To achieve this, <code>easyIFC.*</code> button factories use <strong>minimum</strong> of four display ojects:</p>
+<ul>
+<li><strong>Display Group</strong> - This contains all the button parts and is the object that is returned by the factories.</li>
+<li><strong>Selected Rectangle or Image</strong> </li>
+<li><strong>Un-Selected Rectangle or Image</strong> </li>
+<li><strong>Text Label</strong> </li>
+</ul>
+<p>As a rule of thumb, you only want to use rectangles or images for the selected and unselected representation, but you may have them all in any combination.  Just be aware that the stacking order will be:</p>
+<ul>
+<li><strong>Rectangles</strong> </li>
+<li><strong>Images</strong></li>
+<li><strong>Slices</strong> </li>
+</ul>
+<h3 id="what-are-slices">What Are Slices?</h3>
+<p>Slices are a feature I added recently that allows you to create buttons from a set of sliced up images.  This is similar to what the <code>widget.*</code> library does.  Unlike <code>widget.*</code> however I use discrete images and not a sprite sheet. This is slightly less efficient, but much easier to create for new developers.</p>
+<h3 id="the-other-parts">The Other Parts</h3>
+<ul>
+<li><strong>Strokes</strong> - You may of course set strokes for the two button representations..</li>
+<li><strong>Fills</strong> - Each part of the button can have a fill color to shade it.<ul>
+<li><strong>Note:</strong> I chose not to support the other paint styles because I didn't see much value in them when I could just as easily create the button I needed in Photoshop.</li>
+</ul>
+</li>
+<li><strong>Overlays</strong> - You can have both a rectangle and image overlay if you want.  Each of these lays over the other parts of the button to act like a frame of sorts.</li>
+</ul>
+<h2 id="overrideparams">overrideParams</h2>
+<ul>
+<li>General<ul>
+<li><code>buttonType</code> - EFM</li>
+<li><code>anchorX</code> - EFM</li>
+<li><code>anchorY</code> - EFM</li>
+<li><code>placeRelative</code> - EFM</li>
+</ul>
+</li>
+<li>Label Parameters<ul>
+<li><code>labelText</code> - EFM</li>
+<li><code>labelSize</code> - EFM</li>
+<li><code>labelColor</code> - EFM</li>
+<li><code>selLabelColor</code> - EFM</li>
+<li><code>labelFont</code> - EFM</li>
+<li><code>labelOffset</code> - EFM</li>
+<li><code>labelHorizAlign</code> - EFM</li>
+<li><code>emboss</code> - EFM</li>
+<li><code>labelHorizAlign</code> - EFM</li>
+</ul>
+</li>
+<li>Rectangle Parameters<ul>
+<li><code>unselRectFillColor</code> - EFM</li>
+<li><code>selRectFillColor</code> - EFM</li>
+<li><code>cornerRadius</code> - EFM</li>
+</ul>
+</li>
+<li>Image Parameters<ul>
+<li><code>unselImgSrc</code> - EFM</li>
+<li><code>selImgSrc</code> - EFM</li>
+<li><code>unselImgFillColor</code> - EFM</li>
+<li><code>selImgFillColor</code> - EFM</li>
+</ul>
+</li>
+<li>Slice Parameters<ul>
+<li><code>unselSliceSrc</code> - EFM</li>
+<li><code>selSliceSrc</code> - EFM</li>
+<li><code>unselSliceFillColor</code> - EFM</li>
+<li><code>selSliceFillColor</code> - EFM </li>
+</ul>
+</li>
+<li>Touch Masking Parameters<ul>
+<li><code>touchMask</code> - EFM</li>
+<li><code>touchMaskW</code>, <code>touchMaskH</code> - EFM</li>
+</ul>
+</li>
+<li>Stroke Parameters<ul>
+<li><code>unselStrokeColor</code> - EFM</li>
+<li><code>selStrokeColor</code> - EFM</li>
+<li><code>strokeWidth</code> - EFM</li>
+<li><code>strokeColor</code> - EFM</li>
+</ul>
+</li>
+<li>Overlay Parameters    <ul>
+<li><code>buttonOverlayRectColor</code> - EFM</li>
+<li><code>buttonOverlayImgSrc</code> - EFM</li>
+<li><code>buttonOverlayFillColor</code> - EFM</li>
+</ul>
+</li>
+</ul>
+<h2 id="components-of-a-slider">Components Of A Slider</h2>
+<ul>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+</ul>
+<hr />
+<h2 id="labels">Labels</h2>
+<p>SSK also comes with a text object factories library that incorporates the idea of presets.</p>
+<ul>
+<li><code>labels:addLabelPreset( presetName, params )</code> - Add a label preset definition to the labels preset library.</li>
+<li><code>labels:newLabel( params, screenGroup )</code> - Generic label builder, used by <code>labels:presetLabel()</code>.</li>
+<li><code>labels:presetLabel( group, presetName, text, x, y, params  )</code></li>
+</ul>
+<h3 id="quick-labels">Quick Labels</h3>
+<p>As great as preset labels are, I often tend to use the following functions instead.  They are simple improvments on the standard <code>display.newText()</code> and <code>display.newEmbossedText()</code> factories.</p>
+<ul>
+<li><code>labels:quickLabel( group, text, x, y, font, fontSize, textColor, anchorX, anchorY )</code> </li>
+<li><code>labels:quickEmbossedLabel( group, text, x, y, font, fontSize, embossTextColor, embossHighlightColor, embossShadowColor )</code></li>
+</ul>
+<hr />
+<h2 id="effects">Effects</h2>
+<p>The button library comes with a set of functions that let you do useful visual calculations and to apply cool visual effects to button (and other display objects if you choose).</p>
+<h3 id="visual-calculations">Visual Calculations</h3>
+<ul>
+<li><code>isInBounds( obj, obj2 )</code> - EFM</li>
+<li><code>isInBounds_alt( obj, obj2 )</code> - EFM</li>
+<li><code>EFM</code> - EFM</li>
+</ul>
+<h3 id="fly-ins">Fly Ins</h3>
+<ul>
+<li><code>easyFlyIn( obj, params )</code> - EFM</li>
+</ul>
+<h3 id="squeeze-inflate">Squeeze &amp; Inflate</h3>
+<ul>
+<li><code>easySqueeze( obj, xScale1, yScale1, xScale2, yScale2, delay, time1, time2, time3, myEasing, myEasing2, myEasing3 )</code></li>
+<li><code>easyInflate( obj, xScale1, yScale1, xScale2, yScale2, xScale3, yScale3, delay, time1, time2, time3, myEasing, myEasing2, myEasing3 )</code></li>
+</ul>
+<h3 id="shrink-grow">Shrink &amp; Grow</h3>
+<ul>
+<li><code>doShrink( obj, to )</code></li>
+<li><code>doGrow( obj, to )</code></li>
+</ul>
+<h3 id="flipping">Flipping</h3>
+<ul>
+<li><code>easyFlip( obj, params )</code></li>
+</ul>
+<h3 id="pulsing">Pulsing</h3>
+<ul>
+<li><code>pulse( obj, params )</code></li>
+</ul>
+<h3 id="easy-pinch-zoom-drag">Easy Pinch-Zoom-Drag</h3>
+<ul>
+<li><code>pinchZoomDragTouch( self, event )</code> - Just use this as the touch listener on an object to get full pinch-zoom-drag functionality.</li>
+<li><code>setMinDragDist( dist )</code> - Adjust the minimum distance SSK thinks is drag.  Default is 3 pixels.</li>
+</ul>
+<h2 id="button-callbacks">Button Callbacks</h2>
+<p>EFM EFM EFM
+EFM EFM EFM
+EFM EFM EFM</p>
+<h1 id="who-needs-another-interface-library">Who needs another interface library?</h1>
+<p>(<strong>Note:</strong> Let me say I am not ripping on <code>widget.*</code>. It is a fine library that was designed to replicate the common interfaces of iOS and Android.  It splits the game/business usage down the middle. It is perfect as a general library for Corona SDK developers.)</p>
+<p><code>easyIFC.*</code> was born out of my need to quickly and easily create buttons (push, toggle, and radio) and sliders for games.  I found that while I could use <code>widget.*</code> for this it took more coding effort than I was willing to endure. </p>
+<p>So... I dug in and wrote my own library (<code>easyIFC.*</code>) that supports all the buttons and sliders I needed and has these additional features:</p>
+<ul>
+<li><strong>One Line Creation</strong> - Make buttons and sliders with a single call.</li>
+<li><strong>Preset Library</strong>  - Optionally pre-define the look and feel of common buttons and re-use that information to make new buttons.  <ul>
+<li><strong>Overrides</strong> - Optionally override any preset-parameter while creating a button to account for those <em>one-off</em> cases.</li>
+</ul>
+</li>
+<li><strong>Hyper-Flexible Construction</strong> - You can use an arbitrary combination of images, rectangles, frames, etc. to build sexy/great looking buttons.</li>
+<li>... more</li>
+</ul>
+<h1 id="code-comparison-easyifc-versus-using-widget">Code Comparison: <code>easyIFC.*</code> versus using <code>widget.*</code></h1>
+<h2 id="push-button-with-easyifc">Push Button with <code>easyIFC.*</code></h2>
+<pre><code class="lua">
+-- Forward declaration to reduce typing and speed up future calls
+local easyIFC = ssk.easyIFC
+
+local group = display.newGroup()
+
+local function onRelease( event )
+    print(&quot;Pressed Button&quot;)
+end
+
+-- Create the easyIFC push button
+easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&quot;, onRelease, { labelSize = 72 } )
+
+</code></pre>
+
+<h2 id="push-button-with-widget">Push Button with <code>widget.*</code></h2>
+<p>```lua</p>
+<p>local widget = require( "widget" )</p>
+<p>local group = display.newGroup()</p>
+<p>local function onRelease( event )
+    print("Pressed Button")
+end</p>
+<p>-- Create the widget push button
+widget.newButton(
+    {
+        parent       = group,
+        x            = 100,
+        y            = 100,
+        width        = 50,
+        height       = "40",
+        defaultFile  = "fillW.png",
+        fillColor    = { default={ 0.25, 0.25, 0.25, 1 }, over={ 0.5, 0.5, 0.5, 1 } },
+        label        = "Hello",
+        fontSize     = 72,
+        labelColor   = { default={ 1, 1, 1, 1 }, over={ 1, 1, 1, 1 } },
+        onRelease    = onRelease,
+    }
+)</p>
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../easy_interfaces_button_instance/" class="btn btn-neutral float-right" title="ssk.easyIFC.* (Button Instance)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../easy_interfaces_buttons/" class="btn btn-neutral" title="ssk.easyIFC.* (Button Factories)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../easy_interfaces_buttons/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../easy_interfaces_button_instance/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
