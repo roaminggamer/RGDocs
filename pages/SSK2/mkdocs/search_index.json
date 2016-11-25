@@ -1,6 +1,31 @@
 {
     "docs": [
         {
+            "location": "/home/", 
+            "text": "Super Starter Kit 2\n\n\nSSK 2\n SUPERCHARGING the \nCorona SDK\n game development experience every day.\n\n\n\n\n\n\n\n\n\n\nWhat Is It?\n\n\nSuper Starter Kit 2 (aka SSK 2) is a collection libraries and utilities designed to take your development experience to a whole new level of efficiency and speed.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGlobals\n\n\nVariables \n functions (optionally) added to the global namespace to speed up and simplify coding.\n\n\n\n\n\n\nExtensions\n\n\nAdds 60+ new and improved features to: \ndisplay.*\n, \nio.*\n, \nmath.*\n, \nstring.*\n, \ntable.*\n, \ntransition.*\n\n\n\n\n\n\nCore\n\n\nLibraries that I quite honestly \ncannot develop without\n: \n(Extended) Display Object builders\n, \nEasy Colors\n, \nEasy Interfaces\n, \nSystem Disovery\n\n\n\n\n\n\nSolutions\n\n\nTop-shelf solutions for common development challenges: \nActions Library\n, \nAndroid Helpers\n, \nScene Cameras\n, \nCollision Calculator\n, \nEasy Inputs\n, \nFiles Library\n, \n2D Math\n, \nPersistence\n, \nPoints Library\n, \nSimple Security\n, \nSharing \n Rating\n, \n... more\n\n\n\n\n\n\n\n\nWhere Can I Get It?\n\n\nYou can find \nSSK 2\n (\nand other quality Roaming Gamer products\n) on the \nCorona Marketplace\n.\n\n\n\n\nWhat About SSK Legacy?\n\n\nYes, my old version of SSK is (and always will be) available for free.  However I do not support it any longer and I am not keeping it up-to-date.\n\n\nSSK 2 on the other hand is everything SSK was in a more performant, flexible, and sexier package.  It works as a standalone library and dove-tails with a number of my co-products.\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2016; All Rights Reserved", 
+            "title": "RG Docs (Home)"
+        }, 
+        {
+            "location": "/home/#super-starter-kit-2", 
+            "text": "SSK 2  SUPERCHARGING the  Corona SDK  game development experience every day.", 
+            "title": "Super Starter Kit 2"
+        }, 
+        {
+            "location": "/home/#what-is-it", 
+            "text": "Super Starter Kit 2 (aka SSK 2) is a collection libraries and utilities designed to take your development experience to a whole new level of efficiency and speed.           Globals  Variables   functions (optionally) added to the global namespace to speed up and simplify coding.    Extensions  Adds 60+ new and improved features to:  display.* ,  io.* ,  math.* ,  string.* ,  table.* ,  transition.*    Core  Libraries that I quite honestly  cannot develop without :  (Extended) Display Object builders ,  Easy Colors ,  Easy Interfaces ,  System Disovery    Solutions  Top-shelf solutions for common development challenges:  Actions Library ,  Android Helpers ,  Scene Cameras ,  Collision Calculator ,  Easy Inputs ,  Files Library ,  2D Math ,  Persistence ,  Points Library ,  Simple Security ,  Sharing   Rating ,  ... more", 
+            "title": "What Is It?"
+        }, 
+        {
+            "location": "/home/#where-can-i-get-it", 
+            "text": "You can find  SSK 2  ( and other quality Roaming Gamer products ) on the  Corona Marketplace .", 
+            "title": "Where Can I Get It?"
+        }, 
+        {
+            "location": "/home/#what-about-ssk-legacy", 
+            "text": "Yes, my old version of SSK is (and always will be) available for free.  However I do not support it any longer and I am not keeping it up-to-date.  SSK 2 on the other hand is everything SSK was in a more performant, flexible, and sexier package.  It works as a standalone library and dove-tails with a number of my co-products.     Copyright   Roaming Gamer, LLC. 2008-2016; All Rights Reserved", 
+            "title": "What About SSK Legacy?"
+        }, 
+        {
             "location": "/", 
             "text": "Super Starter Kit 2\n\n\nSSK 2\n SUPERCHARGING the \nCorona SDK\n game development experience every day.\n\n\n\n\n\n\n\n\n\n\nWhat Is It?\n\n\nSuper Starter Kit 2 (aka SSK 2) is a collection libraries and utilities designed to take your development experience to a whole new level of efficiency and speed.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGlobals\n\n\nVariables \n functions (optionally) added to the global namespace to speed up and simplify coding.\n\n\n\n\n\n\nExtensions\n\n\nAdds 60+ new and improved features to: \ndisplay.*\n, \nio.*\n, \nmath.*\n, \nstring.*\n, \ntable.*\n, \ntransition.*\n\n\n\n\n\n\nCore\n\n\nLibraries that I quite honestly \ncannot develop without\n: \n(Extended) Display Object builders\n, \nEasy Colors\n, \nEasy Interfaces\n, \nSystem Disovery\n\n\n\n\n\n\nSolutions\n\n\nTop-shelf solutions for common development challenges: \nActions Library\n, \nAndroid Helpers\n, \nScene Cameras\n, \nCollision Calculator\n, \nEasy Inputs\n, \nFiles Library\n, \n2D Math\n, \nPersistence\n, \nPoints Library\n, \nSimple Security\n, \nSharing \n Rating\n, \n... more\n\n\n\n\n\n\n\n\nWhere Can I Get It?\n\n\nYou can find \nSSK 2\n (\nand other quality Roaming Gamer products\n) on the \nCorona Marketplace\n.\n\n\n\n\nWhat About SSK Legacy?\n\n\nYes, my old version of SSK is (and always will be) available for free.  However I do not support it any longer and I am not keeping it up-to-date.\n\n\nSSK 2 on the other hand is everything SSK was in a more performant, flexible, and sexier package.  It works as a standalone library and dove-tails with a number of my co-products.\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2016; All Rights Reserved", 
             "title": "About"
