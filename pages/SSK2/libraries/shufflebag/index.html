@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/libraries/shufflebag/"> 
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>ssk.shufflebag.* - Super Starter Kit 2</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../home/">Super Starter Kit 2</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">RG Docs</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../globals/">Globals</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../extensions/">Extensions</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../colors/">Colors (ssk.colors)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_standard/">Standard Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_arcs/">Arc Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_lines/">Line Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_layers/">Quick Layers (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_samples/">Samples (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easy_interfaces/">Easy Interfaces (ssk.easyIFC)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../system/">System (ssk.system.)</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../actions/">ssk.actions.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../android/">ssk.android.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../camera/">ssk.camera.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../cc/">ssk.cc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easy_inputs/">ssk.easyInputs.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../files/">ssk.files.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../misc/">ssk.misc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../persist/">ssk.persist.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../points/">ssk.points.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../security/">ssk.security.*</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">ssk.shufflebag.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../social/">ssk.social.*</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../security/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../social/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#shuffle-bags-sskshufflebag">Shuffle Bags (ssk.shufflebag.*)</a></li>
+        
+    
+        <li class="first-level "><a href="#creating-a-shuffle-bag">Creating a Shuffle Bag</a></li>
+        
+    
+        <li class="first-level "><a href="#shuffle-bag-methods-bag">Shuffle Bag Methods (bag:*)</a></li>
+        
+            <li class="third-level"><a href="#insert">insert</a></li>
+        
+            <li class="third-level"><a href="#shuffle">shuffle</a></li>
+        
+            <li class="third-level"><a href="#get">get</a></li>
+        
+            <li class="third-level"><a href="#getcounts">getCounts</a></li>
+        
+            <li class="third-level"><a href="#take">take</a></li>
+        
+            <li class="third-level"><a href="#putback">putBack</a></li>
+        
+    
+        <li class="first-level "><a href="#shuffle-bag-example">Shuffle Bag Example</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="shuffle-bags-sskshufflebag">Shuffle Bags (ssk.shufflebag.*)</h1>
+<p>This library is used to create <em>Shuffle Bags</em>.</p>
+<blockquote>
+<p>A <em>Shuffle Bag</em> is a technique for controlling randomness to create the distribution we desire.
+<a href="https://gamedevelopment.tutsplus.com/tutorials/shuffle-bags-making-random-feel-more-random--gamedev-1249">envatotuts+</a></p>
+</blockquote>
+<p>In short, if you want to create a random set of 'things' and control the random distribution of each 'thing' in that set, this is the answer.</p>
+<p><strong>Tip:</strong> 'Things' can be strings, numbers, object references, table reference, function referenes, ... pretty much any Lua referable entity.</p>
+<h1 id="creating-a-shuffle-bag">Creating a Shuffle Bag</h1>
+<p>Creating a new myCC is as easy as:</p>
+<pre><code class="Lua">
+local bag = ssk.shuffleBag.new()
+
+</code></pre>
+
+<p><strong>Tip:</strong> The <code>new()</code> function takes an optional list of 'things'  to add directly to the new bag.</p>
+<pre><code class="Lua">
+local bag = ssk.shuffleBag.new( &quot;jack.png&quot;, &quot;king.png&quot;, &quot;queen.png&quot;, &quot;ace.png&quot; )
+
+</code></pre>
+
+<h1 id="shuffle-bag-methods-bag">Shuffle Bag Methods (bag:*)</h1>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="../shufflebag/#get">get</a></td>
+<td align="center"><a href="../shufflebag/#getcounts">getCounts</a></td>
+<td align="center"><a href="../shufflebag/#insert">insert</a></td>
+<td align="center"><a href="../shufflebag/#putback">putBack</a></td>
+<td align="center"><a href="../shufflebag/#shuffle">shuffle</a></td>
+<td align="center"><a href="../shufflebag/#take">take</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="insert">insert</h2>
+<p>Add 'thing' to shuffle bag.</p>
+<pre><code class="Lua">bag:insert( thing )
+</code></pre>
+
+<ul>
+<li><code>thing</code> - 'Thing' to add to bag.</li>
+</ul>
+<pre><code class="Lua">
+local cards = shuffleBag.new()
+
+cards:insert( &quot;jack.png&quot; )
+cards:insert( &quot;king.png&quot; )
+cards:insert( &quot;queen.png&quot; )
+cards:insert( &quot;ace.png&quot; )
+
+</code></pre>
+
+<h2 id="shuffle">shuffle</h2>
+<p>Randomize the bag.</p>
+<pre><code class="Lua">bag:shuffle( )
+</code></pre>
+
+<pre><code class="Lua">
+cards:shuffle()
+
+</code></pre>
+
+<h2 id="get">get</h2>
+<p>Get one random entry from bag. </p>
+<p><strong>Tip:</strong> By default, bags autoshuffle. This way, if you try to get an entry from the bag and it is empty, the bag will automatically re-fill and shuffle, then return a new object.</p>
+<pre><code class="Lua">bag:get( [autoShuffle] )
+</code></pre>
+
+<ul>
+<li><code>autoShuffle</code> (<code>true</code>) - If <code>true</code>, and out of entries, automatically shuffle the bag.</li>
+</ul>
+<pre><code class="Lua">
+local file = cards:get()         
+
+</code></pre>
+
+<h2 id="getcounts">getCounts</h2>
+<p>Return count of <em>Unused</em>, <em>Used</em>, and <em>Out</em> entries</p>
+<ul>
+<li><em>Unused</em> Entry - An entry in the bag that has not been 'gotten' since the last shuffle.</li>
+<li><em>Used</em> Entry - An entry in the bag that has been 'gotten' since the last shuffle.  Can't be gotten again till a new shuffle occurs.</li>
+<li><em>Out</em> Entry - A <em>used</em> entry that can't be gotten till it is <code>putBack</code> and a shuffle is done.  <em>Taken</em> entries are marked as <em>out</em>.</li>
+</ul>
+<pre><code class="Lua">bag:getCounts( )
+</code></pre>
+
+<pre><code class="Lua">
+local unused, used, out = cards:getCounts()
+
+print(&quot;Unused entries: &quot;, unused )
+print(&quot;  Used entries: &quot;, used )
+print(&quot;   Out entries: &quot;, out )
+
+</code></pre>
+
+<h2 id="take">take</h2>
+<p>Same as a <code>get()</code>, but entry is marked as <a href="../shufflebag#getcounts"><em>Out</em></a>.  This entry will not be takeable again until:</p>
+<ol>
+<li>It is <code>putBack()</code>, and</li>
+<li>The bag is re-shuffled.</li>
+</ol>
+<p><strong>Tip:</strong> By default, bags autoshuffle. This way, if you try to get an entry from the bag and it is empty, the bag will automatically re-fill and shuffle, then return a new object.</p>
+<pre><code class="Lua">bag:take( [autoShuffle] )
+</code></pre>
+
+<ul>
+<li><code>autoShuffle</code> (<code>true</code>) - If <code>true</code>, and out of entries, automatically shuffle the bag.</li>
+</ul>
+<pre><code class="Lua">
+local file = cards:take()         
+
+</code></pre>
+
+<h2 id="putback">putBack</h2>
+<p>Used to return an <a href="../shufflebag#getcounts"><em>Out</em></a> entry. </p>
+<p><strong>Warning:</strong> When you put back an entry it must be a valid entry that exactly matches a previously taken entry.  You are responsible for tracking references to entries you <code>take()</code>.</p>
+<pre><code class="Lua">bag:putBack( [entry] )
+</code></pre>
+
+<ul>
+<li><code>entry</code> (<code>nil</code>) - The exact entry you removed from the bag previously with <code>take()</code>.<ul>
+<li><strong>Tip:</strong>: If you pass nil (call with no argument), the last <a href="../shufflebag#getcounts"><em>Out</em></a> entry will be put back.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">
+cards:putBack( file )
+
+</code></pre>
+
+<h1 id="shuffle-bag-example">Shuffle Bag Example</h1>
+<pre><code class="Lua">
+local bag1
+
+local bag2
+
+local shuffleBag = ssk.shuffleBag
+
+local test = {}
+
+function test.run( group, params )
+   group = group or display.currentStage
+   params = params or {}
+
+   -- Run tests
+   bag1(group)
+
+   bag2(group)   
+
+end
+
+
+-- ==========================================================
+-- === Shuffle Bag Example 1
+-- ==========================================================
+bag1 = function( group )  
+
+    local cardGroup = display.newGroup()
+    group:insert( cardGroup )
+
+   local cards = shuffleBag.new( &quot;jack.png&quot;, &quot;king.png&quot;, &quot;queen.png&quot;, &quot;ace.png&quot; )
+
+   cards:shuffle()
+
+   local function showCards( button )
+      display.remove(cardGroup)
+      cardGroup = display.newGroup()
+      group:insert( cardGroup )
+
+      for i = 1, 4 do
+         local file = cards:get()         
+         local card = display.newImageRect( cardGroup, &quot;images/kenney/&quot; .. file, 140, 190 )
+         card.x = button.x + 160 * i
+         card.y = button.y
+      end
+   end
+
+   --
+   -- Basic button to 'run' showCards() when touched.
+   --   
+   local function onDeal( event )
+    showCards( event.target )
+   end
+   easyIFC:presetPush( group, &quot;default&quot;, left + 75, centerY - 110, 100, 40, &quot;Deal&quot;, onDeal,  { strokeWidth = 3 } )
+end
+
+
+-- ==========================================================
+-- === Shuffle Bag Example 2 - Insert +  Auto Reshuffle
+-- ==========================================================
+bag2 = function( group )  
+
+    local cardGroup = display.newGroup()
+    group:insert( cardGroup )
+
+   local cards = shuffleBag.new()
+
+   cards:insert( &quot;jack.png&quot; )
+   cards:insert( &quot;king.png&quot; )
+   cards:insert( &quot;queen.png&quot; )
+   cards:insert( &quot;ace.png&quot; )
+
+   cards:shuffle()
+
+   local group = display.newGroup()
+
+   local function showCards( button )
+      display.remove(cardGroup)
+      cardGroup = display.newGroup()
+      group:insert( cardGroup )
+
+      for i = 1, 5 do
+         local file = cards:get()         
+         local card = display.newImageRect( cardGroup, &quot;images/kenney/&quot; .. file, 140, 190 )
+         card.x = button.x + 160 * i
+         card.y = button.y
+      end
+   end
+
+   --
+   -- Basic button to 'run' showCards() when touched.
+   --   
+   local function onDeal( event )
+    showCards( event.target )
+   end
+   easyIFC:presetPush( group, &quot;default&quot;, left + 75, centerY + 110 , 100, 40, &quot;Deal&quot;, onDeal,  { strokeWidth = 3 } )
+end
+
+return test
+
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

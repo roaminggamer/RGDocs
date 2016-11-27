@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/libraries/easy_interfaces/"> 
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>Easy Interfaces (ssk.easyIFC) - Super Starter Kit 2</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../home/">Super Starter Kit 2</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">RG Docs</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../globals/">Globals</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../extensions/">Extensions</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../colors/">Colors (ssk.colors)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_standard/">Standard Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_arcs/">Arc Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_lines/">Line Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_layers/">Quick Layers (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_samples/">Samples (ssk.display)</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Easy Interfaces (ssk.easyIFC)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../system/">System (ssk.system.)</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../actions/">ssk.actions.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../android/">ssk.android.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../camera/">ssk.camera.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../cc/">ssk.cc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easy_inputs/">ssk.easyInputs.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../files/">ssk.files.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../misc/">ssk.misc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../persist/">ssk.persist.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../points/">ssk.points.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../security/">ssk.security.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../shufflebag/">ssk.shufflebag.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../social/">ssk.social.*</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../display_samples/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../system/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#easy-interfaces-sskeasyifc">Easy Interfaces (ssk.easyIFC:*)</a></li>
+        
+    
+        <li class="first-level "><a href="#button-factories">Button Factories</a></li>
+        
+            <li class="third-level"><a href="#button-parameters">Button Parameters</a></li>
+        
+            <li class="third-level"><a href="#making-button-presets">Making Button Presets</a></li>
+        
+            <li class="third-level"><a href="#button-instances">Button Instances</a></li>
+        
+            <li class="third-level"><a href="#button-listeners">Button Listeners</a></li>
+        
+    
+        <li class="first-level "><a href="#label-factories">Label Factories</a></li>
+        
+            <li class="third-level"><a href="#label-parameters">Label Parameters</a></li>
+        
+            <li class="third-level"><a href="#making-label-presets">Making Label Presets</a></li>
+        
+            <li class="third-level"><a href="#label-instances">Label Instances</a></li>
+        
+            <li class="third-level"><a href="#effects-sskeasyifc">Effects (ssk.easyIFC.*)</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="easy-interfaces-sskeasyifc">Easy Interfaces (ssk.easyIFC:*)</h1>
+<p>The <em>Easy Interfaces</em> library is a large library designed to produce:</p>
+<ul>
+<li><a href="../easy_interfaces/#button-factories"><strong>Buttons</strong></a> - Two-state buttons that execute a listener(s) to do 'work'.  Includes:<ul>
+<li>Push Buttons, Toggle Buttons, and Radio Buttons</li>
+</ul>
+</li>
+<li><a href="../easy_interfaces/#label-factories"><strong>Labels</strong></a> - Single-line text objects.</li>
+</ul>
+<p>This library has these features and benefits:</p>
+<ul>
+<li><strong>One Line Creation</strong> - Make interface objects with a single line of code.</li>
+<li><strong>Preset Libraries</strong>  - Create templates (presets) once and use them over-and-over.  </li>
+<li><strong>Selective Overrides</strong> - When using presets, override any setting(s) you need, in order to handle one-off cases while still getting the value from presets.</li>
+<li><strong>Meaningful Listeners</strong> - While buttons are implemented with touch listeners, I realized that the standard "began", "moved", and "ended" phases didn't really express the proper meaning for most new developers.  So, this library uses these explicit (contextual) <a href="../easy_interfaces/#button-listeners">listeners</a> instead: <a href="../easy_interfaces/#onpress">onPress</a>, <a href="../easy_interfaces/#onrelease">onRelease</a>, and <a href="../easy_interfaces/#onevent">onEvent</a>.</li>
+<li><strong>Hyper-Flexible Construction</strong> - You can use an arbitrary combination of images, rectangles, frames, etc. to build great looking buttons.</li>
+<li>... more</li>
+</ul>
+<p>Lastly, this library provides a number of useful <a href="../easy_interfaces/#effects">Effects</a> that can be used to give your menus (and other interfaces) juicy visual effects.</p>
+<h1 id="button-factories">Button Factories</h1>
+<table>
+<thead>
+<tr>
+<th align="left">Method Signatures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ssk.easyIFC:newButton( group [, params ] )</code></td>
+</tr>
+<tr>
+<td align="left">A <a href="../easy_interfaces/#button-parameters">parameterized</a> factory used by all other factories to build buttons.</td>
+</tr>
+<tr>
+<td align="left"><code>ssk.easyIFC:presetPush( group, presetName, x, y, w, h [, labelText [, onRelease [ , overrideParams ]]] )</code></td>
+</tr>
+<tr>
+<td align="left">Creates standard push-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record.</td>
+</tr>
+<tr>
+<td align="left"><code>ssk.easyIFC:presetToggle( group, presetName, x, y, w, h [, labelText [ , onEvent [, overrideParams ]]] )</code></td>
+</tr>
+<tr>
+<td align="left">Creates standard toggle-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record.</td>
+</tr>
+<tr>
+<td align="left"><code>ssk.easyIFC:presetRadio( group, presetName, x, y , w, h [, labelText [, onRelease [, overrideParams ]]] )</code></td>
+</tr>
+<tr>
+<td align="left">Creates standard radio-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>group</code> (<code>display.currentStage</code>) - Group to put button in.</li>
+<li><code>params</code> (<code>{}</code>) - See <a href="../easy_interfaces/#button-parameters">Button Parameters</a> below.</li>
+<li><code>presetName</code> (<code>"default"</code>) - Name of preset record to use for configuring button.<ul>
+<li>See <a href="../easy_interfaces/#making-button-presets">Making Button Presets</a> below.</li>
+</ul>
+</li>
+<li><code>x</code>, <code>y</code> - &lt; x, y &gt; position of button center. </li>
+<li><code>w</code>, <code>h</code> - Width and height of button.</li>
+<li><code>labelText</code> (<code>""</code>) - Optional text for button label.</li>
+<li><code>onRelease</code> (<code>nil</code>) - Listener to call when push/radio button is released.</li>
+<li><code>onEvent</code> (<code>nil</code>) - Listener to call when toggl button is toggled (on or off).</li>
+<li><code>overrideParams</code> (<code>nil</code>) - Optional table of properties to override from preset.<ul>
+<li>See <a href="../easy_interfaces/#button-parameters">Button Parameters</a> below.</li>
+</ul>
+</li>
+</ul>
+<h2 id="button-parameters">Button Parameters</h2>
+<p>The following list is designed as a quick reference to the many button parameters.  </p>
+<p>To learn about using these, please explore the samples <a href="../EFM">here</a>.</p>
+<ul>
+<li>General<ul>
+<li><code>buttonType</code> (<code>"push"</code>) - <code>"push"</code>, <code>"toggle"</code> <code>"radio"</code></li>
+<li><code>anchorX</code> (<code>0.5</code>) - Same as Corona SDK <a href="https://docs.coronalabs.com/daily/api/type/DisplayObject/anchorX.html">anchorX</a> (<em>external link</em>)</li>
+<li><code>anchorY</code> (<code>0.5</code>) - Same as Corona SDK <a href="https://docs.coronalabs.com/daily/api/type/DisplayObject/anchorY.html">anchorY</a> (<em>external link</em>)</li>
+<li><code>placeRelative</code> (<code>false</code>)- <strong>Experimental</strong> option that causes buttons to re-calculate their position relative to the sides of the screen.  (<strong>Use at your own risk.</strong>)</li>
+</ul>
+</li>
+<li>Label Parameters<ul>
+<li><code>emboss</code> (<code>false</code>) - Use <a href="https://docs.coronalabs.com/daily/api/library/display/newEmbossedText.html">embossed</a> label.        </li>
+<li><code>labelSize</code> (<code>20</code>) - Font size of label.</li>
+<li><code>labelColor</code> (<code>_K_</code>) - Label color when not selected.</li>
+<li><code>selLabelColor</code> (<code>_K_</code>) - Label color when selected.</li>
+<li><code>labelFont</code> (<code>gameFont</code> or <code>native.systemFontBold</code>) - Font to use for label.<ul>
+<li>See <a href="http://127.0.0.1:8000/quick_start/#configuring-ssk-2">Configuring SSK 2</a> to learn how to set <code>gameFont</code>.</li>
+</ul>
+</li>
+<li><code>labelOffset</code> (<code>{0,0}</code>) - Table of <code>x</code> and <code>y</code> offsets to apply to lable.  Helps center troublesome fonts or push the label above/below/left/right the button if you want that look.</li>
+<li><code>labelHorizAlign</code> (<code>"center"</code>) - Label alignments: <code>"left"</code>, <code>"center"</code>, <code>"right"</code>. <ul>
+<li><strong>Warning:</strong> Not thoroughly tested as I rarely use this feature.    </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rectangle Parameters - If you are using plain rectangles for the button representation.<ul>
+<li><code>unselRectFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for not selected representation of button.</li>
+<li><code>selRectFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for selected representation of button.</li>
+<li><code>cornerRadius</code> (<code>nil</code>) - EFM</li>
+</ul>
+</li>
+<li>Image Parameters - If you are using image rectangles for the button representation.<ul>
+<li><code>unselImgSrc</code> (<code>EFM</code>) - Path and filename of not selected image representation.</li>
+<li><code>selImgSrc</code> (<code>EFM</code>) - Path and filename of selected image representation.</li>
+<li><code>unselImgFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for not selected representation of button.</li>
+<li><code>selImgFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for selected representation of button.</li>
+</ul>
+</li>
+<li>Touch Masking Parameters<ul>
+<li><code>touchMask</code> (<code>nil</code>) - Optional mask image to restrict/enable touch areas on button.</li>
+<li><code>touchMaskW</code>, <code>touchMaskH</code> - Width and height of mask.</li>
+</ul>
+</li>
+<li>Stroke Parameters<ul>
+<li><code>unselStrokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for not selected representation of button.</li>
+<li><code>selStrokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for selected representation of button.</li>
+<li><code>strokeWidth</code> (<code>0</code>) - Stroke width of button.</li>
+<li><code>strokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for both representations of button. <ul>
+<li><strong>Tip:</strong> Overrides <code>unselStrokeColor</code> and <code>selStrokeColor</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Overlay Parameters - If you want to add an optional frame. (<strong>Tip:</strong> Frame is same size as button and <em>overlays</em> it.)<ul>
+<li><code>buttonOverlayRectColor</code> - If specified, create a rectangle using this color over the other visual elements.</li>
+<li><code>buttonOverlayImgSrc</code> - If specified, create an image rectangle using this path+filename over the other visual elements.</li>
+<li><code>buttonOverlayFillColor</code> - Optional fill color to shade image rectangle overlay.</li>
+</ul>
+</li>
+</ul>
+<h2 id="making-button-presets">Making Button Presets</h2>
+<p>Making a preset is as simple as:</p>
+<ol>
+<li>Specifying a table of <a href="../easy_interfaces/#button-parameters">Button Parameters</a>,</li>
+<li>Adding that table to the list of known button button presets using <code>addButtonPreset()</code>.</li>
+</ol>
+<pre><code class="Lua">
+local params = 
+{ 
+    labelColor         = {1,1,1,1},
+    labelSize          = 16,
+    labelFont          = gameFont,
+    labelOffset        = {0,1},
+    unselRectFillColor = { 0.25,  0.25,  0.25, 1},
+    selRectFillColor   = {0.5, 0.5, 0.5, 1},
+    strokeWidth        = 1,
+    strokeColor        = {1,1,1,0.5},
+    emboss             = false, 
+}
+ssk.easyIFC:addButtonPreset( &quot;default&quot;, params )
+
+</code></pre>
+
+<p>Later, you can use the preset like this:</p>
+<pre><code class="Lua">
+easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&quot; )
+
+</code></pre>
+
+<h3 id="default-presets">Default Presets</h3>
+<p>One great way to see how easy making presets is, is to look at the default presets that come with SSK 2.  </p>
+<p>The default SSK 2 presets can be found here: <code>~&lt;path to ssk2&gt;/interfaces/presets/default/</code>.</p>
+<h3 id="redefining-button-presets">Redefining Button Presets</h3>
+<p>You may redefine a preset at any time in two simple steps:</p>
+<ol>
+<li>Specifying a <strong>NEW</strong> table of <a href="../easy_interfaces/#button-parameters">Button Parameters</a>,</li>
+<li>Adding that table to the list of known button presets using <code>addButtonPreset()</code> using an exiting preset name.</li>
+</ol>
+<p>Any buttons created with that preset name after this change will use the new definition.</p>
+<p><strong>Tip:</strong> This is a handy feature.  You can create your interface using the built-in defaults.  Then, when you are ready, create a custom preset definition file and use the same preset names.  This will replace all the built-in presets with your own.</p>
+<h3 id="more-preset-examples">More Preset Examples</h3>
+<p>You can download examples of button presets <a href="../EFM">here</a>.</p>
+<h3 id="ready-made-presets">Ready-Made Presets</h3>
+<p>Eventually, I expect ready-made presets to be available for free and/or paid paid on:</p>
+<ul>
+<li><a href="../EFM">Corona SDK Marketplace</a></li>
+<li><a href="../EFM">SSK 2 Extras Page</a></li>
+</ul>
+<h2 id="button-instances">Button Instances</h2>
+<p>Button objects are regular display objects.  Thus, they have all the same properties and methods listed on the Corona SDK API <a href="https://docs.coronalabs.com/daily/api/library/display/index.html">display.*</a> reference page.</p>
+<p>In addition, all buttons have the following properties and methods:</p>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><code>isPressed</code> - <code>true</code> if button is currently in selected state.<ul>
+<li><strong>Tip:</strong> You should not modify this field, but rather treat it as a <em>read-only</em> property. </li>
+</ul>
+</li>
+</ul>
+<h3 id="methods">Methods</h3>
+<ul>
+<li><code>buttonInstance:pressed( )</code> - Returns <code>true</code> if the button is in a 'selected' state.</li>
+<li><code>buttonInstance:toggle( [ noDispatch ] )</code> - Toggle the button and execute its listener.<ul>
+<li><strong>Tip:</strong> If you do not want to execute the button's listener, pass <code>true</code> to the method.</li>
+</ul>
+</li>
+<li><code>buttonInstance:disable( )</code> - Disable the button.  <ul>
+<li>Disabled buttons ignore touches.</li>
+<li>Changes alpha of button to 0.5 to show user button is not selectable.    </li>
+</ul>
+</li>
+<li><code>buttonInstance:enable( )</code> - Enable a previously disabled button.<ul>
+<li>Changes alpha back to 1.0.</li>
+<li>Starts responding to touches again.</li>
+</ul>
+</li>
+<li><code>buttonInstance:isEnabled()</code> - Returns <code>true</code> if button is enabled.</li>
+<li><code>buttonInstance:getText( )</code> - Returns the string currently displayed in the label or <code>""</code> if blank.</li>
+<li><code>buttonInstance:setText( [ newText ] )</code> - Changes label text to <code>newText</code> or <code>""</code> if <code>newText</code> is not specified.</li>
+<li><code>buttonInstance:getTextColor()</code> - Returns a table representing the color of the label.</li>
+<li><code>buttonInstance:setLabelColor( color )</code> - Changes the color of the label.</li>
+<li><code>buttonInstance:adjustLabelOffset( offset )</code> - Modifies the offset of the label.</li>
+</ul>
+<h2 id="button-listeners">Button Listeners</h2>
+<p><em>Manually</em> writing a solid button-listener is not straight-forward and requires a surprisingly large and sophisticated piece of code.  This is often well beyond what most new and intermediate developers can do.</p>
+<p>First, different kinds of buttons should execute their listener code at different times:</p>
+<ul>
+<li><strong>Push Button</strong> - Users expect action to occur when button is released.</li>
+<li><strong>Toggle Button</strong> - Users expect the action to occur any time the button is released and changes state.</li>
+<li><strong>Radio Button</strong> - Users expect the action to occur when the button is released.</li>
+</ul>
+<p>Second, the listener should gracefully handle all the <em>weird</em> things users do, such as:</p>
+<ol>
+<li>Touch a button, slide the finger off the button, then release. - Button visuals should update to tell user the button isn't selected any more and then NOT call the listener.</li>
+<li>Touch, swipe off, swipe back on, release - Again, update the visuals so the user knows the button state and then call the listener.</li>
+<li>Touch the screen, then swipe onto a button - The button should entirely ignore this.  It is considered an '<em>accidental touch</em>'.</li>
+<li>Touch one button and swipe onto another - Similar to case #1 above, but second button doesn't update visually. This is another '<em>accidental touch</em>' scenario.</li>
+<li>... The list goes on and you've got to handle it all.</li>
+</ol>
+<p>Third, the listener should work equally well whether the developer has enabled 'multitouch' or not.</p>
+<p>To handle all of this, the <em>Easy Interfaces</em> library uses a single (shared) listener for all buttons.  This function is about 200 lines long and handles all of these interactions and button contexts. </p>
+<p>All buttons use this listener by default.  Then, if you want an action to happen at a particular contextual time, you supply your one (or more) small function(s) for one of these three named <a href="../easy_interfaces/#button-parameters">Button Parameters</a></p>
+<h3 id="onrelease">onRelease</h3>
+<p>This is the default listener for push and radio buttons. </p>
+<pre><code class="lua">
+-- Sample Push Button 'onRelease' Listener
+local function onRelease( event )
+    print(&quot;Pushed Button: &quot; .. tostring( event.target:getText() ) )
+end
+
+-- Create Two Push Buttons
+easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&quot;, onRelease )
+easyIFC:presetPush( group, &quot;default&quot;, 100, 150, 50, 40, &quot;World&quot;, onRelease )
+
+</code></pre>
+
+<p>If you press the buttons created by this code, they will print:</p>
+<blockquote>
+<p><code>"Pushed Button: Hello"</code> <strong>OR</strong> <code>"Pushed Button: World"</code> </p>
+</blockquote>
+<pre><code class="lua">
+-- Sample Radio Button 'onRelease' Listener
+local function onRelease( event )
+    print(&quot;Pushed Button: &quot; .. tostring( event.target:getText() ) )
+end
+
+-- Create Two Radio
+local first = easyIFC:presetRadio( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&quot;, onRelease )
+easyIFC:presetRadio( group, &quot;default&quot;, 100, 150, 50, 40, &quot;World&quot;, onRelease )
+
+first:toggle()
+
+</code></pre>
+
+<p>As soon as this code executes, the message <code>"Pushed Button: Hello"</code> will print.</p>
+<p>Then if you do any of these actions <em>NEXT</em>:</p>
+<ul>
+<li>Touch "Hello" button: Nothing is printed.</li>
+<li>Touch and release "World" button:<ul>
+<li>"Hello" button will de-select, </li>
+<li>"World Button" will select,</li>
+<li>Will be print:<blockquote>
+<p><code>"Pushed Button: World"</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Touch "World" button, swipe off button, release.<ul>
+<li>"World" button will change to its selected visual state and back to deselected.</li>
+<li>Nothing is printed.</li>
+</ul>
+</li>
+<li>Touch "Hello" button, swipe off, release.<ul>
+<li>No visual state change.</li>
+<li>Nothing is printed.</li>
+</ul>
+</li>
+</ul>
+<h3 id="onevent">onEvent</h3>
+<p>This is the default listener for Toggle Buttons.  It is called every time the buttons toggle-state changes.</p>
+<p><strong>Note:</strong> The listener is not called when the visual state updates, but when the finger is lifted.  i.e. Swiping on and off of a toggle button will not fire the listener.</p>
+<pre><code class="lua">
+-- Sample Toggle Button 'onEvent' Listener
+local function onToggle( event )
+    print(&quot;Pressed Button: &quot; .. tostring( event.target:getText() ) )
+    print(&quot;Is pressed ?= &quot; .. tostring( event.target:pressed() ) )
+end
+
+easyIFC:presetToggle( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&quot;, onToggle )
+easyIFC:presetToggle( group, &quot;default&quot;, 100, 150, 50, 40, &quot;World&quot;, onToggle )
+
+</code></pre>
+
+<p>If you touch these buttons, they will print a message any time you press and release the button.  As expected, they ignore all 'weird' interactions and don't fire their listener unless a real toggle occured.  Both buttons can be toggled and will ignore the state of the other button.</p>
+<pre><code class="lua">
+-- Sample Push Button 'onEvent' Listener
+local function onToggle( event )
+    print(&quot;Pressed Button: &quot; .. tostring( event.target:getText() ) )
+    print(&quot;Is pressed ?= &quot; .. tostring( event.target:pressed() ) )
+end
+
+easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&quot;, nil, { onEvent = onToggle } )
+easyIFC:presetPush( group, &quot;default&quot;, 100, 150, 50, 40, &quot;World&quot;, nil, { onEvent = onToggle } )
+
+</code></pre>
+
+<p>These buttons will fire two events.  First when you touch the button, and second when you release the button.</p>
+<p>If you touch a button and swipe away, you will not get the second event.</p>
+<h3 id="onpress">onPress</h3>
+<p>This listener is rarely used and excutes ONLY on the begining of a button touch.  i.e. It is called when the user first touches the button.</p>
+<pre><code class="lua">
+-- Sample Push Button 'onPress' Listener
+local function onPress( event )
+    print(&quot;Pressed Button: &quot; .. tostring( event.target:getText() ) )
+end
+
+easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&quot;, nil, { onPress = onPress } )
+
+</code></pre>
+
+<p>Touching this button will fire the listener immediately.  </p>
+<p>Swiping off and back onto the button is ignored and will not fire the listener again.  </p>
+<p>You must lift your finger and touch the button again to get a new call to the listener.</p>
+<hr />
+<h1 id="label-factories">Label Factories</h1>
+<table>
+<thead>
+<tr>
+<th align="left">Method Signatures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ssk.easyIFC:presetLabel( group, presetName, labelText, x, y [, params ] )</code></td>
+</tr>
+<tr>
+<td align="left">Creates label <a href="../easy_interfaces/#label-instances">instance</a> using a <a href="../easy_interfaces/#making-label-presets">preset</a> record.</td>
+</tr>
+<tr>
+<td align="left"><code>labels:quickLabel( group, labelText, x, y [, font [, fontSize [, textColor [ , anchorX [, anchorY ]]]]] )</code></td>
+</tr>
+<tr>
+<td align="left">Creates a label.</td>
+</tr>
+<tr>
+<td align="left"><code>labels:quickEmbossedLabel( group, labelText, x, y [, font [, fontSize [, embossTextColor [, embossHighlightColor [, embossShadowColor ]]]]] )</code></td>
+</tr>
+<tr>
+<td align="left">Creates an embossed label.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>group</code> (<code>display.currentStage</code>) - Group to put button in.</li>
+<li><code>params</code> (<code>{}</code>) - See <a href="../easy_interfaces/#label-parameters">Label Parameters</a> below.</li>
+<li><code>presetName</code> (<code>"default"</code>) - Name of preset record to use for configuring Label.</li>
+<li>See <a href="../easy_interfaces/#making-label-presets">Making Label Presets</a> below.</li>
+<li><code>x</code>, <code>y</code> - &lt; x, y &gt; position of button center. </li>
+<li><code>anchorX</code>, <code>anchorY</code> (<code>0.5</code>) - You can optionally select the anchors for <code>quickLabel()</code></li>
+<li><code>labelText</code> (<code>""</code>) - Optional text for label.</li>
+<li><code>font</code> (<code>gameFont</code> or <code>native.systemFontBold</code>) - Font to use for label.
+        + See <a href="http://127.0.0.1:8000/quick_start/#configuring-ssk-2">Configuring SSK 2</a> to learn how to set <code>gameFont</code>.</li>
+<li><code>fontSize</code> (<code>20</code>) - Font size of label.</li>
+<li><code>textColor</code> (<code>_K_</code>) - Label color.</li>
+<li><code>embossTextColor</code> (<code>_K_</code>) - Color of embossed label's main stroke.</li>
+<li><code>embossHighlightColor</code> (<code>_K_</code>) - Color of embossed label's highlight stroke.</li>
+<li><code>embossShadowColor</code> (<code>_K_</code>) - Color of embossed label's shadow stroke.</li>
+</ul>
+<h2 id="label-parameters">Label Parameters</h2>
+<p><a href="../easy_interfaces/#making-label-presets">Presets</a> take all of the following parameters:</p>
+<ul>
+<li><code>font</code> (<code>gameFont</code> or <code>native.systemFontBold</code>) - Font to use for label.
+        + See <a href="http://127.0.0.1:8000/quick_start/#configuring-ssk-2">Configuring SSK 2</a> to learn how to set <code>gameFont</code>.</li>
+<li><code>fontSize</code> (<code>20</code>) - Font size of label.</li>
+<li><code>textColor</code> (<code>_K_</code>) - Label color.</li>
+<li><code>embossTextColor</code> (<code>_W_</code>) - Color of embossed label's main stroke.</li>
+<li><code>embossHighlightColor</code> (<code>_W_</code>) - Color of embossed label's highlight stroke.</li>
+<li><code>embossShadowColor</code> (<code>_K_</code>) - Color of embossed label's shadow stroke.</li>
+</ul>
+<h2 id="making-label-presets">Making Label Presets</h2>
+<p>Making a preset is as simple as:</p>
+<ol>
+<li>Specifying a table of <a href="../easy_interfaces/#label-parameters">Label Parameters</a>,</li>
+<li>Adding that table to the list of known label presets using <code>addLabelPreset()</code>.</li>
+</ol>
+<pre><code class="Lua">
+local params = 
+{ 
+    font                 = &quot;Bounty Hunter.ttf&quot;,
+    fontSize             = 32,
+    embossTextColor      = _K_,
+    embossHighlightColor = _Y_,
+    embossShadowColor    = _G_,
+}
+ssk.easyIFC:addLabelPreset( &quot;bounty&quot;, params )
+
+</code></pre>
+
+<p>Later, you can use the preset like this:</p>
+<pre><code class="Lua">
+-- Use 'bounty' preset, but override fontSize
+easyIFC:presetPush( group, &quot;bounty&quot;, &quot;Boom!&quot;, 100, 100, { fontSize = 60 } )
+
+</code></pre>
+
+<h2 id="label-instances">Label Instances</h2>
+<p>Label Instances are regular display objects.  Thus, they have all the same properties and methods listed on the Corona SDK API <a href="https://docs.coronalabs.com/daily/api/library/display/index.html">display.*</a> reference page.</p>
+<p>In addition, <a href="../easy_interfaces/#making-label-presets">Preset</a> Label Instances have the following properties and methods:</p>
+<h3 id="properties_1">Properties</h3>
+<ul>
+<li>All <a href="../easy_interfaces/#label-parameters">Label Parameters</a> are stored as (<em>read-only</em>) properties on the label instance.</li>
+</ul>
+<h3 id="methods_1">Methods</h3>
+<ul>
+<li><code>buttonInstance:getText( )</code> - Returns current text in label.</li>
+<li><code>buttonInstance:setText( [ newText ] )</code> - Changes label text to <code>newText</code> or <code>""</code> if <code>newText</code> is not specified.</li>
+<li><code>buttonInstance:setFillColors( embossTextColor, embossHighlightColor, embossShadowColor )</code> - Allows you to change the emboss colors of embossed label instances.</li>
+<li><code>buttonInstance:setLabelColor( color )</code> - Changes the color of the label.</li>
+<li><code>buttonInstance:adjustLabelOffset( offset )</code> - Modifies the offset of the label.</li>
+</ul>
+<hr />
+<h2 id="effects-sskeasyifc">Effects (ssk.easyIFC.*)</h2>
+<p>The button library comes with a set of functions that let you:</p>
+<ul>
+<li>Make useful visual calculations.</li>
+<li>Apply cool visual effects.</li>
+</ul>
+<p><strong>Tip:</strong> While they were first designed for interfaces, These functions can also be used on other display objects.</p>
+<h3 id="visual-calculations">Visual Calculations</h3>
+<ul>
+<li><code>isInBounds( obj, obj2 )</code> - Returns <code>true</code> if <em>position</em> of <code>obj</code> over <code>obj2</code> (inside its axis-aligned-bounding-box.)<ul>
+<li><strong>Remember</strong>: Anchors affect <em>position</em>.</li>
+<li>Uses Corona SDK built-in <a href="https://docs.coronalabs.com/daily/api/type/DisplayObject/contentBounds.html">obj2.ontentBounds</a>.</li>
+</ul>
+</li>
+<li><code>isInBounds_alt( obj, obj2 )</code> - Same as <code>isInBounds( obj, obj2 )</code>, but bounds of <code>obj2</code> are calculated.</li>
+</ul>
+<h3 id="fly-ins">Fly Ins</h3>
+<p><img alt="Fly Ins" src="../..\images\flyin.gif" /></p>
+<ul>
+<li><code>easyFlyIn( obj, params )</code> - Cuase an object to move/rotate/scale to some offset, then fly-in to its original rotation and/or position and/or scale.<ul>
+<li><code>delay</code> (<code>0</code>) - Wait this long before starting the fly in.</li>
+<li><code>time</code> (<code>250</code>) - Take this long to fly in.</li>
+<li><code>myEasing</code> (<code>easing.outBack</code>) - Use this transition <a href="https://docs.coronalabs.com/daily/api/library/easing/index.html">easing</a> while flying in.</li>
+<li><code>sox</code> (<code>0</code>) - Starting <code>x</code> offset.</li>
+<li><code>soy</code> (<code>0</code>) - Starting <code>y</code> offset.</li>
+<li><code>sdr</code> (<code>0</code>) - Starting <code>rotation</code> delta.</li>
+<li><code>sdsx</code> (<code>1</code>) - Starting <code>xScale</code>.  (<strong>Cannot be 0.</strong>)</li>
+<li><code>sdsy</code> (<code>1</code>) - Starting <code>yScale</code>.  (<strong>Cannot be 0.</strong>)</li>
+<li><code>onComplete</code> (<code>nil</code>) - Function to call when transition completes.   <ul>
+<li><code>function( obj ) ... end</code> </li>
+</ul>
+</li>
+<li><code>onCompleteLabel</code> (<code>nil</code>) - If <code>obj</code> has an object (usually text object) assigned to property <code>obj.label</code>, and you provide this parameter, the associated function will be called on the label.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">
+-- Silly Game
+
+local function onPress( event )
+
+   print(&quot;You Win!&quot;)
+
+   transition.cancel( event.target )
+
+   event.target.rotation = 0
+
+   event.target:setText(&quot;Winner!&quot;)
+
+   event.target:disable()
+
+end
+
+local button = ssk.easyIFC:presetPush( group, &quot;default&quot;, 150, 100, 250, 40, 
+                                       &quot;Press Before Spinning Stops!&quot;, onPress )
+
+local onComplete
+local onComplete2
+
+onComplete = function( obj )
+
+    ssk.easyIFC.easyFlyIn( button, { delay = 1000, time = 1000, sdr = 720, 
+                                     myEasing = easing.linear,
+                                     onComplete = onComplete2 } ) 
+
+end
+
+onComplete2 = function( obj )
+
+    obj:disable()
+    obj:setText( &quot;Loser!&quot; )
+
+end
+
+ssk.easyIFC.easyFlyIn( button, { time = 500, sox = -fullw, onComplete = onComplete  } ) 
+
+</code></pre>
+
+<h3 id="flipping">Flipping</h3>
+<p><img alt="easyFlip" src="../..\images\easyflip.gif" /></p>
+<ul>
+<li><code>easyFlip( obj, params )</code> - Like flipping a card.</li>
+</ul>
+<pre><code class="Lua">
+   local button = ssk.easyIFC:presetPush( group, &quot;default&quot;, x, y, 250, 40, &quot;Flippy Button&quot; )
+
+   ssk.easyIFC.easyFlip( button, { delay = 500, time = 1250, myEasing = easing.outBounce } )
+
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

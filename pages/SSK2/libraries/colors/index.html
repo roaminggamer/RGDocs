@@ -1,355 +1,298 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>ssk.colors.* - Super Starter Kit 2</title>
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/libraries/colors/"> 
+    <link rel="shortcut icon" href="../../img/favicon.ico">
 
-  <link rel="shortcut icon" href="../../img/favicon.ico">
+    <title>Colors (ssk.colors) - Super Starter Kit 2</title>
 
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "ssk.colors.*";
-    var mkdocs_page_input_path = "libraries\colors.md";
-    var mkdocs_page_url = "/libraries/colors/";
-  </script>
-  
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
 
-  
+    
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
 
-  <div class="wy-grid-for-nav">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href="../../home/" class="icon icon-home"> Super Starter Kit 2</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../home/">RG Docs (Home)</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../..">About</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../quick_start/">Quick Start</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../globals/">Globals</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../extensions/">Extensions</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Core</span></li>
-
-        
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
             
-    <li class="toctree-l1 ">
-        <a class="" href="../">Alphabetic Index</a>
-        
-    </li>
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
 
-        
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../home/">Super Starter Kit 2</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">ssk.colors.*</a>
-        
-            <ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">RG Docs</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../globals/">Globals</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../extensions/">Extensions</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">Colors (ssk.colors)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_standard/">Standard Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_arcs/">Arc Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_lines/">Line Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_layers/">Quick Layers (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_samples/">Samples (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easy_interfaces/">Easy Interfaces (ssk.easyIFC)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../system/">System (ssk.system.)</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../actions/">ssk.actions.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../android/">ssk.android.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../camera/">ssk.camera.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../cc/">ssk.cc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easy_inputs/">ssk.easyInputs.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../files/">ssk.files.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../misc/">ssk.misc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../persist/">ssk.persist.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../points/">ssk.points.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../security/">ssk.security.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../shufflebag/">ssk.shufflebag.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../social/">ssk.social.*</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
             
-                <li class="toctree-l3"><a href="#colors-library-sskcolors">Colors Library (ssk.colors.*)</a></li>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
                 
-                    <li><a class="toctree-l4" href="#easy-colors-sskcolorseasy">Easy Colors (ssk.colors.easy.*)</a></li>
+                    <li >
+                        <a rel="next" href="../../extensions/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../display_standard/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
                 
-                    <li><a class="toctree-l4" href="#color-helpers-and-utilities-sskcolors">Color Helpers and Utilities (ssk.colors.*)</a></li>
                 
-                    <li><a class="toctree-l4" href="#rgb-functions-sskcolors">RGB Functions (ssk.colors.*)</a></li>
-                
-                    <li><a class="toctree-l4" href="#hsl-functions-sskcolors">HSL Functions (ssk.colors.*)</a></li>
-                
-                    <li><a class="toctree-l4" href="#example-1-rgb-hsl">Example 1 - RGB &amp; HSL</a></li>
-                
-                    <li><a class="toctree-l4" href="#example-2-pastels">Example 2 - Pastels</a></li>
-                
-            
             </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../display_standard/">ssk.display.* (Standard Factories)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../display_arcs/">ssk.display.* (Arc Factories)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../display_lines/">ssk.display.* (Line Factories)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../display_layers/">ssk.display.* (Quick Layers)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../display_samples/">ssk.display.* Samples</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../easy_interfaces_motivation/">ssk.easyIFC.* (Motivation)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../easy_interfaces_buttons/">ssk.easyIFC.* (Button Factories)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../easy_interfaces_button_presets/">ssk.easyIFC.* (Button Presets)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../easy_interfaces_button_instance/">ssk.easyIFC.* (Button Instance)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../easy_interfaces_labels/">ssk.easyIFC.* (Label Factories)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../system/">ssk.system.*</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Solutions</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../">Alphabetic Index</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../actions/">ssk.actions.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../android/">ssk.android.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../camera/">ssk.camera.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../cc/">ssk.cc.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../easy_inputs/">ssk.easyInputs.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../files/">ssk.files.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../math2D/">ssk.math2d.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../misc/">ssk.misc.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../persist/">ssk.persist.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../points/">ssk.points.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../security/">ssk.security.*</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../social/">ssk.social.*</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../help/">Help!</a>
-        
-    </li>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../home/">Super Starter Kit 2</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../../home/">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Core &raquo;</li>
-        
-      
-    
-    <li>ssk.colors.*</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
+        </div>
+    </div>
 </div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="colors-library-sskcolors">Colors Library (ssk.colors.*)</h1>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#colors-library-sskcolors">Colors Library (ssk.colors.*)</a></li>
+        
+            <li class="third-level"><a href="#easy-colors-sskcolorseasy">Easy Colors (ssk.colors.easy.*)</a></li>
+        
+            <li class="third-level"><a href="#color-helpers-and-utilities-sskcolors">Color Helpers and Utilities (ssk.colors.*)</a></li>
+        
+    
+        <li class="first-level "><a href="#rgb">RGB</a></li>
+        
+            <li class="third-level"><a href="#rgb-functions-sskcolors">RGB Functions (ssk.colors.*)</a></li>
+        
+    
+        <li class="first-level "><a href="#hsl">HSL</a></li>
+        
+            <li class="third-level"><a href="#hsl-functions-sskcolors">HSL Functions (ssk.colors.*)</a></li>
+        
+    
+        <li class="first-level "><a href="#examples">Examples</a></li>
+        
+            <li class="third-level"><a href="#rgb-hsl">RGB &amp; HSL</a></li>
+        
+            <li class="third-level"><a href="#pastels">Pastels</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="colors-library-sskcolors">Colors Library (ssk.colors.*)</h1>
 <h2 id="easy-colors-sskcolorseasy">Easy Colors (ssk.colors.easy.*)</h2>
 <p><strong>Tip:</strong> These variables are exported as globals when SSK <code>init()</code> parameter <code>exportColors</code> is <code>true</code>.</p>
 <table>
@@ -396,6 +339,7 @@ rect:setFillColor( unpack( _PURPLE_ ) )
 </code></pre>
 
 <h2 id="color-helpers-and-utilities-sskcolors">Color Helpers and Utilities (ssk.colors.*)</h2>
+<p><strong>Tip:</strong> These functions are exported as globals when SSK <code>init()</code> parameter <code>exportColors</code> is <code>true</code>.</p>
 <ul>
 <li><code>hexcolor( code )</code> - converts hex color codes to rgba Graphics 2.0 value</li>
 <li><code>randomColor( )</code> - Returns random  color selected from 'Easy Colors'.</li>
@@ -417,7 +361,19 @@ rect3:setFillColor( unpack( rgba2( { 255, 0, 255 } ) ) )
 
 </code></pre>
 
+<h1 id="rgb">RGB</h1>
+<ul>
+<li>R - Red component in the range [0,1].</li>
+<li>G - Green component in the range [0,1].</li>
+<li>B - Blue component in the range [0,1].</li>
+<li>A - Alpha in the range [0,1].  Assumed to be 1 if not specified.</li>
+</ul>
+<p>(<em>Graphcs 1.0 used values in the range [0,255].</em>)</p>
+<pre><code class="Lua">   local lightGrey = { 0.25, 0.25, 0.25, 1 }
+</code></pre>
+
 <h2 id="rgb-functions-sskcolors">RGB Functions (ssk.colors.*)</h2>
+<p><strong>Tip:</strong> These functions are NOT exported and can <em>only</em> be accessed via <code>ssk.colors.*</code> or localizations.</p>
 <ul>
 <li><code>rgb2hsl( r, g, b, a )</code> - Convert RGB color to HSL color table.</li>
 <li><code>mixRGB( c1, c2 )</code> - Evenly mix two RGBa colors.</li>
@@ -428,7 +384,32 @@ rect3:setFillColor( unpack( rgba2( { 255, 0, 255 } ) ) )
 <li><code>rgbTriadic( r, g, b, a )</code> - Converts RGB color to HSL and applies hslTriadic(), then returns two rgb colors.</li>
 <li><code>rgbSplitComplementary( r, g, b, a, angle )</code> - Converts RGB color to HSL and applies hslSplitComplementary(), then returns two rgb colors.</li>
 </ul>
+<h1 id="hsl">HSL</h1>
+<ul>
+<li>H - Hue is a degree on the color wheel in the range [0,360).<ul>
+<li>0 is red, 120 is green, 240 is blue. </li>
+<li>Numbers in between reflect different shades.</li>
+</ul>
+</li>
+<li>S - Saturation is a percentage value in the range [0,1].<ul>
+<li>1.0 is the full color.</li>
+</ul>
+</li>
+<li>L - Lightness is also a percentage value in the range [0,1].<ul>
+<li>0.0 is dark (black), </li>
+<li>1.0 1.0 is light (white)</li>
+<li>0.5 is the average</li>
+</ul>
+</li>
+<li>A - Alpha in the range [0,1].  Assumed to be 1 if not specified.  </li>
+</ul>
+<pre><code class="Lua">
+   local cornFlowerBlue = hsl2rgb( 219, 0.79, 0.66, 1.0 )
+
+</code></pre>
+
 <h2 id="hsl-functions-sskcolors">HSL Functions (ssk.colors.*)</h2>
+<p><strong>Tip:</strong> These functions are NOT exported and can <em>only</em> be accessed via <code>ssk.colors.*</code> or localizations.</p>
 <ul>
 <li><code>hsl2rgb( h, s, l, a )</code> - Convert HSL color to RGB color table.</li>
 <li><code>hueOffset( h, s, l, a, angle )</code> - Rotate hue by 'angle' degrees</li>
@@ -436,7 +417,8 @@ rect3:setFillColor( unpack( rgba2( { 255, 0, 255 } ) ) )
 <li><code>hslTriadic( h, s, l, a )</code> - Return two triadic neighbors of color</li>
 <li><code>hslSplitComplementary( h, s, l, a, angle )</code> - Return two complementary split angle colors. </li>
 </ul>
-<h2 id="example-1-rgb-hsl">Example 1 - RGB &amp; HSL</h2>
+<h1 id="examples">Examples</h1>
+<h2 id="rgb-hsl">RGB &amp; HSL</h2>
 <p><img alt="Colors Example" src="../..\images\colors.jpg" /></p>
 <pre><code class="Lua">function test.run( group, params )
    group = group or display.currentStage
@@ -607,7 +589,7 @@ rect3:setFillColor( unpack( rgba2( { 255, 0, 255 } ) ) )
 end
 </code></pre>
 
-<h2 id="example-2-pastels">Example 2 - Pastels</h2>
+<h2 id="pastels">Pastels</h2>
 <p><img alt="Pastels Example" src="../..\images\pastels.jpg" /></p>
 <pre><code class="Lua">
 function test.run( group, params )
@@ -648,50 +630,53 @@ end
 </code></pre>
 
 <hr />
-<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../display_standard/" class="btn btn-neutral float-right" title="ssk.display.* (Standard Factories)">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../" class="btn btn-neutral" title="Alphabetic Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+        
     </div>
-  
 
-  <hr/>
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
 
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-    </section>
+    </body>
 
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../display_standard/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
 </html>
