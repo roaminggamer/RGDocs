@@ -276,6 +276,9 @@
         <li class="first-level "><a href="#color-switch-like-shape-with-arcs">'Color Switch'-like Shape with Arcs</a></li>
         
     
+        <li class="first-level "><a href="#pac-man-with-poly-arc">'Pac-Man' with Poly Arc</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -417,36 +420,60 @@ physics.addBody( block, &quot;static&quot; )
 <p><img alt="Color Switch" src="../..\images\colorswitch.gif" /></p>
 <pre><code class="lua">
 local spinGroup = display.newGroup()
-
 group:insert(spinGroup)
-
-spinGroup.x = centerX - 200
-
-spinGroup.y = centerY 
-
+spinGroup.x = centerX - 300
+spinGroup.y = centerY - 50
 ssk.display.arc( spinGroup, 0, 0 , 
-                  { w = 100, h = 100, s = 0, e = 90, 
+                  { radius = 50, s = 0, sweep = 90,
                     strokeColor = _R_, strokeWidth = 6 })
-
 ssk.display.arc( spinGroup, 0, 0 , 
-                  { w = 100, h = 100, s = 90, e = 180, 
+                  { radius = 50, s = 90, sweep = 90,
                     strokeColor = _G_, strokeWidth = 6 })
-
-    ssk.display.arc( spinGroup, 0, 0 , 
-                  { w = 100, h = 100, s = 180, e = 270, 
-                    strokeColor = _B_, strokeWidth = 6 })
-
 ssk.display.arc( spinGroup, 0, 0 , 
-                  { w = 100, h = 100, s = 270, e = 360, 
+                  { radius = 50, s = 180, sweep = 90, 
+                    strokeColor = _B_, strokeWidth = 6 })
+ssk.display.arc( spinGroup, 0, 0 , 
+                  { radius = 50, s = 270, sweep = 90,
                     strokeColor = _Y_, strokeWidth = 6 })
 
-
 function spinGroup.enterFrame( self )
-
-   self.rotation = self.rotation + 5 
-
+    self.rotation = self.rotation + 5 
 end; listen(&quot;enterFrame&quot;, spinGroup)
 
+
+-- Poly Arcs
+ssk.display.polyArc( group, centerX-150, centerY-50,
+      { radius = 50, s = 0, sweep = 180, incr = -0.25, fillColor = _O_ } )
+
+
+ssk.display.polyArc( group, centerX-50, centerY-50,
+      { radius = 50, s = 45, sweep = 180, incr = -0.25, fillColor = _P_ } )
+
+
+</code></pre>
+
+<hr />
+<h1 id="pac-man-with-poly-arc">'Pac-Man' with Poly Arc</h1>
+<p><img alt="Pac-Man" src="../..\images\chomp.gif" /></p>
+<pre><code class="lua">
+local pac
+local curSep = 90
+local curDir = -15
+
+local function chomp()
+    display.remove(pac)
+   pac = ssk.display.polyArc( group, centerX - 200, centerY + 100,
+      { radius = 50, s = 90 - curSep/2, sweep = 360 - curSep, incr = -0.1, fillColor = _Y_ } )
+   curSep = curSep + curDir
+   if( curSep &lt;= 0 ) then
+    curSep = 0
+    curDir = 15
+   elseif( curSep &gt;= 90 ) then
+    curSep = 90
+    curDir = -15
+   end
+end
+timer.performWithDelay( 30, chomp, -1 )
 
 </code></pre>
 

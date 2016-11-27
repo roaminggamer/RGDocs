@@ -260,22 +260,121 @@
     
         <li class="first-level active"><a href="#line-factories-sskdisplay">Line Factories (ssk.display.*)</a></li>
         
+            <li class="third-level"><a href="#newline">newLine</a></li>
+        
+            <li class="third-level"><a href="#newangleline">newAngleLine</a></li>
+        
+            <li class="third-level"><a href="#newpointsline">newPointsLine</a></li>
+        
+    
+        <li class="first-level "><a href="#complete-example">Complete Example</a></li>
+        
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="line-factories-sskdisplay">Line Factories (ssk.display.*)</h1>
-<p>(EFM Docs incomplete)</p>
+<p>This library contains a number of function for creating complex and customizable lines.</p>
 <p><img alt="Lines" src="../..\images\lines.gif" /></p>
+<table>
+<thead>
+<tr>
+<th align="right">Function</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><a href="#newline">ssk.display.newLine</a></td>
+<td align="left">Hyper-configurable line-segment factory, using two end-points to define the line.</td>
+</tr>
+<tr>
+<td align="right"><a href="#newangleline">ssk.display.newAngleLine</a></td>
+<td align="left">Hyper-configurable line-segment factory using a start-point, an angle, and a length to define the line.</td>
+</tr>
+<tr>
+<td align="right"><a href="#newpointsline">ssk.display.newPointsLine</a></td>
+<td align="left">Hyper-configurable line-segment factory, using a <a href="../points">points list</a> to define the line.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="newline">newLine</h2>
+<p>Hyper-configurable line-segment factory, using two end-points to define the line.</p>
+<pre><code class="Lua">ssk.display.newLine( group, startX, startY, endX, endY [, visualParams ] )
+</code></pre>
+
 <ul>
-<li><code>newLine( group, startX, startY, endX, endY, visualParams )</code> - Hyper-configurable line-segment factory, using two end-points to define the line.</li>
-<li><code>newAngleLine( group, startX, startY, angle, length, visualParams )</code> - Hyper-configurable line-segment factory using a start-point, an angle, and a length to define the line.</li>
-<li><code>newPointsLine( group, points, visualParams )</code> - Hyper-configurable line-segment factory, using a points-list to define the line.</li>
-<li><code>arrowhead( group, x, y, width, height, visualParams )</code> - Arrow head utility function that is primarily used by line builders.</li>
-<li><code>arrow( group, startX, startY, endX, endY, visualParams )</code> - Arrow utility function that is primarily used by line builders.</li>
-<li><code>arrow2( group, startX, startY, angle, length, visualParams)</code> - Angle based arrow utility function that is primarily used by line builders.</li>
+<li><code>group</code> - Group to add arc object to.</li>
+<li><code>startX</code>, <code>startY</code> - &lt; x, y &gt; start of line.</li>
+<li><code>endX</code>, <code>endX</code> - &lt; x, y &gt; end of line.</li>
+<li><code>visualParams</code> - Table of arc properties.<ul>
+<li><code>dashLen</code> (<code>1</code>) - Length of line-segments making up line.  <ul>
+<li>Ignored for <code>style == "solid"</code>.</li>
 </ul>
+</li>
+<li><code>fill</code> (<code>_W_</code>) - Fill color if  using <code>style</code> <code>"dotted"</code> or <code>"arrows"</code></li>
+<li><code>gapLen</code> (<code>0</code>) - Width of spaces between line-segments.<ul>
+<li>Ignored for <code>style == "solid"</code>.</li>
+</ul>
+</li>
+<li><code>stroke</code> (<code>_W_</code>) - Color of line.</li>
+<li><code>strokeWidth</code> (<code>1</code>) - Thickness of line.</li>
+<li><code>style</code> (<code>"solid"</code>) - <code>"solid"</code>, <code>"dashed"</code>, <code>"dotted"</code>, <code>"arrows"</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="newangleline">newAngleLine</h2>
+<p>Hyper-configurable line-segment factory using a start-point, an angle, and a length to define the line. </p>
+<pre><code class="Lua">ssk.display.newAngleLine( group, startX, startY, angle, length [, visualParams ] )
+</code></pre>
+
+<ul>
+<li><code>group</code> - Group to add arc object to.</li>
+<li><code>startX</code>, <code>startY</code> - &lt; x, y &gt; start of line.</li>
+<li><code>angle</code>  - Angle line runs in where 0 is up, 90 is right, ...</li>
+<li><code>visualParams</code> - Table of arc properties.<ul>
+<li><code>dashLen</code> (<code>1</code>) - Length of line-segments making up line.  <ul>
+<li>Ignored for <code>style == "solid"</code>.</li>
+</ul>
+</li>
+<li><code>fill</code> (<code>_W_</code>) - Fill color if  using <code>style</code> <code>"dotted"</code> or <code>"arrows"</code></li>
+<li><code>gapLen</code> (<code>0</code>) - Width of spaces between line-segments.<ul>
+<li>Ignored for <code>style == "solid"</code>.</li>
+</ul>
+</li>
+<li><code>stroke</code> (<code>_W_</code>) - Color of line.</li>
+<li><code>strokeWidth</code> (<code>1</code>) - Thickness of line.</li>
+<li><code>style</code> (<code>"solid"</code>) - <code>"solid"</code>, <code>"dashed"</code>, <code>"dotted"</code>, <code>"arrows"</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="newpointsline">newPointsLine</h2>
+<p>Hyper-configurable line-segment factory, using a <a href="../points">points list</a> to define the line.</p>
+<pre><code class="Lua">ssk.display.newPointsLine( group, points [, visualParams ] )
+</code></pre>
+
+<ul>
+<li><code>group</code> - Group to add arc object to.</li>
+<li><code>points</code> - <a href="../points">Points list</a>, defining each point on line.</li>
+<li><code>visualParams</code> - Table of arc properties.<ul>
+<li><code>dashLen</code> (<code>1</code>) - Length of line-segments making up line.  <ul>
+<li>Ignored for <code>style == "solid"</code>.</li>
+</ul>
+</li>
+<li><code>fill</code> (<code>_W_</code>) - Fill color if  using <code>style</code> <code>"dotted"</code> or <code>"arrowheads"</code></li>
+<li><code>gapLen</code> (<code>0</code>) - Width of spaces between line-segments.<ul>
+<li>Ignored for <code>style == "solid"</code>.</li>
+</ul>
+</li>
+<li><code>stroke</code> (<code>_W_</code>) - Color of line.</li>
+<li><code>strokeWidth</code> (<code>1</code>) - Thickness of line.</li>
+<li><code>style</code> (<code>"solid"</code>) - <code>"solid"</code>, <code>"dashed"</code>, <code>"dotted"</code>, <code>"arrowheads"</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="complete-example">Complete Example</h1>
+<p>Example of all line factories in use.</p>
 <pre><code class="Lua">
 function test.run( group, params )
    group = group or display.currentStage

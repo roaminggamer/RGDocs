@@ -279,12 +279,13 @@
 <p>Furthermore, the returned <code>layers</code> object provides two very useful methods:</p>
 <ul>
 <li><code>layers:destroy()</code> - Destroys the entire hierachy and all its children in one call.</li>
-<li><code>layers:purge( name )</code> - Purge the contents of any named layer.<ul>
-<li><strong>Warning:</strong> Do not purge layers that contain child layers as this will destroy the child layers.  Instead purge each child individually.</li>
-<li><strong>EFM - Remove this restriction.</strong></li>
+<li><code>layers:purge( [ name [, recursive ] )</code> - Purge the contents of any named layer.<ul>
+<li><code>name</code> (<code>nil</code>) - Name of layer to purge.  If not specified, purge starting from root of hierarchcy.</li>
 </ul>
 </li>
+<li><code>recursive</code> (<code>true</code>) - Clear objects in this layer and all objects in all child layers.</li>
 </ul>
+<p><strong>Tip:</strong> Purges do not destroy the layer groups themselves, so the hierarchy is maintained.</p>
 <h2 id="creating-a-layer-system">Creating A Layer System</h2>
 <pre><code class="Lua">
 -- Create Layers For Current Scene

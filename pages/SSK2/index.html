@@ -282,6 +282,10 @@
         
             <li class="third-level"><a href="#dont-panic">Don't Panic</a></li>
         
+            <li class="third-level"><a href="#are-you-using-the-latest-version">Are You Using The Latest Version?</a></li>
+        
+            <li class="third-level"><a href="#are-you-getting-errors">Are You Getting Errors?</a></li>
+        
             <li class="third-level"><a href="#are-you-typing-ssk2">Are you typing ssk2?</a></li>
         
             <li class="third-level"><a href="#ssk-2-ssk-legacy">SSK 2 ~= SSK Legacy</a></li>
@@ -333,7 +337,7 @@
 <h1 id="installing-ssk-2">Installing SSK 2</h1>
 <p>To use SSK 2, simply:</p>
 <ol>
-<li>Copy the ssk2 folder and its contents to the same folder and your main.lua file.</li>
+<li>Copy the ssk2 folder and its contents to the same folder as your main.lua file.</li>
 <li>Add this to main.lua at or very near the top of the file:</li>
 </ol>
 <pre><code>require &quot;ssk2.loadSSK&quot;
@@ -379,27 +383,27 @@ _G.ssk.init()
 <h2 id="dont-panic">Don't Panic</h2>
 <p>Are you having a problem with SSK 2?  If so, don't panic.</p>
 <p>I regularly update SSK 2 and its co-products.  Most of the time problems can simply be traced back to not having the most up-to-date version of SSK 2.</p>
-<h3 id="are-you-getting-errors">Are You Getting Errors?</h3>
-<p>Did you get an error dialog, or are you seeing error/warning message in the console?  </p>
-<p>If so, read them and see if you've made a mistake on the line indicated.</p>
-<p>If you think its me and not you, post a question in the forums.  (See <a href="#posting-questions-to-the-forums">Posting Questions To Forums</a> below.)</p>
-<h3 id="are-you-using-the-latest-version">Are You Using The Latest Version?</h3>
+<h2 id="are-you-using-the-latest-version">Are You Using The Latest Version?</h2>
 <p>Add this code at the end of main.lua</p>
 <pre><code>print( &quot;SSK VERSION: &quot; .. ssk.getVersion() )
 </code></pre>
 
 <p>If this prints out <code>SSK VERSION: 2016.001</code> you have the latest version. </p>
 <p>If not, then go download a new copy from your store page.</p>
-<p><strong>Tip:</strong> While you're at it, if you are also using one or more co-products, be sure to check that they are up-to-date.</p>
+<p><strong>Tip:</strong> While you are checking, be sure to check that your co-products are up-to-date too.</p>
+<h2 id="are-you-getting-errors">Are You Getting Errors?</h2>
+<p>Did you get an error dialog, or are you seeing error/warning message in the console?  </p>
+<p>If so, read them and see if you have made a mistake on the line indicated.</p>
+<p>If you think its me and not you, post a question in the forums.  (See <a href="#posting-questions-to-the-forums">Posting Questions To Forums</a> below.)</p>
 <h2 id="are-you-typing-ssk2">Are you typing <code>ssk2</code>?</h2>
 <p>You may have noticed that while this is called SSK <strong>2</strong>, I still use the old naming convention <code>ssk.someFunction()</code> in my samples.  </p>
 <p>"Why," you ask?</p>
-<p>I am a lazy coder and proud of it. Even one extra letter is too much repetetive typing for me.</p>
+<p>I am a lazy coder and proud of it. Even one extra letter is too much repetetive typing for me.  Also, I'm and <em>old dog</em>, and as the saying goes, <a href="http://idioms.thefreedictionary.com/You+can't+teach+an+old+dog+new+tricks">"You can't teach an old dog new tricks."</a></p>
 <p>So, if you have been doing this: <code>ssk2.someFunction()</code>, get rid of the <code>2</code> and you'll be good to go.</p>
 <h2 id="ssk-2-ssk-legacy">SSK 2 ~= SSK Legacy</h2>
-<p>This is the guide for SSK 2.  If you're trying to use Legacy SSK and following this guide... well many things have changed.  Please consider getting SSK 2.  </p>
+<p>This is the guide for SSK 2.  If you are trying to use Legacy SSK and following this guide... well many things have changed.  Please consider getting SSK 2.</p>
 <blockquote>
-<p>It will be worth every penny!  - The Roaming Gamer</p>
+<p><a href="http://https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872">Get It Now!</a> It will be worth every penny!  - The Roaming Gamer</p>
 </blockquote>
 <h2 id="posting-questions-to-the-forums">Posting Questions To The Forums</h2>
 <p>I will be providing help (exclusively) through the <a href="https://forums.coronalabs.com/forum/624-tools-services/">Corona SDK Forums</a>.  (<em>Sorry: Direct e-mails will not be answered.</em>)</p>
@@ -407,7 +411,7 @@ _G.ssk.init()
 <ol>
 <li>Post to this forum: <a href="https://forums.coronalabs.com/forum/624-tools-services/">https://forums.coronalabs.com/forum/624-tools-services/</a></li>
 <li>Make sure the <strong>title</strong> starts with: <strong>SSK2</strong> and includes a short and meaninful name for the the problem.<ul>
-<li>Example Title: <code>SSK2: Paint Fill Parameter Not Working</code></li>
+<li>Example Title: <code>SSK2: newImageRect() Paint Fill Parameter Not Working</code></li>
 </ul>
 </li>
 <li>In the <strong>body</strong> of the post tell me all of the following:<ul>
@@ -415,7 +419,7 @@ _G.ssk.init()
 <li>Version of SSK you are using.</li>
 <li>Version of Corona SDK you are using.</li>
 <li>OS you are developing under.</li>
-<li>Where you are encountering the issue (Simulator(s) and or Device(s))</li>
+<li>Where you are encountering the issue (Simulator(s) and or Device(s)).</li>
 </ul>
 </li>
 <li><strong>Error Message(s) (If Any)</strong><ul>
@@ -494,5 +498,5 @@ The more effort you put into your post, the better I will be able to help you. <
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-11-27 08:34:13.759000
+Build Date UTC : 2016-11-27 21:46:57.444000
 -->

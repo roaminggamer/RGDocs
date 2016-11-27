@@ -260,6 +260,36 @@
     
         <li class="first-level active"><a href="#miscellaneous-sskmisc">Miscellaneous (ssk.misc.*)</a></li>
         
+            <li class="third-level"><a href="#blocktouchesforduration">blockTouchesForDuration</a></li>
+        
+            <li class="third-level"><a href="#createeasymeter">createEasyMeter</a></li>
+        
+            <li class="third-level"><a href="#countlocals">countLocals</a></li>
+        
+            <li class="third-level"><a href="#easyalert">easyAlert</a></li>
+        
+            <li class="third-level"><a href="#easyblur">easyBlur</a></li>
+        
+            <li class="third-level"><a href="#easyremoteimage">easyRemoteImage</a></li>
+        
+            <li class="third-level"><a href="#easyshake">easyShake</a></li>
+        
+            <li class="third-level"><a href="#easyunderline">easyUnderline</a></li>
+        
+            <li class="third-level"><a href="#fittext">fitText</a></li>
+        
+            <li class="third-level"><a href="#getimagesize">getImageSize</a></li>
+        
+            <li class="third-level"><a href="#isconnectedtowww">isConnectedToWWW</a></li>
+        
+            <li class="third-level"><a href="#isvalidemail">isValidEmail</a></li>
+        
+            <li class="third-level"><a href="#edges-and-centers">Edges and Centers</a></li>
+        
+            <li class="third-level"><a href="#rotateabout">rotateAbout</a></li>
+        
+            <li class="third-level"><a href="#secondstotimer">secondsToTimer</a></li>
+        
     
     </ul>
 </div></div>
@@ -278,63 +308,64 @@
 </thead>
 <tbody>
 <tr>
-<td align="center">blockTouchesForDuration</td>
-<td align="center">createEasyMeter</td>
-<td align="center">countLocals</td>
+<td align="center"><a href="#blocktouchesforduration">blockTouchesForDuration</a></td>
+<td align="center"><a href="#createeasymeter">createEasyMeter</a></td>
+<td align="center"><a href="#countlocals">countLocals</a></td>
 </tr>
 <tr>
-<td align="center">easyAlert</td>
-<td align="center">easyBlur</td>
-<td align="center">easyRemoteImage</td>
+<td align="center"><a href="#easyalert">easyAlert</a></td>
+<td align="center"><a href="#easyblur">easyBlur</a></td>
+<td align="center"><a href="#easyremoteimage">easyRemoteImage</a></td>
 </tr>
 <tr>
-<td align="center">easyShake</td>
-<td align="center">easyUnderline</td>
-<td align="center">fitText</td>
+<td align="center"><a href="#easyshake">easyShake</a></td>
+<td align="center"><a href="#easyunderline">easyUnderline</a></td>
+<td align="center"><a href="#fittext">fitText</a></td>
 </tr>
 <tr>
-<td align="center">getImageSize</td>
-<td align="center">isConnectedToWWW</td>
-<td align="center">isValidEmail</td>
+<td align="center"><a href="#getimagesize">getImageSize</a></td>
+<td align="center"><a href="#isconnectedtowww">isConnectedToWWW</a></td>
+<td align="center"><a href="#isvalidemail">isValidEmail</a></td>
 </tr>
 <tr>
-<td align="center">oBottom</td>
-<td align="center">oHorizCenter</td>
-<td align="center">oLeft</td>
+<td align="center"><a href="#edges-and-centers">oBottom</a></td>
+<td align="center"><a href="#edges-and-centers">oHorizCenter</a></td>
+<td align="center"><a href="#edges-and-centers">oLeft</a></td>
 </tr>
 <tr>
-<td align="center">oRight</td>
-<td align="center">oTop</td>
-<td align="center">oVertCenter</td>
+<td align="center"><a href="#edges-and-centers">oRight</a></td>
+<td align="center"><a href="#edges-and-centers">oTop</a></td>
+<td align="center"><a href="#edges-and-centers">oVertCenter</a></td>
 </tr>
 <tr>
-<td align="center">rotateAbout</td>
-<td align="center">secondsToTimer</td>
+<td align="center"><a href="#rotateabout">rotateAbout </a></td>
+<td align="center"><a href="#secondstotimer">secondsToTimer</a></td>
 <td align="center"></td>
 </tr>
 </tbody>
 </table>
+<h2 id="blocktouchesforduration">blockTouchesForDuration</h2>
 <ul>
-<li><code>blockTouchesForDuration( [ duration [ , subtle ] ] )</code> - Creates a temporary display object that will block all touches for <code>duration</code> (<code>1000</code>).      <ul>
+<li><code>ssk.misc.blockTouchesForDuration( [ duration [ , subtle ] ] )</code> - Creates a temporary display object that will block all touches for <code>duration</code> (<code>1000</code>).     <ul>
 <li>By default, the blocker is black and up-fades from 0% to 50% opaque over 350 ms.  However, if you want to hide this effect, set subtle to <code>true</code>.</li>
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="createeasymeter">createEasyMeter</h2>
 <ul>
-<li><code>createEasyMeter( [ x , [ y, [ width, [ fontSize ] ] ] ] )</code> - Creates a memory + texture memory meter in the middle of the screen.  You can place it elsewhere and change the size by supplying values for the parameters.</li>
+<li><code>ssk.misc.createEasyMeter( [ x , [ y, [ width, [ fontSize ] ] ] ] )</code> - Creates a memory / texture memory meter in the middle of the screen.  You can place it elsewhere and change the size by supplying values for the parameters.</li>
 </ul>
-<hr />
+<h2 id="countlocals">countLocals</h2>
 <ul>
-<li><code>countLocals()</code> - This debug feature prints out the number of local variables that are in scope at the line where you call the function.  <ul>
+<li><code>ssk.misc.countLocals()</code> - This debug feature prints out the number of local variables that are in scope at the line where you call the function.  <ul>
 <li>Lua has a limit of 200 locals in scope at any one time.  This function lets you check for how close you are.</li>
 <li>Only works in simulator since it requires the 'debug' library which is not included on devices.</li>
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="easyalert">easyAlert</h2>
 <ul>
-<li><code>easyAlert( title, msg, buttons )</code> - A simplified 'dialog' builder that uses <a href="https://docs.coronalabs.com/daily/api/library/native/showAlert.html">native.showAlert()</a> to create a pop-up dialog.  <ul>
+<li><code>ssk.misc.easyAlert( title, msg, buttons )</code> - A simplified 'dialog' builder that uses <a href="https://docs.coronalabs.com/daily/api/library/native/showAlert.html">native.showAlert()</a> to create a pop-up dialog.  <ul>
 <li><code>title</code> - Text at top of dialog box.  </li>
 <li><code>msg</code> - Body of message.  Multiple lines and line-breaks (<code>\n</code>) allowed.</li>
 <li>buttons - Table of buttons and optional functions they call when pressed.</li>
@@ -352,9 +383,9 @@ easyAlert( &quot;Delete Player&quot;,
 
 </code></pre>
 
-<hr />
+<h2 id="easyblur">easyBlur</h2>
 <ul>
-<li><code>easyBlur( [ group, [ time, [ color, [ params ] ] ]  )</code> - Create a display object that is a blurred image of what was on the screen when this function was called.<ul>
+<li><code>ssk.misc.easyBlur( [ group, [ time, [ color, [ params ] ] ]  )</code> - Create a display object that is a blurred image of what was on the screen when this function was called.<ul>
 <li><code>group</code> (<code>display.currentStage</code>) - Insert blur object into this group.</li>
 <li><code>time</code> (<code>0</code>) - Time it takes (in millseconds) for the blur to fade in from <code>alpha == 0</code>.</li>
 <li><code>color</code> (<code>{0.5,0.5,0.5}</code>) - Shade blur object with this fill color.</li>
@@ -367,9 +398,9 @@ easyAlert( &quot;Delete Player&quot;,
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="easyremoteimage">easyRemoteImage</h2>
 <ul>
-<li><code>easyRemoteImage( curImg, fileName, imageURL, baseDirectory )</code> - With this function you can fill an existing display object with a remote image.  You simply call this function and when the download is complete, the existing <code>curImg</code> object will be filled with the remote image file.  <ul>
+<li><code>ssk.misc.easyRemoteImage( curImg, fileName, imageURL, baseDirectory )</code> - With this function you can fill an existing display object with a remote image.  You simply call this function and when the download is complete, the existing <code>curImg</code> object will be filled with the remote image file.  <ul>
 <li><code>curImg</code> - Display object to be filled with remote image.  <ul>
 <li><strong>Tip:</strong> I usually fill this object with a local placeholder image so it looks professional till the image is received.</li>
 </ul>
@@ -380,19 +411,19 @@ easyAlert( &quot;Delete Player&quot;,
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="easyshake">easyShake</h2>
 <ul>
-<li><code>easyShake( obj, amplitude, time )</code> - Shake any object of the entire screen.  Nice juicy effect!<ul>
+<li><code>ssk.misc.easyShake( obj, amplitude, time )</code> - Shake any object of the entire screen.  Nice juicy effect!<ul>
 <li><code>obj</code> (<code>display.currentStage</code>) - Object or group to shake.</li>
 <li><code>amplitude</code> (<code>100</code>) - How much to shake.</li>
 <li><code>time</code> (<code>1000</code>) - How long to shake for.</li>
-<li>Credit: http://forums.coronalabs.com/topic/53736-simple-shake-easing-code-and-demo/</li>
+<li>Credit: <a href="http://forums.coronalabs.com/topic/53736-simple-shake-easing-code-and-demo/">Forum Post: Simple shake easing code and demo</a></li>
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="easyunderline">easyUnderline</h2>
 <ul>
-<li><code>easyUnderline( obj, [ color, [ strokeWidth, [ extraWidth, [ yOffset ]]]] )</code> - Draw a line under any object. I use this for text objects mostly.<ul>
+<li><code>ssk.misc.easyUnderline( obj, [ color, [ strokeWidth, [ extraWidth, [ yOffset ]]]] )</code> - Draw a line under any object. I use this for text objects mostly.<ul>
 <li><code>obj</code> - Object to 'underline'.  Line length is automatically as wide as this object.</li>
 <li><code>color</code> (<code>_W_</code>) - Color of line.</li>
 <li><code>strokeWidth</code> (<code>1</code>) - Stroke width of line.   </li>
@@ -401,39 +432,39 @@ easyAlert( &quot;Delete Player&quot;,
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="fittext">fitText</h2>
 <ul>
-<li><code>fitText( obj, origText, maxWidth )</code> - Reduces the length of a string till the text object <code>obj</code> fits <code>maxWidth</code> (pixels). <code>origText</code> is the initial string value of <code>obj</code>.</li>
+<li><code>ssk.misc.fitText( obj, origText, maxWidth )</code> - Reduces the length of a string till the text object <code>obj</code> fits <code>maxWidth</code> (pixels). <code>origText</code> is the initial string value of <code>obj</code>.</li>
 </ul>
-<hr />
+<h2 id="getimagesize">getImageSize</h2>
 <ul>
-<li><code>getImageSize ( path [ , basePath ] )</code> - Returns <code>width</code>, <code>height</code> of an image.<ul>
+<li><code>ssk.misc.getImageSize ( path [ , basePath ] )</code> - Returns <code>width</code>, <code>height</code> of an image.<ul>
 <li><code>path</code> - File name path including name of file.</li>
 <li><code>basePath</code> (<code>system.ResourceDirectory</code>) - Base type of file path.</li>
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="isconnectedtowww">isConnectedToWWW</h2>
 <ul>
-<li><code>isConnectedToWWW( [url] )</code> - Checks to see if <code>url</code> can be reached.  Default is <code>"www.google.com"</code></li>
+<li><code>ssk.misc.isConnectedToWWW( [url] )</code> - Checks to see if <code>url</code> can be reached.  Default is <code>"www.google.com"</code></li>
 </ul>
-<hr />
+<h2 id="isvalidemail">isValidEmail</h2>
 <ul>
-<li><code>isValidEmail ( val )</code> - Returns true if <code>val</code> <em>seems</em> like a valid email address.</li>
+<li><code>ssk.misc.isValidEmail ( val )</code> - Returns true if <code>val</code> <em>seems</em> like a valid email address.</li>
 </ul>
-<hr />
+<h2 id="edges-and-centers">Edges and Centers</h2>
 <p><strong>Tip:</strong> The following x-/y- position finders do not care what the anchors are.</p>
 <ul>
-<li><code>oBottom( obj )</code> - Returns pixel y-position object <code>obj</code> bottom.</li>
-<li><code>oHorizCenter( obj )</code> - Returns pixel x-position of object <code>obj</code> center.</li>
-<li><code>oLeft( obj )</code> - Returns pixel x-position of object <code>obj</code> left.</li>
-<li><code>oRight( obj )</code> - Returns pixel x-position of object <code>obj</code> right.</li>
-<li><code>oTop( obj )</code> - Returns pixel y-position of object <code>obj</code> top.</li>
-<li><code>oVertCenter( obj )</code> - Returns pixel y-position of object <code>obj</code> center.</li>
+<li><code>ssk.misc.oBottom( obj )</code> - Returns pixel y-position object <code>obj</code> bottom.</li>
+<li><code>ssk.misc.oHorizCenter( obj )</code> - Returns pixel x-position of object <code>obj</code> center.</li>
+<li><code>ssk.misc.oLeft( obj )</code> - Returns pixel x-position of object <code>obj</code> left.</li>
+<li><code>ssk.misc.oRight( obj )</code> - Returns pixel x-position of object <code>obj</code> right.</li>
+<li><code>ssk.misc.oTop( obj )</code> - Returns pixel y-position of object <code>obj</code> top.</li>
+<li><code>ssk.misc.oVertCenter( obj )</code> - Returns pixel y-position of object <code>obj</code> center.</li>
 </ul>
-<hr />
+<h2 id="rotateabout">rotateAbout</h2>
 <ul>
-<li><code>rotateAbout( obj, [ x, [ y, [ params ]]] )</code> - Rotate object <code>obj</code> about the position &lt; <code>x</code>, <code>y</code> &gt;.<ul>
+<li><code>ssk.misc.rotateAbout( obj, [ x, [ y, [ params ]]] )</code> - Rotate object <code>obj</code> about the point &lt;<code>x</code>,<code>y</code>&gt;.<ul>
 <li><code>obj</code> - Object to rotate about a point.</li>
 <li><code>x</code>, <code>y</code> (<code>centerX</code>, <code>centerY</code>) - The point.</li>
 <li><code>params</code> - Table of options controlling the rotate:<ul>
@@ -450,9 +481,9 @@ easyAlert( &quot;Delete Player&quot;,
 </ul>
 </li>
 </ul>
-<hr />
+<h2 id="secondstotimer">secondsToTimer</h2>
 <ul>
-<li><code>secondsToTimer( [ seconds, [ version ] ] )</code> - Converts <code>seconds</code> into one of three different time formats.<ul>
+<li><code>ssk.misc.secondsToTimer( [ seconds, [ version ] ] )</code> - Converts <code>seconds</code> into one of three different time formats.<ul>
 <li><code>seconds</code> (<code>0</code>) - Count of seconds to convert to a timer format.</li>
 <li><code>seconds</code> (<code>1</code>) - Timer format to produce.<ul>
 <li><code>1</code> - Return string with this format: <code>"minutes:seconds"</code></li>
