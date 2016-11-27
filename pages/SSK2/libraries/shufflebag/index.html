@@ -182,12 +182,6 @@
                         
                             
 <li >
-    <a href="../files/">ssk.files.*</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../math2D/">ssk.math2d.*</a>
 </li>
 
@@ -285,7 +279,7 @@
             <li class="third-level"><a href="#putback">putBack</a></li>
         
     
-        <li class="first-level "><a href="#shuffle-bag-example">Shuffle Bag Example</a></li>
+        <li class="first-level "><a href="#complete-shuffle-bag-examples">Complete Shuffle Bag Examples</a></li>
         
     
     </ul>
@@ -320,9 +314,6 @@ local bag = ssk.shuffleBag.new( &quot;jack.png&quot;, &quot;king.png&quot;, &quo
 <th align="center"></th>
 <th align="center"></th>
 <th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
 </tr>
 </thead>
 <tbody>
@@ -330,6 +321,8 @@ local bag = ssk.shuffleBag.new( &quot;jack.png&quot;, &quot;king.png&quot;, &quo
 <td align="center"><a href="../shufflebag/#get">get</a></td>
 <td align="center"><a href="../shufflebag/#getcounts">getCounts</a></td>
 <td align="center"><a href="../shufflebag/#insert">insert</a></td>
+</tr>
+<tr>
 <td align="center"><a href="../shufflebag/#putback">putBack</a></td>
 <td align="center"><a href="../shufflebag/#shuffle">shuffle</a></td>
 <td align="center"><a href="../shufflebag/#take">take</a></td>
@@ -432,7 +425,7 @@ cards:putBack( file )
 
 </code></pre>
 
-<h1 id="shuffle-bag-example">Shuffle Bag Example</h1>
+<h1 id="complete-shuffle-bag-examples">Complete Shuffle Bag Examples</h1>
 <pre><code class="Lua">
 local bag1
 
@@ -485,7 +478,9 @@ bag1 = function( group )
    local function onDeal( event )
     showCards( event.target )
    end
-   easyIFC:presetPush( group, &quot;default&quot;, left + 75, centerY - 110, 100, 40, &quot;Deal&quot;, onDeal,  { strokeWidth = 3 } )
+   easyIFC:presetPush( group, &quot;default&quot;, 
+                       left + 75, centerY - 110, 100, 40, 
+                       &quot;Deal&quot;, onDeal, { strokeWidth = 3 } )
 end
 
 
@@ -527,7 +522,9 @@ bag2 = function( group )
    local function onDeal( event )
     showCards( event.target )
    end
-   easyIFC:presetPush( group, &quot;default&quot;, left + 75, centerY + 110 , 100, 40, &quot;Deal&quot;, onDeal,  { strokeWidth = 3 } )
+   easyIFC:presetPush( group, &quot;default&quot;, 
+                       left + 75, centerY + 110, 100, 40, 
+                       &quot;Deal&quot;, onDeal, { strokeWidth = 3 } )
 end
 
 return test

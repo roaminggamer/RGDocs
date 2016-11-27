@@ -182,12 +182,6 @@
                         
                             
 <li >
-    <a href="../files/">ssk.files.*</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../math2D/">ssk.math2d.*</a>
 </li>
 
@@ -248,7 +242,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../files/">
+                        <a rel="prev" href="../math2D/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -266,15 +260,50 @@
     
         <li class="first-level active"><a href="#easy-inputs-sskeasyinputs">Easy Inputs (ssk.easyInputs.*)</a></li>
         
-            <li class="third-level"><a href="#easy-input-factories">Easy Input Factories</a></li>
+    
+        <li class="first-level "><a href="#easy-input-factories">Easy Input Factories</a></li>
+        
+            <li class="third-level"><a href="#onetouch">oneTouch</a></li>
+        
+            <li class="third-level"><a href="#twotouch">twoTouch</a></li>
+        
+            <li class="third-level"><a href="#onestick">oneStick</a></li>
+        
+            <li class="third-level"><a href="#twostick">twoStick</a></li>
+        
+            <li class="third-level"><a href="#onestickonetouch">oneStickOneTouch</a></li>
         
             <li class="third-level"><a href="#joystick-factory">Joystick Factory</a></li>
         
-            <li class="third-level"><a href="#easy-input-instances">Easy Input Instances</a></li>
+    
+        <li class="first-level "><a href="#easy-input-instances">Easy Input Instances</a></li>
         
-            <li class="third-level"><a href="#easy-input-listeners">Easy Input Listeners</a></li>
+            <li class="third-level"><a href="#one-touch-instance">One Touch Instance</a></li>
         
-            <li class="third-level"><a href="#show-me-examples">Show Me Examples!</a></li>
+            <li class="third-level"><a href="#two-touch-instance">Two Touch Instance</a></li>
+        
+            <li class="third-level"><a href="#one-stick-instance">One Stick Instance</a></li>
+        
+            <li class="third-level"><a href="#two-stick-instance">Two Stick Instance</a></li>
+        
+            <li class="third-level"><a href="#one-stick-one-touch-instance">One Stick + One Touch Instance</a></li>
+        
+            <li class="third-level"><a href="#joystick-instance">Joystick Instance</a></li>
+        
+    
+        <li class="first-level "><a href="#easy-input-listeners">Easy Input Listeners</a></li>
+        
+            <li class="third-level"><a href="#one-touch-listeners">One Touch Listeners</a></li>
+        
+            <li class="third-level"><a href="#two-touch-listeners">Two Touch Listeners</a></li>
+        
+            <li class="third-level"><a href="#one-stick-one-touch-listeners">One Stick + One Touch Listeners</a></li>
+        
+            <li class="third-level"><a href="#one-stick-listeners">One Stick Listeners</a></li>
+        
+            <li class="third-level"><a href="#two-stick-listeners">Two Stick Listeners</a></li>
+        
+            <li class="third-level"><a href="#virtual-joystick-listeners">Virtual Joystick Listeners</a></li>
         
     
     </ul>
@@ -323,8 +352,8 @@
 <li><a href="../easy_inputs/#onestickonetouch">One Stick + One Touch</a> -  One side of the screen is a button, one side hosts a virtual joystick. </li>
 </ul>
 <p><strong>Note:</strong> Each of the three 'stick' factories uses the '<a href="../easy_inputs/#joystick-factory">Joystick Factory</a>' to build the virtual joystick(s).</p>
-<h2 id="easy-input-factories">Easy Input Factories</h2>
-<h3 id="onetouch">oneTouch</h3>
+<h1 id="easy-input-factories">Easy Input Factories</h1>
+<h2 id="onetouch">oneTouch</h2>
 <p>The entire screen is a button.</p>
 <pre><code class="Lua">ssk.easyInputs.oneTouch.create( [ group [ , params ]] )
 </code></pre>
@@ -358,7 +387,7 @@ ssk.easyInputs.oneTouch.create( group, { debugEn = true, keyboardEn = true } )
 
 </code></pre>
 
-<h3 id="twotouch">twoTouch</h3>
+<h2 id="twotouch">twoTouch</h2>
 <p>The screen is split down the middle and each half (left &amp; right) is treated as a button.</p>
 <pre><code class="Lua">ssk.easyInputs.twoTouch.create( [ group [ , params ]] )
 </code></pre>
@@ -391,7 +420,7 @@ ssk.easyInputs.twoTouch.create( group, { debugEn = true, keyboardEn = true } )
 
 </code></pre>
 
-<h3 id="onestick">oneStick</h3>
+<h2 id="onestick">oneStick</h2>
 <p>A single virtual joystick is created anywhere you touch the screen and tracks your finger till you lift it. </p>
 <pre><code class="Lua">ssk.easyInputs.oneStick.create( [ group [ , params ]] )
 </code></pre>
@@ -423,7 +452,7 @@ ssk.easyInputs.oneStick.create( group, { debugEn = true, joyParams = { doNorm = 
 
 </code></pre>
 
-<h3 id="twostick">twoStick</h3>
+<h2 id="twostick">twoStick</h2>
 <p>The screen is split in half horizontally, each side (left &amp; right) hosting a virtual joystick. </p>
 <pre><code class="Lua">ssk.easyInputs.twoStick.create( [ group [ , params ]] )
 </code></pre>
@@ -461,7 +490,7 @@ ssk.easyInputs.twoStick.create( group, { debugEn = true, joyParams = { doNorm = 
 
 </code></pre>
 
-<h3 id="onestickonetouch">oneStickOneTouch</h3>
+<h2 id="onestickonetouch">oneStickOneTouch</h2>
 <p>One side of the screen is a button, one side hosts a virtual joystick.  </p>
 <p>By default, the left-side is the joystick and the right is the button, but this can be swapped.</p>
 <pre><code class="Lua">ssk.easyInputs.oneStickOneTouch.create( [ group [ , params ]] )
@@ -565,8 +594,8 @@ joystick.create( nil, left + 30, bottom - 30 )
 
 </code></pre>
 
-<h2 id="easy-input-instances">Easy Input Instances</h2>
-<h3 id="one-touch-instance">One Touch Instance</h3>
+<h1 id="easy-input-instances">Easy Input Instances</h1>
+<h2 id="one-touch-instance">One Touch Instance</h2>
 <p>The 'One Touch Instance' is a composite object contained in display group that catches touches and converts them into a custom Runtime event.  This event can the be listed for for anywhere and by any object(s).</p>
 <p>Additionally, this 'instance' has these methods:</p>
 <ul>
@@ -576,7 +605,7 @@ joystick.create( nil, left + 30, bottom - 30 )
 <li><code>getPressed()</code> - Returns <code>true</code> if the instance is currently being 'touched'.</li>
 <li><code>finalize()</code> - The factory adds its own '<a href="https://docs.coronalabs.com/daily/api/event/finalize/index.html">finalize</a>' method, so don't add one yourself.</li>
 </ul>
-<h3 id="two-touch-instance">Two Touch Instance</h3>
+<h2 id="two-touch-instance">Two Touch Instance</h2>
 <p>The 'Two Touch Instance' is a composite object contained in display group that catches touches and converts them into a custom Runtime events.  These events can the be listed for for anywhere and by any object(s).</p>
 <p>Additionally, this 'instance' has these methods:</p>
 <ul>
@@ -585,19 +614,19 @@ joystick.create( nil, left + 30, bottom - 30 )
 <li><code>wake()</code> - Resume listenting for inputs.</li>
 <li><code>finalize()</code> - The factory adds its own '<a href="https://docs.coronalabs.com/daily/api/event/finalize/index.html">finalize</a>' method, so don't add one yourself.</li>
 </ul>
-<h3 id="one-stick-instance">One Stick Instance</h3>
+<h2 id="one-stick-instance">One Stick Instance</h2>
 <p>The 'One Stick Instance' is a composite object contained in display group that catches touches and converts them into a custom Runtime event.  This event can the be listed for for anywhere and by any object(s).</p>
 <p>Additionally, this 'instance' has this methods:</p>
 <ul>
 <li><code>destroy()</code> - Destroys and cleans up the object listeners entirely.</li>
 </ul>
-<h3 id="two-stick-instance">Two Stick Instance</h3>
+<h2 id="two-stick-instance">Two Stick Instance</h2>
 <p>The 'Two Stick Instance' is a composite object contained in display group that catches touches and converts them into a custom Runtime events.  These events can the be listed for for anywhere and by any object(s).</p>
 <p>Additionally, this 'instance' has this methods:</p>
 <ul>
 <li><code>destroy()</code> - Destroys and cleans up the object listeners entirely.</li>
 </ul>
-<h3 id="one-stick-one-touch-instance">One Stick + One Touch Instance</h3>
+<h2 id="one-stick-one-touch-instance">One Stick + One Touch Instance</h2>
 <p>The 'One Stick + One Touch Instance' is a composite object contained in display group that catches touches and converts them into a custom Runtime events.  These events can the be listed for for anywhere and by any object(s).</p>
 <p>Additionally, this 'instance' has these methods:</p>
 <ul>
@@ -607,11 +636,11 @@ joystick.create( nil, left + 30, bottom - 30 )
 <li><code>getPressed()</code> - Returns <code>true</code> if the button side of the instance is currently being 'touched'.</li>
 <li><code>finalize()</code> - The factory adds its own '<a href="https://docs.coronalabs.com/daily/api/event/finalize/index.html">finalize</a>' method, so don't add one yourself.</li>
 </ul>
-<h3 id="joystick-instance">Joystick Instance</h3>
+<h2 id="joystick-instance">Joystick Instance</h2>
 <p>The 'Joystick Instance' is a composite object contained in display group that catches touches and converts them into a custom Runtime events.  These events can the be listed for for anywhere and by any object(s).</p>
 <p>It has no special methods attached to it.</p>
-<h2 id="easy-input-listeners">Easy Input Listeners</h2>
-<h3 id="one-touch-listeners">One Touch Listeners</h3>
+<h1 id="easy-input-listeners">Easy Input Listeners</h1>
+<h2 id="one-touch-listeners">One Touch Listeners</h2>
 <p>One Touch objects produce a custom Runtime event with all the same properties as the standard Corona SDK <a href="https://docs.coronalabs.com/daily/api/event/touch/index.html">touch event</a>.</p>
 <p><strong>Exception:</strong> The <code>name</code> field has been changed from <code>"touch"</code> to whatever custom event name the instance is using (Ex: <code>"onOneTouch"</code>).</p>
 <pre><code class="Lua">
@@ -642,7 +671,7 @@ end; listen( &quot;onOneTouch&quot;, player )
 
 </code></pre>
 
-<h3 id="two-touch-listeners">Two Touch Listeners</h3>
+<h2 id="two-touch-listeners">Two Touch Listeners</h2>
 <p>Two Touch objects produce a custom Runtime event with all the same properties as the standard Corona SDK <a href="https://docs.coronalabs.com/daily/api/event/touch/index.html">touch event</a>.</p>
 <p><strong>Exception:</strong> The <code>name</code> field has been changed from <code>"touch"</code> to whatever custom event name the instance is using (Ex: <code>"onTwoTouchLeft"</code> or <code>"onTwoTouchRight"</code> ).</p>
 <pre><code class="Lua">
@@ -686,12 +715,12 @@ end; listen( &quot;onTwoTouchRight&quot;, player )
 
 </code></pre>
 
-<h3 id="one-stick-one-touch-listeners">One Stick + One Touch Listeners</h3>
+<h2 id="one-stick-one-touch-listeners">One Stick + One Touch Listeners</h2>
 <p>'One Stick + One Touch' objects need both a <a href="../easy_inputs/#one-touch-listeners">One Touch Listener</a> and a <a href="../easy_inputs/#one-stick-listeners">One Stick Listener</a>.</p>
-<h3 id="one-stick-listeners">One Stick Listeners</h3>
-<h3 id="two-stick-listeners">Two Stick Listeners</h3>
+<h2 id="one-stick-listeners">One Stick Listeners</h2>
+<h2 id="two-stick-listeners">Two Stick Listeners</h2>
 <p>The 'One' and 'Two' stick listeners both produce virtual joystick events.</p>
-<h3 id="virtual-joystick-listeners">Virtual Joystick Listeners</h3>
+<h2 id="virtual-joystick-listeners">Virtual Joystick Listeners</h2>
 <p>Virtual joysticks produce a custom Runtime event that includes these properties:</p>
 <ul>
 <li><code>angle</code> - Angle the stick is pointed in, where 0 is up, 90 is right, etc.</li>
@@ -734,17 +763,6 @@ end; listen( &quot;onJoystick&quot;, player )
 
 </code></pre>
 
-<h2 id="show-me-examples">Show Me Examples!</h2>
-<p>Did you read all of the above docs and yet you still find this confusing?  </p>
-<p>Maybe a few complete examples would help you.</p>
-<p>If so, try these:</p>
-<ul>
-<li>EFM - Link to recipes, etc.</li>
-<li>EFM - Link to recipes, etc.</li>
-<li>EFM - Link to recipes, etc.</li>
-<li>EFM - Link to recipes, etc.</li>
-<li>EFM - Link to recipes, etc.</li>
-</ul>
 <hr />
 <p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         

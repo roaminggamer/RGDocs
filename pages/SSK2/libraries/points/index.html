@@ -182,12 +182,6 @@
                         
                             
 <li >
-    <a href="../files/">ssk.files.*</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../math2D/">ssk.math2d.*</a>
 </li>
 
@@ -266,7 +260,14 @@
     
         <li class="first-level active"><a href="#points-library-sskpoints">Points Library (ssk.points.*)</a></li>
         
-            <li class="third-level"><a href="#capturebackbutton">captureBackButton</a></li>
+    
+        <li class="first-level "><a href="#creating-a-points-list">Creating a Points List</a></li>
+        
+    
+        <li class="first-level "><a href="#points-instance-methods">Points Instance Methods</a></li>
+        
+    
+        <li class="first-level "><a href="#complete-points-example">Complete Points Example</a></li>
         
     
     </ul>
@@ -274,50 +275,162 @@
         <div class="col-md-9" role="main">
 
 <h1 id="points-library-sskpoints">Points Library (ssk.points.*)</h1>
-<p>(EFM Docs incomplete)</p>
-<ul>
-<li>
-<p><code>new( ... )</code> - EFM</p>
-<ul>
-<li><code>add(...)</code> - EFM</li>
-<li><code>insert(index, ...)</code> - EFM</li>
-<li><code>get(index)</code> - EFM</li>
-<li><code>remove(index)</code> - EFM</li>
-<li><code>push(...)</code> - EFM</li>
-<li><code>peek()</code> - EFM</li>
-<li><code>pop()</code> - EFM</li>
-<li><code>h_head(...)</code> - Treats points list like a queue/FIFO and pushes one or more point sets (in reverse order) onto the points list front. Like calling insert(1, x1,y1), insert(1, x2,y2), ..., insert(1, xN,yN), </li>
-<li><code>peek_head()</code> - Treats points list like a queue/FIFO and retrieves the point at the front of the points list. Like a get at 1.</li>
-<li><code>pop_head(x,y)</code> - Treats points list like a queue/FIFO and pops the point at the front off the points list. Like a remove at 1.</li>
-</ul>
-</li>
-<li>
-<p><code>EFM</code> - EFM</p>
-</li>
-<li><code>EFM</code> - EFM</li>
-<li><code>EFM</code> - EFM</li>
-<li><code>EFM</code> - EFM</li>
-<li><code>EFM</code> - EFM</li>
-</ul>
-<p>EFM EFM EFM</p>
-<h4 id="capturebackbutton">captureBackButton</h4>
-<p><strong>Syntax:</strong></p>
-<pre><code>ssk.android.captureBackButton( [ noCB, [ yesCB ]] )
+<p>This is a general Lua library for creating lists of points <code>{ x = value, y = value }</code>.</p>
+<p>These lists are used by the <a href="../display_lines">Line Factories</a>, but may be useful in other contexts too.</p>
+<h1 id="creating-a-points-list">Creating a Points List</h1>
+<p>You can create a new points list with this function, which returns a <a href="#points-instances-methods">points instance</a>.</p>
+<pre><code class="Lua">ssk.points.new( ... )
 </code></pre>
 
-<p><strong>Summary:</strong>
-EFM EFM EFM</p>
-<p>EFM EFM</p>
-<p><strong>Usage:</strong></p>
-<pre><code>local onNo()
-   print(&quot;Pressed No&quot;)   
+<ul>
+<li><code>...</code> - Optional sequence of x, y values to initialized the points list with.</li>
+</ul>
+<pre><code class="Lua">
+-- Create a points list with these points: 
+--  { x = 10, y = 10 }
+--  { x = 20, y = 20 }
+--  { x = 15, y = 35 }
+--
+local pointsList = ssk.points.new( 10, 10, 20, 20, 15, 35 )
+
+</code></pre>
+
+<p><strong>Tip:</strong> Points lists are numerically indexed tables, so you can do things like this:</p>
+<pre><code class="Lua">
+for 1 = 1, #pointsList do
+   print( &quot;X @ index &quot; .. i .. &quot; == &quot; .. tostring( pointsList[i].x ) )
+   print( &quot;Y @ index &quot; .. i .. &quot; == &quot; .. tostring( pointsList[i].y ) )
 end
 
-local onYes()
-   print(&quot;Pressed Yes&quot;)
+</code></pre>
+
+<p><strong>Warning:</strong> Points lists cannot be saved to JSON because they have functions attached to them.</p>
+<h1 id="points-instance-methods">Points Instance Methods</h1>
+<p>Points list instances have all of these methods:</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><code>add(...)</code></td>
+<td align="left">Add new points using x, y pairs (<code>...</code>)</td>
+</tr>
+<tr>
+<td align="right"><code>insert(index, ...)</code></td>
+<td align="left">Insert x, y pairs in list <code>...</code> to curent point list starting at <code>index</code>.</td>
+</tr>
+<tr>
+<td align="right"><code>get(index)</code></td>
+<td align="left">Returns point (as table) at <code>index</code> in list, or <code>nil</code> if no such <code>index</code> exists.</td>
+</tr>
+<tr>
+<td align="right"><code>remove(index)</code></td>
+<td align="left">Remove point (x, y pair) at <code>index</code> from list.</td>
+</tr>
+<tr>
+<td align="right"><code>push(...)</code></td>
+<td align="left">Add a new point(s) at end of list.</td>
+</tr>
+<tr>
+<td align="right"><code>peek()</code></td>
+<td align="left">Get point from end of list without removing it from the list.  Returns <code>nil</code> if list is empty.</td>
+</tr>
+<tr>
+<td align="right"><code>pop()</code></td>
+<td align="left">Like <code>peek()</code>, but removes point from list at same time.</td>
+</tr>
+<tr>
+<td align="right"><code>push_head(...)</code></td>
+<td align="left">Add new point(s) to beginning of list.  Synonym for <code>add( 1, ... )</code>.</td>
+</tr>
+<tr>
+<td align="right"><code>peek_head()</code></td>
+<td align="left">Get point from beginning (index 1) of the list.  Returns <code>nil</code> if list is empty.</td>
+</tr>
+<tr>
+<td align="right"><code>pop_head( )</code></td>
+<td align="left">Like <code>peek_head()</code>, but removes point from list at same time.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="complete-points-example">Complete Points Example</h1>
+<pre><code class="Lua">
+-- 1. Create blank list
+local pointsList = ssk.points.new( )
+
+-- 2.  Add points
+pointsList:add( 15, 35 )
+
+-- Points list is now:
+--  { x = 15, y = 35 }
+
+-- 3. Insert points at index 1
+pointsList:insert( 1, 10, 10, 20, 20 )
+
+-- Points list is now:
+--  { x = 10, y = 10 }
+--  { x = 20, y = 20 }
+--  { x = 15, y = 35 }
+
+-- 4. Pop Head
+pointsList:pop_head()
+
+-- Points list is now:
+--  { x = 20, y = 20 }
+--  { x = 15, y = 35 }
+
+-- 5. Pop Tail
+pointsList:pop()
+
+-- Points list is now:
+--  { x = 20, y = 20 }
+
+-- 6. Push Point to Tail
+pointsList:push( 10, 10 )
+
+-- Points list is now:
+--  { x = 20, y = 20 }
+--  { x = 10, y = 10 }
+
+-- 7. Push Point to Head
+pointsList:push_head( 15, 25 )
+
+-- Points list is now:
+--  { x = 15, y = 25 }
+--  { x = 20, y = 20 }
+--  { x = 10, y = 10 }
+
+-- 8. Dump the Points
+for i = 1, #pointsList do
+    table.dump(pointsList:get(i), nil, &quot;Index: &quot; .. tostring(i) )
 end
 
-ssk.android.captureBackButton( onNo, onYes )
+</code></pre>
+
+<p>When executed, the above code prints (something like) this in the console:</p>
+<pre><code class="Lua">
+22:01:20.583  Table Dump:
+22:01:20.583  -----
+22:01:20.583  x (string)                     == 15 (number)                   
+22:01:20.583  y (string)                     == 25 (number)                   
+22:01:20.583  Index: 1-----
+22:01:20.583  
+22:01:20.583  Table Dump:
+22:01:20.583  -----
+22:01:20.583  x (string)                     == 20 (number)                   
+22:01:20.583  y (string)                     == 20 (number)                   
+22:01:20.583  Index: 2-----
+22:01:20.583  
+22:01:20.583  Table Dump:
+22:01:20.583  -----
+22:01:20.583  x (string)                     == 10 (number)                   
+22:01:20.583  y (string)                     == 10 (number)                   
+22:01:20.583  Index: 3-----
+
 </code></pre>
 
 <hr />

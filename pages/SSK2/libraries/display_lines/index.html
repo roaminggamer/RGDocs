@@ -182,12 +182,6 @@
                         
                             
 <li >
-    <a href="../files/">ssk.files.*</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../math2D/">ssk.math2d.*</a>
 </li>
 
@@ -290,11 +284,17 @@ function test.run( group, params )
    -- Basic
    local newLine    = ssk.display.newLine
     newLine( group, 50, top + 50, 450, top + 50 )
-    newLine( group, 50, top + 50 + 20, 450, top + 50 + 20, { w = 2, fill = _R_ } )
-    newLine( group, 50, top + 50 + 40, 450, top + 50 + 40, { w = 1, dashLen = 3, gapLen = 5, fill = _C_, style = &quot;dashed&quot; } )
-    newLine( group, 50, top + 50 + 60, 450, top + 50 + 60, { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, stroke = _Y_, strokeWidth = 1} )
-    newLine( group, 50, top + 50 + 80, 450, top + 50 + 80, { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, style = &quot;arrows&quot;} )
-    newLine( group, 50, top + 50 + 100, 450, top + 50 + 100, { gapLen = 10, dashLen = 0, headSize = 4, fill = _C_, style = &quot;arrows&quot;} )
+    newLine( group, 50, top + 50 + 20, 450, top + 50 + 20, 
+              { w = 2, fill = _R_ } )
+    newLine( group, 50, top + 50 + 40, 450, top + 50 + 40, 
+              { w = 1, dashLen = 3, gapLen = 5, fill = _C_, style = &quot;dashed&quot; } )
+    newLine( group, 50, top + 50 + 60, 450, top + 50 + 60, 
+              { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, 
+                stroke = _Y_, strokeWidth = 1} )
+    newLine( group, 50, top + 50 + 80, 450, top + 50 + 80, 
+              { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, style = &quot;arrows&quot;} )
+    newLine( group, 50, top + 50 + 100, 450, top + 50 + 100, 
+              { gapLen = 10, dashLen = 0, headSize = 4, fill = _C_, style = &quot;arrows&quot;} )
 
 
     -- Angle lines
@@ -302,17 +302,25 @@ function test.run( group, params )
     local curY = top + 200
     local tmp = newAngleLine( group, 50, curY, 135, 200 )
     curY = curY + 20
-    local tmp = newAngleLine( group, 50, curY, 135, 200, { w = 2, fill = _R_ } )
+    local tmp = newAngleLine( group, 50, curY, 135, 200, 
+                              { w = 2, fill = _R_ } )
     curY = curY + 20
-    local tmp = newAngleLine( group, 50, curY, 135, 200, { w = 1, dashLen = 3, gapLen = 5, fill = _C_, style = &quot;dashed&quot; } )
+    local tmp = newAngleLine( group, 50, curY, 135, 200, 
+                               { w = 1, dashLen = 3, gapLen = 5, fill = _C_, style = &quot;dashed&quot; } )
     curY = curY + 20
-    local tmp = newAngleLine( group, 50, curY, 135, 200, { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, stroke = _Y_, strokeWidth = 1} )
+    local tmp = newAngleLine( group, 50, curY, 135, 200, 
+                               { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, 
+                                 stroke = _Y_, strokeWidth = 1} )
     curY = curY + 20
-    local tmp = newAngleLine( group, 50, curY, 135, 200, { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, style = &quot;arrows&quot;} )
+    local tmp = newAngleLine( group, 50, curY, 135, 200, 
+                               { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, 
+                                 style = &quot;arrows&quot;} )
     curY = curY + 20
-    local tmp = newAngleLine( group, 50, curY, 135, 200, { gapLen = 10, dashLen = 1, headSize = 4, fill = _C_, style = &quot;arrows&quot;} )
+    local tmp = newAngleLine( group, 50, curY, 135, 200, 
+                               { gapLen = 10, dashLen = 1, headSize = 4, fill = _C_, 
+                                 style = &quot;arrows&quot;} )
 
-    -- Complex Lines
+    -- Animated Lines
     local newPointsLine     = ssk.display.newPointsLine
     local newPoints         = ssk.points.new
     local easyIFC           = ssk.easyIFC
@@ -348,21 +356,27 @@ function test.run( group, params )
         for i = 1, 36 do
             points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
         end
-        local tmp = newPointsLine( lastGroup, points, { w = 1, dashLen = 1, gapLen = 2, fill = _C_, style = &quot;dashed&quot; } )
+        local tmp = newPointsLine( lastGroup, points, 
+                                    { w = 1, dashLen = 1, gapLen = 2, fill = _C_, 
+                                      style = &quot;dashed&quot; } )
 
         local points = newPoints()
         curY = curY + 20
         for i = 1, 36 do
             points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
         end
-        local tmp = newPointsLine( lastGroup, points, { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, stroke = _Y_, strokeWidth = 1} )
+        local tmp = newPointsLine( lastGroup, points, 
+                                    { radius = 3, gapLen = 5, fill = _O_, style = &quot;dotted&quot;, 
+                                       stroke = _Y_, strokeWidth = 1} )
 
         local points = newPoints()
         curY = curY + 20
         for i = 1, 36 do
             points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
         end
-        local tmp = newPointsLine( lastGroup, points, { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, style = &quot;arrowheads&quot;} )
+        local tmp = newPointsLine( lastGroup, points, 
+                                    { gapLen = 10, dashLen = 6, headSize = 4, fill = _O_, 
+                                      style = &quot;arrowheads&quot;} )
 
         local points = newPoints()
         curY = curY + 20
@@ -370,7 +384,9 @@ function test.run( group, params )
             points:add( 50 + (i-1) * 10, curY + mRand(-5,5) )
         end
         local tmp = newPointsLine( lastGroup, points, { fill = {1,1,1,0.2} } )
-        local tmp = newPointsLine( lastGroup, points, { gapLen = 10, dashLen = 1, headSize = 4, fill = _C_, style = &quot;arrowheads&quot;} )
+        local tmp = newPointsLine( lastGroup, points, 
+                                    { gapLen = 10, dashLen = 1, headSize = 4, fill = _C_, 
+                                      style = &quot;arrowheads&quot;} )
 
         timer.performWithDelay( 100, reDrawLines )
     end

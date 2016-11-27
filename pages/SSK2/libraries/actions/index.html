@@ -182,12 +182,6 @@
                         
                             
 <li >
-    <a href="../files/">ssk.files.*</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../math2D/">ssk.math2d.*</a>
 </li>
 
@@ -266,15 +260,69 @@
     
         <li class="first-level active"><a href="#actions-library-sskactions">Actions Library (ssk.actions.*)</a></li>
         
-            <li class="third-level"><a href="#facing-face">Facing  (face)</a></li>
+    
+        <li class="first-level "><a href="#facing-face">Facing  (face)</a></li>
+        
+            <li class="third-level"><a href="#face">face</a></li>
         
             <li class="third-level"><a href="#non-physics-movement-move">Non-Physics Movement (move.*)</a></li>
         
-            <li class="third-level"><a href="#physics-movement-movep">Physics Movement  (movep.*)</a></li>
+            <li class="third-level"><a href="#moveforward">move.forward</a></li>
         
-            <li class="third-level"><a href="#scene-wrapping-scene">Scene Wrapping (scene.*)</a></li>
+            <li class="third-level"><a href="#moveat">move.at</a></li>
         
-            <li class="third-level"><a href="#target-acquisition-target">Target Acquisition (target.*)</a></li>
+    
+        <li class="first-level "><a href="#physics-movement-movep">Physics Movement  (movep.*)</a></li>
+        
+            <li class="third-level"><a href="#movepforward">movep.forward</a></li>
+        
+            <li class="third-level"><a href="#movepthrustforward">movep.thrustForward</a></li>
+        
+            <li class="third-level"><a href="#movepimpulseforward">movep.impulseForward</a></li>
+        
+            <li class="third-level"><a href="#moveplimitv">movep.limitV</a></li>
+        
+            <li class="third-level"><a href="#moveplimitav">movep.limitAV</a></li>
+        
+            <li class="third-level"><a href="#movepdampvert">movep.dampVert</a></li>
+        
+            <li class="third-level"><a href="#movepdamphoriz">movep.dampHoriz</a></li>
+        
+            <li class="third-level"><a href="#movepdampdown">movep.dampDown</a></li>
+        
+            <li class="third-level"><a href="#movepdampnormal">movep.dampNormal</a></li>
+        
+    
+        <li class="first-level "><a href="#scene-wrapping-scene">Scene Wrapping (scene.*)</a></li>
+        
+            <li class="third-level"><a href="#scenerectwrap">scene.rectWrap</a></li>
+        
+            <li class="third-level"><a href="#scenecircwrap">scene.circWrap</a></li>
+        
+    
+        <li class="first-level "><a href="#target-acquisition-target">Target Acquisition (target.*)</a></li>
+        
+            <li class="third-level"><a href="#targetset">target.set</a></li>
+        
+            <li class="third-level"><a href="#targetget">target.get</a></li>
+        
+            <li class="third-level"><a href="#targetacquirerandom">target.acquireRandom</a></li>
+        
+            <li class="third-level"><a href="#targetacquirenearest">target.acquireNearest</a></li>
+        
+            <li class="third-level"><a href="#targetloseondestroyed">target.loseOnDestroyed</a></li>
+        
+            <li class="third-level"><a href="#targetloseatmaxdistance">target.loseAtMaxDistance</a></li>
+        
+            <li class="third-level"><a href="#targetloseatminalpha">target.loseAtMinAlpha</a></li>
+        
+            <li class="third-level"><a href="#targetlosenotvisible">target.loseNotVisible</a></li>
+        
+            <li class="third-level"><a href="#targetdrawdebugline">target.drawDebugLine</a></li>
+        
+            <li class="third-level"><a href="#targetdrawdebugdistancelabel">target.drawDebugDistanceLabel</a></li>
+        
+            <li class="third-level"><a href="#targetdrawdebugangledistancelabel">target.drawDebugAngleDistanceLabel</a></li>
         
     
     </ul>
@@ -367,8 +415,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="facing-face">Facing  (face)</h2>
-<h3 id="face">face</h3>
+<h1 id="facing-face">Facing  (face)</h1>
+<h2 id="face">face</h2>
 <p>Causes <code>obj</code> to rotate towards a specific angle or target.  The rate of rotation can be immediate or at a specified number of degrees-per-second (<strong>dps</strong>).</p>
 <p>This function is typically called in an enterFrame listener and once used must be called every frame.  </p>
 <pre><code class="lua">ssk.actions.face( obj, params )
@@ -401,7 +449,7 @@ end
 <hr />
 <h2 id="non-physics-movement-move">Non-Physics Movement (move.*)</h2>
 <p>The actions <code>move</code> module provides functions to move object using 'calculated' movement in pixels-per-second.  </p>
-<h3 id="moveforward">move.forward</h3>
+<h2 id="moveforward">move.forward</h2>
 <p>Move at a fixed rate, measured in pixels-per-second (<strong>pps</strong>), in the direction the object is facing.</p>
 <pre><code class="lua">ssk.actions.move.forward( obj, params )
 </code></pre>
@@ -422,7 +470,7 @@ end
 end
 </code></pre>
 
-<h3 id="moveat">move.at</h3>
+<h2 id="moveat">move.at</h2>
 <p>Move at a fixed rate, measured in pps, in an arbitrary &lt; x, y &gt; direction.</p>
 <pre><code class="lua">ssk.actions.move.at( obj, params )
 </code></pre>
@@ -445,10 +493,10 @@ end
 </code></pre>
 
 <hr />
-<h2 id="physics-movement-movep">Physics Movement  (movep.*)</h2>
+<h1 id="physics-movement-movep">Physics Movement  (movep.*)</h1>
 <p>The actions <code>movep</code> module provides functions to move, limit, and dampen movement using 'calculatoins' and physics methods.  </p>
 <p><strong>All objects moved with the <code>movep</code> module must have physics bodies.</strong></p>
-<h3 id="movepforward">movep.forward</h3>
+<h2 id="movepforward">movep.forward</h2>
 <p>Move <code>obj</code> foward at a fixed rate, measured in pixels-per-second, using frame-by-frame calculations and <code>obj:setLinearVelocity()</code>.</p>
 <pre><code class="lua">ssk.actions.movep.forward( obj, params )
 </code></pre>
@@ -469,7 +517,7 @@ end
 end
 </code></pre>
 
-<h3 id="movepthrustforward">movep.thrustForward</h3>
+<h2 id="movepthrustforward">movep.thrustForward</h2>
 <p>Move <code>obj</code> forward by applying a force using calculations and <code>obj:applyForce()</code>.</p>
 <pre><code class="lua">ssk.actions.movep.thrustForward( obj, params )
 </code></pre>
@@ -491,7 +539,7 @@ end
 end
 </code></pre>
 
-<h3 id="movepimpulseforward">movep.impulseForward</h3>
+<h2 id="movepimpulseforward">movep.impulseForward</h2>
 <p>Move <code>obj</code> forward by applying a impulses (kicks) using calculations and <code>obj:applyLinearImpulse()</code>.  </p>
 <p>This is suitable for use in timed or intermittent movements and can produce some very intersting responses.</p>
 <pre><code class="lua">ssk.actions.movep.impulseForward( obj, params )
@@ -514,7 +562,7 @@ end
 timer.performWithDelay( 250, player, 15 )
 </code></pre>
 
-<h3 id="moveplimitv">movep.limitV</h3>
+<h2 id="moveplimitv">movep.limitV</h2>
 <p>Limits an object's linear velocity to a maximum rate in pixels-per-second.</p>
 <p>This is often used to place a cap on the maximum rate that can be produced using  <code>movep.thrustForward</code>.</p>
 <pre><code class="lua">ssk.actions.movep.limitV( obj, params )
@@ -538,7 +586,7 @@ timer.performWithDelay( 250, player, 15 )
 end
 </code></pre>
 
-<h3 id="moveplimitav">movep.limitAV</h3>
+<h2 id="moveplimitav">movep.limitAV</h2>
 <p>Limits an object's angular velocity to a maximum rate in degrees-per-second.</p>
 <p>This is great for things like wheels and circles that turn due to frictional contact with other objects.</p>
 <pre><code class="lua">ssk.actions.movep.limitAV( obj, params )
@@ -559,7 +607,7 @@ end
 end
 </code></pre>
 
-<h3 id="movepdampvert">movep.dampVert</h3>
+<h2 id="movepdampvert">movep.dampVert</h2>
 <p>This allows you to dampen linear velocity for just the vertical component of an object's movement.</p>
 <pre><code class="lua">ssk.actions.movep.dampVert( obj, params )
 </code></pre>
@@ -579,7 +627,7 @@ end
 end
 </code></pre>
 
-<h3 id="movepdamphoriz">movep.dampHoriz</h3>
+<h2 id="movepdamphoriz">movep.dampHoriz</h2>
 <p>This allows you to dampen linear velocity for just the horizontal component of an object's movement.</p>
 <pre><code class="lua">ssk.actions.movep.dampHoriz( obj, params )
 </code></pre>
@@ -599,7 +647,7 @@ end
 end
 </code></pre>
 
-<h3 id="movepdampdown">movep.dampDown</h3>
+<h2 id="movepdampdown">movep.dampDown</h2>
 <p>This allows you to dampen linear velocity for just the downward (<code>+y</code>) component of an object's movement.</p>
 <pre><code class="lua">ssk.actions.movep.dampDown( obj, params )
 </code></pre>
@@ -619,7 +667,7 @@ end
 end
 </code></pre>
 
-<h3 id="movepdampnormal">movep.dampNormal</h3>
+<h2 id="movepdampnormal">movep.dampNormal</h2>
 <p>This is a very specialized kind of damping that dampens motion that is 90-degrees away from forward motion.</p>
 <p>The easiest way to think of this is damping like a tire.  Tires slow movement that is at cross angles to the tire's forward vector.</p>
 <p><strong>Note:</strong> Not available yet.</p>
@@ -642,10 +690,10 @@ end
 </code></pre>
 
 <hr />
-<h2 id="scene-wrapping-scene">Scene Wrapping (scene.*)</h2>
+<h1 id="scene-wrapping-scene">Scene Wrapping (scene.*)</h1>
 <p>Some action games use a single-screen world that wraps.  That is, if a player or enemy leaves one side of the screen, they re-enter from the other side.</p>
 <p>The helper functions in this action module help you achieve this.</p>
-<h3 id="scenerectwrap">scene.rectWrap</h3>
+<h2 id="scenerectwrap">scene.rectWrap</h2>
 <p>This helper will wrap one object about the bounds of a rectangle (any display object).</p>
 <p>This seem strange at first, but by using a display object as the proxy for wrapping calculations, we have an easy way to define the wrapping space and well as an easy way to debug this.</p>
 <pre><code class="lua">ssk.actions.scene.rectWrap( objectToWrap, wrapRectangle )
@@ -677,7 +725,7 @@ end
 Runtime:addEventListener( &quot;enterFrame&quot;, player )
 </code></pre>
 
-<h3 id="scenecircwrap">scene.circWrap</h3>
+<h2 id="scenecircwrap">scene.circWrap</h2>
 <p>This helper is similar to <code>rectWrap</code>, but the wrapping is about a circular space and no proxy is required.</p>
 <pre><code class="lua">ssk.actions.scene.circWrap( objectToWrap, point, radius )
 </code></pre>
@@ -708,10 +756,10 @@ Runtime:addEventListener( &quot;enterFrame&quot;, player )
 </code></pre>
 
 <hr />
-<h2 id="target-acquisition-target">Target Acquisition (target.*)</h2>
+<h1 id="target-acquisition-target">Target Acquisition (target.*)</h1>
 <p>In action and arcade games, there is often the need for missiles, gun turrets, enemies, etc. to acquire a target and then chase it down.</p>
 <p>The functions in this actions module handle the first half of that work (target acquisition), and you can code up the second half using the <code>face</code> function in combination with <code>move</code> or <code>movep</code> functions.</p>
-<h3 id="targetset">target.set</h3>
+<h2 id="targetset">target.set</h2>
 <p>This function allows you to manually assign a target to an object.</p>
 <pre><code class="lua">ssk.actions.target.set( obj, newTarget )
 </code></pre>
@@ -725,7 +773,7 @@ Runtime:addEventListener( &quot;enterFrame&quot;, player )
 ssk.actions.target.set( player, enemy )
 </code></pre>
 
-<h3 id="targetget">target.get</h3>
+<h2 id="targetget">target.get</h2>
 <p>This function allows you to manually get an object's current target.  </p>
 <p>Returns nil if the object has no current target.</p>
 <pre><code class="lua">ssk.actions.target.get( obj )
@@ -739,7 +787,7 @@ ssk.actions.target.set( player, enemy )
 local curTarget = ssk.actions.target.get( player )
 </code></pre>
 
-<h3 id="targetacquirerandom">target.acquireRandom</h3>
+<h2 id="targetacquirerandom">target.acquireRandom</h2>
 <p>This chooses a random target from a target pool and assigns it to <code>obj</code>.  </p>
 <p>Returns <code>true</code> if a target was assigned, <code>false</code> otherwise.</p>
 <pre><code class="lua">ssk.actions.target.acquireRandom( obj, params )
@@ -756,7 +804,7 @@ local curTarget = ssk.actions.target.get( player )
 <pre><code class="lua">ssk.actions.target.acquireRandom( self, { targets = targets } )
 </code></pre>
 
-<h3 id="targetacquirenearest">target.acquireNearest</h3>
+<h2 id="targetacquirenearest">target.acquireNearest</h2>
 <p>This chooses the nearest target from a target pool and assigns it to <code>obj</code>.  </p>
 <p>Returns <code>true</code> if a target was assigned, <code>false</code> otherwise.</p>
 <pre><code class="lua">ssk.actions.target.acquireRandom( obj, params )
@@ -774,7 +822,7 @@ local curTarget = ssk.actions.target.get( player )
 <pre><code class="lua">ssk.actions.target.acquireRandom( self, { targets = targets } )
 </code></pre>
 
-<h3 id="targetloseondestroyed">target.loseOnDestroyed</h3>
+<h2 id="targetloseondestroyed">target.loseOnDestroyed</h2>
 <p>Tell <code>obj</code> to wipe its current target if that target has been destroyed and is no longer a valid display object.</p>
 <p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
 <pre><code class="lua">ssk.actions.target.loseOnDestroyed( obj )
@@ -794,7 +842,7 @@ local curTarget = ssk.actions.target.get( player )
 end
 </code></pre>
 
-<h3 id="targetloseatmaxdistance">target.loseAtMaxDistance</h3>
+<h2 id="targetloseatmaxdistance">target.loseAtMaxDistance</h2>
 <p>Tell <code>obj</code> to wipe its current target if that target has moved beyond <code>maxDist</code>.</p>
 <p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
 <pre><code class="lua">ssk.actions.target.loseAtMaxDistance( obj )
@@ -818,7 +866,7 @@ end
 end
 </code></pre>
 
-<h3 id="targetloseatminalpha">target.loseAtMinAlpha</h3>
+<h2 id="targetloseatminalpha">target.loseAtMinAlpha</h2>
 <p>Tell <code>obj</code> to wipe its current target if that target's alpha is below <code>alpha</code>.</p>
 <p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
 <pre><code class="lua">ssk.actions.target.loseAtMinAlpha( obj )
@@ -842,7 +890,7 @@ end
 end
 </code></pre>
 
-<h3 id="targetlosenotvisible">target.loseNotVisible</h3>
+<h2 id="targetlosenotvisible">target.loseNotVisible</h2>
 <p>Tell <code>obj</code> to wipe its current target if that target is not visible.</p>
 <p>Returns <code>true</code> if <code>obj</code> no longer has a valid target.</p>
 <pre><code class="lua">ssk.actions.target.loseNotVisible( obj )
@@ -862,7 +910,7 @@ end
 end
 </code></pre>
 
-<h3 id="targetdrawdebugline">target.drawDebugLine</h3>
+<h2 id="targetdrawdebugline">target.drawDebugLine</h2>
 <p>This is a debug feature that draws a line between <code>obj</code> and its target.</p>
 <pre><code class="lua">ssk.actions.target.drawDebugLine( obj, params )
 </code></pre>
@@ -878,7 +926,7 @@ end
 <pre><code class="lua">ssk.actions.target.drawDebugLine( self )
 </code></pre>
 
-<h3 id="targetdrawdebugdistancelabel">target.drawDebugDistanceLabel</h3>
+<h2 id="targetdrawdebugdistancelabel">target.drawDebugDistanceLabel</h2>
 <p>This is a debug feature that draws a label showing the distance from <code>obj</code> to its target in pixels.</p>
 <pre><code class="lua">ssk.actions.target.drawDebugDistanceLabel( obj, params )
 </code></pre>
@@ -896,7 +944,7 @@ end
 <pre><code class="lua">ssk.actions.target.drawDebugDistanceLabel( self, { yOffset = 40 } )
 </code></pre>
 
-<h3 id="targetdrawdebugangledistancelabel">target.drawDebugAngleDistanceLabel</h3>
+<h2 id="targetdrawdebugangledistancelabel">target.drawDebugAngleDistanceLabel</h2>
 <p>This is a debug feature that draws a label showing the distance from <code>obj</code> to its target in pixels, as well as the angle between <code>obj</code> forward and the target.</p>
 <pre><code class="lua">ssk.actions.target.drawDebugAngleDistanceLabel( obj, params )
 </code></pre>

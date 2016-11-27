@@ -182,12 +182,6 @@
                         
                             
 <li >
-    <a href="../files/">ssk.files.*</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../math2D/">ssk.math2d.*</a>
 </li>
 
@@ -274,7 +268,6 @@
         <div class="col-md-9" role="main">
 
 <h1 id="easy-social-ssksocial">(Easy Social) ssk.social.*</h1>
-<p>(EFM Docs incomplete)</p>
 <p>This module contains a couple 'helper' functions to simplify sharing and rating apps.</p>
 <h2 id="rate">rate</h2>
 <p>Open rate interface in appropriate store for app identified <code>id</code>.</p>
@@ -288,10 +281,7 @@
 </ul>
 <h3 id="supported-stores">Supported Stores:</h3>
 <ul>
-<li>Amazon (<strong>untested</strong>) <ul>
-<li><code>id</code> == "Package Name" used when buiding app</li>
-</ul>
-</li>
+<li><strong>Tested</strong><ul>
 <li>Google Play <ul>
 <li><code>id</code> == "Package Name" used when buiding app</li>
 </ul>
@@ -300,9 +290,18 @@
 <li><code>id</code> == Numeric App ID found on your store page when submitting app.</li>
 </ul>
 </li>
+</ul>
+</li>
+<li><strong>Untested</strong><ul>
+<li>Amazon (<strong>untested</strong>) <ul>
+<li><code>id</code> == "Package Name" used when buiding app</li>
+</ul>
+</li>
 <li>(Apple) tvOS Store (<strong>untested</strong>) <ul>
 <li><code>id</code> == Numeric App ID found on your store page when submitting app.</li>
 <li><code>appName</code> == Name of app.  Utility will clean it for you.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -182,12 +182,6 @@
                         
                             
 <li >
-    <a href="../files/">ssk.files.*</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../math2D/">ssk.math2d.*</a>
 </li>
 
@@ -264,52 +258,132 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#persistance-sskpersist">Persistance (ssk.persist.*)</a></li>
+        <li class="first-level active"><a href="#persistent-data-sskpersist">Persistent Data (ssk.persist.*)</a></li>
         
-            <li class="third-level"><a href="#capturebackbutton">captureBackButton</a></li>
+            <li class="third-level"><a href="#setting-default-values">Setting Default Values</a></li>
+        
+            <li class="third-level"><a href="#setting-and-getting-values">Setting and Getting Values</a></li>
+        
+            <li class="third-level"><a href="#setting-secure-mode">Setting Secure Mode</a></li>
+        
+    
+        <li class="first-level "><a href="#multiple-sets-allowed">Multiple Sets Allowed?</a></li>
+        
+    
+        <li class="first-level "><a href="#data-caching">Data Caching</a></li>
+        
+    
+        <li class="first-level "><a href="#complete-persist-example">Complete Persist Example</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="persistance-sskpersist">Persistance (ssk.persist.*)</h1>
-<p>(EFM Docs incomplete)</p>
-<ul>
-<li><code>setSecure()</code> - EFM</li>
-<li><code>get( fileName, fieldName, params )</code> - EFM</li>
-<li><code>set( fileName, fieldName, value, params )</code> - EFM</li>
-<li>
-<p><code>setDefault( fileName, fieldName, value, params )</code> - EFM</p>
-</li>
-<li>
-<p><code>EFM</code> - EFM</p>
-</li>
-<li><code>EFM</code> - EFM</li>
-<li><code>EFM</code> - EFM</li>
-<li><code>EFM</code> - EFM</li>
-<li><code>EFM</code> - EFM</li>
-<li><code>EFM</code> - EFM</li>
-</ul>
-<p>EFM EFM EFM</p>
-<h4 id="capturebackbutton">captureBackButton</h4>
-<p><strong>Syntax:</strong></p>
-<pre><code>ssk.android.captureBackButton( [ noCB, [ yesCB ]] )
+<h1 id="persistent-data-sskpersist">Persistent Data (ssk.persist.*)</h1>
+<p>This library provides a handy way to automatically save and restore (persist) data.</p>
+<p>Currently this feature works on all platforms, excluding Apple TV.</p>
+<blockquote>
+<p>Apple TV support will be added in the future. - The Roaming Gamer</p>
+</blockquote>
+<h2 id="setting-default-values">Setting Default Values</h2>
+<p>The <code>ssk.persist</code> library lets you set 'default' values for any named field.  This way, if you call <a href="#setting-and-getting-values">get()</a> for a named field before you <a href="#setting-and-getting-values">set()</a> it, you will get a valid value.</p>
+<p>To set a defaut value for a field in a persistent data set, use this function:</p>
+<pre><code class="Lua">ssk.persist.setDefault( fileName, fieldName, value [ , params ] )
 </code></pre>
 
-<p><strong>Summary:</strong>
-EFM EFM EFM</p>
-<p>EFM EFM</p>
-<p><strong>Usage:</strong></p>
-<pre><code>local onNo()
-   print(&quot;Pressed No&quot;)   
+<ul>
+<li><code>fileName</code> - Name of file to save persistent data in.</li>
+<li><code>fieldName</code> - Name of setting to set default for.</li>
+<li><code>value</code> - Value to set as default for <code>fieldName</code>.</li>
+<li><code>params</code> (<code>{}</code>) - Optional table of parameters.<ul>
+<li><code>save</code> (<code>true</code>) - Save immediately to file.</li>
+<li><code>base</code> (<code>system.DocumentsDirectory</code>) - Base folder type for save file.</li>
+</ul>
+</li>
+</ul>
+<h2 id="setting-and-getting-values">Setting and Getting Values</h2>
+<p>Use these functions set and get values respectively:</p>
+<pre><code class="Lua">ssk.persist.set( fileName, fieldName, value [ , params ] )
+
+ssk.persist.get( fileName, fieldName [ , params ] )
+</code></pre>
+
+<ul>
+<li><code>fileName</code> - Name of file to save persistent data in.</li>
+<li><code>fieldName</code> - Name of setting to set default for.</li>
+<li><code>value</code> - Value to set as default for <code>fieldName</code>.</li>
+<li><code>params</code> (<code>{}</code>) - Optional table of parameters.<ul>
+<li><code>save</code> (<code>true</code>) - Save immediately to file.</li>
+<li><code>base</code> (<code>system.DocumentsDirectory</code>) - Base folder type for save file.</li>
+</ul>
+</li>
+</ul>
+<h2 id="setting-secure-mode">Setting Secure Mode</h2>
+<p>If you wish, you can ask <code>ssk.persist</code> to use the <code>ssk.security</code> module when saving and loading data with this function:</p>
+<pre><code class="Lua">ssk.persist.setSecure()
+</code></pre>
+
+<p>Just be sure you turn on <em>secure mode</em> before you first use the module.  (See <a href="#complete-persist-example">Complete Example</a> below.)</p>
+<h1 id="multiple-sets-allowed">Multiple Sets Allowed?</h1>
+<p>As you may have determined already, this module supports multiple separate data sets.  Simply use different names for the <code>fileName</code> setting and your data will be separated into independent sets.   (See <a href="#complete-persist-example">Complete Example</a> below.)</p>
+<h1 id="data-caching">Data Caching</h1>
+<p>This library utilizes caching to speed up data accesses.</p>
+<p>Whenever a persistent data set is mofified the following checks occur:</p>
+<ol>
+<li>Is data cached?  <ul>
+<li>If not, load it from file or create blank record.</li>
+<li>Cache data in persist module.</li>
+</ul>
+</li>
+<li>Is there a value for the field user is accessing?<ul>
+<li>If not, and if there is a default set,<ul>
+<li>Set field in cached copy to default</li>
+<li>Return default value.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Did user set <code>save</code> parameter to <code>false</code>?<ul>
+<li>If not, save cached data immediately</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>I will be modifying this slightly in the future to handle back to back set/setDefault calls with save set to true.
+This modification will prevent these saves from blocking and affecting frame rate.</p>
+</blockquote>
+<h1 id="complete-persist-example">Complete Persist Example</h1>
+<p>The following example shows a example usage with automatic <em>secure mode</em> enabling when on device.</p>
+<pre><code class="Lua">
+-- Enable secure mode if on device, but use un-encoded saves when on the simulator
+-- Tip: This makes checking your saves and hand-modifying them easy while testing in the simulator.
+--
+if( ssk.system.onDevice ) then
+   ssk.persist.setSecure()
 end
 
-local onYes()
-   print(&quot;Pressed Yes&quot;)
-end
+-- Set up two data sets with defaults
+--
+ssk.persist.setDefault( &quot;iap.json&quot;, &quot;disabled_ads&quot;, false , { save = false } )
+ssk.persist.setDefault( &quot;iap.json&quot;, &quot;bought_extra_content&quot;, false )
 
-ssk.android.captureBackButton( onNo, onYes )
+ssk.persist.setDefault( &quot;settings.json&quot;, &quot;sound_enabled&quot;, true, { save = false } )
+ssk.persist.setDefault( &quot;settings.json&quot;, &quot;last_score&quot;, 0 )
+
+-- Check persistent data fields
+print( &quot;Ads disabled? &quot;, ssk.persist( &quot;iap.json&quot;, &quot;disabled_ads&quot;) )
+
+print( &quot;Last Score: &quot;, ssk.persist( &quot;settings.json&quot;, &quot;last_score&quot; ) )
+
+-- Set 'last score' to a random value
+ssk.persist.set( &quot;settings.json&quot;, &quot;last_score&quot;, math.random(100, 10000) )
+
+-- Check persistent data fields again
+print( &quot;Ads disabled? &quot;, ssk.persist( &quot;iap.json&quot;, &quot;disabled_ads&quot;) )
+
+print( &quot;Last Score: &quot;, ssk.persist( &quot;settings.json&quot;, &quot;last_score&quot; ) )
+
 </code></pre>
 
 <hr />
