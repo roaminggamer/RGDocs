@@ -311,7 +311,8 @@
         <div class="col-md-9" role="main">
 
 <h1 id="easy-inputs-sskeasyinputs">Easy Inputs (ssk.easyInputs.*)</h1>
-<p>This library provides a number of <a href="../easy_inputs/#easy-input-factories">factories</a> create easy input object <a href="../easy_inputs/#easy-input-instances">instances</a>.  These objects dispatch Runtime events when touched.  To use these events you simply add <a href="../easy_inputs/#easy-input-listeners">listeners</a> to any part of your code that cares about the input.</p>
+<p>This library provides a number of <a href="../easy_inputs/#easy-input-factories">factories</a> that create easy input object <a href="../easy_inputs/#easy-input-instances">instances</a>.  These objects dispatch Runtime events when touched.  To use these events you simply add <a href="../easy_inputs/#easy-input-listeners">listeners</a> to any part of your code that cares about the input.</p>
+<p>(<em>Images below have <code>debugEn == true</code>.  Normally, the touch areas are invisible.</em>)</p>
 <table>
 <thead>
 <tr>
@@ -529,8 +530,7 @@ ssk.easyInputs.oneStickOneTouch.create( group, { debugEn = true, joyParams = { d
 </code></pre>
 
 <h2 id="joystick-factory">Joystick Factory</h2>
-<p>This is a helper factory (used by the stick factories) to create a virtual joystick.  Of course, you can call it directly if you want to.</p>
-<p>This produces a 'virtual' fixed- or floating- joysticks.  The prior stays in place, while the latter moves to the beginning of the touch event that triggered it.</p>
+<p>This factory produces a 'virtual' fixed- or floating- joystick.  The prior stays in place, while the latter moves to the beginning of the touch event that triggered it.</p>
 <p>Virtual joysticks dispatch a Runtime event that can be listened for anywhere and by any object(s).  See '<a href="../easy_inputs/#easy-input-listeners">Easy Input Listeners</a>' below to learn more about this.</p>
 <pre><code class="Lua">ssk.easyInputs.joystick.create( group, x, y, joyParams  )
 </code></pre>
