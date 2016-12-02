@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//home/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//home/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//globals/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//globals/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//extensions/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//extensions/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -36,143 +36,49 @@
     
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/colors/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/colors/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/display_standard/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/display_standard/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/display_arcs/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/display_arcs/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/display_lines/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/display_lines/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/display_layers/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/display_layers/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/display_samples/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/display_samples/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/easy_interfaces/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/easy_interfaces/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/system/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/actions1/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/actions2/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/android/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/camera/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/cc/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/easy_inputs/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/math2D/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/meters/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/misc/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/persist/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/points/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/security/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/shufflebag/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/social/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//libraries/soundMgr/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/system/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -180,8 +86,102 @@
     
 
     
+        
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//external/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/actions1/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/actions2/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/android/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/camera/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/cc/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/easy_inputs/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/math2D/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/meters/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/misc/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/persist/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/points/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/security/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/shufflebag/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/social/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//libraries/soundMgr/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/SSK2//external/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
