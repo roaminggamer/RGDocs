@@ -413,6 +413,10 @@ _G.ssk.init()
 <li><strong>launchArgs</strong> (<code>nil</code>) - Takes the value <code>...</code> which is only available in main.lua.  If provided it is used to further refine SSK2 settings based on what Corona has discovered about the current 'device' and passed on to your app in the launch args.</li>
 <li><strong>math2DPlugin</strong> (<code>false</code>) - If set to <code>true</code>, SSK2 will try to use the native <a href="https://marketplace.coronalabs.com/plugin/math2d">math2d</a> instead of the built-in Lua-only version.  If it cannot find the plugin, it will safely fall back to the Lua version.</li>
 <li><strong>measure</strong> (<code>false</code>) - If set to <code>true</code> SSK2 will dump a listing of each library name and size to the console.</li>
+<li><strong>useExternal</strong> (<code>false</code>) - If set to <code>true</code> SSK2 will load <a href="./external">external</a> libraries.<ul>
+<li><strong>Tip:</strong> This content must be <a href="./external/#installing-external-content">downloaded</a> first!</li>
+</ul>
+</li>
 </ul>
 <h2 id="example">Example</h2>
 <pre><code>_G.ssk.init( { launchArgs = ..., 
@@ -612,5 +616,5 @@ The more effort you put into your post, the better I will be able to help you. <
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-12-02 04:42:14.593000
+Build Date UTC : 2016-12-02 23:01:11.250000
 -->
