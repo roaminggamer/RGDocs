@@ -1699,6 +1699,11 @@
             "location": "/external/#wait-in-a-timer", 
             "text": "timer.performWithDelay(20, \n    coroutine.wrap(\n        function(event)\n        local source = event.source -- GOTCHA: save this now!\n\n        ssk.wait.ms( 500 )\n        print( 1 )\n        ssk.wait.ms( 500 )\n\n        print( 2 )\n\n        ssk.wait.ms( 500 )\n        print( 3 )\n\n        timer.cancel(source)\n    end), 0)     Copyright   Roaming Gamer, LLC. 2008-2016; All Rights Reserved", 
             "title": "Wait In A Timer"
+        }, 
+        {
+            "location": "/rgdocs/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "RG Docs Home"
         }
     ]
 }
