@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/libraries/soundMgr/"> 
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    <title>ssk.soundMgr.* - Super Starter Kit 2</title>
+
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../home/">Super Starter Kit 2</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">RG Docs</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../globals/">Globals</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../extensions/">Extensions</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../colors/">Colors (ssk.colors)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_standard/">Standard Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_arcs/">Arc Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_lines/">Line Factories (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_layers/">Quick Layers (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../display_samples/">Samples (ssk.display)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easy_interfaces/">Easy Interfaces (ssk.easyIFC)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../system/">System (ssk.system.)</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../actions1/">ssk.actions.* (Part 1)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../actions2/">ssk.actions.* (Part 2)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../android/">ssk.android.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../camera/">ssk.camera.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../cc/">ssk.cc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easy_inputs/">ssk.easyInputs.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../meters/">ssk.meters.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../misc/">ssk.misc.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../persist/">ssk.persist.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../points/">ssk.points.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../security/">ssk.security.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../shufflebag/">ssk.shufflebag.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../social/">ssk.social.*</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">ssk.soundMgr.*</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../external/">External</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../social/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../external/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#sound-manager-ssksoundmgr">Sound Manager (ssk.soundMgr.*)</a></li>
+        
+    
+        <li class="first-level "><a href="#configuring-the-sound-manager">Configuring the Sound Manager</a></li>
+        
+            <li class="third-level"><a href="#max-music-channels">Max Music Channels</a></li>
+        
+            <li class="third-level"><a href="#volume-control">Volume Control</a></li>
+        
+            <li class="third-level"><a href="#enabling-effects">Enabling Effects</a></li>
+        
+            <li class="third-level"><a href="#enabling-music">Enabling Music</a></li>
+        
+    
+        <li class="first-level "><a href="#adding-sounds">Adding Sounds</a></li>
+        
+    
+        <li class="first-level "><a href="#playing-sounds">Playing Sounds</a></li>
+        
+            <li class="third-level"><a href="#playing-sound-effects">Playing Sound Effects</a></li>
+        
+            <li class="third-level"><a href="#playing-music">Playing Music</a></li>
+        
+    
+        <li class="first-level "><a href="#stopping-sounds">Stopping Sounds</a></li>
+        
+            <li class="third-level"><a href="#stop">Stop</a></li>
+        
+            <li class="third-level"><a href="#stop-all">Stop All</a></li>
+        
+    
+        <li class="first-level "><a href="#freeing-memory-releasing">Freeing Memory (Releasing)</a></li>
+        
+            <li class="third-level"><a href="#release">Release</a></li>
+        
+            <li class="third-level"><a href="#release-all">Release All</a></li>
+        
+    
+        <li class="first-level "><a href="#complete-example">Complete Example</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="sound-manager-ssksoundmgr">Sound Manager (ssk.soundMgr.*)</h1>
+<p>The <em>Sound Manager</em> is a basic sound effects and music manager with these functions and listeners:</p>
+<table>
+<thead>
+<tr>
+<th>Functions</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#adding-sounds">add</a></td>
+<td><a href="#adding-sounds">addEffect</a></td>
+<td><a href="#adding-sounds">addMusic</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#debugging">dump</a></td>
+<td><a href="#enable-effects">enableSFX</a></td>
+<td><a href="#enable-music">enableMusic</a></td>
+<td><a href="#release">release</a></td>
+</tr>
+<tr>
+<td><a href="#debugging">setDebugLevel</a></td>
+<td><a href="#EFM">setMaxMusicChannels</a></td>
+<td><a href="#EFM">setMinTweenTime</a></td>
+<td><a href="#volume-control">setVolume</a></td>
+</tr>
+<tr>
+<td><a href="#stop">stop</a></td>
+<td><a href="#stop-all">stopAll</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Listeners</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#playing-sound-effects">onSound (Effect)</a></td>
+<td><a href="#playing-music">onSound (Music)</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="configuring-the-sound-manager">Configuring the Sound Manager</h1>
+<h2 id="max-music-channels">Max Music Channels</h2>
+<p>By default, the manager allocates four music channels for music and the rest (28) are for sound effects.  This is typically enough, but if you feel it won't be, simply call this function with the number of <code>max</code> channels you want held aside for music.</p>
+<p><strong>Tip:</strong> Do this before you start <a href="#playing-sounds">playing sounds</a>.</p>
+<pre><code class="Lua">ssk.soundMgr.setMaxMusicChannels( [ max ] ) 
+</code></pre>
+
+<h2 id="volume-control">Volume Control</h2>
+<p>By default, all channels are set at max volume (<code>1.0</code>), but the <em>Sound Manager</em> give you complete control of these volume:</p>
+<ul>
+<li><strong>Global Volume</strong> - Multiplier for all channels.</li>
+<li><strong>Effect Volume</strong> - Multiplier for <code>"effect"</code> channels.</li>
+<li><strong>Music Volume</strong> - Multiplier for <code>"music"</code> channels.</li>
+</ul>
+<p>The volume for any sound is determined by this equation:</p>
+<blockquote>
+<p>Channel Volume == <em>Global Volume</em> x <em>Type Volume</em> </p>
+</blockquote>
+<pre><code class="Lua">ssk.soundMgr.setVolume( volume [ , volType ] )
+</code></pre>
+
+<ul>
+<li><code>volume</code> (<code>1.0</code>) - Volume level in range [<code>0</code>,<code>1</code>].</li>
+<li><code>volType</code> (<code>nil</code>) - Volume type to set:<ul>
+<li><code>nil</code> - Global</li>
+<li><code>effect</code> - Effect channels.</li>
+<li><code>music</code> - Music channels.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tip:</strong> While you usually do this during initialization, you can change volumes any time.</p>
+<h2 id="enabling-effects">Enabling Effects</h2>
+<p>By default, effect sounds are enabled, but you can disable them at any time by passing <code>false</code> to this function (defaults to <code>true</code>):</p>
+<pre><code class="Lua">ssk.soundMgr.enableSFX( [ enable ] )
+</code></pre>
+
+<p><strong>Tip:</strong> Disabling does not <a href="#stoping-sounds">stop</a> currently <a href="#playing-sounds">playing sounds</a>.  It prevents new ones from starting.</p>
+<h2 id="enabling-music">Enabling Music</h2>
+<p>By default, music sounds are enabled, but you can disable them at any time by passing <code>false</code> to this function (defaults to <code>true</code>):</p>
+<pre><code class="Lua">ssk.soundMgr.enableMusic( [ enable ] )
+</code></pre>
+
+<p><strong>Tip:</strong> Disabling does not <a href="#stoping-sounds">stop</a> currently <a href="#playing-sounds">playing sounds</a>.  It prevents new ones from starting.</p>
+<h1 id="adding-sounds">Adding Sounds</h1>
+<p>There is one 'generic' function for adding sounds and two helper functions that call it.</p>
+<pre><code class="Lua">ssk.soundMgr.add( name, path [, params ] )
+</code></pre>
+
+<pre><code class="Lua">ssk.soundMgr.addEffect( name, path [, params ] )
+</code></pre>
+
+<pre><code class="Lua">ssk.soundMgr.addMusic( name, path [, params ] )
+</code></pre>
+
+<ul>
+<li><code>name</code> - Name to identify sound by in future.<ul>
+<li>Must be unique.</li>
+<li>Case-sensitive.</li>
+</ul>
+</li>
+<li><code>path</code> - Full path (including file name) to sound file.</li>
+<li><code>params</code> (<code>{}</code>) - Table of named parameters to configure sound.<ul>
+<li><code>soundType</code> (<code>effect</code>) - Must be <code>effect</code> or <code>music</code>.<ul>
+<li>Helper functions override this parameter to match their type.</li>
+</ul>
+</li>
+<li><code>baseDir</code> (<code>system.ResourceDirectory</code>) - Folder type for path.</li>
+<li><code>preload</code> (<code>false</code>) - Preload this sound.</li>
+<li><code>sticky</code> (<code>nil</code>) - If <code>true</code>, this sound is skipped during normal release.</li>
+<li><code>minTweenTime</code> (<code>nil</code>) - Set this to a positive non-zero value to keep sounds from flooding (playing repeatedly and too quickly).<ul>
+<li>This prevents this sound from repeating any sooner than <code>minTweenTime</code> milliseconds.</li>
+<li>This is handy for sound effects that can happen quickly and can be used as a basic 'flood control'.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">
+soundMgr.add( &quot;click&quot;, &quot;sounds/sfx/click.mp3&quot;, { soundType = &quot;effect&quot;, preload = true, minTweenTime = 200 } )
+
+soundMgr.addEffect( &quot;explosion&quot;, &quot;sounds/sfx/explosion.wav&quot;, { preload = true, sticky = true } )
+
+soundMgr.addMusic( &quot;Sugar Plum Breakdown&quot;, &quot;sounds/music/Sugar Plum Breakdown.mp3&quot; )
+
+</code></pre>
+
+<h1 id="playing-sounds">Playing Sounds</h1>
+<p>Sound effects and music are both played using the <strong>onSound</strong> event.  </p>
+<p>This event takes a number of (mostly optional) arguments:</p>
+<ul>
+<li><code>sound</code> (required) - Name of sound (must match previously added sound).</li>
+<li><code>loops</code> (<code>1</code>) - Optional number of times to loop sound:<ul>
+<li><code>-1</code> or <code>0</code> - Infinite.</li>
+<li><code>N &gt; 0</code> - <code>N</code> times.</li>
+</ul>
+</li>
+<li><code>duration</code> (<code>nil</code>) - If specified, sound plays up to this many milliseconds and auto-stops.    </li>
+<li><code>fadein</code> (<code>nil</code>) - If specified, fade up from 0 to channel volume over <code>fadein</code> milliseconds.</li>
+<li><code>onComplete</code> (<code>nil</code>) - Optional listener to execute when done playing sound.</li>
+</ul>
+<h2 id="playing-sound-effects">Playing Sound Effects</h2>
+<pre><code class="Lua">
+post( &quot;onSound&quot;, { sound = &quot;click&quot; } )
+
+</code></pre>
+
+<h2 id="playing-music">Playing Music</h2>
+<pre><code class="Lua">
+post( &quot;onSound&quot;, { sound = &quot;Sugar Plum Breakdown&quot;, fadein = 1500 } )
+
+</code></pre>
+
+<p><strong>Tip:</strong> If you try to play the same music while it is playing already, you will get a warning and the second attempt will fail.  </p>
+<h1 id="stopping-sounds">Stopping Sounds</h1>
+<p>You can stop individual sounds, categories or sounds (<code>"effect"</code> or <code>"music"</code>) or all sounds.</p>
+<h2 id="stop">Stop</h2>
+<p>Use this function to stop all playing instances of a specific sound:</p>
+<pre><code class="Lua">ssk.soundMgr.stop( name ) 
+</code></pre>
+
+<ul>
+<li><code>name</code> - Name of sound to stop.</li>
+</ul>
+<h2 id="stop-all">Stop All</h2>
+<p>Use this function to stop categories of sounds (<code>"effect"</code> or <code>"music"</code>) or all sounds.</p>
+<pre><code class="Lua">ssk.soundMgr.stopAll( [ stopType ] ) 
+</code></pre>
+
+<ul>
+<li><code>stopType</code> (<code>nil</code>) - Type of sounds to stop.<ul>
+<li><code>nil</code> - All sounds.</li>
+<li><code>"effect"</code> - Effect sounds.</li>
+<li><code>"music"</code> - Music sounds.</li>
+</ul>
+</li>
+</ul>
+<h1 id="freeing-memory-releasing">Freeing Memory (Releasing)</h1>
+<p>You are responsible for freeing memory used by sounds you no longer need loaded.  Fortunately, the <em>Sound Manager</em> makes this easy.</p>
+<p><strong>Warning:</strong> Releasing a sound will stop any instance(s) of that sound currently being played.</p>
+<h2 id="release">Release</h2>
+<p>You can release the memory associated with any single sound (as long as it is not currently playing) with this function:</p>
+<pre><code class="Lua">ssk.soundMgr.release( name [, force ] ) 
+</code></pre>
+
+<ul>
+<li><code>name</code> - Name of sound (must match previously added sound).</li>
+<li><code>force</code> (<code>false</code>) - Set this to <code>true</code> for force <a href="#adding-sounds">sticky</a> sounds to be removed.</li>
+</ul>
+<h2 id="release-all">Release All</h2>
+<p>You can release the memory associated with any single sound (as long as it is not currently playing) with this function:</p>
+<pre><code class="Lua">ssk.soundMgr.releaseAll( [ releaseType [, force ] ] ) 
+</code></pre>
+
+<ul>
+<li><code>releaseType</code> (<code>nil</code>) - Type of sounds to release.<ul>
+<li><code>nil</code> - All sounds.</li>
+<li><code>"effect"</code> - Effect sounds.</li>
+<li><code>"music"</code> - Music sounds.</li>
+</ul>
+</li>
+<li><code>force</code> (<code>false</code>) - Set this to <code>true</code> for force <a href="#adding-sounds">sticky</a> sounds to be removed.</li>
+</ul>
+<p><strong>Tip:</strong> If you try to play the same music while it is playing already, you will get a warning and the second attempt will fail.  </p>
+<h1 id="complete-example">Complete Example</h1>
+<pre><code class="Lua">
+local soundMgr = ssk.soundMgr
+
+soundMgr.enableSFX( true )
+
+soundMgr.enableMusic( true )
+
+soundMgr.setVolume(0.8)
+
+soundMgr.setVolume(0.5, &quot;music&quot;)
+
+soundMgr.setDebugLevel( 1 )
+
+soundMgr.add( &quot;click&quot;, &quot;sounds/sfx/click.mp3&quot;, { preload = true, minTweenTime = 200 } )
+
+soundMgr.addEffect( &quot;explosion&quot;, &quot;sounds/sfx/explosion.wav&quot;, { preload = true, sticky = true } )
+
+soundMgr.addMusic( &quot;Sugar Plum Breakdown&quot;, &quot;sounds/music/Sugar Plum Breakdown.mp3&quot; )
+
+soundMgr.release( &quot;click&quot; )
+
+soundMgr.release( &quot;explosion&quot; )
+
+post( &quot;onSound&quot;, { sound = &quot;click&quot; } )
+
+nextFrame( function() post( &quot;onSound&quot;, { sound = &quot;click&quot; } ) end, 100 )
+
+timer.performWithDelay( 2000, 
+    function()
+        post( &quot;onSound&quot;, { sound = &quot;explosion&quot; } )
+        nextFrame( function() post( &quot;onSound&quot;, { sound = &quot;explosion&quot; } ) end, 250 )
+    end )
+
+local function onComplete()
+    print(&quot;All sounds should be done.&quot;)
+    soundMgr.dump()
+end
+
+timer.performWithDelay( 3000, 
+    function()
+        post( &quot;onSound&quot;, 
+              { sound = &quot;Sugar Plum Breakdown&quot;, fadein = 1500, 
+                loops = 0, onComplete = onComplete } )
+    end )
+
+timer.performWithDelay( 3500, 
+    function()
+        print(&quot;Stopping early.&quot;)
+        soundMgr.stopAll(&quot;music&quot;)
+    end )
+
+</code></pre>
+
+<hr />
+<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../..';
+    </script>
+    <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+    <script src="../../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

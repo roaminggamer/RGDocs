@@ -152,7 +152,13 @@
                         
                             
 <li >
-    <a href="../actions/">ssk.actions.*</a>
+    <a href="../actions1/">ssk.actions.* (Part 1)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../actions2/">ssk.actions.* (Part 2)</a>
 </li>
 
                         
@@ -183,6 +189,12 @@
                             
 <li >
     <a href="../math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../meters/">ssk.meters.*</a>
 </li>
 
                         
@@ -222,7 +234,19 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../soundMgr/">ssk.soundMgr.*</a>
+</li>
+
+                        
                         </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../external/">External</a>
                     </li>
                 
                 
@@ -386,32 +410,13 @@ newImageRect( group, 445, top + 150, &quot;images/smiley.png&quot;, {
 
 <hr />
 <h1 id="bouncing-block-simple-physics">Bouncing Block - Simple Physics</h1>
+<p><img alt="SSK verus Pure Corona SDK" src="../..\images\sskversuspure.gif" /></p>
 <pre><code class="lua">
-local physics = require &quot;physics&quot;
+newImageRect( group, centerX - 100 , centerY - 50, &quot;images/kenney/physicsAssets/yellow_round.png&quot;, 
+              { size = 40 }, { radius = 20, bounce = 1, gravityScale = 0.2 } )  
 
-physics.setGravity( 0, 10 )
-
-physics.start()
---physics.setDrawMode( &quot;hybrid&quot; )
-
-local ball = display.newImageRect( group, &quot;images/kenney/physicsAssets/yellow_round.png&quot;, 40, 40 )
-
-ball.x = left + 50
-
-ball.y = centerY - 100
-
-physics.addBody( ball, { radius = 20, bounce = 1, radius = 20  } )
-
-ball.gravityScale = 0.2
-
-
-local block = display.newImageRect( group, &quot;images/kenney/physicsAssets/stone/square2.png&quot;, 40, 40 )
-
-block.x = left + 50
-
-block.y = centerY + 50
-
-physics.addBody( block, &quot;static&quot; )
+newImageRect( group, centerX - 100, centerY + 100, &quot;images/kenney/physicsAssets/stone/square2.png&quot;, 
+              { size = 40 }, { bodyType = &quot;static&quot; } ) 
 
 </code></pre>
 

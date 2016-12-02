@@ -153,7 +153,13 @@
                         
                             
 <li >
-    <a href="libraries/actions/">ssk.actions.*</a>
+    <a href="libraries/actions1/">ssk.actions.* (Part 1)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="libraries/actions2/">ssk.actions.* (Part 2)</a>
 </li>
 
                         
@@ -184,6 +190,12 @@
                             
 <li >
     <a href="libraries/math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="libraries/meters/">ssk.meters.*</a>
 </li>
 
                         
@@ -223,7 +235,19 @@
 </li>
 
                         
+                            
+<li >
+    <a href="libraries/soundMgr/">ssk.soundMgr.*</a>
+</li>
+
+                        
                         </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="external/">External</a>
                     </li>
                 
                 
@@ -268,14 +292,24 @@
         <li class="first-level "><a href="#where-can-i-get-it">Where Can I Get It?</a></li>
         
     
-        <li class="first-level "><a href="#installing-ssk-2">Installing SSK 2</a></li>
+        <li class="first-level "><a href="#installing-ssk2">Installing SSK2</a></li>
         
     
-        <li class="first-level "><a href="#configuring-ssk-2">Configuring SSK 2</a></li>
+        <li class="first-level "><a href="#configuring-ssk2">Configuring SSK2</a></li>
         
             <li class="third-level"><a href="#configuration-settings">Configuration Settings:</a></li>
         
             <li class="third-level"><a href="#example">Example</a></li>
+        
+    
+        <li class="first-level "><a href="#validation-sampler">Validation Sampler</a></li>
+        
+    
+        <li class="first-level "><a href="#metrics">Metrics</a></li>
+        
+            <li class="third-level"><a href="#lines-of-code-comments">Lines Of Code &amp; Comments</a></li>
+        
+            <li class="third-level"><a href="#memory-footprint">Memory Footprint</a></li>
         
     
         <li class="first-level "><a href="#help">Help!</a></li>
@@ -288,7 +322,7 @@
         
             <li class="third-level"><a href="#are-you-typing-ssk2">Are you typing ssk2?</a></li>
         
-            <li class="third-level"><a href="#ssk-2-ssk-legacy">SSK 2 ~= SSK Legacy</a></li>
+            <li class="third-level"><a href="#ssk2-ssk-legacy">SSK2 ~= SSK Legacy</a></li>
         
             <li class="third-level"><a href="#posting-questions-to-the-forums">Posting Questions To The Forums</a></li>
         
@@ -298,13 +332,17 @@
         <div class="col-md-9" role="main">
 
 <h1 id="super-starter-kit-2">Super Starter Kit 2</h1>
-<p><a href="https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872"><img alt="GET IT NOW" src="./ssk2_small.png" /></a> SUPERCHARGING <em>Corona SDK</em> game development every day.  <a href="http://https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872">Get It Now!</a></p>
+<p><a href="https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872"><img alt="GET IT NOW" src="./ssk2_small.png" /></a> SUPERCHARGING <a href="https://coronalabs.com/">Corona SDK</a> game development every day.  <a href="https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872">Get It Now!</a></p>
 <p><a href="./libraries/actions/"><img alt="Actions" src="./images/small/actions.gif" /></a>
 <a href="./libraries/camera/"><img alt="Camera" src="./images/small/camera.gif" /></a>
 <a href="./libraries/display_standard/"><img alt="Display" src="./images/small/basic_display.gif" /></a></p>
 <p>(<strong>Latest Release:</strong> <code>2016.001</code>)</p>
 <h1 id="what-is-it">What Is It?</h1>
-<p>Super Starter Kit 2 (aka SSK 2) is a collection libraries and utilities designed to take your development experience to a whole new level of efficiency and speed.</p>
+<p>Super Starter Kit 2 (aka SSK2) is a collection of libraries and utilities designed to take your <a href="https://coronalabs.com/">Corona SDK</a> development experience to a whole new level of efficiency and speed.</p>
+<blockquote>
+<p><strong>SSK2</strong> is the culmination of over five years of programming effort and as such acts as the foundation for all of my projects.  I think you should make it your foundation too.</p>
+<p>~ <strong>The Roaming Gamer</strong></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -329,13 +367,18 @@
 <td align="right"><strong>Solutions</strong></td>
 <td>Top-shelf solutions for common development challenges: <a href="./libraries/actions">Actions Library</a>, <a href="./libraries/android">Android Helpers</a>, <a href="./libraries/camera">(Scene) Camera Library</a>, <a href="./libraries/cc">Collision Calculator</a>, <a href="./libraries/easy_inputs">Easy Inputs</a>, <a href="./libraries/math2D">2D Math</a>, <a href="./libraries/persist">Persistent Data</a>, <a href="./libraries/points">Points Library</a>, <a href="./libraries/security">Simple Security</a>, <a href="./libraries/social">Easy Social</a>, <a href="./libraries/shufflebag">Shuffle Bags</a>, <a href="./libraries/misc">... more</a></td>
 </tr>
+<tr>
+<td align="right"><a href="./external">External</a></td>
+<td>A few libraries by folks that I find useful. (<em>Appropriate licenses listed and included.</em>)</td>
+</tr>
 </tbody>
 </table>
 <h1 id="where-can-i-get-it">Where Can I Get It?</h1>
-<p>You can find <strong>SSK 2</strong> (<em>and other quality Roaming Gamer products</em>) on the <a href="http://https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872">Corona Marketplace</a>.</p>
-<p><a href="http://https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872"><img alt="Corona Marketplace" src="./corona-marketplace-logo.png" /></a></p>
-<h1 id="installing-ssk-2">Installing SSK 2</h1>
-<p>To use SSK 2, simply:</p>
+<p>You can find <strong>SSK2</strong> (<em>and other quality Roaming Gamer products</em>) on the <a href="https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872">Corona Marketplace</a>.</p>
+<p><a href="https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872"><img alt="Corona Marketplace" src="./corona-marketplace-logo.png" /></a></p>
+<p>(<em>You can also see my full list of products on <a href="https://roaminggamer.github.io/RGDocs/">RG Docs</a>.</em>)</p>
+<h1 id="installing-ssk2">Installing SSK2</h1>
+<p>To use SSK2, simply:</p>
 <ol>
 <li>Copy the ssk2 folder and its contents to the same folder as your main.lua file.</li>
 <li>Add this to main.lua at or very near the top of the file:</li>
@@ -344,32 +387,32 @@
 _G.ssk.init()
 </code></pre>
 
-<p><strong>Note:</strong> SSK 2 adds extra features to Lua and Corona so it is best to initialize it <em>prior</em> to requiring any other libraries or modules.</p>
-<h1 id="configuring-ssk-2">Configuring SSK 2</h1>
-<p>The initialization example shown above uses the default settings for SSK 2.  You may want to change that.  </p>
-<p><code>ssk.init()</code> takes an optional table of key-value pairs <code>{ key1=value1, ..., keyN=valueN }</code> that allows you to configure the myriad options SSK 2 provides.</p>
+<p><strong>Tip:</strong> SSK2 adds extra features to Lua and Corona so it is best to initialize it <em>prior</em> to requiring any other libraries or modules.</p>
+<h1 id="configuring-ssk2">Configuring SSK2</h1>
+<p>The initialization example shown above uses the default settings for SSK2.  You may want to change that.  </p>
+<p><code>ssk.init()</code> takes an optional table of key-value pairs <code>{ key1=value1, ..., keyN=valueN }</code> that allows you to configure the myriad options SSK2 provides.</p>
 <h2 id="configuration-settings">Configuration Settings:</h2>
 <ul>
-<li><strong>debugLevel</strong> (<code>0</code>) - Values higher than 0 turn on debug messaging in SSK 2 modules and libraries.<ul>
+<li><strong>debugLevel</strong> (<code>0</code>) - Values higher than 0 turn on debug messaging in SSK2 modules and libraries.<ul>
 <li>Valid range: [0, 2]</li>
 </ul>
 </li>
-<li><strong>exportCore</strong> (<code>true</code>)  - If set to true, SSK 2 'exports' a number of values into the global (<code>_G</code>) namespace.  <ul>
+<li><strong>exportCore</strong> (<code>true</code>)  - If set to true, SSK2 'exports' a number of values into the global (<code>_G</code>) namespace.  <ul>
 <li>See SSK <a href="./globals">Globals</a> for more details.</li>
 </ul>
 </li>
-<li><strong>exportColors</strong> (<code>true</code>)  - If set to <code>true</code>, SSK 2 'exports' a number of color values and functions into the global (<code>_G</code>) namespace.  <ul>
+<li><strong>exportColors</strong> (<code>true</code>)  - If set to <code>true</code>, SSK2 'exports' a number of color values and functions into the global (<code>_G</code>) namespace.  <ul>
 <li>See SSK <a href="./libraries/colors">ssk.colors.*</a> for more details.</li>
 </ul>
 </li>
-<li><strong>exportSystem</strong> (<code>false</code>)  - If set to true, SSK 2 'exports' a number of values into the global (<code>_G</code>) namespace.  <ul>
+<li><strong>exportSystem</strong> (<code>false</code>)  - If set to true, SSK2 'exports' a number of values into the global (<code>_G</code>) namespace.  <ul>
 <li>See <a href="./libraries/system">ssk.system.*</a> for more details.</li>
 </ul>
 </li>
-<li><strong>gameFont</strong> (<code>native.systemFont</code>) - SSK 2 uses a 'default' font for buttons and some other features.  You can specify that default font by providing the name of a valid <code>ttf</code> or <code>otf</code> file in this setting.</li>
-<li><strong>launchArgs</strong> (<code>nil</code>) - Takes the value <code>...</code> which is only available in main.lua.  If provided it is used to further refine SSK 2 settings based on what Corona has discovered about the current 'device' and passed on to your app in the launch args.</li>
-<li><strong>math2DPlugin</strong> (<code>false</code>) - If set to <code>true</code>, SSK 2 will try to use the native <a href="https://marketplace.coronalabs.com/plugin/math2d">math2d</a> instead of the built-in Lua-only version.  If it cannot find the plugin, it will safely fall back to the Lua version.</li>
-<li><strong>measure</strong> (<code>false</code>) - If set to <code>true</code> SSK 2 will dump a listing of each library name and size to the console.</li>
+<li><strong>gameFont</strong> (<code>native.systemFont</code>) - SSK2 uses a 'default' font for buttons and some other features.  You can specify that default font by providing the name of a valid <code>ttf</code> or <code>otf</code> file in this setting.</li>
+<li><strong>launchArgs</strong> (<code>nil</code>) - Takes the value <code>...</code> which is only available in main.lua.  If provided it is used to further refine SSK2 settings based on what Corona has discovered about the current 'device' and passed on to your app in the launch args.</li>
+<li><strong>math2DPlugin</strong> (<code>false</code>) - If set to <code>true</code>, SSK2 will try to use the native <a href="https://marketplace.coronalabs.com/plugin/math2d">math2d</a> instead of the built-in Lua-only version.  If it cannot find the plugin, it will safely fall back to the Lua version.</li>
+<li><strong>measure</strong> (<code>false</code>) - If set to <code>true</code> SSK2 will dump a listing of each library name and size to the console.</li>
 </ul>
 <h2 id="example">Example</h2>
 <pre><code>_G.ssk.init( { launchArgs = ..., 
@@ -379,10 +422,81 @@ _G.ssk.init()
                debugLevel = 2 } )
 </code></pre>
 
+<h1 id="validation-sampler">Validation Sampler</h1>
+<p>As time proceeds, there will me more and more free and paid content available using SSK2... but for now you can take a look at the <em>Validation Sampler</em> that comes with SSK2.</p>
+<p>You will find the <em>Validation Sampler</em> in the ZIP-file you downloaded under ~/validation.</p>
+<p>To run the sampler, do the following:</p>
+<ol>
+<li>Copy the ssk folder (and all its contents) into ~/validation/</li>
+<li>Open main.lua in the <em>SIMULATOR</em>.  This will display a menu of samples you can run.</li>
+<li>Click on any sample button to run that sample.</li>
+<li>Re-load simulator (CTRL+R or CMD+R) to see the menu again.</li>
+</ol>
+<p>(Although it will work, the sampler is not designed to run easily on a device.  i.e. You will need to quit the app to run a new sample.)</p>
+<p>[<img alt="Validation Sampler" src="./images/validationsampler.jpg" />]</p>
+<h1 id="metrics">Metrics</h1>
+<p>For those folks who love metrics (admit it, you do), here are a few interesting details about SSK2.</p>
+<h2 id="lines-of-code-comments">Lines Of Code &amp; Comments</h2>
+<p>Counting with <a href="http://cloc.sourceforge.net">cloc</a> I get these metrics:</p>
+<pre><code>-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Lua                             68           2398           2580          10836
+-------------------------------------------------------------------------------
+</code></pre>
+
+<h2 id="memory-footprint">Memory Footprint</h2>
+<p>A measurement of memory used per-library and in total:</p>
+<pre><code>--------------------------------------------------------------------------
+-- Initalizing SSK
+--------------------------------------------------------------------------
+ssk2.core                                                    :       7 KB
+ssk2.extensions.display                                      :       1 KB
+ssk2.extensions.io                                           :       7 KB
+ssk2.extensions.math                                         :       5 KB
+ssk2.extensions.native                                       :       3 KB
+ssk2.extensions.string                                       :      13 KB
+ssk2.extensions.table                                        :      24 KB
+ssk2.extensions.transition                                   :       3 KB
+ssk2.system                                                  :       2 KB
+ssk2.android                                                 :       1 KB
+ssk2.colors                                                  :      16 KB
+ssk2.security                                                :       9 KB
+ssk2.persist                                                 :       2 KB
+ssk2.math2d                                                  :      12 KB
+ssk2.cc                                                      :       6 KB
+ssk2.points                                                  :       4 KB
+ssk2.actions.actions                                         :      22 KB
+ssk2.soundMgr                                                :      15 KB
+ssk2.easyDisplay                                             :      51 KB
+ssk2.easyIFC                                                 :     121 KB
+ssk2.easyInputs                                              :      70 KB
+ssk2.easyCamera                                              :      12 KB
+ssk2.easySocial                                              :       2 KB
+ssk2.misc                                                    :      44 KB
+ssk2.shuffleBag                                              :       4 KB
+ssk2.meters                                                  :       7 KB
+ssk2.external.mydevelopers.autolan.client                    :      26 KB
+ssk2.external.mydevelopers.autolan.server                    :      23 KB
+ssk2.external.proxy                                          :       1 KB
+ssk2.external.wait                                           :       2 KB
+ssk2.external.randomlua                                      :       7 KB
+ssk2.external.30log                                          :       5 KB
+ssk2.external.portableRandom                                 :       4 KB
+--------------------------------------------------------------------------
+SSK Total                                                    :  529.86 KB
+--------------------------------------------------------------------------
+</code></pre>
+
+<p><strong>Tip:</strong> If this seems <em>FAT</em>, don't worry.  You can always remove components you are not using when you go to release your app or game.</p>
+<blockquote>
+<p>I'll be writing an article on <em>SLIMMING DOWN SSK2</em> soon...</p>
+<p>~ <strong>The Roaming Gamer</strong></p>
+</blockquote>
 <h1 id="help">Help!</h1>
 <h2 id="dont-panic">Don't Panic</h2>
-<p>Are you having a problem with SSK 2?  If so, don't panic.</p>
-<p>I regularly update SSK 2 and its co-products.  Most of the time problems can simply be traced back to not having the most up-to-date version of SSK 2.</p>
+<p>Are you having a problem with SSK2?  If so, don't panic.</p>
+<p>I regularly update SSK2 and its co-products.  Most of the time problems can simply be traced back to not having the most up-to-date version of SSK2.</p>
 <h2 id="are-you-using-the-latest-version">Are You Using The Latest Version?</h2>
 <p>Add this code at the end of main.lua</p>
 <pre><code>print( &quot;SSK VERSION: &quot; .. ssk.getVersion() )
@@ -399,11 +513,11 @@ _G.ssk.init()
 <p>You may have noticed that while this is called SSK <strong>2</strong>, I still use the old naming convention <code>ssk.someFunction()</code> in my samples.  </p>
 <p>"Why," you ask?</p>
 <p>I am a lazy coder and proud of it. Even one extra letter is too much repetetive typing for me.  Also, I'm and <em>old dog</em>, and as the saying goes, <a href="http://idioms.thefreedictionary.com/You+can't+teach+an+old+dog+new+tricks">"You can't teach an old dog new tricks."</a></p>
-<p>So, if you have been doing this: <code>ssk2.someFunction()</code>, get rid of the <code>2</code> and you'll be good to go.</p>
-<h2 id="ssk-2-ssk-legacy">SSK 2 ~= SSK Legacy</h2>
-<p>This is the guide for SSK 2.  If you are trying to use Legacy SSK and following this guide... well many things have changed.  Please consider getting SSK 2.</p>
+<p>So, if you have been doing this: <code>ssk2.someFunction()</code>, get rid of the <code>2</code> and you will be good to go.</p>
+<h2 id="ssk2-ssk-legacy">SSK2 ~= SSK Legacy</h2>
+<p>This is the guide for SSK2.  If you are trying to use Legacy SSK and following this guide... well many things have changed.  Please consider getting SSK2.</p>
 <blockquote>
-<p><a href="http://https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872">Get It Now!</a> It will be worth every penny!  - The Roaming Gamer</p>
+<p><a href="https://marketplace.coronalabs.com/vendor/4a8d1f3c-5e88-45e8-b5bf-834f5abe8872">Get SSK2 Now!</a> It will be worth every penny!  ~ <strong>The Roaming Gamer</strong></p>
 </blockquote>
 <h2 id="posting-questions-to-the-forums">Posting Questions To The Forums</h2>
 <p>I will be providing help (exclusively) through the <a href="https://forums.coronalabs.com/forum/624-tools-services/">Corona SDK Forums</a>.  (<em>Sorry: Direct e-mails will not be answered.</em>)</p>
@@ -423,7 +537,7 @@ _G.ssk.init()
 </ul>
 </li>
 <li><strong>Error Message(s) (If Any)</strong><ul>
-<li>Error messages (put them in a code block for legiblity)</li>
+<li>Error messages (put them in a code block for legibility)</li>
 </ul>
 </li>
 <li><strong>Summary Of Problem</strong><ul>
@@ -443,7 +557,7 @@ _G.ssk.init()
 <blockquote>
 <p>Be clear, consise and precise.<br />
 The more effort you put into your post, the better I will be able to help you. </p>
-<p><strong>The Roaming Gamer</strong></p>
+<p>~ <strong>The Roaming Gamer</strong></p>
 </blockquote>
 <p><img alt="RoamingGamer" src="./roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         
@@ -498,5 +612,5 @@ The more effort you put into your post, the better I will be able to help you. <
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-11-30 05:29:20.509000
+Build Date UTC : 2016-12-02 00:07:43.653000
 -->

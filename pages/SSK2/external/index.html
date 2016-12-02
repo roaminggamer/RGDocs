@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/globals/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/external/"> 
     <link rel="shortcut icon" href="../img/favicon.ico">
 
-    <title>Globals - Super Starter Kit 2</title>
+    <title>External - Super Starter Kit 2</title>
 
     <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -77,8 +77,8 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Globals</a>
+                    <li >
+                        <a href="../globals/">Globals</a>
                     </li>
                 
                 
@@ -245,8 +245,8 @@
                 
                 
                 
-                    <li >
-                        <a href="../external/">External</a>
+                    <li class="active">
+                        <a href="./">External</a>
                     </li>
                 
                 
@@ -261,12 +261,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="..">
+                        <a rel="next" href="../libraries/soundMgr/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../extensions/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -282,124 +282,164 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#global-variables">Global Variables</a></li>
+        <li class="first-level active"><a href="#external">External</a></li>
         
     
-        <li class="first-level "><a href="#global-functions">Global Functions</a></li>
-        
-            <li class="third-level"><a href="#runtime-improvements">Runtime:* Improvements</a></li>
-        
-            <li class="third-level"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#30log-roland-yonaba">30Log (Roland Yonaba)</a></li>
         
     
-        <li class="first-level "><a href="#stop-exporting-globals">Stop Exporting Globals</a></li>
+        <li class="first-level "><a href="#autolan-my-developers">AutoLan &copy; M.Y. Developers</a></li>
+        
+    
+        <li class="first-level "><a href="#portable-random-community-code">Portable Random (Community Code)</a></li>
+        
+            <li class="third-level"><a href="#basic-usage">Basic Usage</a></li>
+        
+    
+        <li class="first-level "><a href="#proxy-corona-blog">Proxy (Corona Blog)</a></li>
+        
+            <li class="third-level"><a href="#example">Example</a></li>
+        
+    
+        <li class="first-level "><a href="#randomlua-love-community">RandomLua (LÖVE Community)</a></li>
+        
+            <li class="third-level"><a href="#mersenne-twister">Mersenne Twister</a></li>
+        
+    
+        <li class="first-level "><a href="#wait-starcrunch">Wait (StarCrunch)</a></li>
+        
+            <li class="third-level"><a href="#waiting-between-steps">Waiting Between Steps</a></li>
+        
+            <li class="third-level"><a href="#wait-in-a-timer">Wait In A Timer</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="global-variables">Global Variables</h1>
-<p>A set of (core) variables designed to save typing and time, period.</p>
-<table>
-<thead>
-<tr>
-<th>Variable(s)</th>
-<th>Equivalent To</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>w, h</td>
-<td><code>display.contentWidth</code>, <code>display.contentHeight</code></td>
-</tr>
-<tr>
-<td>centerX, centerY</td>
-<td><code>display.actualContentWidth</code>, <code>display.actualContentWidth</code></td>
-</tr>
-<tr>
-<td>fullw, fullh</td>
-<td><code>display.actualContentWidth</code>, <code>display.actualContentWidth</code></td>
-</tr>
-<tr>
-<td>unusedWidth, unusedHeight</td>
-<td><code>fullw - w</code> and <code>fullh - h</code> respetively.</td>
-</tr>
-<tr>
-<td>left, right, top, bottom</td>
-<td><em>Calculated</em> positions for the true edges of the screen, regardless of scaling used.</td>
-</tr>
-</tbody>
-</table>
-<h1 id="global-functions">Global Functions</h1>
-<p>A set of (core) functions designed to save time writing common code.</p>
-<h2 id="runtime-improvements">Runtime:* Improvements</h2>
-<p>The following functions improve on the Runtime:* event functions.</p>
-<table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>listen( name, listener )</td>
-<td>Shorthand equivalent to <code>Runtime:addEventListner( event, listener )</code></td>
-</tr>
-<tr>
-<td>ignore( name, listener )</td>
-<td>Shorthand equivalent to <code>Runtime:removeEventListner( event, listener )</code></td>
-</tr>
-<tr>
-<td>ignoreList( list, obj )</td>
-<td>Removes all listeners in table <code>list</code> if found on <code>obj</code>.</td>
-</tr>
-<tr>
-<td>post( name, [ params [, debuglvl ]] )</td>
-<td>Dispatches <code>name</code> event with optional <code>params</code> table.</td>
-</tr>
-<tr>
-<td>autoIgnore( name, obj )</td>
-<td>Stop listening for <code>name</code> event if <code>obj</code> is <em>invalid</em>.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="general">General</h2>
-<p>A (small) set of utility functions that I use very frequently.</p>
-<table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fnn( ... )</td>
-<td>Return first argument from list that is not nil.</td>
-</tr>
-<tr>
-<td>round( val [ , n  ])</td>
-<td>Rounds a number to the nearest decimal place.</td>
-</tr>
-<tr>
-<td>nextFrame( func )</td>
-<td>Execute func in new frame. (Credit: <a href="https://gist.github.com/Lerg">Sergey Lerg</a>)</td>
-</tr>
-</tbody>
-</table>
-<h1 id="stop-exporting-globals">Stop Exporting Globals</h1>
-<p>The functions and variables listed above are part of ssk.core.*.  </p>
-<p>I export them as globals (_G.*) because I find them extremely useful.</p>
-<p>If, on the other hand, you feel this '<em>pollutes</em>' the global space, you can disable exporting, during <a href="../#configuring-ssk-2">initialization</a>.</p>
-<pre><code>_G.ssk.init( { exportCore = false } )
+<h1 id="external">External</h1>
+<p>This page documents content that I have included in SSK2, but which has been sourced from external sources.</p>
+<p>https://raw.githubusercontent.com/Yonaba/30log/master/LICENSE</p>
+<h1 id="30log-roland-yonaba">30Log (Roland Yonaba)</h1>
+<p><a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
+<p><em>30 Lines Of Goodness</em> is a minified framework for <a href="http://lua-users.org/wiki/ObjectOrientedProgramming">object-orientation</a> in Lua.</p>
+<p>It provides  <em>named</em> and <em>unnamed classes</em>, <em>single inheritance</em>, <em>metamethods</em> and a basic support for <em>mixins</em>.<br/></p>
+<p>SSK2 includes the 'clean' version so it is legible.</p>
+<p>30Log is loaded and ready to go.  Simply read <a href="https://github.com/Yonaba/30log/blob/master/README.md">these docs</a> to learn how to code with it.</p>
+<h1 id="autolan-my-developers">AutoLan &copy; M.Y. Developers</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a></p>
+<p>This is a modified version of the (<a href="https://github.com/mydevelopergames/AutoLAN">now free</a>) <a href="http://www.mydevelopersgames.com/AutoLAN/">AutoLan</a> by M.Y. Developers. </p>
+<p>Subsequent to that release, I and a few other developers modified it to support IPV6.  You can read moe about that work <a href="https://forums.coronalabs.com/topic/63788-autolan-ipv6">HERE</a>.</p>
+<p>SSK2 Contains the IPV6 version of AutoLan and can be accessed under:</p>
+<ul>
+<li>ssk.autolan.client</li>
+<li>ssk.autolan.server</li>
+</ul>
+<h1 id="portable-random-community-code">Portable Random (Community Code)</h1>
+<p><em>Note:</em> This module was original found on the Corona Labs <a href="http://developer.coronalabs.com">Community Code</a> page, but it has since gone MIA.  Fortunately, I have a copy in SSK2.</p>
+<p>This module can be used to create a random number generating object that is guaranteed to produce the same sequence for the same seed on all devices.  i.e. It is fully deterministic.</p>
+<p><strong>Warning:</strong> The generator ONLY produces integers in the range 0..255, so it may have limited usage.</p>
+<h2 id="basic-usage">Basic Usage</h2>
+<pre><code class="Lua">
+local prand = math.prand.new()
+
+prand:seed(0xed15c001)
+
+print( &quot;Generated: &quot;, prand:randInt( 0, 255 ) )
+print( &quot;Generated: &quot;, prand:randInt( 0, 255 ) )
+print( &quot;Generated: &quot;, prand:randInt( 0, 255 ) )
+
 </code></pre>
 
-<p><strong>Tip:</strong> Just remember, if you stop exporting globals, you must use full names to access them (ick!):</p>
-<pre><code class="Lua">
-newCircle( group, ssk.core.centerX, ssk.core.bottom - 20, { radius = 20, fill = _BRIGHTORANGE_ } )
+<p>This will print (verify it yourself):</p>
+<pre><code class="Lua">Generated:  73
+Generated:  125
+Generated:  25
+</code></pre>
 
+<h1 id="proxy-corona-blog">Proxy (Corona Blog)</h1>
+<p>This is a handy little module that:</p>
+<blockquote>
+<p>Adds the ability to detect when a property is changed on a display object.</p>
+<p>~ Jonathan Beebe</p>
+</blockquote>
+<p>I grabbed it from <a href="https://coronalabs.com/blog/2012/05/01/tutorial-property-callbacks/">this cool blog post</a>.</p>
+<h2 id="example">Example</h2>
+<pre><code class="Lua">
+local circle = display.newCircle( 100, 100, 10 )
+
+circle.x = left
+circle.y = centerY
+
+circle = ssk.proxy.get_proxy_for( circle )
+
+function circle:propertyUpdate( event )
+    print(event.key, event.value)
+end
+
+circle:addEventListener( &quot;propertyUpdate&quot; )
+
+
+transition.to( circle, { x = right } )
+</code></pre>
+
+<p>This will print <code>x ####</code> every time the <code>circle</code> is moved by transition. Cool, right?</p>
+<h1 id="randomlua-love-community">RandomLua (LÖVE Community)</h1>
+<p><a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
+<p>This is, yet another, Random Number Generator module.  </p>
+<p>It was released under the MIT License.  I grabbed this from <a href="https://love2d.org/forums/viewtopic.php?f=5&amp;t=3424">HERE</a>.</p>
+<p>While this module includes three different generators, I use the Mersenne Twister exclusively.</p>
+<h2 id="mersenne-twister">Mersenne Twister</h2>
+<pre><code class="Lua">
+local rng = ssk.randomlua.twister(10)
+
+print( rng:random( 1, 1000 ) )
+
+print( rng:random() )
+
+print( rng:random(-100,100) )
+
+print( rng:random(1.001, 10.005) )
+
+</code></pre>
+
+<h1 id="wait-starcrunch">Wait (StarCrunch)</h1>
+<p><a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
+<p>Released under the MIT license by our very own Steve J. (aka StarCruch of <a href="https://www.xibalbastudios.com/">Xibalba Studios</a>), this module contains a number of helpers for doing cool stuff with Co-Routines.</p>
+<h2 id="waiting-between-steps">Waiting Between Steps</h2>
+<pre><code class="Lua">local function testSeq()
+    local start = system.getTimer()
+    print(&quot;YO &quot; .. tostring(start) )
+    ssk.wait.ms( 500 )
+    print(&quot;1 &quot; .. tostring(system.getTimer() - start) )
+
+    ssk.wait.ms( 500 )
+    print(&quot;2 &quot; .. tostring(system.getTimer() - start) )
+
+    ssk.wait.ms( 500 )
+    print(&quot;3 &quot; .. tostring(system.getTimer() - start) )
+end
+
+ssk.wait.run( testSeq )
+</code></pre>
+
+<h2 id="wait-in-a-timer">Wait In A Timer</h2>
+<pre><code class="Lua">timer.performWithDelay(20, 
+    coroutine.wrap(
+        function(event)
+        local source = event.source -- GOTCHA: save this now!
+
+        ssk.wait.ms( 500 )
+        print(&quot;1&quot;)
+        ssk.wait.ms( 500 )
+
+        print(&quot;2&quot;)
+
+        ssk.wait.ms( 500 )
+        print(&quot;3&quot;)
+
+        timer.cancel(source)
+    end), 0)
 </code></pre>
 
 <hr />

@@ -152,7 +152,13 @@
                         
                             
 <li >
-    <a href="../libraries/actions/">ssk.actions.*</a>
+    <a href="../libraries/actions1/">ssk.actions.* (Part 1)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../libraries/actions2/">ssk.actions.* (Part 2)</a>
 </li>
 
                         
@@ -183,6 +189,12 @@
                             
 <li >
     <a href="../libraries/math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../libraries/meters/">ssk.meters.*</a>
 </li>
 
                         
@@ -222,7 +234,19 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../libraries/soundMgr/">ssk.soundMgr.*</a>
+</li>
+
+                        
                         </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../external/">External</a>
                     </li>
                 
                 
@@ -285,6 +309,8 @@
         
     
         <li class="first-level "><a href="#transition">transition.*</a></li>
+        
+            <li class="third-level"><a href="#color">color</a></li>
         
     
     </ul>
@@ -651,20 +677,35 @@
 </tbody>
 </table>
 <h1 id="transition">transition.*</h1>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>transition.color( obj, colorFrom, colorTo, time, delay, ease )</code></td>
-<td>Adds ability to transition the color of display objects (including text objects) from <code>fromColor</code> to <code>toColor</code>.  <strong>Warning:</strong> Does not currently support onComplete.</td>
-</tr>
-</tbody>
-</table>
+<h2 id="color">color</h2>
+<p>Adds ability to transition the color of display objects (including text objects) from <code>fromColor</code> to <code>toColor</code>.</p>
+<pre><code class="Lua">transition.color( obj, params )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - Text or other display object that supports <code>setFillColor()</code>.</li>
+<li><code>params</code> (<code>{}</code>) - Transition control parameters.<ul>
+<li><code>fromColor</code> (<code>_W_</code>) - Starting color.</li>
+<li><code>toColor</code> (<code>_W_</code>) - Ending color.</li>
+<li><code>delay</code> (<code>nil</code>) - Time to wait before transitioning in milliseconds.</li>
+<li><code>time</code> (<code>_W_</code>) - Time to transition in milliseconds.</li>
+<li><code>transition</code> (<code>_W_</code>) - <a href="https://docs.coronalabs.com/daily/api/library/easing/index.html">Easing</a> to use for transition.</li>
+<li><code>onComplete</code> (<code>nil</code>) - Listener to call on completion of transition.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">
+local tmp = ssk.display.newCircle( nil, centerX, centerY, { radius = 30, fill = _R_ } )
+
+function tmp.onComplete( self )
+   print(&quot;Done transitioning color.&quot;)
+end
+
+transition.color( tmp, { fromColor = _R_, toColor = _G_, time = 1000, 
+                         transition = easing.outCirc, onComplete = tmp } )
+
+</code></pre>
+
 <hr />
 <p><img alt="RoamingGamer" src="../roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         

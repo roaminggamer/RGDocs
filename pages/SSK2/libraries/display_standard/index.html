@@ -152,7 +152,13 @@
                         
                             
 <li >
-    <a href="../actions/">ssk.actions.*</a>
+    <a href="../actions1/">ssk.actions.* (Part 1)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../actions2/">ssk.actions.* (Part 2)</a>
 </li>
 
                         
@@ -183,6 +189,12 @@
                             
 <li >
     <a href="../math2D/">ssk.math2d.*</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../meters/">ssk.meters.*</a>
 </li>
 
                         
@@ -222,7 +234,19 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../soundMgr/">ssk.soundMgr.*</a>
+</li>
+
+                        
                         </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../external/">External</a>
                     </li>
                 
                 
@@ -270,12 +294,22 @@
     
         <li class="first-level "><a href="#the-standard-factories">The Standard Factories</a></li>
         
-            <li class="third-level"><a href="#factory-signatures">Factory Signatures</a></li>
+            <li class="third-level"><a href="#newcircle">newCircle</a></li>
         
-            <li class="third-level"><a href="#factory-arguments">Factory Arguments</a></li>
+            <li class="third-level"><a href="#newrect">newRect</a></li>
+        
+            <li class="third-level"><a href="#newimage">newImage</a></li>
+        
+            <li class="third-level"><a href="#newimagerect">newImageRect</a></li>
         
     
-        <li class="first-level "><a href="#visual-parameters">Visual Parameters</a></li>
+        <li class="first-level "><a href="#factory-arguments">Factory Arguments</a></li>
+        
+    
+        <li class="first-level "><a href="#other-factories">Other Factories</a></li>
+        
+    
+        <li class="first-level "><a href="#visual-parameters-visualparams">Visual Parameters (visualParams)</a></li>
         
             <li class="third-level"><a href="#visualparams-standard-properties">visualParams - 'Standard' Properties</a></li>
         
@@ -290,7 +324,7 @@
             <li class="third-level"><a href="#visualparams-arbitrary-properties">visualParams - 'Arbitrary' Properties</a></li>
         
     
-        <li class="first-level "><a href="#body-parameters">Body Parameters</a></li>
+        <li class="first-level "><a href="#body-parameters-bodyparams">Body Parameters (bodyParams)</a></li>
         
             <li class="third-level"><a href="#bodyparams-the-default-body">bodyParams - The Default Body {}</a></li>
         
@@ -299,7 +333,7 @@
             <li class="third-level"><a href="#bodyparams-custom-properties">bodyParams - 'Custom' Properties</a></li>
         
     
-        <li class="first-level "><a href="#behaviors">Behaviors</a></li>
+        <li class="first-level "><a href="#behaviors-behaviorslist">Behaviors (behaviorsList)</a></li>
         
     
     </ul>
@@ -349,36 +383,46 @@ physics.addBody( block, &quot;static&quot; )
 </code></pre>
 
 <h1 id="the-standard-factories">The Standard Factories</h1>
-<p>The following lists are designed as a quick reference to the standard factories and their arguments.</p>
-<p>To learn about using these, please explore the <a href="../display_samples">samples</a>.</p>
-<h2 id="factory-signatures">Factory Signatures</h2>
-<p>The new factories have the following signatures:</p>
-<ul>
-<li><code>ssk.display.newCircle( group, x, y [, visualParams [, bodyParams [, behaviorsList ]]] )</code></li>
-<li><code>ssk.display.newRect( group, x, y[, visualParams [, bodyParams [, behaviorsList ]]] )</code></li>
-<li><code>ssk.display.newImage( group, x, y, imgSrc [, visualParams [, bodyParams [, behaviorsList ]]] )</code></li>
-<li><code>ssk.display.newImageRect( group, x, y, imgSrc [, visualParams [, bodyParams [, behaviorsList ]]] )</code></li>
-</ul>
-<h2 id="factory-arguments">Factory Arguments</h2>
+<p>All of the <em>Standard Factories</em> take similar arguments.  Please see <a href="#factory-arguments">Factory Arguments</a> below for details on these arguments.</p>
+<p>(<em>I am not providing individual examples here.  To learn about using these factories, please explore the <a href="../display_samples">samples</a>.</em>)</p>
+<h2 id="newcircle">newCircle</h2>
+<pre><code class="Lua">ssk.display.newCircle( group, x, y [, visualParams [, bodyParams [, behaviorsList ]]] )
+</code></pre>
+
+<h2 id="newrect">newRect</h2>
+<pre><code class="Lua">ssk.display.newRect( group, x, y [, visualParams [, bodyParams [, behaviorsList ]]] )
+</code></pre>
+
+<h2 id="newimage">newImage</h2>
+<pre><code class="Lua">ssk.display.newImage( group, x, y, imgSrc [, visualParams [, bodyParams [, behaviorsList ]]] )
+</code></pre>
+
+<h2 id="newimagerect">newImageRect</h2>
+<pre><code class="Lua">ssk.display.newImageRect( group, x, y, imgSrc [, visualParams [, bodyParams [, behaviorsList ]]] )
+</code></pre>
+
+<h1 id="factory-arguments">Factory Arguments</h1>
 <p>As you will have noticed, the above factories have a fairly consistent function signature and share common arguments.  Those argument can be summarized as follows:</p>
 <ul>
 <li><code>group</code> - Display group to place object in.  If <code>nil</code>, object is placed in <code>display.currentStage</code>.</li>
 <li><code>x</code>, <code>y</code> - &lt; x, y &gt; position to place object at.</li>
 <li><code>imgSrc</code> - A string specifying a path to the image you wish to display.</li>
 <li><code>visualParams</code> - Table of parameters controlling the look of an object.  <ul>
-<li>See '<a href="../display_standard/#visual-parameters">Visual Parameters</a>' below.</li>
+<li>See '<a href="../display_standard/#visual-parameters-visualparams">Visual Parameters</a>' below.</li>
 </ul>
 </li>
 <li><code>bodyParams</code> - Table of parameters controlling the (optional) physics body.  <ul>
-<li>See '<a href="../display_standard/#body-parameters">Body Parameters</a>' below.</li>
+<li>See '<a href="../display_standard/#body-parameters-bodyparams">Body Parameters</a>' below.</li>
 </ul>
 </li>
 <li><code>behaviorsList</code> - Table of parameters that allows the easy addition of complex game logic to display objects. <ul>
-<li>See '<a href="../display_standard/#behaviors">Behaviors</a>' below. </li>
+<li>See '<a href="../display_standard/#behaviors-behaviorsList">Behaviors List</a>' below. </li>
 </ul>
 </li>
 </ul>
-<h1 id="visual-parameters">Visual Parameters</h1>
+<h1 id="other-factories">Other Factories</h1>
+<p>This page (of the docs) only discusses the 'Standard Factories', however <code>ssk.diplay.*</code> also has these factories: <a href="../display_arcs">Arcs</a>, <a href="../display_lines">Lines</a>, <a href="../display_layers">Quick Layers</a></p>
+<h1 id="visual-parameters-visualparams">Visual Parameters (<code>visualParams</code>)</h1>
 <p>The first (common) table that all of these builders takes is the <code>visualParams</code> table.  With this table, you can set almost all visual properties on the object and you can also attach or set any arbitrary property.</p>
 <h2 id="visualparams-standard-properties"><code>visualParams</code> - 'Standard' Properties</h2>
 <p>Aside from the 'custom' and specially handled properties listed above, you may set any normal Corona property as well.</p>
@@ -457,7 +501,7 @@ newCircle( nil, 100, 100 { fill = _R_, alpha = 0.5 } )
 </tbody>
 </table>
 <p>If any of these parameters is specified, SSK will automatically hook-up and start the specified listener(s).</p>
-<p><strong>Note:</strong> Only works if <code>enableAutoListeners = true</code>.  See <a href="../../quick_start/#configuring-ssk-2">Configuring SSK 2</a>.</p>
+<p><strong>Note:</strong> Only works if <code>enableAutoListeners = true</code>.  See <a href="../../quick_start/#configuring-ssk-2">Configuring SSK2</a>.</p>
 <h2 id="listener-example-1-touch">Listener Example 1 - <code>touch</code></h2>
 <pre><code class="lua">
 local function onTouch( self, event)
@@ -511,7 +555,7 @@ print( tmp.myName, tmp.myAge, tmp.amHappy )
 
 </code></pre>
 
-<h1 id="body-parameters">Body Parameters</h1>
+<h1 id="body-parameters-bodyparams">Body Parameters (<code>bodyParams</code>)</h1>
 <p>The second optional table you can pass to all of the builder functions is the <code>bodyParams</code> table.</p>
 <h2 id="bodyparams-the-default-body"><code>bodyParams</code> - The Default Body <code>{}</code></h2>
 <p>Specifying an empty table tell SSK to add a default body to the object.</p>
@@ -569,7 +613,7 @@ newCircle( nil, 100, 100, { radius = 50 }, { calculator = myCC, colliderName = &
 
 </code></pre>
 
-<h1 id="behaviors">Behaviors</h1>
+<h1 id="behaviors-behaviorslist">Behaviors (<code>behaviorsList</code>)</h1>
 <p><strong>This is a work-in-progress feature.</strong></p>
 <p>When it is released, you will be able to create objects with complex behaviors like:</p>
 <ul>

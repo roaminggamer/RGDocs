@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/libraries/system/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/libraries/meters/"> 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>System (ssk.system.) - Super Starter Kit 2</title>
+    <title>ssk.meters.* - Super Starter Kit 2</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -89,7 +89,7 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Core <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -136,8 +136,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">System (ssk.system.)</a>
+<li >
+    <a href="../system/">System (ssk.system.)</a>
 </li>
 
                         
@@ -146,7 +146,7 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -193,8 +193,8 @@
 
                         
                             
-<li >
-    <a href="../meters/">ssk.meters.*</a>
+<li class="active">
+    <a href="./">ssk.meters.*</a>
 </li>
 
                         
@@ -261,12 +261,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../easy_interfaces/">
+                        <a rel="next" href="../math2D/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../actions1/">
+                        <a rel="prev" href="../misc/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -282,137 +282,39 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#system-variables-and-flags-ssksystem">System Variables and Flags (ssk.system.*)</a></li>
+        <li class="first-level active"><a href="#meters-sskmeters">Meters (ssk.meters.*)</a></li>
         
-            <li class="third-level"><a href="#environment-flags">Environment Flags</a></li>
+            <li class="third-level"><a href="#fps-meter">FPS Meter</a></li>
         
-            <li class="third-level"><a href="#device-flags">Device Flags</a></li>
-        
-    
-        <li class="first-level "><a href="#how-to-export-ssksystem">How To Export ssk.system.*</a></li>
+            <li class="third-level"><a href="#memory-meter">Memory Meter</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="system-variables-and-flags-ssksystem">System Variables and Flags (ssk.system.*)</h1>
-<h2 id="environment-flags">Environment Flags</h2>
-<table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>onSimulator</td>
-<td><code>true</code> if running on Corona SDK simulator.</td>
-</tr>
-<tr>
-<td>oniOS</td>
-<td><code>true</code> if running on iPhone or iPad.</td>
-</tr>
-<tr>
-<td>onAndroid</td>
-<td><code>true</code> if running on any Android device.</td>
-</tr>
-<tr>
-<td>onAmazon</td>
-<td><code>true</code> if running on Amazon device.</td>
-</tr>
-<tr>
-<td>onNook</td>
-<td><code>true</code> if running on NOOK device.</td>
-</tr>
-<tr>
-<td>onWinPhone</td>
-<td><code>true</code> if running on Windows phone.</td>
-</tr>
-<tr>
-<td>onAppleTV</td>
-<td><code>true</code> if running on Apple TV device.</td>
-</tr>
-<tr>
-<td>onAndroidTV</td>
-<td><code>true</code> if running on Android TV device. <em>Not 100% reliable.</em></td>
-</tr>
-<tr>
-<td>onOSX</td>
-<td><code>true</code> if running on machine using OS X operating system.</td>
-</tr>
-<tr>
-<td>onWin</td>
-<td><code>true</code> if running on machine using Windows (7/8/10/..) operating system.</td>
-</tr>
-<tr>
-<td>onDesktop</td>
-<td><code>true</code> if onSimulator is <code>false</code> <strong>AND</strong> onOSX or onWin is <code>true</code>.</td>
-</tr>
-<tr>
-<td>onDevice</td>
-<td><code>true</code> if running on a device( i.e. NOT simulator).</td>
-</tr>
-</tbody>
-</table>
-<h2 id="device-flags">Device Flags</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>oniPhone</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>oniPhone4</td>
-<td>oniPhone5</td>
-<td>oniPhone5c</td>
-<td>oniPhone5s</td>
-</tr>
-<tr>
-<td>oniPhone6</td>
-<td>oniPhone6Plus</td>
-<td>oniPhone6s</td>
-<td>oniPhone6sPlus</td>
-</tr>
-<tr>
-<td>oniPad</td>
-<td>oniPadPro</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>onAndroidTablet</td>
-<td><em>Not 100% reliable.</em></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>onTablet</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h1 id="how-to-export-ssksystem">How To Export ssk.system.*</h1>
-<p>By default, SSK2 <strong>DOES NOT</strong> export the ssk.system.* variables as globals.  </p>
-<p>However, I find them extremely useful and so you will typically see me exporting them in my examples by setting <code>exportSystem</code> to <code>true</code> when <a href="../../#configuring-ssk-2">initializing</a>. SSK.</p>
-<pre><code>_G.ssk.init( { exportSystem = true } )
+<h1 id="meters-sskmeters">Meters (ssk.meters.*)</h1>
+<p>Two basic meters to help with debugging FPS and Memory issues.</p>
+<h2 id="fps-meter">FPS Meter</h2>
+<p><img alt="RoamingGamer" src="../../images/fpsmeter.jpg" /></p>
+<p>Creates an FPS meter in the upper-left corner of the screen.  This meter stays on top of all other content.</p>
+<pre><code>ssk.meters.create_fps( [ allowDrag ] )
 </code></pre>
 
+<ul>
+<li>allowDrag - Setting this to <code>true</code> allows you to touch and drag the meter around.</li>
+</ul>
+<h2 id="memory-meter">Memory Meter</h2>
+<p><img alt="RoamingGamer" src="../../images/memmeter.jpg" /></p>
+<p>Creates a memory (main and video) meter in the upper-right corner of the screen.  This meter stays on top of all other content.</p>
+<pre><code>ssk.meters.create_mem( [ allowDrag ] )
+</code></pre>
+
+<ul>
+<li>allowDrag - Setting this to <code>true</code> allows you to touch and drag the meter around.</li>
+</ul>
 <hr />
-<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+<p><img alt="RoamingGamer" src="../../roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         
     </div>
 
