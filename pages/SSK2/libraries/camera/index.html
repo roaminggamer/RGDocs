@@ -293,6 +293,9 @@
             <li class="third-level"><a href="#trackinglooserectangle">trackingLooseRectangle</a></li>
         
     
+        <li class="first-level "><a href="#stopping-cameras">Stopping Cameras</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -321,6 +324,7 @@
 <h2 id="tracking">tracking</h2>
 <p>A camera that tracks the position of the <code>trackObj</code> exactly, keeping it in the exact position it started in or has specified to be at.</p>
 <p>This camera supports the ability to track in only one axis and/or to adjust the tracking offset. </p>
+<p><strong>Tip</strong>: Deleting <code>trackObj</code> and/or the <code>world</code> display group before stopping the camera, you will crash your game.  See <a href="#stopping-cameras">Stopping Cameras</a> below for more details.</p>
 <pre><code class="Lua">ssk.camera.tracking( trackObj, world [ , params ]  )
 </code></pre>
 
@@ -360,6 +364,7 @@ ssk.camera.tracking( player, layers.world )
 <h2 id="delayedtracking">delayedTracking</h2>
 <p>An <strong>experimental</strong> camera that waits a moment then moves to the new position of the <code>trackObj</code>.</p>
 <p><strong>Note:</strong> I don't use this one.  It is meant to be a starting place for delayed cameras.  If you need such a camera, examine this code and then write your own camera function.</p>
+<p><strong>Tip</strong>: Deleting <code>trackObj</code> and/or the <code>world</code> display group before stopping the camera, you will crash your game.  See <a href="#stopping-cameras">Stopping Cameras</a> below for more details.</p>
 <pre><code class="Lua">ssk.camera.delayedTracking(  )
 </code></pre>
 
@@ -385,6 +390,7 @@ ssk.camera.tracking( player, layers.world )
 <p><img alt="trackingLooseCircle" src="../../images/trackingLooseCircle.png" /></p>
 <p>A camera that tracks the <code>trackObj</code> continuously, but only moves the <code>world</code> once the  <code>trackObj</code> moves beyond the radius of a dead zone.  After that, <code>world</code> movement accelerates gradually to match that of <code>trackObj</code>.  </p>
 <p>Includes a debug feature to allow you to see the limits of the dead zone.</p>
+<p><strong>Tip</strong>: Deleting <code>trackObj</code> and/or the <code>world</code> display group before stopping the camera, you will crash your game.  See <a href="#stopping-cameras">Stopping Cameras</a> below for more details.</p>
 <pre><code class="Lua">ssk.camera.trackingLooseCircle( trackObj, world [ , params ]  )
 </code></pre>
 
@@ -403,6 +409,7 @@ ssk.camera.tracking( player, layers.world )
 </ul>
 <h2 id="trackinglooserectangle">trackingLooseRectangle</h2>
 <p>A camera that tracks the <code>trackObj</code> continuously, but only moves the <code>world</code> once the <code>trackObj</code> moves beyond the bounds of a rectangular dead zone.  After that, <code>world</code> movement accelerates gradually to match that of <code>trackObj</code>.  </p>
+<p><strong>Tip</strong>: Deleting <code>trackObj</code> and/or the <code>world</code> display group before stopping the camera, you will crash your game.  See <a href="#stopping-cameras">Stopping Cameras</a> below for more details.</p>
 <pre><code class="Lua">ssk.camera.trackingLooseRectangle( trackObj, world [ , params ]  )
 </code></pre>
 
@@ -417,6 +424,20 @@ ssk.camera.tracking( player, layers.world )
 <li><code>minDelta</code> (<code>0.2</code>) - Controls sensitivity of movement when boundary is encountered.</li>
 </ul>
 </li>
+</ul>
+<h1 id="stopping-cameras">Stopping Cameras</h1>
+<p>Once a camera has been started, it will run continously until it is stopped.  </p>
+<p>When a camera is started, it adds a method to the <code>trackObj</code> called <code>stopCamera()</code>.</p>
+<p>Stopping a previously started camera is a simple as:</p>
+<pre><code class="Lua">
+player:stopCamera()
+
+</code></pre>
+
+<p><strong>Tips</strong></p>
+<ul>
+<li>Deleting <code>trackObj</code> and/or the <code>world</code> display group before stopping the camera, you will crash your game.</li>
+<li>Once a camere has been stopped, you must re-start it using the same code you did initially.</li>
 </ul>
 <hr />
 <p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>

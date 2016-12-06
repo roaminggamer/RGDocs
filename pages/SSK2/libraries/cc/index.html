@@ -345,7 +345,7 @@
 </table>
 <h2 id="addname">addName</h2>
 <p>Add new 'named' collider type to known list of collider types, and automatically assign a number to this collider type (16 Max).</p>
-<pre><code class="Lua">myCC.addName( colliderName )
+<pre><code class="Lua">myCC:addName( colliderName )
 </code></pre>
 
 <ul>
@@ -364,7 +364,7 @@ myCC:addName( &quot;greenBall&quot; )
 
 <h2 id="addnames">addNames</h2>
 <p>Same as <a href="../cc/#addnames">addNames</a>, but takes multiple strings in one call.</p>
-<pre><code class="Lua">myCC.addNames( ... )
+<pre><code class="Lua">myCC:addNames( ... )
 </code></pre>
 
 <ul>
@@ -380,7 +380,7 @@ myCC:addNames( &quot;block&quot;, &quot;redBall&quot;, &quot;greenBall&quot; )
 <h2 id="collideswith">collidesWith</h2>
 <p>Automatically configure named collider A to collide with one or more other named colliders. </p>
 <p>Returns true if named type was successfully added to known colliders list, false otherwise.</p>
-<pre><code class="Lua">myCC.collidesWith( colliderNameA, ... )
+<pre><code class="Lua">myCC:collidesWith( colliderNameA, ... )
 </code></pre>
 
 <ul>
@@ -397,7 +397,7 @@ local myCC = ssk.cc.newCalculator()
 
 <h2 id="getcollisionfilter">getCollisionFilter</h2>
 <p>Get collision filter for the named collider.</p>
-<pre><code class="Lua">myCC.getCollisionFilter( colliderName )
+<pre><code class="Lua">myCC:getCollisionFilter( colliderName )
 </code></pre>
 
 <ul>
@@ -417,7 +417,7 @@ physics.addBody( tmp, &quot;dynamic&quot;, { radius = 10, filter = myCC:getColli
 <h2 id="getcategorybits">getCategoryBits</h2>
 <p>Get category bits for the named collider.</p>
 <p><strong>Note:</strong> Rarely used.  Use the <a href="../cc/#getcollisionfilter">getCollisionFilter()</a> function instead.</p>
-<pre><code class="Lua">myCC.getCategoryBits( colliderName )
+<pre><code class="Lua">myCC:getCategoryBits( colliderName )
 </code></pre>
 
 <ul>
@@ -433,7 +433,7 @@ myCC:getCategoryBits()
 <h2 id="getmaskbits">getMaskBits</h2>
 <p>Get mask bits for the named collider.</p>
 <p><strong>Note:</strong> Rarely used.  Use the <a href="../cc/#getcollisionfilter">getCollisionFilter()</a> function instead.</p>
-<pre><code class="Lua">myCC.getMaskBits( colliderName )
+<pre><code class="Lua">myCC:getMaskBits( colliderName )
 </code></pre>
 
 <ul>

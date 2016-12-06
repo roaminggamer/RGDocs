@@ -298,13 +298,29 @@
     
         <li class="first-level "><a href="#label-factories">Label Factories</a></li>
         
-            <li class="third-level"><a href="#label-parameters">Label Parameters</a></li>
+            <li class="third-level"><a href="#presetlabel">presetLabel</a></li>
         
-            <li class="third-level"><a href="#making-label-presets">Making Label Presets</a></li>
+            <li class="third-level"><a href="#quicklabel">quickLabel</a></li>
+        
+            <li class="third-level"><a href="#quickembossedlabel">quickEmbossedLabel</a></li>
+        
+            <li class="third-level"><a href="#label-factory-arguments">Label Factory Arguments</a></li>
+        
+    
+        <li class="first-level "><a href="#making-label-presets">Making Label Presets</a></li>
+        
+            <li class="third-level"><a href="#label-preset-parameters">Label Preset Parameters</a></li>
         
             <li class="third-level"><a href="#label-instances">Label Instances</a></li>
         
-            <li class="third-level"><a href="#effects-sskeasyifc">Effects (ssk.easyIFC.*)</a></li>
+    
+        <li class="first-level "><a href="#effects">Effects</a></li>
+        
+            <li class="third-level"><a href="#visual-calculations">Visual Calculations</a></li>
+        
+            <li class="third-level"><a href="#fly-ins">Fly Ins</a></li>
+        
+            <li class="third-level"><a href="#flipping">Flipping</a></li>
         
     
     </ul>
@@ -647,33 +663,21 @@ easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&qu
 <p>You must lift your finger and touch the button again to get a new call to the listener.</p>
 <hr />
 <h1 id="label-factories">Label Factories</h1>
-<table>
-<thead>
-<tr>
-<th align="left">Method Signatures</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>ssk.easyIFC:presetLabel( group, presetName, labelText, x, y [, params ] )</code></td>
-</tr>
-<tr>
-<td align="left">Creates label <a href="../easy_interfaces/#label-instances">instance</a> using a <a href="../easy_interfaces/#making-label-presets">preset</a> record.</td>
-</tr>
-<tr>
-<td align="left"><code>labels:quickLabel( group, labelText, x, y [, font [, fontSize [, textColor [ , anchorX [, anchorY ]]]]] )</code></td>
-</tr>
-<tr>
-<td align="left">Creates a label.</td>
-</tr>
-<tr>
-<td align="left"><code>labels:quickEmbossedLabel( group, labelText, x, y [, font [, fontSize [, embossTextColor [, embossHighlightColor [, embossShadowColor ]]]]] )</code></td>
-</tr>
-<tr>
-<td align="left">Creates an embossed label.</td>
-</tr>
-</tbody>
-</table>
+<h2 id="presetlabel">presetLabel</h2>
+<p>Creates label <a href="../easy_interfaces/#label-instances">instance</a> using a <a href="../easy_interfaces/#making-label-presets">preset</a> record.</p>
+<pre><code class="Lua">ssk.easyIFC:presetLabel( group, presetName, text, x, y [, params ] )
+</code></pre>
+
+<h2 id="quicklabel">quickLabel</h2>
+<pre><code class="Lua">ssk.easyIFC:quickLabel( group, text, x, y [, font [, size [, color [ , anchorX [, anchorY ]]]]] )
+</code></pre>
+
+<h2 id="quickembossedlabel">quickEmbossedLabel</h2>
+<pre><code class="Lua">ssk.easyIFC:quickEmbossedLabel( group, text, x, y [,font [,size [,colorM [,colorH [,colorS ]]]]] )
+</code></pre>
+
+<h2 id="label-factory-arguments">Label Factory Arguments</h2>
+<p>As you will have noticed, the above factories have a fairly consistent function signature and share common arguments.  Those argument can be summarized as follows:</p>
 <ul>
 <li><code>group</code> (<code>display.currentStage</code>) - Group to put button in.</li>
 <li><code>params</code> (<code>{}</code>) - See <a href="../easy_interfaces/#label-parameters">Label Parameters</a> below.</li>
@@ -681,27 +685,16 @@ easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&qu
 <li>See <a href="../easy_interfaces/#making-label-presets">Making Label Presets</a> below.</li>
 <li><code>x</code>, <code>y</code> - &lt; x, y &gt; position of button center. </li>
 <li><code>anchorX</code>, <code>anchorY</code> (<code>0.5</code>) - You can optionally select the anchors for <code>quickLabel()</code></li>
-<li><code>labelText</code> (<code>""</code>) - Optional text for label.</li>
+<li><code>text</code> (<code>""</code>) - Optional text for label.</li>
 <li><code>font</code> (<code>gameFont</code> or <code>native.systemFontBold</code>) - Font to use for label.
         + See <a href="http://127.0.0.1:8000/quick_start/#configuring-ssk-2">Configuring SSK2</a> to learn how to set <code>gameFont</code>.</li>
-<li><code>fontSize</code> (<code>20</code>) - Font size of label.</li>
-<li><code>textColor</code> (<code>_K_</code>) - Label color.</li>
-<li><code>embossTextColor</code> (<code>_K_</code>) - Color of embossed label's main stroke.</li>
-<li><code>embossHighlightColor</code> (<code>_K_</code>) - Color of embossed label's highlight stroke.</li>
-<li><code>embossShadowColor</code> (<code>_K_</code>) - Color of embossed label's shadow stroke.</li>
+<li><code>size</code> (<code>20</code>) - Font size of label.</li>
+<li><code>color</code> (<code>_K_</code>) - Label color.</li>
+<li><code>colorM</code> (<code>_W_</code>) - Color of embossed label's main stroke.</li>
+<li><code>colorH</code> (<code>_W_</code>) - Color of embossed label's highlight stroke.</li>
+<li><code>colorS</code> (<code>_K_</code>) - Color of embossed label's shadow stroke.</li>
 </ul>
-<h2 id="label-parameters">Label Parameters</h2>
-<p><a href="../easy_interfaces/#making-label-presets">Presets</a> take all of the following parameters:</p>
-<ul>
-<li><code>font</code> (<code>gameFont</code> or <code>native.systemFontBold</code>) - Font to use for label.
-        + See <a href="http://127.0.0.1:8000/quick_start/#configuring-ssk-2">Configuring SSK2</a> to learn how to set <code>gameFont</code>.</li>
-<li><code>fontSize</code> (<code>20</code>) - Font size of label.</li>
-<li><code>textColor</code> (<code>_K_</code>) - Label color.</li>
-<li><code>embossTextColor</code> (<code>_W_</code>) - Color of embossed label's main stroke.</li>
-<li><code>embossHighlightColor</code> (<code>_W_</code>) - Color of embossed label's highlight stroke.</li>
-<li><code>embossShadowColor</code> (<code>_K_</code>) - Color of embossed label's shadow stroke.</li>
-</ul>
-<h2 id="making-label-presets">Making Label Presets</h2>
+<h1 id="making-label-presets">Making Label Presets</h1>
 <p>Making a preset is as simple as:</p>
 <ol>
 <li>Specifying a table of <a href="../easy_interfaces/#label-parameters">Label Parameters</a>,</li>
@@ -727,6 +720,17 @@ easyIFC:presetPush( group, &quot;bounty&quot;, &quot;Boom!&quot;, 100, 100, { fo
 
 </code></pre>
 
+<h2 id="label-preset-parameters">Label Preset Parameters</h2>
+<p><a href="../easy_interfaces/#making-label-presets">Presets</a> take all of the following parameters:</p>
+<ul>
+<li><code>font</code> (<code>gameFont</code> or <code>native.systemFontBold</code>) - Font to use for label.
+        + See <a href="http://127.0.0.1:8000/quick_start/#configuring-ssk-2">Configuring SSK2</a> to learn how to set <code>gameFont</code>.</li>
+<li><code>fontSize</code> (<code>20</code>) - Font size of label.</li>
+<li><code>textColor</code> (<code>_K_</code>) - Label color.</li>
+<li><code>embossTextColor</code> (<code>_K_</code>) - Color of embossed label's main stroke.</li>
+<li><code>embossHighlightColor</code> (<code>_K_</code>) - Color of embossed label's highlight stroke.</li>
+<li><code>embossShadowColor</code> (<code>_K_</code>) - Color of embossed label's shadow stroke.</li>
+</ul>
 <h2 id="label-instances">Label Instances</h2>
 <p>Label Instances are regular display objects.  Thus, they have all the same properties and methods listed on the Corona SDK API <a href="https://docs.coronalabs.com/daily/api/library/display/index.html">display.*</a> reference page.</p>
 <p>In addition, <a href="../easy_interfaces/#making-label-presets">Preset</a> Label Instances have the following properties and methods:</p>
@@ -743,26 +747,26 @@ easyIFC:presetPush( group, &quot;bounty&quot;, &quot;Boom!&quot;, 100, 100, { fo
 <li><code>buttonInstance:adjustLabelOffset( offset )</code> - Modifies the offset of the label.</li>
 </ul>
 <hr />
-<h2 id="effects-sskeasyifc">Effects (ssk.easyIFC.*)</h2>
+<h1 id="effects">Effects</h1>
 <p>The button library comes with a set of functions that let you:</p>
 <ul>
 <li>Make useful visual calculations.</li>
 <li>Apply cool visual effects.</li>
 </ul>
 <p><strong>Tip:</strong> While they were first designed for interfaces, These functions can also be used on other display objects.</p>
-<h3 id="visual-calculations">Visual Calculations</h3>
+<h2 id="visual-calculations">Visual Calculations</h2>
 <ul>
 <li><code>isInBounds( obj, obj2 )</code> - Returns <code>true</code> if <em>position</em> of <code>obj</code> over <code>obj2</code> (inside its axis-aligned-bounding-box.)<ul>
 <li><strong>Remember</strong>: Anchors affect <em>position</em>.</li>
-<li>Uses Corona SDK built-in <a href="https://docs.coronalabs.com/daily/api/type/DisplayObject/contentBounds.html">obj2.ontentBounds</a>.</li>
+<li>Uses Corona SDK built-in <a href="https://docs.coronalabs.com/daily/api/type/DisplayObject/contentBounds.html">obj2.contentBounds</a> (<em>external link</em>).</li>
 </ul>
 </li>
 <li><code>isInBounds_alt( obj, obj2 )</code> - Same as <code>isInBounds( obj, obj2 )</code>, but bounds of <code>obj2</code> are calculated.</li>
 </ul>
-<h3 id="fly-ins">Fly Ins</h3>
+<h2 id="fly-ins">Fly Ins</h2>
 <p><img alt="Fly Ins" src="../..\images\flyin.gif" /></p>
 <ul>
-<li><code>easyFlyIn( obj, params )</code> - Cuase an object to move/rotate/scale to some offset, then fly-in to its original rotation and/or position and/or scale.<ul>
+<li><code>ssk.easyIFC.easyFlyIn( obj, params )</code> - Cuase an object to move/rotate/scale to some offset, then fly-in to its original rotation and/or position and/or scale.<ul>
 <li><code>delay</code> (<code>0</code>) - Wait this long before starting the fly in.</li>
 <li><code>time</code> (<code>250</code>) - Take this long to fly in.</li>
 <li><code>myEasing</code> (<code>easing.outBack</code>) - Use this transition <a href="https://docs.coronalabs.com/daily/api/library/easing/index.html">easing</a> while flying in.</li>
@@ -821,10 +825,10 @@ ssk.easyIFC.easyFlyIn( button, { time = 500, sox = -fullw, onComplete = onComple
 
 </code></pre>
 
-<h3 id="flipping">Flipping</h3>
+<h2 id="flipping">Flipping</h2>
 <p><img alt="easyFlip" src="../..\images\easyflip.gif" /></p>
 <ul>
-<li><code>easyFlip( obj, params )</code> - Like flipping a card.</li>
+<li><code>ssk.easyIFC.easyFlip( obj, params )</code> - Like flipping a card.</li>
 </ul>
 <pre><code class="Lua">
    local button = ssk.easyIFC:presetPush( group, &quot;default&quot;, x, y, 250, 40, &quot;Flippy Button&quot; )

@@ -285,18 +285,10 @@
         <li class="first-level active"><a href="#sound-manager-ssksoundmgr">Sound Manager (ssk.soundMgr.*)</a></li>
         
     
-        <li class="first-level "><a href="#configuring-the-sound-manager">Configuring the Sound Manager</a></li>
-        
-            <li class="third-level"><a href="#max-music-channels">Max Music Channels</a></li>
-        
-            <li class="third-level"><a href="#volume-control">Volume Control</a></li>
-        
-            <li class="third-level"><a href="#enabling-effects">Enabling Effects</a></li>
-        
-            <li class="third-level"><a href="#enabling-music">Enabling Music</a></li>
+        <li class="first-level "><a href="#adding-sounds">Adding Sounds</a></li>
         
     
-        <li class="first-level "><a href="#adding-sounds">Adding Sounds</a></li>
+        <li class="first-level "><a href="#loading-sounds">Loading Sounds</a></li>
         
     
         <li class="first-level "><a href="#playing-sounds">Playing Sounds</a></li>
@@ -313,11 +305,24 @@
             <li class="third-level"><a href="#stop-all">Stop All</a></li>
         
     
-        <li class="first-level "><a href="#freeing-memory-releasing">Freeing Memory (Releasing)</a></li>
+        <li class="first-level "><a href="#freeing-releasing-memory">Freeing (Releasing) Memory</a></li>
         
             <li class="third-level"><a href="#release">Release</a></li>
         
             <li class="third-level"><a href="#release-all">Release All</a></li>
+        
+    
+        <li class="first-level "><a href="#configuring-the-sound-manager">Configuring the Sound Manager</a></li>
+        
+            <li class="third-level"><a href="#max-music-channels">Max Music Channels</a></li>
+        
+            <li class="third-level"><a href="#volume-control">Volume Control</a></li>
+        
+            <li class="third-level"><a href="#enabling-effects">Enabling Effects</a></li>
+        
+            <li class="third-level"><a href="#enabling-music">Enabling Music</a></li>
+        
+            <li class="third-level"><a href="#debugging">Debugging</a></li>
         
     
         <li class="first-level "><a href="#complete-example">Complete Example</a></li>
@@ -343,23 +348,23 @@
 <td><a href="#adding-sounds">add</a></td>
 <td><a href="#adding-sounds">addEffect</a></td>
 <td><a href="#adding-sounds">addMusic</a></td>
-<td></td>
+<td><a href="#debugging">dump</a></td>
 </tr>
 <tr>
-<td><a href="#debugging">dump</a></td>
 <td><a href="#enable-effects">enableSFX</a></td>
 <td><a href="#enable-music">enableMusic</a></td>
-<td><a href="#release">release</a></td>
-</tr>
-<tr>
+<td><a href="#loading-sounds">load</a></td>
 <td><a href="#debugging">setDebugLevel</a></td>
-<td><a href="#EFM">setMaxMusicChannels</a></td>
-<td><a href="#EFM">setMinTweenTime</a></td>
-<td><a href="#volume-control">setVolume</a></td>
 </tr>
 <tr>
+<td><a href="#max-music-channels">setMaxMusicChannels</a></td>
+<td><a href="#volume-control">setVolume</a></td>
 <td><a href="#stop">stop</a></td>
 <td><a href="#stop-all">stopAll</a></td>
+</tr>
+<tr>
+<td><a href="#release">release</a></td>
+<td><a href="#release-all">releaseAll</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -383,49 +388,6 @@
 </tr>
 </tbody>
 </table>
-<h1 id="configuring-the-sound-manager">Configuring the Sound Manager</h1>
-<h2 id="max-music-channels">Max Music Channels</h2>
-<p>By default, the manager allocates four music channels for music and the rest (28) are for sound effects.  This is typically enough, but if you feel it won't be, simply call this function with the number of <code>max</code> channels you want held aside for music.</p>
-<p><strong>Tip:</strong> Do this before you start <a href="#playing-sounds">playing sounds</a>.</p>
-<pre><code class="Lua">ssk.soundMgr.setMaxMusicChannels( [ max ] ) 
-</code></pre>
-
-<h2 id="volume-control">Volume Control</h2>
-<p>By default, all channels are set at max volume (<code>1.0</code>), but the <em>Sound Manager</em> give you complete control of these volume:</p>
-<ul>
-<li><strong>Global Volume</strong> - Multiplier for all channels.</li>
-<li><strong>Effect Volume</strong> - Multiplier for <code>"effect"</code> channels.</li>
-<li><strong>Music Volume</strong> - Multiplier for <code>"music"</code> channels.</li>
-</ul>
-<p>The volume for any sound is determined by this equation:</p>
-<blockquote>
-<p>Channel Volume == <em>Global Volume</em> x <em>Type Volume</em> </p>
-</blockquote>
-<pre><code class="Lua">ssk.soundMgr.setVolume( volume [ , volType ] )
-</code></pre>
-
-<ul>
-<li><code>volume</code> (<code>1.0</code>) - Volume level in range [<code>0</code>,<code>1</code>].</li>
-<li><code>volType</code> (<code>nil</code>) - Volume type to set:<ul>
-<li><code>nil</code> - Global</li>
-<li><code>effect</code> - Effect channels.</li>
-<li><code>music</code> - Music channels.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Tip:</strong> While you usually do this during initialization, you can change volumes any time.</p>
-<h2 id="enabling-effects">Enabling Effects</h2>
-<p>By default, effect sounds are enabled, but you can disable them at any time by passing <code>false</code> to this function (defaults to <code>true</code>):</p>
-<pre><code class="Lua">ssk.soundMgr.enableSFX( [ enable ] )
-</code></pre>
-
-<p><strong>Tip:</strong> Disabling does not <a href="#stoping-sounds">stop</a> currently <a href="#playing-sounds">playing sounds</a>.  It prevents new ones from starting.</p>
-<h2 id="enabling-music">Enabling Music</h2>
-<p>By default, music sounds are enabled, but you can disable them at any time by passing <code>false</code> to this function (defaults to <code>true</code>):</p>
-<pre><code class="Lua">ssk.soundMgr.enableMusic( [ enable ] )
-</code></pre>
-
-<p><strong>Tip:</strong> Disabling does not <a href="#stoping-sounds">stop</a> currently <a href="#playing-sounds">playing sounds</a>.  It prevents new ones from starting.</p>
 <h1 id="adding-sounds">Adding Sounds</h1>
 <p>There is one 'generic' function for adding sounds and two helper functions that call it.</p>
 <pre><code class="Lua">ssk.soundMgr.add( name, path [, params ] )
@@ -469,9 +431,20 @@ soundMgr.addMusic( &quot;Sugar Plum Breakdown&quot;, &quot;sounds/music/Sugar Pl
 
 </code></pre>
 
+<h1 id="loading-sounds">Loading Sounds</h1>
+<p>When <a href="#adding-sounds">adding sounds</a> you may specify to preload or not preload each sound.  Additionally, you may force a sound file to load at any time.  </p>
+<p><strong>Tip 1:</strong> Once a file is loaded it won't re-load if you try to load again.<br />
+<strong>Tip 2:</strong> If you attempt to play an un-loaded sound, it will be loaded automatically, but this could cause a slight delay for large sounds files.  So, preloading or force-loading before you need to play a sound is generally a good idea.</p>
+<pre><code class="Lua">ssk.soundMgr.addMusic( name )
+</code></pre>
+
+<ul>
+<li><code>name</code> - Name of previously added sound that you wish to load.</li>
+</ul>
 <h1 id="playing-sounds">Playing Sounds</h1>
-<p>Sound effects and music are both played using the <strong>onSound</strong> event.  </p>
-<p>This event takes a number of (mostly optional) arguments:</p>
+<p>There is no function to play a sound directly.  Instead, sound effects and music are both played using the <strong>onSound</strong> event.  </p>
+<p>This may seem <strong><em>weird</em></strong> at first, but it is by design.  The idea is that, once you have configured the sound manager, you should be able to play a sound from anywhere with a single line of code.  <em>No fuss, no muss.</em></p>
+<p>The <code>onSound</code> event takes a number of (mostly optional) arguments:</p>
 <ul>
 <li><code>sound</code> (required) - Name of sound (must match previously added sound).</li>
 <li><code>loops</code> (<code>1</code>) - Optional number of times to loop sound:<ul>
@@ -498,6 +471,7 @@ post( &quot;onSound&quot;, { sound = &quot;Sugar Plum Breakdown&quot;, fadein = 
 <p><strong>Tip:</strong> If you try to play the same music while it is playing already, you will get a warning and the second attempt will fail.  </p>
 <h1 id="stopping-sounds">Stopping Sounds</h1>
 <p>You can stop individual sounds, categories or sounds (<code>"effect"</code> or <code>"music"</code>) or all sounds.</p>
+<p>Unlike <a href="#playing-sounds">playing sounds</a>, stopping sounds is a direct call because it is typically done from a single location in games and apps, so there is no need for 'distributed access'.</p>
 <h2 id="stop">Stop</h2>
 <p>Use this function to stop all playing instances of a specific sound:</p>
 <pre><code class="Lua">ssk.soundMgr.stop( name ) 
@@ -519,7 +493,7 @@ post( &quot;onSound&quot;, { sound = &quot;Sugar Plum Breakdown&quot;, fadein = 
 </ul>
 </li>
 </ul>
-<h1 id="freeing-memory-releasing">Freeing Memory (Releasing)</h1>
+<h1 id="freeing-releasing-memory">Freeing (Releasing) Memory</h1>
 <p>You are responsible for freeing memory used by sounds you no longer need loaded.  Fortunately, the <em>Sound Manager</em> makes this easy.</p>
 <p><strong>Warning:</strong> Releasing a sound will stop any instance(s) of that sound currently being played.</p>
 <h2 id="release">Release</h2>
@@ -546,6 +520,63 @@ post( &quot;onSound&quot;, { sound = &quot;Sugar Plum Breakdown&quot;, fadein = 
 <li><code>force</code> (<code>false</code>) - Set this to <code>true</code> for force <a href="#adding-sounds">sticky</a> sounds to be removed.</li>
 </ul>
 <p><strong>Tip:</strong> If you try to play the same music while it is playing already, you will get a warning and the second attempt will fail.  </p>
+<h1 id="configuring-the-sound-manager">Configuring the Sound Manager</h1>
+<h2 id="max-music-channels">Max Music Channels</h2>
+<p>By default, the manager allocates four music channels for music and the rest (28) are for sound effects.  This is typically enough, but if you feel it won't be, simply call this function with the number of <code>max</code> channels you want held aside for music.</p>
+<p><strong>Tip:</strong> Do this before you start <a href="#playing-sounds">playing sounds</a>.</p>
+<pre><code class="Lua">ssk.soundMgr.setMaxMusicChannels( [ max ] ) 
+</code></pre>
+
+<h2 id="volume-control">Volume Control</h2>
+<p>By default, all channels are set at max volume (<code>1.0</code>), but the <em>Sound Manager</em> give you complete control of these volume:</p>
+<ul>
+<li><strong>Global Volume</strong> - Multiplier for all channels.</li>
+<li><strong>Effect Volume</strong> - Multiplier for <code>"effect"</code> channels.</li>
+<li><strong>Music Volume</strong> - Multiplier for <code>"music"</code> channels.</li>
+</ul>
+<p>The volume for any sound is determined by this equation:</p>
+<blockquote>
+<p>Channel Volume == <em>Global Volume</em> x <em>Type Volume</em> </p>
+</blockquote>
+<pre><code class="Lua">ssk.soundMgr.setVolume( volume [ , volType ] )
+</code></pre>
+
+<ul>
+<li><code>volume</code> (<code>1.0</code>) - Volume level in range [<code>0</code>,<code>1</code>].</li>
+<li><code>volType</code> (<code>nil</code>) - Volume type to set:<ul>
+<li><code>nil</code> - Global</li>
+<li><code>effect</code> - Effect channels.</li>
+<li><code>music</code> - Music channels.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tip:</strong> While you usually do this during initialization, you can change volumes any time.</p>
+<h2 id="enabling-effects">Enabling Effects</h2>
+<p>By default, effect sounds are enabled, but you can disable them at any time by passing <code>false</code> to this function (defaults to <code>true</code>):</p>
+<pre><code class="Lua">ssk.soundMgr.enableSFX( [ enable ] )
+</code></pre>
+
+<p><strong>Tip:</strong> Disabling does not <a href="#stoping-sounds">stop</a> currently <a href="#playing-sounds">playing sounds</a>.  It prevents new ones from starting.</p>
+<h2 id="enabling-music">Enabling Music</h2>
+<p>By default, music sounds are enabled, but you can disable them at any time by passing <code>false</code> to this function (defaults to <code>true</code>):</p>
+<pre><code class="Lua">ssk.soundMgr.enableMusic( [ enable ] )
+</code></pre>
+
+<p><strong>Tip:</strong> Disabling does not <a href="#stoping-sounds">stop</a> currently <a href="#playing-sounds">playing sounds</a>.  It prevents new ones from starting.</p>
+<h2 id="debugging">Debugging</h2>
+<p>By default, only warnings and error messages are printed to the console.  However, while you are working on your game/app, you may find it useful to get additional information.  This module supports three levels of debug messaging.</p>
+<pre><code class="Lua">ssk.soundMgr.setDebugLevel( [ level ] )
+</code></pre>
+
+<ul>
+<li><code>level</code> (<code>0</code>) - Debug messaging level to use after this call.<ul>
+<li><code>0</code> - None.</li>
+<li><code>1</code> - Basic messages.</li>
+<li><code>2</code> - Verbose.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tip:</strong> Disabling does not <a href="#stoping-sounds">stop</a> currently <a href="#playing-sounds">playing sounds</a>.  It prevents new ones from starting.</p>
 <h1 id="complete-example">Complete Example</h1>
 <pre><code class="Lua">
 local soundMgr = ssk.soundMgr

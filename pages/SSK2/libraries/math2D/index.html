@@ -284,7 +284,11 @@
     
         <li class="first-level active"><a href="#2d-math-sskmath2d">2D Math (ssk.math2d.*)</a></li>
         
-            <li class="third-level"><a href="#vector-representations">Vector Representations</a></li>
+    
+        <li class="first-level "><a href="#vector-representations">Vector Representations</a></li>
+        
+    
+        <li class="first-level "><a href="#standard-operations">Standard Operations</a></li>
         
             <li class="third-level"><a href="#addition">Addition</a></li>
         
@@ -310,6 +314,31 @@
         
             <li class="third-level"><a href="#vector-to-angle">Vector To Angle</a></li>
         
+            <li class="third-level"><a href="#angle-between">Angle Between</a></li>
+        
+            <li class="third-level"><a href="#distance-between">Distance Between</a></li>
+        
+            <li class="third-level"><a href="#is-within-distance">Is Within Distance</a></li>
+        
+    
+        <li class="first-level "><a href="#advanced-operations">Advanced Operations</a></li>
+        
+            <li class="third-level"><a href="#in-field-of-view">In Field-Of-View</a></li>
+        
+            <li class="third-level"><a href="#is-in-front">Is In Front</a></li>
+        
+            <li class="third-level"><a href="#is-behind">Is Behind</a></li>
+        
+            <li class="third-level"><a href="#is-to-left">Is To Left</a></li>
+        
+            <li class="third-level"><a href="#is-to-right">Is To Right</a></li>
+        
+            <li class="third-level"><a href="#line-line-intersect">Line-Line Intersect</a></li>
+        
+            <li class="third-level"><a href="#segment-segment-intersect">Segment-Segment Intersect</a></li>
+        
+            <li class="third-level"><a href="#segment-circle-intersect">Segment-Circle Intersect</a></li>
+        
     
     </ul>
 </div></div>
@@ -325,7 +354,7 @@ _G.ssk.init( { math2DPlugin = true } )
 </code></pre>
 
 <p><strong>Tip:</strong> The paid version of the <a href="https://marketplace.coronalabs.com/plugin/math2d">Math2D Plugin</a> is both faster than the SSK2 (Pure Lua) version and incorporates a number of additional features, so you should definitely check it out!</p>
-<h2 id="vector-representations">Vector Representations</h2>
+<h1 id="vector-representations">Vector Representations</h1>
 <p>In the context of these docs, a vector is any table or object with both an x- and a y-field.  Additionally, we often deal with vectors as discrete collections of <em>x</em> and <em>y</em> values. </p>
 <pre><code>-- A table as a 2d-vector: &lt; 10, 15 &gt;
 local v1 = { x = 10, y = 15 } 
@@ -340,6 +369,43 @@ local x2 = -1
 local y2 = 0
 </code></pre>
 
+<h1 id="standard-operations">Standard Operations</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#addition">Addition</a></td>
+<td><a href="#subtraction">Subtraction</a></td>
+<td><a href="#difference">Difference</a></td>
+<td><a href="#length">Length</a></td>
+</tr>
+<tr>
+<td><a href="#squared-length">Squared Length</a></td>
+<td><a href="#scaling">Scaling</a></td>
+<td><a href="#normalizing">Normalizing</a></td>
+<td><a href="#dot-product">Dot Product</a></td>
+</tr>
+<tr>
+<td><a href="#cross-product">Cross Product</a></td>
+<td><a href="#normals">Normals</a></td>
+<td><a href="#angle-to-vector">Angle To Vector</a></td>
+<td><a href="#vector-to-angle">Vector To Angle</a></td>
+</tr>
+<tr>
+<td><a href="#angle-between">Angle Between</a></td>
+<td><a href="#distance-between">Distance Between</a></td>
+<td><a href="#is-within-distance">Is Within Distance</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="addition">Addition</h2>
 <h3 id="tableobject-vectors">Table/Object Vectors</h3>
 <pre><code>math2d.add( v1, v2 [, altRet ] )
@@ -734,8 +800,311 @@ local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 print(&quot;Result: &quot;, math2d.vector2Angle(vx, vy) )
 </code></pre>
 
+<h2 id="angle-between">Angle Between</h2>
+<p><img alt="Angle Between" src="../../images/math2d/anglebetween2.png" /></p>
+<pre><code>math2d.angleBetween( v1, v2 )
+math2d.angleBetween( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Returns the inner (shortest) angle between two vectors.  </p>
+<p><strong>Tip:</strong> These vectors do not have to have the same tail.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local vec1 = angle2Vector( -90, true )
+local vec2 = angle2Vector( -15, true )
+
+print( math2d.angleBetween( vec1, vec2 ) ) -- ~75 degrees
+
+print( math2d.angleBetween( vec2, vec1 ) ) -- ~75 degrees
+</code></pre>
+
+<h2 id="distance-between">Distance Between</h2>
+<pre><code>math2d.distanceBetween( v1, v2 )
+math2d.distanceBetween( x1, y1, x2, y2 )
+</code></pre>
+
+<p>Returns the distance between two vectors.  Shorthand notation for substraction followed by a length calculation.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+</ul>
+<pre><code>local vec1 = { x = 0, y = 100 }
+local vec2 = { x = 0, y = 0 }
+
+print( math2d.distanceBetween( vec1, vec2 ) ) -- 100
+
+print( math2d.distanceBetween( 0, 100, 0, 0 ) ) -- 100
+</code></pre>
+
+<h2 id="is-within-distance">Is Within Distance</h2>
+<pre><code>math2d.isWithinDistance( v1, v2, distance )
+math2d.isWithinDistance( x1, y1, x2, y2, distance )
+</code></pre>
+
+<p>Returns true if two vectors are with the specified <em>distance</em> of each other.</p>
+<ul>
+<li>v1, v2 - Vectors one and two.</li>
+<li>x1, y1, x2, y2 - Four discrete values representing the two vectors: &lt; <em>x1</em>, <em>y1</em> &gt; and &lt; <em>x2</em>, <em>y2</em> &gt;.</li>
+<li>distance - Distance for which true is returned.  Greater than this returns false.</li>
+</ul>
+<pre><code>local vec1 = { x = 0, y = 100 }
+local vec2 = { x = 0, y = 0 }
+
+print( math2d.isWithinDistance( vec1, vec2, 100 ) ) -- true
+
+print( math2d.isWithinDistance( vec1, vec2, 99.999 ) ) -- false
+
+print( math2d.isWithinDistance( 0, 100, 0, 0, 100 ) ) -- true
+
+print( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false
+</code></pre>
+
+<h1 id="advanced-operations">Advanced Operations</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#in-field-of-view">In Field-Of-View</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#is-in-front">Is In Front</a></td>
+<td><a href="#is-behind">Is Behind</a></td>
+<td><a href="#is-to-left">Is To Left</a></td>
+<td><a href="#is-to-right">Is To Right</a></td>
+</tr>
+<tr>
+<td><a href="#line-line-intersect">Line-Line Intersect</a></td>
+<td><a href="#segment-segment-intersect">Segment-Segment Intersect</a></td>
+<td><a href="#segment-circle-intersect">Segment-Circle Intersect</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="in-field-of-view">In Field-Of-View</h2>
+<p><img alt="In Field-Of-View" src="../../images/math2d/fov.png" /></p>
+<p>(image borrowed from <a href="http://rg3.name/201210281829.html">Geek Blight</a>)</p>
+<pre><code>math2d.inFOV( target, observer, fov [, offsetAngle ] )
+</code></pre>
+
+<p>Returns true <em>target</em> is within <em>observer</em>'s field of view as defined by <em>fov</em> and the optional rotation <em>offsetAngle</em>.</p>
+<ul>
+<li>target - A table vector.  Usually a display object, but can be a table representing point in the world.</li>
+<li>observer - A table vector containing a <em>rotation</em> value in addition to the <em>x</em> and <em>y</em> values.  Usually a display object.</li>
+<li>fov - The angle representing the entire field of vision of the observer from that observer's current forward facing vector.</li>
+<li>offsetAngle - Optional angle used to 'rotate' the fov from the observer's forward view.  With this you can rotate the observer's view without rotating the object itself which is useful for animations that give the effect of rotating while the display object stays fixed.</li>
+</ul>
+<pre><code>-- See picture above for reference
+-- objectA, objecB, and player are all display objects.
+
+math2d.inFOV( objectA, player, 90 ) -- false
+
+math2d.inFOV( objectB, player, 90 ) -- true
+
+math2d.inFOV( objectA, player, 90, 270 ) -- true because we rotated the FOV by 270 degrees
+</code></pre>
+
+<h2 id="is-in-front">Is In Front</h2>
+<h2 id="is-behind">Is Behind</h2>
+<h2 id="is-to-left">Is To Left</h2>
+<h2 id="is-to-right">Is To Right</h2>
+<pre><code>math2d.isInFront( target, observer [, offsetAngle ] )
+math2d.isBehind( target, observer [, offsetAngle ] )
+math2d.isToLeft( target, observer [, offsetAngle ] )
+math2d.isToRight( target, observer [, offsetAngle ] )
+</code></pre>
+
+<p>These are all shortcut functions that will quickly tell you if an object is: in-front, behind. to-the-left, or to-the-right of another object.  This is exceptionally useful for things like missiles or enemies that need to 'steer' in the direction of a target.</p>
+<p>This determiniation is based upon the current <em>rotation</em> of the observer and that angle can be modified with the optional <em>offsetAngle</em>.</p>
+<ul>
+<li>target - A table vector.  Usually a display object, but can be a table representing point in the world.</li>
+<li>observer - A table vector containing a <em>rotation</em> value in addition to the <em>x</em> and <em>y</em> values.  Usually a display object.</li>
+<li>offsetAngle - Optional angle used to 'rotate' the observers 'forward' vector for the calculation without actually rotating the observer.</li>
+</ul>
+<pre><code>-- See picture from 'In Field-Of-View ' above for reference
+
+math2d.isInFront( objectA, player ) -- true
+
+math2d.isInFront( objectB, player ) -- true 
+
+math2d.isToLeft( objectA, player ) -- true
+
+math2d.isToRight( objectB, player ) -- true 
+</code></pre>
+
+<h2 id="line-line-intersect">Line-Line Intersect</h2>
+<p><img alt="Line Line Intersection" src="../../images/math2d/lineLineIntersect.gif" /></p>
+<pre><code>math2d.lineLineIntersect( l1x1, l1y1, l1x1, l1y2, l2x1, l2y1, l2x2, l2y2 )
+math2d.lineLineIntersect( p1, p2, p3, p4 )
+</code></pre>
+
+<p>Checks to see if two lines intersect and if so where. </p>
+<p>Returns table representing point of intersection <code>{ x = ??, y = ?? }</code>, or nil indicating no intersection was found.</p>
+<p><strong>Warning:</strong> Although these 'lines' are specified as segments, they are treated as true (infinite) lines and as such any intersection of the infinite lines will be detected.</p>
+<ul>
+<li>l1x1 .. l2y2 - Points making up the two lines we wish to test.  For example, &lt; l1x1, l1y1 &gt; is the position of the first point of the first line.</li>
+<li>p1, p2, p3, p4 - Points making up the two lines we wish to test.  <ul>
+<li>Valid point &rarr; <code>{ x = 10, y = 20 }</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, 
+                    display.contentCenterX, display.contentCenterY+200
+local line1 = display.newLine( x1,y1,x2,y2 )
+line1.strokeWidth = 2
+
+local x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, 
+                    display.contentCenterX + 200, display.contentCenterY
+local line2 = display.newLine( x3,y3,x4,y4 )
+line2.strokeWidth = 2
+
+local period = 60
+local deltaAngle = 5
+local startAngle = 0
+local endAngle = 360
+local angle = startAngle
+local marker
+
+local function testLineIntersect()
+    angle = angle + deltaAngle
+    display.remove(line2)
+    display.remove(marker)
+
+    if( angle &gt; endAngle ) then         
+        return
+    end
+    local vec = angle2Vector( angle, true )
+    vec = scaleVec( vec, 250 )
+    vec.x = vec.x + x3
+    vec.y = vec.y + y3
+    line2 = display.newLine( x3, y3, vec.x, vec.y )
+    line2.strokeWidth = 2
+    local intersect = math2d.lineLineIntersect( x3, y3, vec.x, vec.y, x1, y1, x2, y2 )
+    if( intersect ) then 
+        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )
+        marker:setFillColor(0,1,0)
+    end
+
+    timer.performWithDelay( period, testLineIntersect )
+end
+timer.performWithDelay( period, testLineIntersect )
+</code></pre>
+
+<h2 id="segment-segment-intersect">Segment-Segment Intersect</h2>
+<p><img alt="Segment Segment Intersection" src="../../images/math2d/segmentSegmentIntersect.gif" /></p>
+<pre><code>math2d.segmentSegmentIntersect( s1x1, s1y1, s1x1, s1y2, s2x1, s2y1, s2x2, s2y2 )
+</code></pre>
+
+<p>Checks to see if two line segments intersect and if so where. </p>
+<p>Returns two points &lt; x, y &gt; if an intersection occurs or nil meaning no intersection was found.</p>
+<p><strong>Note:</strong> For most game implementations/tests you will want to use this instead of the line-line version as it is a true segment-segment test and only checks for intersections within the limited ranges of the two segments.</p>
+<ul>
+<li>s1x1 .. s2y2 - Points making up the two lines we wish to test.  For example, &lt; s1x1, s1y1 &gt; is the position of the first point of the first segment.</li>
+</ul>
+<pre><code>local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY-200, 
+                    display.contentCenterX, display.contentCenterY+200
+local line1 = display.newLine( x1,y1,x2,y2 )
+line1.strokeWidth = 2
+
+local x3,y3,x4,y4 = display.contentCenterX-200, display.contentCenterY, 
+                    display.contentCenterX + 200, display.contentCenterY
+local line2 = display.newLine( x3,y3,x4,y4 )
+line2.strokeWidth = 2
+
+local period = 60
+local deltaAngle = 5
+local startAngle = 0
+local endAngle = 360
+local angle = startAngle
+local marker
+
+local function testSegmentIntersect()
+    angle = angle + deltaAngle
+    display.remove(line2)
+    display.remove(marker)
+
+    if( angle &gt; endAngle ) then         
+        return
+    end
+    local vec = angle2Vector( angle, true )
+    vec = scaleVec( vec, 250 )
+    vec.x = vec.x + x3
+    vec.y = vec.y + y3
+    line2 = display.newLine( x3, y3, vec.x, vec.y )
+    line2.strokeWidth = 2
+    local intersect = math2d.segmentSegmentIntersect( x3, y3, vec.x, vec.y , x1, y1, x2, y2 )
+    if( intersect ) then 
+        print(intersect)
+        marker = display.newCircle( intersect.x, intersect.y, 10, true, true )
+        marker:setFillColor(0,1,0)
+    end
+
+    timer.performWithDelay( period, testSegmentIntersect )
+end
+timer.performWithDelay( period, testSegmentIntersect )
+</code></pre>
+
+<h2 id="segment-circle-intersect">Segment-Circle Intersect</h2>
+<pre><code>math2d.segmentCircleIntersect( p1, p2, circle, radius )
+</code></pre>
+
+<p><img alt="Segment Circle Intersection" src="../../images/math2d/lineCircleIntersection.png" /></p>
+<p>Checks to see if the line segment defined by points <em>p1</em> and <em>p2</em> intersects with a <em>circle</em> of the specified <em>radius</em>.</p>
+<p>Possible returns:</p>
+<ul>
+<li>nil - No intersections.</li>
+<li>i1,  nil - Table containing point of first intersection and nil meaning no second intersection.</li>
+<li>i1,  i2 - Tables containing points of first and second intersection. (This is the maximum possible number of intersections that can occur.)</li>
+</ul>
+<p><strong>Credit:</strong> Derived from code by: Davis Claiborne (https://github.com/davisdude/mlib/blob/master/mlib.lua)</p>
+<ul>
+<li>p1, p2 - Table vectors representing the endpoints of a line segment.</li>
+<li>circle - Table or object representing the position of the circle.</li>
+<li>radius - The radius of said circle.</li>
+</ul>
+<pre><code>local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY+200, 
+                    display.contentCenterX, display.contentCenterY-200
+x1 = x1 - 150
+x2 = x2
+local line1 = display.newLine( x1,y1,x2,y2 )
+line1.strokeWidth = 2
+
+local p1 = { x = x1, y = y1 }
+local p2 = { x = x2, y = y2 }
+
+local circ = display.newCircle( display.contentCenterX, display.contentCenterY, 100 )
+circ:setFillColor(0,0,0,0)
+circ.strokeWidth = 2
+
+local i1, i2 = math2d.segmentCircleIntersect( { x = p1.x, y = p1.y}, 
+                                               { x = p2.x, y = p2.y}, 
+                                               circ, 
+                                               100 )
+
+if( i1 ) then
+    local hit = display.newCircle( i1.x, i1.y, 10 )
+    hit:setFillColor(0,1,0)
+end
+
+if( i2 ) then
+    local hit = display.newCircle( i2.x, i2.y, 10 )
+    hit:setFillColor(0,1,0)
+end
+</code></pre>
+
 <hr />
-<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+<p><img alt="RoamingGamer" src="../../roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         
     </div>
 
