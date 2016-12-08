@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/actionpack1/overview/"> 
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <title>Template Overview - Starter - Action Pack 1</title>
+
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Starter - Action Pack 1</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../quick_start/">Quick Start</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Template Overview</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../help/">Help</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../rgdocs/">RG Docs Home</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../quick_start/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../help/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#overview">Overview</a></li>
+        
+    
+        <li class="first-level "><a href="#project-structure">Project Structure</a></li>
+        
+    
+        <li class="first-level "><a href="#the-factory-concept">The Factory Concept</a></li>
+        
+            <li class="third-level"><a href="#typical-factory-structure">Typical Factory Structure</a></li>
+        
+            <li class="third-level"><a href="#example-factory-coinlua">Example Factory - coin.lua</a></li>
+        
+            <li class="third-level"><a href="#factory-manager">Factory Manager</a></li>
+        
+    
+        <li class="first-level "><a href="#the-hallway">The Hallway</a></li>
+        
+            <li class="third-level"><a href="#onnewsegment-event">onNewSegment Event</a></li>
+        
+    
+        <li class="first-level "><a href="#template-walkthrough">Template Walkthrough</a></li>
+        
+            <li class="third-level"><a href="#startup">Startup</a></li>
+        
+            <li class="third-level"><a href="#game-start">Game Start</a></li>
+        
+            <li class="third-level"><a href="#more">More?</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="overview">Overview</h1>
+<p>This is an overview of the template project located in the folder: <code>~/template/</code></p>
+<p>Once you understand how the template works you should be ready to examine any of the five game starters.</p>
+<h1 id="project-structure">Project Structure</h1>
+<p>These are the files and folders in this project and what they do:</p>
+<ul>
+<li><code>~\template\</code> - Home folder for 'template' project<ul>
+<li><code>build.settings</code> - A generic build settings file for this project.</li>
+<li><code>config.lua</code> - A generic config file for the project using 640x960 letterbox scaling.</li>
+<li><code>main.lua</code> - The game's launch file.  This is where the game starts.</li>
+<li><code>images\</code> - This folder contains images files (.jpg and .png).</li>
+<li><code>Prime.ttf</code> - A font file used in all examples.</li>
+<li><code>sskj.bat</code> - You can safely ignore this file.  I use it during testing to soft-link to my local copy of ssk.</li>
+<li><strong><code>ssk2\</code></strong> - Super Starter Kit 2.  If you have not yet copied this folder here yet, please see <a href="../quick_start">Quick Start</a>.</li>
+<li><code>scripts\</code> - This folder contains most scripts used in the project.<ul>
+<li><code>common.lua.lua</code> - This module contains all of the common/shared settings for the game.
+    +<strong>Tip:</strong> All other files in the project <code>require()</code> this module.  So, any changes made to it can be seen by all code.  i.e. You can use it as a <em>scratch pad</em> if need to.</li>
+<li><code>game.lua</code> - This module contains all of the game logic to run the example.</li>
+<li><code>myCC.lua</code> - A module that creates and configures a <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/cc/">collision calculator</a> (<em>external link</em>).</li>
+<li><code>factories\</code> - This folder contains all factory definitions and the factory manager.   <ul>
+<li><code>coin.lua</code> - Coin pickup factory.</li>
+<li><code>coinHUD.lua</code> - Coin counter interface factory.</li>
+<li><code>distanceHUD.lua</code> - Distance counter interface factory.</li>
+<li><code>factoryMgr.lua</code> - The factory manager module.  (See <a href="#the-factory-concept">The Factory Concept</a> below.)</li>
+<li><code>player.lua</code> - Player factory.  (<strong>Note:</strong> All game starters customize this factory.)</li>
+<li><code>scoreHUD.lua</code> - Score counter interface factory.</li>
+<li><code>segment.lua</code> - <em>Hallway Segment</em> factory. (See <a href="#the-hallway">The Hallway</a> below.)<br />
+    This factory creates hallway segments/triggers whose job it is to create/load new content as the player moves right and triggers a segment sensor.          </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>sounds\</code> - A folder where sound effect and music files are stored.<ul>
+<li><code>music\</code> - Music files.</li>
+<li><code>sfx\</code> - Sound-effect files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="the-factory-concept">The Factory Concept</h1>
+<p>This template and all of the starter games use <em>factories</em> to create game objects.  In this sense, a factory is a module whose main job is to create a single game object or set of co-related objects.  Ex:</p>
+<ul>
+<li>A (pickup) coin.</li>
+<li>A score counter interface.</li>
+<li>A player.</li>
+</ul>
+<p><strong>Note:</strong> These factories do not strictly conform to the factory design pattern you may be familiar with in <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">OOP</a> languages and <a href="https://github.com/FloydaGithub/lua-patterns/blob/master/factory_method.lua">other</a> sources.  I am using this terms because the <em>factory</em> modules adhere to the broad principle of the pattern: <strong>Creating Objects</strong>.</p>
+<h2 id="typical-factory-structure">Typical Factory Structure</h2>
+<p>The file containing a <em>factory</em> definition usually has the following structure:</p>
+<ul>
+<li>Header - Copyright info and name of factory.</li>
+<li><code>require()</code> Statements - modules and libraries used by the factory are required here.</li>
+<li>Localizations - In this section, I localize a number of commonly used ssk features.<ul>
+<li><strong>Tip:</strong> I may not end up using all of these features in the module, but the cost of localization is low and having a standard set of localized features makes for easier coding and duplication later.</li>
+</ul>
+</li>
+<li>Locals - Next I declare any file-level locals that may be used by the module. <ul>
+<li>Ex: <code>initialized</code> - Most modules have a flag used to determine if the module has been initialized yet.  This is a safety mechanism I use to avoid accidental double initializations.</li>
+</ul>
+</li>
+<li>Forward Declarations - This is where I declare any functions that may be used by the module, but which I don't expose as <em>public</em> members of the module.
+    +<strong>Tip:</strong>  I rarely use this, but keep a spot for it nonetheless.  Again this is about keeping a known structure and enabling easy duplication.</li>
+<li><strong>Factory Module Begins</strong> - The module function definitions start here.<ul>
+<li>factory.init( params ) - A method do one-time initialization of the factory needs it.  Typical things that would be done here are, pre-loading images, defining sprite-sheets, etc.<ul>
+<li><code>params</code> - Optional table of parameters.</li>
+</ul>
+</li>
+<li>factory.reset( params ) - This function is typically called at the begining of a game (not between levels) to reset the factory module if it is needed.  <ul>
+<li><code>params</code> - Optional table of parameters.</li>
+<li><strong>Tip:</strong> While most factories do not use this, <code>segment.lua</code> does. </li>
+</ul>
+</li>
+<li>factory.new( group, x, y, params ) - This is function responsible for building this factories game object(s).<ul>
+<li><code>group</code> - Display group to insert objects into.</li>
+<li><code>x</code>, <code>y</code> - x- and y- position to place 'object' at.  </li>
+<li><code>params</code> - An optional table of parameters.  This is where we pass special data and arguments a factory may need. </li>
+<li><strong>Tip:</strong> - You don't need to use the values of these arguments in every builder, but by having a minimialistic and yet common <code>new()</code> signature we make factories easy to use, easy to write, and easy to understand.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>return factory</code> - The last line of every factory module, where we return the factory module reference.  </li>
+</ul>
+<h3 id="factories-are-extensible">Factories Are Extensible</h3>
+<p>The above factory definition is pretty basic, but due to the fact that factories are modules, it is easy to extend this concept.  </p>
+<p>For example, if you include a built-in-editor in your game, it may be useful to add these functions to your factories:</p>
+<ul>
+<li><code>editor_widget()</code> - A function to create a drag-n-drop widget representing this object type for the ditor.</li>
+<li><code>editor_new()</code> - A function to create the editor instance of this object.  </li>
+<li><code>...</code> - Whatever else you need.</li>
+</ul>
+<h2 id="example-factory-coinlua">Example Factory - <code>coin.lua</code></h2>
+<pre><code class="Lua">-- =============================================================
+-- Copyright Roaming Gamer, LLC. 2008-2016 (All Rights Reserved)
+-- =============================================================
+-- Pickup: Coin Factory
+-- =============================================================
+local common    = require &quot;scripts.common&quot;
+local myCC      = require &quot;scripts.myCC&quot;
+local physics   = require &quot;physics&quot;
+
+-- =============================================================
+-- Localizations
+-- =============================================================
+-- Commonly used Lua Functions
+local getTimer          = system.getTimer
+local mRand                 = math.random
+local mAbs                  = math.abs
+--
+-- Common SSK Display Object Builders
+local newCircle = ssk.display.newCircle;local newRect = ssk.display.newRect
+local newImageRect = ssk.display.newImageRect;local newSprite = ssk.display.newSprite
+local quickLayers = ssk.display.quickLayers
+--
+-- Common SSK Helper Modules
+local easyIFC = ssk.easyIFC;local persist = ssk.persist
+--
+-- Common SSK Helper Functions
+local isValid = display.isValid;local isInBounds = ssk.easyIFC.isInBounds
+local normRot = ssk.misc.normRot;local easyAlert = ssk.misc.easyAlert
+
+-- =============================================================
+-- Locals
+-- =============================================================
+local initialized = false
+
+-- =============================================================
+-- Forward Declarations
+-- =============================================================
+
+-- =============================================================
+-- Factory Module Begins
+-- =============================================================
+local factory = {}
+
+-- ==
+--    init() - One-time initialization only.
+-- ==
+function factory.init( params )
+    if(initialized) then return end
+    initialized = true
+end
+
+-- ==
+--    reset() - Reset any per-game logic/settings.
+-- ==
+function factory.reset( params )
+end
+
+-- ==
+--    new() - Create new instance(s) of this factory's object(s).
+-- ==
+function factory.new( group, x, y, params )
+    params = params or { width = w/4, debugEn = false }
+
+    -- Catch case where we enter, but group was just removed
+    --
+    if( not isValid( group ) ) then return end
+
+    --
+    -- Ensure there is a params value 'segmentWidth'
+    --
+    params.width = params.width or w/4
+
+    --
+    -- Create a coin
+    --
+    local coin = newImageRect( group, x, y, &quot;images/coin.png&quot;, 
+                                {   size = params.size or 40 },
+                                {   bodyType = &quot;static&quot;, isSensor = true,
+                                    calculator = myCC, colliderName = &quot;pickup&quot;} )
+
+    return coin
+end
+
+return factory
+</code></pre>
+
+<h2 id="factory-manager">Factory Manager</h2>
+<p>The <em>Factory Manager</em> is the single access point for all factories and is used as follows:</p>
+<h3 id="1-register-all-factories">1. Register All Factories</h3>
+<p>First (usually in <code>main.lua</code>) we register all factories with the manager like this:</p>
+<pre><code class="Lua">
+local factoryMgr    = require &quot;scripts.factories.factoryMgr&quot;
+
+factoryMgr.register( &quot;segment&quot;, &quot;scripts.factories.segment&quot; )
+factoryMgr.register( &quot;player&quot;, &quot;scripts.factories.player&quot; )
+factoryMgr.register( &quot;coin&quot;, &quot;scripts.factories.coin&quot; )
+factoryMgr.register( &quot;scoreHUD&quot;, &quot;scripts.factories.scoreHUD&quot; )
+factoryMgr.register( &quot;coinsHUD&quot;, &quot;scripts.factories.coinsHUD&quot; )
+factoryMgr.register( &quot;distanceHUD&quot;, &quot;scripts.factories.distanceHUD&quot; )
+
+</code></pre>
+
+<h3 id="2-initialize-factories">2. Initialize Factories</h3>
+<p>Later (usually in <code>game.lua</code>) we initialize the factories:</p>
+<pre><code class="Lua">-- Initialize 'segment' factory using special options
+factoryMgr.init( &quot;segment&quot;, { ceilingPosition = top + 40, floorPosition = bottom - 40 } )
+
+-- Initialize remainder of factories using their default settings.
+factoryMgr.init()
+
+</code></pre>
+
+<h3 id="3-call-factory-new">3. Call Factory <code>new()</code></h3>
+<p>Next (usually in game.lua and other game logic modules) we create game objects using <code>factoryMgr.new()</code></p>
+<pre><code class="Lua">
+--
+-- Create HUDs
+--
+factoryMgr.new( &quot;scoreHUD&quot;, layers.interfaces, centerX, top + 70 )  
+
+factoryMgr.new( &quot;coinsHUD&quot;, layers.interfaces, left + 10, top + 70, 
+                { iconSize = 40, fontSize = 36} )   
+
+factoryMgr.new( &quot;distanceHUD&quot;, layers.interfaces, right - 10, top + 70, { fontSize = 36 } ) 
+
+</code></pre>
+
+<h3 id="4-reset-factories">4. Reset Factories</h3>
+<p>Finally, when we die or reset the game, we typically reset the factories too.</p>
+<pre><code class="Lua">
+factoryMgr.reset( )
+
+</code></pre>
+
+<h1 id="the-hallway">The Hallway</h1>
+<p>As you will recall from the front page of these docs, the template and all of the starter games in this pack are in a 'world' where the action moves from left-to-right.  </p>
+<p>The player moves to the right and the world scrolls to the left.  While this occors, the player stays in the center of the screen (horizontally) and may move up and down.  Finally, as the world scrolls to the left, it brings in new content.</p>
+<p>You can think of the world as a big un-ending hallway.  </p>
+<p>This hallway is  made up segments where each segment contains a collide-able trigger object.  </p>
+<p>When the player moves-right and the world moves left, it (the player) collides with a hallway segment/trigger.  This causes a listener to execute.  That listener creates the next segment in the hallway including a new trigger.  It also dispatches an event <code>onNewSegment</code>.  </p>
+<h2 id="onnewsegment-event"><code>onNewSegment</code> Event</h2>
+<p>The game logic listens for the event <code>onNewSegment</code> and creates new content at the position of the just created segment.  That new content can be randomly generated, loaded from pre-defined level files, or some combination of both.</p>
+<p><strong>Note:</strong>  All of the game starters in this pack use random generation.</p>
+<p>.. and that is pretty much all there is to it.  Once you get your head around how this works it is really easy to start making this style of game.</p>
+<p>Have Fun!</p>
+<h1 id="template-walkthrough">Template Walkthrough</h1>
+<p>I will briefly walk through how the template project executes.  You should open the script files and follow along to get the most from this part of the docs.</p>
+<h2 id="startup">Startup</h2>
+<p>Please open: <code>build.settings</code>, <code>config.lua</code>, <code>main.lua</code>, then start reading ...</p>
+<ol>
+<li>build.settings and config.lua processed - Corona processes these two files and sets up the environement. </li>
+<li>main.lua - Corona now runs the contents of main.lua<ul>
+<li><code>require()</code> and initialize <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/">SSK2</a></li>
+<li><code>require('scripts.common')</code> - Loads common.lua module into memory.</li>
+<li><code>require(...)</code> - Loads a number of other modules into memory.</li>
+<li>Configure and Load Sounds using the <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/soundMgr/">SSK2 Sound Manager</a></li>
+<li>Register all <a href="#the-factory-concept">factories</a> using the <a href="#factory-manager">Factory Manager</a></li>
+</ul>
+</li>
+<li>Initialize Game Module.</li>
+<li>Start Game.<ul>
+<li><strong>Tip:</strong> In the 'Framed' versions of the game starters, we would use composer to load the splash screen here instead.  In the framed versions, the game is not started until the game scene loads.</li>
+</ul>
+</li>
+</ol>
+<h2 id="game-start">Game Start</h2>
+<p>Now open: <code>~/scripts/game.lua</code> and continue reading...</p>
+<p>Once <code>game.start()</code> is called, things start rolling (locate <code>game.start()</code> function in <code>game.lua</code> to follow along).</p>
+<ol>
+<li>Destroy Then Build - The start function calls <code>destroy()</code> first.  The very first time we start the game, this doesn't do much.  The primary reason we do this is to clean up on 2nd, 3rd, ... runs after the player 'dies' and starts over.</li>
+<li>Mark game as 'running' - Many parts of the game check the <code>common.gameIsRunning</code> flag before doing any work.  So, we set it to <code>true</code> right away.</li>
+<li>Initialize Physics.</li>
+<li>Create a group hierchy using the <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/display_layers/">SSK2 Quick Layers</a> feature. The usual hierarchy looks like this (bottom-to-top)<ul>
+<li><code>group</code><ul>
+<li><code>layers</code> - Group that holds all layers and gives easy access to them.<ul>
+<li><code>underlay</code></li>
+<li><code>world</code><ul>
+<li><code>content</code></li>
+<li><code>player</code></li>
+</ul>
+</li>
+<li><code>interfaces</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create a background image.  We're making visually simple games.  So we have a visually simple background.</li>
+<li>Create an input handler using the <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/easy_inputs/#onetouch">SSK2 Easy Inputs - One Touch Factory</a>.  <ul>
+<li>One line of code and you've got a whole input handler set up. Booya, SSK2!</li>
+</ul>
+</li>
+<li>Define a <a href="#onnewsegment-event">onNewSegment</a> event listener.  This piece of code builds our game content as we move to the right.<ul>
+<li>The template version is pretty boring.  It just drops coins in the hallway.  Check out the game starters to see more interesting listeners.</li>
+</ul>
+</li>
+<li>Define a <code>onDied</code> listener.  When the player dies, it dispatches this event.  We use it to stop the game and clean up.  <ul>
+<li>You can add more code to this in your own games, but I've tried to keep it simple for the purpose of getting you started.
+9 Define a <code>finalize</code> listener on the layers object.  I did this to clean up the <code>onNewSegment</code> and <code>onDied</code> listeners.  This function is called when the <code>layers</code> display group is destroyed.</li>
+<li><strong>Tip:</strong> Uses SSK2 <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/globals/#runtime-improvements">Runtime improvement</a> <code>ignoreList()</code> to do this cleaning.</li>
+</ul>
+</li>
+<li>Creates a number of beginning segments in our <a href="#the-hallway">hallway</a>.</li>
+<li>Creates the player.</li>
+</ol>
+<p>As soon as the player is created it starts moving and after that everything happens as the results of touch inputs and events. Sweet!</p>
+<h2 id="more">More?</h2>
+<p>Yes.  There is more to it than that, but I'm going to let you dig into each of the script files and modules.  </p>
+<blockquote>
+<p>Take it slow and easy.  </p>
+<p>Make small changes and re-run the template.  </p>
+<p>You will understand it soon enough.</p>
+<p><strong>~ The Roaming Gamer</strong></p>
+</blockquote>
+<p><img alt="RoamingGamer" src="../images/roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '..';
+    </script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
