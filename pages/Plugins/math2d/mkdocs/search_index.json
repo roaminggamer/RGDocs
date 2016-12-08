@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Math2D \n\n\nWhat Is Math2D?\n\n\nThe \nmath2d\n plugin is a collection of (natively coded) functions designed to solve the most common 2D math problems found in games.  This collection is both fast and flexible, simplifying and speeding up \nCorona SDK\n in a real way.\n\n\nThe \nmath2d\n plugin is designed to work with \nCorona SDK\n specifically.  Like many of my libraries and modules, I created it for myself originally, but it was so useful I decided to make it available to others.  \n\n\nDon't strugle with 2D math any more.  Get it now.\n\n\nWhere Can I Get It?\n\n\nYou can get the paid \nmath2d\n plugin on the \nCorona SDK Marketplace\n.\n\n\nWhy Is This Paid?\n\n\nOriginally, I released a free version of the \nmath2d\n plugin as a Pure-Lua solution.  Since then, I have converted the library to a much faster (2x .. 6x) native version and added many new 2D math functions.  \n\n\nClick \nBenchmarks\n at the top of this page to see a comparison of \nmath2d\n versus the legacy version.\n\n\nYou can get the old Pure-Lua version here, but be warned, it is much slower than the new version and is missing several key features: \nlegacy math2d\n.\n\n\nBasic Usage\n\n\nUpdating build.settings\n\n\nmath2d\n is a plugin and thus requires that you add it to the plugins section of build.settings as follows:\n\n\nsettings =\n{\n    plugins =\n    {\n        [\nplugin.math2d\n] = { publisherId = \ncom.roaminggamer\n },\n    },      \n}\n\n\n\n\nUsing It\n\n\nTo include \nmath2d\n in your project, simply add this line in main.lua:\n\n\nlocal math2d = require \nplugin.math2d\n\n\n\n\n\nDocs\n\n\nClick the 'References' link at the top of this page for detailed documenation of the \nmath2d\n functions.\n\n\nSamples\n\n\nIf you want to see complete examples using \nmath2d\n, you can download them here:\n\n\n\n\nBasics\n - Tests basic 2d math calculations.\n\n\nVerify\n - Verifies basic 2d math calculations versus original Lua library.\n\n\nSegment Circle Intersect\n - Tests segment-circle intersection.\n\n\nLine Line Intersect\n - Tests line-line intersection.\n\n\nSegment Segment Intersect\n - Tests segment-segment intersection.\n\n\nField Of View\n - Tests field of view features.\n\n\nFront/Behind/Left/Right\n - Tests In Front, Is Behind, Is To Left, and Is To Right features.\n\n\n\n\nRequesting Features\n\n\nIf you have a request for a \nmissing\n function that you feel would be especially useful, please post a request to the \nCorona Plugins Forum\n, using this format:\n\n\nTitle\n\n\nMath2D Feature Request - \nfeature name here\n\n\nBody\n\n\nA clear, concise, and precise description of the feature you want including these details:\n\n\n\n\nName of feature.\n\n\nDescription of feature.\n\n\nSample of problem(s) it can be used to solve.\n\n\nOther supporting details and/or images, but please keep it as concise as possible.", 
+            "text": "Math2D \n\n\nWhat Is Math2D?\n\n\nThe \nmath2d\n plugin is a collection of (natively coded) functions designed to solve the most common 2D math problems found in games.  This collection is both fast and flexible, simplifying and speeding up \nCorona SDK\n in a real way.\n\n\nThe \nmath2d\n plugin is designed to work with \nCorona SDK\n specifically.  Like many of my libraries and modules, I created it for myself originally, but it was so useful I decided to make it available to others.  \n\n\nDon't strugle with 2D math any more.  Get it now.\n\n\nWhere Can I Get It?\n\n\nYou can get the paid \nmath2d\n plugin on the \nCorona SDK Marketplace\n.\n\n\nWhy Is This Paid?\n\n\nOriginally, I released a free version of the \nmath2d\n plugin as a Pure-Lua solution.  Since then, I have converted the library to a much faster (2x .. 6x) native version and added many new 2D math functions.  \n\n\nClick \nBenchmarks\n at the top of this page to see a comparison of \nmath2d\n versus the legacy version.\n\n\nYou can get the old Pure-Lua version here, but be warned, it is much slower than the new version and is missing several key features: \nlegacy math2d\n.\n\n\nBasic Usage\n\n\nUpdating build.settings\n\n\nmath2d\n is a plugin and thus requires that you add it to the plugins section of build.settings as follows:\n\n\nsettings =\n{\n    plugins =\n    {\n        [\nplugin.math2d\n] = { publisherId = \ncom.roaminggamer\n },\n    },      \n}\n\n\n\n\nUsing It\n\n\nTo include \nmath2d\n in your project, simply add this line in main.lua:\n\n\nlocal math2d = require \nplugin.math2d\n\n\n\n\n\nDocs\n\n\nClick the 'References' link at the top of this page for detailed documenation of the \nmath2d\n functions.\n\n\nSamples\n\n\nIf you want to see complete examples using \nmath2d\n, you can download them here:\n\n\n\n\nBasics\n - Tests basic 2d math calculations.\n\n\nVerify\n - Verifies basic 2d math calculations versus original Lua library.\n\n\nSegment Circle Intersect\n - Tests segment-circle intersection.\n\n\nLine Line Intersect\n - Tests line-line intersection.\n\n\nSegment Segment Intersect\n - Tests segment-segment intersection.\n\n\nField Of View\n - Tests field of view features.\n\n\nFront/Behind/Left/Right\n - Tests In Front, Is Behind, Is To Left, and Is To Right features.\n\n\n\n\nRequesting Help/Features\n\n\nIf you run into a bug, or have a feature request, you can contact me via the \nCorona Plugins Forum\n, using this format:\n\n\nTitle\n\n\nMath2D Bug - \nMeaningful Description\n\n\n-OR-\n\n\nMath2D Feature Request - \nfeature name here\n\n\nBody\n\n\nA clear, concise, and precise description of the feature you want including these details:\n\n\n\n\nName of feature.\n\n\nDescription of feature.\n\n\nSample of problem(s) it can be used to solve.\n\n\nOther supporting details and/or images, but please keep it as concise as possible.", 
             "title": "Home"
         }, 
         {
@@ -51,19 +51,24 @@
             "title": "Samples"
         }, 
         {
-            "location": "/#requesting-features", 
-            "text": "If you have a request for a  missing  function that you feel would be especially useful, please post a request to the  Corona Plugins Forum , using this format:", 
-            "title": "Requesting Features"
+            "location": "/#requesting-helpfeatures", 
+            "text": "If you run into a bug, or have a feature request, you can contact me via the  Corona Plugins Forum , using this format:", 
+            "title": "Requesting Help/Features"
         }, 
         {
             "location": "/#title", 
-            "text": "Math2D Feature Request -  feature name here", 
+            "text": "Math2D Bug -  Meaningful Description  -OR-  Math2D Feature Request -  feature name here", 
             "title": "Title"
         }, 
         {
             "location": "/#body", 
             "text": "A clear, concise, and precise description of the feature you want including these details:   Name of feature.  Description of feature.  Sample of problem(s) it can be used to solve.  Other supporting details and/or images, but please keep it as concise as possible.", 
             "title": "Body"
+        }, 
+        {
+            "location": "/ssk2/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "SSK2"
         }, 
         {
             "location": "/benchmarks/", 
@@ -324,6 +329,11 @@
             "location": "/references/#segment-circle-intersect", 
             "text": "math2d.segmentCircleIntersect( p1, p2, circle, radius )   Checks to see if the line segment defined by points  p1  and  p2  intersects with a  circle  of the specified  radius .  Possible returns:   nil - No intersections.  i1,  nil - Table containing point of first intersection and nil meaning no second intersection.  i1,  i2 - Tables containing points of first and second intersection. (This is the maximum possible number of intersections that can occur.)   Credit:  Derived from code by: Davis Claiborne (https://github.com/davisdude/mlib/blob/master/mlib.lua)   p1, p2 - Table vectors representing the endpoints of a line segment.  circle - Table or object representing the position of the circle.  radius - The radius of said circle.   local x1,y1,x2,y2 = display.contentCenterX, display.contentCenterY+200, \n                    display.contentCenterX, display.contentCenterY-200\nx1 = x1 - 150\nx2 = x2\nlocal line1 = display.newLine( x1,y1,x2,y2 )\nline1.strokeWidth = 2\n\nlocal p1 = { x = x1, y = y1 }\nlocal p2 = { x = x2, y = y2 }\n\nlocal circ = display.newCircle( display.contentCenterX, display.contentCenterY, 100 )\ncirc:setFillColor(0,0,0,0)\ncirc.strokeWidth = 2\n\nlocal i1, i2 = math2d.segmentCircleIntersect( { x = p1.x, y = p1.y}, \n                                               { x = p2.x, y = p2.y}, \n                                               circ, \n                                               100 )\n\nif( i1 ) then\n    local hit = display.newCircle( i1.x, i1.y, 10 )\n    hit:setFillColor(0,1,0)\nend\n\nif( i2 ) then\n    local hit = display.newCircle( i2.x, i2.y, 10 )\n    hit:setFillColor(0,1,0)\nend", 
             "title": "Segment-Circle Intersect"
+        }, 
+        {
+            "location": "/rgdocs/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "RG Docs Home"
         }
     ]
 }

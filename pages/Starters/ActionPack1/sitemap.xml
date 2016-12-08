@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs/pages/actionpack1//</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/ActionPack1//</loc>
      <lastmod>2016-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs/pages/actionpack1//quick_start/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/ActionPack1//ssk2/</loc>
      <lastmod>2016-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs/pages/actionpack1//overview/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/ActionPack1//quick_start/</loc>
      <lastmod>2016-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs/pages/actionpack1//help/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/ActionPack1//overview/</loc>
      <lastmod>2016-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -35,7 +35,15 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs/pages/actionpack1//rgdocs/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/ActionPack1//help/</loc>
+     <lastmod>2016-12-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs/pages/ActionPack1//rgdocs/</loc>
      <lastmod>2016-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>

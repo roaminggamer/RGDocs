@@ -46,6 +46,11 @@
             "title": "Example"
         }, 
         {
+            "location": "/ssk2/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "SSK2"
+        }, 
+        {
             "location": "/quick_start/", 
             "text": "Running The Template/Examples\n\n\nBefore you can run the template or the examples, you must copy (install) \n into the appropriate folder(s).\n\n\n\n\nTo Run Template\n\n\nCopy \nssk2\n into  \n~/template/\n\n\nTo Run Standalone Game Starters\n\n\nCopy \nssk2\n into:\n\n\n\n\n~/examples/standalone/001_flappy_bird/\n\n\n~/examples/standalone/002_escape/\n\n\n~/examples/standalone/003_bouncing_ball/\n\n\n~/examples/standalone/004_flappy_color/\n\n\n~/examples/standalone/005_circle/\n\n\n\n\nTo Run Framed Game Starters\n\n\nCopy \nssk2\n into:\n\n\n\n\n~/examples/framed/001_flappy_bird/\n\n\n~/examples/framed/002_escape/\n\n\n~/examples/framed/003_bouncing_ball/\n\n\n~/examples/framed/004_flappy_color/\n\n\n~/examples/framed/005_circle/\n\n\n\n\nChecking The SSK2 Installation\n\n\nYou can check that you copied the right content by opening the folder \nssk2\n that you just copied into the project you want to run.  If you copied correctly, you will see a number of files and folders, including \nloadSSK.lua\n.\n\n\nSSK2 Correctly Installed\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2016; All Rights Reserved", 
             "title": "Quick Start"

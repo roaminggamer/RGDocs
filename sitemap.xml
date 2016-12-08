@@ -19,31 +19,7 @@
 
     
     <url>
-     <loc>https://roaminggamer.github.io/RGDocs//asked/</loc>
-     <lastmod>2016-12-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//freestuff/</loc>
-     <lastmod>2016-12-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//kernels/</loc>
-     <lastmod>2016-12-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://roaminggamer.github.io/RGDocs//plugins/</loc>
+     <loc>https://roaminggamer.github.io/RGDocs//starters/</loc>
      <lastmod>2016-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -59,7 +35,31 @@
 
     
     <url>
+     <loc>https://roaminggamer.github.io/RGDocs//plugins/</loc>
+     <lastmod>2016-12-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>https://roaminggamer.github.io/RGDocs//tools/</loc>
+     <lastmod>2016-12-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs//asked/</loc>
+     <lastmod>2016-12-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://roaminggamer.github.io/RGDocs//freestuff/</loc>
      <lastmod>2016-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
