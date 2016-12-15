@@ -79,30 +79,6 @@
                 
                 
                     <li >
-                        <a href="starters/">Starters</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="templates/">Templates</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="plugins/">Plugins</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="tools/">Tools</a>
-                    </li>
-                
-                
-                
-                    <li >
                         <a href="asked/">AskEd</a>
                     </li>
                 
@@ -147,9 +123,27 @@
     
         <li class="first-level active"><a href="#roaming-gamer-docs">Roaming Gamer Docs</a></li>
         
-            <li class="third-level"><a href="#products">Products</a></li>
+    
+        <li class="first-level "><a href="#starters">Starters</a></li>
         
-            <li class="third-level"><a href="#product-types">Product Types</a></li>
+            <li class="third-level"><a href="#starters-in-progress">Starters In Progress</a></li>
+        
+    
+        <li class="first-level "><a href="#kernels">Kernels</a></li>
+        
+    
+        <li class="first-level "><a href="#templates">Templates</a></li>
+        
+    
+        <li class="first-level "><a href="#plugins">Plugins</a></li>
+        
+    
+        <li class="first-level "><a href="#tools">Tools</a></li>
+        
+    
+        <li class="first-level "><a href="#ideas">Ideas</a></li>
+        
+            <li class="third-level"><a href="#starter-ideas">Starter Ideas</a></li>
         
     
         <li class="first-level "><a href="#requesting-something">Requesting Something</a></li>
@@ -160,42 +154,10 @@
         <div class="col-md-9" role="main">
 
 <h1 id="roaming-gamer-docs">Roaming Gamer Docs</h1>
-<blockquote>
-<p><strong> Submitting products to stores.  Please bear with me as I wait for approvals. </strong></p>
-<p>~ <strong>The Roaming Gamer</strong> 08 DEC 2016</p>
-</blockquote>
-<h2 id="products">Products</h2>
 <table>
 <thead>
 <tr>
-<th align="right">Product</th>
-<th align="center">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/"><img alt="RoamingGamer" src="./images/ssk2smallwide.png" /></a></td>
-<td align="center"><em>Awesome!</em></td>
-<td align="left"><strong>SUPERCHARGING <a href="https://coronalabs.com/">Corona SDK</a> game development every day.  <a href="https://sellfy.com/p/x9oR/">Get It Now!</a></strong></td>
-</tr>
-<tr>
-<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/Starters/ActionPack1/">Action Pack #1</a></td>
-<td align="center"><a href="./starters"><em>Starter</em></a></td>
-<td align="left">One basic template and five game starters: 'Flappy Bird', 'Escape', 'Bouncing Ball 2', 'Flappy Color', and 'Circle'.</td>
-</tr>
-<tr>
-<td align="right">...</td>
-<td align="center"><em>Various</em></td>
-<td align="left">More products coming soon. Check out individual docs pages (links at top of page) for more info.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="product-types">Product Types</h2>
-<table>
-<thead>
-<tr>
-<th align="right"></th>
+<th align="right">Product Types</th>
 <th align="left"></th>
 </tr>
 </thead>
@@ -205,19 +167,23 @@
 <td align="left"><strong>Almost all my products require SSK2. <a href="http://https://sellfy.com/p/x9oR/">Get It Now!</a></strong></td>
 </tr>
 <tr>
-<td align="right"><a href="./starters"><em>Starters</em></a></td>
+<td align="right"><a href="#starters"><em>Starters</em></a></td>
 <td align="left">Focused examinations of game and app mechanics.</td>
 </tr>
 <tr>
-<td align="right"><a href="./templates"><em>Templates</em></a></td>
+<td align="right"><a href="#kernels"><em>Kernels</em></a></td>
+<td align="left">Even smaller than starters, usually free, but no docs except in the code.</td>
+</tr>
+<tr>
+<td align="right"><a href="#templates"><em>Templates</em></a></td>
 <td align="left">Complete games and applications, ready to modify and/or reskin.</td>
 </tr>
 <tr>
-<td align="right"><a href="./plugins"><em>Plugins</em></a></td>
+<td align="right"><a href="#plugins"><em>Plugins</em></a></td>
 <td align="left">Feature specific libraries/modules distributed through the Corona plugin system.</td>
 </tr>
 <tr>
-<td align="right"><a href="./tools"><em>Tools</em></a></td>
+<td align="right"><a href="#tools"><em>Tools</em></a></td>
 <td align="left">Complete solutions to common Corona SDK game and app design problems.</td>
 </tr>
 <tr>
@@ -227,6 +193,758 @@
 <tr>
 <td align="right"><a href="./freestuff"><em>Free Stuff</em></a></td>
 <td align="left">As of last count, hundreds of projects, containing 624 Lua files and over 66,368 lines of code.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="starters">Starters</h1>
+<blockquote>
+<p><em>Starters</em> are "focused examinations of game and app mechanics," with these primary goals:</p>
+</blockquote>
+<ol>
+<li>Provide a way (for you) to examine and understand how specific mechanics are implemented.</li>
+<li>Give you a working piece of code to extend and expand to suit your own needs.</li>
+<li>Keep game and app development simple and fun.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="right">Product</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/"><img alt="RoamingGamer" src="./images/ssk2smallwide.png" /></a></td>
+<td align="left"><strong>SUPERCHARGING <a href="https://coronalabs.com/">Corona SDK</a> game development every day.  <a href="https://sellfy.com/p/x9oR/">Get It Now!</a></strong></td>
+</tr>
+<tr>
+<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/Starters/ActionPack1/">Action Pack #1</a></td>
+<td align="left">One basic template and five game starters: 'Flappy Bird', 'Escape', 'Bouncing Ball 2', 'Flappy Color', and 'Circle'.</td>
+</tr>
+<tr>
+<td align="right"><a href="./ideas/starters"><em>Ideas ...</em></a></td>
+<td align="left">A big list of starters ideas.  See a cool idea?  <a href="#requesting-something">Ask for it in the forums</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="starters-in-progress">Starters In Progress</h2>
+<table>
+<thead>
+<tr>
+<th align="right">Product</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><strong>Slots</strong></td>
+<td align="left">A slot machines starter kit. (<em>Almost Done</em>)</td>
+</tr>
+<tr>
+<td align="right"><strong>Action Pack #2</strong></td>
+<td align="left">Similar to pack #1, but examining vertical style one-touch action games.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="kernels">Kernels</h1>
+<blockquote>
+<p><em>Kernels</em> are <strong>FREE</strong> micro-<em>Starters</em>, that require <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/"><img alt="RoamingGamer" src="./images/ssk2smallwide.png" /></a>.</p>
+</blockquote>
+<p>Note: All kernels are located in the <code>~/RG_FreeStuff/SSK2/kernels/</code> my free Git:</p>
+<p><a href="https://github.com/roaminggamer/RG_FreeStuff">https://github.com/roaminggamer/RG_FreeStuff</a>  </p>
+<p>(<em>The best way to get these is to download the entire repository.</em>)</p>
+<table>
+<thead>
+<tr>
+<th align="right">Kernel (Path)</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><strong>input_Easy/</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="right">001_easyInputs</td>
+<td align="left">A sampler showing how to use each of the <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/easy_inputs/">easyInputs</a> input helpers.</td>
+</tr>
+<tr>
+<td align="right"><strong>movements_General/</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="right">001_actionMovements</td>
+<td align="left">A sampler showing movements using the <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/actions1/">ssk.actions</a> library.</td>
+</tr>
+<tr>
+<td align="right">002_basicMovements</td>
+<td align="left">A sampler showing basic player/enemy movements using pure physics implementations.</td>
+</tr>
+<tr>
+<td align="right">003_gameMovements</td>
+<td align="left">A sampler showing game player movements for the games <a href="https://play.google.com/store/apps/details?id=com.roaminggamer.rad">Red &amp; Dead 1</a>, Asteroids, and Lunar Lander.</td>
+</tr>
+<tr>
+<td align="right"><strong>movements_Player/</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="right">001_asteroids_movement</td>
+<td align="left">Asteroids movement and screen wrapping.</td>
+</tr>
+<tr>
+<td align="right">002_lunar_lander_two_touch</td>
+<td align="left">Lunar lander movement using <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/easy_inputs/#twotouch">twoTouch</a> <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/easy_inputs">ssk.easyInputs</a> helper.</td>
+</tr>
+<tr>
+<td align="right">003_lunar_lander_three_input</td>
+<td align="left">Lunar lander movement using two buttons to turn and a throttle input.</td>
+</tr>
+<tr>
+<td align="right">004_geometry_wars_re_movement</td>
+<td align="left">'Geometry Wars: Retro Evolved'-like player movement.</td>
+</tr>
+<tr>
+<td align="right">005_robotron_movement</td>
+<td align="left">Robotron-like input and movement.</td>
+</tr>
+<tr>
+<td align="right">006_xevious_movement</td>
+<td align="left">Xevious like movement.</td>
+</tr>
+<tr>
+<td align="right">007_endless_vertical</td>
+<td align="left">Endless vertical movement.</td>
+</tr>
+<tr>
+<td align="right">008_endless_horizontal</td>
+<td align="left">Endless horizontal movement.</td>
+</tr>
+<tr>
+<td align="right">009_escape_ketchapp</td>
+<td align="left">Escape-like movement.</td>
+</tr>
+<tr>
+<td align="right">010_rad_flyer</td>
+<td align="left"><a href="https://play.google.com/store/apps/details?id=com.roaminggamer.rad">Red &amp; Dead 1</a> movement modifications experiment.</td>
+</tr>
+<tr>
+<td align="right">011_rad_tunnel_flyer</td>
+<td align="left"><a href="https://play.google.com/store/apps/details?id=com.roaminggamer.rad">Red &amp; Dead 1</a> movement refined.</td>
+</tr>
+<tr>
+<td align="right">012_jelly_fish</td>
+<td align="left">Jellyfish movement?  Joystick to steer.  Tap right side of screen to 'thrust'.  Uses <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/easy_inputs">ssk.easyInputs</a> helper.</td>
+</tr>
+<tr>
+<td align="right"><strong>weapons/</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="right">001_rotating_turret</td>
+<td align="left">Basic turret that auto rotates left-right-left and fires when you click the screen.</td>
+</tr>
+<tr>
+<td align="right">002_aiming_turret</td>
+<td align="left">Basic aiming turret that uses uses SSK2 <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/actions1/#facing-face">facing</a> to aim-at/face target.</td>
+</tr>
+<tr>
+<td align="right">003_seeking_projectile</td>
+<td align="left">This turret fires 'seeking projectiles' with a limited lifetime.  Uses <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/actions1/">ssk.actions</a> library.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="templates">Templates</h1>
+<p><em>Templates</em> are "complete games and applications," designed for you to learn from and to create with these primary goals:</p>
+<ol>
+<li>Provide a starting point for you to make your own games and apps by reskinning.</li>
+<li>Provide a starting point for you to expand and extend the game/app concept.</li>
+<li>Keep game and app development simple and fun.</li>
+</ol>
+<p>I am currently updating my existing templates as well as adding new ones.</p>
+<table>
+<thead>
+<tr>
+<th>Starter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tic-Tac-Toe</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Pig</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Sudoku</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Jigsaw Puzzle</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Sliding Puzzle</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Gear Jumper</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Roids!</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Slot Machines</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>More</td>
+<td>Coming soon ...</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="plugins">Plugins</h1>
+<p><em>Plugins</em> are libraries/modules distributed through the Corona plugin system.</p>
+<table>
+<thead>
+<tr>
+<th>Plugin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://roaminggamer.github.io/RGDocs/pages/Plugins/math2d/">Math 2D</a></td>
+<td>Highly functional, flexible, and fast 2D Math module.</td>
+</tr>
+<tr>
+<td><a href="https://roaminggamer.github.io/RGDocs/pages/Plugins/sudokugen/">Sudoku Generator</a></td>
+<td>Sudoku data generator for 2x2, 3x3, and 4x4 puzzles.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="tools">Tools</h1>
+<p><em>Tools</em>(tools) are complete solutions to common Corona SDK game and app design problems.</p>
+<blockquote>
+<p>All tools require <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/"><img alt="RoamingGamer" src="./images/ssk2small.png" /></a> - <a href="http://https://sellfy.com/p/x9oR/">Get It Here!</a></p>
+</blockquote>
+<p>I am currently updating my existing tools as well as adding new ones.</p>
+<table>
+<thead>
+<tr>
+<th>Starter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EAT Lite</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>EAT Pro</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Particle Editor 2</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>RG Super Meter 3</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>Event Reflector</td>
+<td>Coming soon ...</td>
+</tr>
+<tr>
+<td>More</td>
+<td>Coming soon ...</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ideas">Ideas</h1>
+<h2 id="starter-ideas">Starter Ideas</h2>
+<p>This is my big list of <em>Starter</em>  ideas. I think it would be fun to make starters for these.  If you see something on the list that looks cool to you, let me know by <a href="./../#requesting-something">Requesting Something</a>.</p>
+<blockquote>
+<p>&check; - Means it has been written.<br />
+ &check; &check; - Means it has been released (look above).</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Action Games (Modern)</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flappy Bird  &check;&check;</td>
+<td><a href="https://itunes.apple.com/us/app/color-switch/id1053533457?mt=8">Color Switch</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.jonathantopf.trickshot&amp;hl=en">Trick Shot</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=pl.macaque.Missiles&amp;hl=en">Missiles</a></td>
+</tr>
+<tr>
+<td><a href="http://www.chupamobile.com/unity-casual/color-wheel-ios-android-13499">Color Wheel</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.zlitch.flappycolor&amp;hl=en">Flappy Color</a> &check;&check;</td>
+<td><a href="https://play.google.com/store/apps/details?id=com.mudloop.zigzagboom&amp;hl=en">Zig Zag Boom</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.halfbrick.fruitninja&amp;hl=en">Fruit Ninja</a></td>
+</tr>
+<tr>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.donttouchthespikes&amp;hl=en">Don't Touch The Spikes</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.ketchappbasketball&amp;hl=en">Basketball</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.circle">Circle</a> &check;&check;</td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.bouncingball2&amp;hl=en">Bouncing Ball 2</a> &check;&check;</td>
+</tr>
+<tr>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.swing&amp;hl=en">Swing</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.floors&amp;hl=en">Floors</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.arrow&amp;hl=en">Arrow</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.theline2&amp;hl=en">The Line</a></td>
+</tr>
+<tr>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.tower&amp;hl=en">The Tower</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.twocars&amp;hl=en">2 Cars</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.crazycircle&amp;hl=en">Crazy Circle</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.jumpingfish&amp;hl=en">Jumping Fish</a></td>
+</tr>
+<tr>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.blockit&amp;hl=en">Block It</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=mobi.ketchapp.amazingbrick&amp;hl=en">Amazing Brick</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.speedgolf&amp;hl=en">Speed Golf</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.escape&amp;hl=en">Escape</a> &check;&check;</td>
+</tr>
+<tr>
+<td><a href="https://play.google.com/store/apps/details?id=com.ketchapp.jumpnuts&amp;hl=en">Jump Nuts</a></td>
+<td><a href="https://play.google.com/store/apps/details?id=com.nanovationlabs.slipawayandroid">Slip Away</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Action Games (Retro)</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missile Command</td>
+<td>Lunar Lander</td>
+<td>Space Invaders</td>
+<td>Pong</td>
+</tr>
+<tr>
+<td>Breakout</td>
+<td>Pac Man</td>
+<td>Galaga</td>
+<td>Gauntlet</td>
+</tr>
+<tr>
+<td>Frogger</td>
+<td>Donkey Kong</td>
+<td>Moon Patrol</td>
+<td>Robotron</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Casual Games</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://play.google.com/store/apps/details?id=com.bottleflip2k16">Bottle Flip</a></td>
+<td>Piano Tiles</td>
+<td><a href="http://www.kongregate.com/games/varagtp/tap-heroes">Tap Heroes</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Board Games</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tic Tac Toe</td>
+<td>Sudoku</td>
+<td>Sliding Puzzle</td>
+<td>Jigsaw Puzzles</td>
+</tr>
+<tr>
+<td>Boggle</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Puzzle Games</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://play.google.com/store/apps/details?id=com.Loomus.Prismatica">Prismatica</a></td>
+<td>Match 3</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Card Games</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poker</td>
+<td>Blackjack</td>
+<td>TBD</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Dice Games</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pig</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Casino Games</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slots</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Other Games</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pool</td>
+<td><a href="https://en.wikipedia.org/wiki/Geometry_Wars:_Retro_Evolved">Geometry Wars: Retro Evolved</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Apps</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Products Catalog</td>
+<td>Foreign Vocabulary Starter</td>
+<td>Photo Editor</td>
+<td>Personal Recorder</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Cameras</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed Basic</td>
+<td>Loose Rect</td>
+<td>Loose Circle</td>
+<td>Parallax</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Explosions</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Particle Emitters</td>
+<td>CBE</td>
+<td>Prism</td>
+<td>Doing Damage</td>
+</tr>
+<tr>
+<td>Applying Kickback</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Enemies</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asteroids</td>
+<td>Asteroids UFOs</td>
+<td>Robotron</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>GUI Elements</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Score Counters</td>
+<td>Radar</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endless (Horizontal)</td>
+<td>Endless (Vertical)</td>
+<td>Fixed Size</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Movement (Player) <em>(coming soon...)</em></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asteroids &check;</td>
+<td>Robotron &check;</td>
+<td>Geometry Wars: Retro Evolved &check;</td>
+<td>Lunar Lander (Two Input) &check;</td>
+</tr>
+<tr>
+<td>Lunar Lander (Three Input) &check;</td>
+<td>Gauntlet</td>
+<td>Xevious &check;</td>
+<td>Sinistar</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Pickups</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Robotron</td>
+<td>Coins</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Screen Wrapping</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rectangular &check;</td>
+<td>Circular (only with math2d plugin) &check;</td>
+<td>TBD</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Weapons: Mines</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic</td>
+<td>Sticky</td>
+<td>Seeking</td>
+<td>Proximity</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Weapons: Turrets</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stationary &amp; Fixed Angle &check;</td>
+<td>Stationary &amp; Rotating  &check;</td>
+<td>Moving &amp; Rotating &check;</td>
+<td>Fixed Angles (Robotron) &check;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Weapons: Various</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-Ballistic Projectiles</td>
+<td>Ballistic Projectiles</td>
+<td>Accelerating</td>
+<td>Seeking Missiles</td>
+</tr>
+<tr>
+<td>Lasers</td>
+<td>Ricochets</td>
+<td>Maximum 'Live' Rounds</td>
+<td>Maximum Fire Rate</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>World Objects</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automated Doors</td>
+<td>Teleporters</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -293,5 +1011,5 @@
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-12-08 22:15:18.170000
+Build Date UTC : 2016-12-15 01:00:24.657000
 -->
