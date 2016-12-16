@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roaming Gamer Particle Editor 2">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/RGPE2/"> 
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <title>RGPE2</title>
+
+    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">RGPE2</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="ssk2/">SSK2</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="rgdocs/">RG Docs</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="ssk2/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#roaming-gamer-particle-editor-2">Roaming Gamer Particle Editor 2</a></li>
+        
+    
+        <li class="first-level "><a href="#license">License</a></li>
+        
+            <li class="third-level"><a href="#what-is-it">What Is It?</a></li>
+        
+            <li class="third-level"><a href="#where-can-i-get-it">Where Can I Get It?</a></li>
+        
+    
+        <li class="first-level "><a href="#quick-start">Quick Start</a></li>
+        
+            <li class="third-level"><a href="#before-you-start">Before You Start</a></li>
+        
+    
+        <li class="first-level "><a href="#the-interface-part-1-creating">The Interface - Part 1 (Creating)</a></li>
+        
+            <li class="third-level"><a href="#initial-view">Initial View</a></li>
+        
+            <li class="third-level"><a href="#adding-image-layers">Adding Image Layers</a></li>
+        
+            <li class="third-level"><a href="#adding-existing-emitters">Adding Existing Emitters</a></li>
+        
+            <li class="third-level"><a href="#adding-new-emitter">Adding New Emitter</a></li>
+        
+    
+        <li class="first-level "><a href="#the-interface-part-2-editing">The Interface - Part 2 (Editing)</a></li>
+        
+            <li class="third-level"><a href="#hiding-showing-layers">Hiding &amp; Showing Layers</a></li>
+        
+            <li class="third-level"><a href="#selecting-and-dragging">Selecting and Dragging</a></li>
+        
+            <li class="third-level"><a href="#selecting-and-re-ordering-layers">Selecting and Re-ordering Layers</a></li>
+        
+            <li class="third-level"><a href="#context-sensitive-editing">Context Sensitive Editing</a></li>
+        
+    
+        <li class="first-level "><a href="#the-interface-part-3-generating">The Interface - Part 3 (Generating)</a></li>
+        
+    
+        <li class="first-level "><a href="#more-docs-to-come">More Docs To Come</a></li>
+        
+    
+        <li class="first-level "><a href="#known-issues">Known Issues</a></li>
+        
+    
+        <li class="first-level "><a href="#getting-help">Getting Help</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="roaming-gamer-particle-editor-2">Roaming Gamer Particle Editor 2</h1>
+<p><img alt="Custom Device" src="./images/step5.jpg" /></p>
+<blockquote>
+<p>This tool requires <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/"><img alt="SSK Pro" src="./storeprotiny.png" /></a> to run: <a href="https://sellfy.com/p/x9oR/">Get It Now!</a></p>
+</blockquote>
+<h1 id="license">License</h1>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" /></a></p>
+<p>This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.</p>
+<pre><code>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+<p><strong>This product requires a licensed copy of SSK2 Pro to run.</strong></p>
+<p><strong>While you may distribute the RGPE2 code, be aware YOU MUST NOT distribute SSK2 along with it.</strong></p>
+<h2 id="what-is-it">What Is It?</h2>
+<p><em>Roaming Gamer Particle Editor 2</em> (aka RGPE2) is a <strong>FREE</strong> particle editor for creating emitter definition files for use with the Corona SDK <a href="https://docs.coronalabs.com/daily/api/library/display/newEmitter.html">newEmitter()</a> function.</p>
+<p>(<em>While the tool is free, it does require <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/">SSK Pro</a> to run.</em>)</p>
+<h2 id="where-can-i-get-it">Where Can I Get It?</h2>
+<p>I keep the latest version of this tool on my <a href="https://github.com/roaminggamer/RG_FreeStuff/">RG_FreeStuff</a> Git under <code>~/SSK2/tools/</code></p>
+<p>I suggest getting the entire repository, but if you only want this tool you can download it here:</p>
+<p><a href="https://github.com/roaminggamer/RG_FreeStuff/raw/master/SSK2/tools/rgpe2.zip">RGPE2 Direct Download</a></p>
+<h1 id="quick-start">Quick Start</h1>
+<p>I will revisit these docs later to add more details, but for now I am supplying a quick-start guide to get you going.</p>
+<h2 id="before-you-start">Before You Start</h2>
+<p>Before you can use the tool you must follow these steps:</p>
+<ol>
+<li>Download the source.</li>
+<li>Unzip it (if you got the zip file) and put the <code>rgpe2/</code> folder somewhere on your machine.</li>
+<li>Copy the <code>ssk2</code> folder from your paid copy of SSK2 into rgpe2.  When you are done, the folder should contain these files and folders:<ul>
+<li><code>rgpe2/</code><ul>
+<li><code>data/</code></li>
+<li><code>images/</code></li>
+<li><code>presets/</code></li>
+<li><code>scripts/</code></li>
+<li><strong><code>ssk2/</code></strong></li>
+<li><code>build.settings</code></li>
+<li><code>config.lua</code>      </li>
+<li><code>main.lua</code></li>
+<li><strong>...</strong> and a few other files.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now, you can open the tool in your Corona SDK simulator.</li>
+</ol>
+<blockquote>
+<p><strong> This tool is designed to run in the simulator and runs best in a: </strong></p>
+<p><strong> 720 x 1280 Custom Device </strong></p>
+</blockquote>
+<p><img alt="Custom Device" src="./images/custom.jpg" /></p>
+<h1 id="the-interface-part-1-creating">The Interface - Part 1 (Creating)</h1>
+<h2 id="initial-view">Initial View</h2>
+<p>When you first start the tool you will be presented with a screen like this:</p>
+<p><img alt="Custom Device" src="./images/firstopen.jpg" /></p>
+<ul>
+<li><strong>Menu Bar</strong> - At top of screen with these options:<ul>
+<li><strong>Explore</strong> <ul>
+<li><strong>Output</strong> - Opens the output folder: <code>&lt;desktop&gt;/RPGE2_out/</code><ul>
+<li><em><strong>Warning:</strong> Won't exist till you generate first emitter definition</em></li>
+</ul>
+</li>
+<li><strong>DB Files</strong> - Opens the 'documents' directory where all your definitions are stored for future editing.<ul>
+<li><strong>Tip:</strong> If you ever want to quickly clean up your library of particle definitions you can simply delete the files in this folder and restart the tool/simulator.  However, this will remove them permanently.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Manage</strong> -<ul>
+<li><strong>Emitter Library</strong> - Open emitter library browser so you can see what you have and delete individual emitters.<ul>
+<li><strong>Warning:</strong> Do not delete all of the emitter definitions.  That may crash the tool. :\</li>
+</ul>
+</li>
+<li><strong>Import/Export Library</strong> - These are placeholder features.  <ul>
+<li>I will add these if time permits and/or I get enough requests for them.</li>
+<li><strong>Click them to see what they <em>should</em> do.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Help</strong> - Takes you to these docs.</li>
+<li><strong>roaminggame.com</strong> - Takes you to my website.</li>
+</ul>
+</li>
+<li><strong>Green <code>+</code> Button</strong> - Click this to add a new emitter or image to the edit pane.  When you click the button a dialog like this will pop up:</li>
+</ul>
+<p><img alt="Add New" src="./images/addnew.jpg" /></p>
+<h2 id="adding-image-layers">Adding Image Layers</h2>
+<p>Try clicking the <strong>Green <code>+</code> Button</strong>, then select <code>Image Layer</code> button.  You should see this:</p>
+<p><img alt="Choose Image" src="./images/chooseimage.jpg" /></p>
+<p>From here, you can:</p>
+<ul>
+<li>Navigate with <code>&lt;&lt;</code> and <code>&gt;&gt;</code> buttons.</li>
+<li><code>Cancel</code> and not add an image layer.</li>
+<li>Click an image chip and click <code>OK</code> to create a new image layer.</li>
+<li>Double-click a chip to create a new image layer with the chip.</li>
+<li>Press <code>escape</code> to exit without creating a image layer.</li>
+</ul>
+<blockquote>
+<p><strong>The purpose of 'image layers' is to let you preview/edit an emitter with a test image(s) in the background and/or foreground.</strong></p>
+<p><em>When I revisit these tool, I will add a section showing you how to add your own test images to the tool library.  For now you will have to dig in the code.</em></p>
+<p><strong>~ The Roaming Gamer</strong></p>
+</blockquote>
+<p><strong>Please choose <code>Black &amp; White Grid</code> if you are following along.</strong></p>
+<h2 id="adding-existing-emitters">Adding Existing Emitters</h2>
+<p>Try clicking the <strong>Green <code>+</code> Button</strong>, then select <code>Load Emitter</code> button.  You should see this:</p>
+<p><img alt="Load Emitter" src="./images/loademitter.jpg" /></p>
+<p>From here, you can:</p>
+<ul>
+<li>Navigate with <code>&lt;&lt;</code> and <code>&gt;&gt;</code> buttons.</li>
+<li><code>Cancel</code> and not add an emitter layer.</li>
+<li>Click an emitter chip and click <code>Edit</code> to create a new emitter layer.</li>
+<li>Double-click a chip to create a new emitter layer with the chip.</li>
+<li>Click an emitter chip and click <code>Clone</code> to make a new copy of the definition and then create a emitter layer with it.</li>
+<li>Click an emitter chip and click <code>Delete</code> to delete the definition of then selected chip.  This redraws the emitter browser.</li>
+<li>Press <code>escape</code> to exit without creating a image layer.</li>
+</ul>
+<blockquote>
+<p><strong>The purpose of 'emitter layers' is to let you preview/edit an emitter definition(s) before generating.</strong></p>
+<p><em>You can add multiple emitters to the main pane of the tool in order to see: a. How then look side-by-side, and b. How they interact with each other.</em></p>
+<p><strong>~ The Roaming Gamer</strong></p>
+</blockquote>
+<p><strong>Please choose <code>Nebulon</code> if you are following along.</strong></p>
+<h2 id="adding-new-emitter">Adding New Emitter</h2>
+<p>Try clicking the <strong>Green <code>+</code> Button</strong>, the select <code>New Emitter</code> button.  </p>
+<p>This will create a 'default' emitter immediately, and you should see this:</p>
+<p><img alt="New Emitter" src="./images/generic.jpg" /></p>
+<h1 id="the-interface-part-2-editing">The Interface - Part 2 (Editing)</h1>
+<p>If you have been reading these docs in order and experimenting as I suggest, you should now have somethink like this:</p>
+<p><img alt="Editing" src="./images/step1.jpg" /></p>
+<h2 id="hiding-showing-layers">Hiding &amp; Showing Layers</h2>
+<p>The first thing you will notice is, that it is quite hard to see the emitters.  Let's fix that.</p>
+<blockquote>
+<p>Please click the little green <code>eye</code> icon on the 'Black &amp; White Grid Layer' (left side of screen). This will hide the layer. Clicking it again will show the layer.</p>
+</blockquote>
+<p>Now you will have this:</p>
+<p><img alt="Editing" src="./images/step2.jpg" /></p>
+<h2 id="selecting-and-dragging">Selecting and Dragging</h2>
+<p>If you look at the main pane (center) you will see two particle emitters, one on top of the other.</p>
+<p>You should also see a faint outline of a square.  Click this square and drag it to the left.  These square are handles that let you drag the emitters around the main pane while editing them.  Clicking a handle also selects the emitter for editting and you will notice the right pane updates to reflect this.</p>
+<p>You should have something like this now:</p>
+<p><img alt="Editing" src="./images/step3.jpg" /></p>
+<h2 id="selecting-and-re-ordering-layers">Selecting and Re-ordering Layers</h2>
+<p>If you look to the left side of the screen, you will notice there are four 'buttons/bars':</p>
+<ul>
+<li><strong>Black &amp; White Grid</strong> - The image layer we added.</li>
+<li><strong>Nebulon</strong> - The existing emitter we added from our library.</li>
+<li><strong>Emitter</strong> - The generic emitter we added.</li>
+<li><strong>Green <code>+</code> Button</strong> - The 'add' button.</li>
+</ul>
+<p>You can single click any of the buttons (except add) to select that object/layer.  This will be reflected in the right (edit) pane.</p>
+<p>You can click any of these buttons (except add) button and drag them to change the layering order.  (Drag nebulon to layer so it is rendered last.  <em>Last is list renderes last.</em>)</p>
+<p>You can also double click the emitter buttons to rename the emitters.  (Try double clicking <code>Emitter</code> and renaming it to "Boom".)</p>
+<p><img alt="Renaming Emitter" src="./images/rename.jpg" /></p>
+<blockquote>
+<p><strong>WARNING</strong> <em>Renaming an emitter changes the name of the definition in your library too.</em></p>
+</blockquote>
+<p>You should have something like this now:</p>
+<p><img alt="Editing" src="./images/step4.jpg" /></p>
+<h2 id="context-sensitive-editing">Context Sensitive Editing</h2>
+<p>The right pane of the tool is, as you will have guessed by now, an editor pane for modifying attributes of the selected image/emitter.</p>
+<blockquote>
+<p><strong>WARNING:</strong> <em>Be aware, when you edit a particle you are changing the definition in the library too.</em> </p>
+<p>So, if you have an emitter you like, and you want to tweak it while keeping the original:</p>
+<p>Clone the original, rename the cloned copy, then edit it.</p>
+<p><strong>~ The Roaming Gamer</strong></p>
+</blockquote>
+<p><strong>Note:</strong> I won't go through every option supported by the emitter editor.  You will need to explore this on your own.  </p>
+<p>For now, please just:</p>
+<ol>
+<li>Select the 'Nebulon' emitter.</li>
+<li>Click the <code>1</code> button if it is not selected.</li>
+<li>Change <code>Emitter Type</code> to <code>Gravity</code>.</li>
+</ol>
+<p>Now you should have this:</p>
+<p><img alt="Editing" src="./images/step5.jpg" /></p>
+<h1 id="the-interface-part-3-generating">The Interface - Part 3 (Generating)</h1>
+<p>This tool allows you to generate emitter definitions files that are suitable for creating emitter objects with the Corona SDK <a href="https://docs.coronalabs.com/daily/api/library/display/newEmitter.html">newEmitter()</a> function.</p>
+<p>It also lets you generate test projects that are ready to run with SSK2.</p>
+<p>To generate either one, simply click, the little 'arrow in a circle' icon on a <strong>emitter</strong> button (in left pane).</p>
+<p>This will pop up a dialog like this:</p>
+<p><img alt="Generating" src="./images/generate1.jpg" /></p>
+<p>Here you can choose a name for the generated emitter file and/or project.  Then click <code>Emitter</code> to generate an emitter file with its image, or click <code>Project</code> to generate the emitter and a test project to run it in (requires SSK2 to run).</p>
+<p>Now, you can fine the generated content by clicking: <code>Explore</code> &rarrow; <code>Output</code>.  This will open the folder where you out emitters/projects are generated.</p>
+<h1 id="more-docs-to-come">More Docs To Come</h1>
+<blockquote>
+<p>That is all for now.  I will update these docs some more later, but this should be enought to get you started.  If you need help or run into problems, just follow the <a href="#getting-help">Getting Help</a> instructions below.</p>
+</blockquote>
+<h1 id="known-issues">Known Issues</h1>
+<p>I will list issues I know about here:</p>
+<ul>
+<li><em><strong>Can't select alternate particle</strong></em> - Sorry.  This was an oversight on my part.  The tool comes with a ton of particles to use, but you can ONLY create new emitters with the default particle.  I will fix this in future updates.  Till then, just make your emitters with the default particle and substitute your own image when you use it.</li>
+</ul>
+<h1 id="getting-help">Getting Help</h1>
+<p>I will be providing help (exclusively) through the <a href="https://forums.coronalabs.com/forum/553-other-third-party-tools/">Corona SDK Forums</a>.  (<em>Sorry: Direct e-mails and private messsages will not be answered.</em>)</p>
+<p>When posting a question in the forums, be sure to follow these guidelines:</p>
+<ol>
+<li>Post to this forum: <a href="https://forums.coronalabs.com/forum/553-other-third-party-tools/">https://forums.coronalabs.com/forum/553-other-third-party-tools/</a></li>
+<li>Make sure the <strong>title</strong> starts with: <strong>RPGE2</strong> and includes a short and meaninful name for the the problem.<ul>
+<li>Example Title: <code>RPGE2: Editor Crashed</code></li>
+</ul>
+</li>
+<li>In the <strong>body</strong> of the post tell me all of the following:<ul>
+<li><strong>Versions / Environment / Target</strong><ul>
+<li>Version of SSK you are using.</li>
+<li>Version of Corona SDK you are using.</li>
+<li>OS you are developing under.</li>
+</ul>
+</li>
+<li><strong>Error Message(s) (If Any)</strong><ul>
+<li>Error messages (put them in a code block for legibility)</li>
+</ul>
+</li>
+<li><strong>Summary Of Problem</strong><ul>
+<li>What you are trying to do.</li>
+<li>What you expected to see.</li>
+<li>What you saw instead.</li>
+<li>Why you think this is wrong (if there is no explicit error message.)</li>
+</ul>
+</li>
+<li><strong>Help Thyself</strong><ul>
+<li>Tell me what debugging steps you have tried.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Be clear, concise and precise.<br />
+The more effort you put into your post, the better I will be able to help you. </p>
+<p>~ <strong>The Roaming Gamer</strong></p>
+</blockquote>
+<p><img alt="RoamingGamer" src="./roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/bootstrap-3.0.3.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '.';
+    </script>
+    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+    <script src="./js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-12-16 21:38:50.987000
+-->
