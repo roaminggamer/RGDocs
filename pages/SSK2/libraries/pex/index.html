@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/display_arcs/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/pex/"> 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>Factories (Arc) - Super Starter Kit 2</title>
+    <title>Particle Loaders - Super Starter Kit 2</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lite <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -154,8 +154,8 @@
 
                         
                             
-<li >
-    <a href="../pex/">Particle Loaders</a>
+<li class="active">
+    <a href="./">Particle Loaders</a>
 </li>
 
                         
@@ -176,7 +176,7 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pro <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -187,8 +187,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">Factories (Arc)</a>
+<li >
+    <a href="../display_arcs/">Factories (Arc)</a>
 </li>
 
                         
@@ -288,12 +288,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../android/">
+                        <a rel="next" href="../misc/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../display_lines/">
+                        <a rel="prev" href="../display_layers/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -309,139 +309,77 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#arc-factories-sskdisplay">Arc Factories (ssk.display.*)</a></li>
+        <li class="first-level active"><a href="#particle-loaders-sskpex">Particle Loaders (ssk.pex.*)</a></li>
         
-            <li class="third-level"><a href="#arc">Arc</a></li>
+    
+        <li class="first-level "><a href="#loaders">Loaders</a></li>
         
-            <li class="third-level"><a href="#polyarc">PolyArc</a></li>
+    
+        <li class="first-level "><a href="#example-loader-calls">Example Loader Calls</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="arc-factories-sskdisplay">Arc Factories (ssk.display.*)</h1>
-<p>This library contains two functions for creating arc objects:</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="#arc">ssk.display.arc</a></td>
-<td align="center"><a href="#polyarc">ssk.display.polyArc</a></td>
-</tr>
-<tr>
-<td align="center">Creates a new arc using lines.</td>
-<td align="center">Creates a new <em>arc</em> using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>).</td>
-</tr>
-<tr>
-<td align="center"><img alt="Arcs" src="../..\images\colorswitch.gif" /></td>
-<td align="center"><img alt="PolyArc" src="../..\images\chomp.gif" /></td>
-</tr>
-</tbody>
-</table>
-<h2 id="arc">Arc</h2>
-<p>Creates a new arc using lines.</p>
-<pre><code class="Lua">ssk.display.arc(group, x, y [ , params ] )
-</code></pre>
-
+<h1 id="particle-loaders-sskpex">Particle Loaders (ssk.pex.*)</h1>
+<p>This module allows you to load and directly create Corona <a href="https://docs.coronalabs.com/daily/api/library/display/newEmitter.html">emitters</a> using any of these particle source formats/tools:</p>
 <ul>
-<li><code>group</code> - Group to add arc object to.</li>
-<li><code>x</code>, <code>y</code> - &lt; x, y &gt; center of arc.</li>
-<li><code>params</code> - Table of arc properties.<ul>
-<li><code>s</code> (<code>0</code>) - Start angle where 0 is up, 90 is right, ...</li>
-<li><code>sweep</code> (<code>360</code>) - Angle sweep, where 360 is a full circle.</li>
-<li><code>radius</code> (<code>100</code>) - Radius of arc.</li>
-<li><code>strokeColor</code> (<code>_W_</code>) - Color of arc line.</li>
-<li><code>strokeWidth</code> (<code>4</code>) - Width/thickness of arc line.</li>
-<li><code>incr</code> (<code>1</code>) - Degrees to increment by per step, <ul>
-<li>May be any value in range: (-360,360) except 0 </li>
+<li><a href="https://roaminggamer.github.io/RGDocs/pages/RGPE2/">Roaming Gamer Particle Editor 2</a> (<em>.rg, </em>.png) - A free tool that only requires SSK2 Pro to run.</li>
+<li><a href="http://71squared.com/">Particle Designer 2</a> (<em>.json, </em>.png) - With this paid Mac-only tool, you can export a JSON encoded table (emitter definition) and an image file (the particle used by the emitter).</li>
+<li><a href="http://onebyonedesign.com/flash/particleeditor/">Starling</a> (<em>.pex, </em>.png) - With this free browser tool, you can export an XML file (emitter definition) and an image file (the particle used by the emitter). </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="example">Example</h3>
+<p><img alt="Particle Loaders" src="../..\images\pex.jpg" /></p>
+<h1 id="loaders">Loaders</h1>
+<p>All three loaders have a similar signature:</p>
 <pre><code class="Lua">
-local spinGroup = display.newGroup()
-group:insert(spinGroup)
-spinGroup.x = centerX - 300
-spinGroup.y = centerY - 50
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 0, sweep = 90,
-                    strokeColor = _R_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 90, sweep = 90,
-                    strokeColor = _G_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 180, sweep = 90, 
-                    strokeColor = _B_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 270, sweep = 90,
-                    strokeColor = _Y_, strokeWidth = 6 })
+-- Roaming Gamer Particle Editor 2
+local emitter = ssk.pex.loadRG( group, x, y, fileName [ , params ] )
 
-function spinGroup.enterFrame( self )
-    self.rotation = self.rotation + 5 
-end; listen(&quot;enterFrame&quot;, spinGroup)
+--Particle Designer 2
+local emitter = ssk.pex.loadPD2( group, x, y, fileName [ , params ] )
 
-
--- Poly Arcs
-ssk.display.polyArc( group, centerX-150, centerY-50,
-      { radius = 50, s = 0, sweep = 180, incr = -0.25, fillColor = _O_ } )
-
-
-ssk.display.polyArc( group, centerX-50, centerY-50,
-      { radius = 50, s = 45, sweep = 180, incr = -0.25, fillColor = _P_ } )
-
+-- Starling
+local emitter = ssk.pex.loadStarling( group, x, y, fileName [ , params ] )
 
 </code></pre>
 
-<h2 id="polyarc">PolyArc</h2>
-<p>Creates a new <em>arc</em> (more of a semi-circle/pie-chart shape actually) using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>). </p>
-<pre><code class="Lua">ssk.display.polyArc(group, x, y [ , params ] )
-</code></pre>
-
+<p>All three loaders will load their respective definition file types and then call <a href="https://docs.coronalabs.com/daily/api/library/display/newEmitter.html">newEmitter()</a> to create an <code>emitter</code> vent.  These parameters control how the <code>emitter</code> is created.</p>
 <ul>
-<li><code>group</code> - Group to add arc object to.</li>
-<li><code>x</code>, <code>y</code> - &lt; x, y &gt; center of arc.</li>
-<li><code>params</code> - Table of arc properties.<ul>
-<li><code>s</code> (<code>0</code>) - Start angle where 0 is up, 90 is right, ...</li>
-<li><code>sweep</code> (<code>360</code>) - Angle sweep, where 360 is a full circle.</li>
-<li><code>radius</code> (<code>100</code>) - Radius of arc.</li>
-<li><code>fillColor</code> (<code>_W_</code>) - Fill color for body of arc polygon.</li>
-<li><code>strokeColor</code> (<code>_W_</code>) - Color of arc line.</li>
-<li><code>strokeWidth</code> (<code>0</code>) - Width/thickness of arc line.</li>
-<li><code>incr</code> (<code>1</code>) - Degrees to increment by per step, <ul>
-<li>May be any value in range: (-360,360) except 0 </li>
+<li><code>group</code> (<code>display.currentStage</code>) - Group to place emitter object in.</li>
+<li><code>x</code>, <code>y</code> - &lt; x, y &gt; position to place emitter at.</li>
+<li><code>fileName</code> - Full path and name of emitter definition file.</li>
+<li><code>params</code> (<code>nil</code>) - A paramaterized table of settings to further modify the emitter before creating it.<ul>
+<li><code>texturePath</code> - An alternate path to the particle image you would like to use (path-only, not file name.)</li>
+<li><code>altTexture</code> - An alternate particle image to use.</li>
+<li><strong>Key-Value Parameters</strong> - You can override the value of any named parameter in the standard <a href="https://docs.coronalabs.com/daily/api/library/display/newEmitter.html#key-value-parameters">Key-Value Parameters</a> list.  This means you can create a particle definition file with an editor, but later modify specific parameters just before creating the emitter instance.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="example_1">Example</h3>
+<h1 id="example-loader-calls">Example Loader Calls</h1>
 <pre><code class="Lua">
-local pac
-local curSep = 90
-local curDir = -15
+   -- ==========================================
+   -- 1. Particle Designer Format
+   -- ==========================================
+   local emitter1 = ssk.pex.loadPD2( nil, centerX - 200, centerY, 
+                          &quot;emitters/ParticleDesigner2/Comet.json&quot;,
+                           { texturePath = &quot;emitters/ParticleDesigner2/&quot; } )
+   emitter1.rotation = 45
 
-local function chomp()
-    display.remove(pac)
-   pac = ssk.display.polyArc( group, centerX - 200, centerY + 100,
-      { radius = 50, s = 90 - curSep/2, sweep = 360 - curSep, incr = -0.1, fillColor = _Y_ } )
-   curSep = curSep + curDir
-   if( curSep &lt;= 0 ) then
-    curSep = 0
-    curDir = 15
-   elseif( curSep &gt;= 90 ) then
-    curSep = 90
-    curDir = -15
-   end
-end
-timer.performWithDelay( 30, chomp, -1 )
+   -- ==========================================
+   -- 2. Roaming Gamer Particle Editor (1 &amp; 2)
+   -- ==========================================
+   local emitter2 = ssk.pex.loadRG( nil, centerX, centerY, 
+                          &quot;emitters/RG/emitter16178.rg&quot;,
+                           { texturePath = &quot;emitters/RG/&quot;,
+                           altTexture = &quot;particle78348.png&quot; } )
+
+   -- ==========================================
+   -- 3. Starling Format
+   -- ==========================================
+   local emitter3 = ssk.pex.loadStarling( nil, centerX + 200, centerY, 
+                          &quot;emitters/Starling/particle3.pex&quot;,
+                           { altTexture = &quot;images/star.png&quot; } )
 
 </code></pre>
 

@@ -125,6 +125,12 @@
                         
                             
 <li >
+    <a href="../libraries/dialogs/">Dialog Trays</a>
+</li>
+
+                        
+                            
+<li >
     <a href="../libraries/easy_inputs/">Easy Inputs</a>
 </li>
 
@@ -144,6 +150,12 @@
                             
 <li >
     <a href="../libraries/misc/">Miscellaneous</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../libraries/pex/">Particle Loaders</a>
 </li>
 
                         
@@ -183,6 +195,12 @@
                             
 <li >
     <a href="../libraries/display_lines/">Factories (Line)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../libraries/files/">Files Library</a>
 </li>
 
                         
@@ -302,6 +320,13 @@
         <li class="first-level "><a href="#autolan-my-developers">AutoLan &copy; M.Y. Developers</a></li>
         
     
+        <li class="first-level "><a href="#globals-locker-niklas-frykholm">Globals Locker (Niklas Frykholm)</a></li>
+        
+            <li class="third-level"><a href="#to-lock-globals">To Lock Globals</a></li>
+        
+            <li class="third-level"><a href="#to-unlock-globals">To Unlock Globals</a></li>
+        
+    
         <li class="first-level "><a href="#portable-random-community-code">Portable Random (Community Code)</a></li>
         
             <li class="third-level"><a href="#basic-usage">Basic Usage</a></li>
@@ -356,6 +381,18 @@
 <li>ssk.autolan.client</li>
 <li>ssk.autolan.server</li>
 </ul>
+<h1 id="globals-locker-niklas-frykholm">Globals Locker (Niklas Frykholm)</h1>
+<p>This module allows you to lock and unlock <code>_G</code>, the global table.</p>
+<p>While you can modify existing globals during a <em>lock</em>, if you attempt to create a new global variable you will get an error message.</p>
+<p>You can find the original version of this here: <a href="http://lua-users.org/wiki/DetectingUndefinedVariables">http://lua-users.org/wiki/DetectingUndefinedVariables</a></p>
+<h2 id="to-lock-globals">To Lock Globals</h2>
+<pre><code class="Lua">ssk.globals.lock( _G_ )
+</code></pre>
+
+<h2 id="to-unlock-globals">To Unlock Globals</h2>
+<pre><code class="Lua">ssk.globals.unlock( _G_ )
+</code></pre>
+
 <h1 id="portable-random-community-code">Portable Random (Community Code)</h1>
 <p><em>Note:</em> This module was original found on the Corona Labs <a href="http://developer.coronalabs.com">Community Code</a> page, but it has since gone MIA.  Fortunately, I have a copy in the SSK2 external DLC.</p>
 <p>This module can be used to create a random number generating object that is guaranteed to produce the same sequence for the same seed on all devices.  i.e. It is fully deterministic.</p>

@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/display_arcs/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/dialogs/"> 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>Factories (Arc) - Super Starter Kit 2</title>
+    <title>Dialog Trays - Super Starter Kit 2</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lite <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -124,8 +124,8 @@
 
                         
                             
-<li >
-    <a href="../dialogs/">Dialog Trays</a>
+<li class="active">
+    <a href="./">Dialog Trays</a>
 </li>
 
                         
@@ -176,7 +176,7 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pro <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -187,8 +187,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">Factories (Arc)</a>
+<li >
+    <a href="../display_arcs/">Factories (Arc)</a>
 </li>
 
                         
@@ -288,12 +288,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../android/">
+                        <a rel="next" href="../cc/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../display_lines/">
+                        <a rel="prev" href="../easy_inputs/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -309,139 +309,115 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#arc-factories-sskdisplay">Arc Factories (ssk.display.*)</a></li>
+        <li class="first-level active"><a href="#dialog-trays-sskdialogs">Dialog Trays (ssk.dialogs.*)</a></li>
         
-            <li class="third-level"><a href="#arc">Arc</a></li>
+    
+        <li class="first-level "><a href="#creating-a-dialog-trat">Creating a Dialog Trat</a></li>
         
-            <li class="third-level"><a href="#polyarc">PolyArc</a></li>
+    
+        <li class="first-level "><a href="#examples">Examples</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="arc-factories-sskdisplay">Arc Factories (ssk.display.*)</h1>
-<p>This library contains two functions for creating arc objects:</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="#arc">ssk.display.arc</a></td>
-<td align="center"><a href="#polyarc">ssk.display.polyArc</a></td>
-</tr>
-<tr>
-<td align="center">Creates a new arc using lines.</td>
-<td align="center">Creates a new <em>arc</em> using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>).</td>
-</tr>
-<tr>
-<td align="center"><img alt="Arcs" src="../..\images\colorswitch.gif" /></td>
-<td align="center"><img alt="PolyArc" src="../..\images\chomp.gif" /></td>
-</tr>
-</tbody>
-</table>
-<h2 id="arc">Arc</h2>
-<p>Creates a new arc using lines.</p>
-<pre><code class="Lua">ssk.display.arc(group, x, y [ , params ] )
+<h1 id="dialog-trays-sskdialogs">Dialog Trays (ssk.dialogs.*)</h1>
+<p>This module contains a factory for creating nice looking dialog trays with an optional floating-shadow effect as well as an optional touch blocker (modal versus modeless).</p>
+<p><img alt="Dialog Trats" src="../..\images\dialogs.gif" /></p>
+<p>(<em>Note: GIF motion is not a smooth as real thing.</em>)</p>
+<h1 id="creating-a-dialog-trat">Creating a Dialog Trat</h1>
+<p>Currently there is only one factory, but it supports two styles.</p>
+<pre><code class="Lua">local dialog = basic.create( [ group [, x [, y [, params ]]]]])
 </code></pre>
 
 <ul>
-<li><code>group</code> - Group to add arc object to.</li>
-<li><code>x</code>, <code>y</code> - &lt; x, y &gt; center of arc.</li>
-<li><code>params</code> - Table of arc properties.<ul>
-<li><code>s</code> (<code>0</code>) - Start angle where 0 is up, 90 is right, ...</li>
-<li><code>sweep</code> (<code>360</code>) - Angle sweep, where 360 is a full circle.</li>
-<li><code>radius</code> (<code>100</code>) - Radius of arc.</li>
-<li><code>strokeColor</code> (<code>_W_</code>) - Color of arc line.</li>
-<li><code>strokeWidth</code> (<code>4</code>) - Width/thickness of arc line.</li>
-<li><code>incr</code> (<code>1</code>) - Degrees to increment by per step, <ul>
-<li>May be any value in range: (-360,360) except 0 </li>
+<li><code>group</code> (<code>display.currentStage</code>) - A display group to insert tray into.</li>
+<li><code>x</code>, <code>y</code> (<code>centerX</code>,<code>centerY</code>) - &lt; x, y &gt; position to place tray center at.</li>
+<li><code>params</code> - A parameterized table of options:<ul>
+<li><code>width</code> (<code>fullw/2</code>) - Width of tray.</li>
+<li><code>height</code> (<code>fullh/2</code>) - Height of tray.</li>
+<li><code>fill</code> (<code>_W_</code>) - Fill color for tray background.</li>
+<li><code>blockerFill</code> (<code>_K_</code>) - Fill color for 'blocker'.</li>
+<li><code>blockerAlpha</code> (<code>0.5</code>) - Alpha of 'blocker'</li>
+<li><code>blockerAlphaTime</code> (<code>0</code>) - Time it takes for blocker alpha to rise from 0 to <code>blockerAlpha</code> when tray is opening.  Similarly time to fall from <code>blockerAlpha</code> to 0 when closing.</li>
+<li><code>closeOnTouchBlocker</code> (<code>false</code>) - If <code>true</code> touching the blocker will close the dialog tray.</li>
+<li><code>softShadow</code> (<code>false</code>) - If <code>true</code> the tray will have a nice hover/soft- shadow.</li>
+<li><code>softShadowFill</code> (<code>_K_</code>) - Fill color for soft-shadow.</li>
+<li><code>softShadowOX</code> (<code>2</code>) - X-offset shadow should use.</li>
+<li><code>softShadowOY</code> (<code>2</code>) - Y-offset shadow should use.</li>
+<li><code>softShadowBlur</code> (<code>4</code>) - How blured shadow should be, where higher values are more blurred.</li>
+<li><code>softShadowSigma</code> (<code>140</code>) - Blur sigma for shadow's <a href="https://docs.coronalabs.com/guide/graphics/effects.html#filter.blurgaussian">gaussian blur</a> effect.</li>
+<li><code>softShadowAlpha</code> (<code>0.5</code>) - Alpha for sof shadow.</li>
+<li><code>onClose</code> (<code>nil</code>) - Optional function to call before closing tray.</li>
+<li><code>blockerAction</code> (<code>nil</code>) - Optional function to call if blocker is touched.</li>
+<li><code>style</code> (<code>1</code>) - Tray style.  <ul>
+<li><code>1</code> - Un-adorned rounded edges.</li>
+<li><code>2</code> - Rounded edges with a line embellishment.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="example">Example</h3>
+<h1 id="examples">Examples</h1>
 <pre><code class="Lua">
-local spinGroup = display.newGroup()
-group:insert(spinGroup)
-spinGroup.x = centerX - 300
-spinGroup.y = centerY - 50
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 0, sweep = 90,
-                    strokeColor = _R_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 90, sweep = 90,
-                    strokeColor = _G_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 180, sweep = 90, 
-                    strokeColor = _B_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 270, sweep = 90,
-                    strokeColor = _Y_, strokeWidth = 6 })
+   group = group or display.currentStage
+   params = params or {}
 
-function spinGroup.enterFrame( self )
-    self.rotation = self.rotation + 5 
-end; listen(&quot;enterFrame&quot;, spinGroup)
+   ssk.display.newRect( group, centerX, centerY, 
+                                { w = fullw, h = fullh, fill = hexcolor(&quot;#ED9C55&quot;) } )
+
+   local function showDialogTray( style )
+
+         local width = 600
+         local height = 400
+
+         local function onClose( self, onComplete )
+            transition.to( self, { y = centerY + fullh, transition = easing.inBack, 
+                                            onComplete = onComplete } )
+         end
+
+         local dialog = ssk.dialogs.basic.create( group, centerX, centerY, 
+                        { fill = hexcolor(&quot;#56A5EC&quot;), 
+                          width = width,
+                          height = height,
+                          softShadow = true,
+                          softShadowOX = 8,
+                          softShadowOY = 8,
+                          softShadowBlur = 6,
+                          closeOnTouchBlocker = true, 
+                          blockerFill = _K_,
+                          blockerAlpha = 0.55,
+                          softShadowAlpha = 0.6,
+                          blockerAlphaTime = 100,
+                          onClose = onClose,
+                          style = style } )
 
 
--- Poly Arcs
-ssk.display.polyArc( group, centerX-150, centerY-50,
-      { radius = 50, s = 0, sweep = 180, incr = -0.25, fillColor = _O_ } )
+         local function closeTray( event )
+            onClose( dialog, function() dialog.frame:close() end )
+         end
 
+         ssk.easyIFC:presetPush( dialog, &quot;default&quot;, 0, 0, 280, 50, 
+                                    &quot;Close Dialog Tray: Style &quot; .. style, closeTray )
 
-ssk.display.polyArc( group, centerX-50, centerY-50,
-      { radius = 50, s = 45, sweep = 180, incr = -0.25, fillColor = _P_ } )
-
-
-</code></pre>
-
-<h2 id="polyarc">PolyArc</h2>
-<p>Creates a new <em>arc</em> (more of a semi-circle/pie-chart shape actually) using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>). </p>
-<pre><code class="Lua">ssk.display.polyArc(group, x, y [ , params ] )
-</code></pre>
-
-<ul>
-<li><code>group</code> - Group to add arc object to.</li>
-<li><code>x</code>, <code>y</code> - &lt; x, y &gt; center of arc.</li>
-<li><code>params</code> - Table of arc properties.<ul>
-<li><code>s</code> (<code>0</code>) - Start angle where 0 is up, 90 is right, ...</li>
-<li><code>sweep</code> (<code>360</code>) - Angle sweep, where 360 is a full circle.</li>
-<li><code>radius</code> (<code>100</code>) - Radius of arc.</li>
-<li><code>fillColor</code> (<code>_W_</code>) - Fill color for body of arc polygon.</li>
-<li><code>strokeColor</code> (<code>_W_</code>) - Color of arc line.</li>
-<li><code>strokeWidth</code> (<code>0</code>) - Width/thickness of arc line.</li>
-<li><code>incr</code> (<code>1</code>) - Degrees to increment by per step, <ul>
-<li>May be any value in range: (-360,360) except 0 </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="example_1">Example</h3>
-<pre><code class="Lua">
-local pac
-local curSep = 90
-local curDir = -15
-
-local function chomp()
-    display.remove(pac)
-   pac = ssk.display.polyArc( group, centerX - 200, centerY + 100,
-      { radius = 50, s = 90 - curSep/2, sweep = 360 - curSep, incr = -0.1, fillColor = _Y_ } )
-   curSep = curSep + curDir
-   if( curSep &lt;= 0 ) then
-    curSep = 0
-    curDir = 15
-   elseif( curSep &gt;= 90 ) then
-    curSep = 90
-    curDir = -15
+         ssk.easyIFC.easyFlyIn( dialog, { delay = 250, time = 500, sox = 0, soy = fullh } )
    end
-end
-timer.performWithDelay( 30, chomp, -1 )
+
+   local function onStyle1( event )
+      showDialogTray(1)    
+   end
+
+   ssk.easyIFC:presetPush( group, &quot;default&quot;, centerX - 200, centerY, 280, 50, 
+                            &quot;Show Dialog Tray: Style 1&quot;, onStyle1 )
+
+
+   local function onStyle2( event )
+      showDialogTray(2)        
+   end
+
+   ssk.easyIFC:presetPush( group, &quot;default&quot;, centerX + 200, centerY, 280, 50, 
+                            &quot;Show Dialog Tray: Style 2&quot;, onStyle2 )
 
 </code></pre>
 

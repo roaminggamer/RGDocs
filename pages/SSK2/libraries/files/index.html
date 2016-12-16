@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/display_arcs/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/files/"> 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>Factories (Arc) - Super Starter Kit 2</title>
+    <title>Files Library - Super Starter Kit 2</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -187,8 +187,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">Factories (Arc)</a>
+<li >
+    <a href="../display_arcs/">Factories (Arc)</a>
 </li>
 
                         
@@ -199,8 +199,8 @@
 
                         
                             
-<li >
-    <a href="../files/">Files Library</a>
+<li class="active">
+    <a href="./">Files Library</a>
 </li>
 
                         
@@ -288,12 +288,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../android/">
+                        <a rel="next" href="../display_lines/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../display_lines/">
+                        <a rel="prev" href="../meters/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -309,142 +309,90 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#arc-factories-sskdisplay">Arc Factories (ssk.display.*)</a></li>
+        <li class="first-level active"><a href="#files-library-sskfiles">Files Library (ssk.files.*)</a></li>
         
-            <li class="third-level"><a href="#arc">Arc</a></li>
+            <li class="third-level"><a href="#documents-folder-sskfilesdocuments">Documents Folder (ssk.files.documents.*)</a></li>
         
-            <li class="third-level"><a href="#polyarc">PolyArc</a></li>
+            <li class="third-level"><a href="#resource-folder-sskfilesresource">Resource Folder (ssk.files.resource.*)</a></li>
+        
+            <li class="third-level"><a href="#temporary-folder-sskfilestemporary">Temporary Folder (ssk.files.temporary.*)</a></li>
+        
+            <li class="third-level"><a href="#desktop-os-x-and-windows-sskfilesdesktop">Desktop (OS X and Windows) (ssk.files.desktop.*)</a></li>
+        
+            <li class="third-level"><a href="#utilities-sskfilesutil">Utilities (ssk.files.util.*)</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="arc-factories-sskdisplay">Arc Factories (ssk.display.*)</h1>
-<p>This library contains two functions for creating arc objects:</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="#arc">ssk.display.arc</a></td>
-<td align="center"><a href="#polyarc">ssk.display.polyArc</a></td>
-</tr>
-<tr>
-<td align="center">Creates a new arc using lines.</td>
-<td align="center">Creates a new <em>arc</em> using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>).</td>
-</tr>
-<tr>
-<td align="center"><img alt="Arcs" src="../..\images\colorswitch.gif" /></td>
-<td align="center"><img alt="PolyArc" src="../..\images\chomp.gif" /></td>
-</tr>
-</tbody>
-</table>
-<h2 id="arc">Arc</h2>
-<p>Creates a new arc using lines.</p>
-<pre><code class="Lua">ssk.display.arc(group, x, y [ , params ] )
-</code></pre>
-
+<h1 id="files-library-sskfiles">Files Library (ssk.files.*)</h1>
+<blockquote>
+<p><strong>WARNING</strong> - You should consider this an advanced library and use it with caution and clarity of purpose.  While I have taken steps to reduce the likelihood of you deleting your hard drive, I won't say it is impossible if you try hard enough.</p>
+<p><strong>~ The Roaming Gamer</strong></p>
+</blockquote>
+<p>This library gives you the ability to fully explore, modify, copy, move, and remove folders and files in the current OS file-system.  <strong>The only limits are the permissions the current OS has granted your application.</strong></p>
+<p>This library has been tested on these operating systems:</p>
 <ul>
-<li><code>group</code> - Group to add arc object to.</li>
-<li><code>x</code>, <code>y</code> - &lt; x, y &gt; center of arc.</li>
-<li><code>params</code> - Table of arc properties.<ul>
-<li><code>s</code> (<code>0</code>) - Start angle where 0 is up, 90 is right, ...</li>
-<li><code>sweep</code> (<code>360</code>) - Angle sweep, where 360 is a full circle.</li>
-<li><code>radius</code> (<code>100</code>) - Radius of arc.</li>
-<li><code>strokeColor</code> (<code>_W_</code>) - Color of arc line.</li>
-<li><code>strokeWidth</code> (<code>4</code>) - Width/thickness of arc line.</li>
-<li><code>incr</code> (<code>1</code>) - Degrees to increment by per step, <ul>
-<li>May be any value in range: (-360,360) except 0 </li>
+<li>Android (multiple versions)</li>
+<li>iOS  (multiple versions)</li>
+<li>Windows (7,8,10) - This includes in the simulator and Desktop builds.</li>
+<li>OS X (multiple versions) - This includes in the simulator and Desktop builds.</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="example">Example</h3>
-<pre><code class="Lua">
-local spinGroup = display.newGroup()
-group:insert(spinGroup)
-spinGroup.x = centerX - 300
-spinGroup.y = centerY - 50
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 0, sweep = 90,
-                    strokeColor = _R_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 90, sweep = 90,
-                    strokeColor = _G_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 180, sweep = 90, 
-                    strokeColor = _B_, strokeWidth = 6 })
-ssk.display.arc( spinGroup, 0, 0 , 
-                  { radius = 50, s = 270, sweep = 90,
-                    strokeColor = _Y_, strokeWidth = 6 })
-
-function spinGroup.enterFrame( self )
-    self.rotation = self.rotation + 5 
-end; listen(&quot;enterFrame&quot;, spinGroup)
-
-
--- Poly Arcs
-ssk.display.polyArc( group, centerX-150, centerY-50,
-      { radius = 50, s = 0, sweep = 180, incr = -0.25, fillColor = _O_ } )
-
-
-ssk.display.polyArc( group, centerX-50, centerY-50,
-      { radius = 50, s = 45, sweep = 180, incr = -0.25, fillColor = _P_ } )
-
-
-</code></pre>
-
-<h2 id="polyarc">PolyArc</h2>
-<p>Creates a new <em>arc</em> (more of a semi-circle/pie-chart shape actually) using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>). </p>
-<pre><code class="Lua">ssk.display.polyArc(group, x, y [ , params ] )
-</code></pre>
-
+<h2 id="documents-folder-sskfilesdocuments">Documents Folder (ssk.files.documents.*)</h2>
 <ul>
-<li><code>group</code> - Group to add arc object to.</li>
-<li><code>x</code>, <code>y</code> - &lt; x, y &gt; center of arc.</li>
-<li><code>params</code> - Table of arc properties.<ul>
-<li><code>s</code> (<code>0</code>) - Start angle where 0 is up, 90 is right, ...</li>
-<li><code>sweep</code> (<code>360</code>) - Angle sweep, where 360 is a full circle.</li>
-<li><code>radius</code> (<code>100</code>) - Radius of arc.</li>
-<li><code>fillColor</code> (<code>_W_</code>) - Fill color for body of arc polygon.</li>
-<li><code>strokeColor</code> (<code>_W_</code>) - Color of arc line.</li>
-<li><code>strokeWidth</code> (<code>0</code>) - Width/thickness of arc line.</li>
-<li><code>incr</code> (<code>1</code>) - Degrees to increment by per step, <ul>
-<li>May be any value in range: (-360,360) except 0 </li>
+<li><code>getRoot()</code> - Returns a string containing the full OS-path to the <code>system.DocumentsDirectory</code> folder.</li>
+<li><code>getPath( path )</code> - This returns a string catenating <code>path</code> to the full OS-path to the <code>system.DocumentsDirectory</code> folder.</li>
+</ul>
+<h2 id="resource-folder-sskfilesresource">Resource Folder (ssk.files.resource.*)</h2>
+<ul>
+<li><code>getRoot()</code> - Returns a string containing the full OS-path to the <code>system.ResourceDirectory</code> folder.</li>
+<li><code>getPath( path )</code> - This returns a string catenating <code>path</code> to the full OS-path to the <code>system.ResourceDirectory</code> folder.</li>
+</ul>
+<h2 id="temporary-folder-sskfilestemporary">Temporary Folder (ssk.files.temporary.*)</h2>
+<ul>
+<li><code>getRoot()</code> - Returns a string containing the full OS-path to the <code>system.TemporaryDirectory</code> folder.</li>
+<li><code>getPath( path )</code> - This returns a string catenating <code>path</code> to the full OS-path to the <code>system.TemporaryDirectory</code> folder.</li>
+</ul>
+<h2 id="desktop-os-x-and-windows-sskfilesdesktop">Desktop (OS X and Windows) (ssk.files.desktop.*)</h2>
+<ul>
+<li><code>getDesktopRoot()</code> - Returns a string containing the full OS-path to the user's <em>Desktop</em>.</li>
+<li><code>getDesktopPath( path )</code> - Catenates <code>path</code> to a string containing the full OS-path to the user's <em>Desktop</em>.</li>
+<li><code>getMyDocumentsRoot()</code> - Returns a string containing the full OS-path to the user's <em>Documents Folder</em>.</li>
+<li><code>getMyDocumentsPath( path )</code> - Catenates <code>path</code> to a string containing the full OS-path to the user's <em>Documents Folder</em>.</li>
+<li><code>getDrivePath( path )</code> - Returns the OS-specific drive path for any named drive <code>path</code>.</li>
+<li><code>explore( path )</code> - Opens <code>path</code> folder using the current OSes file explorer utility.</li>
+</ul>
+<h2 id="utilities-sskfilesutil">Utilities (ssk.files.util.*)</h2>
+<ul>
+<li><code>appendFile( data,  path )</code> - Appends the string in <code>data</code> to the file at <code>path</code>, creating the file if it does not yet exists.</li>
+<li><code>dumpAttributes( path )</code> - Prints the file system attributes of the file/folder at <code>path</code> to the console.</li>
+<li><code>cpFile( src, dst )</code> - Copies the a file <code>src</code> to the folder <code>dst</code>.</li>
+<li><code>cpFolder( src, dst )</code> - Copies the a folder <code>src</code>to the folder <code>dst</code>.</li>
+<li><code>exists( path )</code> - Returns <code>true</code> if the file at <code>path</code> exists.  Returns <code>false</code> otherwise.</li>
+<li><code>isFile( path )</code> - Returns <code>true</code> if the file at <code>path</code> is in fact a file and not some other file type.  Returns <code>false</code> otherwise.</li>
+<li><code>isFolder( path )</code> - - Returns <code>true</code> if the file at <code>path</code> is in fact a folder and not some other file type.  Returns <code>false</code> otherwise.</li>
+<li><code>loadTable( path, secure )</code> - Reads a JSON encoded text file at <code>path</code> and returns it as a decoded table.  Optionally uses the ssk.security system if <code>secure</code> is specified and `true.</li>
+<li><code>mkFolder( path )</code> - Makes a folder named <code>path</code>.  <ul>
+<li><strong>Tip:</strong> - This can only make the final folder in the path and will not create entire hieararchies of folders if they do not exist yet.</li>
 </ul>
 </li>
+<li><code>mvFile( src, dst )</code> - Moves the file at <code>src</code> to <code>dst</code>, where <code>src</code> and <code>dst</code> are complete paths. </li>
+<li><code>mvFolder( src, dst )</code> - Moves the folder at <code>src</code> to <code>dst</code>, where <code>src</code> and <code>dst</code> are complete paths.</li>
+<li><code>readFile( path )</code> - Returns a string containing the contents of the file at <code>path</code> or <code>nil</code> if the file cannot be read.</li>
+<li><code>readFileToTable( path )</code> - Returns a table containing the contents of the file at <code>path</code> or <code>{}</code> if the file cannot be read.<ul>
+<li><strong>Tip:</strong> - This table is numerically indexed and each entry represents a line in the file separated by the newline character <code>\n</code>.</li>
 </ul>
 </li>
+<li><code>repairPath( path, forceForward )</code> - Returns a string with the slashes leaning in the right direction for the current OS.<ul>
+<li>If <code>forceForward</code> is specified and <code>true</code>, the slashes will all be forced to be <em>forward leaning</em>.</li>
 </ul>
-<h3 id="example_1">Example</h3>
-<pre><code class="Lua">
-local pac
-local curSep = 90
-local curDir = -15
-
-local function chomp()
-    display.remove(pac)
-   pac = ssk.display.polyArc( group, centerX - 200, centerY + 100,
-      { radius = 50, s = 90 - curSep/2, sweep = 360 - curSep, incr = -0.1, fillColor = _Y_ } )
-   curSep = curSep + curDir
-   if( curSep &lt;= 0 ) then
-    curSep = 0
-    curDir = 15
-   elseif( curSep &gt;= 90 ) then
-    curSep = 90
-    curDir = -15
-   end
-end
-timer.performWithDelay( 30, chomp, -1 )
-
-</code></pre>
-
+</li>
+<li><code>rmFile( path )</code> - Removes the file or folder at <code>path</code>.</li>
+<li><code>rmFolder( path )</code> - Removes the folder at <code>path</code>.</li>
+<li><code>saveTable( tbl, path, secure )</code> - Saves table <code>tbl</code> as a JSON encoded text file to <code>path</code> and optionally uses the ssk.security system if <code>secure</code> is specified and `true.</li>
+<li><code>writeFile( data,  path )</code> - Writes the string <code>data</code> to the file at <code>path</code>, replacing the file if it already exists.</li>
+</ul>
 <hr />
 <p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         
