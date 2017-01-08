@@ -143,7 +143,13 @@
                         
                             
 <li >
-    <a href="../display_standard/">Factories (Standard)</a>
+    <a href="../display_standard/">Factories (Display Object)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../factorymgr/">Factory Manager</a>
 </li>
 
                         
@@ -183,6 +189,12 @@
                             
 <li >
     <a href="../android/">Android Helpers</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easyPositioner/">Easy Positioner</a>
 </li>
 
                         
@@ -243,6 +255,12 @@
                             
 <li >
     <a href="../soundMgr/">Sound Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../tiled/">Tiled Loader</a>
 </li>
 
                         
@@ -312,10 +330,21 @@
         <li class="first-level active"><a href="#dialog-trays-sskdialogs">Dialog Trays (ssk.dialogs.*)</a></li>
         
     
-        <li class="first-level "><a href="#creating-a-dialog-trat">Creating a Dialog Trat</a></li>
+        <li class="first-level "><a href="#basic-trays">Basic Trays</a></li>
+        
+            <li class="third-level"><a href="#creating-a-basic-dialog-tray">Creating a Basic Dialog Tray</a></li>
+        
+    
+        <li class="first-level "><a href="#custom-trays">Custom Trays</a></li>
+        
+            <li class="third-level"><a href="#creating-a-custom-dialog-tray">Creating a Custom Dialog Tray</a></li>
         
     
         <li class="first-level "><a href="#examples">Examples</a></li>
+        
+            <li class="third-level"><a href="#basic">Basic</a></li>
+        
+            <li class="third-level"><a href="#custom">Custom</a></li>
         
     
     </ul>
@@ -324,10 +353,11 @@
 
 <h1 id="dialog-trays-sskdialogs">Dialog Trays (ssk.dialogs.*)</h1>
 <p>This module contains a factory for creating nice looking dialog trays with an optional floating-shadow effect as well as an optional touch blocker (modal versus modeless).</p>
-<p><img alt="Dialog Trats" src="../..\images\dialogs.gif" /></p>
+<h1 id="basic-trays">Basic Trays</h1>
+<p><img alt="Basic Dialog Trays" src="../..\images\dialogs.gif" /></p>
 <p>(<em>Note: GIF motion is not a smooth as real thing.</em>)</p>
-<h1 id="creating-a-dialog-trat">Creating a Dialog Trat</h1>
-<p>Currently there is only one factory, but it supports two styles.</p>
+<h2 id="creating-a-basic-dialog-tray">Creating a Basic Dialog Tray</h2>
+<p>To create a basic dialog tray of any width or height, use this function:</p>
 <pre><code class="Lua">local dialog = basic.create( [ group [, x [, y [, params ]]]]])
 </code></pre>
 
@@ -359,7 +389,45 @@
 </ul>
 </li>
 </ul>
+<h1 id="custom-trays">Custom Trays</h1>
+<p>Custom dialog trays use a up to two images (one for the tray and one for the shadow) to create a nice looking floating dialog tray.</p>
+<p><img alt="Custom Dialog Trays" src="../..\images\customdialogs.gif" /></p>
+<p>(<em>Note: GIF motion is not a smooth as real thing.</em>)</p>
+<h2 id="creating-a-custom-dialog-tray">Creating a Custom Dialog Tray</h2>
+<p>To create a custom dialog tray of any width or height, use this function:</p>
+<pre><code class="Lua">local dialog = basic.create( [ group [, x [, y [, params ]]]]])
+</code></pre>
+
+<ul>
+<li><code>group</code> (<code>display.currentStage</code>) - A display group to insert tray into.</li>
+<li><code>x</code>, <code>y</code> (<code>centerX</code>,<code>centerY</code>) - &lt; x, y &gt; position to place tray center at.</li>
+<li><code>params</code> - A parameterized table of options:<ul>
+<li><code>width</code> (<code>fullw/2</code>) - Width of tray.</li>
+<li><code>height</code> (<code>fullh/2</code>) - Height of tray.</li>
+<li><code>fill</code> (<code>_W_</code>) - Fill color for tray background.</li>
+<li><code>blockerFill</code> (<code>_K_</code>) - Fill color for 'blocker'.</li>
+<li><code>blockerAlpha</code> (<code>0.5</code>) - Alpha of 'blocker'</li>
+<li><code>blockerAlphaTime</code> (<code>0</code>) - Time it takes for blocker alpha to rise from 0 to <code>blockerAlpha</code> when tray is opening.  Similarly time to fall from <code>blockerAlpha</code> to 0 when closing.</li>
+<li><code>closeOnTouchBlocker</code> (<code>false</code>) - If <code>true</code> touching the blocker will close the dialog tray.</li>
+<li><code>softShadow</code> (<code>false</code>) - If <code>true</code> the tray will have a nice hover/soft- shadow.</li>
+<li><code>softShadowFill</code> (<code>_K_</code>) - Fill color for soft-shadow.</li>
+<li><code>softShadowOX</code> (<code>2</code>) - X-offset shadow should use.</li>
+<li><code>softShadowOY</code> (<code>2</code>) - Y-offset shadow should use.</li>
+<li><code>softShadowBlur</code> (<code>4</code>) - How blured shadow should be, where higher values are more blurred.</li>
+<li><code>softShadowSigma</code> (<code>140</code>) - Blur sigma for shadow's <a href="https://docs.coronalabs.com/guide/graphics/effects.html#filter.blurgaussian">gaussian blur</a> effect.</li>
+<li><code>softShadowAlpha</code> (<code>0.5</code>) - Alpha for sof shadow.</li>
+<li><code>onClose</code> (<code>nil</code>) - Optional function to call before closing tray.</li>
+<li><code>blockerAction</code> (<code>nil</code>) - Optional function to call if blocker is touched.</li>
+<li><code>trayImage</code> - Path to PNG or JPG file that should be used as the tray image.</li>
+<li><code>shadowImage</code> - Path to PNG or JPG file that should be used as the tray shadow.<ul>
+<li><strong>Note:</strong> Shadow images are typically all white versions of the tray image.  This is then shaded based on prior shadow settings.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="examples">Examples</h1>
+<h2 id="basic">Basic</h2>
 <pre><code class="Lua">
    group = group or display.currentStage
    params = params or {}
@@ -419,6 +487,63 @@
    ssk.easyIFC:presetPush( group, &quot;default&quot;, centerX + 200, centerY, 280, 50, 
                             &quot;Show Dialog Tray: Style 2&quot;, onStyle2 )
 
+</code></pre>
+
+<h2 id="custom">Custom</h2>
+<pre><code class="Lua">local width, height = ssk.misc.getImageSize( &quot;images/fantasygui/dialog&quot; .. style .. &quot;.png&quot; )
+width = width * scale
+height = height * scale
+
+local function onClose( self, onComplete )
+ transition.to( self, { y = centerY + fullh, transition = easing.inBack, 
+                                 onComplete = onComplete } )
+end
+
+local dialog = ssk.dialogs.custom.create( group, centerX, centerY, 
+             { width = width,
+               height = height,
+               softShadow = true,
+               softShadowOX = 8,
+               softShadowOY = 8,
+               softShadowBlur = 6,
+               closeOnTouchBlocker = true, 
+               blockerFill = _K_,
+               blockerAlpha = 0.15,
+               softShadowAlpha = 0.3,
+               blockerAlphaTime = 100,
+               onClose = onClose,
+               trayImage = &quot;images/fantasygui/dialog&quot; .. style .. &quot;.png&quot;,
+               shadowImage = &quot;images/fantasygui/dialog&quot; .. style .. &quot;_shadow.png&quot; } )
+
+
+local function closeTray( event )
+ onClose( dialog, function() dialog.frame:close() end )
+end
+
+ssk.easyIFC:presetPush( dialog, &quot;default&quot;, 0, 0, 320, 50, 
+                         &quot;Close Custom Dialog Tray: Example &quot; .. style, closeTray )
+
+ssk.easyIFC.easyFlyIn( dialog, { delay = 250, time = 500, sox = 0, soy = fullh } )
+end
+
+local function onStyle1( event )
+showDialogTray(0.5,1)
+end
+ssk.easyIFC:presetPush( group, &quot;default&quot;, centerX + 200, centerY - 75, 320, 50, 
+                    &quot;Show Custom Dialog Tray: Example 1&quot;, onStyle1 )
+
+
+local function onStyle2( event )
+showDialogTray(0.75,2)
+end
+ssk.easyIFC:presetPush( group, &quot;default&quot;, centerX + 200, centerY, 320, 50, 
+                    &quot;Show Custom Dialog Tray: Example 2&quot;, onStyle2 )
+
+local function onStyle3( event )
+showDialogTray(0.75,3)
+end
+ssk.easyIFC:presetPush( group, &quot;default&quot;, centerX + 200, centerY + 75, 320, 50, 
+                    &quot;Show Custom Dialog Tray: Example 3&quot;, onStyle3 )
 </code></pre>
 
 <hr />

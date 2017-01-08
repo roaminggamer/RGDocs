@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/android/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/factorymgr/"> 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>Android Helpers - Super Starter Kit 2</title>
+    <title>Factory Manager - Super Starter Kit 2</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lite <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -148,8 +148,8 @@
 
                         
                             
-<li >
-    <a href="../factorymgr/">Factory Manager</a>
+<li class="active">
+    <a href="./">Factory Manager</a>
 </li>
 
                         
@@ -182,13 +182,13 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pro <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">Android Helpers</a>
+<li >
+    <a href="../android/">Android Helpers</a>
 </li>
 
                         
@@ -306,12 +306,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../system/">
+                        <a rel="next" href="../display_standard/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../easyPositioner/">
+                        <a rel="prev" href="../misc/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -327,121 +327,213 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#android-helpers-sskandroid">Android Helpers (ssk.android.*)</a></li>
+        <li class="first-level active"><a href="#factory-manager-sskfactorymgr">Factory Manager - ssk.factoryMgr.*</a></li>
         
-            <li class="third-level"><a href="#capturebackbutton">captureBackButton</a></li>
+            <li class="third-level"><a href="#typical-factory-structure">Typical Factory Structure</a></li>
         
-            <li class="third-level"><a href="#capturevolumebuttons">captureVolumeButtons</a></li>
+            <li class="third-level"><a href="#example-factory-coinlua">Example Factory - coin.lua</a></li>
         
-            <li class="third-level"><a href="#easyandroiduivisibility">easyAndroidUIVisibility</a></li>
+    
+        <li class="first-level "><a href="#learn-by-example">Learn By Example</a></li>
+        
+            <li class="third-level"><a href="#validation-sample-001_factorytestlua">Validation Sample: 001_factoryTest.lua</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="android-helpers-sskandroid">Android Helpers (ssk.android.*)</h1>
-<p>This library contains a few helper functions to handle common Android issues/tasks.</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="../android/#capturebackbutton">captureBackButton</a></td>
-<td align="center"><a href="../android/#capturevolumebuttons">captureVolumeButtons</a></td>
-<td align="center"><a href="../android/#easyandroiduivisibility">easyAndroidUIVisibility</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="capturebackbutton">captureBackButton</h2>
-<p>Capture the back button on Android devices and prompt the user to be sure they really want to leave the app.</p>
-<p>When user presses back button they are prompted with a pop-up dialog:</p>
-<p><img alt="captureBackButton" src="../../images/captureBackButton.png" /></p>
-<pre><code class="Lua">ssk.android.captureBackButton( [ noCB, [ yesCB ] ] )
-</code></pre>
-
+<h1 id="factory-manager-sskfactorymgr">Factory Manager - ssk.factoryMgr.*</h1>
+<p>This template and all of the starter games use <em>factories</em> to create game objects.  In this sense, a factory is a module whose main job is to create a single game object or set of co-related objects.  Ex:</p>
 <ul>
-<li><code>noCB</code> - Optional function to execute if the user selects "NO".</li>
-<li><code>yesCB</code> - Optional function to execute if the user selects "YES".</li>
+<li>A (pickup) coin.</li>
+<li>A score counter interface.</li>
+<li>A player.</li>
 </ul>
-<pre><code class="Lua">
-local onNo()
-   print(&quot;Pressed No&quot;)   
-end
-
-local onYes()
-   print(&quot;Pressed Yes&quot;)
-end
-
-ssk.android.captureBackButton( onNo, onYes )
-
-</code></pre>
-
-<h2 id="capturevolumebuttons">captureVolumeButtons</h2>
-<p>Capture the volume buttons on Android and do something when they are pressed.</p>
-<pre><code class="Lua">ssk.android.captureVolumeButtons( [ block, [ volUp, [ volDown ] ] ] )
-</code></pre>
-
+<p><strong>Note:</strong> These factories do not strictly conform to the factory design pattern you may be familiar with in <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">OOP</a> languages and <a href="https://github.com/FloydaGithub/lua-patterns/blob/master/factory_method.lua">other</a> sources.  I am using this terms because the <em>factory</em> modules adhere to the broad principle of the pattern: <strong>Creating Objects</strong>.</p>
+<h2 id="typical-factory-structure">Typical Factory Structure</h2>
+<p>The file containing a <em>factory</em> definition usually has the following structure:</p>
 <ul>
-<li><code>block</code> ( <code>true</code> ) - If <code>true</code> block the volume change action.</li>
-<li><code>volUp</code> - Optional function to execute if the user selects "volUp".</li>
-<li><code>volDown</code> - Optional function to execute if the user selects "volDown".</li>
+<li>Header - Copyright info and name of factory.</li>
+<li><code>require()</code> Statements - modules and libraries used by the factory are required here.</li>
+<li>Localizations - In this section, I localize a number of commonly used ssk features.<ul>
+<li><strong>Tip:</strong> I may not end up using all of these features in the module, but the cost of localization is low and having a standard set of localized features makes for easier coding and duplication later.</li>
 </ul>
-<pre><code class="Lua">
-local upUp()
-   print(&quot;Use tried to increase volume&quot;)   
-end
-
-local onDown()
-   print(&quot;Use tried to decrease volume&quot;)   
-end
-
-ssk.android.captureBackButton( true, onUp, onDown )
-
-</code></pre>
-
-<h2 id="easyandroiduivisibility">easyAndroidUIVisibility</h2>
-<p>Easily hide Android virtual buttons (back, home, ... ).</p>
-<pre><code class="Lua">ssk.android.easyAndroidUIVisibility( [ profile ] ] )
-</code></pre>
-
+</li>
+<li>Locals - Next I declare any file-level locals that may be used by the module. <ul>
+<li>Ex: <code>initialized</code> - Most modules have a flag used to determine if the module has been initialized yet.  This is a safety mechanism I use to avoid accidental double initializations.</li>
+</ul>
+</li>
+<li>Forward Declarations - This is where I declare any functions that may be used by the module, but which I don't expose as <em>public</em> members of the module.
+    +<strong>Tip:</strong>  I rarely use this, but keep a spot for it nonetheless.  Again this is about keeping a known structure and enabling easy duplication.</li>
+<li><strong>Factory Module Begins</strong> - The module function definitions start here.<ul>
+<li>factory.init( params ) - A method do one-time initialization of the factory needs it.  Typical things that would be done here are, pre-loading images, defining sprite-sheets, etc.<ul>
+<li><code>params</code> - Optional table of parameters.</li>
+</ul>
+</li>
+<li>factory.reset( params ) - This function is typically called at the begining of a game (not between levels) to reset the factory module if it is needed.  <ul>
+<li><code>params</code> - Optional table of parameters.</li>
+</ul>
+</li>
+<li>factory.new( group, x, y, params ) - This is function responsible for building this factories game object(s).<ul>
+<li><code>group</code> - Display group to insert objects into.</li>
+<li><code>x</code>, <code>y</code> - x- and y- position to place 'object' at.  </li>
+<li><code>params</code> - An optional table of parameters.  This is where we pass special data and arguments a factory may need. </li>
+<li><strong>Tip:</strong> - You don't need to use the values of these arguments in every builder, but by having a minimialistic and yet common <code>new()</code> signature we make factories easy to use, easy to write, and easy to understand.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>return factory</code> - The last line of every factory module, where we return the factory module reference.  </li>
+</ul>
+<h3 id="factories-are-extensible">Factories Are Extensible</h3>
+<p>The above factory definition is pretty basic, but due to the fact that factories are modules, it is easy to extend this concept.  </p>
+<p>For example, if you include a built-in-editor in your game, it may be useful to add these functions to your factories:</p>
 <ul>
-<li><code>profile</code> ( <code>"immersiveSticky"</code> ) - Style of visibility selection:<ul>
-<li><code>"immersiveSticky"</code> - Cause the status and navigation bars to disappear. <ul>
-<li>If the user swipes from the top or bottom, they 
-will reappear and then disappear again.</li>
-<li>Only on Android KitKat (Api 19) or above.</li>
+<li><code>editor_widget()</code> - A function to create a drag-n-drop widget representing this object type for the ditor.</li>
+<li><code>editor_new()</code> - A function to create the editor instance of this object.  </li>
+<li><code>...</code> - Whatever else you need.</li>
 </ul>
-</li>
-<li><code>"immersive"</code> -  Cause the status and navigation bars to disappear. <ul>
-<li>If the user swipes from the top or bottom, they will reappear and stay.<ul>
-<li><strong>WARNING:</strong> A resize event will be triggered and the objects on the screen will need to be manually re-rendered. This is because the content scaling for the device changes and the objects will not have the correct aspect ratio unless they are re-rendered (removed and restored).</li>
-</ul>
-</li>
-<li>Only on Android KitKat (Api 19) or above. </li>
-</ul>
-</li>
-<li><code>"lowProfile"</code> - Dims the navigation bar icons.<ul>
-<li>Only on Android Ice Cream Sandwich (Api 14) or above.</li>
-</ul>
-</li>
-<li><code>"default"</code> - Resets the value.</li>
-</ul>
-</li>
-</ul>
+<h2 id="example-factory-coinlua">Example Factory - <code>coin.lua</code></h2>
 <pre><code class="Lua">
--- Automatically use 'immersiveSticky' if available.
-ssk.android.easyAndroidUIVisibility( nil )
+-- =============================================================
+-- Copyright Roaming Gamer, LLC. 2008-2016 (All Rights Reserved)
+-- =============================================================
+-- Smiley Factory - Just a simple example...
+-- =============================================================
+local physics   = require &quot;physics&quot;
 
+-- =============================================================
+-- Localizations
+-- =============================================================
+-- Commonly used Lua Functions
+local getTimer          = system.getTimer
+local mRand                 = math.random
+local mAbs                  = math.abs
+--
+-- Common SSK Display Object Builders
+local newCircle = ssk.display.newCircle;local newRect = ssk.display.newRect
+local newImageRect = ssk.display.newImageRect;local newSprite = ssk.display.newSprite
+local quickLayers = ssk.display.quickLayers
+--
+-- Common SSK Helper Modules
+local easyIFC = ssk.easyIFC;local persist = ssk.persist
+--
+-- Common SSK Helper Functions
+local isValid = display.isValid;local isInBounds = ssk.easyIFC.isInBounds
+local normRot = ssk.misc.normRot;local easyAlert = ssk.misc.easyAlert
+
+-- =============================================================
+-- Locals
+-- =============================================================
+local initialized = false
+
+-- =============================================================
+-- Forward Declarations
+-- =============================================================
+
+-- =============================================================
+-- Factory Module Begins
+-- =============================================================
+
+local factory = {}
+
+-- ==
+--    init() - One-time initialization only.
+-- ==
+function factory.init( params )
+    if(initialized) then return end
+    initialized = true
+end
+
+-- ==
+--    reset() - Reset any per-game logic/settings.
+-- ==
+function factory.reset( params )
+end
+
+-- ==
+--    new() - Create new instance(s) of this factory's object(s).
+-- ==
+function factory.new( group, x, y, params )
+    params = params or { size = 60 }
+
+    local smiley = newImageRect( group, x, y, &quot;images/smiley.png&quot;, 
+                                {   size = params.size  } )
+
+    return smiley
+end
+
+return factory
+
+</code></pre>
+
+<h1 id="learn-by-example">Learn By Example</h1>
+<p>The best way to learn how factories work is by example.  Please look in the validation code that comes with SSK2 and pay particular attention to example <code>Factory Manager</code> found here:</p>
+<p><code>~/validation/tests/factories/*.lua</code>.</p>
+<h2 id="validation-sample-001_factorytestlua">Validation Sample: 001_factoryTest.lua</h2>
+<pre><code class="Lua">-- =============================================================
+-- Copyright Roaming Gamer, LLC. 2008-2016 (All Rights Reserved)
+-- =============================================================
+
+-- =============================================================
+-- Localizations
+-- =============================================================
+-- Lua
+local getTimer = system.getTimer; local mRand = math.random
+local mAbs = math.abs
+local strMatch = string.match; local strGSub = string.gsub; local strSub = string.sub
+--
+-- Common SSK Display Object Builders
+local newCircle = ssk.display.newCircle;local newRect = ssk.display.newRect
+local newImageRect = ssk.display.newImageRect;local newSprite = ssk.display.newSprite
+local quickLayers = ssk.display.quickLayers
+--
+-- Common SSK Helper Modules
+local easyIFC = ssk.easyIFC;local persist = ssk.persist
+--
+-- Common SSK Helper Functions
+local isValid = display.isValid;local isInBounds = ssk.easyIFC.isInBounds
+local normRot = math.normRot;local easyAlert = ssk.misc.easyAlert
+--
+-- SSK 2D Math Library
+local addVec = ssk.math2d.add;local subVec = ssk.math2d.sub;local diffVec = ssk.math2d.diff
+local lenVec = ssk.math2d.length;local len2Vec = ssk.math2d.length2;
+local normVec = ssk.math2d.normalize;local vector2Angle = ssk.math2d.vector2Angle
+local angle2Vector = ssk.math2d.angle2Vector;local scaleVec = ssk.math2d.scale
+ssk.misc.countLocals(1)
+
+-- =============================================================
+-- =============================================================
+local test = {}
+
+local factoryMgr = ssk.factoryMgr
+
+factoryMgr.register( &quot;smiley&quot;, &quot;tests.factories.example1&quot; )
+factoryMgr.register( &quot;corona&quot;, &quot;tests.factories.example2&quot; )
+factoryMgr.register( &quot;rg&quot;, &quot;tests.factories.example3&quot; )
+
+factoryMgr.init()
+
+function test.run( group, params )
+   group = group or display.currentStage
+   params = params or {}
+
+   local tmp = factoryMgr.new( &quot;rg&quot;, group, centerX, centerY, { size = 80 } )
+
+   local tmp = factoryMgr.new( &quot;corona&quot;, group, centerX - 100, centerY, { size = 50 } )
+
+   local tmp = factoryMgr.new( &quot;smiley&quot;, group, centerX + 100, centerY )
+
+
+end
+
+
+return test
 </code></pre>
 
 <hr />
-<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+<p><img alt="RoamingGamer" src="../../roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         
     </div>
 

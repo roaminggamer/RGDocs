@@ -143,7 +143,13 @@
                         
                             
 <li >
-    <a href="../display_standard/">Factories (Standard)</a>
+    <a href="../display_standard/">Factories (Display Object)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../factorymgr/">Factory Manager</a>
 </li>
 
                         
@@ -183,6 +189,12 @@
                             
 <li >
     <a href="../android/">Android Helpers</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../easyPositioner/">Easy Positioner</a>
 </li>
 
                         
@@ -243,6 +255,12 @@
                             
 <li >
     <a href="../soundMgr/">Sound Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../tiled/">Tiled Loader</a>
 </li>
 
                         
@@ -357,8 +375,12 @@
 <h1 id="easy-interfaces-sskeasyifc">Easy Interfaces (ssk.easyIFC:*)</h1>
 <p>The <em>Easy Interfaces</em> library is a large library designed to produce:</p>
 <ul>
-<li><a href="../easy_interfaces/#button-factories"><strong>Buttons</strong></a> - Two-state buttons that execute a listener(s) to do 'work'.  Includes:<ul>
+<li><a href="../easy_interfaces/#button-factories"><strong>Buttons</strong></a> - Two-, three-, and four- state buttons that execute a listener(s) to do 'work'.  Includes:<ul>
 <li>Push Buttons, Toggle Buttons, and Radio Buttons</li>
+<li>Two-states: Selected, Unselected.</li>
+<li>Three-states: Selected, Unselected, Toggled.</li>
+<li>Three-states <em>alternate</em>: Selected, Unselected, Locked/Disabled.</li>
+<li>Four-states: Selected, Unselected, Toggled, Locked/Disabled.</li>
 </ul>
 </li>
 <li><a href="../easy_interfaces/#label-factories"><strong>Labels</strong></a> - Single-line text objects.</li>
@@ -426,7 +448,6 @@
 </ul>
 <h2 id="button-parameters">Button Parameters</h2>
 <p>The following list is designed as a quick reference to the many button parameters.  </p>
-<p>To learn about using these, please explore the samples <a href="../EFM">here</a>.</p>
 <ul>
 <li>General<ul>
 <li><code>buttonType</code> (<code>"push"</code>) - <code>"push"</code>, <code>"toggle"</code> <code>"radio"</code></li>
@@ -454,14 +475,20 @@
 <li>Rectangle Parameters - If you are using plain rectangles for the button representation.<ul>
 <li><code>unselRectFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for not selected representation of button.</li>
 <li><code>selRectFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for selected representation of button.</li>
-<li><code>cornerRadius</code> (<code>nil</code>) - EFM</li>
+<li><code>lockedRectFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for (optional) locked/disabled representation of button.</li>
+<li><code>toggledRectFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for (optional) toggled representation of button.  This allows you to differentiate selected from toggled in togggle and radio buttons for a 3-state style button.</li>
+<li><code>cornerRadius</code> (<code>nil</code>) - If this is provided and is set to a non-zero value, rounded rectangles are used instead of squared ones.  The corners of these rounded rectangles will use this rounding 'radius'.</li>
 </ul>
 </li>
 <li>Image Parameters - If you are using image rectangles for the button representation.<ul>
-<li><code>unselImgSrc</code> (<code>EFM</code>) - Path and filename of not selected image representation.</li>
-<li><code>selImgSrc</code> (<code>EFM</code>) - Path and filename of selected image representation.</li>
+<li><code>unselImgSrc</code>  - Path and filename of not selected image representation.</li>
+<li><code>selImgSrc</code>  - Path and filename of selected image representation.</li>
+<li><code>lockedImgSrc</code>  - Path and filename of (optional) locked/disabled representation of button image.</li>
+<li><code>toggledImgSrc</code>  - Path and filename of (optional) toggled representation of button image.  This allows you to differentiate selected from toggled in togggle and radio buttons for a 3-state style button.</li>
 <li><code>unselImgFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for not selected representation of button.</li>
 <li><code>selImgFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for selected representation of button.</li>
+<li><code>lockedImgFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for (optional) locked/disabled representation of button.</li>
+<li><code>toggledImgFillColor</code> (<code>{1,1,1,1}</code>) - Fill color for (optional) toggled representation of button.  This allows you to differentiate selected from toggled in togggle and radio buttons for a 3-state style button.</li>
 </ul>
 </li>
 <li>Touch Masking Parameters<ul>
@@ -472,6 +499,8 @@
 <li>Stroke Parameters<ul>
 <li><code>unselStrokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for not selected representation of button.</li>
 <li><code>selStrokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for selected representation of button.</li>
+<li><code>lockedStrokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for (optional) locked/disabled representation of button.</li>
+<li><code>toggledStrokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for (optional) toggled representation of button.  This allows you to differentiate selected from toggled in togggle and radio buttons for a 3-state style button.</li>
 <li><code>strokeWidth</code> (<code>0</code>) - Stroke width of button.</li>
 <li><code>strokeColor</code> (<code>{1,1,1,1}</code>) - Stroke color for both representations of button. <ul>
 <li><strong>Tip:</strong> Overrides <code>unselStrokeColor</code> and <code>selStrokeColor</code>.</li>
@@ -526,13 +555,11 @@ easyIFC:presetPush( group, &quot;default&quot;, 100, 100, 50, 40, &quot;Hello&qu
 </ol>
 <p>Any buttons created with that preset name after this change will use the new definition.</p>
 <p><strong>Tip:</strong> This is a handy feature.  You can create your interface using the built-in defaults.  Then, when you are ready, create a custom preset definition file and use the same preset names.  This will replace all the built-in presets with your own.</p>
-<h3 id="more-preset-examples">More Preset Examples</h3>
-<p>You can download examples of button presets <a href="../EFM">here</a>.</p>
 <h3 id="ready-made-presets">Ready-Made Presets</h3>
 <p>Eventually, I expect ready-made presets to be available for free and/or paid paid on:</p>
 <ul>
-<li><a href="../EFM">Corona SDK Marketplace</a></li>
-<li><a href="../EFM">SSK2 Extras Page</a></li>
+<li><a href="https://marketplace.coronalabs.com/">Corona SDK Marketplace</a></li>
+<li><a href="https://github.com/roaminggamer/RG_FreeStuff/tree/master/SSK2">SSK2 Extras Page</a></li>
 </ul>
 <h2 id="button-instances">Button Instances</h2>
 <p>Button objects are regular display objects.  Thus, they have all the same properties and methods listed on the Corona SDK API <a href="https://docs.coronalabs.com/daily/api/library/display/index.html">display.*</a> reference page.</p>

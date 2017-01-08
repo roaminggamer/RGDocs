@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/android/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/easyPositioner/"> 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>Android Helpers - Super Starter Kit 2</title>
+    <title>Easy Positioner - Super Starter Kit 2</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -187,14 +187,14 @@
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">Android Helpers</a>
+<li >
+    <a href="../android/">Android Helpers</a>
 </li>
 
                         
                             
-<li >
-    <a href="../easyPositioner/">Easy Positioner</a>
+<li class="active">
+    <a href="./">Easy Positioner</a>
 </li>
 
                         
@@ -306,12 +306,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../system/">
+                        <a rel="next" href="../android/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../easyPositioner/">
+                        <a rel="prev" href="../display_arcs/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -327,119 +327,141 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#android-helpers-sskandroid">Android Helpers (ssk.android.*)</a></li>
+        <li class="first-level active"><a href="#easy-positioner-sskeasypositioner">Easy Positioner (ssk.easyPositioner.*)</a></li>
         
-            <li class="third-level"><a href="#capturebackbutton">captureBackButton</a></li>
+            <li class="third-level"><a href="#sskeasypositionerstart">ssk.easyPositioner.start()</a></li>
         
-            <li class="third-level"><a href="#capturevolumebuttons">captureVolumeButtons</a></li>
+            <li class="third-level"><a href="#sskeasypositionerstop">ssk.easyPositioner.stop()</a></li>
         
-            <li class="third-level"><a href="#easyandroiduivisibility">easyAndroidUIVisibility</a></li>
+            <li class="third-level"><a href="#sskeasypositionerattach">ssk.easyPositioner.attach()</a></li>
+        
+            <li class="third-level"><a href="#sskeasypositionersetmoveby">ssk.easyPositioner.setMoveBy()</a></li>
+        
+    
+        <li class="first-level "><a href="#snapping">Snapping</a></li>
+        
+    
+        <li class="first-level "><a href="#keyboard-map">Keyboard Map</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="android-helpers-sskandroid">Android Helpers (ssk.android.*)</h1>
-<p>This library contains a few helper functions to handle common Android issues/tasks.</p>
+<h1 id="easy-positioner-sskeasypositioner">Easy Positioner (ssk.easyPositioner.*)</h1>
+<p>This module gives you the ability to add a basic editor to any game or app while you are working on it.</p>
+<p>Once the 'easy positioner' is attached to an object you can:</p>
+<ul>
+<li>Click on that object to select it,</li>
+<li>Drag that object around the screen, </li>
+<li>Move the object using the arrow keys,</li>
+<li>Change the move scale for keys from sub-pixel to up to 10-pixels per key press, and</li>
+<li>Snap objects together.</li>
+</ul>
+<p>The tool also provides a small floating dialog that shows the current position of the selected object.</p>
+<p>At the end of the day, the purpose of this tool is to allow you to, (in- game/app) modify the positions of elements, get the updated value, then quickly type that into your code. i.e. No more do you have to adjust in code, re-run, adjust again, re-run again, ....</p>
+<p><img alt="Easy Positioner" src="../..\images\easypositioner.gif" /></p>
+<h2 id="sskeasypositionerstart">ssk.easyPositioner.start()</h2>
+<p>Before you can use the Easy Positioner tool, you need to initialize/start it.</p>
+<pre><code class="Lua">ssk.easyPositioner.start( )
+</code></pre>
+
+<h2 id="sskeasypositionerstop">ssk.easyPositioner.stop()</h2>
+<p>If you need to, you can stop the tool, but before using it again (say in another scene), you need to call <code>start()</code> again.</p>
+<p><strong>Note:</strong> I don't personally use this feature because I only ever run the tool while editing.  It isn't meant to be embedded and available in a live app.  However, you may want to enable it and use it on a device and this will let you stop it once started.</p>
+<pre><code class="Lua">ssk.easyPositioner.stop( )
+</code></pre>
+
+<h2 id="sskeasypositionerattach">ssk.easyPositioner.attach()</h2>
+<p>Before you can interact with an object it must be 'attached' to the easyPositioner logic. </p>
+<pre><code class="Lua">ssk.easyPositioner.attach( obj )
+</code></pre>
+
+<ul>
+<li><code>obj</code> - Display object to be attached to the easy positioner system.</li>
+</ul>
+<pre><code class="Lua">
+ssk.easyPositioner.start()
+
+local smiley = newImageRect( group, centerX, centerY, &quot;images/smiley.png&quot;, { size = 80 })
+local rg = newImageRect( group, centerX - 100, centerY, &quot;images/rg256.png&quot;, { size = 80 })
+local corona = newImageRect( group, centerX + 100, centerY, &quot;images/corona256.png&quot;, { size = 80 })
+
+ssk.easyPositioner.attach( smiley )
+ssk.easyPositioner.attach( rg )
+ssk.easyPositioner.attach( corona )
+</code></pre>
+
+<h2 id="sskeasypositionersetmoveby">ssk.easyPositioner.setMoveBy()</h2>
+<p>By default, the easy positioner uses this move-by table: <code>{ 0.25, 0.5, 1, 2, 5, 10 }</code>, but you can have any values you want.  This function lets you set the options you need.</p>
+<pre><code class="Lua">ssk.easyPositioner.setMoveBy( newMoveBy )
+</code></pre>
+
+<ul>
+<li><code>newMoveBy</code> - A table of move-by values.  </li>
+</ul>
+<pre><code class="Lua">
+-- Change move-by options to: 1, 2, 5, 10, 20, and 50 pixels.  
+ssk.easyPositioner.setMoveBy( { 1, 2, 5, 10, 20, 50 } )
+
+</code></pre>
+
+<h1 id="snapping">Snapping</h1>
+<p>To snap object A to object B, do the following:</p>
+<ol>
+<li>Click on object A</li>
+<li>Tap <code>s</code> key till you see the snaping style you want in the dialog-bubble.</li>
+<li>Click on object B.</li>
+</ol>
+<h1 id="keyboard-map">Keyboard Map</h1>
+<p>In addition to using the mouse to select and drag objects, you can use the keyboard to move the currently selected object, to snap objects, to change the move-by settings, and to undo the last snap or keyboard movement.</p>
+<p><strong>Note For Windows Users:</strong> Be sure you are simulating an android or custom device.  The simulated iOS devices ignore keystrokes.</p>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
+<th>Function</th>
+<th>Summary</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="../android/#capturebackbutton">captureBackButton</a></td>
-<td align="center"><a href="../android/#capturevolumebuttons">captureVolumeButtons</a></td>
-<td align="center"><a href="../android/#easyandroiduivisibility">easyAndroidUIVisibility</a></td>
+<td><code>left arrow</code></td>
+<td>Move currently selected object left, by current 'move-by' value.</td>
+</tr>
+<tr>
+<td><code>right arrow</code></td>
+<td>Move currently selected object right, by current 'move-by' value.</td>
+</tr>
+<tr>
+<td><code>up arrow</code></td>
+<td>Move currently selected object up, by current 'move-by' value.</td>
+</tr>
+<tr>
+<td><code>down arrow</code></td>
+<td>Move currently selected object down, by current 'move-by' value.</td>
+</tr>
+<tr>
+<td><code>SHIFT</code> +  <code>arrow key</code></td>
+<td>Move in selected direction at 10 times the current 'move-by' value.</td>
+</tr>
+<tr>
+<td><code>TAB</code></td>
+<td>Select next 'move-by value'.  New value shown in dialog bubble.</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Select next 'snap mode': <code>"off", "leftcenter", "rightcenter", "centertop", "centerbottom", "middle"</code>.</td>
+</tr>
+<tr>
+<td><code>SHIFT</code> +  <code>s</code></td>
+<td>Turn off snapping.</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>Undo last non-drag move.  i.e. You can undo the very last snap or keyboard movement.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="capturebackbutton">captureBackButton</h2>
-<p>Capture the back button on Android devices and prompt the user to be sure they really want to leave the app.</p>
-<p>When user presses back button they are prompted with a pop-up dialog:</p>
-<p><img alt="captureBackButton" src="../../images/captureBackButton.png" /></p>
-<pre><code class="Lua">ssk.android.captureBackButton( [ noCB, [ yesCB ] ] )
-</code></pre>
-
-<ul>
-<li><code>noCB</code> - Optional function to execute if the user selects "NO".</li>
-<li><code>yesCB</code> - Optional function to execute if the user selects "YES".</li>
-</ul>
-<pre><code class="Lua">
-local onNo()
-   print(&quot;Pressed No&quot;)   
-end
-
-local onYes()
-   print(&quot;Pressed Yes&quot;)
-end
-
-ssk.android.captureBackButton( onNo, onYes )
-
-</code></pre>
-
-<h2 id="capturevolumebuttons">captureVolumeButtons</h2>
-<p>Capture the volume buttons on Android and do something when they are pressed.</p>
-<pre><code class="Lua">ssk.android.captureVolumeButtons( [ block, [ volUp, [ volDown ] ] ] )
-</code></pre>
-
-<ul>
-<li><code>block</code> ( <code>true</code> ) - If <code>true</code> block the volume change action.</li>
-<li><code>volUp</code> - Optional function to execute if the user selects "volUp".</li>
-<li><code>volDown</code> - Optional function to execute if the user selects "volDown".</li>
-</ul>
-<pre><code class="Lua">
-local upUp()
-   print(&quot;Use tried to increase volume&quot;)   
-end
-
-local onDown()
-   print(&quot;Use tried to decrease volume&quot;)   
-end
-
-ssk.android.captureBackButton( true, onUp, onDown )
-
-</code></pre>
-
-<h2 id="easyandroiduivisibility">easyAndroidUIVisibility</h2>
-<p>Easily hide Android virtual buttons (back, home, ... ).</p>
-<pre><code class="Lua">ssk.android.easyAndroidUIVisibility( [ profile ] ] )
-</code></pre>
-
-<ul>
-<li><code>profile</code> ( <code>"immersiveSticky"</code> ) - Style of visibility selection:<ul>
-<li><code>"immersiveSticky"</code> - Cause the status and navigation bars to disappear. <ul>
-<li>If the user swipes from the top or bottom, they 
-will reappear and then disappear again.</li>
-<li>Only on Android KitKat (Api 19) or above.</li>
-</ul>
-</li>
-<li><code>"immersive"</code> -  Cause the status and navigation bars to disappear. <ul>
-<li>If the user swipes from the top or bottom, they will reappear and stay.<ul>
-<li><strong>WARNING:</strong> A resize event will be triggered and the objects on the screen will need to be manually re-rendered. This is because the content scaling for the device changes and the objects will not have the correct aspect ratio unless they are re-rendered (removed and restored).</li>
-</ul>
-</li>
-<li>Only on Android KitKat (Api 19) or above. </li>
-</ul>
-</li>
-<li><code>"lowProfile"</code> - Dims the navigation bar icons.<ul>
-<li>Only on Android Ice Cream Sandwich (Api 14) or above.</li>
-</ul>
-</li>
-<li><code>"default"</code> - Resets the value.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="Lua">
--- Automatically use 'immersiveSticky' if available.
-ssk.android.easyAndroidUIVisibility( nil )
-
-</code></pre>
-
 <hr />
 <p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         

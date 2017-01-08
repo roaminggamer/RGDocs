@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/android/"> 
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/SSK2/libraries/tiled/"> 
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
-    <title>Android Helpers - Super Starter Kit 2</title>
+    <title>Tiled Loader - Super Starter Kit 2</title>
 
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -187,8 +187,8 @@
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">Android Helpers</a>
+<li >
+    <a href="../android/">Android Helpers</a>
 </li>
 
                         
@@ -259,8 +259,8 @@
 
                         
                             
-<li >
-    <a href="../tiled/">Tiled Loader</a>
+<li class="active">
+    <a href="./">Tiled Loader</a>
 </li>
 
                         
@@ -306,12 +306,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../system/">
+                        <a rel="next" href="../soundMgr/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../easyPositioner/">
+                        <a rel="prev" href="../display_samples/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -327,121 +327,216 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#android-helpers-sskandroid">Android Helpers (ssk.android.*)</a></li>
+        <li class="first-level active"><a href="#tiled-loader-ssktiled">Tiled Loader - ssk.tiled.*</a></li>
         
-            <li class="third-level"><a href="#capturebackbutton">captureBackButton</a></li>
+            <li class="third-level"><a href="#ponywolf-loader-versus-ssk-2-tiled-loader">Ponywolf Loader versus SSK 2 Tiled Loader</a></li>
         
-            <li class="third-level"><a href="#capturevolumebuttons">captureVolumeButtons</a></li>
+            <li class="third-level"><a href="#learning-to-use-tiled">Learning To Use Tiled</a></li>
         
-            <li class="third-level"><a href="#easyandroiduivisibility">easyAndroidUIVisibility</a></li>
+            <li class="third-level"><a href="#loading-level-data">Loading Level Data</a></li>
+        
+            <li class="third-level"><a href="#drawing-level-using-default-factories">Drawing Level Using Default Factories</a></li>
+        
+            <li class="third-level"><a href="#drawing-level-using-custom-factories">Drawing Level Using Custom Factories</a></li>
+        
+    
+        <li class="first-level "><a href="#tiled-loader-helper-quick-reference">Tiled Loader Helper Quick Reference</a></li>
+        
+    
+        <li class="first-level "><a href="#custom-factory-example">Custom Factory Example</a></li>
         
     
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="android-helpers-sskandroid">Android Helpers (ssk.android.*)</h1>
-<p>This library contains a few helper functions to handle common Android issues/tasks.</p>
+<h1 id="tiled-loader-ssktiled">Tiled Loader - ssk.tiled.*</h1>
+<p>This module allows yout to create game scenes using the <a href="http://www.mapeditor.org/">Tiled</a> editor and then load that scene into Corona using default builder factories and/or <a href="../factorymgr/">custom factories</a> of your own design.</p>
+<blockquote>
+<p>This feature should be considered (somewhat) a Work In Progress at this time.</p>
+<p>While I have tested it and it is very functional, I am still improving it as I use the module in my own games.  I believe there will be additional refinements and feature additions later.</p>
+<p><strong>~ The Roaming Gamer</strong></p>
+</blockquote>
+<h2 id="ponywolf-loader-versus-ssk-2-tiled-loader">Ponywolf Loader versus SSK 2 Tiled Loader</h2>
+<p>This tiled loader/tool is different from the one made by Michael Wilson (AKA <a href="http://ponywolf.com/">Ponywolf</a>) in the recent blog series: <a href="https://coronalabs.com/blog/2016/12/08/using-tiled-for-layout-and-level-design/">"Using Tiled for layout and level design."</a>  However, you can still load those same levels and operate on them with the SSK 2 Tiled Loader.</p>
+<h2 id="learning-to-use-tiled">Learning To Use Tiled</h2>
+<p>If you want to learn about editing levels with Tiled first, go take a look at these YouTube videos:</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=LPKrDwosYHM">Using Tiled – Part 1: Installation and Tiled Basics</a></li>
+<li><a href="https://www.youtube.com/watch?v=wYw02u0ZlaA">Using Tiled – Part 2: Object Layers versus Tile Layers</a></li>
+<li><a href="https://www.youtube.com/watch?v=cITLF45hink">Using Tiled – Part 3: Composing Scenes</a></li>
+<li><a href="https://www.youtube.com/watch?v=0ORwbEe1SCc">Using Tiled – Part 4: Custom Object Properties</a></li>
+</ol>
+<h2 id="loading-level-data">Loading Level Data</h2>
+<p>To load a tiled 'level', you need to follow these steps:</p>
+<ol>
+<li>Create a level in the tiled editor.  If you don't know how to do this see <a href="#learning-to-use-tiled">Learning To Use Tiled</a> above.</li>
+<li>Export that level as a LUA file.</li>
+<li>Create a new 'Tiled Loader' helper object.<ul>
+<li><strong>Tip:</strong> See <a href="#tiled-loader-helper-quick-reference">Tiled Loader Helper Quick Reference</a> below for a listing of the functions available on all helper objects.</li>
+</ul>
+</li>
+<li>Set the data path for the level data.</li>
+<li>Load the level data.</li>
+</ol>
+<pre><code class="Lua">
+-- Create Tiled Loader helper object
+local level = ssk.tiled.new()
+
+-- Data file is in folder 'tests/tiled/'
+level.setLevelsPath( &quot;tests/tiled&quot; )
+
+-- Load the level file 'dummy.lua' and pass no specific extra settings.
+level.load( &quot;dummy&quot; )
+
+</code></pre>
+
+<h2 id="drawing-level-using-default-factories">Drawing Level Using Default Factories</h2>
+<p>If you simply want to draw the level on your screen, you can do so quickly with the default factories like this:</p>
+<ol>
+<li>Load Level Data as discussed <a href="#loading-level-data">above</a></li>
+<li>Call <code>draw()</code></li>
+</ol>
+<pre><code class="Lua">
+level.draw( scengGroup )
+
+</code></pre>
+
+<p>This single line of code will draw all objects in the scene with a few exceptions:</p>
+<ul>
+<li>Objects in a tiled 'tilelayer' are ignored.  Only 'objecgtroup' layer objects are drawn. </li>
+<li>If the name of the layer (in tiled) is called 'ignore' these objects too are not-drawn.</li>
+</ul>
+<h2 id="drawing-level-using-custom-factories">Drawing Level Using Custom Factories</h2>
+<p>While it is cool to draw the scene very fast using the built in <code>draw()</code> function, it isn't useful except for prototyping and verifying layout.</p>
+<p>The better way is to use <a href="../factorymgr/">Custom Factories</a>.</p>
+<blockquote>
+<p>This part of the documentation needs improvement.  For now, please see the full example at the bottom of the page and also see it running in the validation test that comes with SSK2:</p>
+<p>'Tiled Loader Test #1' </p>
+<p><strong>~ The Roaming Gamer</strong></p>
+</blockquote>
+<h1 id="tiled-loader-helper-quick-reference">Tiled Loader Helper Quick Reference</h1>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
+<th>Syntax</th>
+<th>Summary</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="../android/#capturebackbutton">captureBackButton</a></td>
-<td align="center"><a href="../android/#capturevolumebuttons">captureVolumeButtons</a></td>
-<td align="center"><a href="../android/#easyandroiduivisibility">easyAndroidUIVisibility</a></td>
+<td><a href="#loading-level-data">loader.setLevelsPath(levelpath)</a></td>
+<td>Set the path to all level files.</td>
+</tr>
+<tr>
+<td><a href="#loading-level-data">loader.load(path)</a></td>
+<td>Load a named level file from the <code>levelpath/path</code>.  Be sure to exclude the <code>.lua</code> extension.</td>
+</tr>
+<tr>
+<td>loader.drawObj(group,rec)</td>
+<td>Draw the object represented by <code>rec</code> using the default factory object builder and place it in <code>group</code>.</td>
+</tr>
+<tr>
+<td><a href="#drawing-level-using-default-factories">loader.draw(group)</a></td>
+<td>Draw all objects in the level using the default factory object builder and place them in <code>group</code>.</td>
+</tr>
+<tr>
+<td>loader.forEach(func)</td>
+<td>Call <code>func( rec, index )</code> for each object in the level.  <code>rec</code> is the record for the current object and <code>index</code> is the numeric index (1, 2, 3, ...) of that object in the level table.</td>
+</tr>
+<tr>
+<td>loader.getWidth()</td>
+<td>Get the calculated width of the tiled level.</td>
+</tr>
+<tr>
+<td>loader.getHeight()</td>
+<td>Get the calculated height of the tiled level.</td>
+</tr>
+<tr>
+<td>loader.getImages()</td>
+<td>Get a table of records containing information about each textured used in the level, its path, width, and height.</td>
+</tr>
+<tr>
+<td>loader.getImage(gid)</td>
+<td>Using the GID value from a object record, request the texture record used by that object which includes the path to the <code>image</code>, and the <code>width</code> and <code>height</code> of that texture.</td>
+</tr>
+<tr>
+<td>loader.getImagePath(gid)</td>
+<td>Using the GID value from a object record, request the path for the textured used by that object.</td>
+</tr>
+<tr>
+<td>loader.getRecords()</td>
+<td>Returns a list of all object records in the tiled level.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="capturebackbutton">captureBackButton</h2>
-<p>Capture the back button on Android devices and prompt the user to be sure they really want to leave the app.</p>
-<p>When user presses back button they are prompted with a pop-up dialog:</p>
-<p><img alt="captureBackButton" src="../../images/captureBackButton.png" /></p>
-<pre><code class="Lua">ssk.android.captureBackButton( [ noCB, [ yesCB ] ] )
-</code></pre>
-
-<ul>
-<li><code>noCB</code> - Optional function to execute if the user selects "NO".</li>
-<li><code>yesCB</code> - Optional function to execute if the user selects "YES".</li>
-</ul>
+<h1 id="custom-factory-example">Custom Factory Example</h1>
 <pre><code class="Lua">
-local onNo()
-   print(&quot;Pressed No&quot;)   
+local RGTiled = ssk.tiled
+
+-- =============================================================
+local test = {}
+
+function test.run( group, params )
+   group = group or display.currentStage
+   params = params or {}
+
+   -- Create some basic layers.
+   --
+   local layers = quickLayers( group, 
+         &quot;underlay&quot;,
+         &quot;world&quot;,
+            { &quot;background&quot;, &quot;content&quot;, &quot;foreground&quot; },
+         &quot;overlay&quot; )   
+
+   --table.dump(RGTiled, nil, &quot;RGTiled&quot;)   
+   local level = RGTiled.new()
+
+   --table.dump(level, nil, &quot;level&quot;)   
+   level.setLevelsPath( &quot;tests/tiled&quot; )
+
+   level.load( &quot;dummy&quot;, {} )
+
+   --table.dump(level, nil, &quot;level loaded&quot;)   
+
+   local objects = level.getRecords()
+   --table.dump(objects,nil,&quot;objects&quot;)
+
+   local images = level.getImages()
+   --table.dump(images,nil,&quot;images&quot;)
+
+   local function simpleSpinner( obj )
+      obj.rotation = 0
+      obj.onComplete = simpleSpinner
+      local rec = obj.rec
+      local properties = obj.rec.properties
+      transition.to( obj, { rotation = 360, time = properties.rotTime or 1000, onComplete = obj } )
+   end
+
+   local function func( rec, num )
+      local img = level.getImage( rec.gid )
+      local obj = newImageRect( layers[rec.layer], rec.x, rec.y, img.image, 
+         { w = rec.width, h = rec.height, rec = rec }  )
+      if( rec.flip.x ) then obj.xScale = -obj.xScale end
+      if( rec.flip.y ) then obj.yScale = -obj.yScale end
+      --table.dump(rec)
+
+      if(rec.name == &quot;spinner&quot;) then
+         simpleSpinner( obj )
+      end
+
+   end
+
+   level.forEach( func )
 end
 
-local onYes()
-   print(&quot;Pressed Yes&quot;)
-end
+return test
 
-ssk.android.captureBackButton( onNo, onYes )
-
-</code></pre>
-
-<h2 id="capturevolumebuttons">captureVolumeButtons</h2>
-<p>Capture the volume buttons on Android and do something when they are pressed.</p>
-<pre><code class="Lua">ssk.android.captureVolumeButtons( [ block, [ volUp, [ volDown ] ] ] )
-</code></pre>
-
-<ul>
-<li><code>block</code> ( <code>true</code> ) - If <code>true</code> block the volume change action.</li>
-<li><code>volUp</code> - Optional function to execute if the user selects "volUp".</li>
-<li><code>volDown</code> - Optional function to execute if the user selects "volDown".</li>
-</ul>
-<pre><code class="Lua">
-local upUp()
-   print(&quot;Use tried to increase volume&quot;)   
-end
-
-local onDown()
-   print(&quot;Use tried to decrease volume&quot;)   
-end
-
-ssk.android.captureBackButton( true, onUp, onDown )
-
-</code></pre>
-
-<h2 id="easyandroiduivisibility">easyAndroidUIVisibility</h2>
-<p>Easily hide Android virtual buttons (back, home, ... ).</p>
-<pre><code class="Lua">ssk.android.easyAndroidUIVisibility( [ profile ] ] )
-</code></pre>
-
-<ul>
-<li><code>profile</code> ( <code>"immersiveSticky"</code> ) - Style of visibility selection:<ul>
-<li><code>"immersiveSticky"</code> - Cause the status and navigation bars to disappear. <ul>
-<li>If the user swipes from the top or bottom, they 
-will reappear and then disappear again.</li>
-<li>Only on Android KitKat (Api 19) or above.</li>
-</ul>
-</li>
-<li><code>"immersive"</code> -  Cause the status and navigation bars to disappear. <ul>
-<li>If the user swipes from the top or bottom, they will reappear and stay.<ul>
-<li><strong>WARNING:</strong> A resize event will be triggered and the objects on the screen will need to be manually re-rendered. This is because the content scaling for the device changes and the objects will not have the correct aspect ratio unless they are re-rendered (removed and restored).</li>
-</ul>
-</li>
-<li>Only on Android KitKat (Api 19) or above. </li>
-</ul>
-</li>
-<li><code>"lowProfile"</code> - Dims the navigation bar icons.<ul>
-<li>Only on Android Ice Cream Sandwich (Api 14) or above.</li>
-</ul>
-</li>
-<li><code>"default"</code> - Resets the value.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="Lua">
--- Automatically use 'immersiveSticky' if available.
-ssk.android.easyAndroidUIVisibility( nil )
 
 </code></pre>
 
 <hr />
-<p><img alt="RoamingGamer" src="../..\roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
+<p><img alt="RoamingGamer" src="../../roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         
     </div>
 
