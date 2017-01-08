@@ -329,6 +329,10 @@
     
         <li class="first-level active"><a href="#factory-manager-sskfactorymgr">Factory Manager - ssk.factoryMgr.*</a></li>
         
+            <li class="third-level"><a href="#manager-functions">Manager Functions</a></li>
+        
+            <li class="third-level"><a href="#factory-instance-functions">Factory Instance Functions</a></li>
+        
             <li class="third-level"><a href="#typical-factory-structure">Typical Factory Structure</a></li>
         
             <li class="third-level"><a href="#example-factory-coinlua">Example Factory - coin.lua</a></li>
@@ -344,13 +348,19 @@
         <div class="col-md-9" role="main">
 
 <h1 id="factory-manager-sskfactorymgr">Factory Manager - ssk.factoryMgr.*</h1>
-<p>This template and all of the starter games use <em>factories</em> to create game objects.  In this sense, a factory is a module whose main job is to create a single game object or set of co-related objects.  Ex:</p>
+<p>The factory manager is a module designed to help you manage and access object builders: <strong>Factories</strong></p>
+<p>The manager uses a uniform interface and the expectation that every factory will return a single object reference.  </p>
+<h2 id="manager-functions">Manager Functions</h2>
+<p>The manager has thes functions:</p>
 <ul>
-<li>A (pickup) coin.</li>
-<li>A score counter interface.</li>
-<li>A player.</li>
+<li><code>ssk.factoryMgr.register( name, path )</code> - Adds a new 'factory' definitition at <code>path</code> to the factory manager under <code>name</code>.  </li>
+<li><code>ssk.factoryMgr.init( [ name [, params ] ] )</code> - Initializes a named (<code>name</code>) factory or all not previously initialized factories if called with no <code>name</code> value. The optional <code>params</code> table can contain any values you want passed to the factor -y /-ies</li>
+<li><code>ssk.factoryMgr.reset( name [, params ] )</code> - Resets a named (<code>name</code>) factory or all factories if called with no <code>name</code> value. The optional <code>params</code> table can contain any values you want passed to the factor -y /-ies</li>
+<li><code>ssk.factoryMgr.new( [name [, group [, x [, y [, params ]]]]] )</code> - Calls the named (<code>name</code>) factory to build an object, passing it the optional parameters if you specify them.</li>
 </ul>
-<p><strong>Note:</strong> These factories do not strictly conform to the factory design pattern you may be familiar with in <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">OOP</a> languages and <a href="https://github.com/FloydaGithub/lua-patterns/blob/master/factory_method.lua">other</a> sources.  I am using this terms because the <em>factory</em> modules adhere to the broad principle of the pattern: <strong>Creating Objects</strong>.</p>
+<h2 id="factory-instance-functions">Factory Instance Functions</h2>
+<p>All factories should support the <code>new()</code> function:
++ <code>new( [ group [, x [, y [, params ]]]] )</code></p>
 <h2 id="typical-factory-structure">Typical Factory Structure</h2>
 <p>The file containing a <em>factory</em> definition usually has the following structure:</p>
 <ul>
