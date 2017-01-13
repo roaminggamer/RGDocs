@@ -329,6 +329,12 @@
     
         <li class="first-level active"><a href="#miscellaneous-sskmisc">Miscellaneous (ssk.misc.*)</a></li>
         
+            <li class="third-level"><a href="#addphysicsdrag">addPhysicsDrag</a></li>
+        
+            <li class="third-level"><a href="#addsmartdrag">addSmartDrag</a></li>
+        
+            <li class="third-level"><a href="#addsmarttouch">addSmartTouch</a></li>
+        
             <li class="third-level"><a href="#blocktouchesforduration">blockTouchesForDuration</a></li>
         
             <li class="third-level"><a href="#countlocals">countLocals</a></li>
@@ -375,6 +381,11 @@
 </thead>
 <tbody>
 <tr>
+<td align="center"><a href="#addPhysicsDrag">addPhysicsDrag</a></td>
+<td align="center"><a href="#addSmartDrag">addSmartDrag</a></td>
+<td align="center"><a href="#addSmartTouch">addSmartTouch</a></td>
+</tr>
+<tr>
 <td align="center"><a href="#blocktouchesforduration">blockTouchesForDuration</a></td>
 <td align="center"><a href="#countlocals">countLocals</a></td>
 <td align="center"><a href="#easyalert">easyAlert</a></td>
@@ -411,6 +422,100 @@
 </tr>
 </tbody>
 </table>
+<h2 id="addphysicsdrag">addPhysicsDrag</h2>
+<ul>
+<li><code>ssk.misc.addPhysicsDrag( obj [ , params ] ] )</code> - Add smart physics drag listener to <code>obj</code> with optional parameters.  Dragging is accomplished with a touch joint.<ul>
+<li><code>obj</code> - The display object to attach 'smart' drag handler to. </li>
+<li><code>params</code> (<code>{}</code>) - Optional named-parameters table.<ul>
+<li><code>force</code> (<code>10</code>) - <code>maxForce</code> value to use for touch joint.</li>
+<li><code>fromCenter</code> (<code>true</code>) - If this optional parameter is set to <code>true</code>, the touch joint is attached to the center of the object, otherwise it is attached where the touch begins.</li>
+<li><code>toFront</code> (<code>false</code>) - If this optional parameter is set to <code>true</code> raise object to top of its group when the touch begins.</li>
+<li><code>listener</code> - Optional parameter to specify a simplified touch listener.  Simplified means: SSK2 takes care of multi-touch and focus handling for you.         </li>
+<li><code>retval</code> (<code>false</code>) - By default, the touch listener will return <code>false</code>.  You can change that with this parameter.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> This requires that the object have a physics body!</p>
+</blockquote>
+<pre><code class="Lua">
+local physics = require &quot;physics&quot;
+
+physics.start()
+
+physics.setGravity(0,0)
+
+local tmp = ssk.display.newCircle( nil, centerX, centerY, { fill = _Y_ }, {}  )
+
+ssk.misc.addPhysicsDrag( obj, { toFront = true, retval = true, fromCenter = false } }
+
+</code></pre>
+
+<h2 id="addsmartdrag">addSmartDrag</h2>
+<ul>
+<li><code>ssk.misc.addSmartDrag( obj [ , params ] ] )</code> - Add smart drag listener to <code>obj</code> with optional parameters.<ul>
+<li><code>obj</code> - The display object to attach 'smart' drag handler to.</li>
+<li><code>params</code> (<code>{}</code>) - Optional named-parameters table.<ul>
+<li><code>toFront</code> (<code>false</code>) - If this optional parameter is set to <code>true</code> raise object to top of its group when the touch begins.</li>
+<li><code>listener</code> - Optional parameter to specify a simplified touch listener.  Simplified means: SSK2 takes care of multi-touch and focus handling for you.         </li>
+<li><code>retval</code> (<code>false</code>) - By default, the touch listener will return <code>false</code>.  You can change that with this parameter.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">
+local function onDragged( event )
+   print(&quot; Dragging &quot;, event.obj.name, event.dx, event.dy )
+end; listen( &quot;onDragged&quot;, onDragged )
+
+local function onDropped( event )
+   print(&quot; Dropped &quot;, event.obj.name, &quot; @ &quot; event.x, event.y )
+   display.remove(event.obj)
+end; listen( &quot;onDropped&quot;, onDropped )
+
+
+local obj1 = display.newCircle( 100, 100, 40 )
+obj1.name = &quot;bob&quot;
+
+local obj2 = display.newCircle( 200, 100, 40 )
+obj2.name = &quot;sue&quot;
+
+ssk.misc.addSmartDrag( obj1, { toFront = true, retval = true } }
+
+ssk.misc.addSmartDrag( obj2, { toFront = true, retval = true } }
+
+</code></pre>
+
+<h2 id="addsmarttouch">addSmartTouch</h2>
+<ul>
+<li><code>ssk.misc.addSmartTouch( obj [ , params ] ] )</code> - Add smart touch listener to <code>obj</code> with optional parameters. <ul>
+<li><code>obj</code> - The display object to attach 'smart' touch to.</li>
+<li><code>params</code> (<code>{}</code>) - Optional named-parameters table.<ul>
+<li><code>toFront</code> (<code>false</code>) - If this optional parameter is set to <code>true</code> raise object to top of its group when the touch begins.</li>
+<li><code>listener</code> - Optional parameter to specify a simplified touch listener.  Simplified means: SSK2 takes care of multi-touch and focus handling for you.         </li>
+<li><code>retval</code> (<code>false</code>) - By default, the touch listener will return <code>false</code>.  You can change that with this parameter.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">
+local function onTouch( self, event )
+   if( event.phase == &quot;ended&quot; ) then
+      print(&quot;Done&quot;)
+      display.remove(self)
+   end
+end
+
+local obj = display.newCircle( 100, 100, 40 )
+
+ssk.misc.addSmartTouch( obj, { toFront = true, listener = onTouch, retval = true } }
+
+</code></pre>
+
 <h2 id="blocktouchesforduration">blockTouchesForDuration</h2>
 <ul>
 <li><code>ssk.misc.blockTouchesForDuration( [ duration [ , subtle ] ] )</code> - Creates a temporary display object that will block all touches for <code>duration</code> (<code>1000</code>).     <ul>
@@ -431,7 +536,7 @@
 <li><code>ssk.misc.easyAlert( title, msg, buttons )</code> - A simplified 'dialog' builder that uses <a href="https://docs.coronalabs.com/daily/api/library/native/showAlert.html">native.showAlert()</a> to create a pop-up dialog.  <ul>
 <li><code>title</code> - Text at top of dialog box.  </li>
 <li><code>msg</code> - Body of message.  Multiple lines and line-breaks (<code>\n</code>) allowed.</li>
-<li>buttons - Table of buttons and optional functions they call when pressed.</li>
+<li><code>buttons</code> - Table of buttons and optional functions they call when pressed.</li>
 </ul>
 </li>
 </ul>

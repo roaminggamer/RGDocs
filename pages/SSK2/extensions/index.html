@@ -363,7 +363,7 @@
         <div class="col-md-9" role="main">
 
 <h1 id="extensions">Extensions</h1>
-<p>SSK extends a number of Lua and Corona libraries/functions.  </p>
+<p>SSK2 extends a number of Lua and Corona libraries/functions.  </p>
 <h1 id="display">display.*</h1>
 <table>
 <thead>
@@ -373,6 +373,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>isValid( obj )</code></td>
+<td>Returns <code>true</code> if <code>obj</code> is a valid display object.</td>
+</tr>
 <tr>
 <td><code>newContainer( ... )</code></td>
 <td>Adds flags <code>__isContainer = true</code> and <code>__isGroup = true</code> to returned container.</td>
@@ -399,7 +403,7 @@
 </tr>
 <tr>
 <td><code>cleanFileName( filename )</code></td>
-<td>Cleans the string <code>filename</code> to ensure it is safe for use as a file name in all OSes targted by Corona SDK.</td>
+<td>Cleans the string <code>filename</code> to ensure it is safe for use as a file name in all OSes targeted by Corona SDK.</td>
 </tr>
 <tr>
 <td><code>exists( fileName [, base ] )</code></td>

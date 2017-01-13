@@ -329,60 +329,11 @@
     
         <li class="first-level active"><a href="#2d-math-sskmath2d">2D Math (ssk.math2d.*)</a></li>
         
-    
-        <li class="first-level "><a href="#vector-representations">Vector Representations</a></li>
+            <li class="third-level"><a href="#vector-representations">Vector Representations</a></li>
         
-    
-        <li class="first-level "><a href="#standard-operations">Standard Operations</a></li>
+            <li class="third-level"><a href="#standard-operations">Standard Operations</a></li>
         
-            <li class="third-level"><a href="#addition">Addition</a></li>
-        
-            <li class="third-level"><a href="#subtraction">Subtraction</a></li>
-        
-            <li class="third-level"><a href="#difference">Difference</a></li>
-        
-            <li class="third-level"><a href="#length">Length</a></li>
-        
-            <li class="third-level"><a href="#squared-length">Squared Length</a></li>
-        
-            <li class="third-level"><a href="#scaling">Scaling</a></li>
-        
-            <li class="third-level"><a href="#normalizing">Normalizing</a></li>
-        
-            <li class="third-level"><a href="#dot-product">Dot Product</a></li>
-        
-            <li class="third-level"><a href="#cross-product">Cross Product</a></li>
-        
-            <li class="third-level"><a href="#normals">Normals</a></li>
-        
-            <li class="third-level"><a href="#angle-to-vector">Angle To Vector</a></li>
-        
-            <li class="third-level"><a href="#vector-to-angle">Vector To Angle</a></li>
-        
-            <li class="third-level"><a href="#angle-between">Angle Between</a></li>
-        
-            <li class="third-level"><a href="#distance-between">Distance Between</a></li>
-        
-            <li class="third-level"><a href="#is-within-distance">Is Within Distance</a></li>
-        
-    
-        <li class="first-level "><a href="#advanced-operations">Advanced Operations</a></li>
-        
-            <li class="third-level"><a href="#in-field-of-view">In Field-Of-View</a></li>
-        
-            <li class="third-level"><a href="#is-in-front">Is In Front</a></li>
-        
-            <li class="third-level"><a href="#is-behind">Is Behind</a></li>
-        
-            <li class="third-level"><a href="#is-to-left">Is To Left</a></li>
-        
-            <li class="third-level"><a href="#is-to-right">Is To Right</a></li>
-        
-            <li class="third-level"><a href="#line-line-intersect">Line-Line Intersect</a></li>
-        
-            <li class="third-level"><a href="#segment-segment-intersect">Segment-Segment Intersect</a></li>
-        
-            <li class="third-level"><a href="#segment-circle-intersect">Segment-Circle Intersect</a></li>
+            <li class="third-level"><a href="#advanced-operations">Advanced Operations</a></li>
         
     
     </ul>
@@ -399,7 +350,7 @@ _G.ssk.init( { math2DPlugin = true } )
 </code></pre>
 
 <p><strong>Tip:</strong> The paid version of the <a href="https://marketplace.coronalabs.com/plugin/math2d">Math2D Plugin</a> is both faster than the SSK2 (Pure Lua) version and incorporates a number of additional features, so you should definitely check it out!</p>
-<h1 id="vector-representations">Vector Representations</h1>
+<h2 id="vector-representations">Vector Representations</h2>
 <p>In the context of these docs, a vector is any table or object with both an x- and a y-field.  Additionally, we often deal with vectors as discrete collections of <em>x</em> and <em>y</em> values. </p>
 <pre><code>-- A table as a 2d-vector: &lt; 10, 15 &gt;
 local v1 = { x = 10, y = 15 } 
@@ -414,7 +365,7 @@ local x2 = -1
 local y2 = 0
 </code></pre>
 
-<h1 id="standard-operations">Standard Operations</h1>
+<h2 id="standard-operations">Standard Operations</h2>
 <table>
 <thead>
 <tr>
@@ -451,8 +402,8 @@ local y2 = 0
 </tr>
 </tbody>
 </table>
-<h2 id="addition">Addition</h2>
-<h3 id="tableobject-vectors">Table/Object Vectors</h3>
+<h3 id="addition">Addition</h3>
+<h4 id="tableobject-vectors">Table/Object Vectors</h4>
 <pre><code>math2d.add( v1, v2 [, altRet ] )
 </code></pre>
 
@@ -471,7 +422,7 @@ local vx,vy = math2d.add( circ, rect, true ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 </code></pre>
 
-<h3 id="discrete-value-vectors">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors">Discrete Value Vectors</h4>
 <pre><code>math2d.add( x1, y1, x2, y2 [, altRet ] )
 </code></pre>
 
@@ -490,8 +441,8 @@ local vec = math2d.add( math2d.add( circ.x, circ.y, rect.x, rect.y, true ) -- Re
 print(&quot;Results: &quot;, vec.x, vec.y )
 </code></pre>
 
-<h2 id="subtraction">Subtraction</h2>
-<h3 id="tableobject-vectors_1">Table/Object Vectors</h3>
+<h3 id="subtraction">Subtraction</h3>
+<h4 id="tableobject-vectors_1">Table/Object Vectors</h4>
 <pre><code>math2d.sub( v1, v2 [, altRet ] )
 </code></pre>
 
@@ -511,7 +462,7 @@ local vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 </code></pre>
 
-<h3 id="discrete-value-vectors_1">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_1">Discrete Value Vectors</h4>
 <pre><code>math2d.sub( x1, y1, x2, y2 [, altRet ] )
 </code></pre>
 
@@ -531,8 +482,8 @@ local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y ) 
 </code></pre>
 
-<h2 id="difference">Difference</h2>
-<h3 id="tableobject-vectors_2">Table/Object Vectors</h3>
+<h3 id="difference">Difference</h3>
+<h4 id="tableobject-vectors_2">Table/Object Vectors</h4>
 <pre><code>math2d.diff( v1, v2 [, altRet ] )
 </code></pre>
 
@@ -553,7 +504,7 @@ print(&quot;Results: &quot;, vx, vy )
 
 </code></pre>
 
-<h3 id="discrete-value-vectors_2">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_2">Discrete Value Vectors</h4>
 <pre><code>math2d.diff( x1, y1, x2, y2 [, altRet ] )
 </code></pre>
 
@@ -573,8 +524,8 @@ local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y ) 
 </code></pre>
 
-<h2 id="length">Length</h2>
-<h3 id="tableobject-vectors_3">Table/Object Vectors</h3>
+<h3 id="length">Length</h3>
+<h4 id="tableobject-vectors_3">Table/Object Vectors</h4>
 <pre><code>math2d.length( v1 )
 </code></pre>
 
@@ -590,7 +541,7 @@ local vec = math2d.sub( circ, rect ) -- Return a table
 print(&quot;Result: &quot;, math2d.length(vec) )
 </code></pre>
 
-<h3 id="discrete-value-vectors_3">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_3">Discrete Value Vectors</h4>
 <pre><code>math2d.length( x1, y1 )
 </code></pre>
 
@@ -606,8 +557,8 @@ local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 print(&quot;Result: &quot;, math2d.length(vx, vy) )
 </code></pre>
 
-<h2 id="squared-length">Squared Length</h2>
-<h3 id="tableobject-vectors_4">Table/Object Vectors</h3>
+<h3 id="squared-length">Squared Length</h3>
+<h4 id="tableobject-vectors_4">Table/Object Vectors</h4>
 <pre><code>math2d.length2( v1,  )
 </code></pre>
 
@@ -623,7 +574,7 @@ local vec = math2d.sub( circ, rect ) -- Return a table
 print(&quot;Result: &quot;, math2d.length2(vec) )
 </code></pre>
 
-<h3 id="discrete-value-vectors_4">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_4">Discrete Value Vectors</h4>
 <pre><code>math2d.length2( x1, y1 )
 </code></pre>
 
@@ -639,8 +590,8 @@ local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 print(&quot;Result: &quot;, math2d.length2(vx, vy) )
 </code></pre>
 
-<h2 id="scaling">Scaling</h2>
-<h3 id="tableobject-vectors_5">Table/Object Vectors</h3>
+<h3 id="scaling">Scaling</h3>
+<h4 id="tableobject-vectors_5">Table/Object Vectors</h4>
 <pre><code>math2d.scale( obj, scaleBy [, altRet]  )
 </code></pre>
 
@@ -654,7 +605,7 @@ print(&quot;Result: &quot;, math2d.length2(vx, vy) )
 vec = math2d.scale( vec, 30 ) -- Vector is now &lt; 30, 0 &gt;
 </code></pre>
 
-<h3 id="discrete-value-vectors_5">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_5">Discrete Value Vectors</h4>
 <pre><code>math2d.scale( vx, vy, scaleBy [, altRet ] )
 </code></pre>
 
@@ -668,8 +619,8 @@ vec = math2d.scale( vec, 30 ) -- Vector is now &lt; 30, 0 &gt;
 vx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now &lt; 30, 0 &gt;
 </code></pre>
 
-<h2 id="normalizing">Normalizing</h2>
-<h3 id="tableobject-vectors_6">Table/Object Vectors</h3>
+<h3 id="normalizing">Normalizing</h3>
+<h4 id="tableobject-vectors_6">Table/Object Vectors</h4>
 <pre><code>math2d.normalize( v1 [, altRet ] )
 </code></pre>
 
@@ -683,7 +634,7 @@ vx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now &lt; 30, 0 &gt;
 vec = math2d.normalize( vec ) -- Vector is now &lt; 0.707..., 0.707... &gt;
 </code></pre>
 
-<h3 id="discrete-value-vectors_6">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_6">Discrete Value Vectors</h4>
 <pre><code>math2d.normalize( x1, y1 [, altRet ] )
 </code></pre>
 
@@ -697,8 +648,8 @@ vec = math2d.normalize( vec ) -- Vector is now &lt; 0.707..., 0.707... &gt;
 vx, vy = math2d.normalize( vx, vy ) -- Vector is now &lt; 0.707..., 0.707... &gt;
 </code></pre>
 
-<h2 id="dot-product">Dot Product</h2>
-<h3 id="tableobject-vectors_7">Table/Object Vectors</h3>
+<h3 id="dot-product">Dot Product</h3>
+<h4 id="tableobject-vectors_7">Table/Object Vectors</h4>
 <pre><code>math2d.dot( v1, v2 )
 </code></pre>
 
@@ -712,7 +663,7 @@ local rect = display.newRect( 150, 250, 60, 60 )
 print(&quot;Result: &quot;, math2d.dot( circ, rect ) )
 </code></pre>
 
-<h3 id="discrete-value-vectors_7">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_7">Discrete Value Vectors</h4>
 <pre><code>math2d.dot( x1, y1, x2, y2 )
 </code></pre>
 
@@ -726,8 +677,8 @@ local x2,y2 = 15,-10
 print(&quot;Result: &quot;, math2d.dot( x1, y1, x2, y2 ) )
 </code></pre>
 
-<h2 id="cross-product">Cross Product</h2>
-<h3 id="tableobject-vectors_8">Table/Object Vectors</h3>
+<h3 id="cross-product">Cross Product</h3>
+<h4 id="tableobject-vectors_8">Table/Object Vectors</h4>
 <pre><code>math2d.cross( v1, v2 )
 </code></pre>
 
@@ -741,7 +692,7 @@ local rect = display.newRect( 150, 250, 60, 60 )
 print(&quot;Result: &quot;, math2d.cross( circ, rect ) )
 </code></pre>
 
-<h3 id="discrete-value-vectors_8">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_8">Discrete Value Vectors</h4>
 <pre><code>math2d.cross( x1, y1, x2, y2 )
 </code></pre>
 
@@ -755,8 +706,8 @@ local x2,y2 = 15,-10
 print(&quot;Result: &quot;, math2d.cross( x1, y1, x2, y2 ) )
 </code></pre>
 
-<h2 id="normals">Normals</h2>
-<h3 id="tableobject-vectors_9">Table/Object Vectors</h3>
+<h3 id="normals">Normals</h3>
+<h4 id="tableobject-vectors_9">Table/Object Vectors</h4>
 <pre><code>math2d.normals( v1 [, altRet ] )
 </code></pre>
 
@@ -774,7 +725,7 @@ local n1, n2 = math2d.normals( vec )
 --   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
 </code></pre>
 
-<h3 id="discrete-value-vectors_9">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_9">Discrete Value Vectors</h4>
 <pre><code>math2d.normals( x1, y1 [, altRet ] )
 </code></pre>
 
@@ -792,7 +743,7 @@ local nx1, ny1, nx2, ny2 = math2d.normals( x1, y1 )
 --   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
 </code></pre>
 
-<h2 id="angle-to-vector">Angle To Vector</h2>
+<h3 id="angle-to-vector">Angle To Vector</h3>
 <pre><code>math2d.angle2Vector( angle [, altRet ] )
 </code></pre>
 
@@ -811,8 +762,8 @@ local vx,vy = math2d.angle2Vector( angle ) -- Return two numbers
 print(&quot;The vector: &quot; .. vx .. &quot;, &quot; .. vy  )
 </code></pre>
 
-<h2 id="vector-to-angle">Vector To Angle</h2>
-<h3 id="tableobject-vectors_10">Table/Object Vectors</h3>
+<h3 id="vector-to-angle">Vector To Angle</h3>
+<h4 id="tableobject-vectors_10">Table/Object Vectors</h4>
 <pre><code>math2d.vector2Angle( v1 )
 </code></pre>
 
@@ -829,7 +780,7 @@ local vec = math2d.sub( circ, rect ) -- Return a table
 print(&quot;Result: &quot;, math2d.vector2Angle(vec) )
 </code></pre>
 
-<h3 id="discrete-value-vectors_10">Discrete Value Vectors</h3>
+<h4 id="discrete-value-vectors_10">Discrete Value Vectors</h4>
 <pre><code>math2d.vector2Angle( vx, vy )
 </code></pre>
 
@@ -845,7 +796,7 @@ local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 print(&quot;Result: &quot;, math2d.vector2Angle(vx, vy) )
 </code></pre>
 
-<h2 id="angle-between">Angle Between</h2>
+<h3 id="angle-between">Angle Between</h3>
 <p><img alt="Angle Between" src="../../images/math2d/anglebetween2.png" /></p>
 <pre><code>math2d.angleBetween( v1, v2 )
 math2d.angleBetween( x1, y1, x2, y2 )
@@ -865,7 +816,7 @@ print( math2d.angleBetween( vec1, vec2 ) ) -- ~75 degrees
 print( math2d.angleBetween( vec2, vec1 ) ) -- ~75 degrees
 </code></pre>
 
-<h2 id="distance-between">Distance Between</h2>
+<h3 id="distance-between">Distance Between</h3>
 <pre><code>math2d.distanceBetween( v1, v2 )
 math2d.distanceBetween( x1, y1, x2, y2 )
 </code></pre>
@@ -883,7 +834,7 @@ print( math2d.distanceBetween( vec1, vec2 ) ) -- 100
 print( math2d.distanceBetween( 0, 100, 0, 0 ) ) -- 100
 </code></pre>
 
-<h2 id="is-within-distance">Is Within Distance</h2>
+<h3 id="is-within-distance">Is Within Distance</h3>
 <pre><code>math2d.isWithinDistance( v1, v2, distance )
 math2d.isWithinDistance( x1, y1, x2, y2, distance )
 </code></pre>
@@ -906,7 +857,7 @@ print( math2d.isWithinDistance( 0, 100, 0, 0, 100 ) ) -- true
 print( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false
 </code></pre>
 
-<h1 id="advanced-operations">Advanced Operations</h1>
+<h2 id="advanced-operations">Advanced Operations</h2>
 <table>
 <thead>
 <tr>
@@ -937,7 +888,7 @@ print( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false
 </tr>
 </tbody>
 </table>
-<h2 id="in-field-of-view">In Field-Of-View</h2>
+<h3 id="in-field-of-view">In Field-Of-View</h3>
 <p><img alt="In Field-Of-View" src="../../images/math2d/fov.png" /></p>
 <p>(image borrowed from <a href="http://rg3.name/201210281829.html">Geek Blight</a>)</p>
 <pre><code>math2d.inFOV( target, observer, fov [, offsetAngle ] )
@@ -960,10 +911,10 @@ math2d.inFOV( objectB, player, 90 ) -- true
 math2d.inFOV( objectA, player, 90, 270 ) -- true because we rotated the FOV by 270 degrees
 </code></pre>
 
-<h2 id="is-in-front">Is In Front</h2>
-<h2 id="is-behind">Is Behind</h2>
-<h2 id="is-to-left">Is To Left</h2>
-<h2 id="is-to-right">Is To Right</h2>
+<h3 id="is-in-front">Is In Front</h3>
+<h3 id="is-behind">Is Behind</h3>
+<h3 id="is-to-left">Is To Left</h3>
+<h3 id="is-to-right">Is To Right</h3>
 <pre><code>math2d.isInFront( target, observer [, offsetAngle ] )
 math2d.isBehind( target, observer [, offsetAngle ] )
 math2d.isToLeft( target, observer [, offsetAngle ] )
@@ -988,7 +939,7 @@ math2d.isToLeft( objectA, player ) -- true
 math2d.isToRight( objectB, player ) -- true 
 </code></pre>
 
-<h2 id="line-line-intersect">Line-Line Intersect</h2>
+<h3 id="line-line-intersect">Line-Line Intersect</h3>
 <p><img alt="Line Line Intersection" src="../../images/math2d/lineLineIntersect.gif" /></p>
 <pre><code>math2d.lineLineIntersect( l1x1, l1y1, l1x1, l1y2, l2x1, l2y1, l2x2, l2y2 )
 math2d.lineLineIntersect( p1, p2, p3, p4 )
@@ -1046,7 +997,7 @@ end
 timer.performWithDelay( period, testLineIntersect )
 </code></pre>
 
-<h2 id="segment-segment-intersect">Segment-Segment Intersect</h2>
+<h3 id="segment-segment-intersect">Segment-Segment Intersect</h3>
 <p><img alt="Segment Segment Intersection" src="../../images/math2d/segmentSegmentIntersect.gif" /></p>
 <pre><code>math2d.segmentSegmentIntersect( s1x1, s1y1, s1x1, s1y2, s2x1, s2y1, s2x2, s2y2 )
 </code></pre>
@@ -1100,7 +1051,7 @@ end
 timer.performWithDelay( period, testSegmentIntersect )
 </code></pre>
 
-<h2 id="segment-circle-intersect">Segment-Circle Intersect</h2>
+<h3 id="segment-circle-intersect">Segment-Circle Intersect</h3>
 <pre><code>math2d.segmentCircleIntersect( p1, p2, circle, radius )
 </code></pre>
 
