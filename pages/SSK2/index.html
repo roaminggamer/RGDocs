@@ -352,6 +352,9 @@
         <li class="first-level "><a href="#validation-sampler">Validation Sampler</a></li>
         
     
+        <li class="first-level "><a href="#special">Special</a></li>
+        
+    
         <li class="first-level "><a href="#metrics">Metrics</a></li>
         
             <li class="third-level"><a href="#lines-of-code-comments">Lines Of Code &amp; Comments</a></li>
@@ -390,8 +393,8 @@
 <p><a href="./libraries/actions1/"><img alt="Actions" src="./images/small/actions.gif" /></a>
 <a href="./libraries/camera/"><img alt="Camera" src="./images/small/camera.gif" /></a>
 <a href="./libraries/display_standard/"><img alt="Display" src="./images/small/basic_display.gif" /></a></p>
-<p>(<strong>Latest Release:</strong> <code>2017.006</code>)</p>
-<p>(<strong>Last Docs Update:</strong> <code>15 JAN 2017 @ 1315 PST</code>)</p>
+<p>(<strong>Latest Release:</strong> <code>2017.007</code>)</p>
+<p>(<strong>Last Docs Update:</strong> <code>07 FEB 2017</code>)</p>
 <h1 id="what-is-it">What Is It?</h1>
 <p>Super Starter Kit 2 (aka SSK2) is a collection of libraries and utilities designed to take your <a href="https://coronalabs.com/">Corona SDK</a> development experience to a whole new level of efficiency and speed.</p>
 <blockquote>
@@ -458,9 +461,9 @@
 <td align="center"><strong>itch.io</strong></td>
 </tr>
 <tr>
-<td align="center"><a href="https://sellfy.com/roaminggamer"><img alt="RoamingGamer" src="./images/sellfybadge.png" /></a></td>
-<td align="center">soon...</td>
-<td align="center">soon...</td>
+<td align="center"><a href="https://sellfy.com/p/x9oR/"><img alt="RoamingGamer" src="./images/sellfybadge.png" /></a></td>
+<td align="center"><a href="https://gumroad.com/products/GKxvi"><img alt="RoamingGamer" src="./images/gumroad.png" /></a></td>
+<td align="center"><a href="httpshttps://marketplace.coronalabs.com/asset/super-starter-kit-2-ssk2-pro/roaminggamer"><img alt="RoamingGamer" src="./images/cm.png" /></a></td>
 <td align="center">soon...</td>
 </tr>
 </tbody>
@@ -527,6 +530,15 @@ _G.ssk.init()
 </ol>
 <p>(Although it will work, the sampler is not designed to run easily on a device.  i.e. You will need to quit the app to run a new sample.)</p>
 <p><img alt="Validation Sampler" src="./images/validationsampler.jpg" /></p>
+<h1 id="special">Special</h1>
+<p>SSK has a couple of (semi-) hidden feature attached to the module that you might find useful.</p>
+<ul>
+<li><code>ssk.getDT()</code> - Returns the delta-time (in milliseconds) since the last frame.  <ul>
+<li>You can use this instead of re-calculating it yourself over and over in various enterFrame() listeners that need delta-time.</li>
+</ul>
+</li>
+<li><code>ssk.getFrame()</code> - Returns current frame count (starts when SSK loads).</li>
+</ul>
 <h1 id="metrics">Metrics</h1>
 <p>For those folks who love metrics (admit it, you do), here are a few interesting details about SSK2.</p>
 <h2 id="lines-of-code-comments">Lines Of Code &amp; Comments</h2>
@@ -595,7 +607,7 @@ SSK Total                                                    :  529.86 KB
 <pre><code>print( &quot;SSK VERSION: &quot; .. ssk.getVersion() )
 </code></pre>
 
-<p>If this prints out <code>SSK VERSION: 2017.006</code> you have the latest version. </p>
+<p>If this prints out <code>SSK VERSION: 2017.007</code> you have the latest version. </p>
 <p>If not, then go download a new copy from your store page.</p>
 <p><strong>Tip:</strong> While you are checking, be sure to check that your co-products are up-to-date too.</p>
 <h2 id="are-you-getting-errors">Are You Getting Errors?</h2>
@@ -654,21 +666,31 @@ The more effort you put into your post, the better I will be able to help you. <
 </blockquote>
 <h1 id="change-history">Change History</h1>
 <h2 id="2017">2017</h2>
-<h3 id="2017005">2017.005</h3>
+<h3 id="2017007">2017.007</h3>
 <h4 id="lite-pro">lite + PRO</h4>
+<ul>
+<li>Changed string.startswith to camelCase: <a href="./extensions/#string">string.startsWith()</a></li>
+<li>Changed string.endswith to camelCase: <a href="./extensions/#string">string.endsWith()</a></li>
+<li>Updated <a href="./extensions/#color">transition.color()</a> onComplete to handle functions and methods.</li>
+<li>Fixed <a href="./libraries/math2D/#angle-between">math2d.angleBetween()</a> so that it takes vector tables and discrete values.</li>
+<li>Modified <a href="./libraries/misc/#rotateabout">ssk.misc.rotateAbout()</a> to make it more flexible.</li>
+<li>Added <a href="./external/#rle-rosetta-code">Run Length Encode/Decode External Module</a></li>
+</ul>
+<h3 id="2017006">2017.006</h3>
+<h4 id="lite-pro_1">lite + PRO</h4>
 <ul>
 <li>Critical fix to ssk.math2d - Added two missing functions/dependencies.</li>
 <li>Added ssk.misc.addSmartTouch( obj, params ) - Adds a touch handler that will work in all setups.</li>
 <li>Added ssk.misc.addSmartDrag( obj, params ) - Adds a touch handler that gives the object a drag-n-drop ability.</li>
 <li>Added ssk.misc.addPhysicsDrag( obj, params ) - Adds a touch handler that gives the object a drag-n-drop ability using physics.</li>
 </ul>
-<h3 id="2017005_1">2017.005</h3>
+<h3 id="2017005">2017.005</h3>
 <h4 id="pro-only">PRO-only</h4>
 <ul>
 <li>Added Easy Positioner Tool/Module</li>
 <li>Added First Version of Tiled Loader</li>
 </ul>
-<h4 id="lite-pro_1">lite + PRO</h4>
+<h4 id="lite-pro_2">lite + PRO</h4>
 <ul>
 <li>Added First Version of Factory Manager</li>
 <li>Added 'custom' dialog tray factory.</li>
@@ -737,5 +759,5 @@ The more effort you put into your post, the better I will be able to help you. <
 
 <!--
 MkDocs version : 0.16.1
-Build Date UTC : 2017-01-15 21:08:11
+Build Date UTC : 2017-02-07 21:57:54
 -->

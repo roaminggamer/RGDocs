@@ -360,6 +360,9 @@
             <li class="third-level"><a href="#mersenne-twister">Mersenne Twister</a></li>
         
     
+        <li class="first-level "><a href="#rle-rosetta-code">RLE (Rosetta Code)</a></li>
+        
+    
         <li class="first-level "><a href="#wait-starcrunch">Wait (StarCrunch)</a></li>
         
             <li class="third-level"><a href="#waiting-between-steps">Waiting Between Steps</a></li>
@@ -460,7 +463,7 @@ transition.to( circle, { x = right } )
 </code></pre>
 
 <p>This will print <code>x ####</code> every time the <code>circle</code> is moved by transition. Cool, right?</p>
-<h1 id="randomlua-love-community">RandomLua (LÖVE Community)</h1>
+<h1 id="randomlua-love-community">RandomLua (<a href="https://love2d.org/">LÖVE Community</a>)</h1>
 <p><a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
 <p>This is, yet another, Random Number Generator module.  </p>
 <p>It was released under the MIT License.  I grabbed this from <a href="https://love2d.org/forums/viewtopic.php?f=5&amp;t=3424">HERE</a>.</p>
@@ -476,6 +479,24 @@ print( rng:random() )
 print( rng:random(-100,100) )
 
 print( rng:random(1.001, 10.005) )
+
+</code></pre>
+
+<h1 id="rle-rosetta-code">RLE (<a href="http://rosettacode.org/wiki/Run-length_encoding#Lua">Rosetta Code</a>)</h1>
+<p><a href="https://img.shields.io/badge/License-GPL%20v2-blue.svg"><img alt="License: GPL v2" src="https://img.shields.io/badge/License-GPL%20v2-blue.svg" /></a></p>
+<p>Given a string containing uppercase characters (A-Z), compress repeated 'runs' of the same character by storing the length of that run, and provide a function to reverse the compression. The output can be anything, as long as you can recreate the input with it.</p>
+<pre><code class="Lua">
+local rle = ssk.rle
+
+local testStr = &quot;WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW&quot;
+
+local compressed = rle.compress(testStr)
+
+print( compressed ) -- Prints: 12W1B12W3B24W1B14W 
+
+local testStr2 = rle.decompress(compressed)
+
+print( &quot;success? &quot;, testStr == testStr2 )
 
 </code></pre>
 

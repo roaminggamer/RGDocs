@@ -637,10 +637,13 @@ easyAlert( &quot;Delete Player&quot;,
 <li><code>x</code>, <code>y</code> (<code>centerX</code>, <code>centerY</code>) - The point.</li>
 <li><code>params</code> - Table of options controlling the rotate:<ul>
 <li><code>radius</code> (<code>50</code>) - Radius of rotation path.</li>
+<li><code>endRadius</code> - If specified, radius of rotation transitions to this over time.</li>
 <li><code>startA</code> (<code>0</code>) - Start at this rotation angle, where <code>0</code> is up, <code>90</code> is right, etc.</li>
 <li><code>endA</code> (<code>startA + 360</code>) - End at this rotation angle.</li>
-<li><code>time</code> (<code>1000</code>) - Take this long to rotate.</li>
 <li><code>delay</code> (<code>0</code>) - Wait this long to start rotating.</li>
+<li><code>radiusDelay</code> (<code>delay</code>) - Alternate delay for radius change.</li>
+<li><code>time</code> (<code>1000</code>) - Take this long to rotate.</li>
+<li><code>radius</code> (<code>time</code>) - Alternate time for radius change.     </li>
 <li><code>myEasing</code> (<code>easing.linear</code>) - Use this transition easing.</li>
 <li><code>debugEn</code> (<code>false</code>) - Draw circles along path as rotation occurs.</li>
 <li><code>onComplete( obj )</code> (<code>nil</code>) - Call this function when the rotation completes.</li>
@@ -649,6 +652,54 @@ easyAlert( &quot;Delete Player&quot;,
 </ul>
 </li>
 </ul>
+<h3 id="rotate-about-w-radius-change">Rotate About w/ Radius Change</h3>
+<pre><code class="Lua">local axis2 = newCircle( group, centerX + 150, centerY - 100, { fill = _O_ })
+
+for i = 1, 10 do
+    local tmp = newRect( group, axis2.x, axis2.y, { fill = randomColor(), size = 10 } )
+    local doSpin
+    ssk.misc.rotateAbout( tmp, axis2.x, axis2.y, 
+                          { startA = i * 36, 
+                            endA = i * 36 + 1800,
+                            time = 1000, radius = 125, 
+                            endRadius = 10,
+                            onComplete = display.remove } )
+end
+</code></pre>
+
+<h3 id="rotate-about-w-radius-alternate-radiustime">Rotate About w/ Radius &amp; Alternate <code>radiusTime</code></h3>
+<p>This example changes the radius faster than the rotatate time.</p>
+<pre><code class="Lua">-- Inspired by this thread:
+-- https://forums.coronalabs.com/topic/67561-have-multiple-bullets-fire-inward-in-a-circle-formation-ssk2/
+local axis3 = newCircle( group, centerX, centerY + 150, { fill = _R_ })
+
+local doBullets
+doBullets = function( axis, delay, count )
+   for i = 1, 10 do
+    local tmp = newRect( group, axis3.x, axis3.y, { fill = _R_, size = 10 } )
+    local angle = i * 36
+    ssk.misc.rotateAbout( tmp, axis3.x, axis3.y, 
+                          { startA = angle, endA = angle + 360 + 36,
+                            time = 2000, radius = 125, 
+                            endRadius = 10, radiusTime = 750 } )
+
+      tmp.onComplete = function( self )
+        ignore(&quot;enterFrame&quot;, self)
+        display.remove( self )
+      end
+   end
+
+   if( count ) then 
+    count = count - 1
+    if( count &lt;= 0 ) then return end
+    timer.performWithDelay( delay, function() doBullets(axis, delay, count) end )
+   end
+end
+doBullets( axis3, 600, 3 )
+
+
+</code></pre>
+
 <h2 id="secondstotimer">secondsToTimer</h2>
 <ul>
 <li><code>ssk.misc.secondsToTimer( [ seconds, [ version ] ] )</code> - Converts <code>seconds</code> into one of three different time formats.<ul>
