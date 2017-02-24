@@ -441,17 +441,17 @@ ssk.persist.setDefault( &quot;settings.json&quot;, &quot;sound_enabled&quot;, tr
 ssk.persist.setDefault( &quot;settings.json&quot;, &quot;last_score&quot;, 0 )
 
 -- Check persistent data fields
-print( &quot;Ads disabled? &quot;, ssk.persist( &quot;iap.json&quot;, &quot;disabled_ads&quot;) )
+print( &quot;Ads disabled? &quot;, ssk.persist.get( &quot;iap.json&quot;, &quot;disabled_ads&quot;) )
 
-print( &quot;Last Score: &quot;, ssk.persist( &quot;settings.json&quot;, &quot;last_score&quot; ) )
+print( &quot;Last Score: &quot;, ssk.persist.get( &quot;settings.json&quot;, &quot;last_score&quot; ) )
 
 -- Set 'last score' to a random value
 ssk.persist.set( &quot;settings.json&quot;, &quot;last_score&quot;, math.random(100, 10000) )
 
 -- Check persistent data fields again
-print( &quot;Ads disabled? &quot;, ssk.persist( &quot;iap.json&quot;, &quot;disabled_ads&quot;) )
+print( &quot;Ads disabled? &quot;, ssk.persist.get( &quot;iap.json&quot;, &quot;disabled_ads&quot;) )
 
-print( &quot;Last Score: &quot;, ssk.persist( &quot;settings.json&quot;, &quot;last_score&quot; ) )
+print( &quot;Last Score: &quot;, ssk.persist.get( &quot;settings.json&quot;, &quot;last_score&quot; ) )
 
 </code></pre>
 

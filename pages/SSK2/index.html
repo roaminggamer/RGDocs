@@ -393,8 +393,8 @@
 <p><a href="./libraries/actions1/"><img alt="Actions" src="./images/small/actions.gif" /></a>
 <a href="./libraries/camera/"><img alt="Camera" src="./images/small/camera.gif" /></a>
 <a href="./libraries/display_standard/"><img alt="Display" src="./images/small/basic_display.gif" /></a></p>
-<p>(<strong>Latest Release:</strong> <code>2017.007</code>)</p>
-<p>(<strong>Last Docs Update:</strong> <code>07 FEB 2017</code>)</p>
+<p>(<strong>Latest Release:</strong> <code>2017.008</code>)</p>
+<p>(<strong>Last Docs Update:</strong> <code>23 FEB 2017</code>)</p>
 <h1 id="what-is-it">What Is It?</h1>
 <p>Super Starter Kit 2 (aka SSK2) is a collection of libraries and utilities designed to take your <a href="https://coronalabs.com/">Corona SDK</a> development experience to a whole new level of efficiency and speed.</p>
 <blockquote>
@@ -434,12 +434,21 @@
 <h2 id="lite-vs-pro-why-two-versions">Lite vs. Pro - Why Two Versions?</h2>
 <p>In order to best fit the needs and abilities of the community, there are two versions of SSK2:</p>
 <ul>
-<li><strong>Lite</strong> - This version contains what I consider to be the "Can't develop without it!" parts of SSK2.<ul>
-<li><strong>On sale till January 5th 2017 for $12!</strong></li>
+<li><strong>PRO</strong> - This is the <em>Big Dog</em> version of SSK2 and contains all of my current libraries and modules, plus tons of extra content:<ul>
+<li><em>Starter Games</em> - Game concepts I've tried.  Get inspired!</li>
+<li><em>Starter Apps</em> - App ideas I've dalied with.</li>
+<li><em>Toys</em> - Sometimes I make things just for fun.</li>
+<li><a href="https://github.com/roaminggamer/RG_FreeStuff/tree/master/SSK2/tools"><em>Tools</em></a> - Three tools that need SSK2 PRO to run: <ul>
+<li>RGBE - Button (Presets) Editor</li>
+<li>RGPE - Particle Definition Editor</li>
+<li>EAT - Framework, configuration, build.settings generator.</li>
 </ul>
 </li>
-<li><strong>Pro</strong> - <em>Lite</em> + many additional solutions to problems encountered by the Pros.<ul>
-<li><strong>On sale till January 5th 2017 for $32!</strong></li>
+<li><em>WIP</em> - Work In Progress Libraries and Modules (Cars, Blacjack, Spinning Wheel, Slots...).</li>
+</ul>
+</li>
+<li><strong>Lite</strong> - This version contains what I consider to be the "Can't develop without it!" parts of SSK2. <ul>
+<li>If you are on a very limited budget, then this may be the solution for you. </li>
 </ul>
 </li>
 </ul>
@@ -607,7 +616,7 @@ SSK Total                                                    :  529.86 KB
 <pre><code>print( &quot;SSK VERSION: &quot; .. ssk.getVersion() )
 </code></pre>
 
-<p>If this prints out <code>SSK VERSION: 2017.007</code> you have the latest version. </p>
+<p>If this prints out <code>SSK VERSION: 2017.008</code> you have the latest version. </p>
 <p>If not, then go download a new copy from your store page.</p>
 <p><strong>Tip:</strong> While you are checking, be sure to check that your co-products are up-to-date too.</p>
 <h2 id="are-you-getting-errors">Are You Getting Errors?</h2>
@@ -666,8 +675,20 @@ The more effort you put into your post, the better I will be able to help you. <
 </blockquote>
 <h1 id="change-history">Change History</h1>
 <h2 id="2017">2017</h2>
-<h3 id="2017007">2017.007</h3>
+<h3 id="2017008">2017.008</h3>
 <h4 id="lite-pro">lite + PRO</h4>
+<ul>
+<li>Fixed issue with factoryMgr.new() - Previously if nil was passed for &lt; x, y &gt; then &lt; centerX, centerY &gt; was used as a default.  This broke some of my standard factories which relied on nil values to mean: 'auto-place'.  From now on, &lt; x, y &gt; values are passed to the factory instances without change.</li>
+<li>Added ssk.misc.createPieChart() factory</li>
+<li>Added ssk.misc.genCircleMask() helper</li>
+<li>Added ssk.misc.pingPong() helper</li>
+<li>Bug fix (key event autolistener not hooking up)</li>
+<li>Added table.tokenize() function to create token separated strings from tables (opposite of string.split()).</li>
+<li>Fixed bug in autolan require() that caused crash when enabling external libraries.</li>
+<li>Improved detection of iPhone 7 variants.</li>
+</ul>
+<h3 id="2017007">2017.007</h3>
+<h4 id="lite-pro_1">lite + PRO</h4>
 <ul>
 <li>Changed string.startswith to camelCase: <a href="./extensions/#string">string.startsWith()</a></li>
 <li>Changed string.endswith to camelCase: <a href="./extensions/#string">string.endsWith()</a></li>
@@ -677,7 +698,7 @@ The more effort you put into your post, the better I will be able to help you. <
 <li>Added <a href="./external/#rle-rosetta-code">Run Length Encode/Decode External Module</a></li>
 </ul>
 <h3 id="2017006">2017.006</h3>
-<h4 id="lite-pro_1">lite + PRO</h4>
+<h4 id="lite-pro_2">lite + PRO</h4>
 <ul>
 <li>Critical fix to ssk.math2d - Added two missing functions/dependencies.</li>
 <li>Added ssk.misc.addSmartTouch( obj, params ) - Adds a touch handler that will work in all setups.</li>
@@ -690,7 +711,7 @@ The more effort you put into your post, the better I will be able to help you. <
 <li>Added Easy Positioner Tool/Module</li>
 <li>Added First Version of Tiled Loader</li>
 </ul>
-<h4 id="lite-pro_2">lite + PRO</h4>
+<h4 id="lite-pro_3">lite + PRO</h4>
 <ul>
 <li>Added First Version of Factory Manager</li>
 <li>Added 'custom' dialog tray factory.</li>
@@ -759,5 +780,5 @@ The more effort you put into your post, the better I will be able to help you. <
 
 <!--
 MkDocs version : 0.16.1
-Build Date UTC : 2017-02-07 21:57:54
+Build Date UTC : 2017-02-24 00:40:50
 -->

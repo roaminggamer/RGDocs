@@ -415,10 +415,10 @@ local y2 = 0
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-local vec = math2d.add( circ, rect ) -- Return a table
+local vec = ssk.math2d.add( circ, rect ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y )
 
-local vx,vy = math2d.add( circ, rect, true ) -- Return two numbers
+local vx,vy = ssk.math2d.add( circ, rect, true ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 </code></pre>
 
@@ -434,10 +434,10 @@ print(&quot;Results: &quot;, vx, vy )
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-local vx,vy = math2d.add( circ.x, circ.y, rect.x, rect.y ) -- Return two numbers
+local vx,vy = ssk.math2d.add( circ.x, circ.y, rect.x, rect.y ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 
-local vec = math2d.add( math2d.add( circ.x, circ.y, rect.x, rect.y, true ) -- Return a table
+local vec = ssk.math2d.add( circ.x, circ.y, rect.x, rect.y, true ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y )
 </code></pre>
 
@@ -455,10 +455,10 @@ print(&quot;Results: &quot;, vec.x, vec.y )
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-local vec = math2d.sub( circ, rect ) -- Return a table
+local vec = ssk.math2d.sub( circ, rect ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y )
 
-local vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers
+local vx,vy = ssk.math2d.sub( circ, rect, true ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 </code></pre>
 
@@ -475,10 +475,10 @@ print(&quot;Results: &quot;, vx, vy )
 <pre><code>local x1,y1 = 10,10
 local x2,y2 = 15,-10
 
-local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+local vx,vy = ssk.math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 
-local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
+local vec = ssk.math2d.sub( x1, y1, x2, y2, true ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y ) 
 </code></pre>
 
@@ -496,10 +496,10 @@ print(&quot;Results: &quot;, vec.x, vec.y )
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-local vec = math2d.sub( circ, rect ) -- Return a table
+local vec = ssk.math2d.sub( circ, rect ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y )
 
-local vx,vy = math2d.sub( circ, rect, true ) -- Return two numbers
+local vx,vy = ssk.math2d.sub( circ, rect, true ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 
 </code></pre>
@@ -517,10 +517,10 @@ print(&quot;Results: &quot;, vx, vy )
 <pre><code>local x1,y1 = 10,10
 local x2,y2 = 15,-10
 
-local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+local vx,vy = ssk.math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 print(&quot;Results: &quot;, vx, vy ) 
 
-local vec = math2d.sub( x1, y1, x2, y2, true ) -- Return a table
+local vec = ssk.math2d.sub( x1, y1, x2, y2, true ) -- Return a table
 print(&quot;Results: &quot;, vec.x, vec.y ) 
 </code></pre>
 
@@ -536,9 +536,9 @@ print(&quot;Results: &quot;, vec.x, vec.y )
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-local vec = math2d.sub( circ, rect ) -- Return a table
+local vec = ssk.math2d.sub( circ, rect ) -- Return a table
 
-print(&quot;Result: &quot;, math2d.length(vec) )
+print(&quot;Result: &quot;, ssk.math2d.length(vec) )
 </code></pre>
 
 <h4 id="discrete-value-vectors_3">Discrete Value Vectors</h4>
@@ -552,9 +552,9 @@ print(&quot;Result: &quot;, math2d.length(vec) )
 <pre><code>local x1,y1 = 10,10
 local x2,y2 = 15,-10
 
-local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+local vx,vy = ssk.math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 
-print(&quot;Result: &quot;, math2d.length(vx, vy) )
+print(&quot;Result: &quot;, ssk.math2d.length(vx, vy) )
 </code></pre>
 
 <h3 id="squared-length">Squared Length</h3>
@@ -569,9 +569,9 @@ print(&quot;Result: &quot;, math2d.length(vx, vy) )
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-local vec = math2d.sub( circ, rect ) -- Return a table
+local vec = ssk.math2d.sub( circ, rect ) -- Return a table
 
-print(&quot;Result: &quot;, math2d.length2(vec) )
+print(&quot;Result: &quot;, ssk.math2d.length2(vec) )
 </code></pre>
 
 <h4 id="discrete-value-vectors_4">Discrete Value Vectors</h4>
@@ -585,9 +585,9 @@ print(&quot;Result: &quot;, math2d.length2(vec) )
 <pre><code>local x1,y1 = 10,10
 local x2,y2 = 15,-10
 
-local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+local vx,vy = ssk.math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 
-print(&quot;Result: &quot;, math2d.length2(vx, vy) )
+print(&quot;Result: &quot;, ssk.math2d.length2(vx, vy) )
 </code></pre>
 
 <h3 id="scaling">Scaling</h3>
@@ -602,7 +602,7 @@ print(&quot;Result: &quot;, math2d.length2(vx, vy) )
 </ul>
 <pre><code>local vec = { x = 1, y = 0 }
 
-vec = math2d.scale( vec, 30 ) -- Vector is now &lt; 30, 0 &gt;
+vec = ssk.math2d.scale( vec, 30 ) -- Vector is now &lt; 30, 0 &gt;
 </code></pre>
 
 <h4 id="discrete-value-vectors_5">Discrete Value Vectors</h4>
@@ -616,7 +616,7 @@ vec = math2d.scale( vec, 30 ) -- Vector is now &lt; 30, 0 &gt;
 </ul>
 <pre><code>local vx = 1, vy = 0
 
-vx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now &lt; 30, 0 &gt;
+vx, vy = ssk.math2d.scale( vx, vy, 30 ) -- Vector is now &lt; 30, 0 &gt;
 </code></pre>
 
 <h3 id="normalizing">Normalizing</h3>
@@ -631,7 +631,7 @@ vx, vy = math2d.scale( vx, vy, 30 ) -- Vector is now &lt; 30, 0 &gt;
 </ul>
 <pre><code>local vec = { x = 30, y = 30 }
 
-vec = math2d.normalize( vec ) -- Vector is now &lt; 0.707..., 0.707... &gt;
+vec = ssk.math2d.normalize( vec ) -- Vector is now &lt; 0.707..., 0.707... &gt;
 </code></pre>
 
 <h4 id="discrete-value-vectors_6">Discrete Value Vectors</h4>
@@ -645,7 +645,7 @@ vec = math2d.normalize( vec ) -- Vector is now &lt; 0.707..., 0.707... &gt;
 </ul>
 <pre><code>local vx = 30, vy = 30
 
-vx, vy = math2d.normalize( vx, vy ) -- Vector is now &lt; 0.707..., 0.707... &gt;
+vx, vy = ssk.math2d.normalize( vx, vy ) -- Vector is now &lt; 0.707..., 0.707... &gt;
 </code></pre>
 
 <h3 id="dot-product">Dot Product</h3>
@@ -660,7 +660,7 @@ vx, vy = math2d.normalize( vx, vy ) -- Vector is now &lt; 0.707..., 0.707... &gt
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-print(&quot;Result: &quot;, math2d.dot( circ, rect ) )
+print(&quot;Result: &quot;, ssk.math2d.dot( circ, rect ) )
 </code></pre>
 
 <h4 id="discrete-value-vectors_7">Discrete Value Vectors</h4>
@@ -674,7 +674,7 @@ print(&quot;Result: &quot;, math2d.dot( circ, rect ) )
 <pre><code>local x1,y1 = 10,10
 local x2,y2 = 15,-10
 
-print(&quot;Result: &quot;, math2d.dot( x1, y1, x2, y2 ) )
+print(&quot;Result: &quot;, ssk.math2d.dot( x1, y1, x2, y2 ) )
 </code></pre>
 
 <h3 id="cross-product">Cross Product</h3>
@@ -689,7 +689,7 @@ print(&quot;Result: &quot;, math2d.dot( x1, y1, x2, y2 ) )
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-print(&quot;Result: &quot;, math2d.cross( circ, rect ) )
+print(&quot;Result: &quot;, ssk.math2d.cross( circ, rect ) )
 </code></pre>
 
 <h4 id="discrete-value-vectors_8">Discrete Value Vectors</h4>
@@ -703,7 +703,7 @@ print(&quot;Result: &quot;, math2d.cross( circ, rect ) )
 <pre><code>local x1,y1 = 10,10
 local x2,y2 = 15,-10
 
-print(&quot;Result: &quot;, math2d.cross( x1, y1, x2, y2 ) )
+print(&quot;Result: &quot;, ssk.math2d.cross( x1, y1, x2, y2 ) )
 </code></pre>
 
 <h3 id="normals">Normals</h3>
@@ -719,7 +719,7 @@ print(&quot;Result: &quot;, math2d.cross( x1, y1, x2, y2 ) )
 </ul>
 <pre><code>local vec = { x = 1, y = 0 }
 
-local n1, n2 = math2d.normals( vec ) 
+local n1, n2 = ssk.math2d.normals( vec ) 
 
 -- n1 and n2 will contain the two vectors:
 --   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
@@ -737,7 +737,7 @@ local n1, n2 = math2d.normals( vec )
 </ul>
 <pre><code>local x1 = 1, y1 = 0
 
-local nx1, ny1, nx2, ny2 = math2d.normals( x1, y1 ) 
+local nx1, ny1, nx2, ny2 = ssk.math2d.normals( x1, y1 ) 
 
 -- &lt; nx1, ny1 &gt; and &lt; nx2, ny2 &gt; will be equivalent to: 
 --   &lt; 0, -1 &gt; and &lt; 0, 1 &gt; (order may vary).
@@ -755,10 +755,10 @@ local nx1, ny1, nx2, ny2 = math2d.normals( x1, y1 )
 </ul>
 <pre><code>local angle = 135
 
-local vec = math2d.angle2Vector( angle, true ) -- Return a table
+local vec = ssk.math2d.angle2Vector( angle, true ) -- Return a table
 print(&quot;The vector: &quot; .. vec.x .. &quot;, &quot; .. vec.y  )
 
-local vx,vy = math2d.angle2Vector( angle ) -- Return two numbers
+local vx,vy = ssk.math2d.angle2Vector( angle ) -- Return two numbers
 print(&quot;The vector: &quot; .. vx .. &quot;, &quot; .. vy  )
 </code></pre>
 
@@ -775,9 +775,9 @@ Warning: This library uses screen angles NOT Cartesian or polar. </p>
 <pre><code>local circ = display.newCircle( 100, 100, 30 )
 local rect = display.newRect( 150, 250, 60, 60 )
 
-local vec = math2d.sub( circ, rect ) -- Return a table
+local vec = ssk.math2d.sub( circ, rect ) -- Return a table
 
-print(&quot;Result: &quot;, math2d.vector2Angle(vec) )
+print(&quot;Result: &quot;, ssk.math2d.vector2Angle(vec) )
 </code></pre>
 
 <h4 id="discrete-value-vectors_10">Discrete Value Vectors</h4>
@@ -791,9 +791,9 @@ print(&quot;Result: &quot;, math2d.vector2Angle(vec) )
 <pre><code>local x1,y1 = 10,10
 local x2,y2 = 15,-10
 
-local vx,vy = math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
+local vx,vy = ssk.math2d.sub( x1, y1, x2, y2 ) -- Return two numbers
 
-print(&quot;Result: &quot;, math2d.vector2Angle(vx, vy) )
+print(&quot;Result: &quot;, ssk.math2d.vector2Angle(vx, vy) )
 </code></pre>
 
 <h3 id="angle-between">Angle Between</h3>
@@ -811,9 +811,9 @@ math2d.angleBetween( x1, y1, x2, y2 )
 <pre><code>local vec1 = angle2Vector( -90, true )
 local vec2 = angle2Vector( -15, true )
 
-print( math2d.angleBetween( vec1, vec2 ) ) -- ~75 degrees
+print( ssk.math2d.angleBetween( vec1, vec2 ) ) -- ~75 degrees
 
-print( math2d.angleBetween( vec2, vec1 ) ) -- ~75 degrees
+print( ssk.math2d.angleBetween( vec2, vec1 ) ) -- ~75 degrees
 </code></pre>
 
 <h3 id="distance-between">Distance Between</h3>
@@ -829,9 +829,9 @@ math2d.distanceBetween( x1, y1, x2, y2 )
 <pre><code>local vec1 = { x = 0, y = 100 }
 local vec2 = { x = 0, y = 0 }
 
-print( math2d.distanceBetween( vec1, vec2 ) ) -- 100
+print( ssk.math2d.distanceBetween( vec1, vec2 ) ) -- 100
 
-print( math2d.distanceBetween( 0, 100, 0, 0 ) ) -- 100
+print( ssk.math2d.distanceBetween( 0, 100, 0, 0 ) ) -- 100
 </code></pre>
 
 <h3 id="is-within-distance">Is Within Distance</h3>
@@ -848,13 +848,13 @@ math2d.isWithinDistance( x1, y1, x2, y2, distance )
 <pre><code>local vec1 = { x = 0, y = 100 }
 local vec2 = { x = 0, y = 0 }
 
-print( math2d.isWithinDistance( vec1, vec2, 100 ) ) -- true
+print( ssk.math2d.isWithinDistance( vec1, vec2, 100 ) ) -- true
 
-print( math2d.isWithinDistance( vec1, vec2, 99.999 ) ) -- false
+print( ssk.math2d.isWithinDistance( vec1, vec2, 99.999 ) ) -- false
 
-print( math2d.isWithinDistance( 0, 100, 0, 0, 100 ) ) -- true
+print( ssk.math2d.isWithinDistance( 0, 100, 0, 0, 100 ) ) -- true
 
-print( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false
+print( ssk.math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false
 </code></pre>
 
 <h2 id="advanced-operations">Advanced Operations</h2>
@@ -904,11 +904,11 @@ print( math2d.isWithinDistance( 0, 100, 0, 0, 99.999 ) ) -- false
 <pre><code>-- See picture above for reference
 -- objectA, objecB, and player are all display objects.
 
-math2d.inFOV( objectA, player, 90 ) -- false
+ssk.math2d.inFOV( objectA, player, 90 ) -- false
 
-math2d.inFOV( objectB, player, 90 ) -- true
+ssk.math2d.inFOV( objectB, player, 90 ) -- true
 
-math2d.inFOV( objectA, player, 90, 270 ) -- true because we rotated the FOV by 270 degrees
+ssk.math2d.inFOV( objectA, player, 90, 270 ) -- true because we rotated the FOV by 270 degrees
 </code></pre>
 
 <h3 id="is-in-front">Is In Front</h3>
@@ -930,13 +930,13 @@ math2d.isToRight( target, observer [, offsetAngle ] )
 </ul>
 <pre><code>-- See picture from 'In Field-Of-View ' above for reference
 
-math2d.isInFront( objectA, player ) -- true
+ssk.math2d.isInFront( objectA, player ) -- true
 
-math2d.isInFront( objectB, player ) -- true 
+ssk.math2d.isInFront( objectB, player ) -- true 
 
-math2d.isToLeft( objectA, player ) -- true
+ssk.math2d.isToLeft( objectA, player ) -- true
 
-math2d.isToRight( objectB, player ) -- true 
+ssk.math2d.isToRight( objectB, player ) -- true 
 </code></pre>
 
 <h3 id="line-line-intersect">Line-Line Intersect</h3>
@@ -986,7 +986,7 @@ local function testLineIntersect()
     vec.y = vec.y + y3
     line2 = display.newLine( x3, y3, vec.x, vec.y )
     line2.strokeWidth = 2
-    local intersect = math2d.lineLineIntersect( x3, y3, vec.x, vec.y, x1, y1, x2, y2 )
+    local intersect = ssk.math2d.lineLineIntersect( x3, y3, vec.x, vec.y, x1, y1, x2, y2 )
     if( intersect ) then 
         marker = display.newCircle( intersect.x, intersect.y, 10, true, true )
         marker:setFillColor(0,1,0)
@@ -1039,7 +1039,7 @@ local function testSegmentIntersect()
     vec.y = vec.y + y3
     line2 = display.newLine( x3, y3, vec.x, vec.y )
     line2.strokeWidth = 2
-    local intersect = math2d.segmentSegmentIntersect( x3, y3, vec.x, vec.y , x1, y1, x2, y2 )
+    local intersect = ssk.math2d.segmentSegmentIntersect( x3, y3, vec.x, vec.y , x1, y1, x2, y2 )
     if( intersect ) then 
         print(intersect)
         marker = display.newCircle( intersect.x, intersect.y, 10, true, true )
@@ -1083,7 +1083,7 @@ local circ = display.newCircle( display.contentCenterX, display.contentCenterY, 
 circ:setFillColor(0,0,0,0)
 circ.strokeWidth = 2
 
-local i1, i2 = math2d.segmentCircleIntersect( { x = p1.x, y = p1.y}, 
+local i1, i2 = ssk.math2d.segmentCircleIntersect( { x = p1.x, y = p1.y}, 
                                                { x = p2.x, y = p2.y}, 
                                                circ, 
                                                100 )

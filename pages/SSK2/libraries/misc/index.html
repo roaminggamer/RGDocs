@@ -339,6 +339,8 @@
         
             <li class="third-level"><a href="#countlocals">countLocals</a></li>
         
+            <li class="third-level"><a href="#createpiechart">createPieChart</a></li>
+        
             <li class="third-level"><a href="#easyalert">easyAlert</a></li>
         
             <li class="third-level"><a href="#easyblur">easyBlur</a></li>
@@ -351,6 +353,8 @@
         
             <li class="third-level"><a href="#fittext">fitText</a></li>
         
+            <li class="third-level"><a href="#gencirclemask">genCircleMask</a></li>
+        
             <li class="third-level"><a href="#getimagesize">getImageSize</a></li>
         
             <li class="third-level"><a href="#isconnectedtowww">isConnectedToWWW</a></li>
@@ -358,6 +362,8 @@
             <li class="third-level"><a href="#isvalidemail">isValidEmail</a></li>
         
             <li class="third-level"><a href="#edges-and-centers">Edges and Centers</a></li>
+        
+            <li class="third-level"><a href="#pingpong">pingPong</a></li>
         
             <li class="third-level"><a href="#rotateabout">rotateAbout</a></li>
         
@@ -381,39 +387,44 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="#addPhysicsDrag">addPhysicsDrag</a></td>
-<td align="center"><a href="#addSmartDrag">addSmartDrag</a></td>
-<td align="center"><a href="#addSmartTouch">addSmartTouch</a></td>
+<td align="center"><a href="#addphysicsdrag">addPhysicsDrag</a></td>
+<td align="center"><a href="#addsmartdrag">addSmartDrag</a></td>
+<td align="center"><a href="#addsmarttouch">addSmartTouch</a></td>
 </tr>
 <tr>
 <td align="center"><a href="#blocktouchesforduration">blockTouchesForDuration</a></td>
 <td align="center"><a href="#countlocals">countLocals</a></td>
-<td align="center"><a href="#easyalert">easyAlert</a></td>
+<td align="center"><a href="#createpiechart">createPieChart</a></td>
 </tr>
 <tr>
+<td align="center"><a href="#easyalert">easyAlert</a></td>
 <td align="center"><a href="#easyblur">easyBlur</a></td>
 <td align="center"><a href="#easyremoteimage">easyRemoteImage</a></td>
-<td align="center"><a href="#easyshake">easyShake</a></td>
 </tr>
 <tr>
+<td align="center"><a href="#easyshake">easyShake</a></td>
 <td align="center"><a href="#easyunderline">easyUnderline</a></td>
 <td align="center"><a href="#fittext">fitText</a></td>
-<td align="center"><a href="#getimagesize">getImageSize</a></td>
 </tr>
 <tr>
+<td align="center"><a href="#gencirclemask">genCircleMask</a></td>
+<td align="center"><a href="#getimagesize">getImageSize</a></td>
 <td align="center"><a href="#isconnectedtowww">isConnectedToWWW</a></td>
+</tr>
+<tr>
 <td align="center"><a href="#isvalidemail">isValidEmail</a></td>
 <td align="center"><a href="#edges-and-centers">oBottom</a></td>
+<td align="center"><a href="#edges-and-centers">oHorizCenter</a></td>
 </tr>
 <tr>
-<td align="center"><a href="#edges-and-centers">oHorizCenter</a></td>
 <td align="center"><a href="#edges-and-centers">oLeft</a></td>
 <td align="center"><a href="#edges-and-centers">oRight</a></td>
+<td align="center"><a href="#edges-and-centers">oTop</a></td>
 </tr>
 <tr>
-<td align="center"><a href="#edges-and-centers">oTop</a></td>
 <td align="center"><a href="#edges-and-centers">oVertCenter</a></td>
-<td align="center"><a href="#rotateabout">rotateAbout </a></td>
+<td align="center"><a href="#pingpong">pingPong</a></td>
+<td align="center"><a href="#rotateabout">rotateAbout</a></td>
 </tr>
 <tr>
 <td align="center"><a href="#secondstotimer">secondsToTimer</a></td>
@@ -531,9 +542,77 @@ ssk.misc.addSmartTouch( obj, { toFront = true, listener = onTouch, retval = true
 </ul>
 </li>
 </ul>
+<h2 id="createpiechart">createPieChart</h2>
+<blockquote>
+<p>Inspired by free pie chart <a href="http://ragdogstudios.com/2014/02/07/dynamic-pie-charts-with-corona-sdk-graphics-2-0/">module</a> from <a href="http://ragdogstudios.com/">Rag Dog Studios</a>.</p>
+</blockquote>
+<p><img alt="Pie Charts" src="../..\images\pie.gif" /></p>
+<ul>
+<li><code>ssk.misc.createPieChart( group, x, y, params )</code> - Creates a (circular or other) pie chart object.<ul>
+<li><code>group</code> - Display group to insert pie-chart <em>object</em> in.</li>
+<li><code>x</code>, <code>y</code> - &lt; x, y &gt; position of object center.</li>
+<li><code>params</code> - Table of parameters controlling pie-chart visuals.<ul>
+<li><code>slices</code> - Table of slice definitions.  See <a href="#slice-definitions">Slice Definitions</a> below.</li>
+<li><code>mask</code> (<code>mask.png</code>) - Path of 'mask' image to use if masking the pie chart. <ul>
+<li><em>Tip:</em> You can generate masks with <code>ssk.misc.genCircleMask()</code> or create them with an art program.</li>
+</ul>
+</li>
+<li><code>maskBase</code> (<code>system.ResourceDiectory</code>) - Base directory for mask image.</li>
+<li><code>radius</code> (<code>50</code>) - Radius of pie-chart.  Specify this or <code>size</code>, not both.</li>
+<li><code>size</code> (<code>100</code>) - Size of pie-chart.   Specify this or <code>radius</code>, not both.</li>
+<li><code>maskSize</code> (<code>size</code>) - Width and height of mask.</li>
+<li><code>maskWidth</code> (<code>size</code>) - Width of mask (overrides maskSize).</li>
+<li><code>maskHeight</code> (<code>size</code>) - Height of mask (overrides maskSize).</li>
+<li><code>altStrokeWidth</code> (<code>2</code>) - Width of stroke used for wedges.</li>
+<li><code>altStrokeColor</code> (<em>slice color</em>) - Color to use for wedge stroke. Defaults to current wedge color if not specified.</li>
+<li><code>noMask</code> (<code>nil</code>) - Set to <code>true</code> to disble masking.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">
+local params = 
+{
+    slices = 
+    {
+        { degrees = 120, color = _R_},
+        { degrees = 120, color = _G_},
+        { degrees = 120, color = _B_},
+    },
+    mask = &quot;mask64.png&quot;,
+    size = 64,
+    maskWidth = 64,
+    maskHeight = 64,
+}
+
+local pie = ssk.misc.createPieChart( nil, centerX, centerY, params )
+
+</code></pre>
+
+<h3 id="slice-definitions">Slice Definitions</h3>
+<p>There are two ways to specify slices, using percentages or degrees</p>
+<pre><code class="Lua">-- Percentages
+slices = 
+{
+    { percentage = 100/3, color = _R_},
+    { percentage = 100/3, color = _G_},
+    { percentage = 100/3, color = _B_},
+},
+
+-- Degrees
+slices = 
+{
+    { degrees = 120, color = _R_},
+    { degrees = 120, color = _G_},
+    { degrees = 120, color = _B_},
+},
+
+</code></pre>
+
 <h2 id="easyalert">easyAlert</h2>
 <ul>
-<li><code>ssk.misc.easyAlert( title, msg, buttons )</code> - A simplified 'dialog' builder that uses <a href="https://docs.coronalabs.com/daily/api/library/native/showAlert.html">native.showAlert()</a> to create a pop-up dialog.  <ul>
+<li><code>ssk.misc.easyAlert( group, x, y, params )</code> - A simplified 'dialog' builder that uses <a href="https://docs.coronalabs.com/daily/api/library/native/showAlert.html">native.showAlert()</a> to create a pop-up dialog.  <ul>
 <li><code>title</code> - Text at top of dialog box.  </li>
 <li><code>msg</code> - Body of message.  Multiple lines and line-breaks (<code>\n</code>) allowed.</li>
 <li><code>buttons</code> - Table of buttons and optional functions they call when pressed.</li>
@@ -604,6 +683,28 @@ easyAlert( &quot;Delete Player&quot;,
 <ul>
 <li><code>ssk.misc.fitText( obj, origText, maxWidth )</code> - Reduces the length of a string till the text object <code>obj</code> fits <code>maxWidth</code> (pixels). <code>origText</code> is the initial string value of <code>obj</code>.</li>
 </ul>
+<h2 id="gencirclemask">genCircleMask</h2>
+<blockquote>
+<p>Inspired by free pie chart <a href="http://ragdogstudios.com/2014/02/07/dynamic-pie-charts-with-corona-sdk-graphics-2-0/">module</a> from <a href="http://ragdogstudios.com/">Rag Dog Studios</a>.</p>
+</blockquote>
+<ul>
+<li><code>ssk.misc.genCircleMask( size, name )</code> - Generates a circle mask and saves it to the system.DocumentsDirectory.  <ul>
+<li><code>size</code> - Size of mask.<ul>
+<li>Rounds up to next power of 2.</li>
+<li>Can't be larger than largest dimension of screen.</li>
+</ul>
+</li>
+<li><code>name</code> - Name of file to save mask in.<ul>
+<li>mask.png, mask32.png, mask.jpg, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><em><strong>Note 1:</strong> If the device resolution does not match that specified in config.lua, the mask may not be the correct size and/or may be invalid.</em></p>
+<p><em><strong>Note 2:</strong> This is meant to be used during development, not production.  See the code in <code>ssk/misc.lua</code> for more details on this.</em></p>
+</blockquote>
 <h2 id="getimagesize">getImageSize</h2>
 <ul>
 <li><code>ssk.misc.getImageSize ( path [ , basePath ] )</code> - Returns <code>width</code>, <code>height</code> of an image.<ul>
@@ -630,6 +731,64 @@ easyAlert( &quot;Delete Player&quot;,
 <li><code>ssk.misc.oTop( obj )</code> - Returns pixel y-position of object <code>obj</code> top.</li>
 <li><code>ssk.misc.oVertCenter( obj )</code> - Returns pixel y-position of object <code>obj</code> center.</li>
 </ul>
+<h2 id="pingpong">pingPong</h2>
+<p>This function allow you to apply an non-ending ping-pong motion to an object using the <a href="https://docs.coronalabs.com/api/library/transition/index.html">transition</a> functionality in Corona.</p>
+<ul>
+<li><code>ssk.misc.pingPong( obj, [ params ] )</code> - Apply continous ping-pong transitions to object.<ul>
+<li><code>obj</code> - Object to ping-pong.</li>
+<li><code>params</code> - Table of options controlling the rotate:<ul>
+<li><code>ping</code> (<code>{ x = obj.x - 100 }</code>) - Ping transition definition.</li>
+<li><code>pong</code> (<code>{ x = obj.x + 100 }</code>) - Pong transition definition.</li>
+<li><code>tag</code> - Custom <a href="https://docs.coronalabs.com/api/library/transition/index.html">transition</a> tag for ping-pong (allows you 
+to pause/resume).</li>
+<li><code>firstTime</code> - This optional valuea allows you to override the very first transition duration.</li>
+<li><code>time</code> - Common ping/pong transition duration.  <ul>
+<li>Setting time in <code>ping</code> or <code>pong</code> definition will override this for that transition.</li>
+</ul>
+</li>
+<li><code>delay</code> - Common ping/pong wait duration.  <ul>
+<li>Setting delay in <code>ping</code> or <code>pong</code> definition will override this for that transition.</li>
+</ul>
+</li>
+<li><code>transition</code> - Common ping/pong easing.  <ul>
+<li>Setting transition in <code>ping</code> or <code>pong</code> definition will override this for that transition.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pingpong-definitions">pingPong Definitions</h3>
+<p><code>ping</code> and <code>pong</code> definitions can include any params legal for a <a href="https://docs.coronalabs.com/api/library/transition/to.html">transition.to()</a>.</p>
+<pre><code class="Lua">
+local ping = { x = tmp.x - 200, myTime = 5000, myDelay = 500, transition = easing.outBounce }
+
+local pong = { x = tmp.x + 200, myTime = 3000, myDelay = 0, transition = easing.outElastic }
+
+</code></pre>
+
+<h3 id="pingpong-example">pingPong Example</h3>
+<pre><code class="Lua">
+-- 1 Basic Ping Pong (default values)
+--
+local tmp = newImageRect( group, centerX, centerY - 240, &quot;images/rg256.png&quot;, { size = 40 } )
+
+ssk.misc.pingPong( tmp )
+
+-- 2 Custom Ping Pong (x-only)
+--
+local tmp = newImageRect( group, centerX, centerY - 180, &quot;images/rg256.png&quot;, { size = 40 } )
+
+local ping = { x = tmp.x - 200, myTime = 5000, myDelay = 500, transition = easing.outBounce }
+
+local pong = { x = tmp.x + 200, myTime = 3000, myDelay = 0, transition = easing.outElastic }
+
+ssk.misc.pingPong( tmp, { ping = ping, pong = pong } )
+
+end
+</code></pre>
+
 <h2 id="rotateabout">rotateAbout</h2>
 <ul>
 <li><code>ssk.misc.rotateAbout( obj, [ x, [ y, [ params ]]] )</code> - Rotate object <code>obj</code> about the point &lt;<code>x</code>,<code>y</code>&gt;.<ul>
