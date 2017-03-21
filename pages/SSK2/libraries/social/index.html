@@ -340,13 +340,16 @@
 <p>This module contains a couple 'helper' functions to simplify sharing and rating apps.</p>
 <h2 id="rate">rate</h2>
 <p>Open rate interface in appropriate store for app identified <code>id</code>.</p>
-<pre><code>ssk.social.rate( id [, appName [, preProcessed ] ] )
+<pre><code>ssk.social.rate( params )
 </code></pre>
 
 <ul>
+<li><code>params</code> - Named table of parameters<ul>
 <li><code>id</code> - ID of app, varies by store (see 'Supported Stores' below)</li>
 <li><code>appName</code> (<code>nil</code>) - (Optional) Name of app (used for tvOS).</li>
 <li><code>preProcessed</code> (<code>false</code>) - Set this to 'true' if you have already converted your app name to a 'proper' string for the URL, otherwise rate() will try to convert the appName into a 'proper' string.</li>
+</ul>
+</li>
 </ul>
 <h3 id="supported-stores">Supported Stores:</h3>
 <ul>
@@ -379,11 +382,11 @@
 -- Rate Sudoku For.. game on Android  or iOS
 if( onAndroid ) then
 
-   ssk.social.rate( 'com.roaminggamer.sudoku4' ) -- Google Play ID
+   ssk.social.rate( {id = 'com.roaminggamer.sudoku4'} ) -- Google Play ID
 
 elseif( oniOS ) then
 
-   ssk.social.rate( '1150939979' ) -- iTunes Connect ID
+   ssk.social.rate(  {id = '1150939979'} ) -- iTunes Connect ID
 
 end
 
