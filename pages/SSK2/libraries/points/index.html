@@ -84,24 +84,24 @@
                 
                 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lite <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">A .. L <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../math2D/">2D Math</a>
+    <a href="../actions1/">Actions Part 1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../actions1/">Actions Lib - Part 1</a>
+    <a href="../actions2/">Actions Part 2</a>
 </li>
 
                         
                             
 <li >
-    <a href="../actions2/">Actions Lib - Part 2</a>
+    <a href="../android/">Android Helpers</a>
 </li>
 
                         
@@ -143,57 +143,6 @@
                         
                             
 <li >
-    <a href="../display_standard/">Factories (Display Object)</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../factorymgr/">Factory Manager</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../misc/">Miscellaneous</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../pex/">Particle Loaders</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../display_layers/">Quick Layers</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../system/">System</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pro <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../android/">Android Helpers</a>
-</li>
-
-                        
-                            
-<li >
     <a href="../easyPositioner/">Easy Positioner</a>
 </li>
 
@@ -212,13 +161,52 @@
                         
                             
 <li >
+    <a href="../display_standard/">Factories (Display Object)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../factorymgr/">Factory Manager</a>
+</li>
+
+                        
+                            
+<li >
     <a href="../files/">Files Library</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">M .. Z <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../math2D/">Math (2D)</a>
 </li>
 
                         
                             
 <li >
     <a href="../meters/">Meters</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../misc/">Miscellaneous</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../pex/">Particle Loaders</a>
 </li>
 
                         
@@ -236,13 +224,19 @@
                         
                             
 <li >
-    <a href="../security/">Simple Security</a>
+    <a href="../display_layers/">Quick Layers</a>
 </li>
 
                         
                             
 <li >
     <a href="../shufflebag/">Shuffle Bags</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../security/">Simple Security</a>
 </li>
 
                         
@@ -255,6 +249,12 @@
                             
 <li >
     <a href="../soundMgr/">Sound Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../system/">System</a>
 </li>
 
                         
@@ -311,7 +311,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../security/">
+                        <a rel="prev" href="../display_layers/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -376,56 +376,18 @@ end
 <p><strong>Warning:</strong> Points lists cannot be saved to JSON because they have functions attached to them.</p>
 <h1 id="points-instance-methods">Points Instance Methods</h1>
 <p>Points list instances have all of these methods:</p>
-<table>
-<thead>
-<tr>
-<th align="right"></th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right"><code>add(...)</code></td>
-<td align="left">Add new points using x, y pairs (<code>...</code>)</td>
-</tr>
-<tr>
-<td align="right"><code>insert(index, ...)</code></td>
-<td align="left">Insert x, y pairs in list <code>...</code> to curent point list starting at <code>index</code>.</td>
-</tr>
-<tr>
-<td align="right"><code>get(index)</code></td>
-<td align="left">Returns point (as table) at <code>index</code> in list, or <code>nil</code> if no such <code>index</code> exists.</td>
-</tr>
-<tr>
-<td align="right"><code>remove(index)</code></td>
-<td align="left">Remove point (x, y pair) at <code>index</code> from list.</td>
-</tr>
-<tr>
-<td align="right"><code>push(...)</code></td>
-<td align="left">Add a new point(s) at end of list.</td>
-</tr>
-<tr>
-<td align="right"><code>peek()</code></td>
-<td align="left">Get point from end of list without removing it from the list.  Returns <code>nil</code> if list is empty.</td>
-</tr>
-<tr>
-<td align="right"><code>pop()</code></td>
-<td align="left">Like <code>peek()</code>, but removes point from list at same time.</td>
-</tr>
-<tr>
-<td align="right"><code>push_head(...)</code></td>
-<td align="left">Add new point(s) to beginning of list.  Synonym for <code>add( 1, ... )</code>.</td>
-</tr>
-<tr>
-<td align="right"><code>peek_head()</code></td>
-<td align="left">Get point from beginning (index 1) of the list.  Returns <code>nil</code> if list is empty.</td>
-</tr>
-<tr>
-<td align="right"><code>pop_head( )</code></td>
-<td align="left">Like <code>peek_head()</code>, but removes point from list at same time.</td>
-</tr>
-</tbody>
-</table>
+<p>| |
+|-------------:|:-------------|
+| <code>add(...)</code> | Add new points using x, y pairs (<code>...</code>) |
+| <code>insert(index, ...)</code> | Insert x, y pairs in list <code>...</code> to curent point list starting at <code>index</code>.  |
+| <code>get(index)</code> | Returns point (as table) at <code>index</code> in list, or <code>nil</code> if no such <code>index</code> exists. |
+| <code>remove(index)</code> | Remove point (x, y pair) at <code>index</code> from list.|
+| <code>push(...)</code> | Add a new point(s) at end of list.  |
+| <code>peek()</code> | Get point from end of list without removing it from the list.  Returns <code>nil</code> if list is empty. |
+| <code>pop()</code> | Like <code>peek()</code>, but removes point from list at same time. |
+| <code>push_head(...)</code> |  Add new point(s) to beginning of list.  Synonym for <code>add( 1, ... )</code>.  |
+| <code>peek_head()</code> |  Get point from beginning (index 1) of the list.  Returns <code>nil</code> if list is empty. |
+| <code>pop_head( )</code> | Like <code>peek_head()</code>, but removes point from list at same time. |</p>
 <h1 id="complete-points-example">Complete Points Example</h1>
 <pre><code class="Lua">
 -- 1. Create blank list
@@ -510,6 +472,8 @@ end
     <footer class="col-md-12 text-center">
         <hr>
         <p>
+        <small>Copyright © 2008, 2017 Roaming Gamer, LLC.<br></small>
+        
         <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
     </footer>
 
