@@ -340,11 +340,28 @@
 
 <h1 id="arc-factories-sskdisplay">Arc Factories (ssk.display.*)</h1>
 <p>This library contains two functions for creating arc objects:</p>
-<p>| |
-|:-------------:|:-------------:|
-| <a href="#arc">ssk.display.arc</a> |<a href="#polyarc">ssk.display.polyArc</a> |
-| Creates a new arc using lines. | Creates a new <em>arc</em> using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>).  |
-| <img alt="Arcs" src="../..\images\colorswitch.gif" /> |<img alt="PolyArc" src="../..\images\chomp.gif" /> |</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="#arc">ssk.display.arc</a></td>
+<td align="center"><a href="#polyarc">ssk.display.polyArc</a></td>
+</tr>
+<tr>
+<td align="center">Creates a new arc using lines.</td>
+<td align="center">Creates a new <em>arc</em> using <a href="https://docs.coronalabs.com/daily/api/library/display/newPolygon.html">display.newPolygon</a> (<em>external link</em>).</td>
+</tr>
+<tr>
+<td align="center"><img alt="Arcs" src="../..\images\colorswitch.gif" /></td>
+<td align="center"><img alt="PolyArc" src="../..\images\chomp.gif" /></td>
+</tr>
+</tbody>
+</table>
 <h2 id="arc">Arc</h2>
 <p>Creates a new arc using lines.</p>
 <pre><code class="Lua">ssk.display.arc(group, x, y [ , params ] )

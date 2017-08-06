@@ -360,13 +360,36 @@
 <p>This library uses a substitution-cypher to encode and decode strings.  </p>
 <p>While difficult to crack, this is <strong>NOT STRONG</strong> security.  It should not be used to secure sensitive data.  </p>
 <h1 id="security-operations-ssksecurity">Security Operations (ssk.security:*)</h1>
-<p>| |
-|:-------------:|:-------------:|
-| <a href="../security/#generating-a-key">genKey</a> |<br />
-| <a href="../security/#encoding">encode</a> |  <a href="../security/#decoding">decode</a> | 
-| <a href="../security/#saving-a-key">saveKey</a> |  <a href="../security/#restoring-a-key">loadKey</a> | 
-| <a href="../security/#embedding-a-key">printKeyString</a> |  <a href="../security/#embedding-a-key">loadKeyFromKeyString</a> | 
-| <a href="../security/#getting-a-key-string">getKeyString</a> | </p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="../security/#generating-a-key">genKey</a></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><a href="../security/#encoding">encode</a></td>
+<td align="center"><a href="../security/#decoding">decode</a></td>
+</tr>
+<tr>
+<td align="center"><a href="../security/#saving-a-key">saveKey</a></td>
+<td align="center"><a href="../security/#restoring-a-key">loadKey</a></td>
+</tr>
+<tr>
+<td align="center"><a href="../security/#embedding-a-key">printKeyString</a></td>
+<td align="center"><a href="../security/#embedding-a-key">loadKeyFromKeyString</a></td>
+</tr>
+<tr>
+<td align="center"><a href="../security/#getting-a-key-string">getKeyString</a></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="generating-a-key">Generating A Key</h2>
 <p>After exeucuting this code, the security module will be using a new randomly generated key (cypher):</p>
 <pre><code class="Lua">
