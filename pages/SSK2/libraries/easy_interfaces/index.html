@@ -396,16 +396,12 @@
 </ul>
 <p>Lastly, this library provides a number of useful <a href="../easy_interfaces/#effects">Effects</a> that can be used to give your menus (and other interfaces) juicy visual effects.</p>
 <h1 id="button-factories">Button Factories</h1>
-<p>| Method Signatures |
-|:-------------|
-| <code>ssk.easyIFC:newButton( group [, params ] )</code> |
-| A <a href="../easy_interfaces/#button-parameters">parameterized</a> factory used by all other factories to build buttons. |<br />
-| <code>ssk.easyIFC:presetPush( group, presetName, x, y, w, h [, labelText [, onRelease [ , overrideParams ]]] )</code> |
-| Creates standard push-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record. |
-| <code>ssk.easyIFC:presetToggle( group, presetName, x, y, w, h [, labelText [ , onEvent [, overrideParams ]]] )</code> |
-| Creates standard toggle-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record. |
-| <code>ssk.easyIFC:presetRadio( group, presetName, x, y , w, h [, labelText [, onRelease [, overrideParams ]]] )</code> |
-| Creates standard radio-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record. |</p>
+<ul>
+<li><code>ssk.easyIFC:newButton( group [, params ] )</code> - A <a href="../easy_interfaces/#button-parameters">parameterized</a> factory used by all other factories to build buttons.</li>
+<li><code>ssk.easyIFC:presetPush( group, presetName, x, y, w, h [, labelText [, onRelease [ , overrideParams ]]] )</code> - Creates standard push-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record. </li>
+<li><code>ssk.easyIFC:presetToggle( group, presetName, x, y, w, h [, labelText [ , onEvent [, overrideParams ]]] )</code> - Creates standard toggle-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record. </li>
+<li>
+<p><code>ssk.easyIFC:presetRadio( group, presetName, x, y , w, h [, labelText [, onRelease [, overrideParams ]]] )</code> - Creates standard radio-button <a href="../easy_interfaces/#button-instances">instance</a> using a <a href="../easy_interfaces/#making-button-presets">preset</a> record. </p>
 <ul>
 <li><code>group</code> (<code>display.currentStage</code>) - Group to put button in.</li>
 <li><code>params</code> (<code>{}</code>) - See <a href="../easy_interfaces/#button-parameters">Button Parameters</a> below.</li>
@@ -420,6 +416,8 @@
 <li><code>onEvent</code> (<code>nil</code>) - Listener to call when toggl button is toggled (on or off).</li>
 <li><code>overrideParams</code> (<code>nil</code>) - Optional table of properties to override from preset.<ul>
 <li>See <a href="../easy_interfaces/#button-parameters">Button Parameters</a> below.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
