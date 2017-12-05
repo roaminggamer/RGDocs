@@ -1,0 +1,164 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "WIP DOCS - Plugin Not Released Yet\n\n\nTexture Packer Helpers\n\n\n\n\nThis plugin (library) is designed to simplify loading \n using texture sheets while maintaining backward compatibility if you should change tools at a later date.\n\n\n\n\nThe helpers support these tools and formats:\n\n\n\n\nTexture Packer\n - This is the number one \nPAID\n solution and if you can afford it, you should buy it now.\n\n\nShoeBox\n - This is the number one \nFREE\n solution.  It doesn't have a tone of features, but it is very easy to and guaranteed to be available in the future.\n\n\nFree Texture Packer 0.2.4\n - This is a pretty good tool that I came across during the course of a discussion in the Corona Forums.\n\n\nWhen you use this tool, be sure to export using the format JSON (array) and I suggest you use the 'bestAreaFit' as the packing Method.\n\n\nLeshy Sprite Tool\n - This is another good tool that was introduced to me during a forums discussion.\n\n\n\n\n\n\nTexture Packer\n is my personal go-to-tool, but if you are on a budget, any of the last three tools in the list above will suit most basic texture packing purposes and uses.\n\n\nDon't see your favorite tool here?  Contact me in the Corona Fourms. (See \nPosting Questions To Forums\n below.) \n\n\n\n\n\n\nBasic Usage\n\n\nA. Activate Plugin\n\n\nFirst, purchase the plugin on \nCorona Marketplace\n to activate it.\n\n\nB. Update build.settings\n\n\nSecond, ensure your build.settings file has this code in it:\n\n\nsettings =\n{\n    plugins =\n    {\n        [\nplugin.texturePackerHelpers\n] = { publisherId = \ncom.roaminggamer\n },\n    },      \n}\n\n\n\n\nC. Require Helpers Plugin\n\n\nlocal helpers = require \nplugin.texturePackerHelpers\n\n\n\n\n\nYou may find it helpful to localize just the helper you are going to use.  \n\n\nTexture Packer\n\n\nlocal helper = helpers.texturePacker\n\n\n\n\nShoe Box\n\n\nlocal helper = helpers.shoeBox\n\n\n\n\nFree Texture Packer 0.2.4\n\n\nlocal helper = helpers.freeTexturePacker\n\n\n\n\nLeshy Sprite Tool\n\n\nlocal helper = helpers.leshy\n\n\n\n\n\n\nFunction API Docs\n\n\nAll four helpers have the same functions and take basically the same parameters.  This list summarizes the functions.  Additionally, you will find tool specific examples below.\n\n\n\n\nIMPORTANT\n In some cases, these functions do a little work, in others they do more.  The thing to keep in mind is that these helper functions all have the same interface.  So, if you change your tools in the future, or if you mix content from multiple texture packers you can easily maintain your code.\n\n\n\n\nSummaries\n\n\n\n\n\n\n\n\nFunction\n\n\nDescription\n\n\nApplicable Parameters\n\n\n\n\n\n\n\n\n\n\ngetFrameDefinitions( params )\n\n\nReturns table containing the tool specific sheet definition data.\n\n\nbaseDir, definition\n\n\n\n\n\n\nnewImageSheet( params )\n\n\nReturns an \nimage sheet\n based on the parameters you provid.\n\n\nbaseDir, definition, image\n\n\n\n\n\n\nnewImage( params )\n\n\nReturns an \nimage\n made using the speficied parameters.\n\n\nbaseDir, definition, image, sheet, frameIndex.\n\n\n\n\n\n\nnewSprite( params )\n\n\nReturns an \nsprite\n made using the speficied parameters.\n\n\nbaseDir, definition, image, sheet, x, y, parent.\n\n\n\n\n\n\n\n\n'Texture Packer' Examples\n\n\nnewImageSheet()\n\n\nlocal slotsSheet = helper.newImageSheet( { definition = \nslots\n, image = \nslots.png\n } )\n\n\n\n\nindex \n\n\nnewImage()\n\n\n Example 1 - Use Previously Loaded Sheet \n\n\nlocal apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )\n\n\n\n\n Example 2 - Load \n Use Sheet On Demand \n\n\nlocal grapes = helper.newImage( \n   { \n      definition = \nslots\n, \n      image = \nslots.png\n, \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )\n\n\n\n\nindex \n\n\nnewSprite()\n\n\n Example 1 - Single Sheet Sprite \n\n\nlocal ninjaGirlIdleSequenceData =\n{\n   name        = \nidle\n,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition = \nninjaGirlIdle\n,\n      image = \nninjaGirlIdle.png\n,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence(\nidle\n)\nninjaGirlIdleSprite:play()\n\n\n\n\n Example 2 - Multi-Sheet Sprites \n\n\n-- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   {\n      definition = \nninjaGirlIdle\n, \n      image = \nninjaGirlIdle.png\n \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition = \nninjaGirlAttack\n,\n      image = \nninjaGirlAttack.png\n \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name = \nidle\n, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name= \nattack\n, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence(\nidle\n)\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)\n\n\n\n\nindex \n\n\n'ShoeBox' Examples\n\n\nnewImageSheet()\n\n\nlocal slotsSheet = helper.newImageSheet( \n   {\n      definition = \nslots.sprites\n,  \n      image = \nslots/sprites.png\n \n   } )\n\n\n\n\nindex \n\n\nnewImage()\n\n\n Example 1 - Use Previously Loaded Sheet \n\n\nlocal apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )\n\n\n\n\n Example 2 - Load \n Use Sheet On Demand \n\n\nlocal grapes = helper.newImage( \n   { \n      definition = \nslots.sprites\n, \n      image = \nslots/sprites.png\n, \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )\n\n\n\n\nindex \n\n\nnewSprite()\n\n\n Example 1 - Single Sheet Sprite \n\n\nlocal ninjaGirlIdleSequenceData =\n{\n   name        = \nidle\n,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition = \nninjaGirlIdle.sprites\n,\n      image = \nninjaGirlIdle/sprites.png\n,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence(\nidle\n)\nninjaGirlIdleSprite:play()\n\n\n\n\n Example 2 - Multi-Sheet Sprites \n\n\n-- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   { \n      definition = \nninjaGirlIdle.sprites\n, \n      image = \nninjaGirlIdle/sprites.png\n \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition = \nninjaGirlAttack.sprites\n,\n      image = \nninjaGirlAttack/sprites.png\n \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name = \nidle\n, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name= \nattack\n, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence(\nidle\n)\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)\n\n\n\n\nindex \n\n\n'Free Texture Packer 0.2.4' Examples\n\n\nnewImageSheet()\n\n\nlocal slotsSheet = helper.newImageSheet( { definition = \nslots.json\n, image = \nslots.png\n } )\n\n\n\n\nindex \n\n\nnewImage()\n\n\n Example 1 - Use Previously Loaded Sheet \n\n\nlocal apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )\n\n\n\n\n Example 2 - Load \n Use Sheet On Demand \n\n\nlocal grapes = helper.newImage( \n   { \n      definition = \nslots.json\n, \n      image = \nslots.png\n, \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )\n\n\n\n\nindex \n\n\nnewSprite()\n\n\n Example 1 - Single Sheet Sprite \n\n\nlocal ninjaGirlIdleSequenceData =\n{\n   name        = \nidle\n,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition = \nninjaGirlIdle.json\n,\n      image = \nninjaGirlIdle.png\n,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence(\nidle\n)\nninjaGirlIdleSprite:play()\n\n\n\n\n Example 2 - Multi-Sheet Sprites \n\n\n-- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   { \n      definition = \nninjaGirlIdle.json\n, \n      image = \nninjaGirlIdle.png\n \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition = \nninjaGirlAttack.json\n,\n      image = \nninjaGirlAttack.png\n \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name = \nidle\n, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name= \nattack\n, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence(\nidle\n)\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)\n\n\n\n\nindex \n\n\n'Leshy Sprite Tool' Examples\n\n\nnewImageSheet()\n\n\nlocal slotsSheet = helper.newImageSheet( { definition = \nslots.txt\n,  image = \nslots.png\n } )\n\n\n\n\nindex \n\n\nnewImage()\n\n\n Example 1 - Use Previously Loaded Sheet \n\n\nlocal apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )\n\n\n\n\n Example 2 - Load \n Use Sheet On Demand \n\n\nlocal grapes = helper.newImage( \n   { \n      definition = \nslots.txt\n, \n      image = \nslots.png\n, \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )\n\n\n\n\nindex \n\n\nnewSprite()\n\n\n Example 1 - Single Sheet Sprite \n\n\nlocal ninjaGirlIdleSequenceData =\n{\n   name        = \nidle\n,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition = \nninjaGirlIdle.txt\n,\n      image = \nninjaGirlIdle.png\n,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence(\nidle\n)\nninjaGirlIdleSprite:play()\n\n\n\n\n Example 2 - Multi-Sheet Sprites \n\n\n-- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   { \n      definition = \nninjaGirlIdle.txt\n, \n      image = \nninjaGirlIdle.png\n \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition = \nninjaGirlAttack.txt\n,\n      image = \nninjaGirlAttack.png\n \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name = \nidle\n, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name= \nattack\n, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence(\nidle\n)\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)\n\n\n\n\nindex \n\n\nTool Usage Videos\n\n\nHere are some videos showing how to use the four different tools with 'Texture Packer Helpers Plugin'.\n\n\nHow To Use \nTexture Packer\n\n\nCOMING SOON\n\n\nHow To Use \nShoeBox\n\n\nCOMING SOON\n\n\nHow To Use \nFree Texture Packer 0.2.4\n\n\nCOMING SOON\n\n\nHow To Use \nLeshy Sprite Tool\n\n\nCOMING SOON\n\n\nPosting Questions To The Forums\n\n\nI will be providing help (exclusively) through the \nCorona SDK Forums\n.  (\nSorry: Direct e-mails and private messages will not be answered.\n)\n\n\nWhen posting a question in the forums, be sure to follow these guidelines:\n\n\n\n\nPost to this forum: \nhttps://forums.coronalabs.com/forum/553-other-third-party-tools/\n\n\nMake sure the \ntitle\n starts with: \nTexture Packers Helper\n and includes a short and meaninful name for the the problem.\n\n\nIn the \nbody\n of the post give me clear, concise, and precise description or question.\n\n\n\n\n\n\n~ \nThe Roaming Gamer\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
+            "title": "About"
+        }, 
+        {
+            "location": "/#wip-docs-plugin-not-released-yet", 
+            "text": "", 
+            "title": "WIP DOCS - Plugin Not Released Yet"
+        }, 
+        {
+            "location": "/#texture-packer-helpers", 
+            "text": "This plugin (library) is designed to simplify loading   using texture sheets while maintaining backward compatibility if you should change tools at a later date.   The helpers support these tools and formats:   Texture Packer  - This is the number one  PAID  solution and if you can afford it, you should buy it now.  ShoeBox  - This is the number one  FREE  solution.  It doesn't have a tone of features, but it is very easy to and guaranteed to be available in the future.  Free Texture Packer 0.2.4  - This is a pretty good tool that I came across during the course of a discussion in the Corona Forums.  When you use this tool, be sure to export using the format JSON (array) and I suggest you use the 'bestAreaFit' as the packing Method.  Leshy Sprite Tool  - This is another good tool that was introduced to me during a forums discussion.    Texture Packer  is my personal go-to-tool, but if you are on a budget, any of the last three tools in the list above will suit most basic texture packing purposes and uses.  Don't see your favorite tool here?  Contact me in the Corona Fourms. (See  Posting Questions To Forums  below.)", 
+            "title": "Texture Packer Helpers"
+        }, 
+        {
+            "location": "/#basic-usage", 
+            "text": "", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/#a-activate-plugin", 
+            "text": "First, purchase the plugin on  Corona Marketplace  to activate it.", 
+            "title": "A. Activate Plugin"
+        }, 
+        {
+            "location": "/#b-update-buildsettings", 
+            "text": "Second, ensure your build.settings file has this code in it:  settings =\n{\n    plugins =\n    {\n        [ plugin.texturePackerHelpers ] = { publisherId =  com.roaminggamer  },\n    },      \n}", 
+            "title": "B. Update build.settings"
+        }, 
+        {
+            "location": "/#c-require-helpers-plugin", 
+            "text": "local helpers = require  plugin.texturePackerHelpers   You may find it helpful to localize just the helper you are going to use.    Texture Packer  local helper = helpers.texturePacker  Shoe Box  local helper = helpers.shoeBox  Free Texture Packer 0.2.4  local helper = helpers.freeTexturePacker  Leshy Sprite Tool  local helper = helpers.leshy", 
+            "title": "C. Require Helpers Plugin"
+        }, 
+        {
+            "location": "/#function-api-docs", 
+            "text": "All four helpers have the same functions and take basically the same parameters.  This list summarizes the functions.  Additionally, you will find tool specific examples below.   IMPORTANT  In some cases, these functions do a little work, in others they do more.  The thing to keep in mind is that these helper functions all have the same interface.  So, if you change your tools in the future, or if you mix content from multiple texture packers you can easily maintain your code.", 
+            "title": "Function API Docs"
+        }, 
+        {
+            "location": "/#summaries", 
+            "text": "Function  Description  Applicable Parameters      getFrameDefinitions( params )  Returns table containing the tool specific sheet definition data.  baseDir, definition    newImageSheet( params )  Returns an  image sheet  based on the parameters you provid.  baseDir, definition, image    newImage( params )  Returns an  image  made using the speficied parameters.  baseDir, definition, image, sheet, frameIndex.    newSprite( params )  Returns an  sprite  made using the speficied parameters.  baseDir, definition, image, sheet, x, y, parent.", 
+            "title": "Summaries"
+        }, 
+        {
+            "location": "/#texture-packer-examples", 
+            "text": "", 
+            "title": "'Texture Packer' Examples"
+        }, 
+        {
+            "location": "/#newimagesheet", 
+            "text": "local slotsSheet = helper.newImageSheet( { definition =  slots , image =  slots.png  } )  index", 
+            "title": "newImageSheet()"
+        }, 
+        {
+            "location": "/#newimage", 
+            "text": "Example 1 - Use Previously Loaded Sheet   local apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )   Example 2 - Load   Use Sheet On Demand   local grapes = helper.newImage( \n   { \n      definition =  slots , \n      image =  slots.png , \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )  index", 
+            "title": "newImage()"
+        }, 
+        {
+            "location": "/#newsprite", 
+            "text": "Example 1 - Single Sheet Sprite   local ninjaGirlIdleSequenceData =\n{\n   name        =  idle ,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition =  ninjaGirlIdle ,\n      image =  ninjaGirlIdle.png ,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence( idle )\nninjaGirlIdleSprite:play()   Example 2 - Multi-Sheet Sprites   -- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   {\n      definition =  ninjaGirlIdle , \n      image =  ninjaGirlIdle.png  \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition =  ninjaGirlAttack ,\n      image =  ninjaGirlAttack.png  \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name =  idle , sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name=  attack , sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence( idle )\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)  index", 
+            "title": "newSprite()"
+        }, 
+        {
+            "location": "/#shoebox-examples", 
+            "text": "", 
+            "title": "'ShoeBox' Examples"
+        }, 
+        {
+            "location": "/#newimagesheet_1", 
+            "text": "local slotsSheet = helper.newImageSheet( \n   {\n      definition =  slots.sprites ,  \n      image =  slots/sprites.png  \n   } )  index", 
+            "title": "newImageSheet()"
+        }, 
+        {
+            "location": "/#newimage_1", 
+            "text": "Example 1 - Use Previously Loaded Sheet   local apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )   Example 2 - Load   Use Sheet On Demand   local grapes = helper.newImage( \n   { \n      definition =  slots.sprites , \n      image =  slots/sprites.png , \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )  index", 
+            "title": "newImage()"
+        }, 
+        {
+            "location": "/#newsprite_1", 
+            "text": "Example 1 - Single Sheet Sprite   local ninjaGirlIdleSequenceData =\n{\n   name        =  idle ,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition =  ninjaGirlIdle.sprites ,\n      image =  ninjaGirlIdle/sprites.png ,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence( idle )\nninjaGirlIdleSprite:play()   Example 2 - Multi-Sheet Sprites   -- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   { \n      definition =  ninjaGirlIdle.sprites , \n      image =  ninjaGirlIdle/sprites.png  \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition =  ninjaGirlAttack.sprites ,\n      image =  ninjaGirlAttack/sprites.png  \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name =  idle , sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name=  attack , sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence( idle )\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)  index", 
+            "title": "newSprite()"
+        }, 
+        {
+            "location": "/#free-texture-packer-024-examples", 
+            "text": "", 
+            "title": "'Free Texture Packer 0.2.4' Examples"
+        }, 
+        {
+            "location": "/#newimagesheet_2", 
+            "text": "local slotsSheet = helper.newImageSheet( { definition =  slots.json , image =  slots.png  } )  index", 
+            "title": "newImageSheet()"
+        }, 
+        {
+            "location": "/#newimage_2", 
+            "text": "Example 1 - Use Previously Loaded Sheet   local apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )   Example 2 - Load   Use Sheet On Demand   local grapes = helper.newImage( \n   { \n      definition =  slots.json , \n      image =  slots.png , \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )  index", 
+            "title": "newImage()"
+        }, 
+        {
+            "location": "/#newsprite_2", 
+            "text": "Example 1 - Single Sheet Sprite   local ninjaGirlIdleSequenceData =\n{\n   name        =  idle ,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition =  ninjaGirlIdle.json ,\n      image =  ninjaGirlIdle.png ,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence( idle )\nninjaGirlIdleSprite:play()   Example 2 - Multi-Sheet Sprites   -- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   { \n      definition =  ninjaGirlIdle.json , \n      image =  ninjaGirlIdle.png  \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition =  ninjaGirlAttack.json ,\n      image =  ninjaGirlAttack.png  \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name =  idle , sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name=  attack , sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence( idle )\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)  index", 
+            "title": "newSprite()"
+        }, 
+        {
+            "location": "/#leshy-sprite-tool-examples", 
+            "text": "", 
+            "title": "'Leshy Sprite Tool' Examples"
+        }, 
+        {
+            "location": "/#newimagesheet_3", 
+            "text": "local slotsSheet = helper.newImageSheet( { definition =  slots.txt ,  image =  slots.png  } )  index", 
+            "title": "newImageSheet()"
+        }, 
+        {
+            "location": "/#newimage_3", 
+            "text": "Example 1 - Use Previously Loaded Sheet   local apple = helper.newImage( \n   {\n      sheet  = slotsSheet, \n      frameIndex = 2, \n      parent = group,\n      x = 100,\n      y = 100\n   } )   Example 2 - Load   Use Sheet On Demand   local grapes = helper.newImage( \n   { \n      definition =  slots.txt , \n      image =  slots.png , \n      frameIndex = 3,\n      parent = group, x = 100, y = 100 } )  index", 
+            "title": "newImage()"
+        }, 
+        {
+            "location": "/#newsprite_3", 
+            "text": "Example 1 - Single Sheet Sprite   local ninjaGirlIdleSequenceData =\n{\n   name        =  idle ,\n   start       = 1,\n   count       = 10,\n   time        = 1000,\n   loopCount   = 0\n}\n\nlocal ninjaGirlIdleSprite = helper.newSprite( \n   { \n      definition =  ninjaGirlIdle.txt ,\n      image =  ninjaGirlIdle.png ,\n      parent = group, x = cx, y = cy \n   }, ninjaGirlIdleSequenceData )\n\nninjaGirlIdleSprite:scale(0.5,0.5)\nninjaGirlIdleSprite:setSequence( idle )\nninjaGirlIdleSprite:play()   Example 2 - Multi-Sheet Sprites   -- 1. Get sheets from helper\nlocal idleSheet = helper.newImageSheet( \n   { \n      definition =  ninjaGirlIdle.txt , \n      image =  ninjaGirlIdle.png  \n   } )\n\nlocal attackSheet = helper.newImageSheet( \n   { \n      definition =  ninjaGirlAttack.txt ,\n      image =  ninjaGirlAttack.png  \n   } )\n\n-- 2. Write sequence data table (defines how animation plays)\nlocal ninjaGirlSequenceData = \n   {\n      { name =  idle , sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },\n      { name=  attack , sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },\n   }\n\n-- 3. Create sprite and star it\n--\nlocal ninjaGirlSprite = helper.newSprite( \n   { \n      sheet = idleSheet, \n      parent = group, \n      x = cx + 200, \n      y = cy \n   }, ninjaGirlSequenceData )\n\nninjaGirlSprite:setSequence( idle )\nninjaGirlSprite:play()\nninjaGirlSprite:scale(0.5,0.5)  index", 
+            "title": "newSprite()"
+        }, 
+        {
+            "location": "/#tool-usage-videos", 
+            "text": "Here are some videos showing how to use the four different tools with 'Texture Packer Helpers Plugin'.", 
+            "title": "Tool Usage Videos"
+        }, 
+        {
+            "location": "/#how-to-use-texture-packer", 
+            "text": "COMING SOON", 
+            "title": "How To Use Texture Packer"
+        }, 
+        {
+            "location": "/#how-to-use-shoebox", 
+            "text": "COMING SOON", 
+            "title": "How To Use ShoeBox"
+        }, 
+        {
+            "location": "/#how-to-use-free-texture-packer-024", 
+            "text": "COMING SOON", 
+            "title": "How To Use Free Texture Packer 0.2.4"
+        }, 
+        {
+            "location": "/#how-to-use-leshy-sprite-tool", 
+            "text": "COMING SOON", 
+            "title": "How To Use Leshy Sprite Tool"
+        }, 
+        {
+            "location": "/#posting-questions-to-the-forums", 
+            "text": "I will be providing help (exclusively) through the  Corona SDK Forums .  ( Sorry: Direct e-mails and private messages will not be answered. )  When posting a question in the forums, be sure to follow these guidelines:   Post to this forum:  https://forums.coronalabs.com/forum/553-other-third-party-tools/  Make sure the  title  starts with:  Texture Packers Helper  and includes a short and meaninful name for the the problem.  In the  body  of the post give me clear, concise, and precise description or question.    ~  The Roaming Gamer      Copyright   Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
+            "title": "Posting Questions To The Forums"
+        }, 
+        {
+            "location": "/ssk2/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "SSK2"
+        }
+    ]
+}

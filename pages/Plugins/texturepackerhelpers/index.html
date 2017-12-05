@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roaming Gamer, LLC. Texture Packers Helper Documentation">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/texturePackerHelpers/"> 
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <title>Texture Packers Helper</title>
+
+    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">Texture Packers Helper</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="ssk2/">SSK2</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="ssk2/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#wip-docs-plugin-not-released-yet">WIP DOCS - Plugin Not Released Yet</a></li>
+        
+    
+        <li class="first-level "><a href="#texture-packer-helpers">Texture Packer Helpers</a></li>
+        
+    
+        <li class="first-level "><a href="#basic-usage">Basic Usage</a></li>
+        
+            <li class="third-level"><a href="#a-activate-plugin">A. Activate Plugin</a></li>
+        
+            <li class="third-level"><a href="#b-update-buildsettings">B. Update build.settings</a></li>
+        
+            <li class="third-level"><a href="#c-require-helpers-plugin">C. Require Helpers Plugin</a></li>
+        
+    
+        <li class="first-level "><a href="#function-api-docs">Function API Docs</a></li>
+        
+            <li class="third-level"><a href="#summaries">Summaries</a></li>
+        
+            <li class="third-level"><a href="#texture-packer-examples">'Texture Packer' Examples</a></li>
+        
+            <li class="third-level"><a href="#shoebox-examples">'ShoeBox' Examples</a></li>
+        
+            <li class="third-level"><a href="#free-texture-packer-024-examples">'Free Texture Packer 0.2.4' Examples</a></li>
+        
+            <li class="third-level"><a href="#leshy-sprite-tool-examples">'Leshy Sprite Tool' Examples</a></li>
+        
+    
+        <li class="first-level "><a href="#tool-usage-videos">Tool Usage Videos</a></li>
+        
+    
+        <li class="first-level "><a href="#how-to-use-texture-packer">How To Use Texture Packer</a></li>
+        
+    
+        <li class="first-level "><a href="#how-to-use-shoebox">How To Use ShoeBox</a></li>
+        
+    
+        <li class="first-level "><a href="#how-to-use-free-texture-packer-024">How To Use Free Texture Packer 0.2.4</a></li>
+        
+    
+        <li class="first-level "><a href="#how-to-use-leshy-sprite-tool">How To Use Leshy Sprite Tool</a></li>
+        
+    
+        <li class="first-level "><a href="#posting-questions-to-the-forums">Posting Questions To The Forums</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="wip-docs-plugin-not-released-yet">WIP DOCS - Plugin Not Released Yet</h1>
+<h1 id="texture-packer-helpers">Texture Packer Helpers</h1>
+<blockquote>
+<p>This plugin (library) is designed to simplify loading &amp; using texture sheets while maintaining backward compatibility if you should change tools at a later date.</p>
+</blockquote>
+<p>The helpers support these tools and formats:</p>
+<ul>
+<li><a href="https://www.codeandweb.com/texturepacker">Texture Packer</a> - This is the number one <em>PAID</em> solution and if you can afford it, you should buy it now.</li>
+<li><a href="http://renderhjs.net/">ShoeBox</a> - This is the number one <em>FREE</em> solution.  It doesn't have a tone of features, but it is very easy to and guaranteed to be available in the future.</li>
+<li><a href="http://free-tex-packer.com/">Free Texture Packer 0.2.4</a> - This is a pretty good tool that I came across during the course of a discussion in the Corona Forums.</li>
+<li>When you use this tool, be sure to export using the format JSON (array) and I suggest you use the 'bestAreaFit' as the packing Method.</li>
+<li><a href="https://www.leshylabs.com/apps/sstool/">Leshy Sprite Tool</a> - This is another good tool that was introduced to me during a forums discussion.</li>
+</ul>
+<blockquote>
+<p><a href="https://www.codeandweb.com/texturepacker">Texture Packer</a> is my personal go-to-tool, but if you are on a budget, any of the last three tools in the list above will suit most basic texture packing purposes and uses.</p>
+<p>Don't see your favorite tool here?  Contact me in the Corona Fourms. (See <a href="#posting-questions-to-the-forums">Posting Questions To Forums</a> below.) </p>
+</blockquote>
+<hr />
+<h1 id="basic-usage">Basic Usage</h1>
+<h3 id="a-activate-plugin">A. Activate Plugin</h3>
+<p>First, purchase the plugin on <a href="https://marketplace.coronalabs.com/plugin/texturePackerHelpers">Corona Marketplace</a> to activate it.</p>
+<h3 id="b-update-buildsettings">B. Update build.settings</h3>
+<p>Second, ensure your build.settings file has this code in it:</p>
+<pre><code>settings =
+{
+    plugins =
+    {
+        [&quot;plugin.texturePackerHelpers&quot;] = { publisherId = &quot;com.roaminggamer&quot; },
+    },      
+}
+</code></pre>
+
+<h3 id="c-require-helpers-plugin">C. Require Helpers Plugin</h3>
+<pre><code>local helpers = require &quot;plugin.texturePackerHelpers&quot;
+</code></pre>
+
+<p>You may find it helpful to localize just the helper you are going to use.  </p>
+<p><em>Texture Packer</em></p>
+<pre><code>local helper = helpers.texturePacker
+</code></pre>
+
+<p><em>Shoe Box</em></p>
+<pre><code>local helper = helpers.shoeBox
+</code></pre>
+
+<p><em>Free Texture Packer 0.2.4</em></p>
+<pre><code>local helper = helpers.freeTexturePacker
+</code></pre>
+
+<p><em>Leshy Sprite Tool</em></p>
+<pre><code>local helper = helpers.leshy
+</code></pre>
+
+<hr />
+<h1 id="function-api-docs">Function API Docs</h1>
+<p>All four helpers have the same functions and take basically the same parameters.  This list summarizes the functions.  Additionally, you will find tool specific examples below.</p>
+<blockquote>
+<p><em>IMPORTANT</em> In some cases, these functions do a little work, in others they do more.  The thing to keep in mind is that these helper functions all have the same interface.  So, if you change your tools in the future, or if you mix content from multiple texture packers you can easily maintain your code.</p>
+</blockquote>
+<h2 id="summaries">Summaries</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Description</th>
+<th align="left">Applicable Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">getFrameDefinitions( params )</td>
+<td align="left">Returns table containing the tool specific sheet definition data.</td>
+<td align="left">baseDir, definition</td>
+</tr>
+<tr>
+<td align="left">newImageSheet( params )</td>
+<td align="left">Returns an <a href="https://docs.coronalabs.com/api/library/graphics/newImageSheet.html">image sheet</a> based on the parameters you provid.</td>
+<td align="left">baseDir, definition, image</td>
+</tr>
+<tr>
+<td align="left">newImage( params )</td>
+<td align="left">Returns an <a href="https://docs.coronalabs.com/api/library/display/newImage.html">image</a> made using the speficied parameters.</td>
+<td align="left">baseDir, definition, image, sheet, frameIndex.</td>
+</tr>
+<tr>
+<td align="left">newSprite( params )</td>
+<td align="left">Returns an <a href="https://docs.coronalabs.com/api/library/display/newSprite.html">sprite</a> made using the speficied parameters.</td>
+<td align="left">baseDir, definition, image, sheet, x, y, parent.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="texture-packer-examples">'Texture Packer' Examples</h2>
+<h3 id="newimagesheet">newImageSheet()</h3>
+<pre><code>local slotsSheet = helper.newImageSheet( { definition = &quot;slots&quot;, image = &quot;slots.png&quot; } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newimage">newImage()</h3>
+<p><strong> Example 1 - Use Previously Loaded Sheet </strong></p>
+<pre><code>local apple = helper.newImage( 
+   {
+      sheet  = slotsSheet, 
+      frameIndex = 2, 
+      parent = group,
+      x = 100,
+      y = 100
+   } )
+</code></pre>
+
+<p><strong> Example 2 - Load &amp; Use Sheet On Demand </strong></p>
+<pre><code>local grapes = helper.newImage( 
+   { 
+      definition = &quot;slots&quot;, 
+      image = &quot;slots.png&quot;, 
+      frameIndex = 3,
+      parent = group, x = 100, y = 100 } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newsprite">newSprite()</h3>
+<p><strong> Example 1 - Single Sheet Sprite </strong></p>
+<pre><code>local ninjaGirlIdleSequenceData =
+{
+   name        = &quot;idle&quot;,
+   start       = 1,
+   count       = 10,
+   time        = 1000,
+   loopCount   = 0
+}
+
+local ninjaGirlIdleSprite = helper.newSprite( 
+   { 
+      definition = &quot;ninjaGirlIdle&quot;,
+      image = &quot;ninjaGirlIdle.png&quot;,
+      parent = group, x = cx, y = cy 
+   }, ninjaGirlIdleSequenceData )
+
+ninjaGirlIdleSprite:scale(0.5,0.5)
+ninjaGirlIdleSprite:setSequence(&quot;idle&quot;)
+ninjaGirlIdleSprite:play()
+</code></pre>
+
+<p><strong> Example 2 - Multi-Sheet Sprites </strong></p>
+<pre><code>-- 1. Get sheets from helper
+local idleSheet = helper.newImageSheet( 
+   {
+      definition = &quot;ninjaGirlIdle&quot;, 
+      image = &quot;ninjaGirlIdle.png&quot; 
+   } )
+
+local attackSheet = helper.newImageSheet( 
+   { 
+      definition = &quot;ninjaGirlAttack&quot;,
+      image = &quot;ninjaGirlAttack.png&quot; 
+   } )
+
+-- 2. Write sequence data table (defines how animation plays)
+local ninjaGirlSequenceData = 
+   {
+      { name = &quot;idle&quot;, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },
+      { name= &quot;attack&quot;, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },
+   }
+
+-- 3. Create sprite and star it
+--
+local ninjaGirlSprite = helper.newSprite( 
+   { 
+      sheet = idleSheet, 
+      parent = group, 
+      x = cx + 200, 
+      y = cy 
+   }, ninjaGirlSequenceData )
+
+ninjaGirlSprite:setSequence(&quot;idle&quot;)
+ninjaGirlSprite:play()
+ninjaGirlSprite:scale(0.5,0.5)
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h2 id="shoebox-examples">'ShoeBox' Examples</h2>
+<h3 id="newimagesheet_1">newImageSheet()</h3>
+<pre><code>local slotsSheet = helper.newImageSheet( 
+   {
+      definition = &quot;slots.sprites&quot;,  
+      image = &quot;slots/sprites.png&quot; 
+   } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newimage_1">newImage()</h3>
+<p><strong> Example 1 - Use Previously Loaded Sheet </strong></p>
+<pre><code>local apple = helper.newImage( 
+   {
+      sheet  = slotsSheet, 
+      frameIndex = 2, 
+      parent = group,
+      x = 100,
+      y = 100
+   } )
+</code></pre>
+
+<p><strong> Example 2 - Load &amp; Use Sheet On Demand </strong></p>
+<pre><code>local grapes = helper.newImage( 
+   { 
+      definition = &quot;slots.sprites&quot;, 
+      image = &quot;slots/sprites.png&quot;, 
+      frameIndex = 3,
+      parent = group, x = 100, y = 100 } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newsprite_1">newSprite()</h3>
+<p><strong> Example 1 - Single Sheet Sprite </strong></p>
+<pre><code>local ninjaGirlIdleSequenceData =
+{
+   name        = &quot;idle&quot;,
+   start       = 1,
+   count       = 10,
+   time        = 1000,
+   loopCount   = 0
+}
+
+local ninjaGirlIdleSprite = helper.newSprite( 
+   { 
+      definition = &quot;ninjaGirlIdle.sprites&quot;,
+      image = &quot;ninjaGirlIdle/sprites.png&quot;,
+      parent = group, x = cx, y = cy 
+   }, ninjaGirlIdleSequenceData )
+
+ninjaGirlIdleSprite:scale(0.5,0.5)
+ninjaGirlIdleSprite:setSequence(&quot;idle&quot;)
+ninjaGirlIdleSprite:play()
+</code></pre>
+
+<p><strong> Example 2 - Multi-Sheet Sprites </strong></p>
+<pre><code>-- 1. Get sheets from helper
+local idleSheet = helper.newImageSheet( 
+   { 
+      definition = &quot;ninjaGirlIdle.sprites&quot;, 
+      image = &quot;ninjaGirlIdle/sprites.png&quot; 
+   } )
+
+local attackSheet = helper.newImageSheet( 
+   { 
+      definition = &quot;ninjaGirlAttack.sprites&quot;,
+      image = &quot;ninjaGirlAttack/sprites.png&quot; 
+   } )
+
+-- 2. Write sequence data table (defines how animation plays)
+local ninjaGirlSequenceData = 
+   {
+      { name = &quot;idle&quot;, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },
+      { name= &quot;attack&quot;, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },
+   }
+
+-- 3. Create sprite and star it
+--
+local ninjaGirlSprite = helper.newSprite( 
+   { 
+      sheet = idleSheet, 
+      parent = group, 
+      x = cx + 200, 
+      y = cy 
+   }, ninjaGirlSequenceData )
+
+ninjaGirlSprite:setSequence(&quot;idle&quot;)
+ninjaGirlSprite:play()
+ninjaGirlSprite:scale(0.5,0.5)
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h2 id="free-texture-packer-024-examples">'Free Texture Packer 0.2.4' Examples</h2>
+<h3 id="newimagesheet_2">newImageSheet()</h3>
+<pre><code>local slotsSheet = helper.newImageSheet( { definition = &quot;slots.json&quot;, image = &quot;slots.png&quot; } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newimage_2">newImage()</h3>
+<p><strong> Example 1 - Use Previously Loaded Sheet </strong></p>
+<pre><code>local apple = helper.newImage( 
+   {
+      sheet  = slotsSheet, 
+      frameIndex = 2, 
+      parent = group,
+      x = 100,
+      y = 100
+   } )
+</code></pre>
+
+<p><strong> Example 2 - Load &amp; Use Sheet On Demand </strong></p>
+<pre><code>local grapes = helper.newImage( 
+   { 
+      definition = &quot;slots.json&quot;, 
+      image = &quot;slots.png&quot;, 
+      frameIndex = 3,
+      parent = group, x = 100, y = 100 } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newsprite_2">newSprite()</h3>
+<p><strong> Example 1 - Single Sheet Sprite </strong></p>
+<pre><code>local ninjaGirlIdleSequenceData =
+{
+   name        = &quot;idle&quot;,
+   start       = 1,
+   count       = 10,
+   time        = 1000,
+   loopCount   = 0
+}
+
+local ninjaGirlIdleSprite = helper.newSprite( 
+   { 
+      definition = &quot;ninjaGirlIdle.json&quot;,
+      image = &quot;ninjaGirlIdle.png&quot;,
+      parent = group, x = cx, y = cy 
+   }, ninjaGirlIdleSequenceData )
+
+ninjaGirlIdleSprite:scale(0.5,0.5)
+ninjaGirlIdleSprite:setSequence(&quot;idle&quot;)
+ninjaGirlIdleSprite:play()
+</code></pre>
+
+<p><strong> Example 2 - Multi-Sheet Sprites </strong></p>
+<pre><code>-- 1. Get sheets from helper
+local idleSheet = helper.newImageSheet( 
+   { 
+      definition = &quot;ninjaGirlIdle.json&quot;, 
+      image = &quot;ninjaGirlIdle.png&quot; 
+   } )
+
+local attackSheet = helper.newImageSheet( 
+   { 
+      definition = &quot;ninjaGirlAttack.json&quot;,
+      image = &quot;ninjaGirlAttack.png&quot; 
+   } )
+
+-- 2. Write sequence data table (defines how animation plays)
+local ninjaGirlSequenceData = 
+   {
+      { name = &quot;idle&quot;, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },
+      { name= &quot;attack&quot;, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },
+   }
+
+-- 3. Create sprite and star it
+--
+local ninjaGirlSprite = helper.newSprite( 
+   { 
+      sheet = idleSheet, 
+      parent = group, 
+      x = cx + 200, 
+      y = cy 
+   }, ninjaGirlSequenceData )
+
+ninjaGirlSprite:setSequence(&quot;idle&quot;)
+ninjaGirlSprite:play()
+ninjaGirlSprite:scale(0.5,0.5)
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h2 id="leshy-sprite-tool-examples">'Leshy Sprite Tool' Examples</h2>
+<h3 id="newimagesheet_3">newImageSheet()</h3>
+<pre><code>local slotsSheet = helper.newImageSheet( { definition = &quot;slots.txt&quot;,  image = &quot;slots.png&quot; } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newimage_3">newImage()</h3>
+<p><strong> Example 1 - Use Previously Loaded Sheet </strong></p>
+<pre><code>local apple = helper.newImage( 
+   {
+      sheet  = slotsSheet, 
+      frameIndex = 2, 
+      parent = group,
+      x = 100,
+      y = 100
+   } )
+</code></pre>
+
+<p><strong> Example 2 - Load &amp; Use Sheet On Demand </strong></p>
+<pre><code>local grapes = helper.newImage( 
+   { 
+      definition = &quot;slots.txt&quot;, 
+      image = &quot;slots.png&quot;, 
+      frameIndex = 3,
+      parent = group, x = 100, y = 100 } )
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h3 id="newsprite_3">newSprite()</h3>
+<p><strong> Example 1 - Single Sheet Sprite </strong></p>
+<pre><code>local ninjaGirlIdleSequenceData =
+{
+   name        = &quot;idle&quot;,
+   start       = 1,
+   count       = 10,
+   time        = 1000,
+   loopCount   = 0
+}
+
+local ninjaGirlIdleSprite = helper.newSprite( 
+   { 
+      definition = &quot;ninjaGirlIdle.txt&quot;,
+      image = &quot;ninjaGirlIdle.png&quot;,
+      parent = group, x = cx, y = cy 
+   }, ninjaGirlIdleSequenceData )
+
+ninjaGirlIdleSprite:scale(0.5,0.5)
+ninjaGirlIdleSprite:setSequence(&quot;idle&quot;)
+ninjaGirlIdleSprite:play()
+</code></pre>
+
+<p><strong> Example 2 - Multi-Sheet Sprites </strong></p>
+<pre><code>-- 1. Get sheets from helper
+local idleSheet = helper.newImageSheet( 
+   { 
+      definition = &quot;ninjaGirlIdle.txt&quot;, 
+      image = &quot;ninjaGirlIdle.png&quot; 
+   } )
+
+local attackSheet = helper.newImageSheet( 
+   { 
+      definition = &quot;ninjaGirlAttack.txt&quot;,
+      image = &quot;ninjaGirlAttack.png&quot; 
+   } )
+
+-- 2. Write sequence data table (defines how animation plays)
+local ninjaGirlSequenceData = 
+   {
+      { name = &quot;idle&quot;, sheet = idleSheet, start = 1, count = 10, time = 1000, loopCount = 0 },
+      { name= &quot;attack&quot;, sheet = attackSheet, start = 1, count = 10, time = 500, loopCount = 1 },
+   }
+
+-- 3. Create sprite and star it
+--
+local ninjaGirlSprite = helper.newSprite( 
+   { 
+      sheet = idleSheet, 
+      parent = group, 
+      x = cx + 200, 
+      y = cy 
+   }, ninjaGirlSequenceData )
+
+ninjaGirlSprite:setSequence(&quot;idle&quot;)
+ninjaGirlSprite:play()
+ninjaGirlSprite:scale(0.5,0.5)
+</code></pre>
+
+<p><a href="#docs-index"><em>index &uarr;</em></a></p>
+<h1 id="tool-usage-videos">Tool Usage Videos</h1>
+<p>Here are some videos showing how to use the four different tools with 'Texture Packer Helpers Plugin'.</p>
+<h1 id="how-to-use-texture-packer">How To Use <a href="https://www.codeandweb.com/texturepacker">Texture Packer</a></h1>
+<p>COMING SOON</p>
+<h1 id="how-to-use-shoebox">How To Use <a href="http://renderhjs.net/">ShoeBox</a></h1>
+<p>COMING SOON</p>
+<h1 id="how-to-use-free-texture-packer-024">How To Use <a href="http://free-tex-packer.com/">Free Texture Packer 0.2.4</a></h1>
+<p>COMING SOON</p>
+<h1 id="how-to-use-leshy-sprite-tool">How To Use <a href="https://www.leshylabs.com/apps/sstool/">Leshy Sprite Tool</a></h1>
+<p>COMING SOON</p>
+<h1 id="posting-questions-to-the-forums">Posting Questions To The Forums</h1>
+<p>I will be providing help (exclusively) through the <a href="https://forums.coronalabs.com/forum/553-other-third-party-tools/">Corona SDK Forums</a>.  (<em>Sorry: Direct e-mails and private messages will not be answered.</em>)</p>
+<p>When posting a question in the forums, be sure to follow these guidelines:</p>
+<ol>
+<li>Post to this forum: <a href="https://forums.coronalabs.com/forum/553-other-third-party-tools/">https://forums.coronalabs.com/forum/553-other-third-party-tools/</a></li>
+<li>Make sure the <strong>title</strong> starts with: <strong>Texture Packers Helper</strong> and includes a short and meaninful name for the the problem.</li>
+<li>In the <strong>body</strong> of the post give me clear, concise, and precise description or question.</li>
+</ol>
+<blockquote>
+<p>~ <strong>The Roaming Gamer</strong></p>
+</blockquote>
+<hr />
+<p><img alt="RoamingGamer" src="./images/roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2017; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/bootstrap-3.0.3.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '.';
+    </script>
+    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+    <script src="./js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2017-12-05 20:52:50
+-->
