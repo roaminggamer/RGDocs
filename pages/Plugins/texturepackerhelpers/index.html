@@ -121,6 +121,9 @@
             <li class="third-level"><a href="#c-require-helpers-plugin">C. Require Helpers Plugin</a></li>
         
     
+        <li class="first-level "><a href="#samples">Samples</a></li>
+        
+    
         <li class="first-level "><a href="#function-api-docs">Function API Docs</a></li>
         
             <li class="third-level"><a href="#summaries">Summaries</a></li>
@@ -134,19 +137,19 @@
             <li class="third-level"><a href="#leshy-sprite-tool-examples">'Leshy Sprite Tool' Examples</a></li>
         
     
-        <li class="first-level "><a href="#tool-usage-videos">Tool Usage Videos</a></li>
+        <li class="first-level "><a href="#tool-specific-export-settings">Tool Specific Export Settings</a></li>
         
     
-        <li class="first-level "><a href="#how-to-use-texture-packer">How To Use Texture Packer</a></li>
+        <li class="first-level "><a href="#exporting-sprite-sheets-with-texture-packer">Exporting Sprite Sheets with Texture Packer</a></li>
         
     
-        <li class="first-level "><a href="#how-to-use-shoebox">How To Use ShoeBox</a></li>
+        <li class="first-level "><a href="#exporting-sprite-sheets-with-shoebox">Exporting Sprite Sheets with ShoeBox</a></li>
         
     
-        <li class="first-level "><a href="#how-to-use-free-texture-packer-024">How To Use Free Texture Packer 0.2.4</a></li>
+        <li class="first-level "><a href="#exporting-sprite-sheets-with-free-texture-packer-024">Exporting Sprite Sheets with Free Texture Packer 0.2.4</a></li>
         
     
-        <li class="first-level "><a href="#how-to-use-leshy-sprite-tool">How To Use Leshy Sprite Tool</a></li>
+        <li class="first-level "><a href="#exporting-sprite-sheets-with-leshy-sprite-tool">Exporting Sprite Sheets with Leshy Sprite Tool</a></li>
         
     
         <li class="first-level "><a href="#posting-questions-to-the-forums">Posting Questions To The Forums</a></li>
@@ -175,7 +178,7 @@
 <hr />
 <h1 id="basic-usage">Basic Usage</h1>
 <h3 id="a-activate-plugin">A. Activate Plugin</h3>
-<p>First, purchase the plugin on <a href="https://marketplace.coronalabs.com/plugin/texturePackerHelpers">Corona Marketplace</a> to activate it.</p>
+<p>First, purchase the plugin on <a href="https://marketplace.coronalabs.com/plugin/texture-packer-helpers">Corona Marketplace</a> to activate it.</p>
 <h3 id="b-update-buildsettings">B. Update build.settings</h3>
 <p>Second, ensure your build.settings file has this code in it:</p>
 <pre><code>settings =
@@ -208,6 +211,10 @@
 <pre><code>local helper = helpers.leshy
 </code></pre>
 
+<hr />
+<h1 id="samples">Samples</h1>
+<p>You can find an example using all four tool ouput formats here:</p>
+<p><a href="https://github.com/roaminggamer/RG_FreeStuff/raw/master/myPluginSamples/texturepackerhelpers/sample.zip">https://github.com/roaminggamer/RG_FreeStuff/raw/master/myPluginSamples/texturepackerhelpers/sample.zip</a></p>
 <hr />
 <h1 id="function-api-docs">Function API Docs</h1>
 <p>All four helpers have the same functions and take basically the same parameters.  This list summarizes the functions.  Additionally, you will find tool specific examples below.</p>
@@ -602,16 +609,76 @@ ninjaGirlSprite:scale(0.5,0.5)
 </code></pre>
 
 <p><a href="#docs-index"><em>index &uarr;</em></a></p>
-<h1 id="tool-usage-videos">Tool Usage Videos</h1>
+<h1 id="tool-specific-export-settings">Tool Specific Export Settings</h1>
 <p>Here are some videos showing how to use the four different tools with 'Texture Packer Helpers Plugin'.</p>
-<h1 id="how-to-use-texture-packer">How To Use <a href="https://www.codeandweb.com/texturepacker">Texture Packer</a></h1>
-<p>COMING SOON</p>
-<h1 id="how-to-use-shoebox">How To Use <a href="http://renderhjs.net/">ShoeBox</a></h1>
-<p>COMING SOON</p>
-<h1 id="how-to-use-free-texture-packer-024">How To Use <a href="http://free-tex-packer.com/">Free Texture Packer 0.2.4</a></h1>
-<p>COMING SOON</p>
-<h1 id="how-to-use-leshy-sprite-tool">How To Use <a href="https://www.leshylabs.com/apps/sstool/">Leshy Sprite Tool</a></h1>
-<p>COMING SOON</p>
+<h1 id="exporting-sprite-sheets-with-texture-packer">Exporting Sprite Sheets with <a href="https://www.codeandweb.com/texturepacker">Texture Packer</a></h1>
+<p>Assuming you have installed Texture Packer, run the tool and follow these steps:</p>
+<ol>
+<li>Select textures you want in sheet and drag them onto 'the tool'.</li>
+<li>Click 'Publish Sprite Sheet'</li>
+<li>Set 'Save as Type' to 'Corona SDK lua file' and five the file a name (ex: ninjaGirlIdle.lua)</li>
+<li>Click 'Save'.</li>
+</ol>
+<p><img alt="texturePacker" src="./images/texturePacker1.png" />
+<img alt="texturePacker" src="./images/texturePacker2.png" /></p>
+<p>This will produce two files: </p>
+<ul>
+<li>ninjaGirlIdle.lua</li>
+<li>ninjaGirlIdle.png</li>
+</ul>
+<h1 id="exporting-sprite-sheets-with-shoebox">Exporting Sprite Sheets with <a href="http://renderhjs.net/">ShoeBox</a></h1>
+<p>Assuming you have installed ShoeBox and Adobe Air, run ShoeBox and follow these steps:</p>
+<ol>
+<li>Select textures you want in sheet and drag them onto 'Sprite Sheet' area of 'Sprites Tab'.</li>
+<li>After the sprites are processed a window will pop up showing them.  Click the 'settings' button.</li>
+<li>In the 'Sprite Sheet Settings' Dialog that pops up, select 'Corona SDK' as the template.</li>
+<li>On the same dialog, make sure 'Tex Power Of Two' is false, then click Apply.</li>
+<li>The tool will re-process the sprites.  When it is done, click 'Save' in the preview window.</li>
+</ol>
+<p><img alt="shoeBox" src="./images/shoeBox1.png" />
+<img alt="shoeBox" src="./images/shoeBox2.png" />
+<img alt="shoeBox" src="./images/shoeBox3.png" />
+<img alt="shoeBox" src="./images/shoeBox4.png" /></p>
+<p>This will produce two files (in same folder as original images):  </p>
+<ul>
+<li>sprites.lua</li>
+<li>sprites.png</li>
+</ul>
+<h1 id="exporting-sprite-sheets-with-free-texture-packer-024">Exporting Sprite Sheets with <a href="http://free-tex-packer.com/">Free Texture Packer 0.2.4</a></h1>
+<p>Click the link in the title above and it will open the tool in your browser.  Then follow these steps</p>
+<ol>
+<li>Select textures you want in sheet and drag them onto grey box titled "or drag'n'drop images here".</li>
+<li>Use similar settings shown for step two below, then click 'Export'.<ul>
+<li><em>Texture name:</em> and <em>File name:</em> set to same value (Ex: ninjaGirlIdle)</li>
+<li><em>Format:</em> must be set to <em>JSON (array)</em></li>
+<li><em>Allow rotation:</em> must be clear (<em>false</em>).</li>
+<li><em>Packer:</em> should be <em>MaxRectsBin</em></li>
+<li><em>Method:</em> should be <em>BestAreaFit</em></li>
+</ul>
+</li>
+</ol>
+<p><img alt="leshy" src="./images/freeTexturePacker1.png" />
+<img alt="freeTexturePacker" src="./images/freeTexturePacker2.png" /></p>
+<p>This will produce two files in a zip file (ninjaGirlIdle.zip): </p>
+<ul>
+<li>ninjaGirlIdle.json</li>
+<li>ninjaGirlIdle.png</li>
+</ul>
+<h1 id="exporting-sprite-sheets-with-leshy-sprite-tool">Exporting Sprite Sheets with <a href="https://www.leshylabs.com/apps/sstool/">Leshy Sprite Tool</a></h1>
+<p>Click the link in the title above and it will open the tool in your browser.  Then follow these steps</p>
+<ol>
+<li>Select textures you want in sheet and drag them onto grey box titled "Drag &amp; Drop Image Files Here".</li>
+<li>Select 'Text' as save 'Sprite Map' save format.</li>
+<li>Choose file name for the 'Sprite Sheet' and the 'Sprite Map' that match. Ex: ninjaGirlIdle</li>
+<li>Click Save buttons for both 'Sprite Sheet' and 'Sprite Map'.</li>
+</ol>
+<p><img alt="leshy" src="./images/leshy1.png" />
+<img alt="leshy" src="./images/leshy2.png" /></p>
+<p>This will produce two files: </p>
+<ul>
+<li>ninjaGirlIdle.txt</li>
+<li>ninjaGirlIdle.png</li>
+</ul>
 <h1 id="posting-questions-to-the-forums">Posting Questions To The Forums</h1>
 <p>I will be providing help (exclusively) through the <a href="https://forums.coronalabs.com/forum/553-other-third-party-tools/">Corona SDK Forums</a>.  (<em>Sorry: Direct e-mails and private messages will not be answered.</em>)</p>
 <p>When posting a question in the forums, be sure to follow these guidelines:</p>
@@ -677,5 +744,5 @@ ninjaGirlSprite:scale(0.5,0.5)
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-12-05 20:55:08
+Build Date UTC : 2017-12-06 19:15:34
 -->
