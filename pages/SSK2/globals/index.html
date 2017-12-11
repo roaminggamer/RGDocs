@@ -337,9 +337,6 @@
             <li class="third-level"><a href="#general">General</a></li>
         
     
-        <li class="first-level "><a href="#stop-exporting-globals">Stop Exporting Globals</a></li>
-        
-    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -434,19 +431,6 @@
 </tr>
 </tbody>
 </table>
-<h1 id="stop-exporting-globals">Stop Exporting Globals</h1>
-<p>The functions and variables listed above are part of ssk.core.*.  </p>
-<p>I export them as globals (_G.*) because I find them extremely useful.</p>
-<p>If, on the other hand, you feel this '<em>pollutes</em>' the global space, you can disable exporting, during <a href="../#configuring-ssk-2">initialization</a>.</p>
-<pre><code>_G.ssk.init( { exportCore = false } )
-</code></pre>
-
-<p><strong>Tip:</strong> Just remember, if you stop exporting globals, you must use full names to access them (ick!):</p>
-<pre><code class="Lua">
-newCircle( group, ssk.core.centerX, ssk.core.bottom - 20, { radius = 20, fill = _BRIGHTORANGE_ } )
-
-</code></pre>
-
 <hr />
 <p><img alt="RoamingGamer" src="../roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         

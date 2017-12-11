@@ -390,7 +390,7 @@
 <p><a href="./libraries/actions1/"><img alt="Actions" src="./images/small/actions.gif" /></a>
 <a href="./libraries/camera/"><img alt="Camera" src="./images/small/camera.gif" /></a>
 <a href="./libraries/display_standard/"><img alt="Display" src="./images/small/basic_display.gif" /></a></p>
-<p>(<strong>Latest Release Version:</strong> <code>2017.12.04</code>)   (<strong>Last Docs Update:</strong> <code>04 DEC 2017</code>)</p>
+<p>(<strong>Latest Release Version:</strong> <code>2017.12.11</code>)   (<strong>Last Docs Update:</strong> <code>11 DEC 2017</code>)</p>
 <h1 id="what-is-it">What Is It?</h1>
 <p>Super Starter Kit 2 (aka SSK2) is a collection of libraries and utilities designed to take your <a href="https://coronalabs.com/">Corona SDK</a> development experience to a whole new level of efficiency and speed.</p>
 <table>
@@ -446,32 +446,14 @@ _G.ssk.init()
 <li>Valid range: [0, 2]</li>
 </ul>
 </li>
-<li><strong>exportCore</strong> (<code>true</code>)  - If set to true, SSK2 'exports' a number of values into the global (<code>_G</code>) namespace.  <ul>
-<li>See SSK <a href="./globals">Globals</a> for more details.</li>
-</ul>
-</li>
-<li><strong>exportColors</strong> (<code>true</code>)  - If set to <code>true</code>, SSK2 'exports' a number of color values and functions into the global (<code>_G</code>) namespace.  <ul>
-<li>See SSK <a href="./libraries/colors">ssk.colors.*</a> for more details.</li>
-</ul>
-</li>
-<li><strong>exportSystem</strong> (<code>false</code>)  - If set to true, SSK2 'exports' a number of values into the global (<code>_G</code>) namespace.  <ul>
-<li>See <a href="./libraries/system">ssk.system.*</a> for more details.</li>
-</ul>
-</li>
 <li><strong>gameFont</strong> (<code>native.systemFont</code>) - SSK2 uses a 'default' font for buttons and some other features.  You can specify that default font by providing the name of a valid <code>ttf</code> or <code>otf</code> file in this setting.</li>
 <li><strong>launchArgs</strong> (<code>nil</code>) - Takes the value <code>...</code> which is only available in main.lua.  If provided it is used to further refine SSK2 settings based on what Corona has discovered about the current 'device' and passed on to your app in the launch args.</li>
-<li><strong>math2DPlugin</strong> (<code>false</code>) - If set to <code>true</code>, SSK2 will try to use the native <a href="https://marketplace.coronalabs.com/plugin/math2d">math2d</a> instead of the built-in Lua-only version.  If it cannot find the plugin, it will safely fall back to the Lua version.</li>
 <li><strong>measure</strong> (<code>false</code>) - If set to <code>true</code> SSK2 will dump a listing of each library name and size to the console.</li>
-<li><strong>useExternal</strong> (<code>false</code>) - If set to <code>true</code> SSK2 will load <a href="./external">external</a> libraries.<ul>
-<li><strong>Tip:</strong> This content must be <a href="./external/#installing-external-content">downloaded</a> first!</li>
-</ul>
-</li>
 </ul>
 <h2 id="example">Example</h2>
 <pre><code>_G.ssk.init( { launchArgs = ..., 
                measure = true,  
                gameFont = &quot;Raleway-Light.ttf&quot;, 
-               math2DPlugin = true,
                debugLevel = 2 } )
 </code></pre>
 
@@ -566,7 +548,7 @@ SSK Total                                                    :  626.11 KB
 <pre><code>print( &quot;SSK VERSION: &quot; .. ssk.getVersion() )
 </code></pre>
 
-<p>If this prints out <code>SSK VERSION: 2017.12.04</code> you have the latest version. </p>
+<p>If this prints out <code>SSK VERSION: 2017.12.11</code> you have the latest version. </p>
 <p>If not, then go download a new copy from your store page.</p>
 <p><strong>Tip:</strong> While you are checking, be sure to check that your co-products are up-to-date too.</p>
 <h2 id="are-you-getting-errors">Are You Getting Errors?</h2>
@@ -625,8 +607,14 @@ The more effort you put into your post, the better I will be able to help you. <
 </blockquote>
 <h1 id="change-history">Change History</h1>
 <h2 id="2017">2017</h2>
+<h3 id="20171211">2017.12.11</h3>
+<ul>
+<li>Updated system detection code.  Can now detect true current OS, target OS, and device type (even in simulator).</li>
+<li>System, Globals, and Colors are exported all the time.  I removed this option because too many of my products and even internal SSK features depend on them.  Allowing users to disable export just lead to confusion and errors.</li>
+</ul>
 <h3 id="20171204">2017.12.04</h3>
 <ul>
+<li><strong>Changed version numbering system to date style: YYYY.MM.DD</strong></li>
 <li>Fixed functionality and visual feedback for 2, 3, and 4 state image/filled-rect buttons.</li>
 </ul>
 <h3 id="2017011">2017.011</h3>
@@ -725,7 +713,7 @@ The more effort you put into your post, the better I will be able to help you. <
 <h2 id="2016">2016</h2>
 <h3 id="2016001-2016004">2016.001 .. 2016.004</h3>
 <ul>
-<li>Initial Releases</li>
+<li>Initial Releases (of SSK2; SSK version 1 was released long before this...)</li>
 </ul>
 <p><img alt="RoamingGamer" src="./roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2016; All Rights Reserved </p></div>
         
@@ -782,5 +770,5 @@ The more effort you put into your post, the better I will be able to help you. <
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-12-05 01:10:00
+Build Date UTC : 2017-12-11 18:29:47
 -->
