@@ -121,16 +121,13 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#core-products">Core Products</a></li>
-        
-    
-        <li class="first-level "><a href="#behaviors-library">Behaviors Library</a></li>
+        <li class="first-level active"><a href="#templates">Templates</a></li>
         
     
         <li class="first-level "><a href="#plugins">Plugins</a></li>
         
     
-        <li class="first-level "><a href="#templates">Templates</a></li>
+        <li class="first-level "><a href="#core-products">Core Products</a></li>
         
     
         <li class="first-level "><a href="#tools">Tools</a></li>
@@ -143,72 +140,6 @@
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="core-products">Core Products</h1>
-<blockquote>
-<p><strong>FREE</strong> products that are (generally) <strong>required</strong> by my other products to run.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="right">Product</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/"><img alt="RoamingGamer" src="./images/ssk2smallwide.png" /></a></td>
-<td align="left"><strong>SUPERCHARGING <a href="https://coronalabs.com/">Corona SDK</a> game development every day.  <a href="https://github.com/roaminggamer/SSK2">Get It Now!</a></strong></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="behaviors-library">Behaviors Library</h1>
-<p>The <em>Behaviors Library</em> is a collection of code bundles that can be easily attached to corona display objects to give them specific game and app behaviors.</p>
-<pre><code>-- Load two behaviors
-local randMover = require &quot;behaviors.dummy.randMover&quot;
-local randColor = require &quot;behaviors.dummy.randColor&quot;
-
--- Create an object.
-local obj = newRect( layers.content, centerX-100, centerY, {} )
-
--- Create a list of behaviors to attach (optionally initializing behaviors with custom settings)
-local behaviorsList = { 
-    randColor( { colors = { _R_, _G_, _B_, _Y_  } } ),
-    randMover( { delta = 10 } ),    
-}
-
--- Attach the behaviors to the objects.. and done!
-behaviors.attach( obj, behaviorsList )
-</code></pre>
-
-<p><strong>Note:</strong>  While the behaviors themselves are free, but they require the <a href="./EFM">Behaviors Manager</a> Plugin(#plugins) to work.</p>
-<p>... WIP ...</p>
-<hr />
-<h1 id="plugins">Plugins</h1>
-<p><em>Plugins</em> are libraries/modules distributed through the Corona plugin system.</p>
-<table>
-<thead>
-<tr>
-<th align="right">Plugin</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right"><a href="./EFM">Behaviors Manager</a></td>
-<td align="left">EFM</td>
-</tr>
-<tr>
-<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/Plugins/math2d/">Math 2D</a></td>
-<td align="left">Highly functional, flexible, and fast 2D Math module.</td>
-</tr>
-<tr>
-<td align="right"><a href="./EFM">Patcher</a></td>
-<td align="left">EFM</td>
-</tr>
-</tbody>
-</table>
-<hr />
 <h1 id="templates">Templates</h1>
 <p><em>Templates</em> are "complete games and applications," designed for you to learn from and to create with these primary goals:</p>
 <ol>
@@ -216,63 +147,115 @@ behaviors.attach( obj, behaviorsList )
 <li>Provide a starting point for you to expand and extend the game/app concept.</li>
 <li>Keep game and app development simple and fun.</li>
 </ol>
+<blockquote>
+<p><strong>Tip:</strong> Want to use PayPal?  Go to the Sellfy Links.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th align="right">Product</th>
+<th align="right">Docs</th>
+<th align="center">Get It @</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/Starters/ActionPack1/">Action Pack #1</a></td>
+<td align="center"><a href="./EFM">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">'Flappy Bird', 'Escape', 'Bouncing Ball 2', 'Flappy Color', and 'Circle'.</td>
+</tr>
+<tr>
+<td align="right">Asteroids</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/asteroids-game-template">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">A basic implementation of the classic game "Asteroids,"...</td>
+</tr>
+<tr>
+<td align="right">Musical Memory</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/musical-memory-simon-game">Marketplace</a>, <a href="https://sellfy.com/p/4GKw/">Sellfy</a></td>
+<td align="left">"Simon"-like game using Corona.</td>
+</tr>
+<tr>
+<td align="right">Pig Dice Game</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/pig-dice-game-game-template">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">"Pig" dice game "made using Corona.</td>
+</tr>
+<tr>
+<td align="right">Sliding Puzzle</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/sliding-puzzle-game-templates">Marketplace</a>, <a href="https://sellfy.com/p/6zq6/">Sellfy</a></td>
+<td align="left">This set contains basic "Sliding Puzzle" game templates suitable for new game developers. It comes with three (3) versions of the game.</td>
+</tr>
+<tr>
+<td align="right">Tic-Tac-Toe</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/tic-tac-toe-game-templates">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">Tic-Tac-Toe is one of the fundamental games all beginning game developers should make. This package comes with five (5) versions of the game.</td>
+</tr>
+<tr>
+<td align="right">Balloon Pop</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/balloon-pop-game-templates">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">Basic "Pop the Balloons" game suitable for new game developers. Comes with three (3) versions of the game.</td>
+</tr>
+<tr>
+<td align="right">Breakout</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/breakout-game-templates">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">This is a basic "Breakout"-style game suitable for new game developers. It comes with four (4) versions of the game.</td>
+</tr>
+<tr>
+<td align="right">Whack-a-Mole</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/whack-a-mole-game-templates">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">"Whack-a-Mole" is an often-overlooked game that all new developers should re-make at least once. This package comes with four (4) versions of the game.</td>
+</tr>
+<tr>
+<td align="right">Missile Command</td>
+<td align="center"><a href="https://marketplace.coronalabs.com/asset/missile-command-game-templates">Marketplace</a>, <a href="./EFM">Sellfy</a></td>
+<td align="left">"Missile Command" is a classic game that introduces fundamental game development concepts. Includes four versions of game.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="plugins">Plugins</h1>
+<p><em>Plugins</em> are libraries/modules distributed through the Corona plugin system.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Docs</th>
+<th align="center">Get It @</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/Plugins/texturepackerhelpers/">Image Sheet/Sprite Helpers</a></td>
+<td align="center"><a href="https://marketplace.coronalabs.com/plugin/texture-packer-helpers">Marketplace</a></td>
+<td align="left">On a budget?  Use a free texture packer ( <a href="https://renderhjs.net/shoebox/">ShoeBox</a>, <a href="http://free-tex-packer.com/">Free Texture Packer</a>, <a href="https://www.leshylabs.com/apps/sstool/">Leshy Sprite Tool</a>) for now, then update to <a href="https://www.codeandweb.com/texturepacker">Texture Packer</a> when you have the cash. No need to re-write your code....</td>
+</tr>
+<tr>
+<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/Plugins/patcher/">Patcher</a></td>
+<td align="center"><a href="https://marketplace.coronalabs.com/plugin/patcher">Marketplace</a></td>
+<td align="left">This plugin allows you to download and execute/<code>require()</code> scripts...</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="core-products">Core Products</h1>
+<table>
+<thead>
+<tr>
+<th align="right">Docs</th>
+<th align="center">Price</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/"><img alt="RoamingGamer" src="./images/ssk2smallwide.png" /></a></td>
-<td align="left"><strong>SUPERCHARGING <a href="https://coronalabs.com/">Corona SDK</a> game development every day.  <a href="https://sellfy.com/p/x9oR/">Get It Now!</a></strong></td>
-</tr>
-<tr>
-<td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/Starters/ActionPack1/">Action Pack #1</a></td>
-<td align="left">One basic template and five game starters: 'Flappy Bird', 'Escape', 'Bouncing Ball 2', 'Flappy Color', and 'Circle'.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/asteroids-game-template">Asteroids</a></td>
-<td align="left">A basic implementation of the classic game "Asteroids," one of the foundational games that all serious game developers should re-make at least once because it explores some truly fundamental mechanics like movement, scoring, levels, spawning, single-screen camera with wrapping, etc.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/musical-memory-simon-game">Musical Memory</a></td>
-<td align="left">This template contains the source code, art, and sounds necessary to create a "Simon"-like game with Corona. This is a great starter project for new developers who want to learn about basic object creation, touches, sounds, and simple game logic.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/pig-dice-game-game-template">Pig (Dice Game)</a></td>
-<td align="left">This template contains the source code, art, and sounds necessary to create the dice game "Pig" using Corona. This is a great starter project for new developers who want to learn about basic object creation, touches, sounds, and simple AI.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/sliding-puzzle-game-templates">Sliding Puzzle</a></td>
-<td align="left">This set contains basic "Sliding Puzzle" game templates suitable for new game developers. It comes with three (3) versions of the game.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/tic-tac-toe-game-templates">Tic-Tac-Toe</a></td>
-<td align="left">Tic-Tac-Toe is one of the fundamental games all beginning game developers should make. This package comes with five (5) versions of the game.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/balloon-pop-game-templates">Balloon Pop</a></td>
-<td align="left">Basic "Pop the Balloons" game suitable for new game developers. Comes with three (3) versions of the game.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/breakout-game-templates">Breakout</a></td>
-<td align="left">This is a basic "Breakout"-style game suitable for new game developers. It comes with four (4) versions of the game.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/whack-a-mole-game-templates">Whack-a-Mole</a></td>
-<td align="left">"Whack-a-Mole" is an often-overlooked game that all new developers should re-make at least once. This package comes with four (4) versions of the game.</td>
-</tr>
-<tr>
-<td align="right"><a href="https://marketplace.coronalabs.com/asset/missile-command-game-templates">Missile Command</a></td>
-<td align="left">"Missile Command" is a classic game that introduces fundamental game development concepts. Includes four versions of game.</td>
+<td align="center"><strong>FREE</strong></td>
+<td align="left"><strong>SUPERCHARGING <a href="https://coronalabs.com/">Corona</a> game development every day.  <a href="https://github.com/roaminggamer/SSK2">Get It Now!</a></strong></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h1 id="tools">Tools</h1>
-<p><em>Tools</em>(tools) are complete solutions to common Corona SDK game and app design problems.</p>
+<p><em>Tools</em>(tools) are complete solutions to common Corona game and app design problems.</p>
 <table>
 <thead>
 <tr>
@@ -283,7 +266,7 @@ behaviors.attach( obj, behaviorsList )
 <tbody>
 <tr>
 <td align="right"><a href="https://roaminggamer.github.io/RGDocs/pages/RGPE2/">RGPE2</a></td>
-<td align="left"><em>Roaming Gamer Particle Editor 2</em> (aka RGPE2) is a <strong>FREE</strong> particle editor for creating emitter definition files for use with the <a href="https://coronalabs.com/">Corona SDK</a> <a href="https://docs.coronalabs.com/daily/api/library/display/newEmitter.html">newEmitter()</a> function.</td>
+<td align="left"><em>Roaming Gamer Particle Editor 2</em> (aka RGPE2) is a <strong>FREE</strong> particle editor for creating emitter definition files for use with the <a href="https://coronalabs.com/">Corona</a> <a href="https://docs.coronalabs.com/daily/api/library/display/newEmitter.html">newEmitter()</a> function.</td>
 </tr>
 </tbody>
 </table>
@@ -350,5 +333,5 @@ behaviors.attach( obj, behaviorsList )
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-10-14 18:33:29
+Build Date UTC : 2018-01-10 00:29:04
 -->

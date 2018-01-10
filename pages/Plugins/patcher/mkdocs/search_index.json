@@ -154,6 +154,11 @@
             "location": "/ssk2/", 
             "text": "Redirecting to homepage now...", 
             "title": "SSK2"
+        }, 
+        {
+            "location": "/rgdocs/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "RG Docs"
         }
     ]
 }
