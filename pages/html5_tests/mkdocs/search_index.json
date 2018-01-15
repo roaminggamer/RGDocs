@@ -1,0 +1,34 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "HTML5 Tests\n\n\n\n\nPlaceholder tests while I try out the Beta HTML5 features.\n\n\n\n\nMarketplace Templates as HTML5\n\n\n\n\nAsteroids\n\n\nBalloon Pop\n\n\nBreakout\n\n\nMissile Command\n\n\nMusical Memory\n\n\nPig\n\n\nSliding Puzzle\n\n\nTic-Tac-Toe\n\n\nWhack-A-Mole\n\n\n\n\nExperiments\n\n\n\n\nTBD\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
+            "title": "About"
+        }, 
+        {
+            "location": "/#html5-tests", 
+            "text": "Placeholder tests while I try out the Beta HTML5 features.", 
+            "title": "HTML5 Tests"
+        }, 
+        {
+            "location": "/#marketplace-templates-as-html5", 
+            "text": "Asteroids  Balloon Pop  Breakout  Missile Command  Musical Memory  Pig  Sliding Puzzle  Tic-Tac-Toe  Whack-A-Mole", 
+            "title": "Marketplace Templates as HTML5"
+        }, 
+        {
+            "location": "/#experiments", 
+            "text": "TBD      Copyright   Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
+            "title": "Experiments"
+        }, 
+        {
+            "location": "/ssk2/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "SSK2"
+        }, 
+        {
+            "location": "/rgdocs/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "RG Docs"
+        }
+    ]
+}
