@@ -2,18 +2,23 @@
     "docs": [
         {
             "location": "/", 
-            "text": "HTML5 Tests\n\n\n\n\nPlaceholder tests while I try out the Beta HTML5 features.\n\n\n\n\nMarketplace Templates as HTML5\n\n\n\n\nCLICK TO PLAY \n \nAsteroids\n \n\n\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\n\n\n\n\nCLICK TO PLAY \n \nBalloon Pop\n\n\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nBreakout\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nMissile Command\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nMusical Memory\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nPig\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nSliding Puzzle\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nTic-Tac-Toe\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nWhack-A-Mole\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nParental (Number) Gate\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\nCLICK TO PLAY \n \nReversi Module\n\n\nCLICK TO BUY \n \nMarketplace\n -OR- \nSellfy (PayPal accepted)\n\n\n\n\nExperiments\n\n\n\n\nAsk Ed\n Collection - I am considering moving my entire answers collection (\nRG Free Stuff\n) into a single unified app so that folks can try my answers and search them.  This link is to Work In Progress Harness for that app: \nAsk Ed\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
+            "text": "HTML5 Tests\n\n\nMarketplace Templates as HTML5\n\n\n\n\nAsteroids \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nBalloon Pop \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nBreakout \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nMissile Command \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nMusical Memory \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nPig \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nSliding Puzzle \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nTic-Tac-Toe \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nWhack-A-Mole \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\n\n\nMarketplace Other as HTML5\n\n\n\n\nParental (Number) Gate \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\nReversi Module \nPLAY NOW\n  \n Buy \nCC\n -OR- \nPayPal\n\n\n\n\nExperiments\n\n\n\n\nAsk Ed\n Collection - I am considering moving my entire answers collection (\nRG Free Stuff\n) into a single unified app so that folks can try my answers and search them.  This link is to Work In Progress Harness for that app: \nAsk Ed\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
             "title": "About"
         }, 
         {
             "location": "/#html5-tests", 
-            "text": "Placeholder tests while I try out the Beta HTML5 features.", 
+            "text": "", 
             "title": "HTML5 Tests"
         }, 
         {
             "location": "/#marketplace-templates-as-html5", 
-            "text": "CLICK TO PLAY    Asteroids     CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)    CLICK TO PLAY    Balloon Pop   CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Breakout  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Missile Command  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Musical Memory  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Pig  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Sliding Puzzle  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Tic-Tac-Toe  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Whack-A-Mole  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Parental (Number) Gate  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)  CLICK TO PLAY    Reversi Module  CLICK TO BUY    Marketplace  -OR-  Sellfy (PayPal accepted)", 
+            "text": "Asteroids  PLAY NOW     Buy  CC  -OR-  PayPal  Balloon Pop  PLAY NOW     Buy  CC  -OR-  PayPal  Breakout  PLAY NOW     Buy  CC  -OR-  PayPal  Missile Command  PLAY NOW     Buy  CC  -OR-  PayPal  Musical Memory  PLAY NOW     Buy  CC  -OR-  PayPal  Pig  PLAY NOW     Buy  CC  -OR-  PayPal  Sliding Puzzle  PLAY NOW     Buy  CC  -OR-  PayPal  Tic-Tac-Toe  PLAY NOW     Buy  CC  -OR-  PayPal  Whack-A-Mole  PLAY NOW     Buy  CC  -OR-  PayPal", 
             "title": "Marketplace Templates as HTML5"
+        }, 
+        {
+            "location": "/#marketplace-other-as-html5", 
+            "text": "Parental (Number) Gate  PLAY NOW     Buy  CC  -OR-  PayPal  Reversi Module  PLAY NOW     Buy  CC  -OR-  PayPal", 
+            "title": "Marketplace Other as HTML5"
         }, 
         {
             "location": "/#experiments", 
