@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roaming Gamer, LLC. Image Sheet/Sprite Helpers Documentation">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pagesTry/wordsearch/"> 
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <title>Word Search Starter Kit</title>
+
+    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">Word Search Starter Kit</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="ssk2/">SSK2</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="rgdocs/">RG Docs</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="ssk2/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#word-search-starter-kit">Word Search Starter Kit</a></li>
+        
+    
+        <li class="first-level "><a href="#also-included">Also Included</a></li>
+        
+    
+        <li class="first-level "><a href="#the-viewer">The Viewer</a></li>
+        
+            <li class="third-level"><a href="#example-usage">Example Usage</a></li>
+        
+    
+        <li class="first-level "><a href="#the-editor">The Editor</a></li>
+        
+            <li class="third-level"><a href="#basic-usage">Basic Usage</a></li>
+        
+    
+        <li class="first-level "><a href="#quick-reference">Quick Reference</a></li>
+        
+            <li class="third-level"><a href="#createeditor">createEditor</a></li>
+        
+            <li class="third-level"><a href="#createpuzzleviewer">createPuzzleViewer</a></li>
+        
+            <li class="third-level"><a href="#destroyeditor">destroyEditor</a></li>
+        
+            <li class="third-level"><a href="#destroypuzzleviewer">destroyPuzzleViewer</a></li>
+        
+            <li class="third-level"><a href="#getpuzzle">getPuzzle</a></li>
+        
+            <li class="third-level"><a href="#setcolors">setColors</a></li>
+        
+            <li class="third-level"><a href="#setfont">setFont</a></li>
+        
+            <li class="third-level"><a href="#setlinewidth">setLineWidth</a></li>
+        
+            <li class="third-level"><a href="#settilesize">setTileSize</a></li>
+        
+    
+        <li class="first-level "><a href="#posting-questions-to-the-forums">Posting Questions To The Forums</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="word-search-starter-kit">Word Search Starter Kit</h1>
+<blockquote>
+<p>This starter kit will allow you to rapidly write 'word search' style games and edit puzzles for your game.</p>
+</blockquote>
+<p><img alt="RoamingGamer" src="./images/wordsearch1.png" />
+<img alt="RoamingGamer" src="./images/wordsearch2.png" /></p>
+<h1 id="also-included">Also Included</h1>
+<p>This starter kit is made using a standard base that can be found in all current and future 'try before you buy' kits.  Those parts are:</p>
+<ul>
+<li>
+<p><strong>buttonMaker</strong> - Button builders for push, toggle, and radio buttons.  </p>
+<ul>
+<li>Docs coming soon...</li>
+</ul>
+</li>
+<li>
+<p><strong>soundMgr</strong> - Basic sound manager that you can easily tweak and extend.</p>
+<ul>
+<li>Docs coming soon...</li>
+</ul>
+</li>
+<li>
+<p><strong>utils</strong> - Utilities module that includes tons of featues, including a <strong>button generator</strong>.</p>
+<ul>
+<li>Docs coming soon...</li>
+</ul>
+</li>
+</ul>
+<h1 id="the-viewer">The Viewer</h1>
+<h2 id="example-usage">Example Usage</h2>
+<pre><code>require &quot;easy.globals&quot;
+local utils = require &quot;easy.utils&quot;
+require &quot;presets.presets&quot; -- For button maker
+local buttonMaker = require &quot;easy.buttonMaker&quot;
+
+local wordSearch = require &quot;easy.wordSearch&quot;
+
+local group
+local puzzleNum = 0
+local function run()  
+
+  puzzleNum = puzzleNum + 1
+  puzzleNum = (puzzleNum &gt; 2) and 1 or puzzleNum
+
+  display.remove(group)
+  group = display.newGroup()
+
+  --
+  -- Draw a background
+  --    
+  local back = display.newRect( group, centerX, centerY, fullw, fullh ) 
+
+  --
+  -- Draw a win label
+  --
+  local winLabel = display.newText( group, &quot;Puzzle Complete&quot;, 
+                                    centerX, bottom - 40, &quot;Lato-Black.ttf&quot;, 60 )
+  winLabel:setFillColor(1,1,1)
+  winLabel.isVisible = false
+
+  --
+  -- Add a button to 're-run' this example
+  --
+  local button = buttonMaker.easyPush( { parent = group, x = right - 55, y = top + 20,  
+                                         fontSize = 20, width = 100, height = 30, 
+                                         labelText = &quot;Next&quot;, listener = run } ) 
+  button.isVisible = false
+
+  --
+  -- Add a button to 're-run' this example
+  --
+  local button = buttonMaker.easyPush( { parent = group, x = right - 55, y = top + 20,  
+                                        fontSize = 20, width = 100, height = 30, 
+                                        labelText = &quot;Next&quot;, listener = run } ) 
+  button.isVisible = false
+
+  -- 
+  local puzzleToLoad    = string.format( &quot;puzzle_%0.3d.json&quot;, puzzleNum )
+  local tileSize    = 50
+  local info        = wordSearch.getPuzzle( puzzleToLoad )
+  --utils.dump(info,&quot;info&quot;)
+  --
+  local puzzleWidth   = info.cols * tileSize
+  local puzzleHeight  = info.rows * tileSize
+  --
+  local puzzleX = centerX - puzzleWidth/2 - 180
+  local puzzleY = centerY - puzzleHeight/2 - 10
+
+  --
+  --  Draw word list
+  --
+  local wordList = info.rawList
+  wordList = utils.split(wordList,&quot;\n&quot;)
+  --utils.dump(wordList, &quot;wordList&quot;)
+  local wordLabels = {}
+  --
+  local x = puzzleX + puzzleWidth + 21
+  local y = puzzleY
+  local tray = display.newRect( group, x, y, 350, puzzleHeight )
+  tray:setStrokeColor(unpack(utils.hexcolor(&quot;#128223&quot;)))
+  tray.strokeWidth = 5
+  tray.anchorX = 0
+  tray.anchorY = 0
+  --
+  local tmp = display.newText( group, &quot;Difficulty: &quot; .. 
+                               tostring(utils.round(info.difficulty,2)), 
+                               centerX, top + 30, &quot;Lato-Black.ttf&quot;, 25 ) 
+  tmp:setFillColor(unpack(utils.hexcolor(&quot;#128223&quot;)))
+  --
+  x = x + 350/2
+  y = y + 40
+  --
+  for i = 1, #wordList do
+    local word = wordList[i]
+    local tmp = display.newText( group, word, x, y, &quot;Roboto-Thin.ttf&quot;, 20 )
+    tmp:setFillColor(0,0,0)
+    wordLabels[word] = tmp
+    tmp.line = display.newLine( x - 10 - tmp.contentWidth/2, y, x + tmp.contentWidth/2 + 10, y )
+    tmp.line.strokeWidth = 2
+    tmp.line:setStrokeColor(0,0,0)
+    tmp.line.isVisible = false
+    y = y + 40
+  end
+  --
+  -- Listener for puzzle
+  --
+  local function onPuzzleEvent( event )
+    if( event.phase == &quot;foundWord&quot; ) then
+      print(event.word)
+      print(wordLabels[event.word])
+      wordLabels[event.word].line.isVisible = true
+
+    elseif( event.phase == &quot;puzzleComplete&quot; ) then
+      winLabel.isVisible = true
+      button.isVisible = true
+    end
+  end
+
+  --
+  -- Draw current puzzle
+  --
+  wordSearch.setTileSize( tileSize )  
+
+  local colorCodes = { &quot;#7ec696&quot;, &quot;#e9c9bc&quot;, &quot;#aaf2e7&quot;, &quot;#df93ed&quot;, &quot;#dbc1a6&quot;, 
+                &quot;#7f89ad&quot;, &quot;#9194ff&quot;, &quot;#7fafc5&quot;, &quot;#93d3b8&quot;, &quot;#aa84cd&quot;, 
+                &quot;#e1e5c2&quot;, &quot;#e1e5c2&quot;, &quot;#f9f7c4&quot;, &quot;#92ba9f&quot;, &quot;#ec99e1&quot;, 
+                &quot;#af89d6&quot;, &quot;#a3a1c9&quot;, &quot;#afdece&quot;, }
+  wordSearch.setColors( colorCodes )  
+
+  local params =
+  { 
+    tileImg         = &quot;images/fillT.png&quot;,
+    letterColor     = { 0, 0, 0 },
+    --letterSize      = 25,
+    letterFont      = &quot;Lato-Black.ttf&quot;,
+    listener      = onPuzzleEvent 
+  } 
+
+  wordSearch.setLineWidth( 36 )
+
+  wordSearch.createPuzzleViewer( group, puzzleX, puzzleY, puzzleToLoad, params )
+end
+
+run()
+</code></pre>
+
+<h1 id="the-editor">The Editor</h1>
+<h2 id="basic-usage">Basic Usage</h2>
+<pre><code>local mode = &quot;edit&quot; -- edit view
+
+if( mode == &quot;edit&quot; ) then
+    local utils = require &quot;easy.utils&quot;
+    require &quot;presets.presets&quot; -- For button maker
+    local wordSearch = require &quot;easy.wordSearch&quot;
+    wordSearch.setFont( &quot;editor.ttf&quot; )
+    wordSearch.setTileSize(34)
+    wordSearch.createEditor()
+
+else
+    require &quot;easy.globals&quot;
+    local utils = require &quot;easy.utils&quot;
+    require &quot;presets.presets&quot; -- For button maker
+    local wordSearch = require &quot;easy.wordSearch&quot;
+
+    -- 
+    local tileSize      = 60
+    local info              = wordSearch.getPuzzle( &quot;puzzle_001.json&quot; )
+    local puzzleWidth   = info.cols * tileSize
+    local puzzleHeight  = info.rows * tileSize
+    --
+    local x = centerX - puzzleWidth/2
+    local y = centerY - puzzleHeight/2
+    --  
+    wordSearch.setTileSize( tileSize )
+
+    local params =
+    { 
+        tileImg                 = &quot;images/fillW.png&quot;,
+        letterColor         = { 0, 0, 0 },
+        letterSize          = 25,
+        letterFont          = &quot;Roboto-Thin.ttf&quot; }
+
+    wordSearch.createPuzzleViewer( nil, x, y, &quot;puzzle_001.json&quot;, params )
+end
+</code></pre>
+
+<h1 id="quick-reference">Quick Reference</h1>
+<h2 id="createeditor">createEditor</h2>
+<p><code>wordSearch.createEditor( group )</code> - Creates and starts the editor.</p>
+<ul>
+<li>group - An optional display group to place all content in.</li>
+</ul>
+<hr />
+<h2 id="createpuzzleviewer">createPuzzleViewer</h2>
+<p><code>wordSearch.createPuzzleViewer( group, x, y, puzzleToLoad, params  )</code> - Creates a puzzle 'viewer'.</p>
+<p>The 'viewer' is essentially a fully functional game instance that you can place anywherey you like,  in any group you like.</p>
+<ul>
+<li>group - An optional display group to place all content in.</li>
+<li>x, y - &lt; x, y &gt; position of center of puzzle.</li>
+<li>puzzleToLoad - Full name of puzzle, including the .json extension.  </li>
+<li>params - A table of optional parameters.<ul>
+<li>listener - Function to call when board is solved.</li>
+<li>landWidth, landHeight - Width and height of 'lands'.</li>
+<li>landStroke - Stroke width of land.</li>
+<li>landImage - Image to use for drawing lands. If none supplied, a rectangle is drawn.</li>
+<li>landColor - Fill color to use for land.  Default is white.</li>
+<li>tileWidth, tileHeight - Width and height of 'tiles'.</li>
+<li>tileStroke - Stroke width of tile.</li>
+<li>tileImage - Image to use for drawing tiles. If none supplied, a rectangle is drawn.</li>
+<li>tileImages - If supplied, you are telling the module to look in this folder for the letter tiles.</li>
+<li>tileExtension - Optionally used with 'tileImages' parameter and must be either ".png" or ".jpg". </li>
+<li>tileColor - Fill color to use for tile.  Default is white.</li>
+<li>letterFont - Font to use for letters if you're not supplying letter tiles.</li>
+<li>letterSize - Size of letters (only for non-letter tile case).</li>
+<li>letterColor - Color of letters (only for non-letter tile case).</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note: All puzzle definitions are assumed to be in the folder <code>~/puzzles/</code>.</p>
+</blockquote>
+<hr />
+<h2 id="destroyeditor">destroyEditor</h2>
+<p><code>wordSearch.createEditor()</code> - Destroys current editor.</p>
+<hr />
+<h2 id="destroypuzzleviewer">destroyPuzzleViewer</h2>
+<p><code>wordSearch.createPuzzleViewer()</code> - Destroys current 'viewer'.</p>
+<hr />
+<h2 id="getpuzzle">getPuzzle</h2>
+<p><code>wordSearch.getPuzzle( puzzleToLoad )</code> - Returns a table containing the puzzle definition for a named puzzle.</p>
+<ul>
+<li>puzzleToLoad - Full name of puzzle, including the .json extension.  </li>
+</ul>
+<p><strong>Returned Table Fields</strong></p>
+<ul>
+<li>rows - Number of rows in puzzle.</li>
+<li>cols - Number of colums in puzzle.</li>
+<li>inCols - Words in columns.</li>
+<li>inRows - Words in rows.</li>
+<li>inDiagonals - Words in diagonals.</li>
+<li>difficult - Rated dificulty of puzzle from 1 .. 10.</li>
+<li>rawPuzzle - Raw puzzle (rows of letters separated by "\n").</li>
+<li>rawList - Raw list of words in puzzle, separated by "\n".</li>
+</ul>
+<blockquote>
+<p>Note: All puzzle definitions are assumed to be in the folder <code>~/puzzles/</code>.</p>
+</blockquote>
+<hr />
+<h2 id="setcolors">setColors</h2>
+<p><code>wordSearch.setColors( colorCodes )</code> - Set your own custom color codes for lines.</p>
+<ul>
+<li>colorCodes - A table of strings, where each string is a hex encoded color. <ul>
+<li>Ex: This is red <code>#FF0000</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="setfont">setFont</h2>
+<p><code>wordSearch.setFont( ef )</code> - Changes the font used to draw letters.</p>
+<ul>
+<li>ef - Name of font to use for letters.  Set to <code>nil</code> to reset to default.</li>
+</ul>
+<hr />
+<h2 id="setlinewidth">setLineWidth</h2>
+<p><code>wordSearch.setLineWidth( width )</code> - If running viewer, this will set the width of the lines.</p>
+<ul>
+<li>width - Width of lines and end-caps.</li>
+</ul>
+<hr />
+<h2 id="settilesize">setTileSize</h2>
+<p><code>wordSearch.setTileSize( size )</code> - Set size of tiles.</p>
+<ul>
+<li>size - Width and height of tiles.</li>
+</ul>
+<h1 id="posting-questions-to-the-forums">Posting Questions To The Forums</h1>
+<p>I will be providing help (exclusively) through the <a href="https://forums.coronalabs.com/forum/553-other-third-party-tools/">Corona SDK Forums</a>.  (<em>Sorry: Direct e-mails and private messages will not be answered.</em>)</p>
+<p>When posting a question in the forums, be sure to follow these guidelines:</p>
+<ol>
+<li>Post to this forum: <a href="https://forums.coronalabs.com/forum/553-other-third-party-tools/">https://forums.coronalabs.com/forum/553-other-third-party-tools/</a></li>
+<li>Make sure the <strong>title</strong> starts with: <strong>Word Search Starter Kit</strong> and includes a short and meaninful name for the the problem.</li>
+<li>In the <strong>body</strong> of the post give me clear, concise, and precise description or question.</li>
+</ol>
+<blockquote>
+<p>~ <strong>The Roaming Gamer</strong></p>
+</blockquote>
+<hr />
+<p><img alt="RoamingGamer" src="./images/roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2017; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/bootstrap-3.0.3.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '.';
+    </script>
+    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+    <script src="./js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2018-07-10 20:19:49
+-->

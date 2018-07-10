@@ -1,0 +1,99 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Word Snap Starter Kit\n\n\n\n\nThis starter kit will allow you to rapidly write 'word snap' style games and edit puzzles for your game.\n\n\n\n\n\n\n\n\nAlso Included\n\n\nThis starter kit is made using a standard base that can be found in all current and future 'try before you buy' kits.  Those parts are:\n\n\n\n\n\n\nbuttonMaker\n - Button builders for push, toggle, and radio buttons.  \n\n\n\n\nDocs coming soon...\n\n\n\n\n\n\n\n\nsoundMgr\n - Basic sound manager that you can easily tweak and extend.\n\n\n\n\nDocs coming soon...\n\n\n\n\n\n\n\n\nutils\n - Utilities module that includes tons of featues, including a \nbutton generator\n.\n\n\n\n\nDocs coming soon...\n\n\n\n\n\n\n\n\nThe Viewer\n\n\nBasic Usage\n\n\nlocal utils = require \neasy.utils\n\nlocal wordSnap = require \neasy.wordSnap\n\n\nlocal group = display.newGroup()\nlocal back = display.newRect( group, centerX, centerY, fullw, fullh )\nback:setFillColor(unpack(utils.hexcolor(\n#128223\n)))\n\nlocal params = \n{\n   tileColor         = utils.hexcolor(\n#e96a5d\n),\n   tileStroke        = utils.hexcolor(\nFFFFFF\n),\n   tileStrokeWidth   = 2,\n\n   landColor         = utils.hexcolor(\n#1b3679\n),\n   landStroke        = utils.hexcolor(\n#edff47\n),\n   landStrokeWidth   = 2,\n}\n\nwordSnap.setTileDimensions(60,60)\nwordSnap.createViewer( group, centerX, centerY, \nlevel_1_1.json\n, params)\n\n\n\n\nThe Editor\n\n\nBasic Usage\n\n\nlocal mode = \nedit\n -- edit view\n\nif( mode == \nedit\n ) then\n   local utils = require \neasy.utils\n\n   require \npresets.presets\n -- For button maker\n   local wordSnap = require \neasy.wordSnap\n\n\n   wordSnap.setFonts( \nviewer.ttf\n, \neditor.ttf\n )\n   wordSnap.setTileDimensions(60,60)\n\n   wordSnap.createEditor()\n\nelse\n   local wordSnap = require \neasy.wordSnap\n  \n   wordSnap.setTileDimensions(60,60)\n   wordSnap.createViewer( nil, centerX, centerY, \nlevel_1_3.json\n )\nend\n\n\n\n\nQuick Reference\n\n\ncreateEditor\n\n\nwordSnap.createEditor( group )\n - Creates and starts the editor.\n\n\n\n\ngroup - An optional display group to place all content in.\n\n\n\n\n\n\ncreateViewer\n\n\nwordSnap.createViewer( group, x, y, puzzleName, params  )\n - Creates a puzzle 'viewer'.\n\n\nThe 'viewer' is essentially a fully functional game instance that you can place anywherey you like,  in any group you like.\n\n\n\n\ngroup - An optional display group to place all content in.\n\n\nx, y - \n x, y \n position of center of puzzle.\n\n\npuzzleName - Full name of puzzle, including the .json extension.  \n\n\nparams - A table of optional parameters.\n\n\nlistener - Function to call when board is solved.\n\n\nlandWidth, landHeight - Width and height of 'lands'.\n\n\nlandStroke - Stroke width of land.\n\n\nlandImage - Image to use for drawing lands. If none supplied, a rectangle is drawn.\n\n\nlandColor - Fill color to use for land.  Default is white.\n\n\ntileWidth, tileHeight - Width and height of 'tiles'.\n\n\ntileStroke - Stroke width of tile.\n\n\ntileImage - Image to use for drawing tiles. If none supplied, a rectangle is drawn.\n\n\ntileImages - If supplied, you are telling the module to look in this folder for the letter tiles.\n\n\ntileExtension - Optionally used with 'tileImages' parameter and must be either \".png\" or \".jpg\". \n\n\ntileColor - Fill color to use for tile.  Default is white.\n\n\nletterFont - Font to use for letters if you're not supplying letter tiles.\n\n\nletterSize - Size of letters (only for non-letter tile case).\n\n\nletterColor - Color of letters (only for non-letter tile case).\n\n\n\n\n\n\n\n\n\n\nNote: All puzzle definitions are assumed to be in the folder \n~/puzzles/\n.\n\n\n\n\n\n\ngetPuzzleInfo\n\n\nwordSnap.getPuzzleInfo( puzzleName )\n - Gets info about puzzle and returs it as a table.\n\n\n\n\npuzzleName - Full name of puzzle, including the .json extension.  \n\n\n\n\nReturned Table Fields\n\n\n\n\nrows - Number of rows in puzzle.\n\n\ncols - Number of colums in puzzle.\n\n\nwidth - Width of puzzle.\n\n\nheight - Height of puzzle.\n\n\nsets - Numer of 'sets' in puzzle. i.e. Number of puzzle pieces.\n\n\n\n\n\n\nNote: All puzzle definitions are assumed to be in the folder \n~/puzzles/\n.\n\n\n\n\n\n\nresetLayoutToStart\n\n\nwordSnap.resetLayoutToStart( instant )\n - If you're running the viewer, this will set all puzzle pieces back to the starting (unsolved) position.\n\n\n\n\ninstant - It set to \ntrue\n the pieces move instantly.  Otherwise they transition to the start point if they are not already there.\n\n\n\n\n\n\nsetFonts\n\n\nwordSnap.setFonts( vFont, eFont )\n - Sets default font for viewer and/or editor.\n\n\n\n\nvFont - Viewer font.  Pass \nnil\n to reset to default.\n\n\neFont - Editor font.  Pass \nnil\n to reset to default.\n\n\n\n\n\n\nsetTileDimensions\n\n\nwordSnap.setTileDimensions( width, height )\n - Set the width and height of tiles.\n\n\n\n\nwidth, height - Width and height of tiles.\n\n\n\n\n\n\nImportant!\n -- If you are going to change this, be sure to set it to the same value while editing as you do during viewing or your puzzle layouts may look goofy.\n\n\n\n\n\n\nstop\n\n\nwordSnap.setFlySettings( newTime, newEasing )\n - Changes the fly behavior for tiles that snap back to the unsolved position.\n\n\n\n\nnewTime - New fly time in milliseconds.\n\n\nnewEasing - New easing to use for the transition.\n\n\n\n\n\n\nstart\n\n\nwordSnap.start( )\n - If you are running the viewer, calling this enables touch interactions if they were previously disabled.\n\n\nPosting Questions To The Forums\n\n\nI will be providing help (exclusively) through the \nCorona SDK Forums\n.  (\nSorry: Direct e-mails and private messages will not be answered.\n)\n\n\nWhen posting a question in the forums, be sure to follow these guidelines:\n\n\n\n\nPost to this forum: \nhttps://forums.coronalabs.com/forum/553-other-third-party-tools/\n\n\nMake sure the \ntitle\n starts with: \nWord Snap Starter Kit\n and includes a short and meaninful name for the the problem.\n\n\nIn the \nbody\n of the post give me clear, concise, and precise description or question.\n\n\n\n\n\n\n~ \nThe Roaming Gamer\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
+            "title": "About"
+        }, 
+        {
+            "location": "/#word-snap-starter-kit", 
+            "text": "This starter kit will allow you to rapidly write 'word snap' style games and edit puzzles for your game.", 
+            "title": "Word Snap Starter Kit"
+        }, 
+        {
+            "location": "/#also-included", 
+            "text": "This starter kit is made using a standard base that can be found in all current and future 'try before you buy' kits.  Those parts are:    buttonMaker  - Button builders for push, toggle, and radio buttons.     Docs coming soon...     soundMgr  - Basic sound manager that you can easily tweak and extend.   Docs coming soon...     utils  - Utilities module that includes tons of featues, including a  button generator .   Docs coming soon...", 
+            "title": "Also Included"
+        }, 
+        {
+            "location": "/#the-viewer", 
+            "text": "", 
+            "title": "The Viewer"
+        }, 
+        {
+            "location": "/#basic-usage", 
+            "text": "local utils = require  easy.utils \nlocal wordSnap = require  easy.wordSnap \n\nlocal group = display.newGroup()\nlocal back = display.newRect( group, centerX, centerY, fullw, fullh )\nback:setFillColor(unpack(utils.hexcolor( #128223 )))\n\nlocal params = \n{\n   tileColor         = utils.hexcolor( #e96a5d ),\n   tileStroke        = utils.hexcolor( FFFFFF ),\n   tileStrokeWidth   = 2,\n\n   landColor         = utils.hexcolor( #1b3679 ),\n   landStroke        = utils.hexcolor( #edff47 ),\n   landStrokeWidth   = 2,\n}\n\nwordSnap.setTileDimensions(60,60)\nwordSnap.createViewer( group, centerX, centerY,  level_1_1.json , params)", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/#the-editor", 
+            "text": "", 
+            "title": "The Editor"
+        }, 
+        {
+            "location": "/#basic-usage_1", 
+            "text": "local mode =  edit  -- edit view\n\nif( mode ==  edit  ) then\n   local utils = require  easy.utils \n   require  presets.presets  -- For button maker\n   local wordSnap = require  easy.wordSnap \n\n   wordSnap.setFonts(  viewer.ttf ,  editor.ttf  )\n   wordSnap.setTileDimensions(60,60)\n\n   wordSnap.createEditor()\n\nelse\n   local wordSnap = require  easy.wordSnap   \n   wordSnap.setTileDimensions(60,60)\n   wordSnap.createViewer( nil, centerX, centerY,  level_1_3.json  )\nend", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/#quick-reference", 
+            "text": "", 
+            "title": "Quick Reference"
+        }, 
+        {
+            "location": "/#createeditor", 
+            "text": "wordSnap.createEditor( group )  - Creates and starts the editor.   group - An optional display group to place all content in.", 
+            "title": "createEditor"
+        }, 
+        {
+            "location": "/#createviewer", 
+            "text": "wordSnap.createViewer( group, x, y, puzzleName, params  )  - Creates a puzzle 'viewer'.  The 'viewer' is essentially a fully functional game instance that you can place anywherey you like,  in any group you like.   group - An optional display group to place all content in.  x, y -   x, y   position of center of puzzle.  puzzleName - Full name of puzzle, including the .json extension.    params - A table of optional parameters.  listener - Function to call when board is solved.  landWidth, landHeight - Width and height of 'lands'.  landStroke - Stroke width of land.  landImage - Image to use for drawing lands. If none supplied, a rectangle is drawn.  landColor - Fill color to use for land.  Default is white.  tileWidth, tileHeight - Width and height of 'tiles'.  tileStroke - Stroke width of tile.  tileImage - Image to use for drawing tiles. If none supplied, a rectangle is drawn.  tileImages - If supplied, you are telling the module to look in this folder for the letter tiles.  tileExtension - Optionally used with 'tileImages' parameter and must be either \".png\" or \".jpg\".   tileColor - Fill color to use for tile.  Default is white.  letterFont - Font to use for letters if you're not supplying letter tiles.  letterSize - Size of letters (only for non-letter tile case).  letterColor - Color of letters (only for non-letter tile case).      Note: All puzzle definitions are assumed to be in the folder  ~/puzzles/ .", 
+            "title": "createViewer"
+        }, 
+        {
+            "location": "/#getpuzzleinfo", 
+            "text": "wordSnap.getPuzzleInfo( puzzleName )  - Gets info about puzzle and returs it as a table.   puzzleName - Full name of puzzle, including the .json extension.     Returned Table Fields   rows - Number of rows in puzzle.  cols - Number of colums in puzzle.  width - Width of puzzle.  height - Height of puzzle.  sets - Numer of 'sets' in puzzle. i.e. Number of puzzle pieces.    Note: All puzzle definitions are assumed to be in the folder  ~/puzzles/ .", 
+            "title": "getPuzzleInfo"
+        }, 
+        {
+            "location": "/#resetlayouttostart", 
+            "text": "wordSnap.resetLayoutToStart( instant )  - If you're running the viewer, this will set all puzzle pieces back to the starting (unsolved) position.   instant - It set to  true  the pieces move instantly.  Otherwise they transition to the start point if they are not already there.", 
+            "title": "resetLayoutToStart"
+        }, 
+        {
+            "location": "/#setfonts", 
+            "text": "wordSnap.setFonts( vFont, eFont )  - Sets default font for viewer and/or editor.   vFont - Viewer font.  Pass  nil  to reset to default.  eFont - Editor font.  Pass  nil  to reset to default.", 
+            "title": "setFonts"
+        }, 
+        {
+            "location": "/#settiledimensions", 
+            "text": "wordSnap.setTileDimensions( width, height )  - Set the width and height of tiles.   width, height - Width and height of tiles.    Important!  -- If you are going to change this, be sure to set it to the same value while editing as you do during viewing or your puzzle layouts may look goofy.", 
+            "title": "setTileDimensions"
+        }, 
+        {
+            "location": "/#stop", 
+            "text": "wordSnap.setFlySettings( newTime, newEasing )  - Changes the fly behavior for tiles that snap back to the unsolved position.   newTime - New fly time in milliseconds.  newEasing - New easing to use for the transition.", 
+            "title": "stop"
+        }, 
+        {
+            "location": "/#start", 
+            "text": "wordSnap.start( )  - If you are running the viewer, calling this enables touch interactions if they were previously disabled.", 
+            "title": "start"
+        }, 
+        {
+            "location": "/#posting-questions-to-the-forums", 
+            "text": "I will be providing help (exclusively) through the  Corona SDK Forums .  ( Sorry: Direct e-mails and private messages will not be answered. )  When posting a question in the forums, be sure to follow these guidelines:   Post to this forum:  https://forums.coronalabs.com/forum/553-other-third-party-tools/  Make sure the  title  starts with:  Word Snap Starter Kit  and includes a short and meaninful name for the the problem.  In the  body  of the post give me clear, concise, and precise description or question.    ~  The Roaming Gamer      Copyright   Roaming Gamer, LLC. 2008-2017; All Rights Reserved", 
+            "title": "Posting Questions To The Forums"
+        }, 
+        {
+            "location": "/ssk2/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "SSK2"
+        }, 
+        {
+            "location": "/rgdocs/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "RG Docs"
+        }
+    ]
+}
