@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roaming Gamer, LLC.">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/Try/starterscore/"> 
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <title>Starters Core</title>
+
+    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">Starters Core</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="buttonMaker/">Button Maker</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="easyAds/">Easy Ads</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="easyIAP/">Easy IAP</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="frameworks/">Frameworks</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="ssk2/">SSK2</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="rgdocs/">RG Docs</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="buttonMaker/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#starters-core">Starters Core</a></li>
+        
+    
+        <li class="first-level "><a href="#globalslua">globals.lua</a></li>
+        
+    
+        <li class="first-level "><a href="#persistlua">persist.lua</a></li>
+        
+            <li class="third-level"><a href="#setting-default-values">Setting Default Values</a></li>
+        
+            <li class="third-level"><a href="#setting-and-getting-values">Setting and Getting Values</a></li>
+        
+            <li class="third-level"><a href="#multiple-sets-allowed">Multiple Sets Allowed?</a></li>
+        
+            <li class="third-level"><a href="#data-caching">Data Caching</a></li>
+        
+            <li class="third-level"><a href="#complete-persist-example">Complete Persist Example</a></li>
+        
+    
+        <li class="first-level "><a href="#soundmgrlua">soundMgr.lua</a></li>
+        
+            <li class="third-level"><a href="#sound-categories">Sound Categories</a></li>
+        
+            <li class="third-level"><a href="#basic-usage">Basic Usage</a></li>
+        
+            <li class="third-level"><a href="#adding-sounds">Adding Sounds</a></li>
+        
+            <li class="third-level"><a href="#playing-sounds">Playing Sounds</a></li>
+        
+            <li class="third-level"><a href="#stopping-sounds">Stopping Sounds</a></li>
+        
+            <li class="third-level"><a href="#removing-sounds">Removing Sounds</a></li>
+        
+    
+        <li class="first-level "><a href="#utilslua">utils.lua</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="starters-core">Starters Core</h1>
+<p>This page is both a reference to the 'starters core' package as well as a reference for individual libraries from the package that are also included in other starters.</p>
+<p>This package includes these elements:</p>
+<ul>
+<li><a href="./buttonMaker"><strong>ButtonMaker</strong></a> - A module for easily making push, toggle, and radio buttons.</li>
+<li><a href="./easyAds"><strong>Easy Ads</strong></a> - A module to simplify the use of the Appodeal and AppLovin ad plugins.</li>
+<li><a href="./easyIAP"><strong>Easy IAP</strong></a> - A module that layers on top of <a href="https://github.com/happymongoose/iap_badger">IAP Badger</a> to make it even easier to set up In App Purchases.</li>
+<li><a href="#globalslua"><strong>Globals</strong></a> - Useful global varaibles.</li>
+<li><a href="#persistlua"><strong>Persistent Data</strong></a> - Easy and efficient persistent data module.</li>
+<li><a href="#soundmgrlua"><strong>Sound Manager</strong></a> - A basic sound management module.</li>
+<li><a href="#utils.lua"><strong>Utilities</strong></a> - A module containing a number of useful utility functions.</li>
+</ul>
+<p><a href="http://www.youtube.com/watch?v=jDjiqhLq7uE"><img alt="Starters Core - Button Maker" src="http://img.youtube.com/vi/jDjiqhLq7uE/0.jpg" /></a></p>
+<hr />
+<h1 id="globalslua"><code>globals.lua</code></h1>
+<p>All starter kits/packages come with the module file <code>easy/globals.lua</code>. </p>
+<p>Contrary to some folks' beliefs, global variables are not evil.  In fact, they would not be possible if they were not useful and sometimes needed.</p>
+<p>This module sets some useful globals that help save you time typing common values and figuring out commonly needed things:</p>
+<ul>
+<li><code>w</code> - Shorthand for <code>display.contentWidth</code></li>
+<li><code>h</code> - Shorthand for <code>display.contentHeight</code></li>
+<li><code>centerX</code> - Shorthand for <code>display.centerX</code></li>
+<li><code>centerY</code> - Shorthand for <code>display.centerY</code></li>
+<li><code>fullw</code> - Shorthand for <code>display.actualContentWidth</code></li>
+<li><code>fullh</code> - Shorthand for <code>display.actualContentHeight</code></li>
+<li><code>unusedWidth</code> - <code>display.actualContentWidth - display.contentWidth</code></li>
+<li><code>unusedHeight</code> - <code>display.actualContentHeight - display.contentHeight</code></li>
+<li><code>left</code> - Position of left-edge of visible content.</li>
+<li><code>top</code> - Position of top-edge of visible content.</li>
+<li><code>right</code> - Position of right-edge of visible content.</li>
+<li><code>bottom</code> - Position of bottom-edge of visible content.</li>
+</ul>
+<hr />
+<h1 id="persistlua"><code>persist.lua</code></h1>
+<p>The starter core includes a special module that makes it easy and efficient to maintain persistent data in your games.  This module can be found in the file <code>easy/persist.lua</code></p>
+<blockquote>
+<p>This is directly adopted from <a href="https://roaminggamer.github.io/RGDocs/pages/SSK2/">SSK2</a>, but the 'secure' save/load feature has been removed.</p>
+</blockquote>
+<h2 id="setting-default-values">Setting Default Values</h2>
+<p>The <code>persist</code> library lets you set 'default' values for any named field.  This way, if you call <a href="#setting-and-getting-values">get()</a> for a named field before you <a href="#setting-and-getting-values">set()</a> it, you will get a valid value.</p>
+<p>To set a defaut value for a field in a persistent data set, use this function:</p>
+<pre><code class="Lua">persist.setDefault( fileName, fieldName, value [ , params ] )
+</code></pre>
+
+<ul>
+<li><code>fileName</code> - Name of file to save persistent data in.</li>
+<li><code>fieldName</code> - Name of setting to set default for.</li>
+<li><code>value</code> - Value to set as default for <code>fieldName</code>.</li>
+<li><code>params</code> (<code>{}</code>) - Optional table of parameters.<ul>
+<li><code>save</code> (<code>true</code>) - Save immediately to file.</li>
+<li><code>base</code> (<code>system.DocumentsDirectory</code>) - Base folder type for save file.</li>
+</ul>
+</li>
+</ul>
+<h2 id="setting-and-getting-values">Setting and Getting Values</h2>
+<p>Use these functions set and get values respectively:</p>
+<pre><code class="Lua">persist.set( fileName, fieldName, value [ , params ] )
+
+persist.get( fileName, fieldName [ , params ] )
+</code></pre>
+
+<ul>
+<li><code>fileName</code> - Name of file to save persistent data in.</li>
+<li><code>fieldName</code> - Name of setting to set default for.</li>
+<li><code>value</code> - Value to set as default for <code>fieldName</code>.</li>
+<li><code>params</code> (<code>{}</code>) - Optional table of parameters.<ul>
+<li><code>save</code> (<code>true</code>) - Save immediately to file.</li>
+<li><code>base</code> (<code>system.DocumentsDirectory</code>) - Base folder type for save file.</li>
+</ul>
+</li>
+</ul>
+<h2 id="multiple-sets-allowed">Multiple Sets Allowed?</h2>
+<p>As you may have determined already, this module supports multiple separate data sets.  Simply use different names for the <code>fileName</code> setting and your data will be separated into independent sets.   (See <a href="#complete-persist-example">Complete Example</a> below.)</p>
+<h2 id="data-caching">Data Caching</h2>
+<p>This library utilizes caching to speed up data accesses.</p>
+<p>Whenever a persistent data set is mofified the following checks occur:</p>
+<ol>
+<li>Is data cached?  <ul>
+<li>If not, load it from file or create blank record.</li>
+<li>Cache data in persist module.</li>
+</ul>
+</li>
+<li>Is there a value for the field user is accessing?<ul>
+<li>If not, and if there is a default set,<ul>
+<li>Set field in cached copy to default</li>
+<li>Return default value.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Did user set <code>save</code> parameter to <code>false</code>?<ul>
+<li>If not, save cached data immediately</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>I will be modifying this slightly in the future to handle back to back set/setDefault calls with save set to true.
+This modification will prevent these saves from blocking and affecting frame rate.</p>
+</blockquote>
+<h2 id="complete-persist-example">Complete Persist Example</h2>
+<p>The following example shows a example usage with automatic <em>secure mode</em> enabling when on device.</p>
+<pre><code class="Lua">
+-- Set up two data sets with defaults
+--
+persist.setDefault( &quot;store.json&quot;, &quot;disabled_ads&quot;, false , { save = false } )
+persist.setDefault( &quot;store.json&quot;, &quot;bought_extra_content&quot;, false )
+
+persist.setDefault( &quot;settings.json&quot;, &quot;sound_enabled&quot;, true, { save = false } )
+persist.setDefault( &quot;settings.json&quot;, &quot;last_score&quot;, 0 )
+
+-- Check persistent data fields
+print( &quot;Ads disabled? &quot;, persist.get( &quot;store.json&quot;, &quot;disabled_ads&quot;) )
+
+print( &quot;Last Score: &quot;, persist.get( &quot;settings.json&quot;, &quot;last_score&quot; ) )
+
+-- Set 'last score' to a random value
+persist.set( &quot;settings.json&quot;, &quot;last_score&quot;, math.random(100, 10000) )
+
+-- Check persistent data fields again
+print( &quot;Ads disabled? &quot;, persist.get( &quot;store.json&quot;, &quot;disabled_ads&quot;) )
+
+print( &quot;Last Score: &quot;, persist.get( &quot;settings.json&quot;, &quot;last_score&quot; ) )
+
+</code></pre>
+
+<hr />
+<h1 id="soundmgrlua"><code>soundMgr.lua</code></h1>
+<p>All starter kits/packages come with the module file <code>easy/soundMgr.lua</code>. </p>
+<p>This is a very basic sound library that takes the drudgery (and likelihood of error) out of playing sounds in your game.</p>
+<blockquote>
+<p>While it works fine as is, this module is meant to give you a starting point from which to expand and improve.  </p>
+</blockquote>
+<h2 id="sound-categories">Sound Categories</h2>
+<ul>
+<li>Effect - An effect is a short sound.  You may play these in rapid succession and even overlap them.  These are usually .wav files.</li>
+<li>Music - A long sound, usually played as the soundtrack in a game, or as a voice-over.  These are usually stored as .mp3 files.</li>
+</ul>
+<h2 id="basic-usage">Basic Usage</h2>
+<pre><code class="Lua">local soundMgr = require &quot;easy.soundMgr&quot;
+</code></pre>
+
+<h2 id="adding-sounds">Adding Sounds</h2>
+<h3 id="addeffect-name-src"><code>addEffect( name, src )</code></h3>
+<pre><code class="Lua">soundMgr.addEffect( &quot;click&quot;, &quot;sounds/sfx/click.wav&quot; )
+</code></pre>
+
+<h3 id="addmusic-name-src"><code>addMusic( name, src )</code></h3>
+<pre><code class="Lua">soundMgr.addMusic( &quot;soundTrack&quot;, &quot;sounds/music/Blipotron.mp3&quot; )
+</code></pre>
+
+<h2 id="playing-sounds">Playing Sounds</h2>
+<h3 id="playeffect-name-options"><code>playEffect( name, options )</code></h3>
+<ul>
+<li><code>options</code> - You can pass any of the options supported by (audio.play)(https://docs.coronalabs.com/api/library/audio/play.html#parameter-reference).</li>
+</ul>
+<pre><code class="Lua">soundMgr.playEffect( &quot;click&quot; )
+</code></pre>
+
+<h3 id="playmusic-name-options"><code>playMusic( name, options )</code></h3>
+<ul>
+<li><code>options</code> - You can pass any of the options supported by (audio.play)(https://docs.coronalabs.com/api/library/audio/play.html#parameter-reference).</li>
+</ul>
+<pre><code class="Lua">soundMgr.playMusic( &quot;soundTrack&quot;, { fadein = 5000 } )
+</code></pre>
+
+<h2 id="stopping-sounds">Stopping Sounds</h2>
+<p>This module will find and stop all instances of a named sound.</p>
+<h3 id="stopeffect-name"><code>stopEffect( name )</code></h3>
+<pre><code class="Lua">soundMgr.stopEffect( &quot;click&quot; )
+</code></pre>
+
+<h3 id="stopmusic-name"><code>stopMusic( name )</code></h3>
+<pre><code class="Lua">soundMgr.stopMusic( &quot;soundTrack&quot; )
+</code></pre>
+
+<h2 id="removing-sounds">Removing Sounds</h2>
+<p>These featuers automatically stop and remove and then unload all instances of a named sound.</p>
+<h3 id="removeeffect-name"><code>removeEffect( name )</code></h3>
+<pre><code class="Lua">soundMgr.removeEffect( &quot;click&quot; )
+</code></pre>
+
+<h3 id="removemusic-name"><code>removeMusic( name )</code></h3>
+<pre><code class="Lua">soundMgr.removeMusic( &quot;soundTrack&quot; )
+</code></pre>
+
+<h1 id="utilslua"><code>utils.lua</code></h1>
+<p>All starter kits/packages come with the module file <code>easy/utils.lua</code>. </p>
+<p>This is a terse and alphabetical quick reference to the functions found in <code>easy.utils.lua</code> and <code>easy.files.*</code></p>
+<blockquote>
+<p>Remember: You've got the source so if there is any confusion about using these, you can dig into the code. :)</p>
+</blockquote>
+<ul>
+<li><code>autoIgnore( name, obj )</code> - Checks if obj is still valid and if not, removes named listener.  Returns 'true' if object was invalid and listener was removed.</li>
+<li><code>createSlicedImage( group, path, x, y, width, height )</code> -  Draws a rectangle from 9 sub-slices.<ul>
+<li><code>path</code> - Folder containing 9 slice images: slice_1.png .. slice_9.png.</li>
+</ul>
+</li>
+<li><code>deepCopy( src, dst )</code> - Copies multi-level tables; handles non-integer indexes; does not copy metatable</li>
+<li><code>dump( theTable, padding, marker )</code> - Table dumper.</li>
+<li><code>files.*</code> - Grouped by category:<ul>
+<li><code>files.documents.getRoot()</code></li>
+<li><code>files.documents.getPath( path )</code></li>
+<li><code>files.resource.getRoot()</code></li>
+<li><code>files.resource.getPath( path )</code></li>
+<li><code>files.temporary.getRoot()</code></li>
+<li><code>files.temporary.getPath( path )</code></li>
+<li><code>files.desktop.getDesktopRoot()</code></li>
+<li><code>files.desktop.getDesktopPath( path )</code></li>
+<li><code>files.desktop.getMyDocumentsRoot()</code></li>
+<li><code>files.desktop.getMyDocumentsPath( path )</code></li>
+<li><code>files.desktop.getDrivePath( path ) by current OS.</code></li>
+<li><code>files.desktop.explore( path )</code></li>
+<li><code>files.util.exists( path )</code></li>
+<li><code>files.util.dumpAttributes()</code></li>
+<li><code>files.util.isFile( path )</code></li>
+<li><code>files.util.readFile( path )</code></li>
+<li><code>files.util.readFileToTable( path )</code></li>
+<li><code>files.util.writeFile( data,  path )</code></li>
+<li><code>files.util.appendFile( data,  path )</code></li>
+<li><code>files.util.rmFile( path )</code></li>
+<li><code>files.util.mvFile( src, dst )</code></li>
+<li><code>files.util.cpFile( src, dst )</code></li>
+<li><code>files.util.isFolder( path )</code></li>
+<li><code>files.util.repairPath( path, forceForward )</code></li>
+<li><code>files.util.rmFolder( path )</code></li>
+<li><code>files.util.mkFolder( path )</code></li>
+<li><code>files.util.mvFolder( src, dst )</code></li>
+<li><code>files.util.cpFolder( src, dst )</code></li>
+<li><code>files.util.saveTable( tbl, path, secure )</code></li>
+<li><code>files.util.loadTable( path, secure )</code></li>
+<li><code>files.util.getFilesInFolder()</code></li>
+<li><code>files.util.keepFileTypes()</code></li>
+<li><code>files.util.getLuaFiles()</code></li>
+<li><code>files.util.getResourceFiles()</code></li>
+<li><code>files.util.flattenNames()</code></li>
+<li><code>vutil.findAllFiles()</code></li>
+</ul>
+</li>
+<li><code>first_upper(str)</code> - Make first letter in string 'upper-case'.</li>
+<li><code>fnn( ... )</code> - Return first argument passed that does not evaluate to <code>nil</code>.</li>
+<li><code>generateButtonPresets( using2XImages )</code> - This utility will generate button prese for any images found in images/buttons.  Pass <code>true</code> as first argument if your images are twice as large as you want them displayed.</li>
+<li><code>hexcolor( code )</code> - Converts hex color codes to rgba Graphics 2.0 table.</li>
+<li><code>isValid( obj )</code> - Returns 'true' if obj is still a valid display object.</li>
+<li><code>ignore( name, listener )</code> - Shorthand for Runtime:removeEventListener( name, listener ).</li>
+<li><code>ignoreList( list, obj )</code> - Safe Runtime listener remover similar to 'ignore' (above), but takes list (table of strings) for each listener name to remove.</li>
+<li><code>isInBounds( obj, obj2 )</code> - Returns true if obj is in bounds of obj2</li>
+<li><code>listen( name, listener )</code> - Shorthand for Runtime:addEventListener( name, listener ).</li>
+<li><code>load( fileName, base )</code> - Loads table from file.  (Uses JSON library as intermediary)</li>
+<li><code>onDesktop()</code> - Returns true if on a desktop</li>
+<li><code>onDevice()</code> - Returns true if on a device</li>
+<li><code>os()</code> - Returns: 'ios', 'android', 'tvos', win, osx, or nil if OS is unknown.</li>
+<li><code>post( name, params )</code> - Shorthand helper that does job of Runtime:dispatchEvent( event ).</li>
+<li><code>print_r( t )</code> - Dumps indexes and values inside multi-level table (for debug).</li>
+<li><code>getImageSize = ( path, basePath )</code> - Returns width, and height of image at path.</li>
+<li><code>repairPath( path )</code> - Force path to use forward slashes for consistency in later parsing.</li>
+<li><code>round(val, n)</code> - Rounds floating point-values to n places.</li>
+<li><code>rpad( str, len, char)</code> - Places padding on right side of a string, such that the new string is at least len characters long.</li>
+<li><code>save( theTable, fileName, base  )</code> - Saves table to file.  (Uses JSON library as intermediary).</li>
+<li><code>split(str,tok)</code> - Splits a string on specified token and returns table of values.</li>
+<li><code>shallowCopy( src, dst )</code> - Copies single-level tables; handles non-integer indexes; does not copy metatable</li>
+<li><code>shuffle( t, iter )</code> - Randomizes the order of a numerically indexed (non-sparse) table.</li>
+<li><code>triml(s)</code> - Trim whitespace from left-side of string only.</li>
+<li><code>trimr(s)</code> - Trim whitespace from right-side of string only.</li>
+<li><code>trim(s)</code> - Trim whitespace.</li>
+<li><code>utils.onSim(noOs)</code> - returns: onSim, os<ul>
+<li>onSim - 'true' if on simulator</li>
+<li>os - nil if not on simulator, 'win' or 'osx' otherwise.</li>
+</ul>
+</li>
+<li><code>version( )</code> - Print and return current version number of <code>utils.*</code> module in YYMMDD format.</li>
+</ul>
+<hr />
+<p><img alt="RoamingGamer" src="./images/roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2018; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/bootstrap-3.0.3.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '.';
+    </script>
+    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+    <script src="./js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2018-07-15 23:05:06
+-->

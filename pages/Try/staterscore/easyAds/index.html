@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="canonical" href="https://roaminggamer.github.io/RGDocs/pages/Try/starterscore/easyAds/"> 
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <title>Easy Ads - Starters Core</title>
+
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Starters Core</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">About</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../buttonMaker/">Button Maker</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Easy Ads</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../easyIAP/">Easy IAP</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../frameworks/">Frameworks</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../ssk2/">SSK2</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../rgdocs/">RG Docs</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../buttonMaker/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../easyIAP/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#easy-ads">Easy Ads</a></li>
+        
+    
+        <li class="first-level "><a href="#using-easy-ads">Using Easy Ads</a></li>
+        
+    
+        <li class="first-level "><a href="#project-settings">Project Settings</a></li>
+        
+    
+        <li class="first-level "><a href="#selecting-helper">Selecting Helper</a></li>
+        
+            <li class="third-level"><a href="#applovin">AppLovin</a></li>
+        
+            <li class="third-level"><a href="#appodeal">Appodeal</a></li>
+        
+    
+        <li class="first-level "><a href="#preparation-initialization">Preparation &amp; Initialization</a></li>
+        
+            <li class="third-level"><a href="#applovin_1">AppLovin</a></li>
+        
+            <li class="third-level"><a href="#appodeal_1">Appodeal</a></li>
+        
+    
+        <li class="first-level "><a href="#showing-ads">Showing Ads</a></li>
+        
+            <li class="third-level"><a href="#banners">Banners</a></li>
+        
+            <li class="third-level"><a href="#interstitials">Interstitials</a></li>
+        
+            <li class="third-level"><a href="#rewarded-ads">Rewarded Ads</a></li>
+        
+    
+        <li class="first-level "><a href="#hiding-banners">Hiding Banners</a></li>
+        
+    
+        <li class="first-level "><a href="#advanced-features">Advanced Features</a></li>
+        
+            <li class="third-level"><a href="#temporary-listeners">Temporary Listeners</a></li>
+        
+            <li class="third-level"><a href="#applovin-specific-helpers">AppLovin Specific Helpers</a></li>
+        
+            <li class="third-level"><a href="#appodeal-specific-helpers">Appodeal Specific Helpers</a></li>
+        
+            <li class="third-level"><a href="#disabling-helper">Disabling Helper</a></li>
+        
+    
+        <li class="first-level "><a href="#standard-plugin-features">Standard Plugin Features?</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="easy-ads">Easy Ads</h1>
+<p>The <code>Starters Core</code> kit comes with the <code>Easy Ads</code> modules.  </p>
+<p>These modules:</p>
+<ul>
+<li>Make it easier to use the Appodeal or AppLovin plugins.</li>
+<li>Help ensure ads show when and where you want them.</li>
+<li>Make it easy to hook rewarded ads to your success and failure code.</li>
+<li>Allow you to <strong>test your ad logic in the simulator</strong>.</li>
+</ul>
+<h1 id="using-easy-ads">Using Easy Ads</h1>
+<p>This video demonstrates how to use Easy Ads to show Appodeal ads.</p>
+<p><a href="../EFM">EFM</a></p>
+<h1 id="project-settings">Project Settings</h1>
+<p>Please see the Corona docs for setting up the build.settings file.</p>
+<ul>
+<li><a href="https://docs.coronalabs.com/plugin/applovin/index.html#project-settings">AppLovin</a></li>
+<li><a href="https://docs.coronalabs.com/plugin/appodeal/index.html#project-settings">Appodeal</a></li>
+</ul>
+<h1 id="selecting-helper">Selecting Helper</h1>
+<h2 id="applovin">AppLovin</h2>
+<pre><code class="Lua">_G.adsHelper = require( &quot;easy.ads.applovinAds&quot; )
+</code></pre>
+
+<h2 id="appodeal">Appodeal</h2>
+<pre><code class="Lua">_G.adsHelper = require( &quot;easy.ads.appodealAds&quot; )
+</code></pre>
+
+<h1 id="preparation-initialization">Preparation &amp; Initialization</h1>
+<h2 id="applovin_1">AppLovin</h2>
+<h3 id="adshelperprepare-enabled-adparams"><code>adsHelper.prepare( enabled, adParams )</code></h3>
+<ul>
+<li><code>enabled</code> - Pass <code>true</code> to enable ads, or <code>false</code> to stub out all functions. <ul>
+<li>Stubbed functions can still be called, but have no effect, making your code easier to write and maintain.</li>
+</ul>
+</li>
+<li><code>adParams</code> - Table of optional named parameters to set up ads.<ul>
+<li><code>testMode</code> (<code>true</code>) - Run ads in test mode. Be sure to set this to <code>false</code> when you go to publish.</li>
+<li><code>verbose</code> (<code>false</code>) - Set to 'true' for detailed messages from event listener</li>
+<li><code>verboseLogging</code> (<code>false</code>) - Set to 'true' for detailed output from AooLovin plugin.</li>
+<li><code>initDelay</code> (<code>30</code>) - Wait this many milliseconds before initializing plugin.  This makes your game behave more nicely and prevents the call to <code>init()</code> from blocking your first scene load.</li>
+<li><code>androidID</code> (<code>nil</code>) - AppLovin ad ID for Android if needed.</li>
+<li><code>iosID</code> (<code>nil</code>) - AppLovin ad ID for iOS if needed.</li>
+<li><code>enableFakeAds</code> (<code>true</code>) - If <code>true</code>, show fake ads in simulator.</li>
+<li><code>bannerAfterInit</code> (<code>nil</code>) - If set, show a banner ad as soon as possible after initializion completes.<ul>
+<li>To set this, pass in a table: <code>{ position = "bottom", placement = nil }</code>, where position is <code>"top"</code> or <code>"bottom"</code>.  The <code>placement</code> field is optional.</li>
+</ul>
+</li>
+<li><code>interstitialAfterInit</code> (<code>nil</code>) - If set, show an interstitial ad as soon as possible after initializion completes.<ul>
+<li>To set this, pass in a table: <code>{ placement = nil }</code>, where the <code>placement</code> field is optional.</li>
+<li>Only this or <code>bannerAfterInit</code> can be set.  If both are set to <code>true</code>, <code>bannerAfterInit</code> will win.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="example">Example</h4>
+<pre><code class="Lua">adParams = {
+  androidID               = &quot;BCD4524908adfADFAVDS234523DSNB&quot;,
+  iosID                   = &quot;LMND124908adfADFAVDS234523DYND&quot;,
+  interstitialAfterInit   = {},
+}
+adsHelper.prepare( true, adParams )
+</code></pre>
+
+<h2 id="appodeal_1">Appodeal</h2>
+<h3 id="adshelperprepare-enabled-adparams_1"><code>adsHelper.prepare( enabled, adParams )</code></h3>
+<h4 id="example_1">Example</h4>
+<ul>
+<li><code>enabled</code> - Pass <code>true</code> to enable ads, or <code>false</code> to stub out all functions. <ul>
+<li>Stubbed functions can still be called, but have no effect, making your code easier to write and maintain.</li>
+</ul>
+</li>
+<li><code>adParams</code> - Table of optional named parameters to set up ads.<ul>
+<li><code>testMode</code> (<code>true</code>) - Run ads in test mode. Be sure to set this to <code>false</code> when you go to publish.</li>
+<li><code>verbose</code> (<code>false</code>) - Set to 'true' for detailed messages from event listener</li>
+<li><code>initDelay</code> (<code>30</code>) - Wait this many milliseconds before initializing plugin.  This makes your game behave more nicely and prevents the call to <code>init()</code> from blocking your first scene load.</li>
+<li><code>androidID</code> (<code>nil</code>) - Appodeal ad ID for Android if needed.</li>
+<li><code>iosID</code> (<code>nil</code>) - Appodeal ad ID for iOS if needed.</li>
+<li><code>supportedAdTypes</code> (<code>{ "banner", "interstitial", "rewardedVideo" }</code>) - You can pass in a custom table to reduce the number of ads types that are supported.</li>
+<li><code>isCOPPACompliant</code> (<code>false</code>) - If <code>true</code>, show fake ads in simulator.</li>
+<li><code>hasGDPRConsent</code> (<code>nil</code>) - If <code>nil</code>, it is left up to the plugin to query for GDPR permission in the EU.  If <code>true</code> you are attesting that you have gotten permission from the user to send their data toe Appodeal and affiliates.  If <code>false</code> you are saying the user declines to have their data sent.</li>
+<li><code>enableFakeAds</code> (<code>true</code>) - If <code>true</code>, show fake ads in simulator.</li>
+<li><code>bannerAfterInit</code> (<code>nil</code>) - If set, show a banner ad as soon as possible after initializion completes.<ul>
+<li>To set this, pass in a table: <code>{ position = "bottom", placement = nil }</code>, where position is <code>"top"</code> or <code>"bottom"</code>.  The <code>placement</code> field is optional.</li>
+</ul>
+</li>
+<li><code>interstitialAfterInit</code> (<code>nil</code>) - If set, show an interstitial ad as soon as possible after initializion completes.<ul>
+<li>To set this, pass in a table: <code>{ placement = nil }</code>, where the <code>placement</code> field is optional.</li>
+<li>Only this or <code>bannerAfterInit</code> can be set.  If both are set to <code>true</code>, <code>bannerAfterInit</code> will win.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">adParams = {      
+  testMode          = true,
+  verbose           = false,
+  initDelay         = 30,
+  androidID         = &quot;BCD4524908adfADFAVDS234523DSNB&quot;,
+  iosID             = &quot;LMND124908adfADFAVDS234523DYND&quot;,
+  supportedAdTypes  = { &quot;banner&quot;, &quot;rewardedVideo&quot; },
+  isCOPPACompliant  = false,
+  hasGDPRConsent    = true,
+  enableFakeAds     = true, 
+  bannerAfterInit   = { position = &quot;bottom&quot; },
+}
+adsHelper.prepare( true, adParams )
+</code></pre>
+
+<h1 id="showing-ads">Showing Ads</h1>
+<h2 id="banners">Banners</h2>
+<h3 id="showbanner-position-placement"><code>showBanner( [ position [, placement ] ] )</code></h3>
+<ul>
+<li><code>position</code> (<code>"bottom"</code>) - Optional argument for position of ad <code>"bottom"</code> or <code>"top"</code></li>
+<li><code>placement</code>(<code>nil</code>) - Optional argument:<ul>
+<li><a href="https://docs.coronalabs.com/plugin/applovin/show.html#placement-optional">AppLovin</a></li>
+<li><a href="https://docs.coronalabs.com/plugin/appodeal/show.html#placement-optional">Appodeal</a></li>
+</ul>
+</li>
+</ul>
+<pre><code>_G.adsHelper.showBanner( &quot;bottom&quot; )
+</code></pre>
+
+<h2 id="interstitials">Interstitials</h2>
+<h3 id="showinterstitial-position-placement"><code>showInterstitial( [ position [, placement ] ] )</code></h3>
+<ul>
+<li><code>onComplete</code> (<code>nil</code>) - Function to call when ad is done showing.</li>
+<li><code>placement</code>(<code>nil</code>) - Optional argument:<ul>
+<li><a href="https://docs.coronalabs.com/plugin/applovin/show.html#placement-optional">AppLovin</a></li>
+<li><a href="https://docs.coronalabs.com/plugin/appodeal/show.html#placement-optional">Appodeal</a></li>
+</ul>
+</li>
+</ul>
+<pre><code>local function onComplete()
+    print(&quot;Showed interstital!&quot;)
+end
+
+_G.adsHelper.showInterstitial( onComplete )
+</code></pre>
+
+<h2 id="rewarded-ads">Rewarded Ads</h2>
+<h3 id="showrewarded-onsuccess-onfailure-placement"><code>showRewarded( [ onSuccess [, onFailure [, placement ] ] ] )</code></h3>
+<ul>
+<li><code>onSuccess</code> (<code>nil</code>) - Function to call when user successfully watches rewarded ad.</li>
+<li><code>onFailure</code> (<code>nil</code>) - Function to call when user fails to watch rewarded ad.</li>
+<li><code>placement</code>(<code>nil</code>) - Optional argument:<ul>
+<li><a href="https://docs.coronalabs.com/plugin/applovin/show.html#placement-optional">AppLovin</a></li>
+<li><a href="https://docs.coronalabs.com/plugin/appodeal/show.html#placement-optional">Appodeal</a></li>
+</ul>
+</li>
+</ul>
+<pre><code>local function onSuccess()
+    print(&quot;Give reward!&quot;)
+end
+
+local function onFailure()
+    print(&quot;No Twinky For You!&quot;)
+end
+
+_G.adsHelper.showRewarded( onSuccess, onFailure, &quot;earn_coins_button&quot; )
+</code></pre>
+
+<hr />
+<h1 id="hiding-banners">Hiding Banners</h1>
+<pre><code class="Lua">_G.adsHelper.hideBanner()
+</code></pre>
+
+<hr />
+<h1 id="advanced-features">Advanced Features</h1>
+<p>You will probably never need these features, but just in case here are the docs.</p>
+<h2 id="temporary-listeners">Temporary Listeners</h2>
+<p>You can set up unique listeners that are transient in nature.  Once the specific event you are waiting for occurs, these listeners can be removed.  Alternately, you can clear them manually.</p>
+<h3 id="listen-name-alistener"><code>listen( name, aListener )</code></h3>
+<p>Call this function to add a temporary ad listener.  You can then clear it as needed.</p>
+<h4 id="example_2">Example</h4>
+<pre><code class="Lua"> local function clear()
+    _G.adsHelper.ignore( &quot;interstitial&quot; )
+ end
+
+ local function interstitialListener( event )         
+    local isError  = event.isError
+    local phase    = event.phase
+    --
+    if( isError and phase == &quot;rewardedVideo&quot; ) then
+       clear()
+       return
+    end
+
+    --
+    -- Catch all 'ended' equivalent phases and assume that 
+    -- the first one means we have shown the interstitial.
+    if( phase == &quot;hidden&quot; or phase == &quot;playbackEnded&quot; ) then
+       clear()
+       print(&quot;Yay! Showed interstial.&quot;)
+    end
+ end
+ _G.adsHelper.listen( &quot;interstitial&quot;, interstitialListener )
+</code></pre>
+
+<h3 id="ignore-name"><code>ignore( name )</code></h3>
+<p>Call this function to remove a previously added temporary listner.</p>
+<pre><code class="Lua"> _G.adsHelper.ignore( &quot;interstitial&quot; )
+</code></pre>
+
+<h3 id="ignoreall"><code>ignoreAll()</code></h3>
+<p>Call this function to remove all temporary listner.</p>
+<pre><code class="Lua"> _G.adsHelper.ignoreAll( )
+</code></pre>
+
+<h2 id="applovin-specific-helpers">AppLovin Specific Helpers</h2>
+<p>The AppLovin helper also exposes these functions:</p>
+<ul>
+<li><a href="https://docs.coronalabs.com/plugin/applovin/isLoaded.html">adsHelper.isLoaded( adType )</a></li>
+<li><a href="https://docs.coronalabs.com/plugin/applovin/load.html">adsHelper.load( adType )</a></li>
+</ul>
+<h2 id="appodeal-specific-helpers">Appodeal Specific Helpers</h2>
+<p>The Appodeal helper also exposes these functions:</p>
+<ul>
+<li><a href="https://docs.coronalabs.com/plugin/appodeal/isLoaded.html">adsHelper.isLoaded( adType )</a></li>
+<li><a href="https://docs.coronalabs.com/plugin/appodeal/load.html">adsHelper.load( adType )</a></li>
+</ul>
+<h2 id="disabling-helper">Disabling Helper</h2>
+<p>If you find that you want to disable all features of the active helper for the remainder of the app run, you can do so with the <code>disableModule()</code> function.  (It can only be called once.  Subsequen calls do nothing.)</p>
+<h3 id="disablemodule-docleaning"><code>disableModule( [doCleaning] )</code></h3>
+<ul>
+<li><code>doCleaning</code> (<code>nil</code>) - If <code>true</code> cleanup any temporary listeners that may be active.<ul>
+<li>This is an advanced feature of the module.  Unless you are an expert, always pass <code>true</code> if you call this.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="Lua">_G.adsHelper.disableModule( true )
+</code></pre>
+
+<h1 id="standard-plugin-features">Standard Plugin Features?</h1>
+<p>You can always use the other features of the AppLovin and Appodeal plugins just like you normally would. </p>
+<p>Please see the Corona docs:</p>
+<ul>
+<li><a href="https://docs.coronalabs.com/plugin/applovin">AppLovin</a></li>
+<li><a href="https://docs.coronalabs.com/plugin/appodeal">Appodeal</a></li>
+</ul>
+<hr />
+<p><img alt="RoamingGamer" src="../images/roaming_gamer_small.png" />  Copyright &copy; Roaming Gamer, LLC. 2008-2018; All Rights Reserved </p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '..';
+    </script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

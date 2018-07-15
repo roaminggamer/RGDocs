@@ -1,0 +1,439 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Starters Core\n\n\nThis page is both a reference to the 'starters core' package as well as a reference for individual libraries from the package that are also included in other starters.\n\n\nThis package includes these elements:\n\n\n\n\nButtonMaker\n - A module for easily making push, toggle, and radio buttons.\n\n\nEasy Ads\n - A module to simplify the use of the Appodeal and AppLovin ad plugins.\n\n\nEasy IAP\n - A module that layers on top of \nIAP Badger\n to make it even easier to set up In App Purchases.\n\n\nGlobals\n - Useful global varaibles.\n\n\nPersistent Data\n - Easy and efficient persistent data module.\n\n\nSound Manager\n - A basic sound management module.\n\n\nUtilities\n - A module containing a number of useful utility functions.\n\n\n\n\n\n\n\n\nglobals.lua\n\n\nAll starter kits/packages come with the module file \neasy/globals.lua\n. \n\n\nContrary to some folks' beliefs, global variables are not evil.  In fact, they would not be possible if they were not useful and sometimes needed.\n\n\nThis module sets some useful globals that help save you time typing common values and figuring out commonly needed things:\n\n\n\n\nw\n - Shorthand for \ndisplay.contentWidth\n\n\nh\n - Shorthand for \ndisplay.contentHeight\n\n\ncenterX\n - Shorthand for \ndisplay.centerX\n\n\ncenterY\n - Shorthand for \ndisplay.centerY\n\n\nfullw\n - Shorthand for \ndisplay.actualContentWidth\n\n\nfullh\n - Shorthand for \ndisplay.actualContentHeight\n\n\nunusedWidth\n - \ndisplay.actualContentWidth - display.contentWidth\n\n\nunusedHeight\n - \ndisplay.actualContentHeight - display.contentHeight\n\n\nleft\n - Position of left-edge of visible content.\n\n\ntop\n - Position of top-edge of visible content.\n\n\nright\n - Position of right-edge of visible content.\n\n\nbottom\n - Position of bottom-edge of visible content.\n\n\n\n\n\n\npersist.lua\n\n\nThe starter core includes a special module that makes it easy and efficient to maintain persistent data in your games.  This module can be found in the file \neasy/persist.lua\n\n\n\n\nThis is directly adopted from \nSSK2\n, but the 'secure' save/load feature has been removed.\n\n\n\n\nSetting Default Values\n\n\nThe \npersist\n library lets you set 'default' values for any named field.  This way, if you call \nget()\n for a named field before you \nset()\n it, you will get a valid value.\n\n\nTo set a defaut value for a field in a persistent data set, use this function:\n\n\npersist.setDefault( fileName, fieldName, value [ , params ] )\n\n\n\n\n\n\nfileName\n - Name of file to save persistent data in.\n\n\nfieldName\n - Name of setting to set default for.\n\n\nvalue\n - Value to set as default for \nfieldName\n.\n\n\nparams\n (\n{}\n) - Optional table of parameters.\n\n\nsave\n (\ntrue\n) - Save immediately to file.\n\n\nbase\n (\nsystem.DocumentsDirectory\n) - Base folder type for save file.\n\n\n\n\n\n\n\n\nSetting and Getting Values\n\n\nUse these functions set and get values respectively:\n\n\npersist.set( fileName, fieldName, value [ , params ] )\n\npersist.get( fileName, fieldName [ , params ] )\n\n\n\n\n\n\nfileName\n - Name of file to save persistent data in.\n\n\nfieldName\n - Name of setting to set default for.\n\n\nvalue\n - Value to set as default for \nfieldName\n.\n\n\nparams\n (\n{}\n) - Optional table of parameters.\n\n\nsave\n (\ntrue\n) - Save immediately to file.\n\n\nbase\n (\nsystem.DocumentsDirectory\n) - Base folder type for save file.\n\n\n\n\n\n\n\n\nMultiple Sets Allowed?\n\n\nAs you may have determined already, this module supports multiple separate data sets.  Simply use different names for the \nfileName\n setting and your data will be separated into independent sets.   (See \nComplete Example\n below.)\n\n\nData Caching\n\n\nThis library utilizes caching to speed up data accesses.\n\n\nWhenever a persistent data set is mofified the following checks occur:\n\n\n\n\nIs data cached?  \n\n\nIf not, load it from file or create blank record.\n\n\nCache data in persist module.\n\n\n\n\n\n\nIs there a value for the field user is accessing?\n\n\nIf not, and if there is a default set,\n\n\nSet field in cached copy to default\n\n\nReturn default value.\n\n\n\n\n\n\n\n\n\n\nDid user set \nsave\n parameter to \nfalse\n?\n\n\nIf not, save cached data immediately\n\n\n\n\n\n\n\n\n\n\nI will be modifying this slightly in the future to handle back to back set/setDefault calls with save set to true.\nThis modification will prevent these saves from blocking and affecting frame rate.\n\n\n\n\nComplete Persist Example\n\n\nThe following example shows a example usage with automatic \nsecure mode\n enabling when on device.\n\n\n\n-- Set up two data sets with defaults\n--\npersist.setDefault( \nstore.json\n, \ndisabled_ads\n, false , { save = false } )\npersist.setDefault( \nstore.json\n, \nbought_extra_content\n, false )\n\npersist.setDefault( \nsettings.json\n, \nsound_enabled\n, true, { save = false } )\npersist.setDefault( \nsettings.json\n, \nlast_score\n, 0 )\n\n-- Check persistent data fields\nprint( \nAds disabled? \n, persist.get( \nstore.json\n, \ndisabled_ads\n) )\n\nprint( \nLast Score: \n, persist.get( \nsettings.json\n, \nlast_score\n ) )\n\n-- Set 'last score' to a random value\npersist.set( \nsettings.json\n, \nlast_score\n, math.random(100, 10000) )\n\n-- Check persistent data fields again\nprint( \nAds disabled? \n, persist.get( \nstore.json\n, \ndisabled_ads\n) )\n\nprint( \nLast Score: \n, persist.get( \nsettings.json\n, \nlast_score\n ) )\n\n\n\n\n\n\n\nsoundMgr.lua\n\n\nAll starter kits/packages come with the module file \neasy/soundMgr.lua\n. \n\n\nThis is a very basic sound library that takes the drudgery (and likelihood of error) out of playing sounds in your game.\n\n\n\n\nWhile it works fine as is, this module is meant to give you a starting point from which to expand and improve.  \n\n\n\n\nSound Categories\n\n\n\n\nEffect - An effect is a short sound.  You may play these in rapid succession and even overlap them.  These are usually .wav files.\n\n\nMusic - A long sound, usually played as the soundtrack in a game, or as a voice-over.  These are usually stored as .mp3 files.\n\n\n\n\nBasic Usage\n\n\nlocal soundMgr = require \neasy.soundMgr\n\n\n\n\n\nAdding Sounds\n\n\naddEffect( name, src )\n\n\nsoundMgr.addEffect( \nclick\n, \nsounds/sfx/click.wav\n )\n\n\n\n\naddMusic( name, src )\n\n\nsoundMgr.addMusic( \nsoundTrack\n, \nsounds/music/Blipotron.mp3\n )\n\n\n\n\nPlaying Sounds\n\n\nplayEffect( name, options )\n\n\n\n\noptions\n - You can pass any of the options supported by (audio.play)(https://docs.coronalabs.com/api/library/audio/play.html#parameter-reference).\n\n\n\n\nsoundMgr.playEffect( \nclick\n )\n\n\n\n\nplayMusic( name, options )\n\n\n\n\noptions\n - You can pass any of the options supported by (audio.play)(https://docs.coronalabs.com/api/library/audio/play.html#parameter-reference).\n\n\n\n\nsoundMgr.playMusic( \nsoundTrack\n, { fadein = 5000 } )\n\n\n\n\nStopping Sounds\n\n\nThis module will find and stop all instances of a named sound.\n\n\nstopEffect( name )\n\n\nsoundMgr.stopEffect( \nclick\n )\n\n\n\n\nstopMusic( name )\n\n\nsoundMgr.stopMusic( \nsoundTrack\n )\n\n\n\n\nRemoving Sounds\n\n\nThese featuers automatically stop and remove and then unload all instances of a named sound.\n\n\nremoveEffect( name )\n\n\nsoundMgr.removeEffect( \nclick\n )\n\n\n\n\nremoveMusic( name )\n\n\nsoundMgr.removeMusic( \nsoundTrack\n )\n\n\n\n\nutils.lua\n\n\nAll starter kits/packages come with the module file \neasy/utils.lua\n. \n\n\nThis is a terse and alphabetical quick reference to the functions found in \neasy.utils.lua\n and \neasy.files.*\n\n\n\n\nRemember: You've got the source so if there is any confusion about using these, you can dig into the code. :)\n\n\n\n\n\n\nautoIgnore( name, obj )\n - Checks if obj is still valid and if not, removes named listener.  Returns 'true' if object was invalid and listener was removed.\n\n\ncreateSlicedImage( group, path, x, y, width, height )\n -  Draws a rectangle from 9 sub-slices.\n\n\npath\n - Folder containing 9 slice images: slice_1.png .. slice_9.png.\n\n\n\n\n\n\ndeepCopy( src, dst )\n - Copies multi-level tables; handles non-integer indexes; does not copy metatable\n\n\ndump( theTable, padding, marker )\n - Table dumper.\n\n\nfiles.*\n - Grouped by category:\n\n\nfiles.documents.getRoot()\n\n\nfiles.documents.getPath( path )\n\n\nfiles.resource.getRoot()\n\n\nfiles.resource.getPath( path )\n\n\nfiles.temporary.getRoot()\n\n\nfiles.temporary.getPath( path )\n\n\nfiles.desktop.getDesktopRoot()\n\n\nfiles.desktop.getDesktopPath( path )\n\n\nfiles.desktop.getMyDocumentsRoot()\n\n\nfiles.desktop.getMyDocumentsPath( path )\n\n\nfiles.desktop.getDrivePath( path ) by current OS.\n\n\nfiles.desktop.explore( path )\n\n\nfiles.util.exists( path )\n\n\nfiles.util.dumpAttributes()\n\n\nfiles.util.isFile( path )\n\n\nfiles.util.readFile( path )\n\n\nfiles.util.readFileToTable( path )\n\n\nfiles.util.writeFile( data,  path )\n\n\nfiles.util.appendFile( data,  path )\n\n\nfiles.util.rmFile( path )\n\n\nfiles.util.mvFile( src, dst )\n\n\nfiles.util.cpFile( src, dst )\n\n\nfiles.util.isFolder( path )\n\n\nfiles.util.repairPath( path, forceForward )\n\n\nfiles.util.rmFolder( path )\n\n\nfiles.util.mkFolder( path )\n\n\nfiles.util.mvFolder( src, dst )\n\n\nfiles.util.cpFolder( src, dst )\n\n\nfiles.util.saveTable( tbl, path, secure )\n\n\nfiles.util.loadTable( path, secure )\n\n\nfiles.util.getFilesInFolder()\n\n\nfiles.util.keepFileTypes()\n\n\nfiles.util.getLuaFiles()\n\n\nfiles.util.getResourceFiles()\n\n\nfiles.util.flattenNames()\n\n\nvutil.findAllFiles()\n\n\n\n\n\n\nfirst_upper(str)\n - Make first letter in string 'upper-case'.\n\n\nfnn( ... )\n - Return first argument passed that does not evaluate to \nnil\n.\n\n\ngenerateButtonPresets( using2XImages )\n - This utility will generate button prese for any images found in images/buttons.  Pass \ntrue\n as first argument if your images are twice as large as you want them displayed.\n\n\nhexcolor( code )\n - Converts hex color codes to rgba Graphics 2.0 table.\n\n\nisValid( obj )\n - Returns 'true' if obj is still a valid display object.\n\n\nignore( name, listener )\n - Shorthand for Runtime:removeEventListener( name, listener ).\n\n\nignoreList( list, obj )\n - Safe Runtime listener remover similar to 'ignore' (above), but takes list (table of strings) for each listener name to remove.\n\n\nisInBounds( obj, obj2 )\n - Returns true if obj is in bounds of obj2\n\n\nlisten( name, listener )\n - Shorthand for Runtime:addEventListener( name, listener ).\n\n\nload( fileName, base )\n - Loads table from file.  (Uses JSON library as intermediary)\n\n\nonDesktop()\n - Returns true if on a desktop\n\n\nonDevice()\n - Returns true if on a device\n\n\nos()\n - Returns: 'ios', 'android', 'tvos', win, osx, or nil if OS is unknown.\n\n\npost( name, params )\n - Shorthand helper that does job of Runtime:dispatchEvent( event ).\n\n\nprint_r( t )\n - Dumps indexes and values inside multi-level table (for debug).\n\n\ngetImageSize = ( path, basePath )\n - Returns width, and height of image at path.\n\n\nrepairPath( path )\n - Force path to use forward slashes for consistency in later parsing.\n\n\nround(val, n)\n - Rounds floating point-values to n places.\n\n\nrpad( str, len, char)\n - Places padding on right side of a string, such that the new string is at least len characters long.\n\n\nsave( theTable, fileName, base  )\n - Saves table to file.  (Uses JSON library as intermediary).\n\n\nsplit(str,tok)\n - Splits a string on specified token and returns table of values.\n\n\nshallowCopy( src, dst )\n - Copies single-level tables; handles non-integer indexes; does not copy metatable\n\n\nshuffle( t, iter )\n - Randomizes the order of a numerically indexed (non-sparse) table.\n\n\ntriml(s)\n - Trim whitespace from left-side of string only.\n\n\ntrimr(s)\n - Trim whitespace from right-side of string only.\n\n\ntrim(s)\n - Trim whitespace.\n\n\nutils.onSim(noOs)\n - returns: onSim, os\n\n\nonSim - 'true' if on simulator\n\n\nos - nil if not on simulator, 'win' or 'osx' otherwise.\n\n\n\n\n\n\nversion( )\n - Print and return current version number of \nutils.*\n module in YYMMDD format.\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "About"
+        }, 
+        {
+            "location": "/#starters-core", 
+            "text": "This page is both a reference to the 'starters core' package as well as a reference for individual libraries from the package that are also included in other starters.  This package includes these elements:   ButtonMaker  - A module for easily making push, toggle, and radio buttons.  Easy Ads  - A module to simplify the use of the Appodeal and AppLovin ad plugins.  Easy IAP  - A module that layers on top of  IAP Badger  to make it even easier to set up In App Purchases.  Globals  - Useful global varaibles.  Persistent Data  - Easy and efficient persistent data module.  Sound Manager  - A basic sound management module.  Utilities  - A module containing a number of useful utility functions.", 
+            "title": "Starters Core"
+        }, 
+        {
+            "location": "/#globalslua", 
+            "text": "All starter kits/packages come with the module file  easy/globals.lua .   Contrary to some folks' beliefs, global variables are not evil.  In fact, they would not be possible if they were not useful and sometimes needed.  This module sets some useful globals that help save you time typing common values and figuring out commonly needed things:   w  - Shorthand for  display.contentWidth  h  - Shorthand for  display.contentHeight  centerX  - Shorthand for  display.centerX  centerY  - Shorthand for  display.centerY  fullw  - Shorthand for  display.actualContentWidth  fullh  - Shorthand for  display.actualContentHeight  unusedWidth  -  display.actualContentWidth - display.contentWidth  unusedHeight  -  display.actualContentHeight - display.contentHeight  left  - Position of left-edge of visible content.  top  - Position of top-edge of visible content.  right  - Position of right-edge of visible content.  bottom  - Position of bottom-edge of visible content.", 
+            "title": "globals.lua"
+        }, 
+        {
+            "location": "/#persistlua", 
+            "text": "The starter core includes a special module that makes it easy and efficient to maintain persistent data in your games.  This module can be found in the file  easy/persist.lua   This is directly adopted from  SSK2 , but the 'secure' save/load feature has been removed.", 
+            "title": "persist.lua"
+        }, 
+        {
+            "location": "/#setting-default-values", 
+            "text": "The  persist  library lets you set 'default' values for any named field.  This way, if you call  get()  for a named field before you  set()  it, you will get a valid value.  To set a defaut value for a field in a persistent data set, use this function:  persist.setDefault( fileName, fieldName, value [ , params ] )   fileName  - Name of file to save persistent data in.  fieldName  - Name of setting to set default for.  value  - Value to set as default for  fieldName .  params  ( {} ) - Optional table of parameters.  save  ( true ) - Save immediately to file.  base  ( system.DocumentsDirectory ) - Base folder type for save file.", 
+            "title": "Setting Default Values"
+        }, 
+        {
+            "location": "/#setting-and-getting-values", 
+            "text": "Use these functions set and get values respectively:  persist.set( fileName, fieldName, value [ , params ] )\n\npersist.get( fileName, fieldName [ , params ] )   fileName  - Name of file to save persistent data in.  fieldName  - Name of setting to set default for.  value  - Value to set as default for  fieldName .  params  ( {} ) - Optional table of parameters.  save  ( true ) - Save immediately to file.  base  ( system.DocumentsDirectory ) - Base folder type for save file.", 
+            "title": "Setting and Getting Values"
+        }, 
+        {
+            "location": "/#multiple-sets-allowed", 
+            "text": "As you may have determined already, this module supports multiple separate data sets.  Simply use different names for the  fileName  setting and your data will be separated into independent sets.   (See  Complete Example  below.)", 
+            "title": "Multiple Sets Allowed?"
+        }, 
+        {
+            "location": "/#data-caching", 
+            "text": "This library utilizes caching to speed up data accesses.  Whenever a persistent data set is mofified the following checks occur:   Is data cached?    If not, load it from file or create blank record.  Cache data in persist module.    Is there a value for the field user is accessing?  If not, and if there is a default set,  Set field in cached copy to default  Return default value.      Did user set  save  parameter to  false ?  If not, save cached data immediately      I will be modifying this slightly in the future to handle back to back set/setDefault calls with save set to true.\nThis modification will prevent these saves from blocking and affecting frame rate.", 
+            "title": "Data Caching"
+        }, 
+        {
+            "location": "/#complete-persist-example", 
+            "text": "The following example shows a example usage with automatic  secure mode  enabling when on device.  \n-- Set up two data sets with defaults\n--\npersist.setDefault(  store.json ,  disabled_ads , false , { save = false } )\npersist.setDefault(  store.json ,  bought_extra_content , false )\n\npersist.setDefault(  settings.json ,  sound_enabled , true, { save = false } )\npersist.setDefault(  settings.json ,  last_score , 0 )\n\n-- Check persistent data fields\nprint(  Ads disabled?  , persist.get(  store.json ,  disabled_ads ) )\n\nprint(  Last Score:  , persist.get(  settings.json ,  last_score  ) )\n\n-- Set 'last score' to a random value\npersist.set(  settings.json ,  last_score , math.random(100, 10000) )\n\n-- Check persistent data fields again\nprint(  Ads disabled?  , persist.get(  store.json ,  disabled_ads ) )\n\nprint(  Last Score:  , persist.get(  settings.json ,  last_score  ) )", 
+            "title": "Complete Persist Example"
+        }, 
+        {
+            "location": "/#soundmgrlua", 
+            "text": "All starter kits/packages come with the module file  easy/soundMgr.lua .   This is a very basic sound library that takes the drudgery (and likelihood of error) out of playing sounds in your game.   While it works fine as is, this module is meant to give you a starting point from which to expand and improve.", 
+            "title": "soundMgr.lua"
+        }, 
+        {
+            "location": "/#sound-categories", 
+            "text": "Effect - An effect is a short sound.  You may play these in rapid succession and even overlap them.  These are usually .wav files.  Music - A long sound, usually played as the soundtrack in a game, or as a voice-over.  These are usually stored as .mp3 files.", 
+            "title": "Sound Categories"
+        }, 
+        {
+            "location": "/#basic-usage", 
+            "text": "local soundMgr = require  easy.soundMgr", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/#adding-sounds", 
+            "text": "", 
+            "title": "Adding Sounds"
+        }, 
+        {
+            "location": "/#addeffect-name-src", 
+            "text": "soundMgr.addEffect(  click ,  sounds/sfx/click.wav  )", 
+            "title": "addEffect( name, src )"
+        }, 
+        {
+            "location": "/#addmusic-name-src", 
+            "text": "soundMgr.addMusic(  soundTrack ,  sounds/music/Blipotron.mp3  )", 
+            "title": "addMusic( name, src )"
+        }, 
+        {
+            "location": "/#playing-sounds", 
+            "text": "", 
+            "title": "Playing Sounds"
+        }, 
+        {
+            "location": "/#playeffect-name-options", 
+            "text": "options  - You can pass any of the options supported by (audio.play)(https://docs.coronalabs.com/api/library/audio/play.html#parameter-reference).   soundMgr.playEffect(  click  )", 
+            "title": "playEffect( name, options )"
+        }, 
+        {
+            "location": "/#playmusic-name-options", 
+            "text": "options  - You can pass any of the options supported by (audio.play)(https://docs.coronalabs.com/api/library/audio/play.html#parameter-reference).   soundMgr.playMusic(  soundTrack , { fadein = 5000 } )", 
+            "title": "playMusic( name, options )"
+        }, 
+        {
+            "location": "/#stopping-sounds", 
+            "text": "This module will find and stop all instances of a named sound.", 
+            "title": "Stopping Sounds"
+        }, 
+        {
+            "location": "/#stopeffect-name", 
+            "text": "soundMgr.stopEffect(  click  )", 
+            "title": "stopEffect( name )"
+        }, 
+        {
+            "location": "/#stopmusic-name", 
+            "text": "soundMgr.stopMusic(  soundTrack  )", 
+            "title": "stopMusic( name )"
+        }, 
+        {
+            "location": "/#removing-sounds", 
+            "text": "These featuers automatically stop and remove and then unload all instances of a named sound.", 
+            "title": "Removing Sounds"
+        }, 
+        {
+            "location": "/#removeeffect-name", 
+            "text": "soundMgr.removeEffect(  click  )", 
+            "title": "removeEffect( name )"
+        }, 
+        {
+            "location": "/#removemusic-name", 
+            "text": "soundMgr.removeMusic(  soundTrack  )", 
+            "title": "removeMusic( name )"
+        }, 
+        {
+            "location": "/#utilslua", 
+            "text": "All starter kits/packages come with the module file  easy/utils.lua .   This is a terse and alphabetical quick reference to the functions found in  easy.utils.lua  and  easy.files.*   Remember: You've got the source so if there is any confusion about using these, you can dig into the code. :)    autoIgnore( name, obj )  - Checks if obj is still valid and if not, removes named listener.  Returns 'true' if object was invalid and listener was removed.  createSlicedImage( group, path, x, y, width, height )  -  Draws a rectangle from 9 sub-slices.  path  - Folder containing 9 slice images: slice_1.png .. slice_9.png.    deepCopy( src, dst )  - Copies multi-level tables; handles non-integer indexes; does not copy metatable  dump( theTable, padding, marker )  - Table dumper.  files.*  - Grouped by category:  files.documents.getRoot()  files.documents.getPath( path )  files.resource.getRoot()  files.resource.getPath( path )  files.temporary.getRoot()  files.temporary.getPath( path )  files.desktop.getDesktopRoot()  files.desktop.getDesktopPath( path )  files.desktop.getMyDocumentsRoot()  files.desktop.getMyDocumentsPath( path )  files.desktop.getDrivePath( path ) by current OS.  files.desktop.explore( path )  files.util.exists( path )  files.util.dumpAttributes()  files.util.isFile( path )  files.util.readFile( path )  files.util.readFileToTable( path )  files.util.writeFile( data,  path )  files.util.appendFile( data,  path )  files.util.rmFile( path )  files.util.mvFile( src, dst )  files.util.cpFile( src, dst )  files.util.isFolder( path )  files.util.repairPath( path, forceForward )  files.util.rmFolder( path )  files.util.mkFolder( path )  files.util.mvFolder( src, dst )  files.util.cpFolder( src, dst )  files.util.saveTable( tbl, path, secure )  files.util.loadTable( path, secure )  files.util.getFilesInFolder()  files.util.keepFileTypes()  files.util.getLuaFiles()  files.util.getResourceFiles()  files.util.flattenNames()  vutil.findAllFiles()    first_upper(str)  - Make first letter in string 'upper-case'.  fnn( ... )  - Return first argument passed that does not evaluate to  nil .  generateButtonPresets( using2XImages )  - This utility will generate button prese for any images found in images/buttons.  Pass  true  as first argument if your images are twice as large as you want them displayed.  hexcolor( code )  - Converts hex color codes to rgba Graphics 2.0 table.  isValid( obj )  - Returns 'true' if obj is still a valid display object.  ignore( name, listener )  - Shorthand for Runtime:removeEventListener( name, listener ).  ignoreList( list, obj )  - Safe Runtime listener remover similar to 'ignore' (above), but takes list (table of strings) for each listener name to remove.  isInBounds( obj, obj2 )  - Returns true if obj is in bounds of obj2  listen( name, listener )  - Shorthand for Runtime:addEventListener( name, listener ).  load( fileName, base )  - Loads table from file.  (Uses JSON library as intermediary)  onDesktop()  - Returns true if on a desktop  onDevice()  - Returns true if on a device  os()  - Returns: 'ios', 'android', 'tvos', win, osx, or nil if OS is unknown.  post( name, params )  - Shorthand helper that does job of Runtime:dispatchEvent( event ).  print_r( t )  - Dumps indexes and values inside multi-level table (for debug).  getImageSize = ( path, basePath )  - Returns width, and height of image at path.  repairPath( path )  - Force path to use forward slashes for consistency in later parsing.  round(val, n)  - Rounds floating point-values to n places.  rpad( str, len, char)  - Places padding on right side of a string, such that the new string is at least len characters long.  save( theTable, fileName, base  )  - Saves table to file.  (Uses JSON library as intermediary).  split(str,tok)  - Splits a string on specified token and returns table of values.  shallowCopy( src, dst )  - Copies single-level tables; handles non-integer indexes; does not copy metatable  shuffle( t, iter )  - Randomizes the order of a numerically indexed (non-sparse) table.  triml(s)  - Trim whitespace from left-side of string only.  trimr(s)  - Trim whitespace from right-side of string only.  trim(s)  - Trim whitespace.  utils.onSim(noOs)  - returns: onSim, os  onSim - 'true' if on simulator  os - nil if not on simulator, 'win' or 'osx' otherwise.    version( )  - Print and return current version number of  utils.*  module in YYMMDD format.      Copyright   Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "utils.lua"
+        }, 
+        {
+            "location": "/buttonMaker/", 
+            "text": "buttonMaker.lua\n\n\nAll starter kits/packages come with the module file \neasy/buttonMaker.lua\n. \n\n\nThis is a very basic button creating library that allows you to, predefine buttons, then use those 'presets' to make:\n\n\n\n\nPush Buttons - A button, where an action is taken when you release the button.\n\n\nToggle Button - Similar to a Push button, but the state (on/off) of the button toggles.\n\n\nRadio - Similar to a Toggle Button, but only one radio button in a group may be toggled.  Toggling one radio button detoggles the rest.\n\n\n\n\nUsing Button Maker\n\n\nThis video demonstrates how fast an easy it is to make snazy looking buttons with the \npreset\n  concept and the \nbuttonMaker\n module.\n\n\n\n\nBasic Usage\n\n\nlocal buttonMaker = require \neasy.buttonMaker\n\n\n\n\n\nversion()\n\n\nPrints out and returns the current version of the \nbuttonMaker\n module in the format YYMMDD.\n\n\naddPreset( name, def )\n\n\nAdds a new preset definion \ndef\n to the prests library.\n\n\n\n\nSee \neasyPush\n below for a full list of preset fields and their purpose.\n\n\n\n\nlocal default = \n{ \n   selImg           = \neasy/fillW.png\n,\n   selColor         = { 0.5, 0.5, 0.5 },\n   selLabelColor    = { 0.125, 0.125, 0.125 },\n\n   unselImg         = \neasy/fillW.png\n,\n   unselColor       = { 0.25, 0.25, 0.25 },\n   unselLabelColor  = { 1, 1, 1 },\n\n   font             = native.systemFont,\n   fontSize         = 32,\n   labelOffset      = { 0, 0 },\n}\n\nbuttonMaker.addPreset( \ndefault\n, default )\n\n\n\n\ngetPreset( name )\n\n\nReturns the definition of a named preset.  This is handy if you want to use an existing preset to create a new one.  Just get the existing one and modify the parameters you want to change.\n\n\nlocal default = buttonMaker.getPreset( \ndefault\n )\n\ndefault.font     = native.systemFontBold\ndefault.fontSize = 40\n\nbuttonMaker.addPreset( \nbig_default\n, default )\n\n\n\n\neasyPush( params )\n\n\nMakes a preset based push button using a table of optional parameters.\n\n\nWith the exception of \nparent\n, \npreset\n, \nx\n, \ny\n, \nlabelText\n, and \nlistener\n, all of the following fields are also valid preset fields.\n\n\nPassing these fields in your \nparams\n table will override any preset field the requested preset may have set.\n\n\n\n\nparent (\ndisplay.currentStage\n) - Group to place button in.\n\n\npreset (\n\"default\"\n) - Preset to make button based on.\n\n\nx (\n0\n) - x-position of button.\n\n\ny (\n0\n) - y-position of button.\n\n\nwidth (\npreset.width\n or \n200\n) - Width of the button.\n\n\nheight (\npreset.height\n or \n60\n) - Height of the button.\n\n\nlabelText (\n\"\"\n) - Text to print (if any).\n\n\nlabelOffset (\npreset.labelOffset\n or \n{0,0}\n) - x/y offset of button label.\n\n\nfont (\npreset.font\n or \nnative.systemFontBold\n) - Label font.\n\n\nfontSize (\npreset.fontSize\n or \n32\n) - Label font size.\n\n\nunselLabelColor (\npreset.unselLabelColor\n or \n{0,0,0}\n) - Label color when button is not selected.\n\n\nselLabelColor (\npreset.selLabelColor\n or \n{0,0,0}\n) - Label color when button is not selected.\n\n\nlistener (\nnil\n) - A function to call when the button is released, using this signature:\n\n\n\n\nlocal function onPush( self, event )\n   -- Do something here\nend\n\n\n\n\nExamples\n\n\nPlay Button\n\n\nlocal onPlay = function( self, event )\n   composer.gotoScene( \nscenes.play\n, { time = 500, effect = \ncrossFade\n } )\nend\n\nbuttonMaker.easyPush( { preset = \nplay\n, x = centerX, y = centerY, \n                        listener = onPlay } )\n\n\n\n\nRestore IAP Button\n\n\nlocal function restoreIAP()\n   _G.easyIAP.restore()\nend\n\nbuttonMaker.easyPush( { labelText = \nRestore IAP\n, fontSize = 22, \n                        x = left + 80, y = bottom - 140, \n                        width = 140, height = 60, \n                        listener = restoreIAP } )\n\n\n\n\neasyToggle( params )\n\n\nMakes a preset based toggle button using a table of optional parameters.\n\n\nTakes same parameters as \neasyPush()\n\n\nThe returned \nbutton\n object has a \ntoggle\n  function that can be used to toggle the button ON.  Calling this does NOT call the listener.  It only sets the 'toggled' state of the button to true.\n\n\neasyRadio( params )\n\n\nMakes a preset based radio button using a table of optional parameters.\n\n\nTakes same parameters as \neasyPush()\n\n\nThe returned \nbutton\n object has a \ntoggle\n  function that can be used to toggle the button ON.  Calling this does NOT call the listener.  It only sets the 'toggled' state of the button to true.\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "Button Maker"
+        }, 
+        {
+            "location": "/buttonMaker/#buttonmakerlua", 
+            "text": "All starter kits/packages come with the module file  easy/buttonMaker.lua .   This is a very basic button creating library that allows you to, predefine buttons, then use those 'presets' to make:   Push Buttons - A button, where an action is taken when you release the button.  Toggle Button - Similar to a Push button, but the state (on/off) of the button toggles.  Radio - Similar to a Toggle Button, but only one radio button in a group may be toggled.  Toggling one radio button detoggles the rest.", 
+            "title": "buttonMaker.lua"
+        }, 
+        {
+            "location": "/buttonMaker/#using-button-maker", 
+            "text": "This video demonstrates how fast an easy it is to make snazy looking buttons with the  preset   concept and the  buttonMaker  module.", 
+            "title": "Using Button Maker"
+        }, 
+        {
+            "location": "/buttonMaker/#basic-usage", 
+            "text": "local buttonMaker = require  easy.buttonMaker", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/buttonMaker/#version", 
+            "text": "Prints out and returns the current version of the  buttonMaker  module in the format YYMMDD.", 
+            "title": "version()"
+        }, 
+        {
+            "location": "/buttonMaker/#addpreset-name-def", 
+            "text": "Adds a new preset definion  def  to the prests library.   See  easyPush  below for a full list of preset fields and their purpose.   local default = \n{ \n   selImg           =  easy/fillW.png ,\n   selColor         = { 0.5, 0.5, 0.5 },\n   selLabelColor    = { 0.125, 0.125, 0.125 },\n\n   unselImg         =  easy/fillW.png ,\n   unselColor       = { 0.25, 0.25, 0.25 },\n   unselLabelColor  = { 1, 1, 1 },\n\n   font             = native.systemFont,\n   fontSize         = 32,\n   labelOffset      = { 0, 0 },\n}\n\nbuttonMaker.addPreset(  default , default )", 
+            "title": "addPreset( name, def )"
+        }, 
+        {
+            "location": "/buttonMaker/#getpreset-name", 
+            "text": "Returns the definition of a named preset.  This is handy if you want to use an existing preset to create a new one.  Just get the existing one and modify the parameters you want to change.  local default = buttonMaker.getPreset(  default  )\n\ndefault.font     = native.systemFontBold\ndefault.fontSize = 40\n\nbuttonMaker.addPreset(  big_default , default )", 
+            "title": "getPreset( name )"
+        }, 
+        {
+            "location": "/buttonMaker/#easypush-params", 
+            "text": "Makes a preset based push button using a table of optional parameters.  With the exception of  parent ,  preset ,  x ,  y ,  labelText , and  listener , all of the following fields are also valid preset fields.  Passing these fields in your  params  table will override any preset field the requested preset may have set.   parent ( display.currentStage ) - Group to place button in.  preset ( \"default\" ) - Preset to make button based on.  x ( 0 ) - x-position of button.  y ( 0 ) - y-position of button.  width ( preset.width  or  200 ) - Width of the button.  height ( preset.height  or  60 ) - Height of the button.  labelText ( \"\" ) - Text to print (if any).  labelOffset ( preset.labelOffset  or  {0,0} ) - x/y offset of button label.  font ( preset.font  or  native.systemFontBold ) - Label font.  fontSize ( preset.fontSize  or  32 ) - Label font size.  unselLabelColor ( preset.unselLabelColor  or  {0,0,0} ) - Label color when button is not selected.  selLabelColor ( preset.selLabelColor  or  {0,0,0} ) - Label color when button is not selected.  listener ( nil ) - A function to call when the button is released, using this signature:   local function onPush( self, event )\n   -- Do something here\nend", 
+            "title": "easyPush( params )"
+        }, 
+        {
+            "location": "/buttonMaker/#examples", 
+            "text": "", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/buttonMaker/#play-button", 
+            "text": "local onPlay = function( self, event )\n   composer.gotoScene(  scenes.play , { time = 500, effect =  crossFade  } )\nend\n\nbuttonMaker.easyPush( { preset =  play , x = centerX, y = centerY, \n                        listener = onPlay } )", 
+            "title": "Play Button"
+        }, 
+        {
+            "location": "/buttonMaker/#restore-iap-button", 
+            "text": "local function restoreIAP()\n   _G.easyIAP.restore()\nend\n\nbuttonMaker.easyPush( { labelText =  Restore IAP , fontSize = 22, \n                        x = left + 80, y = bottom - 140, \n                        width = 140, height = 60, \n                        listener = restoreIAP } )", 
+            "title": "Restore IAP Button"
+        }, 
+        {
+            "location": "/buttonMaker/#easytoggle-params", 
+            "text": "Makes a preset based toggle button using a table of optional parameters.  Takes same parameters as  easyPush()  The returned  button  object has a  toggle   function that can be used to toggle the button ON.  Calling this does NOT call the listener.  It only sets the 'toggled' state of the button to true.", 
+            "title": "easyToggle( params )"
+        }, 
+        {
+            "location": "/buttonMaker/#easyradio-params", 
+            "text": "Makes a preset based radio button using a table of optional parameters.  Takes same parameters as  easyPush()  The returned  button  object has a  toggle   function that can be used to toggle the button ON.  Calling this does NOT call the listener.  It only sets the 'toggled' state of the button to true.     Copyright   Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "easyRadio( params )"
+        }, 
+        {
+            "location": "/easyAds/", 
+            "text": "Easy Ads\n\n\nThe \nStarters Core\n kit comes with the \nEasy Ads\n modules.  \n\n\nThese modules:\n\n\n\n\nMake it easier to use the Appodeal or AppLovin plugins.\n\n\nHelp ensure ads show when and where you want them.\n\n\nMake it easy to hook rewarded ads to your success and failure code.\n\n\nAllow you to \ntest your ad logic in the simulator\n.\n\n\n\n\nUsing Easy Ads\n\n\nThis video demonstrates how to use Easy Ads to show Appodeal ads.\n\n\nEFM\n\n\nProject Settings\n\n\nPlease see the Corona docs for setting up the build.settings file.\n\n\n\n\nAppLovin\n\n\nAppodeal\n\n\n\n\nSelecting Helper\n\n\nAppLovin\n\n\n_G.adsHelper = require( \neasy.ads.applovinAds\n )\n\n\n\n\nAppodeal\n\n\n_G.adsHelper = require( \neasy.ads.appodealAds\n )\n\n\n\n\nPreparation \n Initialization\n\n\nAppLovin\n\n\nadsHelper.prepare( enabled, adParams )\n\n\n\n\nenabled\n - Pass \ntrue\n to enable ads, or \nfalse\n to stub out all functions. \n\n\nStubbed functions can still be called, but have no effect, making your code easier to write and maintain.\n\n\n\n\n\n\nadParams\n - Table of optional named parameters to set up ads.\n\n\ntestMode\n (\ntrue\n) - Run ads in test mode. Be sure to set this to \nfalse\n when you go to publish.\n\n\nverbose\n (\nfalse\n) - Set to 'true' for detailed messages from event listener\n\n\nverboseLogging\n (\nfalse\n) - Set to 'true' for detailed output from AooLovin plugin.\n\n\ninitDelay\n (\n30\n) - Wait this many milliseconds before initializing plugin.  This makes your game behave more nicely and prevents the call to \ninit()\n from blocking your first scene load.\n\n\nandroidID\n (\nnil\n) - AppLovin ad ID for Android if needed.\n\n\niosID\n (\nnil\n) - AppLovin ad ID for iOS if needed.\n\n\nenableFakeAds\n (\ntrue\n) - If \ntrue\n, show fake ads in simulator.\n\n\nbannerAfterInit\n (\nnil\n) - If set, show a banner ad as soon as possible after initializion completes.\n\n\nTo set this, pass in a table: \n{ position = \"bottom\", placement = nil }\n, where position is \n\"top\"\n or \n\"bottom\"\n.  The \nplacement\n field is optional.\n\n\n\n\n\n\ninterstitialAfterInit\n (\nnil\n) - If set, show an interstitial ad as soon as possible after initializion completes.\n\n\nTo set this, pass in a table: \n{ placement = nil }\n, where the \nplacement\n field is optional.\n\n\nOnly this or \nbannerAfterInit\n can be set.  If both are set to \ntrue\n, \nbannerAfterInit\n will win.\n\n\n\n\n\n\n\n\n\n\n\n\nExample\n\n\nadParams = {\n  androidID               = \nBCD4524908adfADFAVDS234523DSNB\n,\n  iosID                   = \nLMND124908adfADFAVDS234523DYND\n,\n  interstitialAfterInit   = {},\n}\nadsHelper.prepare( true, adParams )\n\n\n\n\nAppodeal\n\n\nadsHelper.prepare( enabled, adParams )\n\n\nExample\n\n\n\n\nenabled\n - Pass \ntrue\n to enable ads, or \nfalse\n to stub out all functions. \n\n\nStubbed functions can still be called, but have no effect, making your code easier to write and maintain.\n\n\n\n\n\n\nadParams\n - Table of optional named parameters to set up ads.\n\n\ntestMode\n (\ntrue\n) - Run ads in test mode. Be sure to set this to \nfalse\n when you go to publish.\n\n\nverbose\n (\nfalse\n) - Set to 'true' for detailed messages from event listener\n\n\ninitDelay\n (\n30\n) - Wait this many milliseconds before initializing plugin.  This makes your game behave more nicely and prevents the call to \ninit()\n from blocking your first scene load.\n\n\nandroidID\n (\nnil\n) - Appodeal ad ID for Android if needed.\n\n\niosID\n (\nnil\n) - Appodeal ad ID for iOS if needed.\n\n\nsupportedAdTypes\n (\n{ \"banner\", \"interstitial\", \"rewardedVideo\" }\n) - You can pass in a custom table to reduce the number of ads types that are supported.\n\n\nisCOPPACompliant\n (\nfalse\n) - If \ntrue\n, show fake ads in simulator.\n\n\nhasGDPRConsent\n (\nnil\n) - If \nnil\n, it is left up to the plugin to query for GDPR permission in the EU.  If \ntrue\n you are attesting that you have gotten permission from the user to send their data toe Appodeal and affiliates.  If \nfalse\n you are saying the user declines to have their data sent.\n\n\nenableFakeAds\n (\ntrue\n) - If \ntrue\n, show fake ads in simulator.\n\n\nbannerAfterInit\n (\nnil\n) - If set, show a banner ad as soon as possible after initializion completes.\n\n\nTo set this, pass in a table: \n{ position = \"bottom\", placement = nil }\n, where position is \n\"top\"\n or \n\"bottom\"\n.  The \nplacement\n field is optional.\n\n\n\n\n\n\ninterstitialAfterInit\n (\nnil\n) - If set, show an interstitial ad as soon as possible after initializion completes.\n\n\nTo set this, pass in a table: \n{ placement = nil }\n, where the \nplacement\n field is optional.\n\n\nOnly this or \nbannerAfterInit\n can be set.  If both are set to \ntrue\n, \nbannerAfterInit\n will win.\n\n\n\n\n\n\n\n\n\n\n\n\nadParams = {      \n  testMode          = true,\n  verbose           = false,\n  initDelay         = 30,\n  androidID         = \nBCD4524908adfADFAVDS234523DSNB\n,\n  iosID             = \nLMND124908adfADFAVDS234523DYND\n,\n  supportedAdTypes  = { \nbanner\n, \nrewardedVideo\n },\n  isCOPPACompliant  = false,\n  hasGDPRConsent    = true,\n  enableFakeAds     = true, \n  bannerAfterInit   = { position = \nbottom\n },\n}\nadsHelper.prepare( true, adParams )\n\n\n\n\nShowing Ads\n\n\nBanners\n\n\nshowBanner( [ position [, placement ] ] )\n\n\n\n\nposition\n (\n\"bottom\"\n) - Optional argument for position of ad \n\"bottom\"\n or \n\"top\"\n\n\nplacement\n(\nnil\n) - Optional argument:\n\n\nAppLovin\n\n\nAppodeal\n\n\n\n\n\n\n\n\n_G.adsHelper.showBanner( \nbottom\n )\n\n\n\n\nInterstitials\n\n\nshowInterstitial( [ position [, placement ] ] )\n\n\n\n\nonComplete\n (\nnil\n) - Function to call when ad is done showing.\n\n\nplacement\n(\nnil\n) - Optional argument:\n\n\nAppLovin\n\n\nAppodeal\n\n\n\n\n\n\n\n\nlocal function onComplete()\n    print(\nShowed interstital!\n)\nend\n\n_G.adsHelper.showInterstitial( onComplete )\n\n\n\n\nRewarded Ads\n\n\nshowRewarded( [ onSuccess [, onFailure [, placement ] ] ] )\n\n\n\n\nonSuccess\n (\nnil\n) - Function to call when user successfully watches rewarded ad.\n\n\nonFailure\n (\nnil\n) - Function to call when user fails to watch rewarded ad.\n\n\nplacement\n(\nnil\n) - Optional argument:\n\n\nAppLovin\n\n\nAppodeal\n\n\n\n\n\n\n\n\nlocal function onSuccess()\n    print(\nGive reward!\n)\nend\n\nlocal function onFailure()\n    print(\nNo Twinky For You!\n)\nend\n\n_G.adsHelper.showRewarded( onSuccess, onFailure, \nearn_coins_button\n )\n\n\n\n\n\n\nHiding Banners\n\n\n_G.adsHelper.hideBanner()\n\n\n\n\n\n\nAdvanced Features\n\n\nYou will probably never need these features, but just in case here are the docs.\n\n\nTemporary Listeners\n\n\nYou can set up unique listeners that are transient in nature.  Once the specific event you are waiting for occurs, these listeners can be removed.  Alternately, you can clear them manually.\n\n\nlisten( name, aListener )\n\n\nCall this function to add a temporary ad listener.  You can then clear it as needed.\n\n\nExample\n\n\n local function clear()\n    _G.adsHelper.ignore( \ninterstitial\n )\n end\n\n local function interstitialListener( event )         \n    local isError  = event.isError\n    local phase    = event.phase\n    --\n    if( isError and phase == \nrewardedVideo\n ) then\n       clear()\n       return\n    end\n\n    --\n    -- Catch all 'ended' equivalent phases and assume that \n    -- the first one means we have shown the interstitial.\n    if( phase == \nhidden\n or phase == \nplaybackEnded\n ) then\n       clear()\n       print(\nYay! Showed interstial.\n)\n    end\n end\n _G.adsHelper.listen( \ninterstitial\n, interstitialListener )\n\n\n\n\nignore( name )\n\n\nCall this function to remove a previously added temporary listner.\n\n\n _G.adsHelper.ignore( \ninterstitial\n )\n\n\n\n\nignoreAll()\n\n\nCall this function to remove all temporary listner.\n\n\n _G.adsHelper.ignoreAll( )\n\n\n\n\nAppLovin Specific Helpers\n\n\nThe AppLovin helper also exposes these functions:\n\n\n\n\nadsHelper.isLoaded( adType )\n\n\nadsHelper.load( adType )\n\n\n\n\nAppodeal Specific Helpers\n\n\nThe Appodeal helper also exposes these functions:\n\n\n\n\nadsHelper.isLoaded( adType )\n\n\nadsHelper.load( adType )\n\n\n\n\nDisabling Helper\n\n\nIf you find that you want to disable all features of the active helper for the remainder of the app run, you can do so with the \ndisableModule()\n function.  (It can only be called once.  Subsequen calls do nothing.)\n\n\ndisableModule( [doCleaning] )\n\n\n\n\ndoCleaning\n (\nnil\n) - If \ntrue\n cleanup any temporary listeners that may be active.\n\n\nThis is an advanced feature of the module.  Unless you are an expert, always pass \ntrue\n if you call this.\n\n\n\n\n\n\n\n\n_G.adsHelper.disableModule( true )\n\n\n\n\nStandard Plugin Features?\n\n\nYou can always use the other features of the AppLovin and Appodeal plugins just like you normally would. \n\n\nPlease see the Corona docs:\n\n\n\n\nAppLovin\n\n\nAppodeal\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "Easy Ads"
+        }, 
+        {
+            "location": "/easyAds/#easy-ads", 
+            "text": "The  Starters Core  kit comes with the  Easy Ads  modules.    These modules:   Make it easier to use the Appodeal or AppLovin plugins.  Help ensure ads show when and where you want them.  Make it easy to hook rewarded ads to your success and failure code.  Allow you to  test your ad logic in the simulator .", 
+            "title": "Easy Ads"
+        }, 
+        {
+            "location": "/easyAds/#using-easy-ads", 
+            "text": "This video demonstrates how to use Easy Ads to show Appodeal ads.  EFM", 
+            "title": "Using Easy Ads"
+        }, 
+        {
+            "location": "/easyAds/#project-settings", 
+            "text": "Please see the Corona docs for setting up the build.settings file.   AppLovin  Appodeal", 
+            "title": "Project Settings"
+        }, 
+        {
+            "location": "/easyAds/#selecting-helper", 
+            "text": "", 
+            "title": "Selecting Helper"
+        }, 
+        {
+            "location": "/easyAds/#applovin", 
+            "text": "_G.adsHelper = require(  easy.ads.applovinAds  )", 
+            "title": "AppLovin"
+        }, 
+        {
+            "location": "/easyAds/#appodeal", 
+            "text": "_G.adsHelper = require(  easy.ads.appodealAds  )", 
+            "title": "Appodeal"
+        }, 
+        {
+            "location": "/easyAds/#preparation-initialization", 
+            "text": "", 
+            "title": "Preparation &amp; Initialization"
+        }, 
+        {
+            "location": "/easyAds/#applovin_1", 
+            "text": "", 
+            "title": "AppLovin"
+        }, 
+        {
+            "location": "/easyAds/#adshelperprepare-enabled-adparams", 
+            "text": "enabled  - Pass  true  to enable ads, or  false  to stub out all functions.   Stubbed functions can still be called, but have no effect, making your code easier to write and maintain.    adParams  - Table of optional named parameters to set up ads.  testMode  ( true ) - Run ads in test mode. Be sure to set this to  false  when you go to publish.  verbose  ( false ) - Set to 'true' for detailed messages from event listener  verboseLogging  ( false ) - Set to 'true' for detailed output from AooLovin plugin.  initDelay  ( 30 ) - Wait this many milliseconds before initializing plugin.  This makes your game behave more nicely and prevents the call to  init()  from blocking your first scene load.  androidID  ( nil ) - AppLovin ad ID for Android if needed.  iosID  ( nil ) - AppLovin ad ID for iOS if needed.  enableFakeAds  ( true ) - If  true , show fake ads in simulator.  bannerAfterInit  ( nil ) - If set, show a banner ad as soon as possible after initializion completes.  To set this, pass in a table:  { position = \"bottom\", placement = nil } , where position is  \"top\"  or  \"bottom\" .  The  placement  field is optional.    interstitialAfterInit  ( nil ) - If set, show an interstitial ad as soon as possible after initializion completes.  To set this, pass in a table:  { placement = nil } , where the  placement  field is optional.  Only this or  bannerAfterInit  can be set.  If both are set to  true ,  bannerAfterInit  will win.", 
+            "title": "adsHelper.prepare( enabled, adParams )"
+        }, 
+        {
+            "location": "/easyAds/#example", 
+            "text": "adParams = {\n  androidID               =  BCD4524908adfADFAVDS234523DSNB ,\n  iosID                   =  LMND124908adfADFAVDS234523DYND ,\n  interstitialAfterInit   = {},\n}\nadsHelper.prepare( true, adParams )", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/easyAds/#appodeal_1", 
+            "text": "", 
+            "title": "Appodeal"
+        }, 
+        {
+            "location": "/easyAds/#adshelperprepare-enabled-adparams_1", 
+            "text": "", 
+            "title": "adsHelper.prepare( enabled, adParams )"
+        }, 
+        {
+            "location": "/easyAds/#example_1", 
+            "text": "enabled  - Pass  true  to enable ads, or  false  to stub out all functions.   Stubbed functions can still be called, but have no effect, making your code easier to write and maintain.    adParams  - Table of optional named parameters to set up ads.  testMode  ( true ) - Run ads in test mode. Be sure to set this to  false  when you go to publish.  verbose  ( false ) - Set to 'true' for detailed messages from event listener  initDelay  ( 30 ) - Wait this many milliseconds before initializing plugin.  This makes your game behave more nicely and prevents the call to  init()  from blocking your first scene load.  androidID  ( nil ) - Appodeal ad ID for Android if needed.  iosID  ( nil ) - Appodeal ad ID for iOS if needed.  supportedAdTypes  ( { \"banner\", \"interstitial\", \"rewardedVideo\" } ) - You can pass in a custom table to reduce the number of ads types that are supported.  isCOPPACompliant  ( false ) - If  true , show fake ads in simulator.  hasGDPRConsent  ( nil ) - If  nil , it is left up to the plugin to query for GDPR permission in the EU.  If  true  you are attesting that you have gotten permission from the user to send their data toe Appodeal and affiliates.  If  false  you are saying the user declines to have their data sent.  enableFakeAds  ( true ) - If  true , show fake ads in simulator.  bannerAfterInit  ( nil ) - If set, show a banner ad as soon as possible after initializion completes.  To set this, pass in a table:  { position = \"bottom\", placement = nil } , where position is  \"top\"  or  \"bottom\" .  The  placement  field is optional.    interstitialAfterInit  ( nil ) - If set, show an interstitial ad as soon as possible after initializion completes.  To set this, pass in a table:  { placement = nil } , where the  placement  field is optional.  Only this or  bannerAfterInit  can be set.  If both are set to  true ,  bannerAfterInit  will win.       adParams = {      \n  testMode          = true,\n  verbose           = false,\n  initDelay         = 30,\n  androidID         =  BCD4524908adfADFAVDS234523DSNB ,\n  iosID             =  LMND124908adfADFAVDS234523DYND ,\n  supportedAdTypes  = {  banner ,  rewardedVideo  },\n  isCOPPACompliant  = false,\n  hasGDPRConsent    = true,\n  enableFakeAds     = true, \n  bannerAfterInit   = { position =  bottom  },\n}\nadsHelper.prepare( true, adParams )", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/easyAds/#showing-ads", 
+            "text": "", 
+            "title": "Showing Ads"
+        }, 
+        {
+            "location": "/easyAds/#banners", 
+            "text": "", 
+            "title": "Banners"
+        }, 
+        {
+            "location": "/easyAds/#showbanner-position-placement", 
+            "text": "position  ( \"bottom\" ) - Optional argument for position of ad  \"bottom\"  or  \"top\"  placement ( nil ) - Optional argument:  AppLovin  Appodeal     _G.adsHelper.showBanner(  bottom  )", 
+            "title": "showBanner( [ position [, placement ] ] )"
+        }, 
+        {
+            "location": "/easyAds/#interstitials", 
+            "text": "", 
+            "title": "Interstitials"
+        }, 
+        {
+            "location": "/easyAds/#showinterstitial-position-placement", 
+            "text": "onComplete  ( nil ) - Function to call when ad is done showing.  placement ( nil ) - Optional argument:  AppLovin  Appodeal     local function onComplete()\n    print( Showed interstital! )\nend\n\n_G.adsHelper.showInterstitial( onComplete )", 
+            "title": "showInterstitial( [ position [, placement ] ] )"
+        }, 
+        {
+            "location": "/easyAds/#rewarded-ads", 
+            "text": "", 
+            "title": "Rewarded Ads"
+        }, 
+        {
+            "location": "/easyAds/#showrewarded-onsuccess-onfailure-placement", 
+            "text": "onSuccess  ( nil ) - Function to call when user successfully watches rewarded ad.  onFailure  ( nil ) - Function to call when user fails to watch rewarded ad.  placement ( nil ) - Optional argument:  AppLovin  Appodeal     local function onSuccess()\n    print( Give reward! )\nend\n\nlocal function onFailure()\n    print( No Twinky For You! )\nend\n\n_G.adsHelper.showRewarded( onSuccess, onFailure,  earn_coins_button  )", 
+            "title": "showRewarded( [ onSuccess [, onFailure [, placement ] ] ] )"
+        }, 
+        {
+            "location": "/easyAds/#hiding-banners", 
+            "text": "_G.adsHelper.hideBanner()", 
+            "title": "Hiding Banners"
+        }, 
+        {
+            "location": "/easyAds/#advanced-features", 
+            "text": "You will probably never need these features, but just in case here are the docs.", 
+            "title": "Advanced Features"
+        }, 
+        {
+            "location": "/easyAds/#temporary-listeners", 
+            "text": "You can set up unique listeners that are transient in nature.  Once the specific event you are waiting for occurs, these listeners can be removed.  Alternately, you can clear them manually.", 
+            "title": "Temporary Listeners"
+        }, 
+        {
+            "location": "/easyAds/#listen-name-alistener", 
+            "text": "Call this function to add a temporary ad listener.  You can then clear it as needed.", 
+            "title": "listen( name, aListener )"
+        }, 
+        {
+            "location": "/easyAds/#example_2", 
+            "text": "local function clear()\n    _G.adsHelper.ignore(  interstitial  )\n end\n\n local function interstitialListener( event )         \n    local isError  = event.isError\n    local phase    = event.phase\n    --\n    if( isError and phase ==  rewardedVideo  ) then\n       clear()\n       return\n    end\n\n    --\n    -- Catch all 'ended' equivalent phases and assume that \n    -- the first one means we have shown the interstitial.\n    if( phase ==  hidden  or phase ==  playbackEnded  ) then\n       clear()\n       print( Yay! Showed interstial. )\n    end\n end\n _G.adsHelper.listen(  interstitial , interstitialListener )", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/easyAds/#ignore-name", 
+            "text": "Call this function to remove a previously added temporary listner.   _G.adsHelper.ignore(  interstitial  )", 
+            "title": "ignore( name )"
+        }, 
+        {
+            "location": "/easyAds/#ignoreall", 
+            "text": "Call this function to remove all temporary listner.   _G.adsHelper.ignoreAll( )", 
+            "title": "ignoreAll()"
+        }, 
+        {
+            "location": "/easyAds/#applovin-specific-helpers", 
+            "text": "The AppLovin helper also exposes these functions:   adsHelper.isLoaded( adType )  adsHelper.load( adType )", 
+            "title": "AppLovin Specific Helpers"
+        }, 
+        {
+            "location": "/easyAds/#appodeal-specific-helpers", 
+            "text": "The Appodeal helper also exposes these functions:   adsHelper.isLoaded( adType )  adsHelper.load( adType )", 
+            "title": "Appodeal Specific Helpers"
+        }, 
+        {
+            "location": "/easyAds/#disabling-helper", 
+            "text": "If you find that you want to disable all features of the active helper for the remainder of the app run, you can do so with the  disableModule()  function.  (It can only be called once.  Subsequen calls do nothing.)", 
+            "title": "Disabling Helper"
+        }, 
+        {
+            "location": "/easyAds/#disablemodule-docleaning", 
+            "text": "doCleaning  ( nil ) - If  true  cleanup any temporary listeners that may be active.  This is an advanced feature of the module.  Unless you are an expert, always pass  true  if you call this.     _G.adsHelper.disableModule( true )", 
+            "title": "disableModule( [doCleaning] )"
+        }, 
+        {
+            "location": "/easyAds/#standard-plugin-features", 
+            "text": "You can always use the other features of the AppLovin and Appodeal plugins just like you normally would.   Please see the Corona docs:   AppLovin  Appodeal      Copyright   Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "Standard Plugin Features?"
+        }, 
+        {
+            "location": "/easyIAP/", 
+            "text": "Easy In App Purchases\n\n\nThe \nStarters Core\n kit comes with the \nEasy IAP\n module.  It is a layer on top of \nIAP Badger\n to make it even easier to set up In App Purchases.\n\n\nProject Settings\n\n\nPlease see the Corona docs for setting up the config.lua and build.settings files.\n\n\n\n\nGoogle IAP\n\n\n\n\n\n\nBasic Usage\n\n\nStep 1 - Require Once As Global\n\n\nTo simplify using the module, just require it once as a global.\n\n\n_G.easyIAP = require \neasy.iap.easyIAP\n\n\n\n\n\nNow, it is available for use everywhere you might want it.\n\n\nStep 2 - Get IAP IDs\n\n\nAcquire IDs for all IAP items you intend to sell from the Apple and/or Google Play console.\n\n\nHow to do this is outside the scope of these docs and you are assumed to know how to do this already.\n\n\nStep 3 - Add Item(s)\n\n\nExample 1 - No Ads Non-Consumable\n\n\nlocal ids = { android = {}, ios = {} }\nids.android.noads       = \ncom.yourcompany.appname.noads\n\n\nids.ios.noads           = \ncom.yourcompany.appname.noads\n\n\nlocal os = utils.os()\n\nif( os == \nandroid\n or os == \nios\n ) then\n   easyIAP.addItem( \nnoads\n, ids[os].noads, \nnon-consumable\n  )\nend\n\n\n\n\n\n\n\n\nTip:\n Use all lower case for ids when you make them and use all lowercase for item names when you add them.  This ensures you don't make errors later.\n\n\n\n\n\n\nOnce this step is complete and once you have initilized the module, two new functions will automatically be available for use:\n\n\neasyIAP.buy_noads()  - You can call this to buy the 'noads' IAP.\neasyIAP.owns_noads() - You can call thos to see if you own the 'noads' IAP.\n\n\n\n\nExample 2 - Consumable Coin Packs\n\n\nlocal ids = { android = {}, ios = {} }\nids.android.coins100   = \ncom.yourcompany.appname.coins100\n\nids.android.coins1000  = \ncom.yourcompany.appname.coins1000\n\nids.android.coins5000  = \ncom.yourcompany.appname.coins5000\n\n\nids.ios.coins100       = \ncom.yourcompany.appname.coins100\n\nids.ios.coins1000      = \ncom.yourcompany.appname.coins1000\n\nids.ios.coins5000      = \ncom.yourcompany.appname.coins5000\n\n\nlocal os = utils.os()\n\nif( os == \nandroid\n or os == \nios\n ) then\n   easyIAP.addItem( \ncoins100\n, ids[os].coins100, \nconsumable\n  )\n   easyIAP.addItem( \ncoins1000\n, ids[os].coins1000, \nconsumable\n  )\n   easyIAP.addItem( \ncoins5000\n, ids[os].coins5000, \nconsumable\n  )\nend\n\n\n\n\n\n\n\n\nTip:\n Use all lower case for ids when you make them and use all lowercase for item names when you add them.  This ensures you don't make errors later.\n\n\n\n\n\n\nOnce this step is complete and once you have initilized the module, six new functions will automatically be available for use:\n\n\n\n-- Buy the items.\neasyIAP.buy_coins100()\neasyIAP.buy_coins1000()\neasyIAP.buy_coins5000()\n\n-- \neasyIAP.owns_coins100()\neasyIAP.owns_coins1000()\neasyIAP.owns_coins5000()\n\n\n\n\nStep 4 - Initialize Easy Ads\n\n\neasyIAP.init( \n   {\n      salt               = \nTypeSomeRandomStringHere\n,\n      testMode           = true,\n      doNotLoadInventory = false,\n   } )\n\n\n\n\nIn this example, we passed three arguments:\n\n\n\n\nsalt\n - Used by IAP badger to encrypt your IAP.json settomgs storage file.\n\n\ntestMode\n - A boolean that determines if we are running in test mode or production mode.\n\n\ndoNotLoadInventory\n - If you set this to \ntrue\n, the catalog is not reloaded next time the apps restarts.  i.e. it is as if you did not purchase any non-consumable items.\n\n\n\n\nAdditional arguments you may want to use/pass are:\n\n\n\n\niapFilename\n (\niap.json\n) - You can provide an alternate name for the settings file.\n\n\nonFail\n - A reference to a common 'failed' listener.  This is not required but may be convenient if you like to have all your code in one place.\n\n\nonCancel\n - A reference to a common 'cancelled' listener.  This is not required but may be convenient if you like to have all your code in one place.\n\n\n\n\nLastly, the \ninit()\n function takes a second argument: \nonCatalog\n which references an optional listener.  If you provide this argument, IAP badger will query the store and some time later return a table of all known products, names, their IDs, and their localized prices.  This information will be passed into the listener as a table.\n\n\nlocal function onCatalog( catalog )\n   utils.print_r( catalog )\nend\n\neasyIAP.init( \n   {\n      salt               = \nTypeSomeRandomStringHere\n,\n      testMode           = true,\n      doNotLoadInventory = false,\n   }, onCatalog )\n\n\n\n\nAutomatically Generated Functions\n\n\nAs was mentioned above when describing 'adding items', adding a named item automatically creates two functions on the \neasyAds\n module.\n\n\n\n\n\n\neasyAds.addItem( \nname\n, storeIAPID )\n\ngenerates,\n\n\n\n\n\n\n\n\neasyAds.buy_\nname\n( onSuccess )\n - Calling this will attempt to buy the product.\n\n\nonSuccess\n is a function that will be called when the purchase attempt completes successfully.\n\n\n\n\n\n\neasyAds.owns_\nname\n()\n  - When called, this will return \ntrue\n if the item is a non-consumable and the user has purchased it.\n\n\n\n\nRestoring\n\n\nFinally, any time after initializing, you can attempto to restore all non-consumable items by calling:\n\n\n\n\neasyAds.restore( [ onSuccess [ , onFailure ] ] )\n \n\n\nonSuccess\n is an optional function that will be called when the restore attempt completes successfully.\n\n\nonFailure\n is an optional function that will be called when the restore attempt completes unsuccessfully.\n\n\n\n\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "Easy IAP"
+        }, 
+        {
+            "location": "/easyIAP/#easy-in-app-purchases", 
+            "text": "The  Starters Core  kit comes with the  Easy IAP  module.  It is a layer on top of  IAP Badger  to make it even easier to set up In App Purchases.", 
+            "title": "Easy In App Purchases"
+        }, 
+        {
+            "location": "/easyIAP/#project-settings", 
+            "text": "Please see the Corona docs for setting up the config.lua and build.settings files.   Google IAP", 
+            "title": "Project Settings"
+        }, 
+        {
+            "location": "/easyIAP/#basic-usage", 
+            "text": "", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/easyIAP/#step-1-require-once-as-global", 
+            "text": "To simplify using the module, just require it once as a global.  _G.easyIAP = require  easy.iap.easyIAP   Now, it is available for use everywhere you might want it.", 
+            "title": "Step 1 - Require Once As Global"
+        }, 
+        {
+            "location": "/easyIAP/#step-2-get-iap-ids", 
+            "text": "Acquire IDs for all IAP items you intend to sell from the Apple and/or Google Play console.  How to do this is outside the scope of these docs and you are assumed to know how to do this already.", 
+            "title": "Step 2 - Get IAP IDs"
+        }, 
+        {
+            "location": "/easyIAP/#step-3-add-items", 
+            "text": "", 
+            "title": "Step 3 - Add Item(s)"
+        }, 
+        {
+            "location": "/easyIAP/#example-1-no-ads-non-consumable", 
+            "text": "local ids = { android = {}, ios = {} }\nids.android.noads       =  com.yourcompany.appname.noads \n\nids.ios.noads           =  com.yourcompany.appname.noads \n\nlocal os = utils.os()\n\nif( os ==  android  or os ==  ios  ) then\n   easyIAP.addItem(  noads , ids[os].noads,  non-consumable   )\nend    Tip:  Use all lower case for ids when you make them and use all lowercase for item names when you add them.  This ensures you don't make errors later.    Once this step is complete and once you have initilized the module, two new functions will automatically be available for use:  easyIAP.buy_noads()  - You can call this to buy the 'noads' IAP.\neasyIAP.owns_noads() - You can call thos to see if you own the 'noads' IAP.", 
+            "title": "Example 1 - No Ads Non-Consumable"
+        }, 
+        {
+            "location": "/easyIAP/#example-2-consumable-coin-packs", 
+            "text": "local ids = { android = {}, ios = {} }\nids.android.coins100   =  com.yourcompany.appname.coins100 \nids.android.coins1000  =  com.yourcompany.appname.coins1000 \nids.android.coins5000  =  com.yourcompany.appname.coins5000 \n\nids.ios.coins100       =  com.yourcompany.appname.coins100 \nids.ios.coins1000      =  com.yourcompany.appname.coins1000 \nids.ios.coins5000      =  com.yourcompany.appname.coins5000 \n\nlocal os = utils.os()\n\nif( os ==  android  or os ==  ios  ) then\n   easyIAP.addItem(  coins100 , ids[os].coins100,  consumable   )\n   easyIAP.addItem(  coins1000 , ids[os].coins1000,  consumable   )\n   easyIAP.addItem(  coins5000 , ids[os].coins5000,  consumable   )\nend    Tip:  Use all lower case for ids when you make them and use all lowercase for item names when you add them.  This ensures you don't make errors later.    Once this step is complete and once you have initilized the module, six new functions will automatically be available for use:  \n-- Buy the items.\neasyIAP.buy_coins100()\neasyIAP.buy_coins1000()\neasyIAP.buy_coins5000()\n\n-- \neasyIAP.owns_coins100()\neasyIAP.owns_coins1000()\neasyIAP.owns_coins5000()", 
+            "title": "Example 2 - Consumable Coin Packs"
+        }, 
+        {
+            "location": "/easyIAP/#step-4-initialize-easy-ads", 
+            "text": "easyIAP.init( \n   {\n      salt               =  TypeSomeRandomStringHere ,\n      testMode           = true,\n      doNotLoadInventory = false,\n   } )  In this example, we passed three arguments:   salt  - Used by IAP badger to encrypt your IAP.json settomgs storage file.  testMode  - A boolean that determines if we are running in test mode or production mode.  doNotLoadInventory  - If you set this to  true , the catalog is not reloaded next time the apps restarts.  i.e. it is as if you did not purchase any non-consumable items.   Additional arguments you may want to use/pass are:   iapFilename  ( iap.json ) - You can provide an alternate name for the settings file.  onFail  - A reference to a common 'failed' listener.  This is not required but may be convenient if you like to have all your code in one place.  onCancel  - A reference to a common 'cancelled' listener.  This is not required but may be convenient if you like to have all your code in one place.   Lastly, the  init()  function takes a second argument:  onCatalog  which references an optional listener.  If you provide this argument, IAP badger will query the store and some time later return a table of all known products, names, their IDs, and their localized prices.  This information will be passed into the listener as a table.  local function onCatalog( catalog )\n   utils.print_r( catalog )\nend\n\neasyIAP.init( \n   {\n      salt               =  TypeSomeRandomStringHere ,\n      testMode           = true,\n      doNotLoadInventory = false,\n   }, onCatalog )", 
+            "title": "Step 4 - Initialize Easy Ads"
+        }, 
+        {
+            "location": "/easyIAP/#automatically-generated-functions", 
+            "text": "As was mentioned above when describing 'adding items', adding a named item automatically creates two functions on the  easyAds  module.    easyAds.addItem(  name , storeIAPID ) \ngenerates,     easyAds.buy_ name ( onSuccess )  - Calling this will attempt to buy the product.  onSuccess  is a function that will be called when the purchase attempt completes successfully.    easyAds.owns_ name ()   - When called, this will return  true  if the item is a non-consumable and the user has purchased it.", 
+            "title": "Automatically Generated Functions"
+        }, 
+        {
+            "location": "/easyIAP/#restoring", 
+            "text": "Finally, any time after initializing, you can attempto to restore all non-consumable items by calling:   easyAds.restore( [ onSuccess [ , onFailure ] ] )    onSuccess  is an optional function that will be called when the restore attempt completes successfully.  onFailure  is an optional function that will be called when the restore attempt completes unsuccessfully.        Copyright   Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "Restoring"
+        }, 
+        {
+            "location": "/frameworks/", 
+            "text": "Frameworks\n\n\nThe \nStarters Core\n kit comes with several \nFrameworks\n.  These are empty projects using composer.* and the modules in this kit to implement game skeletons.\n\n\n\n\nFramework1\n - Basic Framework: No Ads and No IAP.\n\n\nIncludes: Splash Scene, Home Scene (Main Menu), and Play Scene, and basic game module.\n\n\n\n\n\n\nFramework2\n - Framework1 + Banner Ads and 'No Ads' IAP.\n\n\nFramework3\n - Framework1 + Banner Ads, Interstitial on nth 'death', Rewarded Ad to 'continue game' after death, and 'No Ads' IAP to turn off Banners and Interstitials.\n\n\n\n\n\n\n  Copyright \n Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "Frameworks"
+        }, 
+        {
+            "location": "/frameworks/#frameworks", 
+            "text": "The  Starters Core  kit comes with several  Frameworks .  These are empty projects using composer.* and the modules in this kit to implement game skeletons.   Framework1  - Basic Framework: No Ads and No IAP.  Includes: Splash Scene, Home Scene (Main Menu), and Play Scene, and basic game module.    Framework2  - Framework1 + Banner Ads and 'No Ads' IAP.  Framework3  - Framework1 + Banner Ads, Interstitial on nth 'death', Rewarded Ad to 'continue game' after death, and 'No Ads' IAP to turn off Banners and Interstitials.      Copyright   Roaming Gamer, LLC. 2008-2018; All Rights Reserved", 
+            "title": "Frameworks"
+        }, 
+        {
+            "location": "/ssk2/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "SSK2"
+        }, 
+        {
+            "location": "/rgdocs/", 
+            "text": "Redirecting to homepage now...", 
+            "title": "RG Docs"
+        }
+    ]
+}
